@@ -55,3 +55,53 @@ img { max-width: 100%; display: block; }
 /* paper (light) section body tweaks */
 .paper { background: var(--paper-000); color: var(--fg-1-inv); }
 .paper h1, .paper h2, .paper h3, .paper h4 { color: var(--fg-1-inv); }
+
+/* ------------------------------------------------------------------
+   Webflow override scope
+   Webflow's Style Manager often sets `h1, h2, h3 { color: white }` and
+   `section { background: ... }` for the existing dark theme. Those tag-
+   selector rules outrank our component's parent `color:` inheritance,
+   causing dark-on-dark or white-on-cream rendering inside Embeds.
+   Below, we re-scope text and background ownership to our mounted
+   sections so React's inline styles + .paper class always win.
+   ------------------------------------------------------------------ */
+[id^="ignite-"], [id^="ignite-"] * {
+  /* let inline styles + className rules drive these — defeat Webflow tag rules */
+  font-family: inherit;
+}
+[id^="ignite-"] h1,
+[id^="ignite-"] h2,
+[id^="ignite-"] h3,
+[id^="ignite-"] h4,
+[id^="ignite-"] h5,
+[id^="ignite-"] h6,
+[id^="ignite-"] p,
+[id^="ignite-"] blockquote,
+[id^="ignite-"] a,
+[id^="ignite-"] span,
+[id^="ignite-"] button,
+[id^="ignite-"] div {
+  color: inherit;
+}
+[id^="ignite-"] section.paper {
+  background: var(--paper-000) !important;
+  color: var(--fg-1-inv) !important;
+}
+[id^="ignite-"] section.paper h1,
+[id^="ignite-"] section.paper h2,
+[id^="ignite-"] section.paper h3,
+[id^="ignite-"] section.paper h4,
+[id^="ignite-"] section.paper blockquote,
+[id^="ignite-"] section.paper p {
+  color: var(--fg-1-inv) !important;
+}
+/* Dark-themed sections (set via inline background: var(--ink-*)) — make sure
+   text inside them inherits white. The inline section already sets `color`,
+   but Webflow can re-color h2 via a tag rule. */
+[id^="ignite-"] section h1,
+[id^="ignite-"] section h2,
+[id^="ignite-"] section h3,
+[id^="ignite-"] section h4,
+[id^="ignite-"] section blockquote {
+  color: inherit;
+}
