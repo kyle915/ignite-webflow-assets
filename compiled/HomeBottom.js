@@ -56,7 +56,7 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
     fontSize: "clamp(40px, 5vw, 72px)",
     letterSpacing: "-0.03em",
     lineHeight: 0.98,
-    color: "#fff",
+    color: "var(--fg-1-inv)",
     maxWidth: 900
   }
 }, "Great brands deserve", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
@@ -68,7 +68,7 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
   href: "pages/work.html",
   className: "link-mono",
   style: {
-    color: "rgba(255,255,255,0.85)"
+    color: "var(--fg-2-inv)"
   }
 }, "All case studies \u2192")), /*#__PURE__*/React.createElement("div", {
   style: {
