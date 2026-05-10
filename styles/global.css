@@ -92,16 +92,40 @@ img { max-width: 100%; display: block; }
    making the h3 + body text render dark. Force white on the fragment-linked
    anchors (the 3 cards), without affecting the plain "All case studies →"
    link which has no fragment. */
-[id^="ignite-case-studies"] a[href*="#"],
-[id^="ignite-case-studies"] a[href*="#"] h1,
-[id^="ignite-case-studies"] a[href*="#"] h2,
-[id^="ignite-case-studies"] a[href*="#"] h3,
-[id^="ignite-case-studies"] a[href*="#"] h4 {
+/* Use the ID selector (1,0,0 specificity) — beats almost any Webflow tag/pseudo rule.
+   First card (Liquid Death) was being targeted by a higher-specificity Webflow
+   rule that wasn't caught by attribute selectors. */
+#ignite-case-studies,
+#ignite-case-studies a,
+#ignite-case-studies a *,
+#ignite-case-studies h1,
+#ignite-case-studies h2,
+#ignite-case-studies h3,
+#ignite-case-studies h4,
+#ignite-case-studies a h3,
+#ignite-case-studies a:nth-of-type(1) h3,
+#ignite-case-studies a:first-child h3 {
   color: #fff !important;
 }
-/* Stat labels + category badge inside cards (inheriting elements) — also force white. */
-[id^="ignite-case-studies"] a[href*="#"] > div > div > div {
-  color: #fff;
+/* Preserve the orange brand badge + stats + "READ CASE STUDY →" inline colors.
+   Those span/div elements have inline color: #FFB627 — inline beats class without !important,
+   but since the rules above use !important on '*', we explicitly re-orange them. */
+#ignite-case-studies a [style*="#FFB627"] {
+  color: #FFB627 !important;
+}
+#ignite-case-studies a [style*="ignite-500"],
+#ignite-case-studies a [style*="var(--ignite-500)"] {
+  color: var(--ignite-500) !important;
+}
+/* Section header in case studies — these elements should stay readable on the cream
+   paper bg (NOT the cards). Section header text is inside Container > flex, not inside `a`. */
+#ignite-case-studies > section > div > div > h2,
+#ignite-case-studies > section > div > div > div > h2 {
+  /* leave default — handled by h1-h6 inherit rule above */
+}
+#ignite-case-studies a[href$="work.html"] {
+  /* "All case studies →" — paper bg, keep dark */
+  color: var(--fg-2-inv) !important;
 }
 [id^="ignite-"] section.paper {
   background: var(--paper-000) !important;
