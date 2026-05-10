@@ -165,9 +165,9 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
   style: {
     fontFamily: "var(--font-display)",
     fontWeight: 700,
-    fontSize: i === 0 ? "clamp(32px, 3vw, 44px)" : 26,
+    fontSize: "clamp(22px, 2vw, 28px)",
     letterSpacing: "-0.02em",
-    lineHeight: 1.05,
+    lineHeight: 1.15,
     marginBottom: 20,
     color: "#fff",
     textShadow: "0 2px 18px rgba(0,0,0,0.6)"
