@@ -1,0 +1,102 @@
+/* ============================================================
+   Responsive + readability layer.
+   Loaded after global.css, so all rules below override.
+   ============================================================ */
+
+/* --- Default desktop padding for hero sections (was inline) --- */
+.hero-meta { padding: 84px 48px 0; }
+.hero-main { padding: 60px 48px 48px; }
+
+/* ============================================================
+   Mobile (≤ 720px)
+   ============================================================ */
+@media (max-width: 720px) {
+  /* Site nav — collapse links, keep logo + CTA */
+  header nav { display: none !important; }
+  header > div:first-child { padding: 0 18px !important; height: 60px !important; gap: 8px !important; }
+  header a[href$="contact.html"].link-mono { display: none !important; }
+
+  /* Hero */
+  .hero-meta { padding: 64px 20px 0 !important; }
+  .hero-main { padding: 36px 20px 32px !important; }
+  .hero-meta-inner { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
+  .hero-headline { font-size: clamp(44px, 12vw, 72px) !important; line-height: 0.92 !important; letter-spacing: -0.035em !important; }
+  .hero-grid { grid-template-columns: 1fr !important; gap: 28px !important; margin-top: 32px !important; }
+  .hero-lede { font-size: 16px !important; line-height: 1.55 !important; }
+  .hero-ctas { gap: 10px !important; margin-top: 28px !important; }
+  .hero-ctas a { font-size: 14.5px !important; padding: 14px 20px !important; }
+
+  /* Container */
+  div[class*="container"], section > div { padding-left: 20px !important; padding-right: 20px !important; }
+
+  /* All section padding */
+  section { padding-top: 64px !important; padding-bottom: 64px !important; }
+
+  /* Headline downscaling — applies to every h2 in marketing sections */
+  section h2 { font-size: clamp(30px, 8vw, 44px) !important; line-height: 1.05 !important; letter-spacing: -0.025em !important; }
+  section h3 { font-size: 19px !important; }
+
+  /* Body copy readability */
+  section p { font-size: 15.5px !important; line-height: 1.6 !important; }
+
+  /* Convert multi-col grids to stacks */
+  section [style*="grid-template-columns: 1fr 1fr"],
+  section [style*="grid-template-columns: 1.3fr 1fr"],
+  section [style*="grid-template-columns: 1.4fr 1fr 1fr"],
+  section [style*="grid-template-columns: 1.4fr 1fr"],
+  section [style*="grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr"],
+  section [style*="grid-template-columns: 1.6fr 2fr 1fr 1fr"] { grid-template-columns: 1fr !important; gap: 16px !important; }
+
+  section [style*="grid-template-columns: repeat(3,"],
+  section [style*="grid-template-columns: repeat(3 ,"],
+  section [style*="grid-template-columns: repeat(4,"],
+  section [style*="grid-template-columns: repeat(5,"],
+  section [style*="grid-template-columns: repeat(6,"] { grid-template-columns: 1fr 1fr !important; gap: 1px !important; }
+
+  /* Service-card "span 2 / span 3" wrapper grid → stack */
+  section [style*="grid-template-columns: repeat(6, 1fr)"] > div { grid-column: span 2 !important; }
+
+  /* Hero live-card */
+  .hero-grid > div:last-child { padding: 16px 18px !important; }
+
+  /* Footer */
+  footer { padding: 56px 20px 24px !important; }
+  footer [style*="font-size: clamp(80px"] { font-size: 64px !important; margin-bottom: 36px !important; }
+  footer [style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+  footer [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+
+  /* Marquee numbers */
+  section [style*="font-size: 30px"] { font-size: 22px !important; }
+}
+
+/* ============================================================
+   Tablet (721px – 1024px)
+   ============================================================ */
+@media (min-width: 721px) and (max-width: 1024px) {
+  .hero-headline { font-size: clamp(64px, 11vw, 110px) !important; }
+  .hero-meta { padding: 72px 32px 0 !important; }
+  .hero-main { padding: 44px 32px 36px !important; }
+  .hero-grid { gap: 32px !important; }
+
+  section [style*="grid-template-columns: repeat(4,"] { grid-template-columns: 1fr 1fr !important; }
+  section [style*="grid-template-columns: repeat(5,"] { grid-template-columns: 1fr 1fr 1fr !important; }
+  section [style*="grid-template-columns: repeat(6, 1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  section [style*="grid-template-columns: repeat(6, 1fr)"] > div { grid-column: span 2 !important; }
+}
+
+/* ============================================================
+   Readability fixes (all viewports)
+   ============================================================ */
+
+/* Lighter body copy on dark sections — was var(--fg-2) #B8BCC5 (slate-blue),
+   bump alpha-on-white for higher contrast against ink-100/ink-200. */
+section[style*="background: var(--ink-000)"] p,
+section[style*="background: var(--ink-100)"] p { color: rgba(255, 255, 255, 0.78); }
+
+/* Slightly darker secondary text on paper sections */
+.paper p { color: #2A2D33; }
+.paper [style*="color: var(--fg-2-inv)"] { color: #2A2D33 !important; }
+
+/* Tighter dark-card body copy */
+section[style*="background: var(--ink-000)"] [style*="color: var(--fg-2)"],
+section[style*="background: var(--ink-100)"] [style*="color: var(--fg-2)"] { color: rgba(255,255,255,0.78) !important; }
