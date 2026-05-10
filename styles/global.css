@@ -92,11 +92,16 @@ img { max-width: 100%; display: block; }
    making the h3 + body text render dark. Force white on the fragment-linked
    anchors (the 3 cards), without affecting the plain "All case studies →"
    link which has no fragment. */
-[id^="ignite-case-studies"] a[href*="#"] {
+[id^="ignite-case-studies"] a[href*="#"],
+[id^="ignite-case-studies"] a[href*="#"] h1,
+[id^="ignite-case-studies"] a[href*="#"] h2,
+[id^="ignite-case-studies"] a[href*="#"] h3,
+[id^="ignite-case-studies"] a[href*="#"] h4 {
   color: #fff !important;
 }
-[id^="ignite-case-studies"] a[href*="#"] * {
-  /* allow inline color (e.g. orange stats #FFB627) to keep winning at the span level */
+/* Stat labels + category badge inside cards (inheriting elements) — also force white. */
+[id^="ignite-case-studies"] a[href*="#"] > div > div > div {
+  color: #fff;
 }
 [id^="ignite-"] section.paper {
   background: var(--paper-000) !important;
