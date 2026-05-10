@@ -351,7 +351,7 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
     fontSize: "clamp(32px, 4vw, 54px)",
     letterSpacing: "-0.025em",
     lineHeight: 1.05,
-    color: "var(--fg-1-inv)",
+    color: "#fff",
     margin: 0
   }
 }, /*#__PURE__*/React.createElement("span", {
@@ -374,7 +374,7 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
     fontSize: 11,
     letterSpacing: "0.18em",
     textTransform: "uppercase",
-    color: "var(--fg-3-inv)"
+    color: "rgba(255,255,255,0.65)"
   }
 }, "MARKETING DIRECTOR \xB7 CPG BEVERAGE BRAND"))), /*#__PURE__*/React.createElement("div", {
   style: {
