@@ -8,7 +8,7 @@ const HOME_SERVICES = [{
   title: "Experiential Marketing",
   sub: "Brand activations, festival footprints, immersive installations",
   bullets: ["Festival Activations", "Pop-Ups", "Brand Activations", "Immersive Installations", "Campus Tours"],
-  img: "https://BASE/assets/experiential-liquiddeath-nascar.jpg",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/experiential-liquiddeath-nascar.jpg",
   imgPos: "center 40%",
   accent: "#FF5A1F"
 }, {
@@ -54,7 +54,7 @@ const HOME_SERVICES = [{
   title: "Trade Show Support",
   sub: "Booth staffing, lead capture, demos, full show management",
   bullets: ["Booth Staffing", "Lead Capture", "Show Management", "Demos"],
-  img: "https://BASE/assets/pressreader-tradeshow.webp",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/pressreader-tradeshow.webp",
   imgPos: "center 35%",
   accent: "#FFB627"
 }, {

@@ -10,7 +10,7 @@ const SparkHero = () => /*#__PURE__*/React.createElement("section", {
   size: 48,
   opacity: 0.04
 }), /*#__PURE__*/React.createElement("img", {
-  src: window.__resources?.r_assets_chrome_splash_png || "https://BASE/assets/chrome-splash.png",
+  src: window.__resources?.r_assets_chrome_splash_png || "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-splash.png",
   style: {
     position: "absolute",
     right: "-10%",

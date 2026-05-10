@@ -184,29 +184,29 @@ const SG_COLOR_GROUPS = [{
 /* Logo gallery — pulls real files from /assets */
 const SG_LOGOS = [{
   title: "Full lockup — White",
-  file: "https://BASE/assets/ignite-full-white.png",
+  file: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-full-white.png",
   bg: "var(--ink-200)",
   note: "Default on dark. Always use this on photography, video, dark panels."
 }, {
   title: "Full lockup — Black",
-  file: "https://BASE/assets/ignite-full-black.png",
+  file: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-full-black.png",
   bg: "var(--paper-000)",
   light: true,
   note: "Default on light. Off-white paper backgrounds and bright photography."
 }, {
   title: "Typemark — White",
-  file: "https://BASE/assets/ignite-typemark-white.png",
+  file: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
   bg: "var(--ink-200)",
   note: "Use when 'PRODUCTIONS' is implied by context. Navigation, video bugs, social."
 }, {
   title: "Typemark — Black",
-  file: "https://BASE/assets/ignite-typemark-black.png",
+  file: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-black.png",
   bg: "var(--paper-000)",
   light: true,
   note: "Same rules, light surfaces."
 }, {
   title: "Typemark — Outline",
-  file: "https://BASE/assets/ignite-typemark-outline.webp",
+  file: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-outline.webp",
   bg: "var(--ink-000)",
   note: "Decorative only. Giant footers, watermarks, ghost layers behind content.",
   large: true
@@ -617,7 +617,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     opacity: 0.5
   }
 }), /*#__PURE__*/React.createElement("img", {
-  src: "https://BASE/assets/ignite-typemark-white.png",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
   alt: "Ignite",
   style: {
     height: 56,
@@ -671,7 +671,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     textAlign: "center"
   }
 }, /*#__PURE__*/React.createElement("img", {
-  src: "https://BASE/assets/ignite-full-white.png",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-full-white.png",
   alt: "Ignite Productions",
   style: {
     width: 96,
@@ -692,7 +692,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     textAlign: "center"
   }
 }, /*#__PURE__*/React.createElement("img", {
-  src: "https://BASE/assets/ignite-typemark-white.png",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
   alt: "Ignite",
   style: {
     width: 72,
@@ -741,7 +741,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
   }
 }, [{
   sample: /*#__PURE__*/React.createElement("img", {
-    src: "https://BASE/assets/ignite-typemark-white.png",
+    src: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
     alt: "",
     style: {
       height: 38,
@@ -752,7 +752,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
   text: "Don't re-skew or re-italicize. The mark already leans 12°."
 }, {
   sample: /*#__PURE__*/React.createElement("img", {
-    src: "https://BASE/assets/ignite-typemark-white.png",
+    src: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
     alt: "",
     style: {
       height: 38,
@@ -762,7 +762,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
   text: "Don't squash or stretch. Scale uniformly."
 }, {
   sample: /*#__PURE__*/React.createElement("img", {
-    src: "https://BASE/assets/ignite-typemark-white.png",
+    src: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
     alt: "",
     style: {
       height: 38,
@@ -790,7 +790,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
       gap: 4
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "https://BASE/assets/ignite-typemark-white.png",
+    src: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
     alt: "",
     style: {
       height: 30,
@@ -875,8 +875,8 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     background: "var(--ink-200)",
     borderRadius: 4
   }
-}, "https://BASE/assets/ignite-*"))), /*#__PURE__*/React.createElement("a", {
-  href: "https://BASE/assets/ignite-full-white.png",
+}, "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-*"))), /*#__PURE__*/React.createElement("a", {
+  href: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-full-white.png",
   download: true,
   className: "link-mono",
   style: {

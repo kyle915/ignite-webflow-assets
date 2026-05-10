@@ -15,7 +15,7 @@ const FractionalHero = () => /*#__PURE__*/React.createElement("section", {
   size: 48,
   opacity: 0.04
 }), /*#__PURE__*/React.createElement("img", {
-  src: window.__resources?.r_assets_chrome_flow_vertical_png || "https://BASE/assets/chrome-flow-vertical.png",
+  src: window.__resources?.r_assets_chrome_flow_vertical_png || "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-flow-vertical.png",
   style: {
     position: "absolute",
     right: "-5%",
