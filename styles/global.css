@@ -74,14 +74,17 @@ img { max-width: 100%; display: block; }
 [id^="ignite-"] h3,
 [id^="ignite-"] h4,
 [id^="ignite-"] h5,
-[id^="ignite-"] h6,
-[id^="ignite-"] p,
-[id^="ignite-"] blockquote,
-[id^="ignite-"] a,
-[id^="ignite-"] span,
-[id^="ignite-"] button,
-[id^="ignite-"] div {
-  color: inherit;
+[id^="ignite-"] h6 {
+  /* Webflow's tag-level color rule (often !important) beats our inline color.
+     Force inheritance so the parent section/card drives the color. */
+  color: inherit !important;
+}
+
+/* Blockquote: Webflow renders blockquote with a dark fill panel + dark text.
+   Force white text — span children with inline color (orange highlights)
+   still win because inline beats class without !important on their level. */
+[id^="ignite-"] blockquote {
+  color: #fff !important;
 }
 [id^="ignite-"] section.paper {
   background: var(--paper-000) !important;
