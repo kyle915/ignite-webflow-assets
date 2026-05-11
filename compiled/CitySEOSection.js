@@ -964,13 +964,20 @@ const CitySeoFaqs = ({
   const [open, setOpen] = React.useState(0);
   if (faqs.length === 0) return null;
   return /*#__PURE__*/React.createElement("section", {
+    className: "city-faq-section",
     style: {
       padding: "120px 0",
       background: "var(--paper-000)",
       color: "var(--fg-1-inv)",
       borderTop: "1px solid var(--paper-200)"
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("style", null, `
+        .city-faq-section .city-faq-heading,
+        .city-faq-section .city-faq-q,
+        .city-faq-section button.city-faq-q { color: #0A0B0D !important; }
+        .city-faq-section .city-faq-sub,
+        .city-faq-section .city-faq-a { color: #3A4050 !important; }
+      `), /*#__PURE__*/React.createElement("div", {
     style: {
       maxWidth: 1280,
       margin: "0 auto",
@@ -992,6 +999,7 @@ const CitySeoFaqs = ({
       color: "var(--ignite-500)"
     }
   }, ">> ", city.name.toUpperCase(), " \xB7 FAQ"), /*#__PURE__*/React.createElement("h3", {
+    className: "city-faq-heading",
     style: {
       marginTop: 14,
       fontFamily: "var(--font-display)",
@@ -1007,6 +1015,7 @@ const CitySeoFaqs = ({
       color: "var(--ignite-500)"
     }
   }, "answers"), /*#__PURE__*/React.createElement("br", null), "for ", city.name, "."), /*#__PURE__*/React.createElement("p", {
+    className: "city-faq-sub",
     style: {
       marginTop: 24,
       fontSize: 15.5,
@@ -1022,6 +1031,7 @@ const CitySeoFaqs = ({
         borderBottom: "1px solid var(--paper-200)"
       }
     }, /*#__PURE__*/React.createElement("button", {
+      className: "city-faq-q",
       onClick: () => setOpen(isOpen ? -1 : i),
       style: {
         width: "100%",
@@ -1062,6 +1072,7 @@ const CitySeoFaqs = ({
         transition: "transform 200ms"
       }
     }, "+")), isOpen && isNonEmpty(f.a) && /*#__PURE__*/React.createElement("p", {
+      className: "city-faq-a",
       style: {
         paddingBottom: 24,
         paddingLeft: 36,
