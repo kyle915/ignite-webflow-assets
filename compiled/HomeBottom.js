@@ -331,10 +331,11 @@ const CoreDifference = () => /*#__PURE__*/React.createElement("section", {
 
 /* Testimonial + CTA */
 const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
-  className: "paper",
   style: {
     padding: "60px 0 120px",
-    borderTop: "1px solid var(--paper-200)"
+    borderTop: "1px solid var(--ink-400)",
+    background: "var(--ink-000)",
+    color: "var(--fg-1)"
   }
 }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
   style: {
@@ -352,7 +353,7 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
     fontSize: "clamp(32px, 4vw, 54px)",
     letterSpacing: "-0.025em",
     lineHeight: 1.05,
-    color: "var(--fg-1-inv)",
+    color: "#FAFAF7",
     margin: 0,
     background: "transparent",
     padding: 0,
@@ -378,7 +379,7 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
     fontSize: 11,
     letterSpacing: "0.18em",
     textTransform: "uppercase",
-    color: "var(--fg-3-inv)"
+    color: "#9499A3"
   }
 }, "MARKETING DIRECTOR \xB7 CPG BEVERAGE BRAND"))), /*#__PURE__*/React.createElement("div", {
   style: {
