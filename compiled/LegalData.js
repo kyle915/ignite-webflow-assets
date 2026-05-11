@@ -867,97 +867,126 @@ window.LEGAL_DOCS = {
     titleA: "Accessibility",
     titleB: "Statement.",
     effective: "May 11, 2026",
-    lede: "Ignite Productions is committed to making igniteproductions.co and the Spark by Ignite platform accessible to everyone, including people with disabilities. We target WCAG 2.1 Level AA conformance and continuously audit and improve.",
-    contact: [["Company", "Ignite Productions LLC"], ["Email", "events@igniteproductions.co"], ["Phone", "775.406.0435"], ["Web", "www.igniteproductions.co"]],
+    lede: "Ignite Productions LLC is committed to making its website, the Spark by Ignite platform, and related digital experiences usable by the widest possible audience — including people with disabilities. This statement describes the standards we target, what we have done, where we know we fall short, and how to reach us if you hit a barrier.",
+    contact: [["Company", "Ignite Productions LLC"], ["Accessibility", "events@igniteproductions.co"], ["Phone", "775.406.0435"], ["Web", "www.igniteproductions.co"]],
     sections: [{
       id: "commitment",
       title: "Our commitment",
       blocks: [{
         type: "p",
-        text: "Ignite Productions LLC (\"Ignite,\" \"we,\" \"us\") believes the web should be available and accessible to anyone, and we are committed to providing a site and platform that is accessible to the widest possible audience, regardless of ability."
+        text: "Ignite Productions LLC (\"Ignite,\" \"we,\" \"us,\" or \"our\") believes that digital accessibility is a baseline obligation, not a feature. We design and maintain our website (igniteproductions.co), the Spark by Ignite platform, and related digital experiences with the goal of providing equivalent access to everyone, regardless of disability, assistive technology, or device."
       }, {
         type: "p",
-        text: "We strive to conform to the **Web Content Accessibility Guidelines (WCAG) 2.1 Level AA**, published by the World Wide Web Consortium (W3C). These guidelines explain how to make web content more accessible for people with a wide array of disabilities. Conforming with WCAG 2.1 AA helps make the web more user-friendly for everyone."
-      }, {
-        type: "p",
-        text: "Accessibility is an ongoing effort. We continue to audit, update, and refine our site as we add new content and features."
+        text: "Accessibility is an ongoing effort. Our website and platform evolve continuously, and we treat accessibility as part of that lifecycle rather than a one-time audit."
       }]
     }, {
-      id: "what-weve-done",
-      title: "What we've done",
+      id: "standard",
+      title: "Conformance target",
       blocks: [{
         type: "p",
-        text: "Our current accessibility measures include:"
+        text: "We target conformance with the **Web Content Accessibility Guidelines (WCAG) 2.1, Level AA**, published by the World Wide Web Consortium (W3C). WCAG 2.1 AA is the standard most widely referenced in U.S. accessibility law (including the Americans with Disabilities Act and Section 508 of the Rehabilitation Act) and in international regulations such as EN 301 549."
+      }, {
+        type: "callout",
+        label: "TARGET STANDARD",
+        text: "**WCAG 2.1, Level AA** — applied to igniteproductions.co, the Spark by Ignite web and mobile platform, and customer-facing dashboards and reports."
+      }, {
+        type: "p",
+        text: "We design and develop with the four WCAG principles in mind: perceivable, operable, understandable, and robust. Where reasonably practicable, we also adopt WCAG 2.2 AA criteria as they become stable and supported by assistive technology."
+      }]
+    }, {
+      id: "measures",
+      title: "Measures we take",
+      blocks: [{
+        type: "p",
+        text: "Our current accessibility practices include:"
       }, {
         type: "ul",
-        items: ["**Color contrast.** Body and meta text meet or exceed WCAG AA contrast ratios (4.5:1 for normal text, 3:1 for large text).", "**Keyboard navigation.** All interactive elements (links, buttons, forms) are reachable and operable with a keyboard. A visible focus outline appears on the active element.", "**Skip-to-content link.** A \"Skip to main content\" link appears as the first focusable element on every page.", "**Semantic HTML.** Headings follow a logical order; landmarks (header, nav, main, footer) are identified.", "**Alt text on images.** Informative images carry descriptive alt text; decorative images are marked so screen readers skip them.", "**Form labels.** Every form input is programmatically associated with a visible label.", "**Reduced motion.** Users who set \"reduce motion\" in their operating system see static versions of our animated sections.", "**Responsive design.** Layouts adapt to text resize, browser zoom up to 200%, and small screens.", "**Captions and transcripts.** Where we publish video, we provide captions and a transcript."]
-      }]
-    }, {
-      id: "standards",
-      title: "Standards we follow",
-      blocks: [{
-        type: "kv",
-        rows: [["Standard", "WCAG 2.1 Level AA"], ["Status", "Targeting full conformance; ongoing improvements"], ["Last review", "May 11, 2026"], ["Reviewed by", "Internal team + axe DevTools automated audits"]]
-      }, {
-        type: "p",
-        text: "We also reference the **Americans with Disabilities Act (ADA)** Title III as the legal framework that informs our compliance approach for users in the United States."
+        items: ["Building with semantic HTML, ARIA where appropriate, and meaningful headings and landmarks", "Designing for keyboard-only navigation — every interactive control is reachable and operable without a mouse", "Maintaining sufficient color contrast for body text and interactive elements against the design system's dark and light surfaces", "Providing visible focus indicators on all focusable controls", "Writing alternative text for meaningful imagery and marking decorative imagery as such", "Captioning or providing transcripts for video content where reasonably practicable", "Supporting browser-level text resizing up to 200% without loss of content or functionality", "Honoring user preferences for reduced motion where they are exposed by the operating system", "Reviewing accessibility during design, code review, and pre-release QA"]
       }]
     }, {
       id: "known-limitations",
       title: "Known limitations",
       blocks: [{
         type: "p",
-        text: "Despite our best efforts, some content may not yet be fully accessible. We are actively working on:"
+        text: "We believe in being honest about where we know we are not yet fully conformant. As of the last review date, the following are known limitations we are actively working to address:"
       }, {
         type: "ul",
-        items: ["**Third-party embeds.** Some embedded content from partners (e.g., LinkedIn widgets, third-party video players) may not fully meet WCAG AA. We are working with vendors and choosing accessible alternatives where possible.", "**Legacy case-study imagery.** A small number of older portfolio images may not yet have detailed alt text. We are auditing and updating them.", "**PDF documents.** Older PDF case studies may not be fully tagged. New PDFs are produced as accessible documents."]
+        items: ["**Third-party embeds.** Some embedded content (e.g., video players, mapping providers, analytics widgets) is loaded from third-party services whose accessibility we do not directly control. We choose vendors that publish their own accessibility documentation where possible.", "**Legacy proof-of-performance media.** Photo and video assets uploaded by field staff prior to our captioning workflow may not have alt text or captions attached. New uploads are prompted for descriptions; older recap archives are being backfilled.", "**Data-dense dashboards.** Some real-time Spark dashboards include map visualizations and dense tables that may be difficult to consume with a screen reader. We provide accessible tabular equivalents and CSV export for these views, and continue to improve native screen-reader support.", "**PDF documents.** Some downloadable PDFs (such as case studies, recaps, or partnership materials) may not yet be fully tagged for screen readers. If you need an accessible version of a specific document, contact us and we will provide one.", "**Animations & motion.** Marketing pages on igniteproductions.co include scroll-linked animations and decorative motion. These respect the `prefers-reduced-motion` system setting where supported, but a small number of legacy effects may still play.", "**Custom typography.** A small number of display headings use custom letterforms (e.g., stencil-style brand marks). These are presented as text where reasonably practicable, but a few are rendered as images and may rely on alt text rather than live text."]
       }, {
-        type: "callout",
-        label: "WE WANT TO KNOW",
-        text: "If you encounter an accessibility barrier on our site or in the Spark platform, please tell us. We treat accessibility reports as priority bugs."
+        type: "p",
+        text: "This list is not exhaustive. If you encounter an accessibility barrier that is not listed here, please tell us — see **Feedback & contact** below."
       }]
     }, {
       id: "assistive-tech",
-      title: "Compatibility with assistive technology",
+      title: "Compatibility",
       blocks: [{
         type: "p",
-        text: "We design and test the site for compatibility with current versions of major browsers and assistive technologies, including:"
+        text: "We design for compatibility with current versions of major browsers (Chrome, Edge, Safari, Firefox) on Windows, macOS, iOS, and Android, used with current versions of common assistive technologies, including:"
       }, {
         type: "ul",
-        items: ["Chrome, Firefox, Safari, and Edge — latest two versions", "iOS Safari and Android Chrome — current and one prior major version", "Screen readers: NVDA (Windows), JAWS (Windows), VoiceOver (macOS / iOS), TalkBack (Android)", "Browser zoom up to 200%"]
+        items: ["Screen readers: VoiceOver (macOS, iOS), TalkBack (Android), NVDA, JAWS", "Operating-system zoom and high-contrast / increased-contrast modes", "Speech-recognition input (e.g., Voice Control, Dragon)", "Keyboard-only navigation"]
       }, {
         type: "p",
-        text: "We do not officially support Internet Explorer or browser versions more than two major releases out of date."
+        text: "Older browsers and end-of-life assistive technology versions may not be fully supported."
+      }]
+    }, {
+      id: "assessment",
+      title: "Assessment approach",
+      blocks: [{
+        type: "p",
+        text: "We assess accessibility through a combination of:"
+      }, {
+        type: "ul",
+        items: ["**Self-evaluation** by our design and engineering team against the WCAG 2.1 AA success criteria during design reviews and pre-release QA", "**Automated testing** using tools such as axe-core, Lighthouse, and similar utilities integrated into our development workflow", "**Manual testing** with keyboard-only navigation and screen readers (VoiceOver and NVDA) on key user flows", "**User feedback** received through the contact channels listed below, which we treat as a first-class signal alongside formal audits"]
+      }, {
+        type: "p",
+        text: "We periodically engage third-party accessibility consultants for targeted reviews of high-traffic pages and the Spark platform's core workflows."
       }]
     }, {
       id: "feedback",
-      title: "Feedback and contact",
+      title: "Feedback & contact",
       blocks: [{
         type: "p",
-        text: "We welcome your feedback on the accessibility of igniteproductions.co and the Spark platform. If you experience accessibility barriers, please let us know — we typically respond within 2 business days."
+        text: "If you encounter an accessibility barrier on our website or the Spark platform, or if you need information from us in an alternative format, please contact us. We treat accessibility feedback as a priority and aim to respond within five (5) business days."
       }, {
         type: "p",
-        text: "When you report an issue, please include (if possible):"
+        text: "When you contact us, it helps if you can include:"
       }, {
         type: "ul",
-        items: ["The URL of the page where the issue occurred", "The browser, operating system, and assistive technology you were using", "A short description of what happened"]
+        items: ["The URL of the page or screen where you encountered the barrier", "A description of the problem and what you were trying to do", "Your browser, operating system, and any assistive technology you were using (if comfortable sharing)", "How you'd like us to follow up with you"]
       }, {
         type: "kv",
-        rows: [["Email", "events@igniteproductions.co"], ["Phone", "775.406.0435"], ["Subject line", "\"Accessibility — [page or feature]\""]]
+        rows: [["Company", "Ignite Productions LLC"], ["Email", "events@igniteproductions.co"], ["Subject line", "Accessibility — [page or feature]"], ["Phone", "775.406.0435"], ["Website", "www.igniteproductions.co"]]
       }]
     }, {
       id: "formal-complaints",
       title: "Formal complaints",
       blocks: [{
         type: "p",
-        text: "If you are not satisfied with our response, you may file a complaint with the U.S. Department of Justice, Civil Rights Division, or with a local agency responsible for enforcing the Americans with Disabilities Act. We are not affiliated with these agencies; they are listed only to inform users of available remedies."
+        text: "We aim to resolve accessibility concerns informally and directly. If you are not satisfied with our response, you may also have rights under applicable law, including the Americans with Disabilities Act (ADA) in the United States. Nothing in this statement waives or limits any such rights."
       }]
     }, {
-      id: "updates",
-      title: "Updates to this statement",
+      id: "ongoing-work",
+      title: "Ongoing work",
       blocks: [{
         type: "p",
-        text: "We will update this statement as we improve the site and as accessibility standards evolve. The \"Effective\" date and version stamp at the top of this page reflect the most recent review."
+        text: "Accessibility is treated as continuous work, not a finished deliverable. Our current focus areas include:"
+      }, {
+        type: "ul",
+        items: ["Expanding alt-text and caption coverage on historical recap media inside the Spark platform", "Improving screen-reader narration of real-time dashboards and map visualizations", "Auditing and remediating downloadable PDFs (case studies, recaps, capability decks)", "Documenting accessible patterns inside our internal design system so future work starts from an accessible baseline", "Re-running automated and manual sweeps after major releases"]
+      }, {
+        type: "p",
+        text: "We will update this statement as our work progresses, and we welcome feedback that helps us prioritize."
+      }]
+    }, {
+      id: "review",
+      title: "Review history",
+      blocks: [{
+        type: "p",
+        text: "This statement is reviewed and updated on a regular cadence and after material changes to the website or the Spark platform."
+      }, {
+        type: "kv",
+        rows: [["Last reviewed", "May 11, 2026"], ["Standard", "WCAG 2.1, Level AA"], ["Scope", "igniteproductions.co, Spark by Ignite web & mobile, customer-facing dashboards & reports"], ["Owner", "Ignite Productions LLC — Operations"]]
       }]
     }]
   }
