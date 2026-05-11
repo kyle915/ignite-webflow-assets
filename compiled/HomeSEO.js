@@ -484,7 +484,34 @@ const SeoLongform = () => /*#__PURE__*/React.createElement("section", {
     marginBottom: 0
   }
 }, "As a certified Veteran-Owned Small Business (VOSB), Ignite Productions has been the field marketing partner for emerging and Fortune 500 brands since 2018. Whether you need a single-night activation in Austin, a 50-state tour, a custom-fabricated photo op, or a fractional VP of Sales \u2014 we run the whole stack under one roof."))));
-const HomeSEOBand = () => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SeoCapabilities, null), /*#__PURE__*/React.createElement(SeoIndustries, null), /*#__PURE__*/React.createElement(SeoMarkets, null), /*#__PURE__*/React.createElement(SeoFaq, null), /*#__PURE__*/React.createElement(SeoLongform, null));
+const HomeSEOBand = () => {
+  React.useEffect(() => {
+    const cleanup = window.injectJsonLd && window.injectJsonLd("home", {
+      "@context": "https://schema.org",
+      "@graph": [{
+        "@type": "FAQPage",
+        "@id": "https://www.igniteproductions.co/#faq",
+        mainEntity: SEO_FAQS.map(([q, a]) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a }
+        }))
+      }, {
+        "@type": "ItemList",
+        "@id": "https://www.igniteproductions.co/#services-offered",
+        name: "Ignite Productions — Capabilities",
+        itemListElement: SEO_CAPS.map((c, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: c.t,
+          description: c.d
+        }))
+      }]
+    });
+    return () => cleanup && cleanup();
+  }, []);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SeoCapabilities, null), /*#__PURE__*/React.createElement(SeoIndustries, null), /*#__PURE__*/React.createElement(SeoMarkets, null), /*#__PURE__*/React.createElement(SeoFaq, null), /*#__PURE__*/React.createElement(SeoLongform, null));
+};
 Object.assign(window, {
   HomeSEOBand,
   SeoCapabilities,

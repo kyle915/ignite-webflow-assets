@@ -1749,6 +1749,34 @@ const ServiceDetailPage = ({
   slug
 }) => {
   const s = SERVICES_DATA[slug];
+  React.useEffect(() => {
+    if (!s) return;
+    const url = `https://www.igniteproductions.co/services-${slug}`;
+    const graph = [{
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.igniteproductions.co/" },
+        { "@type": "ListItem", position: 2, name: "Services", item: "https://www.igniteproductions.co/ignite-services" },
+        { "@type": "ListItem", position: 3, name: s.label, item: url }
+      ]
+    }];
+    if (s.faqs && s.faqs.length) {
+      graph.push({
+        "@type": "FAQPage",
+        "@id": url + "#faq",
+        mainEntity: s.faqs.map(([q, a]) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a }
+        }))
+      });
+    }
+    const cleanup = window.injectJsonLd && window.injectJsonLd("service-detail", {
+      "@context": "https://schema.org",
+      "@graph": graph
+    });
+    return () => cleanup && cleanup();
+  }, [slug]);
   if (!s) return /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 80,

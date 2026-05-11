@@ -969,6 +969,43 @@ const CaseStudyPage = () => {
     return React.createElement(window.WorkPage);
   }
   const c = (window.CASE_STUDIES || {})[slug];
+  React.useEffect(() => {
+    if (!c) return;
+    const url = `https://www.igniteproductions.co/case-study.html?slug=${c.slug}`;
+    if (typeof document !== "undefined") document.title = `${c.brand} — ${c.headline} | Ignite Productions Case Study`;
+    const cleanups = [];
+    cleanups.push(window.injectJsonLd && window.injectJsonLd("case-study", {
+      "@context": "https://schema.org",
+      "@graph": [{
+        "@type": "CreativeWork",
+        "@id": url + "#case-study",
+        name: `${c.brand} — ${c.headline}`,
+        headline: c.headline,
+        url,
+        image: [c.hero, ...(c.gallery || []).slice(0, 3)].filter(Boolean),
+        about: c.brand,
+        keywords: (c.tags || []).join(", "),
+        genre: c.category,
+        inLanguage: "en-US",
+        creator: window.IGNITE_ORG_LD,
+        author: window.IGNITE_ORG_LD,
+        publisher: window.IGNITE_ORG_LD,
+        datePublished: String(c.year || "").match(/\d{4}/) ? String(c.year).match(/\d{4}/)[0] : undefined,
+        description: c.challenge,
+        text: [c.challenge, c.solution].filter(Boolean).join(" "),
+        spatialCoverage: c.location ? { "@type": "Place", name: c.location } : undefined,
+        mentions: { "@type": "Brand", name: c.brand, logo: c.logo }
+      }, {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.igniteproductions.co/" },
+          { "@type": "ListItem", position: 2, name: "Our Work", item: "https://www.igniteproductions.co/work" },
+          { "@type": "ListItem", position: 3, name: c.brand, item: url }
+        ]
+      }]
+    }));
+    return () => cleanups.forEach(fn => fn && fn());
+  }, [c && c.slug]);
   return /*#__PURE__*/React.createElement("div", {
     "data-screen-label": c ? `Case · ${c.brand}` : "Case · 404"
   }, /*#__PURE__*/React.createElement(SiteNav, {

@@ -17,8 +17,38 @@ function BlogPost() {
   }
   const post = BLOG_POSTS.find(p => p.slug === slug);
   React.useEffect(() => {
-    if (post) document.title = `${post.title} | Ignite Productions`;
-  }, [post]);
+    if (!post) return;
+    document.title = `${post.title} | Ignite Productions`;
+    const url = `https://www.igniteproductions.co/blog-post.html?slug=${post.slug}`;
+    const cleanup = window.injectJsonLd && window.injectJsonLd("blog-post", {
+      "@context": "https://schema.org",
+      "@graph": [{
+        "@type": "BlogPosting",
+        "@id": url + "#blogposting",
+        mainEntityOfPage: url,
+        headline: post.title,
+        description: post.dek,
+        image: post.heroImage,
+        datePublished: post.date,
+        dateModified: post.date,
+        articleSection: post.category,
+        keywords: (post.tags || []).join(", "),
+        wordCount: (post.body || []).join(" ").split(/\s+/).filter(Boolean).length,
+        inLanguage: "en-US",
+        author: { "@type": "Person", name: post.author, jobTitle: post.role, worksFor: window.IGNITE_ORG_LD },
+        publisher: window.IGNITE_ORG_LD,
+        url
+      }, {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.igniteproductions.co/" },
+          { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.igniteproductions.co/blog" },
+          { "@type": "ListItem", position: 3, name: post.title, item: url }
+        ]
+      }]
+    });
+    return () => cleanup && cleanup();
+  }, [post && post.slug]);
   if (!post) {
     return /*#__PURE__*/React.createElement("div", {
       style: {
