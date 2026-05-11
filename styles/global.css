@@ -160,12 +160,19 @@ img { max-width: 100%; display: block; }
 }
 /* GLOBAL (unscoped) override for case-study card taglines on the home page.
    Webflow paints <h3> with a dark color via a tag-level !important rule, so
-   we must match that specificity without needing an [id^="ignite-"] wrapper. */
-a[href*="?slug="] h3 {
+   we must match that specificity without needing an [id^="ignite-"] wrapper.
+   Case-study card links use either "?slug=" or "work.html#<slug>" anchors. */
+a[href*="?slug="] h3,
+a[href*="work.html#"] h3,
+a[href*="/work#"] h3,
+a[href*="/work?"] h3 {
   color: #fff !important;
   text-shadow: 0 2px 18px rgba(0,0,0,0.6);
 }
-a[href*="?slug="] h3 * {
+a[href*="?slug="] h3 *,
+a[href*="work.html#"] h3 *,
+a[href*="/work#"] h3 *,
+a[href*="/work?"] h3 * {
   color: inherit !important;
 }
 
