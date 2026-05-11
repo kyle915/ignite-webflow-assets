@@ -254,7 +254,7 @@ const SiteNav = ({
     }
   }, SITE_SERVICES.map((s, i) => /*#__PURE__*/React.createElement("a", {
     key: s.slug,
-    href: "/services-" + s.slug,
+    href: "/services/" + s.slug,
     style: {
       display: "block",
       padding: "14px 14px",
@@ -394,7 +394,7 @@ const SiteFooter = ({
 }, SITE_SERVICES.map(s => /*#__PURE__*/React.createElement("li", {
   key: s.slug
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/services-" + s.slug,
+  href: "/services/" + s.slug,
   style: {
     fontSize: 13.5,
     color: "var(--fg-2)"
