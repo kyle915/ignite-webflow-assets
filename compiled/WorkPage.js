@@ -193,7 +193,7 @@ const WorkBrandMarquee = () => {
     }
   }, items.map((c, i) => /*#__PURE__*/React.createElement("a", {
     key: `${c.slug}-${i}`,
-    href: `/case-study?slug=${c.slug}`,
+    href: `/case-studies?slug=${c.slug}`,
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -629,7 +629,7 @@ const WorkHeroRail = () => {
     }
   }, cases.map((c, i) => /*#__PURE__*/React.createElement("a", {
     key: c.slug,
-    href: `/case-study?slug=${c.slug}`,
+    href: `/case-studies?slug=${c.slug}`,
     className: "wk-card",
     style: {
       flex: "0 0 480px",
@@ -918,7 +918,7 @@ const WorkBento = () => {
     }
   }, cases.map((c, i) => /*#__PURE__*/React.createElement("a", {
     key: c.slug,
-    href: `/case-study?slug=${c.slug}`,
+    href: `/case-studies?slug=${c.slug}`,
     className: "wk-card",
     style: {
       gridColumn: plan[c.slug]?.col || "span 4",
@@ -1124,7 +1124,7 @@ const WorkIndexList = () => {
     }
   }, cases.map((c, i) => /*#__PURE__*/React.createElement("a", {
     key: c.slug,
-    href: `/case-study?slug=${c.slug}`,
+    href: `/case-studies?slug=${c.slug}`,
     className: "wk-row",
     style: {
       position: "relative",
