@@ -480,7 +480,6 @@ const TypeSpec = ({
    ============================================================ */
 
 const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SiteNav, {
-  rel: "../",
   active: ""
 }), /*#__PURE__*/React.createElement("section", {
   style: {
@@ -1210,9 +1209,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     color: "var(--fg-2)",
     margin: 0
   }
-}, p.use))))), /*#__PURE__*/React.createElement(SiteFooter, {
-  rel: "../"
-}));
+}, p.use))))), /*#__PURE__*/React.createElement(SiteFooter, null));
 Object.assign(window, {
   StyleGuidePage
 });

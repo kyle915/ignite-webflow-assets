@@ -277,11 +277,8 @@ const ServicesIndexGrid = () => /*#__PURE__*/React.createElement("section", {
 const ServicesIndexPage = () => /*#__PURE__*/React.createElement("div", {
   "data-screen-label": "01 Services Index"
 }, /*#__PURE__*/React.createElement(SiteNav, {
-  rel: "../",
   active: "SERVICES"
-}), /*#__PURE__*/React.createElement(ServicesIndexHero, null), /*#__PURE__*/React.createElement(ServicesIndexGrid, null), /*#__PURE__*/React.createElement(SiteFooter, {
-  rel: "../"
-}));
+}), /*#__PURE__*/React.createElement(ServicesIndexHero, null), /*#__PURE__*/React.createElement(ServicesIndexGrid, null), /*#__PURE__*/React.createElement(SiteFooter, null));
 Object.assign(window, {
   ServicesIndexPage
 });

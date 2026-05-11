@@ -1758,7 +1758,6 @@ const ServiceDetailPage = ({
   return /*#__PURE__*/React.createElement("div", {
     "data-screen-label": "01 " + s.label
   }, /*#__PURE__*/React.createElement(SiteNav, {
-    rel: "../",
     active: "SERVICES"
   }), /*#__PURE__*/React.createElement(ServiceHero, {
     s: s
@@ -1790,9 +1789,7 @@ const ServiceDetailPage = ({
     s: s
   }), /*#__PURE__*/React.createElement(ServiceCTA, {
     s: s
-  }), /*#__PURE__*/React.createElement(SiteFooter, {
-    rel: "../"
-  }));
+  }), /*#__PURE__*/React.createElement(SiteFooter, null));
 };
 Object.assign(window, {
   ServiceDetailPage
