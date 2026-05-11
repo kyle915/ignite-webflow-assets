@@ -443,7 +443,7 @@ const SiteFooter = ({
     textDecoration: "none"
   }
 }, /*#__PURE__*/React.createElement(OpsLine, null, "PRIVACY")), /*#__PURE__*/React.createElement("a", {
-  href: "/privacy",
+  href: "/terms",
   style: {
     textDecoration: "none"
   }
