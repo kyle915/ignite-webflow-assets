@@ -10,14 +10,20 @@
   var CITIES_JSON_URL = "https://kyle915.github.io/ignite-webflow-assets/cities.json";
   var CDN = "https://kyle915.github.io/ignite-webflow-assets";
 
-  function isCityPage() {
+  function wfAttr(name) {
+    // Webflow puts data-wf-* attributes on <html>, not <body>. Check both for safety.
+    var html = document.documentElement;
     var body = document.body;
-    if (!body) return false;
-    var col = body.getAttribute("data-wf-collection");
-    return col === BA_LOCATIONS_COLLECTION_ID && !!body.getAttribute("data-wf-item-slug");
+    return (html && html.getAttribute(name)) ||
+           (body && body.getAttribute(name)) ||
+           "";
+  }
+  function isCityPage() {
+    return wfAttr("data-wf-collection") === BA_LOCATIONS_COLLECTION_ID &&
+           !!wfAttr("data-wf-item-slug");
   }
   function getSlug() {
-    return (document.body.getAttribute("data-wf-item-slug") || "").trim().toLowerCase();
+    return wfAttr("data-wf-item-slug").trim().toLowerCase();
   }
 
   function loadScript(src) {
