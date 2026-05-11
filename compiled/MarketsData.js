@@ -144,13 +144,13 @@ const MARKETS_REGIONS = [{
     name: "Miami",
     state: "FL",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "atlanta",
     name: "Atlanta",
     state: "GA",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "charlotte",
     name: "Charlotte",
@@ -329,7 +329,7 @@ const MARKETS_REGIONS = [{
     name: "Chicago",
     state: "IL",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "detroit",
     name: "Detroit",
@@ -448,13 +448,13 @@ const MARKETS_REGIONS = [{
     name: "Dallas-Fort Worth",
     state: "TX",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "houston",
     name: "Houston",
     state: "TX",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "austin",
     name: "Austin",
@@ -549,7 +549,7 @@ const MARKETS_REGIONS = [{
     name: "Los Angeles",
     state: "CA",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "san-francisco",
     name: "San Francisco",
@@ -650,7 +650,7 @@ const MARKETS_REGIONS = [{
     name: "Seattle",
     state: "WA",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "portland",
     name: "Portland",

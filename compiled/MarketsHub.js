@@ -388,13 +388,16 @@ const RegionCard = ({
       gap: 8
     }
   }, matches.map(c => {
-    const href = window.CITY_URL ? window.CITY_URL(c.slug) : "/cities/" + c.slug;
-    const Tag = "a";
-    const isTier1 = c.tier === 1;
+    const isLive = !!c.available;
+    const href = isLive ? window.CITY_URL ? window.CITY_URL(c.slug) : "/cities/" + c.slug : null;
+    const Tag = isLive ? "a" : "span";
+    const isTier1 = c.tier === 1 && isLive;
     return /*#__PURE__*/React.createElement(Tag, {
       key: c.slug,
       href: href || undefined,
-      className: href ? isTier1 ? "markets-chip markets-chip--live markets-chip--tier1" : "markets-chip markets-chip--live" : "markets-chip markets-chip--stub",
+      className: isLive ? isTier1 ? "markets-chip markets-chip--live markets-chip--tier1" : "markets-chip markets-chip--live" : "markets-chip markets-chip--stub",
+      "aria-disabled": !isLive ? "true" : undefined,
+      title: !isLive ? "Coverage available — page coming soon" : undefined,
       style: {
         display: "inline-flex",
         alignItems: "center",
@@ -407,11 +410,12 @@ const RegionCard = ({
         fontWeight: isTier1 ? 700 : 500,
         letterSpacing: "0.06em",
         textTransform: "none",
-        background: href ? isTier1 ? "rgba(255,107,53,0.08)" : "var(--ink-200)" : "transparent",
-        color: href ? "var(--fg-1)" : "var(--fg-3)",
+        background: isLive ? isTier1 ? "rgba(255,107,53,0.08)" : "var(--ink-200)" : "transparent",
+        color: isLive ? "var(--fg-1)" : "var(--fg-3)",
+        opacity: isLive ? 1 : 0.55,
         textDecoration: "none",
         transition: "background 160ms, border-color 160ms, color 160ms, transform 160ms",
-        cursor: href ? "pointer" : "default"
+        cursor: isLive ? "pointer" : "default"
       }
     }, /*#__PURE__*/React.createElement("span", null, c.name), /*#__PURE__*/React.createElement("span", {
       style: {
@@ -419,7 +423,7 @@ const RegionCard = ({
         opacity: 0.65,
         letterSpacing: "0.18em"
       }
-    }, "/ ", c.state), href && /*#__PURE__*/React.createElement("span", {
+    }, "/ ", c.state), isLive && /*#__PURE__*/React.createElement("span", {
       style: {
         fontSize: 10,
         color: "var(--ignite-500)",
