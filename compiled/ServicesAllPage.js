@@ -143,7 +143,7 @@ const SVC_LANES = [{
   bullets: ["Advisory Tier", "Embedded VP", "Full Leadership", "Retail Strategy", "Field Execution", "Sponsorship Management", "Sales Programs", "Marketing Ops"],
   img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&q=80",
   imgPos: "center 40%",
-  href: "fractional.html",
+  href: "/fractional",
   meta: ["3 engagement tiers", "Monthly retainer", "CPG-specialized"]
 }, {
   slug: "spark",
@@ -155,7 +155,7 @@ const SVC_LANES = [{
   bullets: ["GPS Check-ins", "Sample Counts", "Lead Capture", "Photo Uploads", "Live Dashboards", "Auto Recaps", "Per-SKU Breakdown", "Same-Day Data"],
   img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80",
   imgPos: "center",
-  href: "spark.html",
+  href: "/spark",
   meta: ["Free with engagements", "Live data", "Auto recaps"]
 }];
 
@@ -488,7 +488,7 @@ const SvcHero = () => {
       boxShadow: "0 8px 28px rgba(255,90,31,0.32)"
     }
   }, "Browse all nine lanes ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "contact.html",
+    href: "/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -830,7 +830,7 @@ const SvcLane = ({
       textDecoration: "none"
     }
   }, "Explore ", s.title.split(" ")[0].toLowerCase(), " ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "contact.html",
+    href: "/contact",
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: 11,
@@ -1126,7 +1126,7 @@ const SvcFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     justifyContent: "center"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "contact.html",
+  href: "/contact",
   style: {
     padding: "18px 26px",
     borderRadius: 999,
@@ -1140,7 +1140,7 @@ const SvcFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     boxShadow: "0 12px 40px rgba(255,90,31,0.35)"
   }
 }, "Request a quote \u2192"), /*#__PURE__*/React.createElement("a", {
-  href: "work.html",
+  href: "/work",
   style: {
     padding: "18px 26px",
     borderRadius: 999,

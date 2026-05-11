@@ -1505,7 +1505,7 @@ const WorkCTA = () => {
       alignItems: "center"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "contact.html",
+    href: "/contact",
     style: {
       padding: "24px 38px",
       borderRadius: 99,
@@ -1535,7 +1535,7 @@ const WorkCTA = () => {
       fontSize: 14
     }
   }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "services.html",
+    href: "/services",
     style: {
       padding: "24px 38px",
       borderRadius: 99,

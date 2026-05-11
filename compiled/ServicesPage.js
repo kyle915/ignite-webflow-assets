@@ -191,7 +191,7 @@ const ServicesHero = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "contact.html",
+  href: "/contact",
   style: {
     padding: "18px 26px",
     borderRadius: 999,
@@ -207,7 +207,7 @@ const ServicesHero = () => /*#__PURE__*/React.createElement("section", {
     boxShadow: "0 12px 32px rgba(255,90,31,0.35)"
   }
 }, "Request a quote \u2192"), /*#__PURE__*/React.createElement("a", {
-  href: "contact.html?urgent=1",
+  href: "/contact?urgent=1",
   style: {
     padding: "18px 26px",
     borderRadius: 999,
@@ -618,7 +618,7 @@ const TwoWays = () => /*#__PURE__*/React.createElement("section", {
     margin: "0 auto"
   }
 }, [{
-  href: "fractional.html",
+  href: "/fractional",
   kicker: "ONGOING · STRATEGIC",
   label: "01 · FRACTIONAL",
   title: "Fractional Teams",
@@ -627,7 +627,7 @@ const TwoWays = () => /*#__PURE__*/React.createElement("section", {
   cta: "Explore Fractional →",
   accent: "#FF5A1F"
 }, {
-  href: "services.html",
+  href: "/services",
   kicker: "PROJECT · ON-DEMAND",
   label: "02 · STAFFING + EXPERIENTIAL",
   title: "BA Staffing & Experiential",
@@ -709,7 +709,7 @@ const TwoWays = () => /*#__PURE__*/React.createElement("section", {
     color: c.accent
   }
 }, c.cta)))), /*#__PURE__*/React.createElement("a", {
-  href: "spark.html",
+  href: "/spark",
   style: {
     display: "flex",
     alignItems: "center",

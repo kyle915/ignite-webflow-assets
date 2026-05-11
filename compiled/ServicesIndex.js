@@ -35,7 +35,7 @@ const ServicesIndexHero = () => /*#__PURE__*/React.createElement("section", {
     color: "rgba(255,255,255,0.6)"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "../index.html",
+  href: "/",
   style: {
     color: "rgba(255,255,255,0.6)"
   }
@@ -93,7 +93,7 @@ const ServicesIndexGrid = () => /*#__PURE__*/React.createElement("section", {
   }
 }, Object.entries(SERVICES_DATA).map(([slug, s]) => /*#__PURE__*/React.createElement("a", {
   key: slug,
-  href: "services-" + slug + ".html",
+  href: "/services/" + slug,
   style: {
     position: "relative",
     display: "block",

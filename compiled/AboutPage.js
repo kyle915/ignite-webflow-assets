@@ -506,7 +506,7 @@ const AboutHero = () => {
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "contact.html",
+    href: "/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -1819,7 +1819,7 @@ const AboutCaseSpotlight = () => /*#__PURE__*/React.createElement("section", {
     textTransform: "uppercase"
   }
 }, l)))), /*#__PURE__*/React.createElement("a", {
-  href: "work.html",
+  href: "/work",
   style: {
     marginTop: 36,
     display: "inline-flex",
@@ -2550,7 +2550,7 @@ const AboutFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     justifyContent: "center"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "contact.html",
+  href: "/contact",
   style: {
     padding: "18px 26px",
     borderRadius: 999,
@@ -2564,7 +2564,7 @@ const AboutFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     boxShadow: "0 12px 40px rgba(255,90,31,0.35)"
   }
 }, "Request a quote \u2192"), /*#__PURE__*/React.createElement("a", {
-  href: "work.html",
+  href: "/work",
   style: {
     padding: "18px 26px",
     borderRadius: 999,
@@ -2970,7 +2970,7 @@ const AboutSpark = () => {
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "spark.html",
+    href: "/spark",
     style: {
       padding: "15px 24px",
       borderRadius: 999,
@@ -2984,7 +2984,7 @@ const AboutSpark = () => {
       boxShadow: "0 0 24px rgba(214,243,95,0.4)"
     }
   }, "See Spark in action \u2192"), /*#__PURE__*/React.createElement("a", {
-    href: "contact.html",
+    href: "/contact",
     style: {
       padding: "15px 24px",
       borderRadius: 999,
@@ -3191,21 +3191,21 @@ const ABOUT_ENGAGEMENT = [{
   body: "A launch, a tour leg, a stadium takeover. We scope, build, staff, run, and measure a single campaign — then hand you the recap.",
   best: "Best for: a defined moment with a clear date.",
   cta: "Request a quote",
-  href: "contact.html"
+  href: "/contact"
 }, {
   tag: "02 · RETAINER",
   title: "Always-on field execution.",
   body: "We become your field marketing arm. Recurring sampling, demo cycles, regional tours, ambassador programs — measured continuously through Spark.",
   best: "Best for: programs running 6+ months.",
   cta: "Talk through scope",
-  href: "contact.html"
+  href: "/contact"
 }, {
   tag: "03 · FRACTIONAL",
   title: "Embedded leadership.",
   body: "Senior CPG marketing leadership inside your team without the FTE cost. Retail strategy, sponsorship management, GTM planning — by the quarter.",
   best: "Best for: brands $5M–$100M without a VP yet.",
   cta: "See Fractional →",
-  href: "fractional.html"
+  href: "/fractional"
 }];
 const AboutEngagement = () => /*#__PURE__*/React.createElement("section", {
   style: {

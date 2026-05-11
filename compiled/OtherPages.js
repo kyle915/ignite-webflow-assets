@@ -59,7 +59,7 @@ const FractionalHero = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(AccentBtn, {
   size: "lg",
-  onClick: () => location.href = "contact.html"
+  onClick: () => location.href = "/contact"
 }, "Book a strategy call"), /*#__PURE__*/React.createElement(GhostBtn, {
   size: "lg"
 }, "See how it works"))));
@@ -195,7 +195,7 @@ const FractionalTiers = () => /*#__PURE__*/React.createElement("section", {
     marginTop: 32
   }
 }, /*#__PURE__*/React.createElement(AccentBtn, {
-  onClick: () => location.href = "contact.html",
+  onClick: () => location.href = "/contact",
   style: {
     width: "100%",
     justifyContent: "center"

@@ -278,7 +278,7 @@ const ServicesGrid = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 640
   }
 }, "From strategy to fabrication to 42,000 ambassadors on the ground \u2014 we operate every lane of activation under one roof.")), /*#__PURE__*/React.createElement("a", {
-  href: "pages/services.html",
+  href: "/services",
   style: {
     padding: "14px 22px",
     borderRadius: 999,
@@ -399,7 +399,7 @@ const ServicesGrid = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--spark-500)"
   }
 }, "Spark Tech Stack"))), /*#__PURE__*/React.createElement("a", {
-  href: "pages/services.html",
+  href: "/services",
   style: {
     fontFamily: "var(--font-mono)",
     fontSize: 11,

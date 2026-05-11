@@ -147,7 +147,7 @@ const TwoEngines = () => /*#__PURE__*/React.createElement("section", {
     gap: 20
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "pages/fractional.html",
+  href: "/fractional",
   style: {
     display: "block",
     padding: 40,
@@ -251,7 +251,7 @@ const TwoEngines = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--ignite-500)"
   }
 }, "EXPLORE FRACTIONAL \u2192"))), /*#__PURE__*/React.createElement("a", {
-  href: "pages/services.html",
+  href: "/services",
   style: {
     display: "block",
     padding: 40,
@@ -372,7 +372,7 @@ const TwoEngines = () => /*#__PURE__*/React.createElement("section", {
     color: "#FFB627"
   }
 }, "EXPLORE SERVICES \u2192")))), /*#__PURE__*/React.createElement("a", {
-  href: "pages/spark.html",
+  href: "/spark",
   style: {
     display: "flex",
     alignItems: "center",

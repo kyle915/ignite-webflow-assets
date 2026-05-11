@@ -374,7 +374,7 @@ const SeoFaq = () => {
       color: "var(--fg-2-inv)"
     }
   }, "Don't see yours?", " ", /*#__PURE__*/React.createElement("a", {
-    href: "pages/contact.html",
+    href: "/contact",
     style: {
       color: "var(--ignite-500)",
       textDecoration: "underline"

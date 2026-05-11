@@ -369,7 +369,7 @@ const SparkShowcase = () => {
     }
   }, /*#__PURE__*/React.createElement(Bracket, null, "Field marketing finally gets the intelligence it deserves."))), /*#__PURE__*/React.createElement(AccentBtn, {
     size: "lg",
-    onClick: () => location.href = "pages/spark.html"
+    onClick: () => location.href = "/spark"
   }, "Tour the platform")), /*#__PURE__*/React.createElement("div", {
     style: {
       background: "linear-gradient(180deg, #14161B 0%, #0F1115 100%)",

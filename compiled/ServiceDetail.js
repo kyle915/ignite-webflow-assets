@@ -53,7 +53,7 @@ const ServiceHero = ({
     color: "rgba(255,255,255,0.6)"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "../index.html",
+  href: "/",
   style: {
     color: "rgba(255,255,255,0.6)"
   }
@@ -62,7 +62,7 @@ const ServiceHero = ({
     color: "rgba(255,255,255,0.3)"
   }
 }, "/"), /*#__PURE__*/React.createElement("a", {
-  href: "services.html",
+  href: "/services",
   style: {
     color: "rgba(255,255,255,0.6)"
   }
@@ -177,7 +177,7 @@ const ServiceHero = ({
     alignItems: "center"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "contact.html",
+  href: "/contact",
   style: {
     padding: "16px 24px",
     borderRadius: 999,
@@ -192,7 +192,7 @@ const ServiceHero = ({
     gap: 10
   }
 }, "Brief us on a ", s.short.toLowerCase(), " project ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "contact.html?urgent=1",
+  href: "/contact?urgent=1",
   style: {
     padding: "16px 24px",
     borderRadius: 999,
@@ -518,7 +518,7 @@ const FeaturedCase = ({
     letterSpacing: "-0.025em"
   }
 }, s.featured.line), /*#__PURE__*/React.createElement("a", {
-  href: "work.html",
+  href: "/work",
   style: {
     marginTop: 32,
     fontFamily: "var(--font-mono)",
@@ -559,7 +559,7 @@ const AdjacentServices = ({
   if (!o) return null;
   return /*#__PURE__*/React.createElement("a", {
     key: slug,
-    href: "services-" + slug + ".html",
+    href: "/services/" + slug,
     style: {
       display: "block",
       borderRadius: 16,
@@ -666,7 +666,7 @@ const ServiceCTA = ({
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "contact.html",
+  href: "/contact",
   style: {
     padding: "20px 28px",
     borderRadius: 999,
@@ -681,7 +681,7 @@ const ServiceCTA = ({
     gap: 10
   }
 }, "Request a quote ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "contact.html?urgent=1",
+  href: "/contact?urgent=1",
   style: {
     padding: "20px 28px",
     borderRadius: 999,

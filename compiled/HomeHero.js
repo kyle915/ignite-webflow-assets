@@ -297,7 +297,7 @@ const HomeHero = () => {
       alignItems: "center"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "pages/contact.html",
+    href: "/contact",
     style: {
       padding: "16px 24px",
       borderRadius: 999,
@@ -322,7 +322,7 @@ const HomeHero = () => {
       e.currentTarget.style.boxShadow = "0 12px 32px rgba(255,90,31,0.35)";
     }
   }, "Request a quote ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "pages/contact.html?urgent=1",
+    href: "/contact?urgent=1",
     style: {
       padding: "16px 24px",
       borderRadius: 999,

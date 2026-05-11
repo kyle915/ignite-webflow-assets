@@ -80,7 +80,7 @@ const CaseMissing = ({
     color: "var(--fg-2)"
   }
 }, "It may have moved. Head back to Our Work and pick a different one."), /*#__PURE__*/React.createElement("a", {
-  href: "work.html",
+  href: "/work",
   style: {
     display: "inline-block",
     marginTop: 36,
@@ -135,7 +135,7 @@ const CaseHero = ({
     position: "relative"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "work.html",
+  href: "/work",
   style: {
     display: "inline-flex",
     alignItems: "center",
@@ -777,7 +777,7 @@ const CaseMoreWork = ({
       margin: "14px 0 0"
     }
   }, "Keep reading.")), /*#__PURE__*/React.createElement("a", {
-    href: "work.html",
+    href: "/work",
     style: {
       padding: "14px 22px",
       borderRadius: 99,
@@ -929,7 +929,7 @@ const CaseCTA = ({
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "contact.html",
+  href: "/contact",
   style: {
     padding: "20px 30px",
     borderRadius: 99,
@@ -943,7 +943,7 @@ const CaseCTA = ({
     textDecoration: "none"
   }
 }, "Contact us \u2192"), /*#__PURE__*/React.createElement("a", {
-  href: "work.html",
+  href: "/work",
   style: {
     padding: "20px 30px",
     borderRadius: 99,

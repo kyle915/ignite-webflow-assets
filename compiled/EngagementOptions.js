@@ -18,7 +18,7 @@ const SPECTRUM_TIERS = [{
   best: "FOR · single activations · trade shows · seasonal pushes",
   includes: ["Brand ambassadors", "Mobile tours", "Trade show staff", "Sampling programs"],
   cta: "Explore services",
-  href: "pages/services.html"
+  href: "/services"
 }, {
   num: "02",
   tag: "PLUG US IN",
@@ -32,7 +32,7 @@ const SPECTRUM_TIERS = [{
   best: "FOR · brands scaling one channel · post-Series-A teams · pre-IPO ops",
   includes: ["Sponsorship management", "Field sales programs", "Brand & marketing ops", "Retail strategy"],
   cta: "Explore fractional",
-  href: "pages/fractional.html"
+  href: "/fractional"
 }, {
   num: "03",
   tag: "BUILD WITH US",
@@ -46,7 +46,7 @@ const SPECTRUM_TIERS = [{
   best: "FOR · emerging CPG · launching a line · DTC going retail",
   includes: ["Full fractional team", "Senior leadership", "Cross-functional ops", "Quarterly roadmaps"],
   cta: "Explore leadership",
-  href: "pages/fractional.html"
+  href: "/fractional"
 }];
 const EngagementSpectrum = () => {
   const [active, setActive] = React.useState(1);
@@ -368,7 +368,7 @@ const EngagementSpectrum = () => {
       fontSize: 20
     }
   }, "\u25B8"), " ", inc))))), /*#__PURE__*/React.createElement("a", {
-    href: "pages/spark.html",
+    href: "/spark",
     style: {
       marginTop: 24,
       padding: "28px 36px",

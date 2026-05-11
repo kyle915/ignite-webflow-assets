@@ -65,7 +65,7 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--ignite-500)"
   }
 }, "exceptional"), " people.")), /*#__PURE__*/React.createElement("a", {
-  href: "pages/work.html",
+  href: "/work",
   className: "link-mono",
   style: {
     color: "var(--fg-2-inv)"
@@ -78,7 +78,7 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
   }
 }, FEATURED_CASES.map((c, i) => /*#__PURE__*/React.createElement("a", {
   key: c.slug,
-  href: "pages/work.html#" + c.slug,
+  href: "/case-study?slug=" + c.slug,
   style: {
     position: "relative",
     display: "block",
@@ -471,10 +471,10 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(AccentBtn, {
   size: "lg",
-  onClick: () => location.href = "pages/contact.html"
+  onClick: () => location.href = "/contact"
 }, "Request a quote"), /*#__PURE__*/React.createElement(GhostBtn, {
   size: "lg",
-  onClick: () => location.href = "pages/contact.html?urgent=1",
+  onClick: () => location.href = "/contact?urgent=1",
   icon: /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-mono)",
@@ -482,7 +482,7 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
     }
   }, "\u25CF")
 }, "Request staff now"), /*#__PURE__*/React.createElement("a", {
-  href: "pages/spark.html",
+  href: "/spark",
   style: {
     marginLeft: 8,
     display: "inline-flex",

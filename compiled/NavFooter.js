@@ -37,23 +37,23 @@ const SITE_SERVICES = [{
 }];
 const NAV_ITEMS = [{
   label: "SPARK",
-  href: "pages/spark.html"
+  href: "/spark"
 }, {
   label: "FRACTIONAL",
-  href: "pages/fractional.html"
+  href: "/fractional"
 }, {
   label: "SERVICES",
-  href: "pages/services.html",
+  href: "/services",
   mega: "services"
 }, {
   label: "OUR WORK",
-  href: "pages/work.html"
+  href: "/work"
 }, {
   label: "ABOUT",
-  href: "pages/about.html"
+  href: "/about"
 }, {
   label: "CONTACT",
-  href: "pages/contact.html"
+  href: "/contact"
 }];
 
 /* rel: "" when on root, "../" when on a page inside /pages/ */
@@ -106,7 +106,7 @@ const SiteNav = ({
       gap: 24
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: rel + "index.html",
+    href: rel + "/",
     "aria-label": "Ignite Productions \u2014 home",
     style: {
       display: "inline-flex",
@@ -177,11 +177,11 @@ const SiteNav = ({
       alignItems: "center"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: rel + "pages/contact.html",
+    href: rel + "/contact",
     className: "link-mono"
   }, "Request a quote"), /*#__PURE__*/React.createElement(AccentBtn, {
     size: "sm",
-    onClick: () => location.href = rel + "pages/contact.html?urgent=1"
+    onClick: () => location.href = "/contact?urgent=1"
   }, "Request staff now"))), /*#__PURE__*/React.createElement("div", {
     onMouseEnter: () => openMega("services"),
     onMouseLeave: closeMegaSoon,
@@ -235,7 +235,7 @@ const SiteNav = ({
       marginBottom: 20
     }
   }, "Strategy, fabrication, staffing, sampling \u2014 every lane of brand activation under one roof."), /*#__PURE__*/React.createElement("a", {
-    href: rel + "pages/services.html",
+    href: rel + "/services",
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: 11,
@@ -251,7 +251,7 @@ const SiteNav = ({
     }
   }, SITE_SERVICES.map((s, i) => /*#__PURE__*/React.createElement("a", {
     key: s.slug,
-    href: rel + "pages/services-" + s.slug + ".html",
+    href: "/services/" + s.slug,
     style: {
       display: "block",
       padding: "14px 14px",
@@ -391,14 +391,14 @@ const SiteFooter = ({
 }, SITE_SERVICES.map(s => /*#__PURE__*/React.createElement("li", {
   key: s.slug
 }, /*#__PURE__*/React.createElement("a", {
-  href: rel + "pages/services-" + s.slug + ".html",
+  href: "/services/" + s.slug,
   style: {
     fontSize: 13.5,
     color: "var(--fg-2)"
   },
   onMouseEnter: e => e.currentTarget.style.color = "var(--spark-500)",
   onMouseLeave: e => e.currentTarget.style.color = "var(--fg-2)"
-}, s.label))))), [["AGENCY", [["Our Work", "pages/work.html"], ["About", "pages/about.html"], ["Contact", "pages/contact.html"], ["Spark Platform", "pages/spark.html"], ["Fractional", "pages/fractional.html"]]], ["TALENT", [["Apply", "pages/contact.html?role=ambassador"], ["LinkedIn", "#"], ["Press", "#"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
+}, s.label))))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Contact", "/contact"], ["Spark Platform", "/spark"], ["Fractional", "/fractional"]]], ["TALENT", [["Apply", "/contact?role=ambassador"], ["LinkedIn", "#"], ["Press", "#"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
   key: h
 }, /*#__PURE__*/React.createElement(OpsLine, null, ">> " + h), /*#__PURE__*/React.createElement("ul", {
   style: {
