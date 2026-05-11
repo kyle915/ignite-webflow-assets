@@ -133,13 +133,30 @@ img { max-width: 100%; display: block; }
 }
 /* Dark-themed sections (set via inline background: var(--ink-*)) — make sure
    text inside them inherits white. The inline section already sets `color`,
-   but Webflow can re-color h2 via a tag rule. */
+   but Webflow can re-color h1-h6, p, blockquote, div via tag rules. */
 [id^="ignite-"] section h1,
 [id^="ignite-"] section h2,
 [id^="ignite-"] section h3,
 [id^="ignite-"] section h4,
-[id^="ignite-"] section blockquote {
-  color: inherit;
+[id^="ignite-"] section h5,
+[id^="ignite-"] section h6,
+[id^="ignite-"] section blockquote,
+[id^="ignite-"] section [role="blockquote"] {
+  color: inherit !important;
+}
+/* Webflow gives <blockquote> a dark background, padding, and left-border by
+   default. Neutralize those when our React renders one on a light .paper bg. */
+[id^="ignite-"] section.paper blockquote,
+[id^="ignite-"] section.paper [role="blockquote"] {
+  background: transparent !important;
+  padding: 0 !important;
+  border: 0 !important;
+  margin: 0 !important;
+}
+/* Case-study cards on home: the parent <a> has inline color:#fff, but
+   Webflow's link-color rule can override. Force the link's own color from inline. */
+[id^="ignite-"] a[href*="?slug="][style*="color"] {
+  color: #fff !important;
 }
 
 /* ============================================================

@@ -343,7 +343,8 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
     gap: 80,
     alignItems: "center"
   }
-}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(OpsLine, null, ">> WHAT CLIENTS SAY"), /*#__PURE__*/React.createElement("blockquote", {
+}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(OpsLine, null, ">> WHAT CLIENTS SAY"), /*#__PURE__*/React.createElement("div", {
+  role: "blockquote",
   style: {
     marginTop: 24,
     fontFamily: "var(--font-display)",
@@ -352,7 +353,10 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
     letterSpacing: "-0.025em",
     lineHeight: 1.05,
     color: "var(--fg-1-inv)",
-    margin: 0
+    margin: 0,
+    background: "transparent",
+    padding: 0,
+    border: 0
   }
 }, /*#__PURE__*/React.createElement("span", {
   style: {
