@@ -49,6 +49,9 @@ const NAV_ITEMS = [{
   label: "OUR WORK",
   href: "/work"
 }, {
+  label: "MARKETS",
+  href: "/markets"
+}, {
   label: "BLOG",
   href: "/blog"
 }, {
