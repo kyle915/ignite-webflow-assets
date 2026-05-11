@@ -582,10 +582,8 @@ const SvcIndex = () => /*#__PURE__*/React.createElement("section", {
     background: "var(--ink-100)",
     borderTop: "1px solid var(--ink-400)",
     borderBottom: "1px solid var(--ink-400)",
-    position: "sticky",
-    top: 0,
-    zIndex: 30,
-    backdropFilter: "blur(10px)"
+    position: "relative",
+    zIndex: 1
   }
 }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
   style: {
