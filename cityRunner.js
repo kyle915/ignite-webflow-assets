@@ -26,16 +26,36 @@
     return wfAttr("data-wf-item-slug").trim().toLowerCase();
   }
 
-  function loadScript(src) {
+  function loadScript(src, alreadyLoadedCheck) {
     return new Promise(function(resolve, reject){
-      var existing = document.querySelector('script[data-ignite-runtime="' + src + '"]');
-      if (existing) return resolve();
+      // Skip if the script's target global is already on window (other ignite
+      // scripts on the site may have loaded this same URL already).
+      if (typeof alreadyLoadedCheck === "function" && alreadyLoadedCheck()) {
+        window.__cityRunnerStage = "skip:" + src.split("/").pop();
+        return resolve();
+      }
+      // Skip if an existing <script> tag with the same src is already in DOM.
+      var srcOnly = src.split("?")[0];
+      var existing = Array.prototype.find.call(
+        document.scripts,
+        function(s){ return s.src && s.src.split("?")[0] === srcOnly; }
+      );
+      if (existing) {
+        window.__cityRunnerStage = "exists:" + srcOnly.split("/").pop();
+        return resolve();
+      }
       var s = document.createElement("script");
       s.src = src;
       s.async = false;
-      s.setAttribute("data-ignite-runtime", src);
-      s.onload = resolve;
-      s.onerror = function(){ reject(new Error("Failed to load " + src)); };
+      s.setAttribute("data-ignite-runtime", "1");
+      s.onload = function(){
+        window.__cityRunnerStage = "loaded:" + srcOnly.split("/").pop();
+        resolve();
+      };
+      s.onerror = function(){
+        window.__cityRunnerStage = "ERR:" + srcOnly.split("/").pop();
+        reject(new Error("Failed to load " + src));
+      };
       document.head.appendChild(s);
     });
   }
@@ -150,24 +170,37 @@
   }
 
   function start() {
-    if (!isCityPage()) return;
+    window.__cityRunnerStage = "start";
+    if (!isCityPage()) { window.__cityRunnerStage = "not-city-page"; return; }
+    window.__cityRunnerStage = "ensureRoot";
     ensureRoot();
 
     Promise.all([
-      loadScript("https://unpkg.com/react@18.3.1/umd/react.production.min.js"),
-      loadScript("https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js")
+      loadScript("https://unpkg.com/react@18.3.1/umd/react.production.min.js",
+        function(){ return !!window.React; }),
+      loadScript("https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js",
+        function(){ return !!window.ReactDOM; })
     ]).then(function(){
+      window.__cityRunnerStage = "react-ready";
       loadCss(CDN + "/styles/tokens.css");
       loadCss(CDN + "/styles/global.css");
       loadCss(CDN + "/styles/responsive.css");
-      return loadScript(CDN + "/compiled/Shared.js");
+      return loadScript(CDN + "/compiled/Shared.js",
+        function(){ return !!window.OpsLine; });
     }).then(function(){
-      return loadScript(CDN + "/compiled/Primitives.js");
+      return loadScript(CDN + "/compiled/Primitives.js",
+        function(){ return !!window.Container; });
     }).then(function(){
-      return loadScript(CDN + "/compiled/MarketsData.js");
+      return loadScript(CDN + "/compiled/MarketsData.js",
+        function(){ return !!window.MARKETS_BY_SLUG; });
     }).then(function(){
-      return loadScript(CDN + "/compiled/CitySEOSection.js");
-    }).then(fetchCities).then(function(allCities){
+      return loadScript(CDN + "/compiled/CitySEOSection.js",
+        function(){ return !!window.CitySEOSection; });
+    }).then(function(){
+      window.__cityRunnerStage = "scripts-loaded";
+      return fetchCities();
+    }).then(function(allCities){
+      window.__cityRunnerStage = "cities-fetched:" + (allCities ? allCities.length : 0);
       var slug = getSlug();
       var rec = (allCities || []).find(function(c){ return (c.slug || "").toLowerCase() === slug; });
       if (!rec) {
@@ -193,6 +226,7 @@
         root.innerHTML = '<div style="padding:80px 24px;color:#fff;text-align:center;font-family:sans-serif">City failed to render — check console.</div>';
       }
     }).catch(function(err){
+      window.__cityRunnerStage = "ERR: " + (err && err.message || err);
       console.error("[city-runner] startup failed:", err);
     });
   }
