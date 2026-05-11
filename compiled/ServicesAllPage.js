@@ -1160,15 +1160,12 @@ const SvcFinalCTA = () => /*#__PURE__*/React.createElement("section", {
 const ServicesAllPage = () => /*#__PURE__*/React.createElement("div", {
   "data-screen-label": "01 Services"
 }, /*#__PURE__*/React.createElement(SiteNav, {
-  rel: "../",
   active: "SERVICES"
 }), /*#__PURE__*/React.createElement(SvcHero, null), /*#__PURE__*/React.createElement(SvcIndex, null), SVC_LANES.map((s, i) => /*#__PURE__*/React.createElement(SvcLane, {
   key: s.slug,
   s: s,
   i: i
-})), /*#__PURE__*/React.createElement(SvcStats, null), /*#__PURE__*/React.createElement(SvcFinalCTA, null), /*#__PURE__*/React.createElement(SiteFooter, {
-  rel: "../"
-}));
+})), /*#__PURE__*/React.createElement(SvcStats, null), /*#__PURE__*/React.createElement(SvcFinalCTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
 Object.assign(window, {
   ServicesAllPage,
   SVC_LANES
