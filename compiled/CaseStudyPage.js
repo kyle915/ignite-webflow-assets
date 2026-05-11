@@ -962,7 +962,12 @@ const CaseCTA = ({
 /* ------------------------------------------------------------------ ROOT */
 const CaseStudyPage = () => {
   const params = new URLSearchParams(window.location.search);
-  const slug = params.get("slug") || "liquid-death";
+  const slug = params.get("slug");
+  /* If someone lands on /case-study without a slug, render the WorkPage
+     (the case-study index) inline instead of defaulting to one case. */
+  if (!slug && typeof window !== "undefined" && typeof window.WorkPage === "function") {
+    return React.createElement(window.WorkPage);
+  }
   const c = (window.CASE_STUDIES || {})[slug];
   return /*#__PURE__*/React.createElement("div", {
     "data-screen-label": c ? `Case · ${c.brand}` : "Case · 404"
