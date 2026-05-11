@@ -66,6 +66,52 @@
     l.href = href;
     document.head.appendChild(l);
   }
+  /* City pages occasionally inherit a stray "07 SERVICE LANES / What we do, end to end."
+     block from a Webflow template/symbol that isn't editable in Designer. This sweep
+     removes only that specific block, only on city pages, and only OUTSIDE the
+     CitySEOSection React root (so the nav's mega-menu copy is untouched). */
+  function removeStrayServiceLanesBlock() {
+    var SEO_ROOT_ID = "city-seo-root";
+    var seoRoot = document.getElementById(SEO_ROOT_ID);
+    var eyebrowRe = /^\s*>>\s*0?7\s*SERVICE LANES\s*$/i;
+    var headingRe = /^\s*What we do,?\s*end to end\.?\s*$/i;
+    var nodes = document.querySelectorAll("body *");
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (seoRoot && (el === seoRoot || seoRoot.contains(el))) continue;
+      var t = (el.textContent || "").trim();
+      if (!t) continue;
+      if (!(eyebrowRe.test(t) || headingRe.test(t))) continue;
+      // Walk up to find the smallest section/div container with both lines,
+      // then remove it. Cap at 6 levels to avoid nuking the page.
+      var target = el;
+      for (var d = 0; d < 6 && target.parentElement && target.parentElement !== document.body; d++) {
+        var p = target.parentElement;
+        if (seoRoot && p.contains(seoRoot)) break;
+        var pt = (p.textContent || "");
+        if (eyebrowRe.test(pt) || /What we do,?\s*end to end\./i.test(pt)) {
+          target = p;
+        } else {
+          break;
+        }
+      }
+      if (target && target !== document.body && (!seoRoot || !target.contains(seoRoot))) {
+        target.parentNode && target.parentNode.removeChild(target);
+        window.__cityRunnerStage = "stray-services-removed";
+        return; // one block, done
+      }
+    }
+  }
+  function scheduleStrayCleanup() {
+    var tries = 0;
+    function run() {
+      try { removeStrayServiceLanesBlock(); } catch (e) {}
+      tries++;
+      if (tries < 4) setTimeout(run, 250 * tries);
+    }
+    run();
+  }
+
   function ensureRoot() {
     if (document.getElementById("city-seo-root")) return;
     // Fallback: inject root if the template doesn't have one
@@ -174,6 +220,7 @@
     if (!isCityPage()) { window.__cityRunnerStage = "not-city-page"; return; }
     window.__cityRunnerStage = "ensureRoot";
     ensureRoot();
+    scheduleStrayCleanup();
 
     Promise.all([
       loadScript("https://unpkg.com/react@18.3.1/umd/react.production.min.js",
@@ -229,6 +276,7 @@
           React.createElement.apply(React, [React.Fragment, null].concat(children))
         );
         root.dataset.mounted = "1";
+        scheduleStrayCleanup();
         console.log("[city-runner] mounted:", city.name, "| faqs:", (city.faqs||[]).length, "| nav:", includeNav);
       } catch (e) {
         console.error("[city-runner] render threw:", e);
