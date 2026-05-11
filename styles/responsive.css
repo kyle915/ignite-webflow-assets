@@ -39,13 +39,34 @@
   /* Body copy readability */
   section p { font-size: 15.5px !important; line-height: 1.6 !important; }
 
-  /* Convert multi-col grids to stacks */
+  /* Convert multi-col grids to stacks — broad ratio coverage */
   section [style*="grid-template-columns: 1fr 1fr"],
+  section [style*="grid-template-columns: 1fr 1.3fr"],
+  section [style*="grid-template-columns: 1fr 1.4fr"],
+  section [style*="grid-template-columns: 1fr 1.5fr"],
+  section [style*="grid-template-columns: 1fr 1.6fr"],
+  section [style*="grid-template-columns: 1fr 2fr"],
   section [style*="grid-template-columns: 1.3fr 1fr"],
   section [style*="grid-template-columns: 1.4fr 1fr 1fr"],
   section [style*="grid-template-columns: 1.4fr 1fr"],
   section [style*="grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr"],
-  section [style*="grid-template-columns: 1.6fr 2fr 1fr 1fr"] { grid-template-columns: 1fr !important; gap: 16px !important; }
+  section [style*="grid-template-columns: 1.6fr 2fr 1fr 1fr"],
+  section [style*="grid-template-columns: 1fr auto"],
+  section [style*="grid-template-columns: auto 1fr"],
+  section [style*="grid-template-columns: 260px"],
+  section [style*="grid-template-columns: 280px"],
+  section [style*="grid-template-columns: 300px"] { grid-template-columns: 1fr !important; gap: 16px !important; }
+
+  /* auto-fit/auto-fill grids with min-track widths > 200px — force single column */
+  section [style*="minmax(280px"],
+  section [style*="minmax(260px"],
+  section [style*="minmax(240px"],
+  section [style*="minmax(220px"],
+  section [style*="minmax(200px"] { grid-template-columns: 1fr !important; gap: 12px !important; }
+  /* Smaller auto-fit grids: two columns max on mobile */
+  section [style*="minmax(180px"],
+  section [style*="minmax(160px"],
+  section [style*="minmax(140px"] { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
 
   section [style*="grid-template-columns: repeat(3,"],
   section [style*="grid-template-columns: repeat(3 ,"],
@@ -67,6 +88,36 @@
 
   /* Marquee numbers */
   section [style*="font-size: 30px"] { font-size: 22px !important; }
+
+  /* Buttons inside a row of CTAs — wrap and full-width */
+  section [style*="display: \"flex\""][style*="flex-wrap"] a,
+  section [style*="display: \"flex\""] > a,
+  section [style*="display: flex"] > a { max-width: 100% !important; }
+
+  /* Long images / videos — never overflow */
+  section img, section video { max-width: 100% !important; height: auto !important; }
+
+  /* Fix overflow of large fixed-width elements */
+  section [style*="width: 700px"],
+  section [style*="width: 800px"],
+  section [style*="width: 900px"],
+  section [style*="width: 1000px"],
+  section [style*="width: 1100px"],
+  section [style*="width: 1200px"] { width: 100% !important; max-width: 100% !important; }
+
+  /* Tighten any clamp() that maxes too high on phones */
+  section [style*="clamp(56px"],
+  section [style*="clamp(64px"],
+  section [style*="clamp(72px"],
+  section [style*="clamp(80px"] {
+    /* fallback: limit max via font-size override via media — but we can't change clamp itself,
+       so cap via parent via attr — fallback is to nudge h1 sizes specifically */
+  }
+  section h1 { font-size: clamp(40px, 11vw, 60px) !important; line-height: 0.96 !important; }
+
+  /* Sticky elements: unstick on mobile so they don't trap thumb */
+  section [style*="position: sticky"],
+  section [style*="position: \"sticky\""] { position: static !important; max-height: none !important; }
 }
 
 /* ============================================================
@@ -82,6 +133,32 @@
   section [style*="grid-template-columns: repeat(5,"] { grid-template-columns: 1fr 1fr 1fr !important; }
   section [style*="grid-template-columns: repeat(6, 1fr)"] { grid-template-columns: 1fr 1fr !important; }
   section [style*="grid-template-columns: repeat(6, 1fr)"] > div { grid-column: span 2 !important; }
+
+  /* Tablet: collapse city/markets 2-up ratio grids to single column for breathing room */
+  section [style*="grid-template-columns: 1fr 1.5fr"],
+  section [style*="grid-template-columns: 1fr 1.6fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+}
+
+/* ============================================================
+   City template + Markets — extra polish at small screens
+   ============================================================ */
+@media (max-width: 720px) {
+  /* CitySeoIntro hero: shrink headline, contain SVG ghost mark */
+  #city-seo-root h2 { font-size: clamp(44px, 13vw, 76px) !important; line-height: 0.94 !important; }
+  #city-seo-root svg[data-city-anim] { max-height: 40% !important; width: 100vw !important; right: 0 !important; }
+  /* Pull bottom-padding tighter so sections don't feel endless */
+  #city-seo-root section { padding-top: 56px !important; padding-bottom: 56px !important; }
+  /* The 4-stat strip — make sure each cell is full width */
+  #city-seo-root [style*="repeat(auto-fit, minmax(180px"] > div { padding: 16px 18px !important; }
+  /* Service cards / industries pills — tighter spacing */
+  #city-seo-root [style*="border-radius: 999"] { font-size: 12.5px !important; }
+  /* CitySeoCta big stencil mark — shrink so it doesn't dominate */
+  #city-seo-root [data-city-anim] { font-size: clamp(72px, 18vw, 140px) !important; }
+
+  /* MarketsHub region card chips wrap better */
+  .markets-chip { font-size: 11.5px !important; padding: 8px 12px !important; }
+  /* Filter input field full width */
+  [id^="ignite-"] input[type="text"] { width: 100% !important; }
 }
 
 /* ============================================================
