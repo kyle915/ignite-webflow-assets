@@ -1526,7 +1526,7 @@ const ServiceCTA = ({
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact",
+  href: "https://www.igniteproductions.co/contact?urgent=1",
   style: {
     padding: "20px 28px",
     borderRadius: 999,
@@ -1541,7 +1541,7 @@ const ServiceCTA = ({
     gap: 10
   }
 }, "Request a quote ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "/contact?urgent=1",
+  href: "https://www.igniteproductions.co/contact?urgent=1",
   style: {
     padding: "20px 28px",
     borderRadius: 999,
