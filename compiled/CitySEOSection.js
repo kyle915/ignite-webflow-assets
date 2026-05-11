@@ -110,6 +110,127 @@ const cityStateAbbr = city => {
 };
 const isNonEmpty = v => Array.isArray(v) ? v.length > 0 : v != null && String(v).trim() !== "";
 
+/* ---------- JSON-LD helpers (idempotent, deterministic IDs) ---------- */
+const CITY_SITE_ORIGIN = "https://www.igniteproductions.co";
+const CITY_LD_SERVICES = [
+  "Event Staffing",
+  "Brand Ambassadors",
+  "Product Sampling",
+  "Experiential Marketing",
+  "Mobile Tours",
+  "Trade Show Staffing",
+  "Custom Fabrication",
+  "Promotional Products",
+  "Field Reporting",
+  "Logistics & Permitting"
+];
+function cityCanonicalUrl(slug) {
+  if (!slug) return null;
+  return CITY_SITE_ORIGIN + "/cities/" + slug;
+}
+function upsertJsonLd(id, payload) {
+  if (typeof document === "undefined") return function(){};
+  // Reuse existing script with the same id to keep updates idempotent.
+  let el = document.getElementById(id);
+  if (!el) {
+    el = document.createElement("script");
+    el.type = "application/ld+json";
+    el.id = id;
+    el.setAttribute("data-ignite-jsonld", "1");
+    document.head.appendChild(el);
+  }
+  try {
+    el.textContent = JSON.stringify(payload);
+  } catch (e) {
+    /* ignore serialization errors */
+  }
+  return function cleanup() {
+    if (el && el.parentNode) el.parentNode.removeChild(el);
+  };
+}
+function hasExistingJsonLdOfType(typeName) {
+  if (typeof document === "undefined") return false;
+  const nodes = document.querySelectorAll('script[type="application/ld+json"]');
+  for (let i = 0; i < nodes.length; i++) {
+    const node = nodes[i];
+    // Skip our own deterministic scripts so we don't self-collide on re-render.
+    if (node.getAttribute("data-ignite-jsonld") === "1") continue;
+    const text = node.textContent || "";
+    if (!text) continue;
+    try {
+      const parsed = JSON.parse(text);
+      const items = Array.isArray(parsed) ? parsed : (parsed["@graph"] ? parsed["@graph"] : [parsed]);
+      for (let j = 0; j < items.length; j++) {
+        const t = items[j] && items[j]["@type"];
+        if (t === typeName) return true;
+        if (Array.isArray(t) && t.indexOf(typeName) !== -1) return true;
+      }
+    } catch (e) {
+      // Non-JSON or invalid LD — fall back to substring check.
+      if (text.indexOf('"' + typeName + '"') !== -1) return true;
+    }
+  }
+  return false;
+}
+function buildCityServiceLd(city, canonical) {
+  const region = isNonEmpty(city.state) ? city.state : null;
+  const areaServed = { "@type": "City", name: city.name };
+  if (region) areaServed.containedInPlace = { "@type": "AdministrativeArea", name: region };
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": canonical + "#service",
+    name: "Brand Activations in " + city.name,
+    serviceType: "Experiential Marketing & Event Staffing",
+    provider: {
+      "@type": "Organization",
+      name: "Ignite Productions",
+      url: CITY_SITE_ORIGIN
+    },
+    areaServed: areaServed,
+    url: canonical,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Ignite Productions — Services in " + city.name,
+      itemListElement: CITY_LD_SERVICES.map(function(name) {
+        return {
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: name }
+        };
+      })
+    }
+  };
+}
+function buildCityFaqLd(faqs, canonical) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": canonical + "#faq",
+    mainEntity: faqs.map(function(f) {
+      return {
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a }
+      };
+    })
+  };
+}
+function buildCityBreadcrumbLd(city, canonical) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": canonical + "#breadcrumb",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: CITY_SITE_ORIGIN + "/" },
+      { "@type": "ListItem", position: 2, name: "Markets", item: CITY_SITE_ORIGIN + "/markets" },
+      { "@type": "ListItem", position: 3, name: city.name, item: canonical }
+    ]
+  };
+}
+function cityJsonLdId(kind, slug) {
+  return "ignite-city-jsonld-" + kind + (slug ? "-" + slug : "");
+}
+
 /* ---------- Tactical grid background (matches Ignite vocab) ---------- */
 const CityGridBg = ({
   opacity = 0.05,
@@ -303,10 +424,11 @@ const CitySeoIntro = ({
     const fontCap = Math.min(168, Math.floor(168 * 17 / longestLine));
     const vwMax = (9.5 * 17 / longestLine).toFixed(2);
     const baseMin = longestLine > 22 ? 44 : longestLine > 19 ? 52 : 64;
-    return /*#__PURE__*/React.createElement("h2", {
+    return /*#__PURE__*/React.createElement("h1", {
       className: "city-intro-cell",
       style: {
         marginTop: 22,
+        marginBottom: 0,
         fontFamily: "var(--font-display)",
         fontWeight: 800,
         fontSize: `clamp(${baseMin}px, ${vwMax}vw, ${fontCap}px)`,
@@ -1348,12 +1470,63 @@ const CitySeoVenues = ({
   }, "+ ROOFTOPS, POP-UP SITES, AND PRIVATE PROPERTIES ON REQUEST")));
 };
 
+/* ---------- JSON-LD COMPONENT (no DOM output; effect-only) ---------- */
+const CitySeoJsonLd = ({ city }) => {
+  React.useEffect(() => {
+    if (!city || !isNonEmpty(city.name)) return undefined;
+    const slug = isNonEmpty(city.slug) ? String(city.slug).toLowerCase().trim() : null;
+    const canonicalLink = typeof document !== "undefined"
+      ? document.querySelector('link[rel="canonical"]')
+      : null;
+    const canonical = (canonicalLink && canonicalLink.href)
+      || cityCanonicalUrl(slug)
+      || (typeof location !== "undefined" ? location.href.split("#")[0].split("?")[0] : CITY_SITE_ORIGIN);
+
+    const cleanups = [];
+
+    // Service schema — always safe, generic catalog (no fake local claims).
+    cleanups.push(upsertJsonLd(
+      cityJsonLdId("service", slug),
+      buildCityServiceLd(city, canonical)
+    ));
+
+    // FAQPage — only when we have at least one complete {q,a} pair matching what's rendered.
+    const renderedFaqs = (city.faqs || [])
+      .filter(f => f && isNonEmpty(f.q) && isNonEmpty(f.a))
+      .slice(0, 3);
+    if (renderedFaqs.length > 0) {
+      cleanups.push(upsertJsonLd(
+        cityJsonLdId("faq", slug),
+        buildCityFaqLd(renderedFaqs, canonical)
+      ));
+    }
+
+    // BreadcrumbList — skip if Webflow already injected a BreadcrumbList we didn't author.
+    if (!hasExistingJsonLdOfType("BreadcrumbList")) {
+      cleanups.push(upsertJsonLd(
+        cityJsonLdId("breadcrumb", slug),
+        buildCityBreadcrumbLd(city, canonical)
+      ));
+    }
+
+    return () => cleanups.forEach(fn => fn && fn());
+  }, [
+    city && city.slug,
+    city && city.name,
+    city && city.state,
+    city && (city.faqs || []).length
+  ]);
+  return null;
+};
+
 /* ---------- COMPOSED SECTION ---------- */
 const CitySEOSection = ({
   city
 }) => {
   if (!city || !isNonEmpty(city.name)) return null;
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(CitySeoIntro, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(CitySeoJsonLd, {
+    city: city
+  }), /*#__PURE__*/React.createElement(CitySeoIntro, {
     city: city
   }), /*#__PURE__*/React.createElement(CitySeoServices, {
     city: city
@@ -1376,6 +1549,7 @@ Object.assign(window, {
   CitySeoIndustriesMarkets,
   CitySeoFaqs,
   CitySeoCta,
+  CitySeoJsonLd,
   DEFAULT_SERVICES
 });
 })();
