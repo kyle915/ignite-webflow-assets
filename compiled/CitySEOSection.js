@@ -89,10 +89,10 @@ const US_STATE_ABBR = {
   "Puerto Rico": "PR"
 };
 const stateAbbr = s => {
-  if (!s) return "USA";
+  if (!s) return "";
   const trim = String(s).trim();
-  if (trim.length === 2) return trim.toUpperCase();
-  return US_STATE_ABBR[trim] || trim.slice(0, 2).toUpperCase();
+  if (trim.length === 2 && /^[A-Za-z]{2}$/.test(trim)) return trim.toUpperCase();
+  return US_STATE_ABBR[trim] || ""; // empty string = render nothing for regional labels
 };
 const isNonEmpty = v => Array.isArray(v) ? v.length > 0 : v != null && String(v).trim() !== "";
 
@@ -313,7 +313,7 @@ const CitySeoIntro = ({
         animation: "city-intro-glow 1600ms var(--ease-out) 600ms both",
         display: "inline-block"
       }
-    }, city.name), city.state && /*#__PURE__*/React.createElement("span", {
+    }, city.name), stateAbbr(city.state) && /*#__PURE__*/React.createElement("span", {
       style: {
         color: "var(--fg-3)",
         fontWeight: 500,

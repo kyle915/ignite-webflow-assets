@@ -191,6 +191,9 @@
       return loadScript(CDN + "/compiled/Primitives.js",
         function(){ return !!window.Container; });
     }).then(function(){
+      return loadScript(CDN + "/compiled/NavFooter.js",
+        function(){ return !!window.SiteNav; });
+    }).then(function(){
       return loadScript(CDN + "/compiled/MarketsData.js",
         function(){ return !!window.MARKETS_BY_SLUG; });
     }).then(function(){
@@ -216,11 +219,17 @@
       if (!root) return console.error("[city-runner] no #city-seo-root in DOM");
       if (root.dataset.mounted === "1") return;
       try {
+        var includeNav = !!(window.SiteNav && window.SiteFooter);
+        var children = [React.createElement(window.CitySEOSection, { city: city })];
+        if (includeNav) {
+          children.unshift(React.createElement(window.SiteNav, {}));
+          children.push(React.createElement(window.SiteFooter, {}));
+        }
         ReactDOM.createRoot(root).render(
-          React.createElement(window.CitySEOSection, { city: city })
+          React.createElement.apply(React, [React.Fragment, null].concat(children))
         );
         root.dataset.mounted = "1";
-        console.log("[city-runner] mounted:", city.name, "| faqs:", (city.faqs||[]).length);
+        console.log("[city-runner] mounted:", city.name, "| faqs:", (city.faqs||[]).length, "| nav:", includeNav);
       } catch (e) {
         console.error("[city-runner] render threw:", e);
         root.innerHTML = '<div style="padding:80px 24px;color:#fff;text-align:center;font-family:sans-serif">City failed to render — check console.</div>';
