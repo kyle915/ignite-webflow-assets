@@ -87,24 +87,16 @@ img { max-width: 100%; display: block; }
   color: #fff !important;
 }
 
-/* Case study cards: each card is an <a href="pages/work.html#slug"> wrapping a
-   dark image overlay. Webflow's anchor color rule beats our inline color: #fff,
-   making the h3 + body text render dark. Force white on the fragment-linked
-   anchors (the 3 cards), without affecting the plain "All case studies →"
-   link which has no fragment. */
-/* Use the ID selector (1,0,0 specificity) — beats almost any Webflow tag/pseudo rule.
-   First card (Liquid Death) was being targeted by a higher-specificity Webflow
-   rule that wasn't caught by attribute selectors. */
-#ignite-case-studies,
-#ignite-case-studies a,
-#ignite-case-studies a *,
-#ignite-case-studies h1,
-#ignite-case-studies h2,
-#ignite-case-studies h3,
-#ignite-case-studies h4,
-#ignite-case-studies a h3,
-#ignite-case-studies a:nth-of-type(1) h3,
-#ignite-case-studies a:first-child h3 {
+/* Case study cards: each card is an <a href="/case-studies?slug=..."> wrapping a
+   dark image overlay. Force white on the SLUG-linked card anchors only —
+   NOT on the section header h2 "Great brands deserve exceptional people."
+   which lives outside the cards and needs dark text on the cream paper bg. */
+#ignite-case-studies a[href*="?slug="],
+#ignite-case-studies a[href*="?slug="] *,
+#ignite-case-studies a[href*="?slug="] h1,
+#ignite-case-studies a[href*="?slug="] h2,
+#ignite-case-studies a[href*="?slug="] h3,
+#ignite-case-studies a[href*="?slug="] h4 {
   color: #fff !important;
 }
 /* Preserve the orange brand badge + stats + "READ CASE STUDY →" inline colors.
@@ -123,7 +115,7 @@ img { max-width: 100%; display: block; }
 #ignite-case-studies > section > div > div > div > h2 {
   /* leave default — handled by h1-h6 inherit rule above */
 }
-#ignite-case-studies a[href$="work.html"] {
+#ignite-case-studies a[href="/work"] {
   /* "All case studies →" — paper bg, keep dark */
   color: var(--fg-2-inv) !important;
 }
