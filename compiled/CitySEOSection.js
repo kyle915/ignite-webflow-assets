@@ -984,7 +984,8 @@ const CitySeoFaqs = ({
       fontWeight: 700,
       fontSize: "clamp(38px, 4.6vw, 64px)",
       letterSpacing: "-0.03em",
-      lineHeight: 0.96
+      lineHeight: 0.96,
+      color: "#0A0B0D"
     }
   }, "Quick", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -996,7 +997,7 @@ const CitySeoFaqs = ({
       marginTop: 24,
       fontSize: 15.5,
       lineHeight: 1.6,
-      color: "var(--fg-2-inv)"
+      color: "#3A4050"
     }
   }, "The three questions we get most for this market.")), /*#__PURE__*/React.createElement("div", null, faqs.map((f, i) => {
     const isOpen = open === i;
@@ -1018,7 +1019,7 @@ const CitySeoFaqs = ({
         alignItems: "center",
         cursor: "pointer",
         textAlign: "left",
-        color: "inherit",
+        color: "#0A0B0D",
         fontFamily: "var(--font-display)",
         fontWeight: 600,
         fontSize: 19,
@@ -1052,7 +1053,7 @@ const CitySeoFaqs = ({
         paddingLeft: 36,
         fontSize: 15.5,
         lineHeight: 1.65,
-        color: "var(--fg-2-inv)",
+        color: "#3A4050",
         margin: 0,
         maxWidth: 700
       }
