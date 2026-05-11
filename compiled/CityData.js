@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.CITY_DATA) return;
 /* ============================================================
    CITY DATA — per-city custom copy for the City SEO Section.
    ------------------------------------------------------------
@@ -107,3 +108,4 @@ Object.assign(window, {
   getCityData,
   slugifyCity: slugify
 });
+})();

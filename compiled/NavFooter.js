@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.SiteNav) return;
 /* Top nav + footer — used on every page. SERVICES exposes a hover mega-menu. */
 const {
   useState: useNavState,
@@ -463,3 +464,4 @@ Object.assign(window, {
   SiteFooter,
   SITE_SERVICES
 });
+})();

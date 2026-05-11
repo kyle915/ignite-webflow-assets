@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.OpsLine) return;
 /*
  * Shared UI kit components — Ignite / Spark
  * Requires React 18, Babel. Exposes components on window.
@@ -299,36 +300,6 @@ const OpsLine = ({
     color: glow ? "var(--spark-500)" : "var(--fg-3)"
   }
 }, children);
-/* Inject (and clean up) a JSON-LD <script> tag in <head>.
-   id namespaces the tag so multiple schemas can coexist on one page.
-   Pass a plain object (or array); we JSON.stringify safely. */
-const injectJsonLd = (id, data) => {
-  if (typeof document === "undefined" || !data) return () => {};
-  const tagId = "ld-" + id;
-  let el = document.getElementById(tagId);
-  if (!el) {
-    el = document.createElement("script");
-    el.type = "application/ld+json";
-    el.id = tagId;
-    document.head.appendChild(el);
-  }
-  try {
-    el.textContent = JSON.stringify(data).replace(/</g, "\\u003c");
-  } catch (e) {
-    el.textContent = "{}";
-  }
-  return () => { const n = document.getElementById(tagId); if (n) n.remove(); };
-};
-
-const IGNITE_ORG_LD = {
-  "@type": "Organization",
-  "@id": "https://www.igniteproductions.co/#organization",
-  name: "Ignite Productions",
-  url: "https://www.igniteproductions.co/",
-  logo: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-full-black.png",
-  sameAs: ["https://www.linkedin.com/company/ignite-productionsllc"]
-};
-
 Object.assign(window, {
   Eyebrow,
   Bracket,
@@ -339,7 +310,6 @@ Object.assign(window, {
   SparkLockup,
   IgniteWordmark,
   GridOverlay,
-  OpsLine,
-  injectJsonLd,
-  IGNITE_ORG_LD
+  OpsLine
 });
+})();

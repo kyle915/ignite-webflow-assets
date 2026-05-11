@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.CitySEOSection) return;
 /* global React */
 /* ============================================================
    CITY SEO SECTION — reusable Webflow CMS template block.
@@ -1351,3 +1352,4 @@ Object.assign(window, {
   CitySeoCta,
   DEFAULT_SERVICES
 });
+})();

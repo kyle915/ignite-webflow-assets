@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.MarketsHub) return;
 /* global React */
 /* ============================================================
    MARKETS HUB — /markets (or /cities) page body.
@@ -653,3 +654,4 @@ Object.assign(window, {
   MarketsHero,
   RegionCard
 });
+})();

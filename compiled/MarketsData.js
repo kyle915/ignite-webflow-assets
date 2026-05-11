@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.MARKETS_BY_SLUG) return;
 /* global React */
 /* ============================================================
    MARKETS DATA — one source of truth for city/market routing.
@@ -897,3 +898,4 @@ Object.assign(window, {
   CITY_VENUES,
   venuesFor
 });
+})();
