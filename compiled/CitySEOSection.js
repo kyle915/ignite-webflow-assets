@@ -94,6 +94,20 @@ const stateAbbr = s => {
   if (trim.length === 2 && /^[A-Za-z]{2}$/.test(trim)) return trim.toUpperCase();
   return US_STATE_ABBR[trim] || ""; // empty string = render nothing for regional labels
 };
+/* Resolve a real US state abbreviation for the city, falling back to the
+   MARKETS_BY_SLUG catalog when the CMS "Location Region" value is a
+   regional label like "Tri-State Area" / "Pacific Northwest". */
+const cityStateAbbr = city => {
+  const direct = stateAbbr(city && city.state);
+  if (direct) return direct;
+  const m = typeof window !== "undefined" && window.MARKETS_BY_SLUG || {};
+  const lookup = city && city.slug && m[city.slug];
+  if (lookup && lookup.state) {
+    const a = stateAbbr(lookup.state);
+    if (a) return a;
+  }
+  return "";
+};
 const isNonEmpty = v => Array.isArray(v) ? v.length > 0 : v != null && String(v).trim() !== "";
 
 /* ---------- Tactical grid background (matches Ignite vocab) ---------- */
@@ -313,7 +327,7 @@ const CitySeoIntro = ({
         animation: "city-intro-glow 1600ms var(--ease-out) 600ms both",
         display: "inline-block"
       }
-    }, city.name), stateAbbr(city.state) && /*#__PURE__*/React.createElement("span", {
+    }, city.name), cityStateAbbr(city) && /*#__PURE__*/React.createElement("span", {
       style: {
         color: "var(--fg-3)",
         fontWeight: 500,
@@ -323,7 +337,7 @@ const CitySeoIntro = ({
         verticalAlign: "0.65em",
         marginLeft: 18
       }
-    }, "/ ", stateAbbr(city.state)), /*#__PURE__*/React.createElement("span", {
+    }, "/ ", cityStateAbbr(city)), /*#__PURE__*/React.createElement("span", {
       style: {
         color: "var(--ignite-500)"
       }
@@ -1177,7 +1191,7 @@ const CitySeoCta = ({
     }
   }, "\u2192")))), (() => {
     const n = (city.name || "").toUpperCase();
-    const sa = stateAbbr(city.state) || "";
+    const sa = cityStateAbbr(city);
     const vbW = Math.max(n.length, 4) * 62;
     return /*#__PURE__*/React.createElement("svg", {
       "data-city-anim": true,
