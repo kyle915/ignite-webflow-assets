@@ -63,7 +63,7 @@ const ServiceHero = ({
     color: "rgba(255,255,255,0.3)"
   }
 }, "/"), /*#__PURE__*/React.createElement("a", {
-  href: "/services",
+  href: "/ignite-services",
   style: {
     color: "rgba(255,255,255,0.6)"
   }

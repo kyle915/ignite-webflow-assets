@@ -627,7 +627,7 @@ const TwoWays = () => /*#__PURE__*/React.createElement("section", {
   cta: "Explore Fractional →",
   accent: "#FF5A1F"
 }, {
-  href: "/services",
+  href: "/ignite-services",
   kicker: "PROJECT · ON-DEMAND",
   label: "02 · STAFFING + EXPERIENTIAL",
   title: "BA Staffing & Experiential",

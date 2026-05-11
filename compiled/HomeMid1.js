@@ -251,7 +251,7 @@ const TwoEngines = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--ignite-500)"
   }
 }, "EXPLORE FRACTIONAL \u2192"))), /*#__PURE__*/React.createElement("a", {
-  href: "/services",
+  href: "/ignite-services",
   style: {
     display: "block",
     padding: 40,

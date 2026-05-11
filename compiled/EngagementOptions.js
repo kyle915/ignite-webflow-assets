@@ -18,7 +18,7 @@ const SPECTRUM_TIERS = [{
   best: "FOR · single activations · trade shows · seasonal pushes",
   includes: ["Brand ambassadors", "Mobile tours", "Trade show staff", "Sampling programs"],
   cta: "Explore services",
-  href: "/services"
+  href: "/ignite-services"
 }, {
   num: "02",
   tag: "PLUG US IN",

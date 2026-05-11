@@ -1535,7 +1535,7 @@ const WorkCTA = () => {
       fontSize: 14
     }
   }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "/services",
+    href: "/ignite-services",
     style: {
       padding: "24px 38px",
       borderRadius: 99,

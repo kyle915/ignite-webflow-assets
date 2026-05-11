@@ -43,7 +43,7 @@ const NAV_ITEMS = [{
   href: "/fractional"
 }, {
   label: "SERVICES",
-  href: "/services",
+  href: "/ignite-services",
   mega: "services"
 }, {
   label: "OUR WORK",
@@ -238,7 +238,7 @@ const SiteNav = ({
       marginBottom: 20
     }
   }, "Strategy, fabrication, staffing, sampling \u2014 every lane of brand activation under one roof."), /*#__PURE__*/React.createElement("a", {
-    href: rel + "/services",
+    href: rel + "/ignite-services",
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: 11,
