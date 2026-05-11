@@ -1,50 +1,92 @@
 /* Ignite Services — bold, SEO-driven services page covering all 7 lanes.
+
    Composed from: SiteNav, SiteFooter, ServicesData (SERVICES_DATA),
+
    and HOME_SERVICES image refs already in the project. */
 
 /* inject a one-off keyframe for the measured pulse */
+
 if (typeof document !== "undefined" && !document.getElementById("svc-measured-kf")) {
   const _kf = document.createElement("style");
   _kf.id = "svc-measured-kf";
   _kf.textContent = `
+
     @keyframes svcMeasuredPulse {
+
       0%,100% { opacity: 0.55; transform: scale(1); }
+
       50%     { opacity: 1;    transform: scale(1.06); }
+
     }
+
     @keyframes svcMeasuredTextPulse {
+
       0%,100% { text-shadow: 0 0 18px rgba(214,243,95,0.35); }
+
       50%     { text-shadow: 0 0 38px rgba(214,243,95,0.7); }
+
     }
+
     @keyframes svcBloomA {
+
       0%,100% { opacity: 0.55; transform: translate(-10%, 10%) scale(1); }
+
       50%     { opacity: 0.9;  transform: translate(-6%, 6%)   scale(1.12); }
+
     }
+
     @keyframes svcBloomB {
+
       0%,100% { opacity: 0.4;  transform: translate(10%, 20%) scale(1); }
+
       50%     { opacity: 0.75; transform: translate(6%, 14%)  scale(1.18); }
+
     }
+
     @keyframes svcScanY {
+
       0%   { transform: translateY(-100%); opacity: 0; }
+
       8%   { opacity: 1; }
+
       92%  { opacity: 1; }
+
       100% { transform: translateY(100vh); opacity: 0; }
+
     }
+
     @keyframes svcDrift1 {
+
       0%,100% { transform: translate(0,0) rotate(-6deg); }
+
       50%     { transform: translate(10px,-14px) rotate(-6deg); }
+
     }
+
     @keyframes svcDrift2 {
+
       0%,100% { transform: translate(0,0) rotate(4deg); }
+
       50%     { transform: translate(-12px,10px) rotate(4deg); }
+
     }
+
     @keyframes svcTicker {
+
       0%   { transform: translateY(0); }
+
       100% { transform: translateY(-50%); }
+
     }
+
     @keyframes svcCursorBlink {
+
       0%,50%  { opacity: 1; }
+
       51%,100%{ opacity: 0; }
+
     }
+
   `;
   document.head.appendChild(_kf);
 }
@@ -160,8 +202,11 @@ const SVC_LANES = [{
 }];
 
 /* ============================================================
+
    HERO — massive numeric, "07 services"
+
 ============================================================ */
+
 const SvcHero = () => {
   const [t, setT] = svaState(0);
   svaEffect(() => {
@@ -573,8 +618,11 @@ const SvcHero = () => {
 };
 
 /* ============================================================
+
    QUICK INDEX — anchored TOC chip strip
+
 ============================================================ */
+
 const SvcIndex = () => /*#__PURE__*/React.createElement("section", {
   id: "all-services",
   style: {
@@ -636,8 +684,11 @@ const SvcIndex = () => /*#__PURE__*/React.createElement("section", {
 }, s.n), s.title)))));
 
 /* ============================================================
+
    LANE — full-bleed alternating service section
+
 ============================================================ */
+
 const SvcLane = ({
   s,
   i
@@ -1013,8 +1064,11 @@ const SvcLane = ({
 };
 
 /* ============================================================
+
    STATS BAND — credibility band between sections
+
 ============================================================ */
+
 const SvcStats = () => /*#__PURE__*/React.createElement("section", {
   style: {
     padding: "80px 0",
@@ -1056,8 +1110,11 @@ const SvcStats = () => /*#__PURE__*/React.createElement("section", {
 }, l))))));
 
 /* ============================================================
+
    FINAL CTA — bold band
+
 ============================================================ */
+
 const SvcFinalCTA = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "relative",
@@ -1155,8 +1212,11 @@ const SvcFinalCTA = () => /*#__PURE__*/React.createElement("section", {
 }, "See the work \u2192"))));
 
 /* ============================================================
+
    PAGE ROOT
+
 ============================================================ */
+
 const ServicesAllPage = () => /*#__PURE__*/React.createElement("div", {
   "data-screen-label": "01 Services"
 }, /*#__PURE__*/React.createElement(SiteNav, {

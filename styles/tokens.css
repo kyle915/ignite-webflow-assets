@@ -26,8 +26,8 @@
   /* Foreground */
   --fg-1: #FAFAF7;       /* primary text on dark */
   --fg-2: #B8BCC5;       /* secondary text on dark */
-  --fg-3: #7A7F8B;       /* tertiary / meta on dark */
-  --fg-4: #4D5260;       /* disabled / very quiet */
+  --fg-3: #9499A3;       /* tertiary / meta on dark — bumped to 6.5:1 AAA (was #7A7F8B = 4.3:1) */
+  --fg-4: #6B7080;       /* disabled / very quiet — 3.4:1 (large-text / UI-state only) */
 
   --fg-1-inv: #0A0B0D;   /* primary on light */
   --fg-2-inv: #3A4050;   /* secondary on light */

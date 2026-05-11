@@ -178,6 +178,8 @@ const SparkHero = () => {
     }
   }), /*#__PURE__*/React.createElement("img", {
     src: window.__resources?.r_assets_chrome_splash_png || "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-splash.png",
+    alt: "",
+    "aria-hidden": "true",
     style: {
       position: "absolute",
       right: "-10%",
@@ -283,7 +285,7 @@ const SparkHero = () => {
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "contact.html",
     className: "sp-cta-btn",
     style: {
       display: "inline-flex",
@@ -742,11 +744,7 @@ const SparkMobile = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1,
     color: "var(--fg-1-inv)"
   }
-}, /*#__PURE__*/React.createElement("span", {
-  style: {
-    whiteSpace: "nowrap"
-  }
-}, "Ambassadors clock in"), /*#__PURE__*/React.createElement("br", null), "from the actual venue."), /*#__PURE__*/React.createElement("p", {
+}, "Ambassadors clock in", /*#__PURE__*/React.createElement("br", null), "from the actual venue."), /*#__PURE__*/React.createElement("p", {
   style: {
     marginTop: 24,
     fontSize: 17,

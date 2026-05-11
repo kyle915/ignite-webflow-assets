@@ -8,87 +8,138 @@ const US_CITIES = [{
   name: "SEATTLE",
   x: 16,
   y: 20,
-  brand: "White Claw"
+  brand: "White Claw",
+  samples: 412,
+  leads: 78,
+  status: "ACTIVE"
 }, {
   name: "PORTLAND",
   x: 13,
   y: 26,
-  brand: "Krispy Krunchy"
+  brand: "Krispy Krunchy",
+  samples: 268,
+  leads: 41,
+  status: "ACTIVE"
 }, {
   name: "SAN FRANCISCO",
   x: 10,
   y: 46,
-  brand: "Liquid Death"
+  brand: "Liquid Death",
+  samples: 522,
+  leads: 96,
+  status: "LIVE"
 }, {
   name: "LOS ANGELES",
   x: 15,
   y: 60,
-  brand: "Dude Wipes"
+  brand: "Dude Wipes",
+  samples: 638,
+  leads: 112,
+  status: "LIVE"
 }, {
   name: "PHOENIX",
   x: 25,
   y: 62,
-  brand: "Mas+"
+  brand: "Mas+",
+  samples: 184,
+  leads: 38,
+  status: "ACTIVE"
 }, {
   name: "DENVER",
   x: 35,
   y: 44,
-  brand: "Liquid Death"
+  brand: "Liquid Death",
+  samples: 346,
+  leads: 71,
+  status: "LIVE"
 }, {
   name: "DALLAS",
   x: 47,
   y: 68,
-  brand: "Smalls Sliders"
+  brand: "Smalls Sliders",
+  samples: 412,
+  leads: 58,
+  status: "ACTIVE"
 }, {
   name: "HOUSTON",
   x: 51,
   y: 76,
-  brand: "Total Wireless"
+  brand: "Total Wireless",
+  samples: 388,
+  leads: 84,
+  status: "ACTIVE"
 }, {
   name: "AUSTIN",
   x: 47,
   y: 74,
-  brand: "White Claw"
+  brand: "White Claw",
+  samples: 327,
+  leads: 68,
+  status: "LIVE"
 }, {
   name: "MIAMI",
   x: 76,
   y: 82,
-  brand: "Mark Anthony"
+  brand: "Mark Anthony",
+  samples: 504,
+  leads: 102,
+  status: "LIVE"
 }, {
   name: "ATLANTA",
   x: 68,
   y: 62,
-  brand: "Krispy Krunchy"
+  brand: "Krispy Krunchy",
+  samples: 296,
+  leads: 49,
+  status: "ACTIVE"
 }, {
   name: "NASHVILLE",
   x: 62,
   y: 52,
-  brand: "White Claw"
+  brand: "White Claw",
+  samples: 218,
+  leads: 36,
+  status: "ACTIVE"
 }, {
   name: "CHICAGO",
   x: 56,
   y: 34,
-  brand: "Total Wireless"
+  brand: "Total Wireless",
+  samples: 432,
+  leads: 88,
+  status: "LIVE"
 }, {
   name: "DETROIT",
   x: 63,
   y: 32,
-  brand: "Liquid Death"
+  brand: "Liquid Death",
+  samples: 244,
+  leads: 42,
+  status: "ACTIVE"
 }, {
   name: "BROOKLYN",
   x: 80,
   y: 32,
-  brand: "Liquid Death"
+  brand: "Liquid Death",
+  samples: 586,
+  leads: 124,
+  status: "LIVE"
 }, {
   name: "BOSTON",
   x: 85,
   y: 26,
-  brand: "White Claw"
+  brand: "White Claw",
+  samples: 358,
+  leads: 72,
+  status: "ACTIVE"
 }, {
   name: "DC",
   x: 76,
   y: 42,
-  brand: "Dude Wipes"
+  brand: "Dude Wipes",
+  samples: 312,
+  leads: 64,
+  status: "ACTIVE"
 }];
 const CoverageMap = () => {
   const [focus, setFocus] = shState(null);
@@ -171,7 +222,109 @@ const CoverageMap = () => {
         boxShadow: "0 0 10px rgba(214,243,95,0.8)",
         transition: "width 160ms, height 160ms"
       }
-    }), (isFocus || i === pulseIdx) && /*#__PURE__*/React.createElement("div", {
+    }), isFocus ? /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "absolute",
+        left: "50%",
+        top: "calc(100% + 10px)",
+        transform: "translateX(-50%)",
+        whiteSpace: "nowrap",
+        padding: "12px 14px",
+        minWidth: 200,
+        background: "rgba(10,11,13,0.96)",
+        border: "1px solid rgba(214,243,95,0.4)",
+        borderRadius: 8,
+        pointerEvents: "none",
+        boxShadow: "0 12px 40px rgba(0,0,0,0.5), 0 0 30px rgba(214,243,95,0.15)",
+        animation: "sp-pop 240ms cubic-bezier(0.2,0.9,0.3,1)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        gap: 12,
+        marginBottom: 8
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--font-mono)",
+        fontSize: 10,
+        letterSpacing: "0.2em",
+        color: "var(--fg-3)",
+        textTransform: "uppercase"
+      }
+    }, c.name), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: "var(--font-mono)",
+        fontSize: 9,
+        letterSpacing: "0.18em",
+        textTransform: "uppercase",
+        color: c.status === "LIVE" ? "var(--spark-500)" : "var(--fg-3)",
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 4
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: 6,
+        height: 6,
+        borderRadius: 999,
+        background: "currentColor",
+        animation: c.status === "LIVE" ? "sp-pulse-dot 1.6s infinite" : "none"
+      }
+    }), c.status)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--font-display)",
+        fontWeight: 600,
+        fontSize: 15,
+        color: "var(--fg-1)",
+        letterSpacing: "-0.01em",
+        marginBottom: 10
+      }
+    }, c.brand), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: 10,
+        borderTop: "1px solid var(--ink-400)",
+        paddingTop: 8
+      }
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--font-display)",
+        fontWeight: 700,
+        fontSize: 18,
+        color: "var(--spark-500)",
+        lineHeight: 1
+      }
+    }, c.samples), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--font-mono)",
+        fontSize: 9,
+        letterSpacing: "0.18em",
+        color: "var(--fg-3)",
+        textTransform: "uppercase",
+        marginTop: 3
+      }
+    }, "samples")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--font-display)",
+        fontWeight: 700,
+        fontSize: 18,
+        color: "var(--fg-1)",
+        lineHeight: 1
+      }
+    }, c.leads), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--font-mono)",
+        fontSize: 9,
+        letterSpacing: "0.18em",
+        color: "var(--fg-3)",
+        textTransform: "uppercase",
+        marginTop: 3
+      }
+    }, "leads")))) : i === pulseIdx && /*#__PURE__*/React.createElement("div", {
       style: {
         position: "absolute",
         left: "50%",
@@ -327,6 +480,8 @@ const SparkShowcase = () => {
     opacity: 0.04
   }), /*#__PURE__*/React.createElement("img", {
     src: window.__resources?.r_assets_chrome_blob_medium_png || "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-blob-medium.png",
+    alt: "",
+    "aria-hidden": "true",
     style: {
       position: "absolute",
       left: "-10%",
@@ -369,7 +524,7 @@ const SparkShowcase = () => {
     }
   }, /*#__PURE__*/React.createElement(Bracket, null, "Field marketing finally gets the intelligence it deserves."))), /*#__PURE__*/React.createElement(AccentBtn, {
     size: "lg",
-    onClick: () => location.href = "/spark"
+    onClick: () => location.href = "pages/spark.html"
   }, "Tour the platform")), /*#__PURE__*/React.createElement("div", {
     style: {
       background: "linear-gradient(180deg, #14161B 0%, #0F1115 100%)",

@@ -65,7 +65,7 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--ignite-500)"
   }
 }, "exceptional"), " people.")), /*#__PURE__*/React.createElement("a", {
-  href: "/work",
+  href: "pages/work.html",
   className: "link-mono",
   style: {
     color: "var(--fg-2-inv)"
@@ -78,7 +78,7 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
   }
 }, FEATURED_CASES.map((c, i) => /*#__PURE__*/React.createElement("a", {
   key: c.slug,
-  href: "/case-studies?slug=" + c.slug,
+  href: "pages/work.html#" + c.slug,
   style: {
     position: "relative",
     display: "block",
@@ -165,9 +165,9 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
   style: {
     fontFamily: "var(--font-display)",
     fontWeight: 700,
-    fontSize: "clamp(22px, 2vw, 28px)",
+    fontSize: i === 0 ? "clamp(32px, 3vw, 44px)" : 26,
     letterSpacing: "-0.02em",
-    lineHeight: 1.15,
+    lineHeight: 1.05,
     marginBottom: 20,
     color: "#fff",
     textShadow: "0 2px 18px rgba(0,0,0,0.6)"
@@ -343,8 +343,7 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
     gap: 80,
     alignItems: "center"
   }
-}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(OpsLine, null, ">> WHAT CLIENTS SAY"), /*#__PURE__*/React.createElement("div", {
-  role: "blockquote",
+}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(OpsLine, null, ">> WHAT CLIENTS SAY"), /*#__PURE__*/React.createElement("blockquote", {
   style: {
     marginTop: 24,
     fontFamily: "var(--font-display)",
@@ -352,11 +351,8 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
     fontSize: "clamp(32px, 4vw, 54px)",
     letterSpacing: "-0.025em",
     lineHeight: 1.05,
-    color: "#fff",
-    margin: 0,
-    background: "var(--ink-000)",
-    padding: "40px 36px",
-    borderRadius: 18
+    color: "var(--fg-1-inv)",
+    margin: 0
   }
 }, /*#__PURE__*/React.createElement("span", {
   style: {
@@ -378,7 +374,7 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
     fontSize: 11,
     letterSpacing: "0.18em",
     textTransform: "uppercase",
-    color: "rgba(255,255,255,0.65)"
+    color: "var(--fg-3-inv)"
   }
 }, "MARKETING DIRECTOR \xB7 CPG BEVERAGE BRAND"))), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -429,6 +425,8 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement("img", {
   src: window.__resources?.r_assets_chrome_blob_large_png || "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-blob-large.png",
+  alt: "",
+  "aria-hidden": "true",
   style: {
     position: "absolute",
     right: "-10%",
@@ -471,10 +469,10 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(AccentBtn, {
   size: "lg",
-  onClick: () => location.href = "/contact"
+  onClick: () => location.href = "pages/contact.html"
 }, "Request a quote"), /*#__PURE__*/React.createElement(GhostBtn, {
   size: "lg",
-  onClick: () => location.href = "/contact?urgent=1",
+  onClick: () => location.href = "pages/contact.html?urgent=1",
   icon: /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-mono)",
@@ -482,7 +480,7 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
     }
   }, "\u25CF")
 }, "Request staff now"), /*#__PURE__*/React.createElement("a", {
-  href: "/spark",
+  href: "pages/spark.html",
   style: {
     marginLeft: 8,
     display: "inline-flex",

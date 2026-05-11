@@ -225,3 +225,80 @@ img { max-width: 100%; display: block; }
     grid-template-columns: 1fr 1fr !important;
   }
 }
+
+/* ============================================================
+   Accessibility — WCAG 2.1 AA
+   ============================================================ */
+
+/* Keyboard focus ring — visible on any focusable element when navigating with Tab.
+   Uses :focus-visible so mouse clicks don't get an outline. */
+[id^="ignite-"] a:focus-visible,
+[id^="ignite-"] button:focus-visible,
+[id^="ignite-"] input:focus-visible,
+[id^="ignite-"] select:focus-visible,
+[id^="ignite-"] textarea:focus-visible,
+[id^="ignite-"] [tabindex]:focus-visible,
+body > [id="root"] a:focus-visible,
+body > [id="root"] button:focus-visible,
+body > [id="root"] input:focus-visible,
+body > [id="root"] select:focus-visible,
+body > [id="root"] textarea:focus-visible,
+body > [id="root"] [tabindex]:focus-visible {
+  outline: 2px solid #FF5A1F !important;
+  outline-offset: 3px !important;
+  border-radius: 4px;
+}
+
+/* Skip-link — first focusable element on every page.
+   Inserted by the embed code; styled here so it's hidden until tabbed. */
+.ignite-skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 99999;
+}
+.ignite-skip-link:focus {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  width: auto;
+  height: auto;
+  padding: 12px 20px;
+  background: #FF5A1F;
+  color: #0A0B0D;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+/* Visually-hidden — for screen-reader-only text */
+.ignite-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Reduced motion — disable animations for users who request it.
+   WCAG 2.3.3 (Animation from Interactions). */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

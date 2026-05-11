@@ -860,5 +860,105 @@ window.LEGAL_DOCS = {
         rows: [["Company", "Ignite Productions LLC"], ["Email", "events@igniteproductions.co"], ["Phone", "775.406.0435"], ["Website", "www.igniteproductions.co"]]
       }]
     }]
+  },
+  accessibility: {
+    kind: "Accessibility Statement",
+    version: "2026.05",
+    titleA: "Accessibility",
+    titleB: "Statement.",
+    effective: "May 11, 2026",
+    lede: "Ignite Productions is committed to making igniteproductions.co and the Spark by Ignite platform accessible to everyone, including people with disabilities. We target WCAG 2.1 Level AA conformance and continuously audit and improve.",
+    contact: [["Company", "Ignite Productions LLC"], ["Email", "events@igniteproductions.co"], ["Phone", "775.406.0435"], ["Web", "www.igniteproductions.co"]],
+    sections: [{
+      id: "commitment",
+      title: "Our commitment",
+      blocks: [{
+        type: "p",
+        text: "Ignite Productions LLC (\"Ignite,\" \"we,\" \"us\") believes the web should be available and accessible to anyone, and we are committed to providing a site and platform that is accessible to the widest possible audience, regardless of ability."
+      }, {
+        type: "p",
+        text: "We strive to conform to the **Web Content Accessibility Guidelines (WCAG) 2.1 Level AA**, published by the World Wide Web Consortium (W3C). These guidelines explain how to make web content more accessible for people with a wide array of disabilities. Conforming with WCAG 2.1 AA helps make the web more user-friendly for everyone."
+      }, {
+        type: "p",
+        text: "Accessibility is an ongoing effort. We continue to audit, update, and refine our site as we add new content and features."
+      }]
+    }, {
+      id: "what-weve-done",
+      title: "What we've done",
+      blocks: [{
+        type: "p",
+        text: "Our current accessibility measures include:"
+      }, {
+        type: "ul",
+        items: ["**Color contrast.** Body and meta text meet or exceed WCAG AA contrast ratios (4.5:1 for normal text, 3:1 for large text).", "**Keyboard navigation.** All interactive elements (links, buttons, forms) are reachable and operable with a keyboard. A visible focus outline appears on the active element.", "**Skip-to-content link.** A \"Skip to main content\" link appears as the first focusable element on every page.", "**Semantic HTML.** Headings follow a logical order; landmarks (header, nav, main, footer) are identified.", "**Alt text on images.** Informative images carry descriptive alt text; decorative images are marked so screen readers skip them.", "**Form labels.** Every form input is programmatically associated with a visible label.", "**Reduced motion.** Users who set \"reduce motion\" in their operating system see static versions of our animated sections.", "**Responsive design.** Layouts adapt to text resize, browser zoom up to 200%, and small screens.", "**Captions and transcripts.** Where we publish video, we provide captions and a transcript."]
+      }]
+    }, {
+      id: "standards",
+      title: "Standards we follow",
+      blocks: [{
+        type: "kv",
+        rows: [["Standard", "WCAG 2.1 Level AA"], ["Status", "Targeting full conformance; ongoing improvements"], ["Last review", "May 11, 2026"], ["Reviewed by", "Internal team + axe DevTools automated audits"]]
+      }, {
+        type: "p",
+        text: "We also reference the **Americans with Disabilities Act (ADA)** Title III as the legal framework that informs our compliance approach for users in the United States."
+      }]
+    }, {
+      id: "known-limitations",
+      title: "Known limitations",
+      blocks: [{
+        type: "p",
+        text: "Despite our best efforts, some content may not yet be fully accessible. We are actively working on:"
+      }, {
+        type: "ul",
+        items: ["**Third-party embeds.** Some embedded content from partners (e.g., LinkedIn widgets, third-party video players) may not fully meet WCAG AA. We are working with vendors and choosing accessible alternatives where possible.", "**Legacy case-study imagery.** A small number of older portfolio images may not yet have detailed alt text. We are auditing and updating them.", "**PDF documents.** Older PDF case studies may not be fully tagged. New PDFs are produced as accessible documents."]
+      }, {
+        type: "callout",
+        label: "WE WANT TO KNOW",
+        text: "If you encounter an accessibility barrier on our site or in the Spark platform, please tell us. We treat accessibility reports as priority bugs."
+      }]
+    }, {
+      id: "assistive-tech",
+      title: "Compatibility with assistive technology",
+      blocks: [{
+        type: "p",
+        text: "We design and test the site for compatibility with current versions of major browsers and assistive technologies, including:"
+      }, {
+        type: "ul",
+        items: ["Chrome, Firefox, Safari, and Edge — latest two versions", "iOS Safari and Android Chrome — current and one prior major version", "Screen readers: NVDA (Windows), JAWS (Windows), VoiceOver (macOS / iOS), TalkBack (Android)", "Browser zoom up to 200%"]
+      }, {
+        type: "p",
+        text: "We do not officially support Internet Explorer or browser versions more than two major releases out of date."
+      }]
+    }, {
+      id: "feedback",
+      title: "Feedback and contact",
+      blocks: [{
+        type: "p",
+        text: "We welcome your feedback on the accessibility of igniteproductions.co and the Spark platform. If you experience accessibility barriers, please let us know — we typically respond within 2 business days."
+      }, {
+        type: "p",
+        text: "When you report an issue, please include (if possible):"
+      }, {
+        type: "ul",
+        items: ["The URL of the page where the issue occurred", "The browser, operating system, and assistive technology you were using", "A short description of what happened"]
+      }, {
+        type: "kv",
+        rows: [["Email", "events@igniteproductions.co"], ["Phone", "775.406.0435"], ["Subject line", "\"Accessibility — [page or feature]\""]]
+      }]
+    }, {
+      id: "formal-complaints",
+      title: "Formal complaints",
+      blocks: [{
+        type: "p",
+        text: "If you are not satisfied with our response, you may file a complaint with the U.S. Department of Justice, Civil Rights Division, or with a local agency responsible for enforcing the Americans with Disabilities Act. We are not affiliated with these agencies; they are listed only to inform users of available remedies."
+      }]
+    }, {
+      id: "updates",
+      title: "Updates to this statement",
+      blocks: [{
+        type: "p",
+        text: "We will update this statement as we improve the site and as accessibility standards evolve. The \"Effective\" date and version stamp at the top of this page reflect the most recent review."
+      }]
+    }]
   }
 };

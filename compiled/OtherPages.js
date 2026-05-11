@@ -16,6 +16,8 @@ const FractionalHero = () => /*#__PURE__*/React.createElement("section", {
   opacity: 0.04
 }), /*#__PURE__*/React.createElement("img", {
   src: window.__resources?.r_assets_chrome_flow_vertical_png || "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-flow-vertical.png",
+  alt: "",
+  "aria-hidden": "true",
   style: {
     position: "absolute",
     right: "-5%",
@@ -59,7 +61,7 @@ const FractionalHero = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(AccentBtn, {
   size: "lg",
-  onClick: () => location.href = "/contact"
+  onClick: () => location.href = "contact.html"
 }, "Book a strategy call"), /*#__PURE__*/React.createElement(GhostBtn, {
   size: "lg"
 }, "See how it works"))));
@@ -195,7 +197,7 @@ const FractionalTiers = () => /*#__PURE__*/React.createElement("section", {
     marginTop: 32
   }
 }, /*#__PURE__*/React.createElement(AccentBtn, {
-  onClick: () => location.href = "/contact",
+  onClick: () => location.href = "contact.html",
   style: {
     width: "100%",
     justifyContent: "center"
@@ -736,17 +738,21 @@ const ContactForm = () => {
   }, [["Name", "text", "name"], ["Company", "text", "company"], ["Email", "email", "email"]].map(([l, ty, n]) => /*#__PURE__*/React.createElement("div", {
     key: n
   }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "contact-" + n,
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: 10,
       letterSpacing: "0.22em",
       textTransform: "uppercase",
-      color: "var(--fg-3)"
+      color: "var(--fg-3)",
+      display: "block"
     }
   }, l), /*#__PURE__*/React.createElement("input", {
+    id: "contact-" + n,
     required: true,
     name: n,
     type: ty,
+    autoComplete: n === "name" ? "name" : n === "email" ? "email" : n === "company" ? "organization" : "off",
     style: {
       width: "100%",
       marginTop: 6,
@@ -759,14 +765,17 @@ const ContactForm = () => {
       fontSize: 15
     }
   }))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "contact-need",
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: 10,
       letterSpacing: "0.22em",
       textTransform: "uppercase",
-      color: "var(--fg-3)"
+      color: "var(--fg-3)",
+      display: "block"
     }
   }, "What do you need?"), /*#__PURE__*/React.createElement("select", {
+    id: "contact-need",
     name: "need",
     style: {
       width: "100%",
@@ -780,14 +789,17 @@ const ContactForm = () => {
       fontSize: 15
     }
   }, /*#__PURE__*/React.createElement("option", null, "National sampling program"), /*#__PURE__*/React.createElement("option", null, "Experiential activation / tour"), /*#__PURE__*/React.createElement("option", null, "Event staffing (short-lead)"), /*#__PURE__*/React.createElement("option", null, "Fractional CPG leadership"), /*#__PURE__*/React.createElement("option", null, "Spark platform demo"), /*#__PURE__*/React.createElement("option", null, "Other"))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "contact-notes",
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: 10,
       letterSpacing: "0.22em",
       textTransform: "uppercase",
-      color: "var(--fg-3)"
+      color: "var(--fg-3)",
+      display: "block"
     }
   }, "Tell us more"), /*#__PURE__*/React.createElement("textarea", {
+    id: "contact-notes",
     name: "notes",
     rows: "4",
     style: {

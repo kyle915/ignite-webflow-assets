@@ -447,7 +447,12 @@ const SiteFooter = ({
   style: {
     textDecoration: "none"
   }
-}, /*#__PURE__*/React.createElement(OpsLine, null, "TERMS")), /*#__PURE__*/React.createElement(OpsLine, {
+}, /*#__PURE__*/React.createElement(OpsLine, null, "TERMS")), /*#__PURE__*/React.createElement("a", {
+  href: "/accessibility",
+  style: {
+    textDecoration: "none"
+  }
+}, /*#__PURE__*/React.createElement(OpsLine, null, "ACCESSIBILITY")), /*#__PURE__*/React.createElement(OpsLine, {
   glow: true
 }, "\u2605 IGNITEPRODUCTIONS.CO")))));
 Object.assign(window, {

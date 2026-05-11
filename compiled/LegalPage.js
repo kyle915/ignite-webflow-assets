@@ -433,13 +433,21 @@ const LegalPage = ({
   kind
 }) => {
   const doc = window.LEGAL_DOCS[kind];
-  const sister = kind === "privacy" ? {
-    href: "terms.html",
-    label: "TERMS OF SERVICE"
-  } : {
-    href: "privacy.html",
-    label: "PRIVACY POLICY"
+  const SISTERS = {
+    privacy: {
+      href: "/terms",
+      label: "TERMS OF SERVICE"
+    },
+    terms: {
+      href: "/privacy",
+      label: "PRIVACY POLICY"
+    },
+    accessibility: {
+      href: "/privacy",
+      label: "PRIVACY POLICY"
+    }
   };
+  const sister = SISTERS[kind] || SISTERS.privacy;
   const [activeId, setActiveId] = useLegalState(doc.sections[0]?.id);
   useLegalEffect(() => {
     const obs = new IntersectionObserver(entries => {
