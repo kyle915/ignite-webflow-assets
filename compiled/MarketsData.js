@@ -25,115 +25,115 @@ const MARKETS_REGIONS = [{
     name: "Brooklyn",
     state: "NY",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "boston",
     name: "Boston",
     state: "MA",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "philadelphia",
     name: "Philadelphia",
     state: "PA",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "washington-dc",
     name: "Washington DC",
     state: "DC",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "pittsburgh",
     name: "Pittsburgh",
     state: "PA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "newark",
     name: "Newark",
     state: "NJ",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "jersey-city",
     name: "Jersey City",
     state: "NJ",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "hartford",
     name: "Hartford",
     state: "CT",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "providence",
     name: "Providence",
     state: "RI",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "buffalo",
     name: "Buffalo",
     state: "NY",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "rochester",
     name: "Rochester",
     state: "NY",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "albany",
     name: "Albany",
     state: "NY",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "baltimore",
     name: "Baltimore",
     state: "MD",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "portland-me",
     name: "Portland",
     state: "ME",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "long-island",
     name: "Long Island",
     state: "NY",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "stamford",
     name: "Stamford",
     state: "CT",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "wilmington-de",
     name: "Wilmington",
     state: "DE",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "newport-ri",
     name: "Newport",
     state: "RI",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "saratoga-springs",
     name: "Saratoga Springs",
     state: "NY",
     tier: 2,
-    available: false
+    available: true
   }]
 }, {
   id: "southeast",
@@ -156,169 +156,169 @@ const MARKETS_REGIONS = [{
     name: "Charlotte",
     state: "NC",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "orlando",
     name: "Orlando",
     state: "FL",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "tampa",
     name: "Tampa",
     state: "FL",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "nashville",
     name: "Nashville",
     state: "TN",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "jacksonville",
     name: "Jacksonville",
     state: "FL",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "fort-lauderdale",
     name: "Fort Lauderdale",
     state: "FL",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "raleigh",
     name: "Raleigh-Durham",
     state: "NC",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "greensboro",
     name: "Greensboro",
     state: "NC",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "richmond",
     name: "Richmond",
     state: "VA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "virginia-beach",
     name: "Virginia Beach",
     state: "VA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "birmingham",
     name: "Birmingham",
     state: "AL",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "new-orleans",
     name: "New Orleans",
     state: "LA",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "memphis",
     name: "Memphis",
     state: "TN",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "knoxville",
     name: "Knoxville",
     state: "TN",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "louisville",
     name: "Louisville",
     state: "KY",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "charleston",
     name: "Charleston",
     state: "SC",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "savannah",
     name: "Savannah",
     state: "GA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "greenville-sc",
     name: "Greenville",
     state: "SC",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "columbia-sc",
     name: "Columbia",
     state: "SC",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "asheville",
     name: "Asheville",
     state: "NC",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "chattanooga",
     name: "Chattanooga",
     state: "TN",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "lexington",
     name: "Lexington",
     state: "KY",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "huntsville",
     name: "Huntsville",
     state: "AL",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "sarasota",
     name: "Sarasota",
     state: "FL",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "daytona-beach",
     name: "Daytona Beach",
     state: "FL",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "hollywood-fl",
     name: "Hollywood",
     state: "FL",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "augusta",
     name: "Augusta",
     state: "GA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "athens-ga",
     name: "Athens",
     state: "GA",
     tier: 2,
-    available: false
+    available: true
   }]
 }, {
   id: "midwest",
@@ -335,31 +335,31 @@ const MARKETS_REGIONS = [{
     name: "Detroit",
     state: "MI",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "minneapolis",
     name: "Minneapolis",
     state: "MN",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "indianapolis",
     name: "Indianapolis",
     state: "IN",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "columbus",
     name: "Columbus",
     state: "OH",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "kansas-city",
     name: "Kansas City",
     state: "MO",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "cleveland",
     name: "Cleveland",
@@ -371,73 +371,73 @@ const MARKETS_REGIONS = [{
     name: "Cincinnati",
     state: "OH",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "milwaukee",
     name: "Milwaukee",
     state: "WI",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "madison",
     name: "Madison",
     state: "WI",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "st-louis",
     name: "St. Louis",
     state: "MO",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "omaha",
     name: "Omaha",
     state: "NE",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "des-moines",
     name: "Des Moines",
     state: "IA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "grand-rapids",
     name: "Grand Rapids",
     state: "MI",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "akron",
     name: "Akron",
     state: "OH",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "dayton",
     name: "Dayton",
     state: "OH",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "ann-arbor",
     name: "Ann Arbor",
     state: "MI",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "fort-wayne",
     name: "Fort Wayne",
     state: "IN",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "wichita",
     name: "Wichita",
     state: "KS",
     tier: 2,
-    available: false
+    available: true
   }]
 }, {
   id: "southwest",
@@ -466,79 +466,79 @@ const MARKETS_REGIONS = [{
     name: "Phoenix",
     state: "AZ",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "tucson",
     name: "Tucson",
     state: "AZ",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "san-antonio",
     name: "San Antonio",
     state: "TX",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "el-paso",
     name: "El Paso",
     state: "TX",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "oklahoma-city",
     name: "Oklahoma City",
     state: "OK",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "tulsa",
     name: "Tulsa",
     state: "OK",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "albuquerque",
     name: "Albuquerque",
     state: "NM",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "plano",
     name: "Plano",
     state: "TX",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "lubbock",
     name: "Lubbock",
     state: "TX",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "mcallen",
     name: "McAllen",
     state: "TX",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "frisco",
     name: "Frisco",
     state: "TX",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "arlington-tx",
     name: "Arlington",
     state: "TX",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "scottsdale",
     name: "Scottsdale",
     state: "AZ",
     tier: 2,
-    available: false
+    available: true
   }]
 }, {
   id: "west",
@@ -555,91 +555,91 @@ const MARKETS_REGIONS = [{
     name: "San Francisco",
     state: "CA",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "san-diego",
     name: "San Diego",
     state: "CA",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "sacramento",
     name: "Sacramento",
     state: "CA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "las-vegas",
     name: "Las Vegas",
     state: "NV",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "oakland",
     name: "Oakland",
     state: "CA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "san-jose",
     name: "San Jose",
     state: "CA",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "fresno",
     name: "Fresno",
     state: "CA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "riverside",
     name: "Riverside",
     state: "CA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "long-beach",
     name: "Long Beach",
     state: "CA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "anaheim",
     name: "Anaheim",
     state: "CA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "honolulu",
     name: "Honolulu",
     state: "HI",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "santa-barbara",
     name: "Santa Barbara",
     state: "CA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "palm-springs",
     name: "Palm Springs",
     state: "CA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "indio",
     name: "Indio",
     state: "CA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "inglewood",
     name: "Inglewood",
     state: "CA",
     tier: 2,
-    available: false
+    available: true
   }]
 }, {
   id: "pacific-northwest",
@@ -656,43 +656,43 @@ const MARKETS_REGIONS = [{
     name: "Portland",
     state: "OR",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "tacoma",
     name: "Tacoma",
     state: "WA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "spokane",
     name: "Spokane",
     state: "WA",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "eugene",
     name: "Eugene",
     state: "OR",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "boise",
     name: "Boise",
     state: "ID",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "anchorage",
     name: "Anchorage",
     state: "AK",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "bellevue",
     name: "Bellevue",
     state: "WA",
     tier: 2,
-    available: false
+    available: true
   }]
 }, {
   id: "mountain",
@@ -703,7 +703,7 @@ const MARKETS_REGIONS = [{
     name: "Denver",
     state: "CO",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "reno",
     name: "Reno",
@@ -715,55 +715,55 @@ const MARKETS_REGIONS = [{
     name: "Colorado Springs",
     state: "CO",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "salt-lake-city",
     name: "Salt Lake City",
     state: "UT",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "boulder",
     name: "Boulder",
     state: "CO",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "bozeman",
     name: "Bozeman",
     state: "MT",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "park-city",
     name: "Park City",
     state: "UT",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "jackson-hole",
     name: "Jackson Hole",
     state: "WY",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "billings",
     name: "Billings",
     state: "MT",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "aspen",
     name: "Aspen",
     state: "CO",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "lake-tahoe",
     name: "Lake Tahoe",
     state: "NV",
     tier: 2,
-    available: false
+    available: true
   }]
 }];
 
