@@ -1320,7 +1320,7 @@ const AboutLeaders = () => /*#__PURE__*/React.createElement("section", {
   }
 }, ABOUT_LEADERS.map((m, i) => {
   const accent = i === 0 ? "var(--ignite-500)" : i % 3 === 1 ? "#FFB627" : i % 3 === 2 ? "#D6F35F" : "var(--ignite-500)";
-  const resolved = window.__resources && window.__resources[m.resKey] || "../" + m.img;
+  const resolved = window.__resources && window.__resources[m.resKey] || m.img;
   return /*#__PURE__*/React.createElement("div", {
     key: m.name,
     style: {
