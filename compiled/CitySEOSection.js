@@ -29,9 +29,9 @@ const CITY_FALLBACK_CTA = {
   heading: "Let's run something here.",
   body: "Brief us on the program. Single-night activation through national tour — we'll scope it to fit.",
   primaryLabel: "Start a brief",
-  primaryHref: "https://www.igniteproductions.co/contact?urgent=1",
+  primaryHref: "https://igniteproductions.co/contact?urgent=1",
   secondaryLabel: "See the work",
-  secondaryHref: "https://www.igniteproductions.co/work"
+  secondaryHref: "https://igniteproductions.co/work"
 };
 const US_STATE_ABBR = {
   "Alabama": "AL",
@@ -327,7 +327,7 @@ const CitySeoIntro = ({
         color: "var(--ignite-500)"
       }
     }, ".")));
-  })(), isNonEmpty(city.intro) ? /*#__PURE__*/React.createElement("p", {
+  })(), /*#__PURE__*/React.createElement("p", {
     className: "city-intro-cell",
     style: {
       marginTop: 36,
@@ -342,22 +342,47 @@ const CitySeoIntro = ({
       animationDelay: "340ms",
       position: "relative"
     }
-  }, city.intro) : /*#__PURE__*/React.createElement("p", {
+  }, isNonEmpty(city.intro) ? city.intro : `Ignite Productions supports brand activations, event staffing, product sampling, experiential marketing, mobile tours, and trade show programs in ${city.state ? city.name + ", " + city.state : city.name}. Our team helps brands plan, staff, execute, and report on single-market and multi-market campaigns.`), /*#__PURE__*/React.createElement("div", {
     className: "city-intro-cell",
     style: {
-      marginTop: 36,
-      fontFamily: "var(--font-display)",
-      fontWeight: 500,
-      fontSize: "clamp(20px, 2.1vw, 28px)",
-      lineHeight: 1.35,
-      letterSpacing: "-0.015em",
-      color: "rgba(255,255,255,0.92)",
-      maxWidth: 880,
-      textWrap: "pretty",
-      animationDelay: "340ms",
-      position: "relative"
+      marginTop: 32,
+      display: "flex",
+      flexWrap: "wrap",
+      gap: 12,
+      alignItems: "center",
+      animationDelay: "420ms"
     }
-  }, "We staff, build, and run brand activations in ", city.metro || city.name, " \u2014 festival pop-ups, retail demos, mobile tours, and trade-show floors. Local crew, local permits, national playbook."), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("a", {
+    href: city.cta && city.cta.primaryHref || "https://igniteproductions.co/contact?urgent=1",
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 10,
+      padding: "16px 24px",
+      borderRadius: 999,
+      background: "var(--ignite-500)",
+      color: "#fff",
+      fontFamily: "var(--font-display)",
+      fontWeight: 600,
+      fontSize: 15.5,
+      letterSpacing: "-0.01em",
+      textDecoration: "none",
+      boxShadow: "0 12px 32px rgba(255,90,31,0.35)",
+      transition: "transform 200ms, box-shadow 200ms"
+    },
+    onMouseEnter: e => {
+      e.currentTarget.style.transform = "translateY(-2px)";
+      e.currentTarget.style.boxShadow = "0 20px 48px rgba(255,90,31,0.5)";
+    },
+    onMouseLeave: e => {
+      e.currentTarget.style.transform = "translateY(0)";
+      e.currentTarget.style.boxShadow = "0 12px 32px rgba(255,90,31,0.35)";
+    }
+  }, "Brief us on ", city.name, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)"
+    }
+  }, "\u2192"))), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 64,
       position: "relative",
@@ -919,7 +944,8 @@ const CitySeoIndustriesMarkets = ({
 const CitySeoFaqs = ({
   city
 }) => {
-  const faqs = (city.faqs || []).filter(f => isNonEmpty(f?.q)).slice(0, 3);
+  // Strict completeness: both question AND answer must be non-empty.
+  const faqs = (city.faqs || []).filter(f => f && isNonEmpty(f.q) && isNonEmpty(f.a)).slice(0, 3);
   const [open, setOpen] = React.useState(0);
   if (faqs.length === 0) return null;
   return /*#__PURE__*/React.createElement("section", {
@@ -1301,8 +1327,6 @@ const CitySEOSection = ({
 }) => {
   if (!city || !isNonEmpty(city.name)) return null;
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(CitySeoIntro, {
-    city: city
-  }), /*#__PURE__*/React.createElement(CitySeoActivations, {
     city: city
   }), /*#__PURE__*/React.createElement(CitySeoServices, {
     city: city

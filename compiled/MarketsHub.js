@@ -465,7 +465,7 @@ const MarketsHub = ({
       gap: 14,
       marginBottom: 32
     }
-  }, /*#__PURE__*/React.createElement(OpsLine, null, ">> ", "BY REGION \xB7 ", visibleCount, "/", totalCities, " NAMED MARKETS \xB7 ", liveCities, " LIVE PAGES"), /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement(OpsLine, null, ">> ", "MAJOR MARKETS ORGANIZED BY REGION"), /*#__PURE__*/React.createElement("span", {
     style: {
       flex: 1,
       height: 1,

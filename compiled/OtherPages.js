@@ -350,7 +350,7 @@ const WorkGrid = () => /*#__PURE__*/React.createElement("section", {
 }, WORK_CASES.map((c, i) => /*#__PURE__*/React.createElement("a", {
   key: c.slug,
   id: c.slug,
-  href: "#",
+  href: "/work#" + c.slug,
   style: {
     position: "relative",
     display: "block",

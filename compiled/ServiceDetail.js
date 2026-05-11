@@ -1526,7 +1526,7 @@ const ServiceCTA = ({
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "https://www.igniteproductions.co/contact?urgent=1",
+  href: "https://igniteproductions.co/contact?urgent=1",
   style: {
     padding: "20px 28px",
     borderRadius: 999,
@@ -1541,7 +1541,7 @@ const ServiceCTA = ({
     gap: 10
   }
 }, "Request a quote ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "https://www.igniteproductions.co/contact?urgent=1",
+  href: "https://igniteproductions.co/contact?urgent=1",
   style: {
     padding: "20px 28px",
     borderRadius: 999,
@@ -1749,34 +1749,6 @@ const ServiceDetailPage = ({
   slug
 }) => {
   const s = SERVICES_DATA[slug];
-  React.useEffect(() => {
-    if (!s) return;
-    const url = `https://www.igniteproductions.co/services-${slug}`;
-    const graph = [{
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.igniteproductions.co/" },
-        { "@type": "ListItem", position: 2, name: "Services", item: "https://www.igniteproductions.co/ignite-services" },
-        { "@type": "ListItem", position: 3, name: s.label, item: url }
-      ]
-    }];
-    if (s.faqs && s.faqs.length) {
-      graph.push({
-        "@type": "FAQPage",
-        "@id": url + "#faq",
-        mainEntity: s.faqs.map(([q, a]) => ({
-          "@type": "Question",
-          name: q,
-          acceptedAnswer: { "@type": "Answer", text: a }
-        }))
-      });
-    }
-    const cleanup = window.injectJsonLd && window.injectJsonLd("service-detail", {
-      "@context": "https://schema.org",
-      "@graph": graph
-    });
-    return () => cleanup && cleanup();
-  }, [slug]);
   if (!s) return /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 80,

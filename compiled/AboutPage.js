@@ -2413,7 +2413,7 @@ const AboutCareers = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 480
   }
 }, "42,000 ambassadors and counting. Energetic, professional, ready to represent the brands you love. Fill in your info and we'll be in touch.")), /*#__PURE__*/React.createElement("a", {
-  href: "https://www.igniteproductions.co/careers/brand-ambassador",
+  href: "https://igniteproductions.co/careers/brand-ambassador",
   style: {
     display: "grid",
     gridTemplateColumns: "auto 1fr auto auto",
