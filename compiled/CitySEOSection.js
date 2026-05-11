@@ -29,9 +29,9 @@ const CITY_FALLBACK_CTA = {
   heading: "Let's run something here.",
   body: "Brief us on the program. Single-night activation through national tour — we'll scope it to fit.",
   primaryLabel: "Start a brief",
-  primaryHref: "contact.html",
+  primaryHref: "https://www.igniteproductions.co/contact?urgent=1",
   secondaryLabel: "See the work",
-  secondaryHref: "work.html"
+  secondaryHref: "https://www.igniteproductions.co/work"
 };
 const US_STATE_ABBR = {
   "Alabama": "AL",
@@ -212,25 +212,39 @@ const CitySeoIntro = ({
     }
   }, /*#__PURE__*/React.createElement("style", null, CITY_INTRO_KEYFRAMES), /*#__PURE__*/React.createElement(CityGridBg, {
     animated: true
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    "data-city-anim": true,
-    style: {
-      position: "absolute",
-      right: "-3%",
-      top: "-2%",
-      fontFamily: "var(--font-stencil)",
-      fontSize: "clamp(180px, 28vw, 460px)",
-      lineHeight: 0.85,
-      letterSpacing: "-0.04em",
-      color: "rgba(255,255,255,0.025)",
-      whiteSpace: "nowrap",
-      textTransform: "uppercase",
-      pointerEvents: "none",
-      userSelect: "none",
-      animation: "city-ghost-pan 22s ease-in-out infinite"
-    }
-  }, city.name), /*#__PURE__*/React.createElement("div", {
+  }), (() => {
+    const n = (city.name || "").toUpperCase();
+    const vbW = Math.max(n.length, 4) * 62;
+    return /*#__PURE__*/React.createElement("svg", {
+      "aria-hidden": "true",
+      "data-city-anim": true,
+      viewBox: `0 0 ${vbW} 110`,
+      preserveAspectRatio: "xMidYMid meet",
+      style: {
+        position: "absolute",
+        right: 0,
+        top: "-1.5%",
+        width: "94vw",
+        height: "auto",
+        maxHeight: "62%",
+        pointerEvents: "none",
+        userSelect: "none",
+        animation: "city-ghost-pan 22s ease-in-out infinite",
+        overflow: "visible"
+      }
+    }, /*#__PURE__*/React.createElement("text", {
+      x: "50%",
+      y: "92",
+      textAnchor: "middle",
+      fontSize: "100",
+      fill: "rgba(255,255,255,0.035)",
+      textLength: vbW - 6,
+      lengthAdjust: "spacingAndGlyphs",
+      style: {
+        fontFamily: "var(--font-stencil)"
+      }
+    }, n));
+  })(), /*#__PURE__*/React.createElement("div", {
     style: {
       maxWidth: 1280,
       margin: "0 auto",
@@ -267,41 +281,53 @@ const CitySeoIntro = ({
       boxShadow: "0 0 8px var(--ignite-500)",
       animation: "city-intro-blink 2.4s var(--ease-out) infinite"
     }
-  }), ">> ", "LOCAL MARKET \xB7 ", region.toUpperCase())), /*#__PURE__*/React.createElement("h2", {
-    className: "city-intro-cell",
-    style: {
-      marginTop: 22,
-      fontFamily: "var(--font-display)",
-      fontWeight: 800,
-      fontSize: "clamp(64px, 9.5vw, 168px)",
-      letterSpacing: "-0.045em",
-      lineHeight: 0.88,
-      maxWidth: 1300,
-      textWrap: "balance",
-      animationDelay: "180ms"
-    }
-  }, "Brand activations", /*#__PURE__*/React.createElement("br", null), "in ", /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontStyle: "italic",
-      color: "var(--ignite-500)",
-      animation: "city-intro-glow 1600ms var(--ease-out) 600ms both",
-      display: "inline-block"
-    }
-  }, city.name), city.state && /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: "var(--fg-3)",
-      fontWeight: 500,
-      fontStyle: "normal",
-      fontSize: "0.4em",
-      letterSpacing: "-0.01em",
-      verticalAlign: "0.65em",
-      marginLeft: 18
-    }
-  }, "/ ", stateAbbr(city.state)), /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: "var(--ignite-500)"
-    }
-  }, ".")), /*#__PURE__*/React.createElement("p", {
+  }), ">> ", "LOCAL MARKET \xB7 ", region.toUpperCase())), (() => {
+    const nameLen = (city.name || "").length;
+    const stateLen = city.state ? 5 : 1; // "/ XX." or "."
+    const longestLine = Math.max(17, 3 + nameLen + stateLen);
+    const fontCap = Math.min(168, Math.floor(168 * 17 / longestLine));
+    const vwMax = (9.5 * 17 / longestLine).toFixed(2);
+    const baseMin = longestLine > 22 ? 44 : longestLine > 19 ? 52 : 64;
+    return /*#__PURE__*/React.createElement("h2", {
+      className: "city-intro-cell",
+      style: {
+        marginTop: 22,
+        fontFamily: "var(--font-display)",
+        fontWeight: 800,
+        fontSize: `clamp(${baseMin}px, ${vwMax}vw, ${fontCap}px)`,
+        letterSpacing: "-0.045em",
+        lineHeight: 0.88,
+        maxWidth: 1300,
+        textWrap: "balance",
+        animationDelay: "180ms"
+      }
+    }, "Brand activations", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      style: {
+        whiteSpace: "nowrap"
+      }
+    }, "in ", /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontStyle: "italic",
+        color: "var(--ignite-500)",
+        animation: "city-intro-glow 1600ms var(--ease-out) 600ms both",
+        display: "inline-block"
+      }
+    }, city.name), city.state && /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: "var(--fg-3)",
+        fontWeight: 500,
+        fontStyle: "normal",
+        fontSize: "0.4em",
+        letterSpacing: "-0.01em",
+        verticalAlign: "0.65em",
+        marginLeft: 18
+      }
+    }, "/ ", stateAbbr(city.state)), /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: "var(--ignite-500)"
+      }
+    }, ".")));
+  })(), isNonEmpty(city.intro) ? /*#__PURE__*/React.createElement("p", {
     className: "city-intro-cell",
     style: {
       marginTop: 36,
@@ -316,7 +342,22 @@ const CitySeoIntro = ({
       animationDelay: "340ms",
       position: "relative"
     }
-  }, isNonEmpty(city.intro) ? city.intro : cityFallbackIntro(city)), /*#__PURE__*/React.createElement("div", {
+  }, city.intro) : /*#__PURE__*/React.createElement("p", {
+    className: "city-intro-cell",
+    style: {
+      marginTop: 36,
+      fontFamily: "var(--font-display)",
+      fontWeight: 500,
+      fontSize: "clamp(20px, 2.1vw, 28px)",
+      lineHeight: 1.35,
+      letterSpacing: "-0.015em",
+      color: "rgba(255,255,255,0.92)",
+      maxWidth: 880,
+      textWrap: "pretty",
+      animationDelay: "340ms",
+      position: "relative"
+    }
+  }, "We staff, build, and run brand activations in ", city.metro || city.name, " \u2014 festival pop-ups, retail demos, mobile tours, and trade-show floors. Local crew, local permits, national playbook."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 64,
       position: "relative",
@@ -330,7 +371,7 @@ const CitySeoIntro = ({
       backdropFilter: "blur(6px)",
       WebkitBackdropFilter: "blur(6px)"
     }
-  }, [["AMBASSADORS", city.ambassadors || "1,200+", "in-market"], ["RUSH WINDOW", "48 HR", "brief to boots"], ["YEARS ACTIVE", city.yearsActive || "Since 2018", "in this metro"], ["COVERAGE", city.coverageNote || "Full metro", "+ surrounding"]].map(([k, v, sub], i, arr) => /*#__PURE__*/React.createElement("div", {
+  }, (city.generic ? [["COVERAGE", "Nationwide", "all 50 states"], ["RUSH WINDOW", city.rushWindow || "48 HR", "brief to boots"], ["BENCH", "12,000+", "ambassadors active"], ["MARKETS", "200+", "named metros"]] : [["AMBASSADORS", city.ambassadors || "1,200+", "in-market"], ["RUSH WINDOW", city.rushWindow || "48 HR", "brief to boots"], ["YEARS ACTIVE", city.yearsActive || "Since 2018", "in this metro"], ["COVERAGE", city.coverageNote || "Full metro", "+ surrounding"]]).map(([k, v, sub], i, arr) => /*#__PURE__*/React.createElement("div", {
     key: k,
     className: "city-intro-cell",
     style: {
@@ -383,8 +424,7 @@ const CitySeoIntro = ({
 const CitySeoActivations = ({
   city
 }) => {
-  const activations = isNonEmpty(city.activations) ? city.activations : CITY_DEFAULT_ACTIVATIONS;
-  if (activations.length === 0) return null;
+  if (!isNonEmpty(city.activations)) return null;
   return /*#__PURE__*/React.createElement("section", {
     style: {
       padding: "100px 0",
@@ -441,7 +481,7 @@ const CitySeoActivations = ({
       gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
       gap: 10
     }
-  }, activations.map((a, i) => /*#__PURE__*/React.createElement("div", {
+  }, city.activations.map((a, i) => /*#__PURE__*/React.createElement("div", {
     key: a + i,
     style: {
       padding: "18px 20px",
@@ -480,69 +520,52 @@ const DEFAULT_SERVICES = [{
   slug: "event-staffing",
   title: "Event Staffing",
   desc: "Vetted field teams for festivals, trade shows, retail programs, nightlife, and private events.",
-  href: "/services/event-staffing"
+  href: "../Ignite Services.html#event-staffing"
 }, {
   slug: "brand-ambassadors",
   title: "Brand Ambassadors",
   desc: "Trained ambassadors who represent your brand, capture leads, distribute samples, and drive guest interaction.",
-  href: "/ignite-services"
+  href: "../Ignite Brand Ambassadors.html"
 }, {
   slug: "product-sampling",
   title: "Product Sampling",
   desc: "Compliant, high-volume sampling teams for CPG, beverage, food, wellness, and lifestyle brands.",
-  href: "/services/product-sampling"
+  href: "../Ignite Services.html#product-sampling"
 }, {
   slug: "experiential-marketing",
   title: "Experiential Marketing",
   desc: "Pop-ups, launch events, mobile activations, street teams, and brand experiences built for attention.",
-  href: "/services/experiential-marketing"
+  href: "../Ignite Services.html#experiential-marketing"
 }, {
   slug: "mobile-tours",
   title: "Mobile Tours",
   desc: "Route planning, staffing, logistics, and market support for regional or national mobile campaigns.",
-  href: "/services/mobile-tours"
+  href: "../Ignite Services.html#mobile-tours"
 }, {
   slug: "trade-shows",
   title: "Trade Shows",
   desc: "Booth staff, lead capture, demo support, hospitality teams, and post-show reporting.",
-  href: "/services/trade-shows"
+  href: "../Trade Show Staffing.html"
 }, {
   slug: "custom-fabrication",
   title: "Custom Fabrication",
   desc: "Branded displays, photo moments, sampling carts, event assets, and activation builds.",
-  href: "/services/fabrication-builds"
+  href: "../Ignite Services.html#fabrication-builds"
 }, {
   slug: "promotional-products",
   title: "Promotional Products",
   desc: "Sourcing, kitting, shipping, and on-site distribution for branded merchandise.",
-  href: "/services/promotional-products"
+  href: "../Ignite Services.html#promotional-products"
 }, {
   slug: "spark-reporting",
   title: "Spark Reporting",
   desc: "Field recaps, photos, attendance notes, lead capture, and activation reporting.",
-  href: "/spark"
+  href: "../Ignite Spark.html"
 }, {
   slug: "logistics-permitting",
   title: "Logistics & Permitting",
   desc: "Local planning support for venues, public spaces, routes, permits, and production details.",
-  href: "/ignite-services"
-}];
-
-/* ---------- DEFAULT FALLBACKS (per spec) ---------- */
-const CITY_DEFAULT_ACTIVATIONS = ["Event staffing", "Brand ambassador programs", "Product sampling", "Retail activations", "Mobile tours", "Trade shows", "Pop-ups", "Street teams"];
-const cityFallbackIntro = city => {
-  const region = city.state ? city.name + ", " + city.state : city.name;
-  return "Ignite Productions supports brand activations, event staffing, product sampling, and experiential marketing programs in " + region + ". Our teams help brands plan, staff, execute, and report on local and multi-market campaigns.";
-};
-const cityFallbackFaqs = city => [{
-  q: "Do you staff activations in " + city.name + "?",
-  a: "Yes. We staff brand ambassadors, sampling teams, demo specialists, and event support in " + city.name + " and the surrounding metro for one-day activations through multi-month programs."
-}, {
-  q: "How fast can you book a program in " + city.name + "?",
-  a: "Our rush window is 48 hours from brief to boots on the ground for in-market staffing. Larger fabrication or multi-market builds typically need a longer lead time — brief us and we'll scope it."
-}, {
-  q: "What kinds of brands do you run in " + city.name + "?",
-  a: "CPG (beverage, food, wellness), tech, automotive, hospitality, beauty, and B2B/industrial. The same Ignite playbook we run nationally — adapted to the " + city.name + " market."
+  href: "../Ignite Services.html#logistics"
 }];
 const resolveServices = input => {
   if (!Array.isArray(input) || input.length === 0) return DEFAULT_SERVICES;
@@ -615,7 +638,7 @@ const CitySeoServices = ({
       lineHeight: 0.98,
       textWrap: "balance"
     }
-  }, "What Ignite runs in ", /*#__PURE__*/React.createElement("span", {
+  }, "What Ignite runs in", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
       color: "var(--ignite-500)"
@@ -772,7 +795,7 @@ const CitySeoIndustriesMarkets = ({
       letterSpacing: "-0.025em",
       lineHeight: 1
     }
-  }, "Categories we book in ", /*#__PURE__*/React.createElement("span", {
+  }, "Categories we book in", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
       color: "var(--ignite-500)"
@@ -824,7 +847,7 @@ const CitySeoIndustriesMarkets = ({
       letterSpacing: "-0.025em",
       lineHeight: 1
     }
-  }, "Within reach of ", /*#__PURE__*/React.createElement("span", {
+  }, "Within reach of", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
       color: "#FFB627"
@@ -839,48 +862,64 @@ const CitySeoIndustriesMarkets = ({
       overflow: "hidden",
       background: "var(--ink-100)"
     }
-  }, markets.map((m, i, arr) => /*#__PURE__*/React.createElement("div", {
-    key: m.name + i,
-    style: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      padding: "14px 18px",
-      borderBottom: i < arr.length - 1 ? "1px solid var(--ink-400)" : "none",
-      fontFamily: "var(--font-display)",
-      fontSize: 15,
-      fontWeight: 500,
-      color: "var(--fg-1)"
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: "flex",
-      alignItems: "center",
-      gap: 12
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: "#FFB627",
-      fontFamily: "var(--font-mono)",
-      fontSize: 12
-    }
-  }, "\u2192"), m.name), m.miles && /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-mono)",
-      fontSize: 11,
-      letterSpacing: "0.14em",
-      textTransform: "uppercase",
-      color: "var(--fg-3)"
-    }
-  }, m.miles, " MI"))))))));
+  }, markets.map((m, i, arr) => {
+    const slug = (window.NAME_TO_SLUG || {})[String(m.name).toLowerCase().trim()];
+    const href = slug ? window.CITY_URL && window.CITY_URL(slug) || "/cities/" + slug : null;
+    const Tag = href ? "a" : "div";
+    return /*#__PURE__*/React.createElement(Tag, {
+      key: m.name + i,
+      href: href || undefined,
+      className: href ? "city-nearby-link" : undefined,
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "14px 18px",
+        borderBottom: i < arr.length - 1 ? "1px solid var(--ink-400)" : "none",
+        fontFamily: "var(--font-display)",
+        fontSize: 15,
+        fontWeight: 500,
+        color: "var(--fg-1)",
+        textDecoration: "none",
+        transition: "background 160ms, color 160ms",
+        cursor: href ? "pointer" : "default"
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 12
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: "#FFB627",
+        fontFamily: "var(--font-mono)",
+        fontSize: 12
+      }
+    }, "\u2192"), m.name, href && /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: "#FFB627",
+        fontSize: 10,
+        marginLeft: 4,
+        opacity: 0.75
+      }
+    }, "\u2197")), m.miles && /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: "var(--font-mono)",
+        fontSize: 11,
+        letterSpacing: "0.14em",
+        textTransform: "uppercase",
+        color: "var(--fg-3)"
+      }
+    }, m.miles, " MI"));
+  }))))));
 };
 
 /* ---------- FAQ (max 3) ---------- */
 const CitySeoFaqs = ({
   city
 }) => {
-  const source = isNonEmpty(city.faqs) ? city.faqs : cityFallbackFaqs(city);
-  const faqs = source.filter(f => isNonEmpty(f?.q)).slice(0, 3);
+  const faqs = (city.faqs || []).filter(f => isNonEmpty(f?.q)).slice(0, 3);
   const [open, setOpen] = React.useState(0);
   if (faqs.length === 0) return null;
   return /*#__PURE__*/React.createElement("section", {
@@ -1108,144 +1147,152 @@ const CitySeoCta = ({
       fontFamily: "var(--font-mono)",
       color: "var(--fg-3)"
     }
-  }, "\u2192")))), /*#__PURE__*/React.createElement("div", {
-    "data-city-anim": true,
-    style: {
-      textAlign: "right",
-      fontFamily: "var(--font-stencil)",
-      color: "var(--ink-300)",
-      fontSize: "clamp(96px, 14vw, 240px)",
-      lineHeight: 0.85,
-      letterSpacing: "-0.02em",
-      textTransform: "uppercase",
-      textShadow: "0 0 60px rgba(255,90,31,0.18)",
-      opacity: 0.92,
-      userSelect: "none",
-      animation: "city-ghost-pan 22s ease-in-out infinite"
-    }
-  }, city.name, /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: "var(--ignite-500)",
-      opacity: 0.65
-    }
-  }, stateAbbr(city.state)))));
-};
-
-/* ---------- JSON-LD generators ---------- */
-const SITE_ORIGIN = "https://www.igniteproductions.co";
-const citySlug = city => (city.slug || city.name).toString().trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-const cityCanonical = city => SITE_ORIGIN + "/cities/" + citySlug(city);
-const buildCityJsonLd = city => {
-  if (!city || !isNonEmpty(city.name)) return [];
-  const region = city.state ? city.name + ", " + city.state : city.name;
-  const canonical = city.canonical || cityCanonical(city);
-  const services = resolveServices(city.services).map(s => s.title);
-  const faqs = (isNonEmpty(city.faqs) ? city.faqs : cityFallbackFaqs(city)).filter(f => isNonEmpty(f?.q) && isNonEmpty(f?.a)).slice(0, 3);
-  const docs = [];
-  // Service schema
-  docs.push({
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": canonical + "#service",
-    name: "Field marketing & event staffing in " + region,
-    serviceType: "Field marketing, event staffing, brand activations",
-    provider: {
-      "@type": "Organization",
-      name: "Ignite Productions LLC",
-      url: SITE_ORIGIN
-    },
-    areaServed: {
-      "@type": "City",
-      name: city.name,
-      ...(city.state ? {
-        containedInPlace: {
-          "@type": "State",
-          name: city.state
-        }
-      } : {})
-    },
-    url: canonical,
-    description: isNonEmpty(city.intro) ? city.intro : cityFallbackIntro(city),
-    ...(services.length ? {
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Services in " + city.name,
-        itemListElement: services.map((t, i) => ({
-          "@type": "Offer",
-          position: i + 1,
-          itemOffered: {
-            "@type": "Service",
-            name: t
-          }
-        }))
+  }, "\u2192")))), (() => {
+    const n = (city.name || "").toUpperCase();
+    const sa = stateAbbr(city.state) || "";
+    const vbW = Math.max(n.length, 4) * 62;
+    return /*#__PURE__*/React.createElement("svg", {
+      "data-city-anim": true,
+      viewBox: `0 0 ${vbW} ${sa ? 175 : 110}`,
+      preserveAspectRatio: "xMaxYMid meet",
+      style: {
+        display: "block",
+        width: "100%",
+        maxWidth: "100%",
+        height: "auto",
+        opacity: 0.92,
+        userSelect: "none",
+        animation: "city-ghost-pan 22s ease-in-out infinite",
+        filter: "drop-shadow(0 0 60px rgba(255,90,31,0.18))"
       }
-    } : {})
-  });
-  // FAQPage schema
-  if (faqs.length > 0) {
-    docs.push({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "@id": canonical + "#faq",
-      mainEntity: faqs.map(f => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: f.a
-        }
-      }))
-    });
-  }
-  // BreadcrumbList schema
-  docs.push({
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "@id": canonical + "#breadcrumb",
-    itemListElement: [{
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: SITE_ORIGIN + "/"
-    }, {
-      "@type": "ListItem",
-      position: 2,
-      name: "Cities",
-      item: SITE_ORIGIN + "/cities"
-    }, {
-      "@type": "ListItem",
-      position: 3,
-      name: region,
-      item: canonical
-    }]
-  });
-  return docs;
+    }, /*#__PURE__*/React.createElement("text", {
+      x: "100%",
+      y: "92",
+      textAnchor: "end",
+      fontSize: "100",
+      fill: "var(--ink-300)",
+      textLength: vbW - 6,
+      lengthAdjust: "spacingAndGlyphs",
+      style: {
+        fontFamily: "var(--font-stencil)"
+      }
+    }, n), sa && /*#__PURE__*/React.createElement("text", {
+      x: "100%",
+      y: "168",
+      textAnchor: "end",
+      fontSize: "62",
+      fill: "var(--ignite-500)",
+      fillOpacity: "0.65",
+      style: {
+        fontFamily: "var(--font-stencil)"
+      }
+    }, sa));
+  })()));
 };
 
-/* Mount the JSON-LD into <head> once per city. Idempotent: removes any
-   previously-injected city-seo blocks before adding new ones. Safe to call
-   multiple times. */
-const injectCityJsonLd = city => {
-  if (typeof document === "undefined") return;
-  const head = document.head;
-  if (!head) return;
-  // Remove prior city-seo blocks (do not touch Webflow's Organization schema)
-  Array.from(document.querySelectorAll('script[data-city-seo-jsonld]')).forEach(n => n.remove());
-  buildCityJsonLd(city).forEach((doc, i) => {
-    const s = document.createElement("script");
-    s.type = "application/ld+json";
-    s.setAttribute("data-city-seo-jsonld", String(i));
-    s.text = JSON.stringify(doc);
-    head.appendChild(s);
-  });
-};
-const CitySeoJsonLd = ({
+/* ---------- VENUES / ANCHORS ---------- */
+const CitySeoVenues = ({
   city
 }) => {
-  React.useEffect(() => {
-    injectCityJsonLd(city);
-  }, [city && city.name, city && city.state]);
-  return null;
+  const venues = (city.venues || []).filter(Boolean);
+  if (venues.length === 0) return null;
+  return /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: "100px 0",
+      background: "var(--ink-100)",
+      color: "var(--fg-1)",
+      borderTop: "1px solid var(--ink-400)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1280,
+      margin: "0 auto",
+      padding: "0 32px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "baseline",
+      justifyContent: "space-between",
+      flexWrap: "wrap",
+      gap: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 11,
+      letterSpacing: "0.22em",
+      textTransform: "uppercase",
+      color: "var(--ignite-500)"
+    }
+  }, ">> ", "VENUES & ANCHORS"), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      marginTop: 14,
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: "clamp(32px, 4vw, 56px)",
+      letterSpacing: "-0.03em",
+      lineHeight: 0.96
+    }
+  }, "Where we\u2019ve ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontStyle: "italic",
+      color: "var(--ignite-500)"
+    }
+  }, "worked"), " in", /*#__PURE__*/React.createElement("br", null), city.name, ".")), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 11,
+      letterSpacing: "0.22em",
+      textTransform: "uppercase",
+      color: "var(--fg-3)"
+    }
+  }, venues.length, " NAMED VENUES")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 32,
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+      gap: 0,
+      border: "1px solid var(--ink-400)",
+      borderRadius: 12,
+      overflow: "hidden",
+      background: "var(--ink-000)"
+    }
+  }, venues.map((v, i) => /*#__PURE__*/React.createElement("div", {
+    key: v + i,
+    style: {
+      padding: "18px 20px",
+      borderRight: "1px solid var(--ink-400)",
+      borderBottom: "1px solid var(--ink-400)",
+      display: "flex",
+      alignItems: "center",
+      gap: 12,
+      fontFamily: "var(--font-display)",
+      fontSize: 15,
+      fontWeight: 500,
+      color: "var(--fg-1)"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 10,
+      color: "var(--ignite-500)",
+      letterSpacing: "0.14em"
+    }
+  }, String(i + 1).padStart(2, "0")), /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: 1
+    }
+  }, v)))), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 18,
+      fontFamily: "var(--font-mono)",
+      fontSize: 11,
+      letterSpacing: "0.18em",
+      textTransform: "uppercase",
+      color: "var(--fg-3)"
+    }
+  }, "+ ROOFTOPS, POP-UP SITES, AND PRIVATE PROPERTIES ON REQUEST")));
 };
 
 /* ---------- COMPOSED SECTION ---------- */
@@ -1253,13 +1300,13 @@ const CitySEOSection = ({
   city
 }) => {
   if (!city || !isNonEmpty(city.name)) return null;
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(CitySeoJsonLd, {
-    city: city
-  }), /*#__PURE__*/React.createElement(CitySeoIntro, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(CitySeoIntro, {
     city: city
   }), /*#__PURE__*/React.createElement(CitySeoActivations, {
     city: city
   }), /*#__PURE__*/React.createElement(CitySeoServices, {
+    city: city
+  }), /*#__PURE__*/React.createElement(CitySeoVenues, {
     city: city
   }), /*#__PURE__*/React.createElement(CitySeoIndustriesMarkets, {
     city: city
@@ -1274,13 +1321,9 @@ Object.assign(window, {
   CitySeoIntro,
   CitySeoActivations,
   CitySeoServices,
+  CitySeoVenues,
   CitySeoIndustriesMarkets,
   CitySeoFaqs,
   CitySeoCta,
-  DEFAULT_SERVICES,
-  CITY_DEFAULT_ACTIVATIONS,
-  cityFallbackIntro,
-  cityFallbackFaqs,
-  buildCityJsonLd,
-  injectCityJsonLd
+  DEFAULT_SERVICES
 });
