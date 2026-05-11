@@ -620,9 +620,9 @@ const MarketsHub = ({
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement(AccentBtn, {
-    onClick: () => location.href = rel + "pages/contact.html"
+    onClick: () => location.href = "https://igniteproductions.co/contact?urgent=1"
   }, "Request staff now"), /*#__PURE__*/React.createElement("a", {
-    href: rel + "pages/services.html",
+    href: "https://igniteproductions.co/ignite-services",
     className: "link-mono",
     style: {
       display: "inline-flex",
