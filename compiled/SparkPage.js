@@ -285,7 +285,7 @@ const SparkHero = () => {
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "contact.html",
+    href: "https://www.igniteproductions.co/contact",
     className: "sp-cta-btn",
     style: {
       display: "inline-flex",
