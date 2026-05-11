@@ -437,7 +437,17 @@ const SiteFooter = ({
     display: "flex",
     gap: 24
   }
-}, /*#__PURE__*/React.createElement(OpsLine, null, "PRIVACY"), /*#__PURE__*/React.createElement(OpsLine, null, "TERMS"), /*#__PURE__*/React.createElement(OpsLine, {
+}, /*#__PURE__*/React.createElement("a", {
+  href: "/privacy",
+  style: {
+    textDecoration: "none"
+  }
+}, /*#__PURE__*/React.createElement(OpsLine, null, "PRIVACY")), /*#__PURE__*/React.createElement("a", {
+  href: "/privacy",
+  style: {
+    textDecoration: "none"
+  }
+}, /*#__PURE__*/React.createElement(OpsLine, null, "TERMS")), /*#__PURE__*/React.createElement(OpsLine, {
   glow: true
 }, "\u2605 IGNITEPRODUCTIONS.CO")))));
 Object.assign(window, {
