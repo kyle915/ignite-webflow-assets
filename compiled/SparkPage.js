@@ -742,7 +742,11 @@ const SparkMobile = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1,
     color: "var(--fg-1-inv)"
   }
-}, "Ambassadors clock in", /*#__PURE__*/React.createElement("br", null), "from the actual venue."), /*#__PURE__*/React.createElement("p", {
+}, /*#__PURE__*/React.createElement("span", {
+  style: {
+    whiteSpace: "nowrap"
+  }
+}, "Ambassadors clock in"), /*#__PURE__*/React.createElement("br", null), "from the actual venue."), /*#__PURE__*/React.createElement("p", {
   style: {
     marginTop: 24,
     fontSize: 17,
