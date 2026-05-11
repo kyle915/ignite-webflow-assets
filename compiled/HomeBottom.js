@@ -474,10 +474,10 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(AccentBtn, {
   size: "lg",
-  onClick: () => location.href = "pages/contact.html"
+  onClick: () => location.href = "https://www.igniteproductions.co/contact?urgent=1"
 }, "Request a quote"), /*#__PURE__*/React.createElement(GhostBtn, {
   size: "lg",
-  onClick: () => location.href = "pages/contact.html?urgent=1",
+  onClick: () => location.href = "https://www.igniteproductions.co/contact?urgent=1",
   icon: /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-mono)",
@@ -485,7 +485,7 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
     }
   }, "\u25CF")
 }, "Request staff now"), /*#__PURE__*/React.createElement("a", {
-  href: "pages/spark.html",
+  href: "https://www.igniteproductions.co/spark",
   style: {
     marginLeft: 8,
     display: "inline-flex",
