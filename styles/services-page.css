@@ -174,9 +174,8 @@ body { margin: 0; background: #0A0A0A; }
 
 /* ---- Index nav ---- */
 .va-index {
-  position: sticky; top: 0; z-index: 10;
+  position: relative; z-index: 1;
   background: rgba(10,10,10,0.85);
-  backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--ig-line);
 }
 .va-index-row {
