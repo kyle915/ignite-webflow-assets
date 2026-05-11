@@ -401,7 +401,7 @@ const SiteFooter = ({
   },
   onMouseEnter: e => e.currentTarget.style.color = "var(--spark-500)",
   onMouseLeave: e => e.currentTarget.style.color = "var(--fg-2)"
-}, s.label))))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Contact", "/contact"], ["Spark Platform", "/spark"], ["Fractional", "/fractional"]]], ["TALENT", [["Apply", "/contact?role=ambassador"], ["LinkedIn", "https://www.linkedin.com/company/ignite-productionsllc"], ["Press", "#"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
+}, s.label))))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Contact", "/contact"], ["Spark Platform", "/spark"], ["Fractional", "/fractional"]]], ["TALENT", [["LinkedIn", "https://www.linkedin.com/company/ignite-productionsllc"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
   key: h
 }, /*#__PURE__*/React.createElement(OpsLine, null, ">> " + h), /*#__PURE__*/React.createElement("ul", {
   style: {
