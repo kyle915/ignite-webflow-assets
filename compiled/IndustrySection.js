@@ -708,13 +708,21 @@ const IndustryFaqs = ({
   const [open, setOpen] = React.useState(0);
   if (faqs.length === 0) return null;
   return /*#__PURE__*/React.createElement("section", {
+    className: "ind-faq",
     style: {
       padding: "120px 0",
       background: "var(--paper-000)",
       color: "var(--fg-1-inv)",
       borderTop: "1px solid var(--paper-200)"
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("style", null, `
+        .ind-faq h2,
+        .ind-faq .ind-faq-title { color: #0A0B0D !important; }
+        .ind-faq h2 .ind-faq-accent { color: ${ind.accent} !important; }
+        .ind-faq button { color: #0A0B0D !important; }
+        .ind-faq .ind-faq-q { color: #0A0B0D !important; }
+        .ind-faq .ind-faq-a { color: #2A2D33 !important; }
+      `), /*#__PURE__*/React.createElement("div", {
     style: {
       maxWidth: 1280,
       margin: "0 auto",
@@ -736,15 +744,18 @@ const IndustryFaqs = ({
       color: ind.accent
     }
   }, ">> ", ind.short.toUpperCase(), " \xB7 FAQ"), /*#__PURE__*/React.createElement("h2", {
+    className: "ind-faq-title",
     style: {
       marginTop: 14,
       fontFamily: "var(--font-display)",
       fontWeight: 800,
       fontSize: "clamp(38px, 4.6vw, 64px)",
       letterSpacing: "-0.03em",
-      lineHeight: 0.96
+      lineHeight: 0.96,
+      color: "#0A0B0D"
     }
   }, "The questions", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    className: "ind-faq-accent",
     style: {
       fontStyle: "italic",
       color: ind.accent
@@ -1253,7 +1264,7 @@ const IndustrySparkCallout = ({
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: window.__resources?.r_assets_spark_logo_full_png || "https://kyle915.github.io/ignite-webflow-https://kyle915.github.io/ignite-webflow-assets/assets/assets/spark-logo-full.png",
+    src: window.__resources?.r_assets_spark_logo_full_png || "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png",
     alt: "Spark by Ignite",
     style: {
       height: 36,
