@@ -121,16 +121,20 @@ const SiteNav = ({
     style: {
       display: "inline-flex",
       alignItems: "center",
-      gap: 12
+      gap: 12,
+      flexShrink: 0
     }
   }, /*#__PURE__*/React.createElement("img", {
     src: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
     alt: "Ignite",
+    width: "78",
     height: "22",
     style: {
       height: 22,
-      width: "auto",
-      display: "block"
+      width: 78,
+      display: "block",
+      flexShrink: 0,
+      maxWidth: "none"
     }
   })), /*#__PURE__*/React.createElement("nav", {
     style: {
