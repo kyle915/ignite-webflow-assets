@@ -124,7 +124,7 @@ const SiteNav = ({
       gap: 12
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: rel + (window.__resources?.r_assets_ignite_typemark_white_png || "assets/ignite-typemark-white.png"),
+    src: window.__resources?.r_assets_ignite_typemark_white_png || (rel ? rel + "assets/ignite-typemark-white.png" : "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png"),
     alt: "Ignite",
     height: "22",
     style: {
@@ -161,6 +161,7 @@ const SiteNav = ({
         display: "inline-flex",
         alignItems: "center",
         gap: 6,
+        whiteSpace: "nowrap",
         transition: "color 160ms var(--ease-out)"
       },
       onMouseEnter: e => !isActive && (e.currentTarget.style.color = "var(--fg-1)"),
@@ -335,7 +336,7 @@ const SiteFooter = ({
     marginBottom: 60
   }
 }, /*#__PURE__*/React.createElement("img", {
-  src: rel + (window.__resources?.r_assets_ignite_typemark_outline_webp || "assets/ignite-typemark-outline.webp"),
+  src: window.__resources?.r_assets_ignite_typemark_outline_webp || (rel ? rel + "assets/ignite-typemark-outline.webp" : "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-outline.webp"),
   alt: "IGNITE",
   style: {
     width: "100%",
