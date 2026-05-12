@@ -517,8 +517,8 @@ const SiteFooter = ({
 }, ".")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
-    gridTemplateColumns: "1.6fr 2fr 1fr 1fr",
-    gap: 40,
+    gridTemplateColumns: "1.4fr 1.8fr 1fr 1fr 1fr",
+    gap: 36,
     marginBottom: 72
   }
 }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(OpsLine, null, ">> ", "HEADQUARTERS"), /*#__PURE__*/React.createElement("p", {
@@ -570,7 +570,7 @@ const SiteFooter = ({
   },
   onMouseEnter: e => e.currentTarget.style.color = "var(--spark-500)",
   onMouseLeave: e => e.currentTarget.style.color = "var(--fg-2)"
-}, s.label))))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Contact", "/contact"], ["Spark Platform", "/spark"], ["Fractional", "/fractional"]]], ["TALENT", [["LinkedIn", "https://www.linkedin.com/company/ignite-productionsllc"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
+}, s.label))))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Contact", "/contact"], ["Spark Platform", "/spark"], ["Fractional", "/fractional"]]], ["RESOURCES", [["Industries", "/industries"], ["Markets", "/markets"], ["Topic Pillars", "/topics"], ["Glossary", "/glossary"], ["Blog", "/blog"]]], ["TALENT", [["LinkedIn", "https://www.linkedin.com/company/ignite-productionsllc"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
   key: h
 }, /*#__PURE__*/React.createElement(OpsLine, null, ">> " + h), /*#__PURE__*/React.createElement("ul", {
   style: {
