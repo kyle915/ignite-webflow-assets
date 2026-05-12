@@ -215,6 +215,93 @@
     });
   }
 
+  /* Lat/long lookup for 28 priority metros — drives Google local pack signal. */
+  var CITY_GEO = {
+    "new-york":[40.7128,-74.0060],"los-angeles":[34.0522,-118.2437],"chicago":[41.8781,-87.6298],
+    "dallas":[32.7767,-96.7970],"houston":[29.7604,-95.3698],"miami":[25.7617,-80.1918],
+    "atlanta":[33.7490,-84.3880],"boston":[42.3601,-71.0589],"san-francisco":[37.7749,-122.4194],
+    "seattle":[47.6062,-122.3321],"denver":[39.7392,-104.9903],"austin":[30.2672,-97.7431],
+    "phoenix":[33.4484,-112.0740],"las-vegas":[36.1699,-115.1398],"philadelphia":[39.9526,-75.1652],
+    "washington-dc":[38.9072,-77.0369],"san-diego":[32.7157,-117.1611],"detroit":[42.3314,-83.0458],
+    "minneapolis":[44.9778,-93.2650],"nashville":[36.1627,-86.7816],"portland":[45.5152,-122.6784],
+    "reno":[39.5296,-119.8138],"new-orleans":[29.9511,-90.0715],"orlando":[28.5383,-81.3792],
+    "tampa":[27.9506,-82.4572],"san-antonio":[29.4241,-98.4936],"charlotte":[35.2271,-80.8431],
+    "indianapolis":[39.7684,-86.1581],"cleveland":[41.4993,-81.6944],"kansas-city":[39.0997,-94.5786]
+  };
+  function injectLd(obj, id) {
+    var sel = 'script[type="application/ld+json"][data-city="' + id + '"]';
+    var s = document.querySelector(sel);
+    if (!s) {
+      s = document.createElement("script");
+      s.type = "application/ld+json";
+      s.setAttribute("data-city", id);
+      document.head.appendChild(s);
+    }
+    s.text = JSON.stringify(obj);
+  }
+  function injectCitySchema(city, slug) {
+    var cityUrl = "https://igniteproductions.co/cities/" + slug;
+    /* BreadcrumbList */
+    injectLd({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://igniteproductions.co/" },
+        { "@type": "ListItem", "position": 2, "name": "Markets", "item": "https://igniteproductions.co/markets" },
+        { "@type": "ListItem", "position": 3, "name": city.name, "item": cityUrl }
+      ]
+    }, "crumbs");
+    /* LocalBusiness — geo-pinned for major metros */
+    var geo = CITY_GEO[slug];
+    if (geo) {
+      var lb = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Ignite Productions — " + city.name,
+        "description": "Brand activation, event staffing, product sampling, mobile tours, and trade-show programs in " + city.name + ".",
+        "url": cityUrl,
+        "image": "https://igniteproductions.co/assets/ignite-full-white.png",
+        "telephone": "+1-775-406-0435",
+        "priceRange": "$$$",
+        "areaServed": { "@type": "City", "name": city.name },
+        "geo": { "@type": "GeoCoordinates", "latitude": geo[0], "longitude": geo[1] },
+        "parentOrganization": { "@type": "Organization", "name": "Ignite Productions", "url": "https://igniteproductions.co/" }
+      };
+      if (city.state) {
+        lb.areaServed.containedInPlace = { "@type": "AdministrativeArea", "name": city.state };
+      }
+      injectLd(lb, "localbiz");
+    }
+    /* Service — one Service node covering the offering in this city */
+    var svc = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Brand activation, event staffing, and experiential marketing",
+      "provider": { "@type": "Organization", "name": "Ignite Productions", "url": "https://igniteproductions.co/" },
+      "areaServed": { "@type": "City", "name": city.name },
+      "url": cityUrl,
+      "description": "Event staffing, product sampling, experiential marketing, mobile tours, fabrication, and trade-show programs in " + city.name + ".",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services in " + city.name,
+        "itemListElement": ["Event staffing","Product sampling","Experiential marketing","Mobile tours","Fabrication & builds","Trade-show programs","Promotional products"].map(function(n){
+          return { "@type": "Offer", "itemOffered": { "@type": "Service", "name": n } };
+        })
+      }
+    };
+    if (city.state) svc.areaServed.containedInPlace = { "@type": "AdministrativeArea", "name": city.state };
+    injectLd(svc, "service");
+    /* FAQPage — only if the city has real FAQs */
+    var faqs = (city.faqs || []).filter(function(f){ return f && f.q && f.a; });
+    if (faqs.length) {
+      injectLd({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(function(f){ return { "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }; })
+      }, "faq");
+    }
+  }
+
   function start() {
     window.__cityRunnerStage = "start";
     if (!isCityPage()) { window.__cityRunnerStage = "not-city-page"; return; }
@@ -262,6 +349,7 @@
         console.warn("[city-runner] CMS record missing name:", slug);
         return;
       }
+      injectCitySchema(city, slug);
       var root = document.getElementById("city-seo-root");
       if (!root) return console.error("[city-runner] no #city-seo-root in DOM");
       if (root.dataset.mounted === "1") return;
