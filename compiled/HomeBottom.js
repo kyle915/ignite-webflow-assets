@@ -33,13 +33,17 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
     borderTop: "1px solid var(--paper-200)"
   }
 }, /*#__PURE__*/React.createElement("style", null, `
-      .home-case-tile h3,
-      .home-case-tile .home-case-tile-title { color: #fff !important; }
-      .home-case-tile .home-case-tile-stat-num { color: #FFB627 !important; }
-      .home-case-tile .home-case-tile-stat-lbl,
-      .home-case-tile .home-case-tile-meta { color: #fff !important; opacity: 0.85; }
-      .home-case-tile .home-case-tile-cta { color: #FFB627 !important; }
-      .home-case-tile .home-case-tile-brand { color: #FFB627 !important; }
+      .home-case-section .home-case-tile h3,
+      .home-case-section .home-case-tile .home-case-tile-title,
+      section.home-case-section .home-case-tile h3 {
+        color: #ffffff !important;
+        text-shadow: 0 2px 24px rgba(0,0,0,0.85), 0 0 6px rgba(0,0,0,0.7) !important;
+      }
+      .home-case-section .home-case-tile .home-case-tile-stat-num { color: #FFB627 !important; }
+      .home-case-section .home-case-tile .home-case-tile-stat-lbl,
+      .home-case-section .home-case-tile .home-case-tile-meta { color: #ffffff !important; opacity: 0.9 !important; }
+      .home-case-section .home-case-tile .home-case-tile-cta { color: #FFB627 !important; }
+      .home-case-section .home-case-tile .home-case-tile-brand { color: #FFB627 !important; }
     `), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
   style: {
     display: "flex",
