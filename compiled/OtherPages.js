@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.WorkPage) return;
 /* Fractional, Work, About, Contact page components */
 const {
   useState: fpState
@@ -15,7 +16,7 @@ const FractionalHero = () => /*#__PURE__*/React.createElement("section", {
   size: 48,
   opacity: 0.04
 }), /*#__PURE__*/React.createElement("img", {
-  src: window.__resources?.r_assets_chrome_flow_vertical_png || "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-flow-vertical.png",
+  src: window.__resources?.r_assets_chrome_flow_vertical_png || "assets/chrome-flow-vertical.png",
   alt: "",
   "aria-hidden": "true",
   style: {
@@ -341,7 +342,13 @@ const WorkGrid = () => /*#__PURE__*/React.createElement("section", {
   style: {
     padding: "80px 0 120px"
   }
-}, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+}, /*#__PURE__*/React.createElement("style", null, `
+      .work-grid-tile h3,
+      .work-grid-tile .work-grid-tile-title { color: #fff !important; }
+      .work-grid-tile .work-grid-tile-meta { color: #fff !important; opacity: 0.85; }
+      .work-grid-tile .work-grid-tile-stat-num { color: #FFB627 !important; }
+      .work-grid-tile .work-grid-tile-brand { color: #FFB627 !important; }
+    `), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
@@ -351,6 +358,7 @@ const WorkGrid = () => /*#__PURE__*/React.createElement("section", {
   key: c.slug,
   id: c.slug,
   href: "/work#" + c.slug,
+  className: "work-grid-tile",
   style: {
     position: "relative",
     display: "block",
@@ -422,6 +430,7 @@ const WorkGrid = () => /*#__PURE__*/React.createElement("section", {
     opacity: 0.8
   }
 }, c.category)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  className: "work-grid-tile-brand",
   style: {
     fontFamily: "var(--font-stencil)",
     fontSize: 14,
@@ -430,13 +439,15 @@ const WorkGrid = () => /*#__PURE__*/React.createElement("section", {
     marginBottom: 14
   }
 }, c.brand), /*#__PURE__*/React.createElement("h3", {
+  className: "work-grid-tile-title",
   style: {
     fontFamily: "var(--font-display)",
     fontWeight: 700,
     fontSize: 34,
     letterSpacing: "-0.02em",
     lineHeight: 1.05,
-    marginBottom: 20
+    marginBottom: 20,
+    color: "#fff"
   }
 }, c.tagline), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -834,3 +845,4 @@ Object.assign(window, {
   AboutValues,
   ContactForm
 });
+})();

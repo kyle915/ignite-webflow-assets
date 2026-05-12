@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.WorkPageFull) return;
 /* Our Work — case studies index. Editorial bento + imagery-driven. */
 
 const {
@@ -44,6 +45,10 @@ if (typeof document !== "undefined" && !document.getElementById("wk-kf")) {
 
     .wk-chip { transition: all 160ms ease; }
     .wk-chip:hover { background: var(--ignite-500); color: #fff; border-color: var(--ignite-500); }
+
+    /* Webflow has a global h3 color rule that beats inline styles — re-assert white inside dark case cards. */
+    .wk-card h3 { color: #fff !important; }
+    .wk-card .wk-card-h3 { color: #fff !important; }
   `;
   document.head.appendChild(_wk);
 }
@@ -1630,3 +1635,4 @@ Object.assign(window, {
   WORK_CASES,
   WORK_BRAND_LOGOS
 });
+})();
