@@ -314,9 +314,162 @@ const SiteNav = ({
     }
   }, s.sub)))))));
 };
+
+/* ---------- Sticky bottom-right quote CTA — global, every public page ---------- */
+const StickyQuoteCTA = () => {
+  const [shown, setShown] = React.useState(false);
+  const [dismissed, setDismissed] = React.useState(() => {
+    try {
+      return typeof window !== "undefined" && localStorage.getItem("ig_quote_dismissed") === "1";
+    } catch (e) {
+      return false;
+    }
+  });
+  React.useEffect(() => {
+    if (dismissed) return;
+    const onScroll = () => setShown(window.scrollY > 600);
+    onScroll();
+    window.addEventListener("scroll", onScroll, {
+      passive: true
+    });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [dismissed]);
+  if (dismissed || !shown) return null;
+  const track = name => {
+    try {
+      if (window.dataLayer) window.dataLayer.push({
+        event: name
+      });else if (window.gtag) window.gtag("event", name);else if (window.analytics && window.analytics.track) window.analytics.track(name);
+    } catch (e) {}
+  };
+  const onCtaClick = () => track("cta_sticky_brief_clicked");
+  const onDismiss = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      localStorage.setItem("ig_quote_dismissed", "1");
+    } catch (err) {}
+    setDismissed(true);
+    track("cta_sticky_dismissed");
+  };
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", null, `
+        @keyframes ig-sticky-in { from { opacity: 0; transform: translateY(20px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes ig-sticky-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.7); } }
+        .ig-sticky-cta { animation: ig-sticky-in 400ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+        .ig-sticky-cta__dot { animation: ig-sticky-pulse 1.8s ease-in-out infinite; }
+        .ig-sticky-cta__brief:focus-visible,
+        .ig-sticky-cta__dismiss:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+        .ig-sticky-cta__dismiss:hover { color: #fff !important; background: rgba(255,90,31,0.12) !important; }
+        @media (max-width: 720px) { .ig-sticky-cta-wrap { display: none !important; } }
+        @media (prefers-reduced-motion: reduce) {
+          .ig-sticky-cta, .ig-sticky-cta__dot { animation: none !important; }
+        }
+      `), /*#__PURE__*/React.createElement("div", {
+    className: "ig-sticky-cta-wrap",
+    style: {
+      position: "fixed",
+      bottom: 22,
+      right: 22,
+      zIndex: 90
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ig-sticky-cta",
+    style: {
+      display: "inline-flex",
+      alignItems: "stretch",
+      background: "rgba(10,11,13,0.78)",
+      backdropFilter: "blur(10px)",
+      WebkitBackdropFilter: "blur(10px)",
+      border: "1px solid rgba(255,90,31,0.45)",
+      borderRadius: 999,
+      overflow: "hidden",
+      boxShadow: "0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,90,31,0.15), 0 0 48px rgba(255,90,31,0.18)"
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "ig-sticky-cta__brief",
+    href: "/contact",
+    onClick: onCtaClick,
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 12,
+      padding: "12px 18px",
+      background: "linear-gradient(90deg, #FF5A1F 0%, #FF7A3F 100%)",
+      color: "#0A0B0D",
+      textDecoration: "none"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true",
+    className: "ig-sticky-cta__dot",
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: "50%",
+      background: "#0A0B0D",
+      boxShadow: "0 0 0 2px rgba(0,0,0,0.18)"
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 10,
+      fontWeight: 700,
+      letterSpacing: "0.22em",
+      textTransform: "uppercase",
+      color: "#0A0B0D"
+    }
+  }, "48-HR QUOTE"), /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true",
+    style: {
+      width: 1,
+      alignSelf: "stretch",
+      background: "rgba(0,0,0,0.25)"
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-body)",
+      fontWeight: 700,
+      fontSize: 14,
+      color: "#0A0B0D"
+    }
+  }, "Brief us"), /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true",
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 14,
+      fontWeight: 700,
+      color: "#0A0B0D"
+    }
+  }, "\u2192")), /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true",
+    style: {
+      width: 1,
+      alignSelf: "stretch",
+      background: "rgba(255,90,31,0.35)"
+    }
+  }), /*#__PURE__*/React.createElement("button", {
+    className: "ig-sticky-cta__dismiss",
+    type: "button",
+    "aria-label": "Dismiss",
+    onClick: onDismiss,
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "0 14px",
+      background: "transparent",
+      border: "none",
+      color: "rgba(255,255,255,0.55)",
+      cursor: "pointer",
+      fontFamily: "var(--font-mono)",
+      fontSize: 16,
+      lineHeight: 1,
+      transition: "color 160ms, background 160ms"
+    }
+  }, "\xD7"))));
+};
 const SiteFooter = ({
   rel = ""
-}) => /*#__PURE__*/React.createElement("footer", {
+}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("footer", {
   style: {
     background: "var(--ink-000)",
     color: "var(--fg-1)",
@@ -466,10 +619,11 @@ const SiteFooter = ({
   }
 }, /*#__PURE__*/React.createElement(OpsLine, null, "ACCESSIBILITY")), /*#__PURE__*/React.createElement(OpsLine, {
   glow: true
-}, "\u2605 IGNITEPRODUCTIONS.CO")))));
+}, "\u2605 IGNITEPRODUCTIONS.CO"))))), /*#__PURE__*/React.createElement(StickyQuoteCTA, null));
 Object.assign(window, {
   SiteNav,
   SiteFooter,
-  SITE_SERVICES
+  SITE_SERVICES,
+  StickyQuoteCTA
 });
 })();
