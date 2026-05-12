@@ -376,13 +376,18 @@ const IndustriesHub = () => {
       color: "var(--fg-3)"
     }
   }, c.lab)))))))), /*#__PURE__*/React.createElement("section", {
+    className: "ih-cv-faq",
     style: {
       padding: "120px 0",
       background: "var(--paper-000)",
       color: "var(--fg-1-inv)",
       borderTop: "1px solid var(--paper-200)"
     }
-  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("style", null, `
+          .ih-cv-faq h2,
+          .ih-cv-faq .ih-cv-faq-title { color: #0A0B0D !important; }
+          .ih-cv-faq h2 .ih-cv-faq-accent { color: #FF5A1F !important; }
+        `), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
       gridTemplateColumns: "1fr 1.5fr",
@@ -398,15 +403,18 @@ const IndustriesHub = () => {
       color: "var(--ignite-500)"
     }
   }, ">> ", "CROSS-VERTICAL FAQ"), /*#__PURE__*/React.createElement("h2", {
+    className: "ih-cv-faq-title",
     style: {
       marginTop: 14,
       fontFamily: "var(--font-display)",
       fontWeight: 800,
       fontSize: "clamp(38px, 4.6vw, 64px)",
       letterSpacing: "-0.03em",
-      lineHeight: 0.96
+      lineHeight: 0.96,
+      color: "#0A0B0D"
     }
   }, "Questions when your", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    className: "ih-cv-faq-accent",
     style: {
       fontStyle: "italic",
       color: "var(--ignite-500)"
