@@ -185,11 +185,15 @@ const SiteNav = ({
     style: {
       display: "flex",
       gap: 10,
-      alignItems: "center"
+      alignItems: "center",
+      whiteSpace: "nowrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
     href: rel + "/contact",
-    className: "link-mono"
+    className: "link-mono",
+    style: {
+      whiteSpace: "nowrap"
+    }
   }, "Request a quote"), /*#__PURE__*/React.createElement(AccentBtn, {
     size: "sm",
     onClick: () => location.href = "/contact?urgent=1"
