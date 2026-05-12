@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.CaseStudyCarousel) return;
 /* Featured case studies carousel + Core Difference + CTA footer */
 const FEATURED_CASES = [{
   brand: "LIQUID DEATH",
@@ -26,12 +27,20 @@ const FEATURED_CASES = [{
   imgPos: "center"
 }];
 const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
-  className: "paper",
+  className: "paper home-case-section",
   style: {
     padding: "120px 0",
     borderTop: "1px solid var(--paper-200)"
   }
-}, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+}, /*#__PURE__*/React.createElement("style", null, `
+      .home-case-tile h3,
+      .home-case-tile .home-case-tile-title { color: #fff !important; }
+      .home-case-tile .home-case-tile-stat-num { color: #FFB627 !important; }
+      .home-case-tile .home-case-tile-stat-lbl,
+      .home-case-tile .home-case-tile-meta { color: #fff !important; opacity: 0.85; }
+      .home-case-tile .home-case-tile-cta { color: #FFB627 !important; }
+      .home-case-tile .home-case-tile-brand { color: #FFB627 !important; }
+    `), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
   style: {
     display: "flex",
     justifyContent: "space-between",
@@ -79,6 +88,7 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
 }, FEATURED_CASES.map((c, i) => /*#__PURE__*/React.createElement("a", {
   key: c.slug,
   href: "pages/work.html#" + c.slug,
+  className: "home-case-tile",
   style: {
     position: "relative",
     display: "block",
@@ -162,6 +172,7 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
     marginBottom: 14
   }
 }, c.brand), /*#__PURE__*/React.createElement("h3", {
+  className: "home-case-tile-title",
   style: {
     fontFamily: "var(--font-display)",
     fontWeight: 700,
@@ -429,7 +440,7 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
     borderTop: "1px solid var(--ink-400)"
   }
 }, /*#__PURE__*/React.createElement("img", {
-  src: window.__resources?.r_assets_chrome_blob_large_png || "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-blob-large.png",
+  src: window.__resources?.r_assets_chrome_blob_large_png || "assets/chrome-blob-large.png",
   alt: "",
   "aria-hidden": "true",
   style: {
@@ -504,3 +515,4 @@ Object.assign(window, {
   HomeTestimonial,
   FinalCTA
 });
+})();
