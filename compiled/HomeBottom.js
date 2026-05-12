@@ -440,7 +440,7 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
     borderTop: "1px solid var(--ink-400)"
   }
 }, /*#__PURE__*/React.createElement("img", {
-  src: window.__resources?.r_assets_chrome_blob_large_png || "assets/chrome-blob-large.png",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-blob-large.png",
   alt: "",
   "aria-hidden": "true",
   style: {

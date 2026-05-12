@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.SparkShowcase) return;
 /* Live Spark dashboard moment — dark, the "wow" section */
 const {
   useState: shState,
@@ -479,7 +480,7 @@ const SparkShowcase = () => {
     size: 48,
     opacity: 0.04
   }), /*#__PURE__*/React.createElement("img", {
-    src: window.__resources?.r_assets_chrome_blob_medium_png || "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-blob-medium.png",
+    src: "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-blob-medium.png",
     alt: "",
     "aria-hidden": "true",
     style: {
@@ -783,3 +784,4 @@ Object.assign(window, {
   BarChart,
   ActivityRows
 });
+})();

@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.ServicesAllPage) return;
 /* Ignite Services — bold, SEO-driven services page covering all 7 lanes.
 
    Composed from: SiteNav, SiteFooter, ServicesData (SERVICES_DATA),
@@ -104,7 +105,7 @@ const SVC_LANES = [{
   sub: "Brand activations, festival footprints, immersive installations.",
   long: "Festival activations, pop-ups, brand activations, immersive installations, campus tours. We design the moment, build the set, staff the floor, and capture the metric — start to recap.",
   bullets: ["Festival Activations", "Pop-Ups", "Brand Activations", "Immersive Installations", "Campus Tours", "Mall & Lifestyle Centers"],
-  img: window.__resources?.r_assets_experiential_liquiddeath_nascar_jpg || "https://kyle915.github.io/ignite-webflow-assets/assets/experiential-liquiddeath-nascar.jpg",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/experiential-liquiddeath-nascar.jpg",
   imgPos: "center 40%",
   meta: ["48 markets / yr", "350+ activations", "12 yrs running"]
 }, {
@@ -150,7 +151,7 @@ const SVC_LANES = [{
   sub: "GPS-verified counts, retail demos, street + event sampling.",
   long: "Reportable sampling — every can, taste, and conversion tied to a place and a person. Power by Spark, our field-marketing dashboard, so you see numbers the same day.",
   bullets: ["In-Store Sampling", "Retail Demo Programs", "Street Sampling", "Campus Sampling", "Festival Sampling", "GPS-Verified Counts"],
-  img: window.__resources?.r_assets_sampling_liquiddeath_petsmart_jpg || "https://kyle915.github.io/ignite-webflow-assets/assets/sampling-liquiddeath-petsmart.jpg",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/sampling-liquiddeath-petsmart.jpg",
   imgPos: "center 35%",
   meta: ["GPS-verified", "Same-day data", "Spark-powered"]
 }, {
@@ -161,7 +162,7 @@ const SVC_LANES = [{
   sub: "Booth staffing, lead capture, demos, full show management.",
   long: "Booth staffing, lead capture, on-stand demos, and full pre/at/post show management. The team that makes your booth the busiest one on the floor.",
   bullets: ["Booth Staffing", "Lead Capture", "Show Management", "Product Demos", "Speaker Support", "Hospitality Suites"],
-  img: window.__resources?.r_assets_pressreader_tradeshow_webp || "https://kyle915.github.io/ignite-webflow-assets/assets/pressreader-tradeshow.webp",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/pressreader-tradeshow.webp",
   imgPos: "center 35%",
   meta: ["CES · NAB · NRF", "Lead-cap integration", "On-stand demos"]
 }, {
@@ -960,7 +961,7 @@ const SvcLane = ({
       textAlign: "center"
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: window.__resources?.r_assets_spark_logo_full_png || "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png",
+    src: "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png",
     alt: "Spark",
     style: {
       maxWidth: "78%",
@@ -1230,3 +1231,4 @@ Object.assign(window, {
   ServicesAllPage,
   SVC_LANES
 });
+})();

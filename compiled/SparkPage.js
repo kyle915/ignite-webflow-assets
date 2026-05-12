@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.SparkPage) return;
 /* Spark product page — dark-dominant, with motion + pop */
 const {
   useState: spState,
@@ -177,7 +178,7 @@ const SparkHero = () => {
       animation: "sp-glow 6s ease-in-out infinite"
     }
   }), /*#__PURE__*/React.createElement("img", {
-    src: window.__resources?.r_assets_chrome_splash_png || "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-splash.png",
+    src: "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-splash.png",
     alt: "",
     "aria-hidden": "true",
     style: {
@@ -965,3 +966,4 @@ Object.assign(window, {
   SparkMobile,
   SparkTicker
 });
+})();

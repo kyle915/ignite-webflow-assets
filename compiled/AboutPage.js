@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.AboutPage) return;
 /* About Ignite — restructured: small core team, national-scale network */
 
 const {
@@ -55,61 +56,61 @@ const ABOUT_VALUES = [{
 const ABOUT_LEADERS = [{
   name: "Kyle Christiansen",
   role: "Founder · Senior Director",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-kyle.webp",
+  img: "assets/team-kyle.webp",
   resKey: "r_assets_team_kyle_webp",
   bio: "20+ years CPG marketing. Red Bull, 160over90, Amazon. Veteran. Built Ignite to do experiential the way operators actually want it run."
 }, {
   name: "Baesha",
   role: "Director, Experiential Sales",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-baesha.png",
+  img: "assets/team-baesha.png",
   resKey: "r_assets_team_baesha_png",
   bio: "Runs the experiential pipeline end-to-end — from scoping the brief to deploying the team in market."
 }, {
   name: "Junior",
   role: "Director of Sales",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-junior.png",
+  img: "assets/team-junior.png",
   resKey: "r_assets_team_junior_png",
   bio: "Owns CPG and retail accounts. The one your brand manager will know on a first-name basis."
 }, {
   name: "Sara",
   role: "Account Director",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-sara.webp",
+  img: "assets/team-sara.webp",
   resKey: "r_assets_team_sara_webp",
   bio: "Senior account oversight. Keeps the brief, the budget, and the brand all pointing the same direction."
 }, {
   name: "Taylor",
   role: "Creative Director",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-taylor.jpg",
+  img: "assets/team-taylor.jpg",
   resKey: "r_assets_team_taylor_jpg",
   bio: "Owns the look and feel of every activation — from booth concept to ambassador wardrobe to recap design."
 }, {
   name: "Keis",
   role: "Project Coordinator",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-keis.png",
+  img: "assets/team-keis.png",
   resKey: "r_assets_team_keis_png",
   bio: "The operational backbone. Schedules, staffing, logistics — the work that makes the work happen."
 }, {
   name: "Nena",
   role: "Data Analyst",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-nena.webp",
+  img: "assets/team-nena.webp",
   resKey: "r_assets_team_nena_webp",
   bio: "Turns raw activation data into the recap that wins next year's program. Lives in Spark."
 }, {
   name: "Brad",
   role: "Account Manager",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-brad.png",
+  img: "assets/team-brad.png",
   resKey: "r_assets_team_brad_png",
   bio: "Day-to-day account lead. Keeps activations on schedule, on budget, and on-brief from kickoff to recap."
 }, {
   name: "Myriant",
   role: "Sr. Account Coordinator",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-myriant.webp",
+  img: "assets/team-myriant.webp",
   resKey: "r_assets_team_myriant_webp",
   bio: "Coordinates the moving pieces — staffing, assets, vendors — so the field team can focus on the consumer."
 }, {
   name: "Madi",
   role: "Account & Activation Manager",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-madi.png",
+  img: "assets/team-madi.png",
   resKey: "r_assets_team_madi_png",
   bio: "Runs accounts and activations end to end — from kickoff brief through live execution on the ground."
 }];
@@ -1057,7 +1058,7 @@ const AboutFounder = () => /*#__PURE__*/React.createElement("section", {
     position: "relative"
   }
 }, /*#__PURE__*/React.createElement("img", {
-  src: window.__resources?.r_assets_team_kyle_webp || "https://kyle915.github.io/ignite-webflow-assets/assets/team-kyle.webp",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/team-kyle.webp",
   alt: "Kyle Christiansen, founder of Ignite Productions",
   loading: "lazy",
   style: {
@@ -1849,7 +1850,7 @@ const AboutCaseSpotlight = () => /*#__PURE__*/React.createElement("section", {
     background: "#0b0c0e"
   }
 }, /*#__PURE__*/React.createElement("img", {
-  src: window.__resources?.r_assets_sampling_liquiddeath_petsmart_jpg || "https://kyle915.github.io/ignite-webflow-assets/assets/sampling-liquiddeath-petsmart.jpg",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/sampling-liquiddeath-petsmart.jpg",
   alt: "Liquid Death sampling activation at PetSmart",
   loading: "lazy",
   style: {
@@ -2219,7 +2220,7 @@ const AboutVOSB = () => /*#__PURE__*/React.createElement("section", {
     animation: "abTextPulse 3.2s ease-in-out infinite"
   }
 }), /*#__PURE__*/React.createElement("img", {
-  src: window.__resources?.r_assets_vosb_logo_png || "https://kyle915.github.io/ignite-webflow-assets/assets/vosb-logo.png",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/vosb-logo.png",
   alt: "VOSB \u2014 Certified Veteran-Owned Small Business",
   width: "260",
   height: "260",
@@ -3023,7 +3024,7 @@ const AboutSpark = () => {
       marginBottom: 24
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: window.__resources?.r_assets_spark_logo_full_png || "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png",
+    src: "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png",
     alt: "Spark by Ignite \u2014 proprietary field marketing platform",
     style: {
       height: 42,
@@ -3634,3 +3635,4 @@ Object.assign(window, {
   ABOUT_CLIENT_LOGOS,
   ABOUT_KEY_MARKETS
 });
+})();

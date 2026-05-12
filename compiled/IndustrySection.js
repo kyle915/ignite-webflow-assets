@@ -1264,7 +1264,7 @@ const IndustrySparkCallout = ({
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: window.__resources?.r_assets_spark_logo_full_png || "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png",
+    src: "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png",
     alt: "Spark by Ignite",
     style: {
       height: 36,

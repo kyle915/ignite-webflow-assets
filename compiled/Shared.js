@@ -193,13 +193,13 @@ const __sparkAssetBase = (() => {
   // This site layout: root index.html + pages/*.html. Assets at /assets/.
   let prefix = "./";
   if (parts.includes("pages")) prefix = "../";
-  return prefix + "https://kyle915.github.io/ignite-webflow-assets/assets/";
+  return prefix + "assets/";
 })();
 const assetUrl = name => __sparkAssetBase + name;
 const SparkLogomark = ({
   size = 28
 }) => /*#__PURE__*/React.createElement("img", {
-  src: window.__resources?.r_assets_spark_logomark_pixel_png || "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logomark-pixel.png",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logomark-pixel.png",
   width: size,
   height: size,
   style: {
@@ -256,7 +256,7 @@ const IgniteWordmark = ({
   variant = "white",
   rel = ""
 }) => {
-  const src = variant === "black" ? window.__resources?.r_assets_ignite_typemark_black_png || "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-black.png" : window.__resources?.r_assets_ignite_typemark_white_png || "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png";
+  const src = variant === "black" ? "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-black.png" : "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png";
   return /*#__PURE__*/React.createElement("img", {
     src: rel + src,
     alt: "Ignite",
