@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.BLOG_POSTS) return;
 // Blog posts — SEO-targeted, expert-voiced.
 // Categories: Staffing · Strategy · Logistics · Measurement · Industry
 const BLOG_POSTS = [{
@@ -409,4 +408,3 @@ Object.assign(window, {
   BLOG_POSTS,
   BLOG_CATEGORIES
 });
-})();

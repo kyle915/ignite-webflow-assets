@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.StyleGuidePage) return;
 /* global React */
 const {
   useState
@@ -1227,4 +1226,3 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
 Object.assign(window, {
   StyleGuidePage
 });
-})();

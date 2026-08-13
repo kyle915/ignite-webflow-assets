@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.ClientMarquee) return;
 /* Marquee of REAL brand logos — pulled from the live site */
 const CLIENT_LOGOS = [{
   name: "Liquid Death",
@@ -434,4 +433,3 @@ Object.assign(window, {
   ClientMarquee,
   TwoEngines
 });
-})();

@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.ServicesGrid) return;
 /* Homepage services taxonomy — bold dark grid w/ photo backgrounds.
    Maps 1:1 to the 7-page service nav: each card → its dedicated page. */
 
@@ -462,4 +461,3 @@ Object.assign(window, {
   ServicesGrid,
   HOME_SERVICES
 });
-})();

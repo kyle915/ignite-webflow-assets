@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.ServicesIndexPage) return;
 /* Services index page — overview of all 7 lanes */
 
 const ServicesIndexHero = () => /*#__PURE__*/React.createElement("section", {
@@ -282,4 +281,3 @@ const ServicesIndexPage = () => /*#__PURE__*/React.createElement("div", {
 Object.assign(window, {
   ServicesIndexPage
 });
-})();

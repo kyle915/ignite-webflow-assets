@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.TweaksPanel) return;
 /* Tweaks panel + main App for the homepage */
 const {
   useState: taState,
@@ -241,4 +240,3 @@ const TweaksPanel = () => {
 Object.assign(window, {
   TweaksPanel
 });
-})();

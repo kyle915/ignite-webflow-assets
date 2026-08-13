@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.HomeSEOBand) return;
 /* global React */
 /* ============================================================
    HOME SEO BAND — capabilities, industries, markets, FAQ,
@@ -551,4 +550,3 @@ Object.assign(window, {
   SeoFaq,
   SeoLongform
 });
-})();

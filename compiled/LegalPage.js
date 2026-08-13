@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.LegalPage) return;
 /* Legal page (Privacy Policy / Terms of Service) — shared renderer.
    Data lives in window.LEGAL_DOCS keyed by "privacy" | "terms".
    ------------------------------------------------------------------ */
@@ -530,4 +529,3 @@ const LegalPage = ({
 Object.assign(window, {
   LegalPage
 });
-})();

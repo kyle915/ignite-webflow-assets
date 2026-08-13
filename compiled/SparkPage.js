@@ -519,7 +519,7 @@ const SparkDeepDash = () => {
       fontSize: "clamp(40px, 5vw, 72px)",
       letterSpacing: "-0.03em",
       lineHeight: 1,
-      maxWidth: 900
+      maxWidth: 1100
     }
   }, "The command center for", /*#__PURE__*/React.createElement("br", null), "every program you run.")), /*#__PURE__*/React.createElement("div", {
     ref: ref,

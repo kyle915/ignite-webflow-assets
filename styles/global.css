@@ -86,3 +86,23 @@ img { max-width: 100%; display: block; }
 /* paper (light) section body tweaks */
 .paper { background: var(--paper-000); color: var(--fg-1-inv); }
 .paper h1, .paper h2, .paper h3, .paper h4 { color: var(--fg-1-inv); }
+
+/* ============================================================
+   Webflow base-element reset
+   Webflow's own stylesheet styles bare element selectors, which beat
+   inheritance from our sections and fight the design:
+     h1..h6 / strong / label / a  -> forced colour (white headings on
+       light sections; e.g. the homepage capabilities headline)
+     blockquote -> dark background + large padding + border-left
+       (the homepage testimonial rendered as dark-on-dark)
+   `body <el>` is specificity 0,0,2 so it wins regardless of stylesheet
+   order, while the design's inline styles still take precedence.
+   ============================================================ */
+body h1, body h2, body h3, body h4, body h5, body h6,
+body strong, body b, body label, body a { color: inherit; }
+body blockquote {
+  background: transparent;
+  border-left: 0;
+  padding: 0;
+  color: inherit;
+}

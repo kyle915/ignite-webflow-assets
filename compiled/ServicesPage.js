@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.ServicesHero) return;
 /* Services page — sticky category navigator + rich panels */
 const {
   useState: svcState,
@@ -785,4 +784,3 @@ Object.assign(window, {
   ServicesStats,
   TwoWays
 });
-})();

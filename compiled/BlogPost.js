@@ -1,4 +1,3 @@
-(function(){
 // BlogPost — long-form article view, editorial typography
 
 const fmtDate2 = iso => {
@@ -558,4 +557,3 @@ function BlogPost() {
   }, "Start a brief \u2192")))), /*#__PURE__*/React.createElement(SiteFooter, null));
 }
 window.BlogPost = BlogPost;
-})();

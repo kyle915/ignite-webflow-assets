@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.SparkBeforeAfter) return;
 /* Spark page — extras: before/after, replaces strip, live toasts */
 const {
   useState: spxState,
@@ -853,4 +852,3 @@ Object.assign(window, {
   SparkReplaces,
   SparkToasts
 });
-})();

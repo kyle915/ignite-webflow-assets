@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.NotFound) return;
 /* 404 — cool, on-brand, auto-redirect with countdown */
 const {
   useState: nfUseState,
@@ -330,4 +329,3 @@ const NotFound = () => {
 Object.assign(window, {
   NotFound
 });
-})();

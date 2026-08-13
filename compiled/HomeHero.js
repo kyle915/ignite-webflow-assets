@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.HomeHero) return;
 /* Homepage hero — full-bleed video, big typographic spine */
 const {
   useState: hsState,
@@ -413,4 +412,3 @@ const HomeHero = () => {
 Object.assign(window, {
   HomeHero
 });
-})();

@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.EngagementSpectrum) return;
 /* global React */
 /* ============================================================
    ENGAGEMENT SPECTRUM — Option 1, bolder rev.
@@ -417,4 +416,3 @@ const EngagementSpectrum = () => {
 Object.assign(window, {
   EngagementSpectrum
 });
-})();

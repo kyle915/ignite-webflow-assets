@@ -193,7 +193,7 @@ const __sparkAssetBase = (() => {
   // This site layout: root index.html + pages/*.html. Assets at /assets/.
   let prefix = "./";
   if (parts.includes("pages")) prefix = "../";
-  return prefix + "https://kyle915.github.io/ignite-webflow-assets/assets/";
+  return "https://kyle915.github.io/ignite-webflow-assets/assets/";
 })();
 const assetUrl = name => __sparkAssetBase + name;
 const SparkLogomark = ({
@@ -216,7 +216,7 @@ const SparkLockup = ({
   size = 20,
   rel = ""
 }) => {
-  const src = window.__resources?.r_assets_spark_logo_full_png || rel + "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png";
+  const src = window.__resources?.r_assets_spark_logo_full_png || "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png";
   return /*#__PURE__*/React.createElement("img", {
     src: src,
     alt: "Spark by Ignite",

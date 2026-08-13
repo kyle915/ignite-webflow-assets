@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.ThankYou) return;
 /* Thank-you / confirmation page — simple, focused, one cool animation. */
 const {
   useState: useTyState,
@@ -241,4 +240,3 @@ const ThankYou = ({
 Object.assign(window, {
   ThankYou
 });
-})();

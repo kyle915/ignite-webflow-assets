@@ -1,4 +1,3 @@
-(function(){
 // BlogIndex — editorial magazine-style index for the Ignite blog
 // Dark ground · ignite-orange accents · Space Grotesk display · JetBrains mono labels
 
@@ -858,4 +857,3 @@ function BlogIndex() {
   }, "// 48-HOUR RESPONSE \xB7 ALL 50 STATES \xB7 NO RFP THEATER")))), /*#__PURE__*/React.createElement(SiteFooter, null));
 }
 window.BlogIndex = BlogIndex;
-})();

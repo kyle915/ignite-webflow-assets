@@ -437,7 +437,7 @@ const SiteNav = ({
       gap: 12
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: window.__resources?.r_assets_ignite_typemark_white_png || rel + "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
+    src: window.__resources?.r_assets_ignite_typemark_white_png || "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
     alt: "Ignite",
     height: "22",
     style: {
@@ -1035,7 +1035,7 @@ const SiteNav = ({
       alignItems: "center"
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: window.__resources?.r_assets_ignite_typemark_white_png || rel + "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
+    src: window.__resources?.r_assets_ignite_typemark_white_png || "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
     alt: "Ignite",
     height: "20",
     style: {
@@ -1247,7 +1247,7 @@ const SiteFooter = ({
     marginBottom: 60
   }
 }, /*#__PURE__*/React.createElement("img", {
-  src: window.__resources?.r_assets_ignite_typemark_outline_webp || rel + "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-outline.webp",
+  src: window.__resources?.r_assets_ignite_typemark_outline_webp || "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-outline.webp",
   alt: "IGNITE",
   style: {
     width: "100%",

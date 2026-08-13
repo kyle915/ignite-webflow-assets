@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.FractionalHero2) return;
 /* =========================================================================
    FRACTIONAL — service page (reworked)
    Source of truth: Ignite Fractional · Sales Sheet
@@ -2340,4 +2339,3 @@ Object.assign(window, {
   FractionalPainBanner,
   FractionalPrograms
 });
-})();

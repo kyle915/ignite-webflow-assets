@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.CaseStudyPage) return;
 /* Case Study detail template — driven by ?slug= query param */
 
 const {
@@ -1228,4 +1227,3 @@ const CaseStudyPage = () => {
 Object.assign(window, {
   CaseStudyPage
 });
-})();
