@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.CASE_STUDIES) return;
 /* Real case study content — captured from igniteproductions.co/portfolio/* live pages.
    Each entry feeds case-study.html (router off ?slug=). */
 
@@ -195,3 +196,4 @@ const CASE_STUDIES = {
 Object.assign(window, {
   CASE_STUDIES
 });
+})();

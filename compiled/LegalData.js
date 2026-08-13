@@ -1,3 +1,4 @@
+(function(){
 /* Data for Privacy Policy + Terms of Service pages.
    Source: Ignite Productions LLC legal documents, effective Feb 23, 2026.
    ----------------------------------------------------------------------- */
@@ -991,3 +992,4 @@ window.LEGAL_DOCS = {
     }]
   }
 };
+})();

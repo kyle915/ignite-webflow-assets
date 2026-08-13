@@ -55,61 +55,61 @@ const ABOUT_VALUES = [{
 const ABOUT_LEADERS = [{
   name: "Kyle Christiansen",
   role: "Founder · Senior Director",
-  img: "assets/team-kyle.webp",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-kyle.webp",
   resKey: "r_assets_team_kyle_webp",
   bio: "20+ years CPG marketing. Red Bull, 160over90, Amazon. Veteran. Built Ignite to do experiential the way operators actually want it run."
 }, {
   name: "Baesha",
   role: "Director, Experiential Sales",
-  img: "assets/team-baesha.png",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-baesha.png",
   resKey: "r_assets_team_baesha_png",
   bio: "Runs the experiential pipeline end-to-end — from scoping the brief to deploying the team in market."
 }, {
   name: "Junior",
   role: "Director of Sales",
-  img: "assets/team-junior.png",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-junior.png",
   resKey: "r_assets_team_junior_png",
   bio: "Owns CPG and retail accounts. The one your brand manager will know on a first-name basis."
 }, {
   name: "Sara",
   role: "Account Director",
-  img: "assets/team-sara.webp",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-sara.webp",
   resKey: "r_assets_team_sara_webp",
   bio: "Senior account oversight. Keeps the brief, the budget, and the brand all pointing the same direction."
 }, {
   name: "Taylor",
   role: "Creative Director",
-  img: "assets/team-taylor.jpg",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-taylor.jpg",
   resKey: "r_assets_team_taylor_jpg",
   bio: "Owns the look and feel of every activation — from booth concept to ambassador wardrobe to recap design."
 }, {
   name: "Keis",
   role: "Project Coordinator",
-  img: "assets/team-keis.png",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-keis.png",
   resKey: "r_assets_team_keis_png",
   bio: "The operational backbone. Schedules, staffing, logistics — the work that makes the work happen."
 }, {
   name: "Nena",
   role: "Data Analyst",
-  img: "assets/team-nena.webp",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-nena.webp",
   resKey: "r_assets_team_nena_webp",
   bio: "Turns raw activation data into the recap that wins next year's program. Lives in Spark."
 }, {
   name: "Brad",
   role: "Account Manager",
-  img: "assets/team-brad.png",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-brad.png",
   resKey: "r_assets_team_brad_png",
   bio: "Day-to-day account lead. Keeps activations on schedule, on budget, and on-brief from kickoff to recap."
 }, {
   name: "Myriant",
   role: "Sr. Account Coordinator",
-  img: "assets/team-myriant.webp",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-myriant.webp",
   resKey: "r_assets_team_myriant_webp",
   bio: "Coordinates the moving pieces — staffing, assets, vendors — so the field team can focus on the consumer."
 }, {
   name: "Harris",
   role: "Account & Activation Manager",
-  img: "assets/team-harris.webp",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-harris.webp",
   resKey: "r_assets_team_harris_webp",
   bio: "Runs accounts and activations end to end — from kickoff brief through live execution on the ground."
 }];
@@ -1137,7 +1137,7 @@ const AboutLeaders = () => /*#__PURE__*/React.createElement("section", {
   }
 }, ABOUT_LEADERS.map((m, i) => {
   const accent = i === 0 ? "var(--ignite-500)" : i % 3 === 1 ? "#FFB627" : i % 3 === 2 ? "#D6F35F" : "var(--ignite-500)";
-  const resolved = window.__resources && window.__resources[m.resKey] || "https://kyle915.github.io/ignite-webflow-assets/" + m.img;
+  const resolved = window.__resources && window.__resources[m.resKey] || m.img;
   return /*#__PURE__*/React.createElement("div", {
     key: m.name,
     style: {
@@ -2110,7 +2110,7 @@ const AboutCareers = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 480
   }
 }, "257,000 ambassadors and counting. Energetic, professional, ready to represent the brands you love. Fill in your info and we'll be in touch.")), /*#__PURE__*/React.createElement("a", {
-  href: "/careers/brand-ambassador",
+  href: "https://www.igniteproductions.co/careers/brand-ambassador",
   style: {
     display: "grid",
     gridTemplateColumns: "auto 1fr auto auto",

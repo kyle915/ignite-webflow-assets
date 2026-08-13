@@ -1,4 +1,4 @@
-(function(){if (typeof window !== "undefined" && window.OpsLine) return;
+(function(){if (typeof window !== "undefined" && window.Eyebrow) return;
 /*
  * Shared UI kit components — Ignite / Spark
  * Requires React 18, Babel. Exposes components on window.
@@ -65,8 +65,8 @@ const LivePill = ({
     width: 6,
     height: 6,
     borderRadius: 999,
-    background: "#FF4D4D",
-    boxShadow: "0 0 8px #FF4D4D",
+    background: "var(--live)",
+    boxShadow: "0 0 8px var(--live)",
     animation: "livepulse 1.2s infinite"
   }
 }), label);
@@ -87,7 +87,7 @@ const Btn = ({
     primary: {
       background: "var(--spark-500)",
       color: "#0A0B0D",
-      boxShadow: "0 0 0 1px rgba(214,243,95,0.3), 0 8px 32px rgba(214,243,95,0.22)"
+      boxShadow: "0 0 0 1px rgba(214, 243, 95, 0.15), 0 8px 32px rgba(214,243,95,0.22)"
     },
     ignite: {
       background: "var(--ignite-500)",
@@ -193,62 +193,43 @@ const __sparkAssetBase = (() => {
   // This site layout: root index.html + pages/*.html. Assets at /assets/.
   let prefix = "./";
   if (parts.includes("pages")) prefix = "../";
-  return prefix + "assets/";
+  return prefix + "https://kyle915.github.io/ignite-webflow-assets/assets/";
 })();
 const assetUrl = name => __sparkAssetBase + name;
 const SparkLogomark = ({
   size = 28
 }) => /*#__PURE__*/React.createElement("img", {
-  src: "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logomark-pixel.png",
+  src: window.__resources?.r_assets_spark_logomark_pixel_png || "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logomark-pixel.png",
   width: size,
   height: size,
   style: {
     imageRendering: "pixelated",
     display: "block"
   },
-  alt: ""
+  alt: "",
+  loading: "lazy",
+  decoding: "async"
 });
 
-/* Spark-by-Ignite wordmark lockup */
+/* Spark-by-Ignite wordmark lockup — uses the official full Spark logo image */
 const SparkLockup = ({
   size = 20,
   rel = ""
-}) => /*#__PURE__*/React.createElement("span", {
-  style: {
-    display: "inline-flex",
-    alignItems: "center",
-    gap: 10
-  }
-}, /*#__PURE__*/React.createElement(SparkLogomark, {
-  size: size + 8
-}), /*#__PURE__*/React.createElement("span", {
-  style: {
-    fontFamily: "var(--font-display)",
-    fontWeight: 700,
-    fontSize: size,
-    letterSpacing: "-0.02em",
-    display: "inline-flex",
-    alignItems: "center"
-  }
-}, /*#__PURE__*/React.createElement("span", {
-  style: {
-    color: "var(--spark-500)"
-  }
-}, "Spark"), /*#__PURE__*/React.createElement("span", {
-  style: {
-    fontFamily: "var(--font-mono)",
-    fontSize: size * 0.55,
-    fontWeight: 400,
-    letterSpacing: "0.18em",
-    color: "var(--fg-3)",
-    textTransform: "uppercase",
-    margin: "0 7px"
-  }
-}, "by"), /*#__PURE__*/React.createElement(IgniteWordmark, {
-  size: size * 0.95,
-  variant: "white",
-  rel: rel
-})));
+}) => {
+  const src = window.__resources?.r_assets_spark_logo_full_png || rel + "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png";
+  return /*#__PURE__*/React.createElement("img", {
+    src: src,
+    alt: "Spark by Ignite",
+    style: {
+      height: size * 1.8,
+      width: "auto",
+      display: "inline-block",
+      verticalAlign: "middle"
+    },
+    loading: "lazy",
+    decoding: "async"
+  });
+};
 
 /* Ignite wordmark, standalone — uses the official typemark image */
 const IgniteWordmark = ({
@@ -256,16 +237,21 @@ const IgniteWordmark = ({
   variant = "white",
   rel = ""
 }) => {
-  const src = variant === "black" ? "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-black.png" : "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png";
+  const key = variant === "black" ? "r_assets_ignite_typemark_black_png" : "r_assets_ignite_typemark_white_png";
+  const fallback = variant === "black" ? "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-black.png" : "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png";
+  const resolved = window.__resources?.[key];
+  const src = resolved ? resolved : rel + fallback;
   return /*#__PURE__*/React.createElement("img", {
-    src: rel + src,
+    src: src,
     alt: "Ignite",
     style: {
       height: size,
       width: "auto",
       display: "inline-block",
       verticalAlign: "middle"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   });
 };
 

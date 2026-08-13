@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.EngagementSpectrum) return;
 /* global React */
 /* ============================================================
    ENGAGEMENT SPECTRUM — Option 1, bolder rev.
@@ -22,9 +23,10 @@ const SPECTRUM_TIERS = [{
 }, {
   num: "02",
   tag: "PLUG US IN",
-  accent: "var(--ignite-500)",
-  accentBg: "var(--ignite-500)",
-  accentInk: "#fff",
+  accent: "var(--purple-500)",
+  accentBg: "var(--purple-500)",
+  accentInk: "#0b0905",
+  prism: true,
   title: "Embedded.",
   depth: "MEDIUM · FUNCTIONAL",
   sub: "A discipline-as-a-service — sponsorships, sales, marketing, OR key accounts.",
@@ -55,19 +57,11 @@ const EngagementSpectrum = () => {
     style: {
       background: "var(--ink-000)",
       color: "#fff",
-      padding: "140px 0",
+      padding: "96px 0",
       position: "relative",
       overflow: "hidden"
     }
   }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: "absolute",
-      inset: 0,
-      backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
-      backgroundSize: "48px 48px",
-      pointerEvents: "none"
-    }
-  }), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
       left: `${15 + active * 30}%`,
@@ -75,7 +69,7 @@ const EngagementSpectrum = () => {
       width: 600,
       height: 600,
       borderRadius: 999,
-      background: `radial-gradient(circle, ${t.accent === "var(--ignite-500)" ? "rgba(215, 69, 62,0.18)" : t.accent === "#FFB627" ? "rgba(255,182,39,0.14)" : "rgba(214,243,95,0.14)"}, transparent 70%)`,
+      background: "transparent",
       filter: "blur(60px)",
       transition: "left 600ms var(--ease-out)",
       pointerEvents: "none"
@@ -100,7 +94,7 @@ const EngagementSpectrum = () => {
   }, "Plug us in ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
-      color: "var(--ignite-500)"
+      color: "var(--purple-500)"
     }
   }, "deep"), ".", /*#__PURE__*/React.createElement("br", null), "Or call us in ", /*#__PURE__*/React.createElement("span", {
     style: {
@@ -118,7 +112,7 @@ const EngagementSpectrum = () => {
     }
   }, "Sponsorships, sales, marketing, key accounts, activations \u2014 at any depth, in any combination. Same operators. Same Spark dashboard. Different scope."), /*#__PURE__*/React.createElement("div", {
     style: {
-      marginTop: 64,
+      marginTop: 48,
       padding: "24px 32px",
       background: "rgba(255,255,255,0.03)",
       border: "1px solid rgba(255,255,255,0.08)",
@@ -147,105 +141,14 @@ const EngagementSpectrum = () => {
     }
   }, d)))), /*#__PURE__*/React.createElement("div", {
     style: {
-      marginTop: 56,
-      position: "relative"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: "grid",
-      gridTemplateColumns: "repeat(3, 1fr)",
-      gap: 6
-    }
-  }, SPECTRUM_TIERS.map((tier, i) => {
-    const isActive = active === i;
-    return /*#__PURE__*/React.createElement("button", {
-      key: tier.num,
-      onClick: () => setActive(i),
-      style: {
-        padding: "44px 36px",
-        textAlign: "left",
-        cursor: "pointer",
-        background: isActive ? tier.accentBg : "rgba(255,255,255,0.04)",
-        border: isActive ? `2px solid ${tier.accentBg}` : "2px solid rgba(255,255,255,0.08)",
-        borderRadius: 16,
-        color: isActive ? tier.accentInk : "var(--fg-2)",
-        transition: "all 320ms var(--ease-out)",
-        position: "relative",
-        minHeight: 260,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        fontFamily: "inherit"
-      }
-    }, /*#__PURE__*/React.createElement("div", {
-      style: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "flex-start"
-      }
-    }, /*#__PURE__*/React.createElement("span", {
-      style: {
-        fontFamily: "var(--font-stencil)",
-        fontSize: 80,
-        lineHeight: 0.85,
-        letterSpacing: "-0.02em",
-        color: isActive ? tier.accentInk : tier.accent,
-        opacity: isActive ? 1 : 0.55,
-        transition: "all 320ms"
-      }
-    }, tier.num), /*#__PURE__*/React.createElement("span", {
-      style: {
-        fontFamily: "var(--font-mono)",
-        fontSize: 11,
-        letterSpacing: "0.2em",
-        textTransform: "uppercase",
-        color: isActive ? "rgba(0,0,0,0.6)" : "var(--fg-3)",
-        writingMode: "vertical-rl",
-        transform: "rotate(180deg)"
-      }
-    }, tier.depth)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontFamily: "var(--font-stencil)",
-        fontSize: 14,
-        letterSpacing: "0.08em",
-        color: isActive ? "rgba(0,0,0,0.55)" : tier.accent,
-        marginBottom: 12
-      }
-    }, tier.tag), /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontFamily: "var(--font-display)",
-        fontWeight: 700,
-        fontSize: "clamp(36px, 4vw, 56px)",
-        letterSpacing: "-0.03em",
-        lineHeight: 0.95,
-        fontStyle: "italic"
-      }
-    }, tier.title)));
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 18,
-      display: "flex",
-      justifyContent: "space-between",
-      fontFamily: "var(--font-mono)",
-      fontSize: 11,
-      letterSpacing: "0.24em",
-      textTransform: "uppercase",
-      color: "var(--fg-3)"
-    }
-  }, /*#__PURE__*/React.createElement("span", null, "\u2190 LESS DEPTH"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: "var(--ignite-500)"
-    }
-  }, "\u2501\u2501\u2501\u2501 DEPTH OF ENGAGEMENT \u2501\u2501\u2501\u2501"), /*#__PURE__*/React.createElement("span", null, "MORE DEPTH \u2192"))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 40,
-      padding: "64px 56px",
+      marginTop: 48,
+      padding: "36px 40px",
       borderRadius: 24,
       background: "linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01))",
-      border: `2px solid ${t.accent === "var(--ignite-500)" ? "rgba(215, 69, 62,0.35)" : t.accent === "#FFB627" ? "rgba(255,182,39,0.3)" : "rgba(214,243,95,0.3)"}`,
-      display: "grid",
-      gridTemplateColumns: "1.3fr 1fr",
-      gap: 72,
+      border: `2px solid ${t.accent === "var(--purple-500)" ? "rgba(77,67,187,0.4)" : t.accent === "#FFB627" ? "rgba(255,182,39,0.3)" : "rgba(214,243,95,0.3)"}`,
+      display: "flex",
+      flexDirection: "column",
+      gap: 36,
       position: "relative",
       overflow: "hidden"
     }
@@ -263,6 +166,81 @@ const EngagementSpectrum = () => {
       pointerEvents: "none"
     }
   }, t.num), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      display: "grid",
+      gridTemplateColumns: "repeat(3, 1fr)",
+      gap: 6
+    }
+  }, SPECTRUM_TIERS.map((tier, i) => {
+    const isActive = active === i;
+    const stars = "★".repeat(i + 1);
+    return /*#__PURE__*/React.createElement("button", {
+      key: tier.num,
+      onClick: () => setActive(i),
+      style: {
+        padding: "18px 22px",
+        textAlign: "left",
+        cursor: "pointer",
+        background: isActive ? tier.accentBg : "rgba(255,255,255,0.04)",
+        border: isActive ? `2px solid ${tier.accentBg}` : "2px solid rgba(255,255,255,0.08)",
+        borderRadius: 16,
+        color: isActive ? tier.accentInk : "var(--fg-2)",
+        transition: "all 320ms var(--ease-out)",
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        gap: 14,
+        fontFamily: "inherit"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center"
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 22,
+        letterSpacing: "0.12em",
+        color: isActive ? tier.accentInk : tier.accent,
+        opacity: isActive ? 1 : 0.75,
+        transition: "all 320ms"
+      }
+    }, stars), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: "var(--font-mono)",
+        fontSize: 10,
+        letterSpacing: "0.2em",
+        textTransform: "uppercase",
+        color: isActive ? "rgba(0,0,0,0.6)" : "var(--fg-3)"
+      }
+    }, tier.depth)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--font-stencil)",
+        fontSize: 13,
+        letterSpacing: "0.08em",
+        color: isActive ? "rgba(0,0,0,0.55)" : tier.accent,
+        marginBottom: 6
+      }
+    }, tier.tag), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--font-display)",
+        fontWeight: 700,
+        fontSize: "clamp(28px, 3vw, 40px)",
+        letterSpacing: "-0.03em",
+        lineHeight: 0.95,
+        fontStyle: "italic"
+      }
+    }, tier.title)));
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      display: "grid",
+      gridTemplateColumns: "1.3fr 1fr",
+      gap: 72
+    }
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       position: "relative"
     }
@@ -314,8 +292,8 @@ const EngagementSpectrum = () => {
       gap: 14,
       padding: "18px 28px",
       borderRadius: 999,
-      background: t.accentBg,
-      color: t.accentInk,
+      background: t.href.includes("fractional") ? "var(--fractional-prism)" : t.accentBg,
+      color: t.href.includes("fractional") ? "#0b0905" : t.accentInk,
       fontFamily: "var(--font-mono)",
       fontSize: 13,
       letterSpacing: "0.22em",
@@ -367,7 +345,7 @@ const EngagementSpectrum = () => {
       color: t.accent,
       fontSize: 20
     }
-  }, "\u25B8"), " ", inc))))), /*#__PURE__*/React.createElement("a", {
+  }, "\u25B8"), " ", inc)))))), /*#__PURE__*/React.createElement("a", {
     href: "/spark",
     style: {
       marginTop: 24,
@@ -439,3 +417,4 @@ const EngagementSpectrum = () => {
 Object.assign(window, {
   EngagementSpectrum
 });
+})();

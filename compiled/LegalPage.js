@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.LegalPage) return;
 /* Legal page (Privacy Policy / Terms of Service) — shared renderer.
    Data lives in window.LEGAL_DOCS keyed by "privacy" | "terms".
    ------------------------------------------------------------------ */
@@ -265,16 +266,13 @@ const LegalHero = ({
   sister
 }) => /*#__PURE__*/React.createElement("section", {
   style: {
-    padding: "120px 0 80px",
+    padding: "var(--hero-pad-compact) 0",
     position: "relative",
     overflow: "hidden",
     background: "var(--ink-000)",
     borderBottom: "1px solid var(--ink-400)"
   }
-}, /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 48,
-  opacity: 0.04
-}), /*#__PURE__*/React.createElement(Container, {
+}, /*#__PURE__*/React.createElement(Container, {
   style: {
     position: "relative"
   }
@@ -532,3 +530,4 @@ const LegalPage = ({
 Object.assign(window, {
   LegalPage
 });
+})();

@@ -1,4 +1,4 @@
-(function(){if (typeof window !== "undefined" && window.MARKETS_BY_SLUG) return;
+(function(){if (typeof window !== "undefined" && window.SPECTRUM_HEX) return;
 /* global React */
 /* ============================================================
    MARKETS DATA — one source of truth for city/market routing.
@@ -26,115 +26,115 @@ const MARKETS_REGIONS = [{
     name: "Brooklyn",
     state: "NY",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "boston",
     name: "Boston",
     state: "MA",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "philadelphia",
     name: "Philadelphia",
     state: "PA",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "washington-dc",
     name: "Washington DC",
     state: "DC",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "pittsburgh",
     name: "Pittsburgh",
     state: "PA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "newark",
     name: "Newark",
     state: "NJ",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "jersey-city",
     name: "Jersey City",
     state: "NJ",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "hartford",
     name: "Hartford",
     state: "CT",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "providence",
     name: "Providence",
     state: "RI",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "buffalo",
     name: "Buffalo",
     state: "NY",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "rochester",
     name: "Rochester",
     state: "NY",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "albany",
     name: "Albany",
     state: "NY",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "baltimore",
     name: "Baltimore",
     state: "MD",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "portland-me",
     name: "Portland",
     state: "ME",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "long-island",
     name: "Long Island",
     state: "NY",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "stamford",
     name: "Stamford",
     state: "CT",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "wilmington-de",
     name: "Wilmington",
     state: "DE",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "newport-ri",
     name: "Newport",
     state: "RI",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "saratoga-springs",
     name: "Saratoga Springs",
     state: "NY",
     tier: 2,
-    available: true
+    available: false
   }]
 }, {
   id: "southeast",
@@ -145,181 +145,181 @@ const MARKETS_REGIONS = [{
     name: "Miami",
     state: "FL",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "atlanta",
     name: "Atlanta",
     state: "GA",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "charlotte",
     name: "Charlotte",
     state: "NC",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "orlando",
     name: "Orlando",
     state: "FL",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "tampa",
     name: "Tampa",
     state: "FL",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "nashville",
     name: "Nashville",
     state: "TN",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "jacksonville",
     name: "Jacksonville",
     state: "FL",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "fort-lauderdale",
     name: "Fort Lauderdale",
     state: "FL",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "raleigh",
     name: "Raleigh-Durham",
     state: "NC",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "greensboro",
     name: "Greensboro",
     state: "NC",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "richmond",
     name: "Richmond",
     state: "VA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "virginia-beach",
     name: "Virginia Beach",
     state: "VA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "birmingham",
     name: "Birmingham",
     state: "AL",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "new-orleans",
     name: "New Orleans",
     state: "LA",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "memphis",
     name: "Memphis",
     state: "TN",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "knoxville",
     name: "Knoxville",
     state: "TN",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "louisville",
     name: "Louisville",
     state: "KY",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "charleston",
     name: "Charleston",
     state: "SC",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "savannah",
     name: "Savannah",
     state: "GA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "greenville-sc",
     name: "Greenville",
     state: "SC",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "columbia-sc",
     name: "Columbia",
     state: "SC",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "asheville",
     name: "Asheville",
     state: "NC",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "chattanooga",
     name: "Chattanooga",
     state: "TN",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "lexington",
     name: "Lexington",
     state: "KY",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "huntsville",
     name: "Huntsville",
     state: "AL",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "sarasota",
     name: "Sarasota",
     state: "FL",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "daytona-beach",
     name: "Daytona Beach",
     state: "FL",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "hollywood-fl",
     name: "Hollywood",
     state: "FL",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "augusta",
     name: "Augusta",
     state: "GA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "athens-ga",
     name: "Athens",
     state: "GA",
     tier: 2,
-    available: true
+    available: false
   }]
 }, {
   id: "midwest",
@@ -330,37 +330,37 @@ const MARKETS_REGIONS = [{
     name: "Chicago",
     state: "IL",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "detroit",
     name: "Detroit",
     state: "MI",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "minneapolis",
     name: "Minneapolis",
     state: "MN",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "indianapolis",
     name: "Indianapolis",
     state: "IN",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "columbus",
     name: "Columbus",
     state: "OH",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "kansas-city",
     name: "Kansas City",
     state: "MO",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "cleveland",
     name: "Cleveland",
@@ -372,73 +372,73 @@ const MARKETS_REGIONS = [{
     name: "Cincinnati",
     state: "OH",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "milwaukee",
     name: "Milwaukee",
     state: "WI",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "madison",
     name: "Madison",
     state: "WI",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "st-louis",
     name: "St. Louis",
     state: "MO",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "omaha",
     name: "Omaha",
     state: "NE",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "des-moines",
     name: "Des Moines",
     state: "IA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "grand-rapids",
     name: "Grand Rapids",
     state: "MI",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "akron",
     name: "Akron",
     state: "OH",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "dayton",
     name: "Dayton",
     state: "OH",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "ann-arbor",
     name: "Ann Arbor",
     state: "MI",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "fort-wayne",
     name: "Fort Wayne",
     state: "IN",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "wichita",
     name: "Wichita",
     state: "KS",
     tier: 2,
-    available: true
+    available: false
   }]
 }, {
   id: "southwest",
@@ -449,13 +449,13 @@ const MARKETS_REGIONS = [{
     name: "Dallas-Fort Worth",
     state: "TX",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "houston",
     name: "Houston",
     state: "TX",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "austin",
     name: "Austin",
@@ -467,79 +467,79 @@ const MARKETS_REGIONS = [{
     name: "Phoenix",
     state: "AZ",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "tucson",
     name: "Tucson",
     state: "AZ",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "san-antonio",
     name: "San Antonio",
     state: "TX",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "el-paso",
     name: "El Paso",
     state: "TX",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "oklahoma-city",
     name: "Oklahoma City",
     state: "OK",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "tulsa",
     name: "Tulsa",
     state: "OK",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "albuquerque",
     name: "Albuquerque",
     state: "NM",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "plano",
     name: "Plano",
     state: "TX",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "lubbock",
     name: "Lubbock",
     state: "TX",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "mcallen",
     name: "McAllen",
     state: "TX",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "frisco",
     name: "Frisco",
     state: "TX",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "arlington-tx",
     name: "Arlington",
     state: "TX",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "scottsdale",
     name: "Scottsdale",
     state: "AZ",
     tier: 2,
-    available: true
+    available: false
   }]
 }, {
   id: "west",
@@ -550,97 +550,97 @@ const MARKETS_REGIONS = [{
     name: "Los Angeles",
     state: "CA",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "san-francisco",
     name: "San Francisco",
     state: "CA",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "san-diego",
     name: "San Diego",
     state: "CA",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "sacramento",
     name: "Sacramento",
     state: "CA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "las-vegas",
     name: "Las Vegas",
     state: "NV",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "oakland",
     name: "Oakland",
     state: "CA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "san-jose",
     name: "San Jose",
     state: "CA",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "fresno",
     name: "Fresno",
     state: "CA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "riverside",
     name: "Riverside",
     state: "CA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "long-beach",
     name: "Long Beach",
     state: "CA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "anaheim",
     name: "Anaheim",
     state: "CA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "honolulu",
     name: "Honolulu",
     state: "HI",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "santa-barbara",
     name: "Santa Barbara",
     state: "CA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "palm-springs",
     name: "Palm Springs",
     state: "CA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "indio",
     name: "Indio",
     state: "CA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "inglewood",
     name: "Inglewood",
     state: "CA",
     tier: 2,
-    available: true
+    available: false
   }]
 }, {
   id: "pacific-northwest",
@@ -651,49 +651,49 @@ const MARKETS_REGIONS = [{
     name: "Seattle",
     state: "WA",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "portland",
     name: "Portland",
     state: "OR",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "tacoma",
     name: "Tacoma",
     state: "WA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "spokane",
     name: "Spokane",
     state: "WA",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "eugene",
     name: "Eugene",
     state: "OR",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "boise",
     name: "Boise",
     state: "ID",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "anchorage",
     name: "Anchorage",
     state: "AK",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "bellevue",
     name: "Bellevue",
     state: "WA",
     tier: 2,
-    available: true
+    available: false
   }]
 }, {
   id: "mountain",
@@ -704,7 +704,7 @@ const MARKETS_REGIONS = [{
     name: "Denver",
     state: "CO",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "reno",
     name: "Reno",
@@ -716,55 +716,55 @@ const MARKETS_REGIONS = [{
     name: "Colorado Springs",
     state: "CO",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "salt-lake-city",
     name: "Salt Lake City",
     state: "UT",
     tier: 1,
-    available: true
+    available: false
   }, {
     slug: "boulder",
     name: "Boulder",
     state: "CO",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "bozeman",
     name: "Bozeman",
     state: "MT",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "park-city",
     name: "Park City",
     state: "UT",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "jackson-hole",
     name: "Jackson Hole",
     state: "WY",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "billings",
     name: "Billings",
     state: "MT",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "aspen",
     name: "Aspen",
     state: "CO",
     tier: 2,
-    available: true
+    available: false
   }, {
     slug: "lake-tahoe",
     name: "Lake Tahoe",
     state: "NV",
     tier: 2,
-    available: true
+    available: false
   }]
 }];
 
@@ -887,6 +887,67 @@ const marketHrefFor = (name /*, rel */) => {
 
 /* All city slugs (for the dynamic template + sitemap). */
 const AVAILABLE_CITY_SLUGS = Object.values(MARKETS_BY_SLUG).map(c => c.slug);
+
+/* ------------------------------------------------------------
+   SPECTRUM ASSIGNMENT — shared with IndustriesData. Defined here
+   too (guarded) so hueForSlug is available wherever markets/city
+   data loads, independent of load order.
+   ------------------------------------------------------------ */
+(function () {
+  if (window.SPECTRUM_HEX) return;
+  const SPECTRUM_HEX = ["#D7453E", "#E0663F", "#E68A4C", "#FFB627", "#E8C24A", "#CBD24A", "#9FC24E", "#6FBF6A", "#4FB58A", "#3FAEA8", "#3E9FC0", "#4F7DA6", "#4664C4", "#6A5CD1", "#8A5CD1", "#A85BC0", "#C85B9E", "#E27BA0"];
+  const hueFor = (i, n) => SPECTRUM_HEX[Math.round(i * 18 / n) % 18];
+  const hueForSlug = slug => {
+    slug = String(slug || "");
+    let h = 0;
+    for (let i = 0; i < slug.length; i++) h = h * 31 + slug.charCodeAt(i) >>> 0;
+    return SPECTRUM_HEX[h % 18];
+  };
+  Object.assign(window, {
+    SPECTRUM_HEX,
+    hueFor,
+    hueForSlug
+  });
+})();
+
+/* ------------------------------------------------------------
+   REGION HUES — the source of truth for market color.
+   Each region has one primary color, roughly coordinated to its
+   biome (warm for the south, evergreen for the PNW, etc). Every
+   city inherits its REGION's hue so the color trickles down from
+   the hub chip all the way to the city detail page. Defined here
+   (guarded) so both MarketsHub and the city template read the same
+   map regardless of load order.
+   ------------------------------------------------------------ */
+if (!window.REGION_HUES) {
+  window.REGION_HUES = {
+    "northeast": "#5E8B7E",
+    // slate green — temperate deciduous
+    "southeast": "#E39A4C",
+    // warm amber — humid subtropical
+    "midwest": "#4F86C6",
+    // lake blue — Great Lakes
+    "southwest": "#CE6B3E",
+    // desert terracotta — arid
+    "west": "#E7B84A",
+    // coastal gold — Mediterranean
+    "pacific-northwest": "#3E8060",
+    // evergreen — temperate rainforest
+    "mountain": "#6C6FB2" // alpine slate-violet — high country
+  };
+}
+
+/* Region hue for a given city slug (falls back to Ignite red). */
+const regionHueForSlug = slug => {
+  const c = MARKETS_BY_SLUG[slug];
+  return c && window.REGION_HUES[c.regionId] || "#D7453E";
+};
+
+/* Every city record inherits its REGION's hue — the color trickles
+   down from the region to each city and on to its detail page. */
+Object.values(MARKETS_BY_SLUG).forEach(c => {
+  c.hue = window.REGION_HUES[c.regionId] || "#D7453E";
+});
 Object.assign(window, {
   MARKETS_REGIONS,
   MARKETS_BY_SLUG,
@@ -896,6 +957,7 @@ Object.assign(window, {
   marketHrefFor,
   CITY_URL,
   CITY_VENUES,
-  venuesFor
+  venuesFor,
+  regionHueForSlug
 });
 })();

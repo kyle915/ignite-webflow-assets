@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.FractionalHero2) return;
 /* =========================================================================
    FRACTIONAL — service page (reworked)
    Source of truth: Ignite Fractional · Sales Sheet
@@ -7,6 +8,12 @@ const {
   useEffect: fpUseEffect,
   useRef: fpUseRef
 } = React;
+
+/* Fractalizing — distinct sections/cards each take a solid spectrum hue (accents only). */
+const FP_SPECTRUM = Array.from({
+  length: 18
+}, (_, i) => `var(--spectrum-${String(i + 1).padStart(2, "0")})`);
+const fpHue = (i, n) => FP_SPECTRUM[Math.round(i * 18 / n) % 18];
 
 /* ------- shared primitives (local copies; named to avoid collisions) ----- */
 const FpOpsLine = ({
@@ -30,7 +37,6 @@ const FpOpsLine = ({
     height: 6,
     borderRadius: 999,
     background: color,
-    boxShadow: `0 0 12px ${color}`,
     animation: "fpPulse 1.8s infinite"
   }
 }), children);
@@ -197,6 +203,7 @@ const TodoChaos = () => {
   const mm = String(Math.floor(totalMs / 60000) % 60).padStart(2, "0");
   const ss = String(Math.floor(totalMs / 1000) % 60).padStart(2, "0");
   return /*#__PURE__*/React.createElement("div", {
+    className: "frac-todo-chaos",
     style: {
       position: "relative",
       width: "100%",
@@ -276,7 +283,7 @@ const TodoChaos = () => {
       height: 64,
       borderRadius: 999,
       border: "3px solid rgba(120,60,30,0.18)",
-      boxShadow: "inset 0 0 0 6px transparent, 0 0 0 2px rgba(120,60,30,0.08)",
+      boxShadow: "inset 0 0 0 6px transparent, 0 0 0 2px rgba(120, 60, 30, 0.04)",
       transform: "rotate(-8deg)"
     }
   }), /*#__PURE__*/React.createElement("div", {
@@ -467,15 +474,14 @@ const TodoChaos = () => {
       fontFamily: "'Caveat', cursive",
       color: "rgba(200,40,30,0.85)",
       fontSize: 26,
-      transform: "rotate(8deg)",
-      textShadow: "0 0 1px rgba(200,40,30,0.4)"
+      transform: "rotate(8deg)"
     }
   }, "!! URGENT")), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
       right: -28,
       bottom: -28,
-      background: "var(--ignite-500)",
+      background: "var(--fractional-prism)",
       color: "#0b0905",
       padding: "18px 22px",
       borderRadius: 6,
@@ -521,7 +527,10 @@ const VpCycler = () => {
       display: "inline",
       alignItems: "baseline"
     }
-  }, /*#__PURE__*/React.createElement(FpItalic, null, "VP\xA0of\xA0"), /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement(FpItalic, {
+    color: "#fff"
+  }, "VP\xA0of\xA0"), /*#__PURE__*/React.createElement("span", {
+    className: "fp-vp-cycle",
     style: {
       position: "relative",
       display: "inline-block",
@@ -530,14 +539,14 @@ const VpCycler = () => {
     }
   }, /*#__PURE__*/React.createElement("span", {
     key: word,
+    className: showFinal ? undefined : "fp-prism-text",
     style: {
       fontStyle: "italic",
-      color: showFinal ? "var(--ignite-500)" : "#FFB627",
+      color: showFinal ? "var(--ignite-500)" : undefined,
       fontFamily: "Georgia, 'Times New Roman', serif",
       fontWeight: 400,
       display: "inline-block",
-      animation: showFinal ? "vpLand 900ms cubic-bezier(.18,.9,.2,1.2) both" : "vpFlick 900ms cubic-bezier(.4,0,.2,1) both",
-      textShadow: showFinal ? "0 0 40px rgba(215, 69, 62,0.45)" : "none"
+      animation: showFinal ? "vpLand 900ms cubic-bezier(.18,.9,.2,1.2) both" : "vpFlick 900ms cubic-bezier(.4,0,.2,1) both"
     }
   }, word), showFinal && /*#__PURE__*/React.createElement("span", {
     "aria-hidden": "true",
@@ -565,19 +574,16 @@ const FractionalHero2 = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "relative",
     background: "var(--ink-000)",
-    padding: "120px 0 110px",
+    padding: "var(--hero-pad-standard) 0",
     overflow: "hidden",
     borderBottom: "1px solid var(--ink-400)"
   }
-}, /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 48,
-  opacity: 0.05
-}), /*#__PURE__*/React.createElement("div", {
+}, /*#__PURE__*/React.createElement("div", {
   "aria-hidden": "true",
   style: {
     position: "absolute",
     inset: 0,
-    background: "radial-gradient(ellipse at 18% 30%, rgba(215, 69, 62,0.18), transparent 55%)",
+    background: "transparent",
     pointerEvents: "none"
   }
 }), /*#__PURE__*/React.createElement("link", {
@@ -586,7 +592,15 @@ const FractionalHero2 = () => /*#__PURE__*/React.createElement("section", {
 }), /*#__PURE__*/React.createElement("link", {
   rel: "stylesheet",
   href: "https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap"
-}), /*#__PURE__*/React.createElement("div", {
+}), /*#__PURE__*/React.createElement("style", null, `
+      @property --fp-ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+      @keyframes fpPrismShift{from{background-position:0% 50%}to{background-position:200% 50%}}
+      .fp-prism-text{background:var(--fractional-prism);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:fpPrismShift 9s linear infinite}
+      .fp-live{position:relative;display:inline-flex;align-items:center;gap:12px;padding:11px 18px;border-radius:8px;margin-bottom:28px}
+      .fp-live::before{content:"";position:absolute;inset:0;border-radius:8px;padding:1.5px;background:conic-gradient(from var(--fp-ang,0deg),var(--ignite-500),#FFB627,var(--ignite-500),#FFB627,var(--ignite-500));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:fpLiveSpin 4s linear infinite}
+      @keyframes fpLiveSpin{to{--fp-ang:360deg}}
+      @media (prefers-reduced-motion: reduce){.fp-prism-text{animation:none}.fp-live::before{animation:none}}
+    `), /*#__PURE__*/React.createElement("div", {
   style: {
     position: "absolute",
     top: 0,
@@ -641,6 +655,7 @@ const FractionalHero2 = () => /*#__PURE__*/React.createElement("section", {
     marginTop: 24
   }
 }, /*#__PURE__*/React.createElement("div", {
+  className: "frac-hero-grid",
   style: {
     display: "grid",
     gridTemplateColumns: "minmax(0, 1.05fr) 520px",
@@ -681,19 +696,19 @@ const FractionalHero2 = () => /*#__PURE__*/React.createElement("section", {
     margin: 0
   }
 }, /*#__PURE__*/React.createElement("span", {
+  className: "fp-prism-text",
   style: {
     display: "block",
     fontSize: "clamp(36px, 4.2vw, 64px)",
     fontWeight: 600,
     letterSpacing: "-0.02em",
-    color: "var(--fg-2)",
     lineHeight: 1.02
   }
 }, "Stop being your own"), /*#__PURE__*/React.createElement("span", {
   style: {
     display: "block",
     marginTop: 6,
-    fontSize: "clamp(64px, 8.2vw, 124px)",
+    fontSize: "clamp(34px, 8.2vw, 124px)",
     letterSpacing: "-0.04em",
     lineHeight: 1.08,
     color: "var(--fg-1)",
@@ -724,6 +739,11 @@ const FractionalHero2 = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(AccentBtn, {
   size: "lg",
+  style: {
+    background: "var(--fractional-prism)",
+    backgroundSize: "220% 100%",
+    color: "#0b0905"
+  },
   onClick: () => window.open("https://calendly.com/kyle-igniteproductions/30min?back=1", "_blank")
 }, "Book a 30-min call"), /*#__PURE__*/React.createElement(GhostBtn, {
   size: "lg",
@@ -748,7 +768,7 @@ const FractionalHero2 = () => /*#__PURE__*/React.createElement("section", {
 const PAIN_POINTS = ["Building a sell sheet in Canva at 2am", "Hoping the buyer calls you back after that last-ditch text", "Three Slack DMs to the broker. Two unread. One \"k.\"", "Forecasting Q4 in a spreadsheet you don't fully trust", "Booking a flight to meet a buyer who already rescheduled twice", "Approving a demo team you've never met for a Saturday at Costco", "Reconciling slotting fees against a P&L that hasn't been updated since March", "Re-saving \"FINAL_v9_USE_THIS_ONE.pdf\"", "Following up on the Sprouts review three Mondays in a row", "Wondering why velocity is flat at store #44", "Lying awake doing trade math instead of sleeping", "Posting a job for a VP of Sales you can't actually afford", "Realizing the photos from Saturday's activation never came in", "Negotiating slotting on the same call as picking up your kid", "Showing up to a trade show with a booth and zero leads queued", "Telling your investors \"we just need one more hire\" — again", "Eating a granola bar at your desk because the team needs a recap deck by EOD", "Pretending the broker scorecard isn't a vibe check", "Re-reading the MDF agreement at midnight trying to find the loophole", "Submitting a co-op claim with 90% of receipts and praying", "Burning through scan-back budget on a promo that didn't move units", "Signing a festival sponsorship and realizing nobody's running activation", "An athlete partnership that's basically just a UPS shipping address", "Watching a competitor walk away with the endcap you wanted", "Building the Q4 trade calendar in the parking lot before a buyer meeting", "Three Instagram DMs from agencies pitching you the same deck", "Approving sponsorship spend before approving payroll", "Buyer asking for a TPR and you're not 100% sure what TPR stands for", "Reading a Nielsen report you didn't pay for and don't fully trust", "Realizing the partnership lead never got handed off after the trade show", "Pulling category review insights from three different broker emails", "Saying \"we'll figure out KPIs after launch\" — again", "Trying to remember which retailer wants the SRP at 3.99 vs 4.49"];
 const FractionalPainBanner = () => {
   /* split into 3 staggered rows for variety */
-  const rows = [[PAIN_POINTS.slice(0, 12), 60, "var(--ignite-500)"], [PAIN_POINTS.slice(12, 23), 80, "#FFB627"], [PAIN_POINTS.slice(23), 70, "var(--ignite-500)"]];
+  const rows = [[PAIN_POINTS.slice(0, 12), 100, "var(--ignite-500)"], [PAIN_POINTS.slice(12, 23), 130, "#FFB627"], [PAIN_POINTS.slice(23), 115, "var(--ignite-500)"]];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: "var(--ink-100)",
@@ -902,7 +922,7 @@ const FractionalStats = () => /*#__PURE__*/React.createElement("section", {
     gap: 32,
     alignItems: "baseline"
   }
-}, [["12+", "Years in CPG"], ["42K+", "Brand ambassadors"], ["50", "States covered"], ["~2 wk", "Time to in-market"]].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
+}, [["12+", "Years in CPG"], ["257K+", "Brand ambassadors"], ["50", "States covered"], ["~2 wk", "Time to in-market"]].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
   key: l,
   style: {
     display: "flex",
@@ -947,7 +967,9 @@ const FractionalEngines = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 980,
     marginBottom: 64
   }
-}, /*#__PURE__*/React.createElement(FpOpsLine, null, ">>", " TWO ENGINES \xB7 ONE UNIFIED TEAM"), /*#__PURE__*/React.createElement("h2", {
+}, /*#__PURE__*/React.createElement(FpOpsLine, {
+  color: "var(--spectrum-03)"
+}, ">>", " SALES-LED \xB7 MARKETING THAT BACKS IT UP"), /*#__PURE__*/React.createElement("h2", {
   style: {
     marginTop: 16,
     fontFamily: "var(--font-display)",
@@ -964,42 +986,43 @@ const FractionalEngines = () => /*#__PURE__*/React.createElement("section", {
     fontStyle: "italic",
     fontFamily: "Georgia, 'Times New Roman', serif",
     fontWeight: 400,
-    color: "#fff",
-    background: "var(--ignite-500)",
-    padding: "0.04em 0.22em 0.08em",
+    color: "#0b0905",
+    background: "var(--fractional-prism)",
+    padding: "0.12em 0.32em 0.18em",
     transform: "rotate(-2deg)",
     borderRadius: 6,
-    boxShadow: "0 18px 44px rgba(215, 69, 62,0.4)",
     marginLeft: "0.12em"
   }
-}, " it's a fractional team plugged in by Monday."))), /*#__PURE__*/React.createElement("div", {
+}, " it's a sales team plugged in by Monday."))), /*#__PURE__*/React.createElement("div", {
+  className: "frac-engines",
   style: {
     display: "grid",
-    gridTemplateColumns: "1fr 1fr",
+    gridTemplateColumns: "1.5fr 1fr",
     gap: 20
   }
 }, [{
   icon: "⚡",
-  tag: "ENGINE 01",
+  tag: "ENGINE 01 · THE LEAD",
   title: "CPG Sales",
   head: "Get on shelf. Stay on shelf.",
-  blurb: "Senior sales leadership without the full-time overhead. We own buyer pitching, distribution, slotting, and account management end-to-end.",
-  chips: ["Buyer meetings", "Chain mgmt", "Slotting", "Distribution", "Trade programs", "Velocity"],
-  accent: "var(--ignite-500)"
+  blurb: "Senior sales leadership without the full-time overhead. We own buyer pitching, broker management, distribution, slotting, and trade — end-to-end, accountable to revenue.",
+  chips: [["Fractional sales team", "/services/fractional-sales-team"], ["Broker management", "/services/retail-sales-broker-management"], ["Buyer pitch & line reviews", "/services/buyer-pitch-line-reviews"], ["Trade marketing", "/services/trade-marketing-management"], ["Distribution expansion", "/services/distribution-expansion"], ["Retail readiness & margin", "/services/retail-readiness"]],
+  accent: "var(--ignite-500)",
+  lead: true
 }, {
   icon: "✦",
-  tag: "ENGINE 02",
+  tag: "ENGINE 02 · THE SUPPORT",
   title: "Marketing",
   head: "Make them remember you.",
-  blurb: "Sell sheets, trade marketing, co-op & MDF programs, sponsorships & partnerships, demo & sampling, and experiential activations. The presence that gets you remembered — and bought.",
-  chips: ["Sell sheets", "Trade marketing", "Co-op / MDF", "Sponsorships", "Partnerships", "Sampling", "Trade shows", "Activations"],
+  blurb: "Sell sheets, sponsorships, demo & sampling, and experiential — the presence that backs the sell-in and keeps you bought.",
+  chips: [["Sell sheets", null], ["Sponsorships", null], ["Sampling", null], ["Trade shows", null], ["Activations", null]],
   accent: "#FFB627"
 }].map(e => /*#__PURE__*/React.createElement("div", {
   key: e.tag,
   style: {
     position: "relative",
-    background: "var(--paper-000)",
-    border: "1px solid var(--paper-200)",
+    background: e.lead ? "var(--ink-000)" : "var(--paper-000)",
+    border: e.lead ? "1px solid var(--ink-400)" : "1px solid var(--paper-200)",
     borderRadius: 20,
     padding: 44,
     overflow: "hidden"
@@ -1013,7 +1036,7 @@ const FractionalEngines = () => /*#__PURE__*/React.createElement("section", {
     width: 320,
     height: 320,
     borderRadius: 999,
-    background: `radial-gradient(circle, ${e.accent}33, transparent 60%)`,
+    background: "transparent",
     filter: "blur(20px)",
     pointerEvents: "none"
   }
@@ -1054,17 +1077,17 @@ const FractionalEngines = () => /*#__PURE__*/React.createElement("section", {
     fontSize: 18,
     letterSpacing: "0.04em",
     textTransform: "uppercase",
-    color: "var(--fg-3-inv)",
+    color: e.lead ? "var(--fg-3)" : "var(--fg-3-inv)",
     marginBottom: 14
   }
 }, e.title), /*#__PURE__*/React.createElement("div", {
   style: {
     fontFamily: "var(--font-display)",
     fontWeight: 700,
-    fontSize: "clamp(34px, 3.4vw, 52px)",
+    fontSize: e.lead ? "clamp(40px, 4.2vw, 64px)" : "clamp(30px, 3vw, 44px)",
     letterSpacing: "-0.025em",
     lineHeight: 1.02,
-    color: "var(--fg-1-inv)",
+    color: e.lead ? "var(--fg-1)" : "var(--fg-1-inv)",
     marginBottom: 22,
     textWrap: "balance"
   }
@@ -1072,7 +1095,7 @@ const FractionalEngines = () => /*#__PURE__*/React.createElement("section", {
   style: {
     fontSize: 16,
     lineHeight: 1.55,
-    color: "var(--fg-2-inv)",
+    color: e.lead ? "var(--fg-2)" : "var(--fg-2-inv)",
     marginBottom: 28
   }
 }, e.blurb), /*#__PURE__*/React.createElement("div", {
@@ -1081,7 +1104,29 @@ const FractionalEngines = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap",
     gap: 8
   }
-}, e.chips.map(c => /*#__PURE__*/React.createElement("span", {
+}, e.chips.map(([c, href]) => href ? /*#__PURE__*/React.createElement("a", {
+  key: c,
+  href: href,
+  style: {
+    padding: "9px 15px",
+    borderRadius: 999,
+    background: "rgba(215, 69, 62,0.12)",
+    color: "var(--ignite-500)",
+    fontFamily: "var(--font-mono)",
+    fontSize: 11,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    border: "1px solid rgba(215, 69, 62,0.4)",
+    textDecoration: "none",
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 6
+  }
+}, c, " ", /*#__PURE__*/React.createElement("span", {
+  style: {
+    opacity: 0.7
+  }
+}, "\u2192")) : /*#__PURE__*/React.createElement("span", {
   key: c,
   style: {
     padding: "8px 14px",
@@ -1099,7 +1144,7 @@ const FractionalEngines = () => /*#__PURE__*/React.createElement("section", {
 /* ==================================================================
    04 · FROM → TO — transformation pairs
    ================================================================== */
-const FROM_TO = [["Founder pitching buyers at 11pm", "Senior CPG closer in your seat"], ["Brokers you can't reach", "Weekly read-outs & scorecards"], ["Slotting fees with no plan", "Trade calendar tied to P&L"], ["Demos run by no-shows", "42K vetted ambassadors"], ["Sell sheet from 2022", "Buyer-ready brand kit"], ["$240K+ for two FT hires", "A retainer that flexes monthly"]];
+const FROM_TO = [["Founder pitching buyers at 11pm", "Senior CPG closer in your seat"], ["Brokers you can't reach", "Weekly read-outs & scorecards"], ["Slotting fees with no plan", "Trade calendar tied to P&L"], ["Demos run by no-shows", "257K vetted ambassadors"], ["Sell sheet from 2022", "Buyer-ready brand kit"], ["$240K+ for two FT hires", "A retainer that flexes monthly"]];
 const FractionalFromTo = () => /*#__PURE__*/React.createElement("section", {
   style: {
     background: "var(--ink-000)",
@@ -1108,14 +1153,13 @@ const FractionalFromTo = () => /*#__PURE__*/React.createElement("section", {
     position: "relative",
     overflow: "hidden"
   }
-}, /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 48,
-  opacity: 0.04
-}), /*#__PURE__*/React.createElement(Container, {
+}, /*#__PURE__*/React.createElement(Container, {
   style: {
     position: "relative"
   }
-}, /*#__PURE__*/React.createElement(FpOpsLine, null, ">>", " FROM \u2192 TO"), /*#__PURE__*/React.createElement("h2", {
+}, /*#__PURE__*/React.createElement(FpOpsLine, {
+  color: "var(--spectrum-06)"
+}, ">>", " FROM \u2192 TO"), /*#__PURE__*/React.createElement("h2", {
   style: {
     marginTop: 14,
     fontFamily: "var(--font-display)",
@@ -1126,7 +1170,15 @@ const FractionalFromTo = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 1100,
     textWrap: "balance"
   }
-}, "What changes ", /*#__PURE__*/React.createElement(FpItalic, null, "by month two.")), /*#__PURE__*/React.createElement("div", {
+}, "What changes ", /*#__PURE__*/React.createElement("span", {
+  className: "fp-prism-text",
+  style: {
+    fontStyle: "italic",
+    fontFamily: "Georgia, 'Times New Roman', serif",
+    fontWeight: 400,
+    display: "inline-block"
+  }
+}, "by month two.")), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 56,
     display: "grid",
@@ -1196,7 +1248,9 @@ const FractionalBuiltFor = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 920,
     marginBottom: 64
   }
-}, /*#__PURE__*/React.createElement(FpOpsLine, null, ">>", " BEST FOR \xB7 $1M\u2013$50M BRANDS SCALING DISTRIBUTION"), /*#__PURE__*/React.createElement("h2", {
+}, /*#__PURE__*/React.createElement(FpOpsLine, {
+  color: "var(--spectrum-09)"
+}, ">>", " BEST FOR \xB7 $1M\u2013$50M BRANDS SCALING DISTRIBUTION"), /*#__PURE__*/React.createElement("h2", {
   style: {
     marginTop: 16,
     fontFamily: "var(--font-display)",
@@ -1222,12 +1276,11 @@ const FractionalBuiltFor = () => /*#__PURE__*/React.createElement("section", {
     fontSize: "clamp(28px, 3.4vw, 52px)",
     letterSpacing: "-0.015em",
     lineHeight: 1.1,
-    color: "#fff",
-    background: "var(--ignite-500)",
+    color: "#0b0905",
+    background: "var(--fractional-prism)",
     padding: "0.12em 0.32em 0.18em",
     transform: "rotate(-1.5deg)",
-    borderRadius: 8,
-    boxShadow: "0 18px 44px rgba(215, 69, 62,0.35)"
+    borderRadius: 8
   }
 }, "Not the bandwidth to scale it."))), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -1300,7 +1353,7 @@ const FractionalBuiltFor = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "absolute",
     inset: 0,
-    background: "radial-gradient(circle at 80% 0%, rgba(215, 69, 62,0.18), transparent 50%)"
+    background: "transparent"
   }
 }), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -1392,10 +1445,7 @@ const FractionalCadence = () => /*#__PURE__*/React.createElement("section", {
     position: "relative",
     overflow: "hidden"
   }
-}, /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 48,
-  opacity: 0.04
-}), /*#__PURE__*/React.createElement(Container, {
+}, /*#__PURE__*/React.createElement(Container, {
   style: {
     position: "relative"
   }
@@ -1410,99 +1460,110 @@ const FractionalCadence = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 1100,
     textWrap: "balance"
   }
-}, "A real cadence \u2014", /*#__PURE__*/React.createElement(FpItalic, null, " not a check-in call.")), /*#__PURE__*/React.createElement("div", {
+}, "A real cadence \u2014", /*#__PURE__*/React.createElement("span", {
+  className: "fp-prism-text",
+  style: {
+    fontStyle: "italic",
+    fontFamily: "Georgia, 'Times New Roman', serif",
+    fontWeight: 400,
+    display: "inline-block"
+  }
+}, " not a check-in call.")), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 64,
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
     gap: 20
   }
-}, CADENCE.map((c, i) => /*#__PURE__*/React.createElement("div", {
-  key: c.when,
-  style: {
-    position: "relative",
-    padding: 36,
-    borderRadius: 16,
-    background: "var(--ink-100)",
-    border: "1px solid var(--ink-400)",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    minHeight: 360
-  }
-}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-  style: {
-    display: "inline-flex",
-    alignItems: "center",
-    gap: 8,
-    padding: "6px 10px",
-    borderRadius: 999,
-    background: "rgba(215, 69, 62,0.12)",
-    fontFamily: "var(--font-mono)",
-    fontSize: 11,
-    letterSpacing: "0.22em",
-    color: "var(--ignite-500)",
-    textTransform: "uppercase",
-    marginBottom: 24
-  }
-}, c.when), /*#__PURE__*/React.createElement("h3", {
-  style: {
-    fontFamily: "var(--font-display)",
-    fontWeight: 700,
-    fontSize: 26,
-    letterSpacing: "-0.02em",
-    lineHeight: 1.1,
-    marginBottom: 16,
-    textWrap: "balance"
-  }
-}, c.head), /*#__PURE__*/React.createElement("p", {
-  style: {
-    fontSize: 15,
-    lineHeight: 1.55,
-    color: "var(--fg-2)"
-  }
-}, c.body)), /*#__PURE__*/React.createElement("ul", {
-  style: {
-    listStyle: "none",
-    padding: 0,
-    margin: "28px 0 0",
-    display: "flex",
-    flexDirection: "column",
-    gap: 8
-  }
-}, c.bullets.map(b => /*#__PURE__*/React.createElement("li", {
-  key: b,
-  style: {
-    display: "flex",
-    gap: 10,
-    alignItems: "center",
-    fontFamily: "var(--font-mono)",
-    fontSize: 11,
-    letterSpacing: "0.18em",
-    color: "var(--fg-3)",
-    textTransform: "uppercase"
-  }
-}, /*#__PURE__*/React.createElement("span", {
-  style: {
-    color: "var(--ignite-500)"
-  }
-}, "\u21B3"), b))), /*#__PURE__*/React.createElement("div", {
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
-    top: 24,
-    right: 24,
-    fontFamily: "var(--font-stencil)",
-    fontSize: 28,
-    color: "var(--fg-3)",
-    opacity: 0.4
-  }
-}, "0", i + 1))))));
+}, CADENCE.map((c, i) => {
+  const accent = fpHue(i, CADENCE.length);
+  return /*#__PURE__*/React.createElement("div", {
+    key: c.when,
+    style: {
+      position: "relative",
+      padding: 36,
+      borderRadius: 16,
+      background: "var(--ink-100)",
+      border: "1px solid var(--ink-400)",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+      minHeight: 360
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 8,
+      padding: "6px 10px",
+      borderRadius: 999,
+      background: `color-mix(in srgb, ${accent} 14%, transparent)`,
+      fontFamily: "var(--font-mono)",
+      fontSize: 11,
+      letterSpacing: "0.22em",
+      color: accent,
+      textTransform: "uppercase",
+      marginBottom: 24
+    }
+  }, c.when), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: 26,
+      letterSpacing: "-0.02em",
+      lineHeight: 1.1,
+      marginBottom: 16,
+      textWrap: "balance"
+    }
+  }, c.head), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 15,
+      lineHeight: 1.55,
+      color: "var(--fg-2)"
+    }
+  }, c.body)), /*#__PURE__*/React.createElement("ul", {
+    style: {
+      listStyle: "none",
+      padding: 0,
+      margin: "28px 0 0",
+      display: "flex",
+      flexDirection: "column",
+      gap: 8
+    }
+  }, c.bullets.map(b => /*#__PURE__*/React.createElement("li", {
+    key: b,
+    style: {
+      display: "flex",
+      gap: 10,
+      alignItems: "center",
+      fontFamily: "var(--font-mono)",
+      fontSize: 11,
+      letterSpacing: "0.18em",
+      color: "var(--fg-3)",
+      textTransform: "uppercase"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: accent
+    }
+  }, "\u21B3"), b))), /*#__PURE__*/React.createElement("div", {
+    "aria-hidden": "true",
+    style: {
+      position: "absolute",
+      top: 24,
+      right: 24,
+      fontFamily: "var(--font-stencil)",
+      fontSize: 28,
+      color: accent,
+      opacity: 0.5
+    }
+  }, "0", i + 1));
+}))));
 
 /* ==================================================================
    07 · COMPARISON — Ignite vs FT Hire vs Agency
    ================================================================== */
-const COMPARE_ROWS = [["Time to start", "~2 weeks", "3–6 mos", "4–8 wks"], ["CPG-specific senior leadership", true, "maybe", false], ["42K+ ambassadors / boots-on-ground", true, false, "subbed"], ["Sales + Marketing under one roof", true, "2 hires", "usually one"], ["Scale up / down monthly", true, "severance", "annual"], ["Skin in the game on revenue", true, "salary only", false]];
+const COMPARE_ROWS = [["Time to start", "~2 weeks", "3–6 mos", "4–8 wks"], ["CPG-specific senior leadership", true, "maybe", false], ["257K+ ambassadors / boots-on-ground", true, false, "subbed"], ["Sales + Marketing under one roof", true, "2 hires", "usually one"], ["Scale up / down monthly", true, "severance", "annual"], ["Skin in the game on revenue", true, "salary only", false]];
 const cellRender = v => {
   if (v === true) return /*#__PURE__*/React.createElement("span", {
     style: {
@@ -1538,7 +1599,9 @@ const FractionalCompare = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 920,
     marginBottom: 56
   }
-}, /*#__PURE__*/React.createElement(FpOpsLine, null, ">>", " HONEST COMPARISON"), /*#__PURE__*/React.createElement("h2", {
+}, /*#__PURE__*/React.createElement(FpOpsLine, {
+  color: "var(--spectrum-13)"
+}, ">>", " HONEST COMPARISON"), /*#__PURE__*/React.createElement("h2", {
   style: {
     marginTop: 14,
     fontFamily: "var(--font-display)",
@@ -1648,10 +1711,7 @@ const Fractional90Days = () => /*#__PURE__*/React.createElement("section", {
     position: "relative",
     overflow: "hidden"
   }
-}, /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 48,
-  opacity: 0.04
-}), /*#__PURE__*/React.createElement(Container, {
+}, /*#__PURE__*/React.createElement(Container, {
   style: {
     position: "relative"
   }
@@ -1688,88 +1748,92 @@ const Fractional90Days = () => /*#__PURE__*/React.createElement("section", {
     gridTemplateColumns: "repeat(3, 1fr)",
     gap: 24
   }
-}, PHASES.map((p, i) => /*#__PURE__*/React.createElement("div", {
-  key: p.name,
-  style: {
-    position: "relative"
-  }
-}, /*#__PURE__*/React.createElement("div", {
-  style: {
-    width: 64,
-    height: 64,
-    borderRadius: 999,
-    background: "var(--ink-100)",
-    border: "2px solid var(--ignite-500)",
-    display: "grid",
-    placeItems: "center",
-    fontFamily: "var(--font-display)",
-    fontWeight: 700,
-    fontSize: 24,
-    color: "var(--ignite-500)",
-    margin: "0 auto",
-    boxShadow: "0 0 24px rgba(215, 69, 62,0.4)",
-    position: "relative",
-    zIndex: 1
-  }
-}, "0", i + 1), /*#__PURE__*/React.createElement("div", {
-  style: {
-    marginTop: 28,
-    padding: 28,
-    background: "var(--ink-100)",
-    border: "1px solid var(--ink-400)",
-    borderRadius: 14,
-    minHeight: 280
-  }
-}, /*#__PURE__*/React.createElement("div", {
-  style: {
-    fontFamily: "var(--font-mono)",
-    fontSize: 11,
-    letterSpacing: "0.22em",
-    color: "var(--ignite-500)",
-    textTransform: "uppercase",
-    marginBottom: 8
-  }
-}, p.range), /*#__PURE__*/React.createElement("h3", {
-  style: {
-    fontFamily: "var(--font-display)",
-    fontWeight: 700,
-    fontSize: 32,
-    letterSpacing: "-0.025em",
-    lineHeight: 1.05,
-    marginBottom: 14
-  }
-}, p.name), /*#__PURE__*/React.createElement("p", {
-  style: {
-    fontSize: 15,
-    lineHeight: 1.55,
-    color: "var(--fg-2)",
-    marginBottom: 24
-  }
-}, p.body), /*#__PURE__*/React.createElement("div", {
-  style: {
-    paddingTop: 18,
-    borderTop: "1px dashed var(--ink-400)",
-    display: "flex",
-    alignItems: "center",
-    gap: 10
-  }
-}, /*#__PURE__*/React.createElement("span", {
-  style: {
-    fontFamily: "var(--font-mono)",
-    fontSize: 10,
-    letterSpacing: "0.22em",
-    color: "var(--fg-3)",
-    textTransform: "uppercase"
-  }
-}, "OUTPUT \u2192"), /*#__PURE__*/React.createElement("span", {
-  style: {
-    fontFamily: "var(--font-display)",
-    fontWeight: 600,
-    fontSize: 15,
-    color: "var(--fg-1)",
-    lineHeight: 1.3
-  }
-}, p.out)))))))));
+}, PHASES.map((p, i) => {
+  const accent = fpHue(i, PHASES.length);
+  return /*#__PURE__*/React.createElement("div", {
+    key: p.name,
+    style: {
+      position: "relative"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 64,
+      height: 64,
+      borderRadius: 999,
+      background: "var(--ink-100)",
+      border: `2px solid ${accent}`,
+      display: "grid",
+      placeItems: "center",
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: 24,
+      lineHeight: 1,
+      whiteSpace: "nowrap",
+      color: accent,
+      margin: "0 auto",
+      position: "relative",
+      zIndex: 1
+    }
+  }, "0", i + 1), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 28,
+      padding: 28,
+      background: "var(--ink-100)",
+      border: "1px solid var(--ink-400)",
+      borderRadius: 14,
+      minHeight: 280
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 11,
+      letterSpacing: "0.22em",
+      color: accent,
+      textTransform: "uppercase",
+      marginBottom: 8
+    }
+  }, p.range), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: 32,
+      letterSpacing: "-0.025em",
+      lineHeight: 1.05,
+      marginBottom: 14
+    }
+  }, p.name), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 15,
+      lineHeight: 1.55,
+      color: "var(--fg-2)",
+      marginBottom: 24
+    }
+  }, p.body), /*#__PURE__*/React.createElement("div", {
+    style: {
+      paddingTop: 18,
+      borderTop: "1px dashed var(--ink-400)",
+      display: "flex",
+      alignItems: "center",
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 10,
+      letterSpacing: "0.22em",
+      color: "var(--fg-3)",
+      textTransform: "uppercase"
+    }
+  }, "OUTPUT \u2192"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-display)",
+      fontWeight: 600,
+      fontSize: 15,
+      color: "var(--fg-1)",
+      lineHeight: 1.3
+    }
+  }, p.out))));
+})))));
 
 /* ==================================================================
    09 · FINAL CTA — match the sales sheet voice
@@ -1832,7 +1896,7 @@ const FractionalFinalCTA = () => {
       height: 1800,
       marginLeft: -900,
       marginTop: -900,
-      background: "conic-gradient(from 0deg, rgba(215, 69, 62,0) 0deg, rgba(215, 69, 62,0.18) 45deg, rgba(255,182,39,0.22) 90deg, rgba(215, 69, 62,0) 180deg, rgba(215, 69, 62,0.12) 270deg, rgba(215, 69, 62,0) 360deg)",
+      background: "transparent",
       animation: "ctaSweep 24s linear infinite",
       filter: "blur(30px)",
       opacity: 0.85
@@ -1842,7 +1906,7 @@ const FractionalFinalCTA = () => {
     style: {
       position: "absolute",
       inset: 0,
-      background: "radial-gradient(ellipse at 50% 50%, rgba(215, 69, 62,0.55) 0%, rgba(215, 69, 62,0.18) 30%, transparent 60%)",
+      background: "transparent",
       animation: "ctaPulse 4.6s ease-in-out infinite"
     }
   }), /*#__PURE__*/React.createElement("div", {
@@ -1854,75 +1918,22 @@ const FractionalFinalCTA = () => {
       width: 520,
       height: 520,
       borderRadius: 999,
-      background: "radial-gradient(circle, rgba(255,182,39,0.4), transparent 65%)",
+      background: "transparent",
       filter: "blur(20px)",
       animation: "ctaPulse 5.4s ease-in-out infinite 0.8s"
     }
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-      height: 14,
-      background: "repeating-linear-gradient(135deg, var(--ignite-500) 0 20px, #FFB627 20px 40px)",
-      animation: "ctaStripe 1.6s linear infinite",
-      opacity: 0.95
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      bottom: 0,
-      left: 0,
-      right: 0,
-      height: 14,
-      background: "repeating-linear-gradient(135deg, #FFB627 0 20px, var(--ignite-500) 20px 40px)",
-      animation: "ctaStripe 1.6s linear infinite reverse",
-      opacity: 0.95
-    }
-  }), /*#__PURE__*/React.createElement(GridOverlay, {
-    size: 48,
-    opacity: 0.05
-  }), Array.from({
-    length: 28
-  }).map((_, i) => {
-    const x = i * 73 % 100;
-    const y = i * 41 % 90 + 5;
-    const ph = (t + i * 7) % 80;
-    const opacity = ph < 40 ? ph / 40 : (80 - ph) / 40;
-    const color = i % 3 === 0 ? "var(--ignite-500)" : i % 3 === 1 ? "#FFB627" : "#fff";
-    return /*#__PURE__*/React.createElement("span", {
-      key: i,
-      "aria-hidden": "true",
-      style: {
-        position: "absolute",
-        left: `${x}%`,
-        top: `${y}%`,
-        width: i % 4 === 0 ? 6 : 3,
-        height: i % 4 === 0 ? 6 : 3,
-        borderRadius: 999,
-        background: color,
-        opacity: opacity * 0.8,
-        boxShadow: `0 0 ${i % 4 === 0 ? 14 : 6}px ${color}`
-      }
-    });
   }), /*#__PURE__*/React.createElement(Container, {
     style: {
       position: "relative"
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "fp-live",
     style: {
-      display: "flex",
-      alignItems: "center",
-      gap: 14,
       fontFamily: "var(--font-mono)",
       fontSize: 11,
       letterSpacing: "0.24em",
       textTransform: "uppercase",
-      color: "rgba(255,255,255,0.55)",
-      marginBottom: 28
+      color: "rgba(255,255,255,0.7)"
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -1930,7 +1941,6 @@ const FractionalFinalCTA = () => {
       height: 8,
       borderRadius: 999,
       background: "var(--ignite-500)",
-      boxShadow: "0 0 12px var(--ignite-500)",
       animation: "ctaTickerDot 1.2s ease-in-out infinite"
     }
   }), /*#__PURE__*/React.createElement("span", {
@@ -1940,11 +1950,9 @@ const FractionalFinalCTA = () => {
     }
   }, "LIVE TRANSMISSION"), /*#__PURE__*/React.createElement("span", {
     style: {
-      flex: 1,
-      height: 1,
-      background: "linear-gradient(90deg, rgba(215, 69, 62,0.5), transparent)"
+      opacity: 0.5
     }
-  }), /*#__PURE__*/React.createElement("span", null, "// IGNITE FRACTIONAL \xB7 DESK 01")), /*#__PURE__*/React.createElement("h2", {
+  }, "\xB7"), /*#__PURE__*/React.createElement("span", null, "// IGNITE FRACTIONAL \xB7 DESK 01")), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 800,
@@ -1966,60 +1974,19 @@ const FractionalFinalCTA = () => {
       fontStyle: "italic",
       fontFamily: "Georgia, 'Times New Roman', serif",
       fontWeight: 400,
-      backgroundImage: "linear-gradient(90deg, #D7453E 0%, #FFB627 50%, #D7453E 100%)",
+      backgroundImage: "var(--fractional-prism)",
       backgroundSize: "200% 100%",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
-      animation: "ctaShimmer 5s linear infinite",
-      filter: "drop-shadow(0 0 36px rgba(215, 69, 62,0.55))"
+      animation: "ctaShimmer 5s linear infinite"
     }
-  }, "growth."), /*#__PURE__*/React.createElement("span", {
-    "aria-hidden": "true",
+  }, "growth."))), /*#__PURE__*/React.createElement("div", {
     style: {
-      position: "absolute",
-      left: 0,
-      right: "0.08em",
-      bottom: "0.08em",
-      height: 8,
-      background: "var(--ignite-500)",
-      transformOrigin: "left center",
-      animation: "ctaUnderlineDraw 800ms cubic-bezier(.2,.8,.2,1) 200ms both",
-      boxShadow: "0 0 24px var(--ignite-500)"
+      margin: "30px 0 26px",
+      height: 1,
+      background: "rgba(255,255,255,0.08)"
     }
-  }))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: "flex",
-      alignItems: "center",
-      gap: 16,
-      margin: "28px 0 22px"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      flex: 1,
-      height: 14,
-      background: "repeating-linear-gradient(135deg, var(--ignite-500) 0 14px, transparent 14px 28px)",
-      opacity: 0.85
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-mono)",
-      fontSize: 11,
-      letterSpacing: "0.32em",
-      textTransform: "uppercase",
-      color: "var(--ignite-500)",
-      fontWeight: 700,
-      padding: "6px 14px",
-      border: "1px solid rgba(215, 69, 62,0.5)",
-      background: "rgba(215, 69, 62,0.08)"
-    }
-  }, "\u25BC THE OFFER"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      flex: 1,
-      height: 14,
-      background: "repeating-linear-gradient(135deg, var(--ignite-500) 0 14px, transparent 14px 28px)",
-      opacity: 0.85
-    }
-  })), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       alignItems: "flex-end",
@@ -2040,21 +2007,20 @@ const FractionalFinalCTA = () => {
       margin: 0
     }
   }, "And", " ", /*#__PURE__*/React.createElement("span", {
+    className: "fp-prism-text",
     style: {
       fontStyle: "italic",
       fontFamily: "Georgia, serif",
       fontWeight: 400,
-      textTransform: "none",
-      color: "var(--ignite-500)"
+      textTransform: "none"
     }
   }, "actually"), " ", /*#__PURE__*/React.createElement("span", {
     style: {
       display: "inline-block",
       padding: "0 18px",
-      background: "var(--ignite-500)",
+      background: "var(--fractional-prism)",
       color: "#0b0905",
-      transform: "skew(-6deg)",
-      boxShadow: "0 18px 50px rgba(215, 69, 62,0.45)"
+      transform: "skew(-6deg)"
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -2119,7 +2085,7 @@ const FractionalFinalCTA = () => {
       alignItems: "center",
       gap: 14,
       padding: "22px 30px",
-      background: "linear-gradient(90deg, var(--ignite-500) 0%, #FF7A3D 50%, var(--ignite-500) 100%)",
+      background: "var(--fractional-prism)",
       backgroundSize: "200% 100%",
       animation: "ctaShimmer 5s linear infinite",
       color: "#0b0905",
@@ -2176,49 +2142,7 @@ const FractionalFinalCTA = () => {
       borderRadius: 4,
       backdropFilter: "blur(8px)"
     }
-  }, /*#__PURE__*/React.createElement("span", null, "staffing@igniteproductions.co"))), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      marginTop: 64,
-      display: "flex",
-      gap: 24,
-      alignItems: "center"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      flex: "0 0 60px",
-      height: 1,
-      background: "linear-gradient(90deg, transparent, rgba(215, 69, 62,0.5))"
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: "inline-block",
-      color: "var(--ignite-500)",
-      fontSize: 18,
-      animation: "ctaStarSpin 8s linear infinite"
-    }
-  }, "\u2726"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-mono)",
-      fontSize: 11,
-      letterSpacing: "0.24em",
-      textTransform: "uppercase",
-      color: "rgba(255,255,255,0.6)"
-    }
-  }, "NO PROPOSAL THEATER \xB7 NO LOCKED CONTRACTS"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: "inline-block",
-      color: "var(--ignite-500)",
-      fontSize: 18,
-      animation: "ctaStarSpin 8s linear infinite reverse"
-    }
-  }, "\u2726"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      flex: "0 0 60px",
-      height: 1,
-      background: "linear-gradient(90deg, rgba(215, 69, 62,0.5), transparent)"
-    }
-  }))));
+  }, /*#__PURE__*/React.createElement("span", null, "staffing@igniteproductions.co")))));
 };
 
 /* ==================================================================
@@ -2247,7 +2171,7 @@ const PROGRAMS = [{
   accent: "#FFB627",
   cat: "04 · Field & Experiential",
   title: "Boots on the ground, statewide.",
-  items: ["Costco roadshows & demo programs", "Retail sampling & in-store activations", "Mobile tours & pop-ups", "Trade shows & booth builds", "42K+ vetted ambassadors, 50 states"]
+  items: ["Costco roadshows & demo programs", "Retail sampling & in-store activations", "Mobile tours & pop-ups", "Trade shows & booth builds", "257K+ vetted ambassadors, 50 states"]
 }];
 const FractionalPrograms = () => /*#__PURE__*/React.createElement("section", {
   className: "paper",
@@ -2279,12 +2203,11 @@ const FractionalPrograms = () => /*#__PURE__*/React.createElement("section", {
     fontStyle: "italic",
     fontFamily: "Georgia, serif",
     fontWeight: 400,
-    color: "#fff",
-    background: "var(--ignite-500)",
-    padding: "0.04em 0.22em 0.08em",
+    color: "#0b0905",
+    background: "var(--fractional-prism)",
+    padding: "0.12em 0.32em 0.18em",
     transform: "rotate(-1.5deg)",
-    borderRadius: 6,
-    boxShadow: "0 18px 44px rgba(215, 69, 62,0.35)"
+    borderRadius: 6
   }
 }, "a broker, three agencies, and a trade marketing hire.")), /*#__PURE__*/React.createElement("p", {
   style: {
@@ -2300,107 +2223,110 @@ const FractionalPrograms = () => /*#__PURE__*/React.createElement("section", {
     gridTemplateColumns: "repeat(2, 1fr)",
     gap: 18
   }
-}, PROGRAMS.map(p => /*#__PURE__*/React.createElement("div", {
-  key: p.cat,
-  style: {
-    position: "relative",
-    background: "var(--paper-000)",
-    border: "1px solid var(--paper-200)",
-    borderRadius: 16,
-    padding: 36,
-    overflow: "hidden"
-  }
-}, /*#__PURE__*/React.createElement("div", {
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
-    top: -80,
-    right: -60,
-    width: 240,
-    height: 240,
-    borderRadius: 999,
-    background: `radial-gradient(circle, ${p.accent}22, transparent 60%)`,
-    filter: "blur(20px)",
-    pointerEvents: "none"
-  }
-}), /*#__PURE__*/React.createElement("div", {
-  style: {
-    position: "relative"
-  }
-}, /*#__PURE__*/React.createElement("div", {
-  style: {
-    display: "flex",
-    alignItems: "center",
-    gap: 12,
-    marginBottom: 20
-  }
-}, /*#__PURE__*/React.createElement("span", {
-  style: {
-    width: 36,
-    height: 36,
-    borderRadius: 6,
-    background: p.accent,
-    color: "#0b0905",
-    display: "grid",
-    placeItems: "center",
-    fontSize: 18,
-    fontWeight: 700
-  }
-}, p.icon), /*#__PURE__*/React.createElement("span", {
-  style: {
-    fontFamily: "var(--font-stencil)",
-    fontSize: 12,
-    letterSpacing: "0.18em",
-    color: p.accent
-  }
-}, p.cat)), /*#__PURE__*/React.createElement("h3", {
-  style: {
-    fontFamily: "var(--font-display)",
-    fontWeight: 700,
-    fontSize: "clamp(24px, 2.2vw, 32px)",
-    letterSpacing: "-0.02em",
-    lineHeight: 1.1,
-    color: "var(--fg-1-inv)",
-    margin: "0 0 22px",
-    textWrap: "balance"
-  }
-}, p.title), /*#__PURE__*/React.createElement("ul", {
-  style: {
-    listStyle: "none",
-    padding: 0,
-    margin: 0,
-    display: "flex",
-    flexDirection: "column",
-    gap: 10
-  }
-}, p.items.map((it, i) => /*#__PURE__*/React.createElement("li", {
-  key: i,
-  style: {
-    display: "flex",
-    gap: 12,
-    alignItems: "flex-start",
-    paddingBottom: 10,
-    borderBottom: i === p.items.length - 1 ? "none" : "1px dashed var(--paper-200)"
-  }
-}, /*#__PURE__*/React.createElement("span", {
-  style: {
-    flex: "0 0 18px",
-    color: p.accent,
-    fontFamily: "var(--font-mono)",
-    fontSize: 11,
-    fontWeight: 700,
-    paddingTop: 3
-  }
-}, "0", i + 1), /*#__PURE__*/React.createElement("span", {
-  style: {
-    fontFamily: "var(--font-display)",
-    fontWeight: 500,
-    fontSize: 15.5,
-    lineHeight: 1.4,
-    color: "var(--fg-2-inv)",
-    letterSpacing: "-0.005em"
-  }
-}, it))))))))));
+}, PROGRAMS.map((p, pi) => {
+  const accent = fpHue(pi, PROGRAMS.length);
+  return /*#__PURE__*/React.createElement("div", {
+    key: p.cat,
+    style: {
+      position: "relative",
+      background: "var(--paper-000)",
+      border: "1px solid var(--paper-200)",
+      borderRadius: 16,
+      padding: 36,
+      overflow: "hidden"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    "aria-hidden": "true",
+    style: {
+      position: "absolute",
+      top: -80,
+      right: -60,
+      width: 240,
+      height: 240,
+      borderRadius: 999,
+      background: "transparent",
+      filter: "blur(20px)",
+      pointerEvents: "none"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 12,
+      marginBottom: 20
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 36,
+      height: 36,
+      borderRadius: 6,
+      background: accent,
+      color: "#0b0905",
+      display: "grid",
+      placeItems: "center",
+      fontSize: 18,
+      fontWeight: 700
+    }
+  }, p.icon), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-stencil)",
+      fontSize: 12,
+      letterSpacing: "0.18em",
+      color: accent
+    }
+  }, p.cat)), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: "clamp(24px, 2.2vw, 32px)",
+      letterSpacing: "-0.02em",
+      lineHeight: 1.1,
+      color: "var(--fg-1-inv)",
+      margin: "0 0 22px",
+      textWrap: "balance"
+    }
+  }, p.title), /*#__PURE__*/React.createElement("ul", {
+    style: {
+      listStyle: "none",
+      padding: 0,
+      margin: 0,
+      display: "flex",
+      flexDirection: "column",
+      gap: 10
+    }
+  }, p.items.map((it, i) => /*#__PURE__*/React.createElement("li", {
+    key: i,
+    style: {
+      display: "flex",
+      gap: 12,
+      alignItems: "flex-start",
+      paddingBottom: 10,
+      borderBottom: i === p.items.length - 1 ? "none" : "1px dashed var(--paper-200)"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: "0 0 18px",
+      color: accent,
+      fontFamily: "var(--font-mono)",
+      fontSize: 11,
+      fontWeight: 700,
+      paddingTop: 3
+    }
+  }, "0", i + 1), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-display)",
+      fontWeight: 500,
+      fontSize: 15.5,
+      lineHeight: 1.4,
+      color: "var(--fg-2-inv)",
+      letterSpacing: "-0.005em"
+    }
+  }, it))))));
+}))));
 Object.assign(window, {
   FractionalHero2,
   FractionalStats,
@@ -2414,3 +2340,4 @@ Object.assign(window, {
   FractionalPainBanner,
   FractionalPrograms
 });
+})();

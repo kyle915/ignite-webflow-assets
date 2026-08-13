@@ -1,4 +1,4 @@
-(function(){if (typeof window !== "undefined" && window.WorkPage) return;
+(function(){if (typeof window !== "undefined" && window.FractionalHero) return;
 /* Fractional, Work, About, Contact page components */
 const {
   useState: fpState
@@ -12,13 +12,9 @@ const FractionalHero = () => /*#__PURE__*/React.createElement("section", {
     padding: "140px 0 100px",
     overflow: "hidden"
   }
-}, /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 48,
-  opacity: 0.04
-}), /*#__PURE__*/React.createElement("img", {
-  src: "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-flow-vertical.png",
+}, /*#__PURE__*/React.createElement("img", {
   alt: "",
-  "aria-hidden": "true",
+  src: window.__resources?.r_assets_chrome_flow_vertical_png || "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-flow-vertical.png",
   style: {
     position: "absolute",
     right: "-5%",
@@ -26,7 +22,9 @@ const FractionalHero = () => /*#__PURE__*/React.createElement("section", {
     width: 380,
     opacity: 0.22,
     mixBlendMode: "screen"
-  }
+  },
+  loading: "lazy",
+  decoding: "async"
 }), /*#__PURE__*/React.createElement(Container, {
   style: {
     position: "relative"
@@ -62,7 +60,7 @@ const FractionalHero = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(AccentBtn, {
   size: "lg",
-  onClick: () => location.href = "contact.html"
+  onClick: () => location.href = "/contact"
 }, "Book a strategy call"), /*#__PURE__*/React.createElement(GhostBtn, {
   size: "lg"
 }, "See how it works"))));
@@ -198,7 +196,7 @@ const FractionalTiers = () => /*#__PURE__*/React.createElement("section", {
     marginTop: 32
   }
 }, /*#__PURE__*/React.createElement(AccentBtn, {
-  onClick: () => location.href = "contact.html",
+  onClick: () => location.href = "/contact",
   style: {
     width: "100%",
     justifyContent: "center"
@@ -342,13 +340,7 @@ const WorkGrid = () => /*#__PURE__*/React.createElement("section", {
   style: {
     padding: "80px 0 120px"
   }
-}, /*#__PURE__*/React.createElement("style", null, `
-      .work-grid-tile h3,
-      .work-grid-tile .work-grid-tile-title { color: #fff !important; }
-      .work-grid-tile .work-grid-tile-meta { color: #fff !important; opacity: 0.85; }
-      .work-grid-tile .work-grid-tile-stat-num { color: #FFB627 !important; }
-      .work-grid-tile .work-grid-tile-brand { color: #FFB627 !important; }
-    `), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+}, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
@@ -357,8 +349,7 @@ const WorkGrid = () => /*#__PURE__*/React.createElement("section", {
 }, WORK_CASES.map((c, i) => /*#__PURE__*/React.createElement("a", {
   key: c.slug,
   id: c.slug,
-  href: "/work#" + c.slug,
-  className: "work-grid-tile",
+  href: "#",
   style: {
     position: "relative",
     display: "block",
@@ -389,12 +380,14 @@ const WorkGrid = () => /*#__PURE__*/React.createElement("section", {
     objectFit: "cover",
     transition: "transform 600ms var(--ease-out)",
     filter: "brightness(0.7) saturate(1.1)"
-  }
+  },
+  loading: "lazy",
+  decoding: "async"
 }), /*#__PURE__*/React.createElement("div", {
   style: {
     position: "absolute",
     inset: 0,
-    background: "linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.85))"
+    background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.425))"
   }
 }), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -430,7 +423,6 @@ const WorkGrid = () => /*#__PURE__*/React.createElement("section", {
     opacity: 0.8
   }
 }, c.category)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-  className: "work-grid-tile-brand",
   style: {
     fontFamily: "var(--font-stencil)",
     fontSize: 14,
@@ -439,15 +431,13 @@ const WorkGrid = () => /*#__PURE__*/React.createElement("section", {
     marginBottom: 14
   }
 }, c.brand), /*#__PURE__*/React.createElement("h3", {
-  className: "work-grid-tile-title",
   style: {
     fontFamily: "var(--font-display)",
     fontWeight: 700,
     fontSize: 34,
     letterSpacing: "-0.02em",
     lineHeight: 1.05,
-    marginBottom: 20,
-    color: "#fff"
+    marginBottom: 20
   }
 }, c.tagline), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -525,7 +515,7 @@ const AboutHero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "var(--fg-1)"
   }
-}, "42,000+ brand ambassadors"), " running 5,000+ activations a year for the brands that define culture \u2014 and the agency-run Spark platform has changed how clients see field marketing forever."))));
+}, "257,000+ brand ambassadors"), " running 5,000+ activations a year for the brands that define culture \u2014 and the agency-run Spark platform has changed how clients see field marketing forever."))));
 const AboutStats = () => /*#__PURE__*/React.createElement("section", {
   id: "impact",
   className: "paper",
@@ -563,7 +553,7 @@ const AboutStats = () => /*#__PURE__*/React.createElement("section", {
     gridTemplateColumns: "repeat(4, 1fr)",
     gap: 20
   }
-}, [["42,000+", "Vetted ambassadors"], ["5,000+", "Activations per year"], ["200+", "Brands served"], ["50", "States covered"], ["8", "Years in business"], ["25M+", "Consumers reached"], ["87%", "Client retention"], ["20%+", "Avg demo conversion"]].map(([n, l]) => /*#__PURE__*/React.createElement("div", {
+}, [["257,000+", "Vetted ambassadors"], ["5,000+", "Activations per year"], ["200+", "Brands served"], ["50", "States covered"], ["8", "Years in business"], ["25M+", "Consumers reached"], ["87%", "Client retention"], ["20%+", "Avg demo conversion"]].map(([n, l]) => /*#__PURE__*/React.createElement("div", {
   key: l,
   style: {
     padding: 24,
@@ -649,190 +639,443 @@ const AboutValues = () => /*#__PURE__*/React.createElement("section", {
 }, d))))));
 
 /* ---------- CONTACT ---------- */
+const CONTACT_STEPS = [["01", "You send us the brief.", "2 min", "Just the basics — what you're launching, where, and roughly when. No long forms. No qualification gauntlet."], ["02", "We respond within 24 hours.", "Same day on weekdays", "A real human who's read your brief — not a templated \u201Cthanks for reaching out.\u201D If we're not the right fit, we'll tell you and point you somewhere better."], ["03", "30-min discovery call.", "No pitch deck", "We dig into goals, timeline, and budget. You leave with a clear sense of fit, scope, and next steps — even if that's \u201Cgo talk to someone else.\u201D"]];
+const CONTACT_DOORS = [{
+  dot: "var(--ignite-500)",
+  t: "Brand Ambassador Staffing",
+  lead: "I need bodies on the ground.",
+  d: "Trained ambassadors for samplings, retail, on-premise, festivals, and field marketing. National coverage, fast deploy, full reporting.",
+  tag: "Brand Ambassadors",
+  href: "/services/event-staffing"
+}, {
+  dot: "#FFB627",
+  t: "Fractional Sales & Marketing",
+  lead: "I'm doing too much myself.",
+  d: "Senior CPG operators plug into your team. Sales strategy, retail growth, broker management, marketing leadership — without the full-time hire.",
+  tag: "Fractional Services",
+  href: "/fractional"
+}, {
+  dot: "var(--spark-500)",
+  t: "Spark Platform",
+  lead: "I need to see what's actually happening.",
+  d: "Real-time field marketing intelligence. Live check-ins, sample tracking, conversion data, and post-event recaps — all in one dashboard.",
+  tag: "Spark by Ignite",
+  href: "/spark"
+}];
 const ContactForm = () => {
   const urgent = typeof window !== "undefined" && new URLSearchParams(window.location.search).get("urgent");
-  const [submitted, setSubmitted] = fpState(false);
-  return /*#__PURE__*/React.createElement("section", {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("section", {
     style: {
-      padding: "140px 0 120px",
+      padding: "150px 0 90px",
       background: "var(--ink-000)",
       color: "var(--fg-1)",
-      minHeight: "90vh"
+      position: "relative",
+      overflow: "hidden",
+      borderBottom: "1px solid var(--ink-400)"
     }
-  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
+    "aria-hidden": "true",
+    style: {
+      position: "absolute",
+      right: "-10%",
+      top: "-15%",
+      width: "48%",
+      height: "70%",
+      background: "transparent"
+    }
+  }), /*#__PURE__*/React.createElement(Container, {
+    style: {
+      position: "relative"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
-      gridTemplateColumns: "1fr 1fr",
-      gap: 80
-    }
+      gridTemplateColumns: "1.4fr 1fr",
+      gap: 64,
+      alignItems: "end"
+    },
+    className: "contact-hero-grid"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(OpsLine, null, ">> ", urgent ? "URGENT STAFFING REQUEST" : "GET IN TOUCH"), /*#__PURE__*/React.createElement("h1", {
     style: {
-      marginTop: 14,
+      marginTop: 16,
       fontFamily: "var(--font-display)",
       fontWeight: 700,
-      fontSize: "clamp(44px, 6vw, 88px)",
-      letterSpacing: "-0.035em",
-      lineHeight: 0.95
+      fontSize: "clamp(46px, 6.4vw, 104px)",
+      letterSpacing: "-0.04em",
+      lineHeight: 0.92,
+      textWrap: "balance"
     }
   }, urgent ? /*#__PURE__*/React.createElement(React.Fragment, null, "Need staff ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
       color: "#FF6969"
     }
-  }, "now?")) : /*#__PURE__*/React.createElement(React.Fragment, null, "Let's build", /*#__PURE__*/React.createElement("br", null), "something ", /*#__PURE__*/React.createElement("span", {
+  }, "now?")) : /*#__PURE__*/React.createElement(React.Fragment, null, "Let's build something ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
       color: "var(--ignite-500)"
     }
-  }, "big."))), /*#__PURE__*/React.createElement("p", {
+  }, "worth showing up for."))), /*#__PURE__*/React.createElement("p", {
     style: {
-      marginTop: 28,
-      fontSize: 18,
+      marginTop: 26,
+      fontSize: 19,
       lineHeight: 1.55,
       color: "var(--fg-2)",
-      maxWidth: 480
+      maxWidth: 580
     }
-  }, urgent ? "We staff short-lead requests in as little as 48 hours across our 50-state network. Tell us when, where, and how many." : "Whether you're scoping a national tour or just trying to get sampling right in three markets, we'll respond within one business day."), /*#__PURE__*/React.createElement("div", {
+  }, urgent ? "We staff short-lead requests in as little as 48 hours across our 50-state network. Email or call — tell us when, where, and how many." : "Tell us about your launch, activation, or staffing need. Whether you're 90 days from a national rollout or trying to figure out next quarter's play — we'll respond within 24 hours and get a real conversation started."), /*#__PURE__*/React.createElement("div", {
     style: {
-      marginTop: 48,
+      marginTop: 36,
       display: "flex",
+      gap: 14,
+      flexWrap: "wrap"
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "mailto:staffing@igniteproductions.co",
+    style: {
+      display: "inline-flex",
       flexDirection: "column",
-      gap: 20
+      gap: 4,
+      padding: "16px 24px",
+      borderRadius: 12,
+      background: "var(--ignite-500)",
+      color: "#fff",
+      textDecoration: "none",
+      minWidth: 220
     }
-  }, [["OFFICE", "Based nationwide · All 50 states"], ["EMAIL", "hello@igniteproductions.co"], ["CERTIFIED", "Veteran-Owned Small Business (VOSB)"]].map(([k, v]) => /*#__PURE__*/React.createElement("div", {
-    key: k
-  }, /*#__PURE__*/React.createElement(OpsLine, null, "* " + k), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("span", {
     style: {
-      marginTop: 6,
-      fontFamily: "var(--font-display)",
-      fontSize: 17
+      fontFamily: "var(--font-mono)",
+      fontSize: 10,
+      letterSpacing: "0.2em",
+      textTransform: "uppercase",
+      opacity: 0.85
     }
-  }, v))))), /*#__PURE__*/React.createElement("div", null, submitted ? /*#__PURE__*/React.createElement("div", {
-    style: {
-      padding: 40,
-      background: "rgba(214,243,95,0.08)",
-      border: "1px solid rgba(214,243,95,0.3)",
-      borderRadius: 16,
-      textAlign: "center"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 48,
-      marginBottom: 12
-    }
-  }, "\u25C9"), /*#__PURE__*/React.createElement("h3", {
+  }, "Email \u2197"), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 700,
-      fontSize: 32,
-      letterSpacing: "-0.02em"
+      fontSize: 18
     }
-  }, "We'll be in touch."), /*#__PURE__*/React.createElement("p", {
+  }, "staffing@igniteproductions.co")), /*#__PURE__*/React.createElement("a", {
+    href: "tel:+17754060435",
     style: {
-      marginTop: 16,
-      color: "var(--fg-2)"
+      display: "inline-flex",
+      flexDirection: "column",
+      gap: 4,
+      padding: "16px 24px",
+      borderRadius: 12,
+      background: "transparent",
+      color: "var(--fg-1)",
+      border: "1px solid var(--ink-400)",
+      textDecoration: "none"
     }
-  }, "Response within one business day.")) : /*#__PURE__*/React.createElement("form", {
-    onSubmit: e => {
-      e.preventDefault();
-      setSubmitted(true);
-    },
+  }, /*#__PURE__*/React.createElement("span", {
     style: {
-      padding: 32,
+      fontFamily: "var(--font-mono)",
+      fontSize: 10,
+      letterSpacing: "0.2em",
+      textTransform: "uppercase",
+      color: "var(--fg-3)"
+    }
+  }, "Phone \u2197"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: 18
+    }
+  }, "775.406.0435")))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: 28,
       background: "var(--ink-100)",
       border: "1px solid var(--ink-400)",
-      borderRadius: 20,
+      borderRadius: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      paddingBottom: 16,
+      borderBottom: "1px solid var(--ink-400)"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 11,
+      letterSpacing: "0.16em",
+      textTransform: "uppercase",
+      color: "var(--fg-2)"
+    }
+  }, "Project Inquiry"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 7
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 7,
+      height: 7,
+      borderRadius: 999,
+      background: "var(--spark-500)",
+      boxShadow: "0 0 8px var(--spark-500)"
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 10,
+      letterSpacing: "0.14em",
+      color: "var(--spark-500)"
+    }
+  }, "LIVE \xB7 AVG REPLY 4H"))), [["Response", "< 24 hours"], ["Coverage", "All 50 states"], ["Active brands", "40+ this quarter"]].map(([k, v]) => /*#__PURE__*/React.createElement("div", {
+    key: k,
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "baseline",
+      padding: "16px 0",
+      borderBottom: "1px solid var(--ink-400)"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 10,
+      letterSpacing: "0.18em",
+      textTransform: "uppercase",
+      color: "var(--fg-3)"
+    }
+  }, k), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: 19,
+      color: "var(--fg-1)"
+    }
+  }, v))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 16,
+      fontFamily: "var(--font-mono)",
+      fontSize: 10,
+      letterSpacing: "0.16em",
+      textTransform: "uppercase",
+      color: "var(--ignite-500)"
+    }
+  }, "\u2605 Veteran-Owned \xB7 VOSB"))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: "110px 0",
+      background: "var(--ink-100)",
+      color: "var(--fg-1)",
+      borderBottom: "1px solid var(--ink-400)"
+    }
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement(OpsLine, null, ">> ", "WHAT HAPPENS NEXT"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 40,
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+      gap: 16
+    }
+  }, CONTACT_STEPS.map(([n, t, when, d]) => /*#__PURE__*/React.createElement("div", {
+    key: n,
+    style: {
+      padding: "30px 28px",
+      background: "var(--ink-000)",
+      border: "1px solid var(--ink-400)",
+      borderRadius: 14
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-stencil)",
+      fontSize: 24,
+      color: "var(--ignite-500)"
+    }
+  }, n), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 10,
+      letterSpacing: "0.14em",
+      textTransform: "uppercase",
+      color: "var(--spark-500)"
+    }
+  }, when)), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      marginTop: 18,
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: 22,
+      letterSpacing: "-0.02em"
+    }
+  }, t), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 10,
+      fontSize: 14.5,
+      lineHeight: 1.55,
+      color: "var(--fg-2)"
+    }
+  }, d)))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: "110px 0",
+      background: "var(--ink-000)",
+      color: "var(--fg-1)",
+      borderBottom: "1px solid var(--ink-400)"
+    }
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 760,
+      marginBottom: 44
+    }
+  }, /*#__PURE__*/React.createElement(OpsLine, null, ">> ", "NOT SURE WHERE TO START?"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      marginTop: 14,
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: "clamp(34px, 4.6vw, 64px)",
+      letterSpacing: "-0.035em",
+      lineHeight: 0.98
+    }
+  }, "Pick the door that ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontStyle: "italic",
+      color: "var(--ignite-500)"
+    }
+  }, "fits.")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 18,
+      fontSize: 17,
+      lineHeight: 1.55,
+      color: "var(--fg-2)"
+    }
+  }, "If you already know what you need, jump straight to the relevant team. We'll route your inquiry and skip a step on the call.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",
+      gap: 16
+    }
+  }, CONTACT_DOORS.map(d => /*#__PURE__*/React.createElement("a", {
+    key: d.t,
+    href: d.href,
+    style: {
       display: "flex",
       flexDirection: "column",
-      gap: 18
-    }
-  }, [["Name", "text", "name"], ["Company", "text", "company"], ["Email", "email", "email"]].map(([l, ty, n]) => /*#__PURE__*/React.createElement("div", {
-    key: n
-  }, /*#__PURE__*/React.createElement("label", {
-    htmlFor: "contact-" + n,
-    style: {
-      fontFamily: "var(--font-mono)",
-      fontSize: 10,
-      letterSpacing: "0.22em",
-      textTransform: "uppercase",
-      color: "var(--fg-3)",
-      display: "block"
-    }
-  }, l), /*#__PURE__*/React.createElement("input", {
-    id: "contact-" + n,
-    required: true,
-    name: n,
-    type: ty,
-    autoComplete: n === "name" ? "name" : n === "email" ? "email" : n === "company" ? "organization" : "off",
-    style: {
-      width: "100%",
-      marginTop: 6,
-      padding: "12px 14px",
-      background: "var(--ink-300)",
-      color: "var(--fg-1)",
+      padding: 30,
+      background: "var(--ink-100)",
       border: "1px solid var(--ink-400)",
-      borderRadius: 8,
-      fontFamily: "var(--font-body)",
-      fontSize: 15
+      borderRadius: 16,
+      textDecoration: "none",
+      transition: "transform 220ms var(--ease-out), border-color 220ms"
+    },
+    onMouseEnter: e => {
+      e.currentTarget.style.transform = "translateY(-5px)";
+      e.currentTarget.style.borderColor = d.dot;
+    },
+    onMouseLeave: e => {
+      e.currentTarget.style.transform = "translateY(0)";
+      e.currentTarget.style.borderColor = "var(--ink-400)";
     }
-  }))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
-    htmlFor: "contact-need",
+  }, /*#__PURE__*/React.createElement("span", {
     style: {
+      width: 9,
+      height: 9,
+      borderRadius: 999,
+      background: d.dot
+    }
+  }), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      marginTop: 18,
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: 22,
+      letterSpacing: "-0.02em",
+      color: "var(--fg-1)"
+    }
+  }, d.t), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 8,
+      fontStyle: "italic",
+      fontFamily: "Georgia, serif",
+      fontSize: 16,
+      color: d.dot
+    }
+  }, d.lead), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 12,
+      fontSize: 14,
+      lineHeight: 1.55,
+      color: "var(--fg-2)",
+      flex: 1
+    }
+  }, d.d), /*#__PURE__*/React.createElement("span", {
+    style: {
+      marginTop: 20,
       fontFamily: "var(--font-mono)",
-      fontSize: 10,
-      letterSpacing: "0.22em",
+      fontSize: 11,
+      letterSpacing: "0.18em",
       textTransform: "uppercase",
-      color: "var(--fg-3)",
-      display: "block"
+      color: d.dot
     }
-  }, "What do you need?"), /*#__PURE__*/React.createElement("select", {
-    id: "contact-need",
-    name: "need",
+  }, d.tag, " \u2192")))))), /*#__PURE__*/React.createElement("section", {
     style: {
-      width: "100%",
-      marginTop: 6,
-      padding: "12px 14px",
-      background: "var(--ink-300)",
+      padding: "120px 0",
+      background: "var(--ink-100)",
       color: "var(--fg-1)",
-      border: "1px solid var(--ink-400)",
-      borderRadius: 8,
-      fontFamily: "var(--font-body)",
-      fontSize: 15
+      textAlign: "center"
     }
-  }, /*#__PURE__*/React.createElement("option", null, "National sampling program"), /*#__PURE__*/React.createElement("option", null, "Experiential activation / tour"), /*#__PURE__*/React.createElement("option", null, "Event staffing (short-lead)"), /*#__PURE__*/React.createElement("option", null, "Fractional CPG leadership"), /*#__PURE__*/React.createElement("option", null, "Spark platform demo"), /*#__PURE__*/React.createElement("option", null, "Other"))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
-    htmlFor: "contact-notes",
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement(OpsLine, null, ">> ", "NO LONG SALES CYCLES. NO MYSTERY PRICING."), /*#__PURE__*/React.createElement("h2", {
     style: {
-      fontFamily: "var(--font-mono)",
-      fontSize: 10,
-      letterSpacing: "0.22em",
-      textTransform: "uppercase",
-      color: "var(--fg-3)",
-      display: "block"
+      marginTop: 18,
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: "clamp(36px, 5.4vw, 84px)",
+      letterSpacing: "-0.04em",
+      lineHeight: 0.96,
+      maxWidth: 1000,
+      marginInline: "auto"
     }
-  }, "Tell us more"), /*#__PURE__*/React.createElement("textarea", {
-    id: "contact-notes",
-    name: "notes",
-    rows: "4",
+  }, "If we're the right fit, we'll be in your inbox ", /*#__PURE__*/React.createElement("span", {
     style: {
-      width: "100%",
-      marginTop: 6,
-      padding: "12px 14px",
-      background: "var(--ink-300)",
-      color: "var(--fg-1)",
-      border: "1px solid var(--ink-400)",
-      borderRadius: 8,
-      fontFamily: "var(--font-body)",
-      fontSize: 15,
-      resize: "vertical"
+      fontStyle: "italic",
+      color: "var(--ignite-500)"
     }
-  })), /*#__PURE__*/React.createElement(AccentBtn, {
-    size: "lg",
+  }, "tomorrow morning.")), /*#__PURE__*/React.createElement("div", {
     style: {
-      width: "100%",
+      marginTop: 40,
+      display: "flex",
+      gap: 14,
       justifyContent: "center",
-      marginTop: 8
+      flexWrap: "wrap"
     }
-  }, urgent ? "Request staff now" : "Send it"))))));
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "mailto:staffing@igniteproductions.co",
+    style: {
+      padding: "20px 32px",
+      borderRadius: 999,
+      background: "var(--ignite-500)",
+      color: "#fff",
+      fontFamily: "var(--font-display)",
+      fontWeight: 800,
+      fontSize: 17,
+      textDecoration: "none"
+    }
+  }, "Email staffing@igniteproductions.co \u2192"), /*#__PURE__*/React.createElement("a", {
+    href: "tel:+17754060435",
+    style: {
+      padding: "20px 28px",
+      borderRadius: 999,
+      background: "transparent",
+      color: "var(--fg-1)",
+      border: "1px solid var(--ink-400)",
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: 17,
+      textDecoration: "none"
+    }
+  }, "Call 775.406.0435")))), /*#__PURE__*/React.createElement("style", null, `@media (max-width: 860px){ .contact-hero-grid{ grid-template-columns: 1fr !important; } }`));
 };
 Object.assign(window, {
   FractionalHero,

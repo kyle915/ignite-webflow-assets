@@ -9,7 +9,7 @@
 const IND_KEYFRAMES = `
 @keyframes ind-rise { 0% { opacity: 0; transform: translateY(14px); } 100% { opacity: 1; transform: translateY(0); } }
 @keyframes ind-blink { 0%, 60%, 100% { opacity: 1; } 70%, 80% { opacity: 0.2; } }
-@keyframes ind-glow { 0% { text-shadow: 0 0 0 rgba(0,0,0,0); } 60% { text-shadow: 0 0 18px currentColor; } 100% { text-shadow: 0 0 0 transparent; } }
+@keyframes ind-glow { 0%,100% { opacity: 1; } }
 @keyframes ind-grid-drift { 0% { background-position: 0 0, 0 0; } 100% { background-position: 48px 48px, 48px 48px; } }
 @keyframes ind-glow-a { 0%,100% { transform: translate3d(-8%, -4%, 0) scale(1); opacity: .55; } 50% { transform: translate3d(6%, 4%, 0) scale(1.12); opacity: .85; } }
 @keyframes ind-glow-b { 0%,100% { transform: translate3d(4%, 6%, 0) scale(1.05); opacity: .35; } 50% { transform: translate3d(-6%, -4%, 0) scale(0.95); opacity: .6; } }
@@ -25,46 +25,7 @@ const IND_KEYFRAMES = `
 const IndGridBg = ({
   animated = true,
   accent = "#D7453E"
-}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
-    inset: 0,
-    pointerEvents: "none",
-    backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px)," + "linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-    backgroundSize: "48px 48px",
-    opacity: 0.05,
-    maskImage: "radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%)",
-    WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%)",
-    animation: animated ? "ind-grid-drift 28s linear infinite" : undefined
-  }
-}), animated && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
-    left: "-10%",
-    top: "-15%",
-    width: "60%",
-    height: "70%",
-    background: `radial-gradient(ellipse at center, ${accent}38 0%, ${accent}00 65%)`,
-    filter: "blur(20px)",
-    pointerEvents: "none",
-    animation: "ind-glow-a 18s ease-in-out infinite"
-  }
-}), /*#__PURE__*/React.createElement("div", {
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
-    right: "-8%",
-    bottom: "-20%",
-    width: "55%",
-    height: "70%",
-    background: `radial-gradient(ellipse at center, ${accent}24 0%, ${accent}00 65%)`,
-    filter: "blur(28px)",
-    pointerEvents: "none",
-    animation: "ind-glow-b 22s ease-in-out infinite"
-  }
-}), /*#__PURE__*/React.createElement("div", {
+}) => /*#__PURE__*/React.createElement(React.Fragment, null, animated && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
   "aria-hidden": "true",
   style: {
     position: "absolute",
@@ -85,7 +46,7 @@ const IndustryHero = ({
 }) => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "relative",
-    padding: "140px 0 90px",
+    padding: "var(--hero-pad-compact) 0",
     background: "var(--ink-000)",
     color: "var(--fg-1)",
     borderTop: "1px solid var(--ink-400)",
@@ -113,7 +74,7 @@ const IndustryHero = ({
   }
 }, ind.short || ind.name), /*#__PURE__*/React.createElement("div", {
   style: {
-    maxWidth: 1280,
+    maxWidth: 1480,
     margin: "0 auto",
     padding: "0 32px",
     position: "relative"
@@ -145,7 +106,6 @@ const IndustryHero = ({
     height: 7,
     borderRadius: 999,
     background: ind.accent,
-    boxShadow: `0 0 12px ${ind.accent}`,
     animation: "ind-blink 2.4s ease-out infinite"
   }
 }), ">> ", ind.hero.eyebrow)), /*#__PURE__*/React.createElement("h1", {
@@ -244,7 +204,7 @@ const IndustryActivations = ({
   }
 }, /*#__PURE__*/React.createElement("div", {
   style: {
-    maxWidth: 1280,
+    maxWidth: 1480,
     margin: "0 auto",
     padding: "0 32px"
   }
@@ -342,7 +302,7 @@ const IndustryCompliance = ({
       position: "absolute",
       inset: 0,
       pointerEvents: "none",
-      background: `radial-gradient(ellipse 50% 60% at 15% 25%, ${ind.accent}1a 0%, transparent 60%)`
+      background: "transparent"
     }
   }), /*#__PURE__*/React.createElement("div", {
     "aria-hidden": "true",
@@ -361,7 +321,7 @@ const IndustryCompliance = ({
     }
   }, "RULES"), /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px",
       position: "relative"
@@ -397,7 +357,6 @@ const IndustryCompliance = ({
       height: 7,
       borderRadius: 999,
       background: ind.accent,
-      boxShadow: `0 0 12px ${ind.accent}`,
       animation: "ind-blink 2.4s ease-out infinite"
     }
   }), "COMPLIANCE \xB7 CERTIFICATIONS \xB7 PAPERWORK"), /*#__PURE__*/React.createElement("h2", {
@@ -413,8 +372,7 @@ const IndustryCompliance = ({
   }, "We don't fake the", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
-      color: ind.accent,
-      textShadow: `0 0 40px ${ind.accent}88, 0 0 14px ${ind.accent}55`
+      color: ind.accent
     }
   }, "boring parts.")), /*#__PURE__*/React.createElement("p", {
     style: {
@@ -433,8 +391,7 @@ const IndustryCompliance = ({
       position: "relative",
       display: "flex",
       flexDirection: "column",
-      gap: 8,
-      boxShadow: `0 20px 60px -30px ${ind.accent}66`
+      gap: 8
     }
   }, /*#__PURE__*/React.createElement("div", {
     "aria-hidden": "true",
@@ -461,8 +418,7 @@ const IndustryCompliance = ({
       fontSize: 34,
       color: ind.accent,
       letterSpacing: "-0.025em",
-      lineHeight: 1,
-      textShadow: `0 0 30px ${ind.accent}55`
+      lineHeight: 1
     }
   }, "Audit-ready"), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -493,7 +449,7 @@ const IndustryCompliance = ({
     onMouseEnter: e => {
       e.currentTarget.style.transform = "translateY(-3px)";
       e.currentTarget.style.borderColor = ind.accent;
-      e.currentTarget.style.boxShadow = `0 24px 50px -25px ${ind.accent}40`;
+      e.currentTarget.style.boxShadow = "none";
     },
     onMouseLeave: e => {
       e.currentTarget.style.transform = "none";
@@ -572,7 +528,7 @@ const IndustryProof = ({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px"
     }
@@ -644,7 +600,7 @@ const IndustryProof = ({
       }
     }), /*#__PURE__*/React.createElement("div", {
       style: {
-        height: 80,
+        height: 116,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -654,12 +610,14 @@ const IndustryProof = ({
       src: logo.url,
       alt: logo.name,
       style: {
-        maxHeight: 64,
-        maxWidth: "85%",
+        maxHeight: 96,
+        maxWidth: "100%",
         width: "auto",
         objectFit: "contain",
         filter: "brightness(0) invert(1) opacity(0.92)"
-      }
+      },
+      loading: "lazy",
+      decoding: "async"
     }) : /*#__PURE__*/React.createElement("span", {
       style: {
         fontFamily: "var(--font-stencil)",
@@ -708,23 +666,15 @@ const IndustryFaqs = ({
   const [open, setOpen] = React.useState(0);
   if (faqs.length === 0) return null;
   return /*#__PURE__*/React.createElement("section", {
-    className: "ind-faq",
     style: {
       padding: "120px 0",
       background: "var(--paper-000)",
       color: "var(--fg-1-inv)",
       borderTop: "1px solid var(--paper-200)"
     }
-  }, /*#__PURE__*/React.createElement("style", null, `
-        .ind-faq h2,
-        .ind-faq .ind-faq-title { color: #0A0B0D !important; }
-        .ind-faq h2 .ind-faq-accent { color: ${ind.accent} !important; }
-        .ind-faq button { color: #0A0B0D !important; }
-        .ind-faq .ind-faq-q { color: #0A0B0D !important; }
-        .ind-faq .ind-faq-a { color: #2A2D33 !important; }
-      `), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px"
     }
@@ -744,18 +694,15 @@ const IndustryFaqs = ({
       color: ind.accent
     }
   }, ">> ", ind.short.toUpperCase(), " \xB7 FAQ"), /*#__PURE__*/React.createElement("h2", {
-    className: "ind-faq-title",
     style: {
       marginTop: 14,
       fontFamily: "var(--font-display)",
       fontWeight: 800,
       fontSize: "clamp(38px, 4.6vw, 64px)",
       letterSpacing: "-0.03em",
-      lineHeight: 0.96,
-      color: "#0A0B0D"
+      lineHeight: 0.96
     }
   }, "The questions", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
-    className: "ind-faq-accent",
     style: {
       fontStyle: "italic",
       color: ind.accent
@@ -841,12 +788,12 @@ const IndustryCta = ({
     style: {
       position: "absolute",
       inset: 0,
-      background: `radial-gradient(ellipse 60% 80% at 90% 50%, ${ind.accent}24, transparent 60%)`,
+      background: "transparent",
       pointerEvents: "none"
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px",
       position: "relative",
@@ -889,7 +836,7 @@ const IndustryCta = ({
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: cta.primaryHref || "contact.html",
+    href: cta.primaryHref || "/contact",
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 600,
@@ -939,7 +886,6 @@ const IndustryCta = ({
       lineHeight: 0.85,
       letterSpacing: "-0.02em",
       textTransform: "uppercase",
-      textShadow: `0 0 60px ${ind.accent}30`,
       opacity: 0.9,
       userSelect: "none"
     }
@@ -966,20 +912,7 @@ const IndustryPlaybook = ({
       position: "absolute",
       inset: 0,
       pointerEvents: "none",
-      background: `radial-gradient(ellipse 70% 50% at 80% 30%, ${ind.accent}1c 0%, transparent 60%)`
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      inset: 0,
-      pointerEvents: "none",
-      opacity: 0.06,
-      backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px)," + "linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-      backgroundSize: "56px 56px",
-      maskImage: "radial-gradient(ellipse 60% 60% at 50% 50%, black 30%, transparent 80%)",
-      WebkitMaskImage: "radial-gradient(ellipse 60% 60% at 50% 50%, black 30%, transparent 80%)",
-      animation: "ind-grid-drift 28s linear infinite"
+      background: "transparent"
     }
   }), /*#__PURE__*/React.createElement("div", {
     "aria-hidden": "true",
@@ -998,7 +931,7 @@ const IndustryPlaybook = ({
     }
   }, "PLAYBOOK"), /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px",
       position: "relative"
@@ -1030,7 +963,6 @@ const IndustryPlaybook = ({
       height: 7,
       borderRadius: 999,
       background: ind.accent,
-      boxShadow: `0 0 12px ${ind.accent}`,
       animation: "ind-blink 2.4s ease-out infinite"
     }
   }), "HOW THE ", ind.short.toUpperCase(), " PLAYBOOK RUNS"), /*#__PURE__*/React.createElement("h2", {
@@ -1046,8 +978,7 @@ const IndustryPlaybook = ({
   }, "From brief to ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
-      color: ind.accent,
-      textShadow: `0 0 40px ${ind.accent}88, 0 0 14px ${ind.accent}55`
+      color: ind.accent
     }
   }, "boots on the ground."))), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1096,7 +1027,7 @@ const IndustryPlaybook = ({
       fontSize: 28,
       color: "#0A0B0D",
       letterSpacing: "-0.02em",
-      boxShadow: `0 0 0 6px var(--ink-000), 0 0 0 7px ${ind.accent}55, 0 0 30px ${ind.accent}99`
+      boxShadow: `0 0 0 6px var(--ink-000), 0 0 0 7px ${ind.accent}55`
     }
   }, String(i + 1).padStart(2, "0")), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1115,7 +1046,7 @@ const IndustryPlaybook = ({
     onMouseEnter: e => {
       e.currentTarget.style.transform = "translateY(-4px)";
       e.currentTarget.style.borderColor = ind.accent;
-      e.currentTarget.style.boxShadow = `0 30px 60px -25px ${ind.accent}40`;
+      e.currentTarget.style.boxShadow = "none";
     },
     onMouseLeave: e => {
       e.currentTarget.style.transform = "none";
@@ -1227,7 +1158,7 @@ const IndustrySparkCallout = ({
       position: "absolute",
       inset: 0,
       pointerEvents: "none",
-      background: "radial-gradient(ellipse 50% 60% at 85% 40%, rgba(214,243,95,0.18), transparent 60%), radial-gradient(ellipse 40% 50% at 12% 80%, rgba(214,243,95,0.08), transparent 60%)"
+      background: "transparent"
     }
   }), /*#__PURE__*/React.createElement("div", {
     "aria-hidden": "true",
@@ -1243,7 +1174,7 @@ const IndustrySparkCallout = ({
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px",
       position: "relative"
@@ -1264,15 +1195,16 @@ const IndustrySparkCallout = ({
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png",
+    src: window.__resources?.r_assets_spark_logo_full_png || "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png",
     alt: "Spark by Ignite",
     style: {
       height: 36,
       width: "auto",
       display: "inline-block",
-      verticalAlign: "middle",
-      filter: "drop-shadow(0 0 24px rgba(214,243,95,0.45))"
-    }
+      verticalAlign: "middle"
+    },
+    loading: "lazy",
+    decoding: "async"
   }), /*#__PURE__*/React.createElement("span", {
     style: {
       display: "inline-flex",
@@ -1290,7 +1222,6 @@ const IndustrySparkCallout = ({
       height: 8,
       borderRadius: 999,
       background: "var(--spark-500)",
-      boxShadow: "0 0 8px var(--spark-500)",
       animation: "spk-pulse-dot 1.6s infinite"
     }
   }), /*#__PURE__*/React.createElement("span", {
@@ -1381,7 +1312,7 @@ const IndustrySparkCallout = ({
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "spark.html",
+    href: "/spark",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -1393,11 +1324,11 @@ const IndustrySparkCallout = ({
       borderRadius: 999,
       background: "var(--spark-500)",
       color: "#0A0B0D",
-      boxShadow: "0 0 0 1px rgba(214,243,95,0.4), 0 8px 32px rgba(214,243,95,0.28)",
+      boxShadow: "0 0 0 1px rgba(214, 243, 95, 0.2), 0 8px 32px rgba(214,243,95,0.28)",
       textDecoration: "none"
     }
   }, "Tour Spark ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "https://igniteproductions.co/contact?urgent=1",
+    href: "/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -1419,8 +1350,7 @@ const IndustrySparkCallout = ({
       border: "1px solid var(--ink-400)",
       borderRadius: 20,
       overflow: "hidden",
-      boxShadow: "0 40px 120px rgba(0,0,0,0.6), 0 0 0 1px rgba(214,243,95,0.1)",
-      animation: "spk-glow 4s ease-in-out infinite 1s"
+      boxShadow: "0 40px 120px rgba(0,0,0,0.6)"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1469,7 +1399,6 @@ const IndustrySparkCallout = ({
       height: 7,
       borderRadius: 999,
       background: "var(--spark-500)",
-      boxShadow: "0 0 10px var(--spark-500)",
       animation: "spk-pulse-dot 1.6s infinite"
     }
   }), "LIVE")), /*#__PURE__*/React.createElement("div", {
@@ -1517,7 +1446,6 @@ const IndustrySparkCallout = ({
       height: 7,
       borderRadius: 999,
       background: i === 0 ? "var(--spark-500)" : "var(--fg-3)",
-      boxShadow: i === 0 ? "0 0 8px var(--spark-500)" : "none",
       animation: i === 0 ? "spk-pulse-dot 1.6s infinite" : "none"
     }
   }), /*#__PURE__*/React.createElement("span", {
@@ -1600,7 +1528,7 @@ const IndustryRelated = ({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px"
     }
@@ -1641,7 +1569,7 @@ const IndustryRelated = ({
     }
   }, services.map(s => /*#__PURE__*/React.createElement("a", {
     key: s.slug,
-    href: "services-" + s.slug + ".html",
+    href: "/services/" + s.slug,
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -1744,7 +1672,7 @@ const IndustryRelated = ({
       }
     }, "\u2197"));
   })), /*#__PURE__*/React.createElement("a", {
-    href: "markets.html",
+    href: "/markets",
     style: {
       marginTop: 18,
       display: "inline-flex",
@@ -1781,7 +1709,7 @@ const IndustryLogoStrip = ({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px 28px"
     }
@@ -1808,7 +1736,9 @@ const IndustryLogoStrip = ({
   }, row.map((b, i) => /*#__PURE__*/React.createElement("img", {
     key: i,
     src: b.url,
-    alt: b.name
+    alt: b.name,
+    loading: "lazy",
+    decoding: "async"
   })))));
 };
 

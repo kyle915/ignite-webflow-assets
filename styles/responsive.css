@@ -4,20 +4,27 @@
    ============================================================ */
 
 /* --- Default desktop padding for hero sections (was inline) --- */
-.hero-meta { padding: 84px 48px 0; }
-.hero-main { padding: 60px 48px 48px; }
+.hero-meta { width: 100%; max-width: 1480px; margin: 0 auto; padding: 50px 32px 0; }
+.hero-main { width: 100%; max-width: 1480px; margin: 0 auto; padding: 20px 32px 50px; }
 
 /* ============================================================
    Mobile (≤ 720px)
    ============================================================ */
 @media (max-width: 720px) {
+  /* Hero size tokens step down on mobile */
+  :root {
+    --hero-pad-compact:  48px;
+    --hero-pad-standard: 72px;
+    --hero-pad-tall:     96px;
+  }
+
   /* Site nav — collapse links, keep logo + CTA */
   header nav { display: none !important; }
   header > div:first-child { padding: 0 18px !important; height: 60px !important; gap: 8px !important; }
   header a[href$="contact.html"].link-mono { display: none !important; }
 
   /* Hero */
-  .hero-meta { padding: 64px 20px 0 !important; }
+  .hero-meta { padding: 24px 20px 0 !important; }
   .hero-main { padding: 36px 20px 32px !important; }
   .hero-meta-inner { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
   .hero-headline { font-size: clamp(44px, 12vw, 72px) !important; line-height: 0.92 !important; letter-spacing: -0.035em !important; }
@@ -36,40 +43,43 @@
   section h2 { font-size: clamp(30px, 8vw, 44px) !important; line-height: 1.05 !important; letter-spacing: -0.025em !important; }
   section h3 { font-size: 19px !important; }
 
+  /* Hero headlines: shrink + allow wrapping so nowrap splits don't bleed past the frame */
+  section h1 { font-size: clamp(32px, 8.6vw, 52px) !important; line-height: 1.04 !important; letter-spacing: -0.03em !important; }
+  section h1 span { white-space: normal !important; }
+
   /* Body copy readability */
   section p { font-size: 15.5px !important; line-height: 1.6 !important; }
 
-  /* Convert multi-col grids to stacks — broad ratio coverage */
+  /* Convert multi-col grids to stacks — covers every 2-col ratio used across bespoke pages */
   section [style*="grid-template-columns: 1fr 1fr"],
+  section [style*="grid-template-columns: 1fr 1.05fr"],
   section [style*="grid-template-columns: 1fr 1.3fr"],
   section [style*="grid-template-columns: 1fr 1.4fr"],
   section [style*="grid-template-columns: 1fr 1.5fr"],
   section [style*="grid-template-columns: 1fr 1.6fr"],
-  section [style*="grid-template-columns: 1fr 2fr"],
+  section [style*="grid-template-columns: 1.02fr 0.98fr"],
+  section [style*="grid-template-columns: 1.05fr 0.95fr"],
+  section [style*="grid-template-columns: 1.1fr 1fr"],
+  section [style*="grid-template-columns: 1.15fr 0.85fr"],
+  section [style*="grid-template-columns: 1.2fr 1fr"],
+  section [style*="grid-template-columns: 1.25fr 1fr"],
   section [style*="grid-template-columns: 1.3fr 1fr"],
   section [style*="grid-template-columns: 1.4fr 1fr 1fr"],
   section [style*="grid-template-columns: 1.4fr 1fr"],
+  section [style*="grid-template-columns: 1.5fr 1fr"],
   section [style*="grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr"],
   section [style*="grid-template-columns: 1.6fr 2fr 1fr 1fr"],
-  section [style*="grid-template-columns: 1fr auto"],
-  section [style*="grid-template-columns: auto 1fr"],
-  section [style*="grid-template-columns: 260px"],
-  section [style*="grid-template-columns: 280px"],
-  section [style*="grid-template-columns: 300px"] { grid-template-columns: 1fr !important; gap: 16px !important; }
+  section [style*="grid-template-columns: 1.6fr 1fr 1fr 1fr"],
+  section [style*="grid-template-columns: auto 1fr auto 1fr"],
+  section [style*="grid-template-columns: repeat(2,"] { grid-template-columns: 1fr !important; gap: 16px !important; }
 
-  /* auto-fit/auto-fill grids with min-track widths > 200px — force single column */
-  section [style*="minmax(280px"],
-  section [style*="minmax(260px"],
-  section [style*="minmax(240px"],
-  section [style*="minmax(220px"],
-  section [style*="minmax(200px"] { grid-template-columns: 1fr !important; gap: 12px !important; }
-  /* Smaller auto-fit grids: two columns max on mobile */
-  section [style*="minmax(180px"],
-  section [style*="minmax(160px"],
-  section [style*="minmax(140px"] { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+  /* Fractional hero — hide the founder's to-do animation, stack to one column */
+  .frac-todo-chaos { display: none !important; }
+  .frac-hero-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
 
   section [style*="grid-template-columns: repeat(3,"],
-  section [style*="grid-template-columns: repeat(3 ,"],
+  section [style*="grid-template-columns: repeat(3 ,"] { grid-template-columns: 1fr !important; gap: 16px !important; }
+
   section [style*="grid-template-columns: repeat(4,"],
   section [style*="grid-template-columns: repeat(5,"],
   section [style*="grid-template-columns: repeat(6,"] { grid-template-columns: 1fr 1fr !important; gap: 1px !important; }
@@ -89,76 +99,44 @@
   /* Marquee numbers */
   section [style*="font-size: 30px"] { font-size: 22px !important; }
 
-  /* Buttons inside a row of CTAs — wrap and full-width */
-  section [style*="display: \"flex\""][style*="flex-wrap"] a,
-  section [style*="display: \"flex\""] > a,
-  section [style*="display: flex"] > a { max-width: 100% !important; }
+  /* Sticky breadcrumb sits under the 60px mobile header, not the 128px desktop one */
+  .sticky-breadcrumb { top: 60px !important; }
+  .sticky-breadcrumb > div { padding: 0 20px !important; font-size: 10px !important; gap: 10px !important; }
 
-  /* Long images / videos — never overflow */
-  section img, section video { max-width: 100% !important; height: auto !important; }
+  /* Hero sits right under the breadcrumb, which already adds its own bar height.
+     Drop the hero section's own top padding so breadcrumb pages don't sit a whole
+     bar lower than pages without one (keeps hero start consistent site-wide). */
+  .sticky-breadcrumb + section { padding-top: 24px !important; }
 
-  /* Fix overflow of large fixed-width elements */
-  section [style*="width: 700px"],
-  section [style*="width: 800px"],
-  section [style*="width: 900px"],
-  section [style*="width: 1000px"],
-  section [style*="width: 1100px"],
-  section [style*="width: 1200px"] { width: 100% !important; max-width: 100% !important; }
-
-  /* Tighten any clamp() that maxes too high on phones */
-  section [style*="clamp(56px"],
-  section [style*="clamp(64px"],
-  section [style*="clamp(72px"],
-  section [style*="clamp(80px"] {
-    /* fallback: limit max via font-size override via media — but we can't change clamp itself,
-       so cap via parent via attr — fallback is to nudge h1 sizes specifically */
-  }
-  section h1 { font-size: clamp(40px, 11vw, 60px) !important; line-height: 0.96 !important; }
-
-  /* Sticky elements: unstick on mobile so they don't trap thumb */
-  section [style*="position: sticky"],
-  section [style*="position: \"sticky\""] { position: static !important; max-height: none !important; }
+  /* Never let anything bleed past the viewport width.
+     Use clip (not hidden) so it doesn't create a scroll container that kills position:sticky */
+  html, body { overflow-x: clip !important; max-width: 100% !important; }
 }
 
 /* ============================================================
    Tablet (721px – 1024px)
    ============================================================ */
 @media (min-width: 721px) and (max-width: 1024px) {
-  .hero-headline { font-size: clamp(64px, 11vw, 110px) !important; }
-  .hero-meta { padding: 72px 32px 0 !important; }
-  .hero-main { padding: 44px 32px 36px !important; }
-  .hero-grid { gap: 32px !important; }
+  .hero-headline { font-size: clamp(38px, 7.4vw, 104px) !important; line-height: 0.9 !important; }
+  .hero-meta { padding: 22px 32px 0 !important; }
+  .hero-main { padding: 18px 32px 22px !important; }
+  .hero-grid { gap: 20px !important; }
 
   section [style*="grid-template-columns: repeat(4,"] { grid-template-columns: 1fr 1fr !important; }
   section [style*="grid-template-columns: repeat(5,"] { grid-template-columns: 1fr 1fr 1fr !important; }
   section [style*="grid-template-columns: repeat(6, 1fr)"] { grid-template-columns: 1fr 1fr !important; }
   section [style*="grid-template-columns: repeat(6, 1fr)"] > div { grid-column: span 2 !important; }
-
-  /* Tablet: collapse city/markets 2-up ratio grids to single column for breathing room */
-  section [style*="grid-template-columns: 1fr 1.5fr"],
-  section [style*="grid-template-columns: 1fr 1.6fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
 }
 
 /* ============================================================
-   City template + Markets — extra polish at small screens
+   Services Index hero — hide decorative city ticker + the "nine lanes"
+   list on tablet & mobile (they get cut off), and let the headline column
+   span full width once the right column is gone.
    ============================================================ */
-@media (max-width: 720px) {
-  /* CitySeoIntro hero: shrink headline, contain SVG ghost mark */
-  #city-seo-root h2 { font-size: clamp(44px, 13vw, 76px) !important; line-height: 0.94 !important; }
-  #city-seo-root svg[data-city-anim] { max-height: 40% !important; width: 100vw !important; right: 0 !important; }
-  /* Pull bottom-padding tighter so sections don't feel endless */
-  #city-seo-root section { padding-top: 56px !important; padding-bottom: 56px !important; }
-  /* The 4-stat strip — make sure each cell is full width */
-  #city-seo-root [style*="repeat(auto-fit, minmax(180px"] > div { padding: 16px 18px !important; }
-  /* Service cards / industries pills — tighter spacing */
-  #city-seo-root [style*="border-radius: 999"] { font-size: 12.5px !important; }
-  /* CitySeoCta big stencil mark — shrink so it doesn't dominate */
-  #city-seo-root [data-city-anim] { font-size: clamp(72px, 18vw, 140px) !important; }
-
-  /* MarketsHub region card chips wrap better */
-  .markets-chip { font-size: 11.5px !important; padding: 8px 12px !important; }
-  /* Filter input field full width */
-  [id^="ignite-"] input[type="text"] { width: 100% !important; }
+@media (max-width: 1024px) {
+  .svc-city-ticker { display: none !important; }
+  .svc-nine-lanes { display: none !important; }
+  section [style*="grid-template-columns: 1.45fr 1fr"] { grid-template-columns: 1fr !important; }
 }
 
 /* ============================================================

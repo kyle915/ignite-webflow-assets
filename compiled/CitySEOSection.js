@@ -30,9 +30,9 @@ const CITY_FALLBACK_CTA = {
   heading: "Let's run something here.",
   body: "Brief us on the program. Single-night activation through national tour — we'll scope it to fit.",
   primaryLabel: "Start a brief",
-  primaryHref: "https://igniteproductions.co/contact?urgent=1",
+  primaryHref: "/contact",
   secondaryLabel: "See the work",
-  secondaryHref: "https://igniteproductions.co/work"
+  secondaryHref: "/work"
 };
 const US_STATE_ABBR = {
   "Alabama": "AL",
@@ -89,172 +89,24 @@ const US_STATE_ABBR = {
   "Puerto Rico": "PR"
 };
 const stateAbbr = s => {
-  if (!s) return "";
+  if (!s) return "USA";
   const trim = String(s).trim();
-  if (trim.length === 2 && /^[A-Za-z]{2}$/.test(trim)) return trim.toUpperCase();
-  return US_STATE_ABBR[trim] || ""; // empty string = render nothing for regional labels
-};
-/* Resolve a real US state abbreviation for the city, falling back to the
-   MARKETS_BY_SLUG catalog when the CMS "Location Region" value is a
-   regional label like "Tri-State Area" / "Pacific Northwest". */
-const cityStateAbbr = city => {
-  const direct = stateAbbr(city && city.state);
-  if (direct) return direct;
-  const m = typeof window !== "undefined" && window.MARKETS_BY_SLUG || {};
-  const lookup = city && city.slug && m[city.slug];
-  if (lookup && lookup.state) {
-    const a = stateAbbr(lookup.state);
-    if (a) return a;
-  }
-  return "";
+  if (trim.length === 2) return trim.toUpperCase();
+  return US_STATE_ABBR[trim] || trim.slice(0, 2).toUpperCase();
 };
 const isNonEmpty = v => Array.isArray(v) ? v.length > 0 : v != null && String(v).trim() !== "";
-
-/* ---------- JSON-LD helpers (idempotent, deterministic IDs) ---------- */
-const CITY_SITE_ORIGIN = "https://www.igniteproductions.co";
-const CITY_LD_SERVICES = [
-  "Event Staffing",
-  "Brand Ambassadors",
-  "Product Sampling",
-  "Experiential Marketing",
-  "Mobile Tours",
-  "Trade Show Staffing",
-  "Custom Fabrication",
-  "Promotional Products",
-  "Field Reporting",
-  "Logistics & Permitting"
-];
-function cityCanonicalUrl(slug) {
-  if (!slug) return null;
-  return CITY_SITE_ORIGIN + "/cities/" + slug;
-}
-function upsertJsonLd(id, payload) {
-  if (typeof document === "undefined") return function(){};
-  // Reuse existing script with the same id to keep updates idempotent.
-  let el = document.getElementById(id);
-  if (!el) {
-    el = document.createElement("script");
-    el.type = "application/ld+json";
-    el.id = id;
-    el.setAttribute("data-ignite-jsonld", "1");
-    document.head.appendChild(el);
-  }
-  try {
-    el.textContent = JSON.stringify(payload);
-  } catch (e) {
-    /* ignore serialization errors */
-  }
-  return function cleanup() {
-    if (el && el.parentNode) el.parentNode.removeChild(el);
-  };
-}
-function hasExistingJsonLdOfType(typeName) {
-  if (typeof document === "undefined") return false;
-  const nodes = document.querySelectorAll('script[type="application/ld+json"]');
-  for (let i = 0; i < nodes.length; i++) {
-    const node = nodes[i];
-    // Skip our own deterministic scripts so we don't self-collide on re-render.
-    if (node.getAttribute("data-ignite-jsonld") === "1") continue;
-    const text = node.textContent || "";
-    if (!text) continue;
-    try {
-      const parsed = JSON.parse(text);
-      const items = Array.isArray(parsed) ? parsed : (parsed["@graph"] ? parsed["@graph"] : [parsed]);
-      for (let j = 0; j < items.length; j++) {
-        const t = items[j] && items[j]["@type"];
-        if (t === typeName) return true;
-        if (Array.isArray(t) && t.indexOf(typeName) !== -1) return true;
-      }
-    } catch (e) {
-      // Non-JSON or invalid LD — fall back to substring check.
-      if (text.indexOf('"' + typeName + '"') !== -1) return true;
-    }
-  }
-  return false;
-}
-function buildCityServiceLd(city, canonical) {
-  const region = isNonEmpty(city.state) ? city.state : null;
-  const areaServed = { "@type": "City", name: city.name };
-  if (region) areaServed.containedInPlace = { "@type": "AdministrativeArea", name: region };
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": canonical + "#service",
-    name: "Brand Activations in " + city.name,
-    serviceType: "Experiential Marketing & Event Staffing",
-    provider: {
-      "@type": "Organization",
-      name: "Ignite Productions",
-      url: CITY_SITE_ORIGIN
-    },
-    areaServed: areaServed,
-    url: canonical,
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Ignite Productions — Services in " + city.name,
-      itemListElement: CITY_LD_SERVICES.map(function(name) {
-        return {
-          "@type": "Offer",
-          itemOffered: { "@type": "Service", name: name }
-        };
-      })
-    }
-  };
-}
-function buildCityFaqLd(faqs, canonical) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "@id": canonical + "#faq",
-    mainEntity: faqs.map(function(f) {
-      return {
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a }
-      };
-    })
-  };
-}
-function buildCityBreadcrumbLd(city, canonical) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "@id": canonical + "#breadcrumb",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: CITY_SITE_ORIGIN + "/" },
-      { "@type": "ListItem", position: 2, name: "Markets", item: CITY_SITE_ORIGIN + "/markets" },
-      { "@type": "ListItem", position: 3, name: city.name, item: canonical }
-    ]
-  };
-}
-function cityJsonLdId(kind, slug) {
-  return "ignite-city-jsonld-" + kind + (slug ? "-" + slug : "");
-}
 
 /* ---------- Tactical grid background (matches Ignite vocab) ---------- */
 const CityGridBg = ({
   opacity = 0.05,
   animated = false
-}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+}) => /*#__PURE__*/React.createElement(React.Fragment, null, animated && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
   "aria-hidden": "true",
   style: {
     position: "absolute",
     inset: 0,
     pointerEvents: "none",
-    backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px)," + "linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-    backgroundSize: "48px 48px",
-    opacity,
-    maskImage: "radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%)",
-    WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%)",
-    animation: animated ? "city-grid-drift 28s linear infinite" : undefined
-  }
-}), animated && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
-    inset: 0,
-    pointerEvents: "none",
-    background: "radial-gradient(ellipse 36% 50% at 20% 30%, rgba(215, 69, 62,0.16), transparent 60%)",
+    background: "transparent",
     animation: "city-glow-a 14s ease-in-out infinite",
     mixBlendMode: "screen"
   }
@@ -264,7 +116,7 @@ const CityGridBg = ({
     position: "absolute",
     inset: 0,
     pointerEvents: "none",
-    background: "radial-gradient(ellipse 30% 40% at 80% 70%, rgba(255,182,39,0.12), transparent 60%)",
+    background: "transparent",
     animation: "city-glow-b 18s ease-in-out infinite",
     mixBlendMode: "screen"
   }
@@ -277,7 +129,7 @@ const CityGridBg = ({
     top: 0,
     height: 1,
     pointerEvents: "none",
-    background: "linear-gradient(90deg, transparent, var(--ignite-500), transparent)",
+    background: "linear-gradient(90deg, transparent, var(--accent), transparent)",
     opacity: 0.5,
     animation: "city-scan 7s linear infinite"
   }
@@ -299,8 +151,8 @@ const CITY_INTRO_KEYFRAMES = `
 }
 @keyframes city-intro-glow {
   0%   { text-shadow: 0 0 0 rgba(215, 69, 62,0); }
-  60%  { text-shadow: 0 0 28px rgba(215, 69, 62,0.55); }
-  100% { text-shadow: 0 0 12px rgba(215, 69, 62,0.25); }
+  60%  { text-shadow: 0 0 28px rgba(215, 69, 62, 0.275); }
+  100% { text-shadow: 0 0 12px rgba(215, 69, 62, 0.125); }
 }
 @keyframes city-grid-drift {
   0%   { background-position: 0 0, 0 0; }
@@ -382,7 +234,7 @@ const CitySeoIntro = ({
     }, n));
   })(), /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px",
       position: "relative"
@@ -402,7 +254,7 @@ const CitySeoIntro = ({
       fontSize: 11,
       letterSpacing: "0.22em",
       textTransform: "uppercase",
-      color: "var(--ignite-500)",
+      color: "var(--accent)",
       display: "inline-flex",
       alignItems: "center",
       gap: 8
@@ -413,8 +265,7 @@ const CitySeoIntro = ({
       width: 6,
       height: 6,
       borderRadius: 999,
-      background: "var(--ignite-500)",
-      boxShadow: "0 0 8px var(--ignite-500)",
+      background: "var(--accent)",
       animation: "city-intro-blink 2.4s var(--ease-out) infinite"
     }
   }), ">> ", "LOCAL MARKET \xB7 ", region.toUpperCase())), (() => {
@@ -424,11 +275,10 @@ const CitySeoIntro = ({
     const fontCap = Math.min(168, Math.floor(168 * 17 / longestLine));
     const vwMax = (9.5 * 17 / longestLine).toFixed(2);
     const baseMin = longestLine > 22 ? 44 : longestLine > 19 ? 52 : 64;
-    return /*#__PURE__*/React.createElement("h1", {
+    return /*#__PURE__*/React.createElement("h2", {
       className: "city-intro-cell",
       style: {
         marginTop: 22,
-        marginBottom: 0,
         fontFamily: "var(--font-display)",
         fontWeight: 800,
         fontSize: `clamp(${baseMin}px, ${vwMax}vw, ${fontCap}px)`,
@@ -445,11 +295,11 @@ const CitySeoIntro = ({
     }, "in ", /*#__PURE__*/React.createElement("span", {
       style: {
         fontStyle: "italic",
-        color: "var(--ignite-500)",
+        color: "var(--accent)",
         animation: "city-intro-glow 1600ms var(--ease-out) 600ms both",
         display: "inline-block"
       }
-    }, city.name), cityStateAbbr(city) && /*#__PURE__*/React.createElement("span", {
+    }, city.name), city.state && /*#__PURE__*/React.createElement("span", {
       style: {
         color: "var(--fg-3)",
         fontWeight: 500,
@@ -459,12 +309,12 @@ const CitySeoIntro = ({
         verticalAlign: "0.65em",
         marginLeft: 18
       }
-    }, "/ ", cityStateAbbr(city)), /*#__PURE__*/React.createElement("span", {
+    }, "/ ", stateAbbr(city.state)), /*#__PURE__*/React.createElement("span", {
       style: {
-        color: "var(--ignite-500)"
+        color: "var(--accent)"
       }
     }, ".")));
-  })(), /*#__PURE__*/React.createElement("p", {
+  })(), isNonEmpty(city.intro) ? /*#__PURE__*/React.createElement("p", {
     className: "city-intro-cell",
     style: {
       marginTop: 36,
@@ -479,47 +329,22 @@ const CitySeoIntro = ({
       animationDelay: "340ms",
       position: "relative"
     }
-  }, isNonEmpty(city.intro) ? city.intro : `Ignite Productions supports brand activations, event staffing, product sampling, experiential marketing, mobile tours, and trade show programs in ${city.state ? city.name + ", " + city.state : city.name}. Our team helps brands plan, staff, execute, and report on single-market and multi-market campaigns.`), /*#__PURE__*/React.createElement("div", {
+  }, city.intro) : /*#__PURE__*/React.createElement("p", {
     className: "city-intro-cell",
     style: {
-      marginTop: 32,
-      display: "flex",
-      flexWrap: "wrap",
-      gap: 12,
-      alignItems: "center",
-      animationDelay: "420ms"
-    }
-  }, /*#__PURE__*/React.createElement("a", {
-    href: city.cta && city.cta.primaryHref || "https://igniteproductions.co/contact?urgent=1",
-    style: {
-      display: "inline-flex",
-      alignItems: "center",
-      gap: 10,
-      padding: "16px 24px",
-      borderRadius: 999,
-      background: "var(--ignite-500)",
-      color: "#fff",
+      marginTop: 36,
       fontFamily: "var(--font-display)",
-      fontWeight: 600,
-      fontSize: 15.5,
-      letterSpacing: "-0.01em",
-      textDecoration: "none",
-      boxShadow: "0 12px 32px rgba(215, 69, 62,0.35)",
-      transition: "transform 200ms, box-shadow 200ms"
-    },
-    onMouseEnter: e => {
-      e.currentTarget.style.transform = "translateY(-2px)";
-      e.currentTarget.style.boxShadow = "0 20px 48px rgba(215, 69, 62,0.5)";
-    },
-    onMouseLeave: e => {
-      e.currentTarget.style.transform = "translateY(0)";
-      e.currentTarget.style.boxShadow = "0 12px 32px rgba(215, 69, 62,0.35)";
+      fontWeight: 500,
+      fontSize: "clamp(20px, 2.1vw, 28px)",
+      lineHeight: 1.35,
+      letterSpacing: "-0.015em",
+      color: "rgba(255,255,255,0.92)",
+      maxWidth: 880,
+      textWrap: "pretty",
+      animationDelay: "340ms",
+      position: "relative"
     }
-  }, "Brief us on ", city.name, /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-mono)"
-    }
-  }, "\u2192"))), /*#__PURE__*/React.createElement("div", {
+  }, "We staff, build, and run brand activations in ", city.metro || city.name, " \u2014 festival pop-ups, retail demos, mobile tours, and trade-show floors. Local crew, local permits, national playbook."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 64,
       position: "relative",
@@ -533,7 +358,7 @@ const CitySeoIntro = ({
       backdropFilter: "blur(6px)",
       WebkitBackdropFilter: "blur(6px)"
     }
-  }, (city.generic ? [["COVERAGE", "Nationwide", "all 50 states"], ["RUSH WINDOW", city.rushWindow || "48 HR", "brief to boots"], ["BENCH", "12,000+", "ambassadors active"], ["MARKETS", "200+", "named metros"]] : [["AMBASSADORS", city.ambassadors || "1,200+", "in-market"], ["RUSH WINDOW", city.rushWindow || "48 HR", "brief to boots"], ["YEARS ACTIVE", city.yearsActive || "Since 2018", "in this metro"], ["COVERAGE", city.coverageNote || "Full metro", "+ surrounding"]]).map(([k, v, sub], i, arr) => /*#__PURE__*/React.createElement("div", {
+  }, (city.generic ? [["COVERAGE", "Nationwide", "all 50 states"], ["RUSH WINDOW", "48 HR", "brief to boots"], ["BENCH", "12,000+", "ambassadors active"], ["MARKETS", "200+", "named metros"]] : [["AMBASSADORS", city.ambassadors || "1,200+", "in-market"], ["RUSH WINDOW", "48 HR", "brief to boots"], ["YEARS ACTIVE", city.yearsActive || "Since 2018", "in this metro"], ["COVERAGE", city.coverageNote || "Full metro", "+ surrounding"]]).map(([k, v, sub], i, arr) => /*#__PURE__*/React.createElement("div", {
     key: k,
     className: "city-intro-cell",
     style: {
@@ -550,7 +375,7 @@ const CitySeoIntro = ({
       left: 0,
       right: 0,
       height: 1,
-      background: "linear-gradient(90deg, transparent, var(--ignite-500), transparent)",
+      background: "linear-gradient(90deg, transparent, var(--accent), transparent)",
       transform: "scaleX(0)",
       transformOrigin: "left",
       animation: `city-intro-line 900ms var(--ease-out) ${600 + i * 90}ms both`,
@@ -596,7 +421,7 @@ const CitySeoActivations = ({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px"
     }
@@ -613,7 +438,7 @@ const CitySeoActivations = ({
       fontSize: 11,
       letterSpacing: "0.22em",
       textTransform: "uppercase",
-      color: "var(--ignite-500)"
+      color: "var(--accent)"
     }
   }, ">> ", "WHAT WE RUN HERE"), /*#__PURE__*/React.createElement("h3", {
     style: {
@@ -658,7 +483,7 @@ const CitySeoActivations = ({
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: 11,
-      color: "var(--ignite-500)",
+      color: "var(--accent)",
       letterSpacing: "0.1em"
     }
   }, String(i + 1).padStart(2, "0")), /*#__PURE__*/React.createElement("span", {
@@ -764,7 +589,7 @@ const CitySeoServices = ({
     opacity: 0.04
   }), /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px",
       position: "relative"
@@ -788,7 +613,7 @@ const CitySeoServices = ({
       fontSize: 11,
       letterSpacing: "0.22em",
       textTransform: "uppercase",
-      color: "var(--ignite-500)"
+      color: "var(--accent)"
     }
   }, ">> ", "SERVICES IN MARKET"), /*#__PURE__*/React.createElement("h3", {
     style: {
@@ -803,7 +628,7 @@ const CitySeoServices = ({
   }, "What Ignite runs in", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
-      color: "var(--ignite-500)"
+      color: "var(--accent)"
     }
   }, city.name), "."), /*#__PURE__*/React.createElement("p", {
     style: {
@@ -850,11 +675,11 @@ const CitySeoServices = ({
       },
       onMouseEnter: e => {
         if (!s.href) return;
-        e.currentTarget.style.borderColor = "var(--ignite-500)";
+        e.currentTarget.style.borderColor = "var(--accent)";
         e.currentTarget.style.background = "rgba(215, 69, 62,0.04)";
         const ar = e.currentTarget.querySelector("[data-arrow]");
         if (ar) {
-          ar.style.color = "var(--ignite-500)";
+          ar.style.color = "var(--accent)";
           ar.style.transform = "translateX(4px)";
         }
       },
@@ -881,7 +706,7 @@ const CitySeoServices = ({
         fontFamily: "var(--font-mono)",
         fontSize: 10,
         letterSpacing: "0.18em",
-        color: "var(--ignite-500)"
+        color: "var(--accent)"
       }
     }, String(i + 1).padStart(2, "0")), s.href && /*#__PURE__*/React.createElement("span", {
       "data-arrow": true,
@@ -930,7 +755,7 @@ const CitySeoIndustriesMarkets = ({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px"
     }
@@ -946,7 +771,7 @@ const CitySeoIndustriesMarkets = ({
       fontSize: 11,
       letterSpacing: "0.22em",
       textTransform: "uppercase",
-      color: "var(--ignite-500)"
+      color: "var(--accent)"
     }
   }, ">> ", "INDUSTRIES SERVED"), /*#__PURE__*/React.createElement("h3", {
     style: {
@@ -960,7 +785,7 @@ const CitySeoIndustriesMarkets = ({
   }, "Categories we book in", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
-      color: "var(--ignite-500)"
+      color: "var(--accent)"
     }
   }, city.name), "."), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -990,7 +815,7 @@ const CitySeoIndustriesMarkets = ({
       width: 5,
       height: 5,
       borderRadius: 999,
-      background: "var(--ignite-500)"
+      background: "var(--accent)"
     }
   }), ind)))), hasMkt && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -1081,27 +906,19 @@ const CitySeoIndustriesMarkets = ({
 const CitySeoFaqs = ({
   city
 }) => {
-  // Strict completeness: both question AND answer must be non-empty.
-  const faqs = (city.faqs || []).filter(f => f && isNonEmpty(f.q) && isNonEmpty(f.a)).slice(0, 3);
+  const faqs = (city.faqs || []).filter(f => isNonEmpty(f?.q)).slice(0, 3);
   const [open, setOpen] = React.useState(0);
   if (faqs.length === 0) return null;
   return /*#__PURE__*/React.createElement("section", {
-    className: "city-faq-section",
     style: {
       padding: "120px 0",
       background: "var(--paper-000)",
       color: "var(--fg-1-inv)",
       borderTop: "1px solid var(--paper-200)"
     }
-  }, /*#__PURE__*/React.createElement("style", null, `
-        .city-faq-section .city-faq-heading,
-        .city-faq-section .city-faq-q,
-        .city-faq-section button.city-faq-q { color: #0A0B0D !important; }
-        .city-faq-section .city-faq-sub,
-        .city-faq-section .city-faq-a { color: #3A4050 !important; }
-      `), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px"
     }
@@ -1118,31 +935,28 @@ const CitySeoFaqs = ({
       fontSize: 11,
       letterSpacing: "0.22em",
       textTransform: "uppercase",
-      color: "var(--ignite-500)"
+      color: "var(--accent)"
     }
   }, ">> ", city.name.toUpperCase(), " \xB7 FAQ"), /*#__PURE__*/React.createElement("h3", {
-    className: "city-faq-heading",
     style: {
       marginTop: 14,
       fontFamily: "var(--font-display)",
       fontWeight: 700,
       fontSize: "clamp(38px, 4.6vw, 64px)",
       letterSpacing: "-0.03em",
-      lineHeight: 0.96,
-      color: "#0A0B0D"
+      lineHeight: 0.96
     }
   }, "Quick", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
-      color: "var(--ignite-500)"
+      color: "var(--accent)"
     }
   }, "answers"), /*#__PURE__*/React.createElement("br", null), "for ", city.name, "."), /*#__PURE__*/React.createElement("p", {
-    className: "city-faq-sub",
     style: {
       marginTop: 24,
       fontSize: 15.5,
       lineHeight: 1.6,
-      color: "#3A4050"
+      color: "var(--fg-2-inv)"
     }
   }, "The three questions we get most for this market.")), /*#__PURE__*/React.createElement("div", null, faqs.map((f, i) => {
     const isOpen = open === i;
@@ -1153,7 +967,6 @@ const CitySeoFaqs = ({
         borderBottom: "1px solid var(--paper-200)"
       }
     }, /*#__PURE__*/React.createElement("button", {
-      className: "city-faq-q",
       onClick: () => setOpen(isOpen ? -1 : i),
       style: {
         width: "100%",
@@ -1165,7 +978,7 @@ const CitySeoFaqs = ({
         alignItems: "center",
         cursor: "pointer",
         textAlign: "left",
-        color: "#0A0B0D",
+        color: "inherit",
         fontFamily: "var(--font-display)",
         fontWeight: 600,
         fontSize: 19,
@@ -1183,24 +996,23 @@ const CitySeoFaqs = ({
         fontFamily: "var(--font-mono)",
         fontSize: 12,
         letterSpacing: "0.14em",
-        color: "var(--ignite-500)"
+        color: "var(--accent)"
       }
     }, String(i + 1).padStart(2, "0")), f.q), /*#__PURE__*/React.createElement("span", {
       style: {
-        color: "var(--ignite-500)",
+        color: "var(--accent)",
         fontSize: 22,
         flexShrink: 0,
         transform: isOpen ? "rotate(45deg)" : "none",
         transition: "transform 200ms"
       }
     }, "+")), isOpen && isNonEmpty(f.a) && /*#__PURE__*/React.createElement("p", {
-      className: "city-faq-a",
       style: {
         paddingBottom: 24,
         paddingLeft: 36,
         fontSize: 15.5,
         lineHeight: 1.65,
-        color: "#3A4050",
+        color: "var(--fg-2-inv)",
         margin: 0,
         maxWidth: 700
       }
@@ -1232,12 +1044,12 @@ const CitySeoCta = ({
     style: {
       position: "absolute",
       inset: 0,
-      background: "radial-gradient(ellipse 60% 80% at 90% 50%, rgba(215, 69, 62,0.18), transparent 60%)",
+      background: "transparent",
       pointerEvents: "none"
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px",
       position: "relative",
@@ -1252,7 +1064,7 @@ const CitySeoCta = ({
       fontSize: 11,
       letterSpacing: "0.22em",
       textTransform: "uppercase",
-      color: "var(--ignite-500)"
+      color: "var(--accent)"
     }
   }, ">> ", cta.eyebrow), /*#__PURE__*/React.createElement("h3", {
     style: {
@@ -1288,9 +1100,9 @@ const CitySeoCta = ({
       padding: "14px 22px",
       borderRadius: 10,
       cursor: "pointer",
-      background: "var(--ignite-500)",
+      background: "var(--accent)",
       color: "#fff",
-      boxShadow: "0 0 0 1px rgba(215, 69, 62,0.3), 0 8px 32px rgba(215, 69, 62,0.25)",
+      boxShadow: "0 0 0 1px rgba(215, 69, 62, 0.15), 0 8px 32px rgba(215, 69, 62,0.25)",
       display: "inline-flex",
       alignItems: "center",
       gap: 10,
@@ -1324,7 +1136,7 @@ const CitySeoCta = ({
     }
   }, "\u2192")))), (() => {
     const n = (city.name || "").toUpperCase();
-    const sa = cityStateAbbr(city);
+    const sa = stateAbbr(city.state) || "";
     const vbW = Math.max(n.length, 4) * 62;
     return /*#__PURE__*/React.createElement("svg", {
       "data-city-anim": true,
@@ -1337,8 +1149,7 @@ const CitySeoCta = ({
         height: "auto",
         opacity: 0.92,
         userSelect: "none",
-        animation: "city-ghost-pan 22s ease-in-out infinite",
-        filter: "drop-shadow(0 0 60px rgba(215, 69, 62,0.18))"
+        animation: "city-ghost-pan 22s ease-in-out infinite"
       }
     }, /*#__PURE__*/React.createElement("text", {
       x: "100%",
@@ -1356,7 +1167,7 @@ const CitySeoCta = ({
       y: "168",
       textAnchor: "end",
       fontSize: "62",
-      fill: "var(--ignite-500)",
+      fill: "var(--accent)",
       fillOpacity: "0.65",
       style: {
         fontFamily: "var(--font-stencil)"
@@ -1380,7 +1191,7 @@ const CitySeoVenues = ({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px"
     }
@@ -1398,7 +1209,7 @@ const CitySeoVenues = ({
       fontSize: 11,
       letterSpacing: "0.22em",
       textTransform: "uppercase",
-      color: "var(--ignite-500)"
+      color: "var(--accent)"
     }
   }, ">> ", "VENUES & ANCHORS"), /*#__PURE__*/React.createElement("h3", {
     style: {
@@ -1412,7 +1223,7 @@ const CitySeoVenues = ({
   }, "Where we\u2019ve ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
-      color: "var(--ignite-500)"
+      color: "var(--accent)"
     }
   }, "worked"), " in", /*#__PURE__*/React.createElement("br", null), city.name, ".")), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -1451,7 +1262,7 @@ const CitySeoVenues = ({
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: 10,
-      color: "var(--ignite-500)",
+      color: "var(--accent)",
       letterSpacing: "0.14em"
     }
   }, String(i + 1).padStart(2, "0")), /*#__PURE__*/React.createElement("span", {
@@ -1470,63 +1281,20 @@ const CitySeoVenues = ({
   }, "+ ROOFTOPS, POP-UP SITES, AND PRIVATE PROPERTIES ON REQUEST")));
 };
 
-/* ---------- JSON-LD COMPONENT (no DOM output; effect-only) ---------- */
-const CitySeoJsonLd = ({ city }) => {
-  React.useEffect(() => {
-    if (!city || !isNonEmpty(city.name)) return undefined;
-    const slug = isNonEmpty(city.slug) ? String(city.slug).toLowerCase().trim() : null;
-    const canonicalLink = typeof document !== "undefined"
-      ? document.querySelector('link[rel="canonical"]')
-      : null;
-    const canonical = (canonicalLink && canonicalLink.href)
-      || cityCanonicalUrl(slug)
-      || (typeof location !== "undefined" ? location.href.split("#")[0].split("?")[0] : CITY_SITE_ORIGIN);
-
-    const cleanups = [];
-
-    // Service schema — always safe, generic catalog (no fake local claims).
-    cleanups.push(upsertJsonLd(
-      cityJsonLdId("service", slug),
-      buildCityServiceLd(city, canonical)
-    ));
-
-    // FAQPage — only when we have at least one complete {q,a} pair matching what's rendered.
-    const renderedFaqs = (city.faqs || [])
-      .filter(f => f && isNonEmpty(f.q) && isNonEmpty(f.a))
-      .slice(0, 3);
-    if (renderedFaqs.length > 0) {
-      cleanups.push(upsertJsonLd(
-        cityJsonLdId("faq", slug),
-        buildCityFaqLd(renderedFaqs, canonical)
-      ));
-    }
-
-    // BreadcrumbList — skip if Webflow already injected a BreadcrumbList we didn't author.
-    if (!hasExistingJsonLdOfType("BreadcrumbList")) {
-      cleanups.push(upsertJsonLd(
-        cityJsonLdId("breadcrumb", slug),
-        buildCityBreadcrumbLd(city, canonical)
-      ));
-    }
-
-    return () => cleanups.forEach(fn => fn && fn());
-  }, [
-    city && city.slug,
-    city && city.name,
-    city && city.state,
-    city && (city.faqs || []).length
-  ]);
-  return null;
-};
-
 /* ---------- COMPOSED SECTION ---------- */
 const CitySEOSection = ({
   city
 }) => {
   if (!city || !isNonEmpty(city.name)) return null;
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(CitySeoJsonLd, {
+  const accent = city.hue || (window.hueForSlug ? window.hueForSlug(city.slug || city.name) : "#D7453E");
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "contents",
+      "--accent": accent
+    }
+  }, /*#__PURE__*/React.createElement(CitySeoIntro, {
     city: city
-  }), /*#__PURE__*/React.createElement(CitySeoIntro, {
+  }), /*#__PURE__*/React.createElement(CitySeoActivations, {
     city: city
   }), /*#__PURE__*/React.createElement(CitySeoServices, {
     city: city
@@ -1549,7 +1317,6 @@ Object.assign(window, {
   CitySeoIndustriesMarkets,
   CitySeoFaqs,
   CitySeoCta,
-  CitySeoJsonLd,
   DEFAULT_SERVICES
 });
 })();

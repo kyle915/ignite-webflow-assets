@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.ThankYou) return;
 /* Thank-you / confirmation page — simple, focused, one cool animation. */
 const {
   useState: useTyState,
@@ -27,25 +28,13 @@ const ThankYou = ({
     "aria-hidden": "true",
     style: {
       position: "absolute",
-      inset: "-10%",
-      backgroundImage: "linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)",
-      backgroundSize: "56px 56px",
-      maskImage: "radial-gradient(ellipse at center, black 0%, transparent 70%)",
-      WebkitMaskImage: "radial-gradient(ellipse at center, black 0%, transparent 70%)",
-      animation: "ty-grid-drift 24s linear infinite",
-      pointerEvents: "none"
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
       width: 700,
       height: 700,
       borderRadius: "50%",
-      background: "radial-gradient(circle at 30% 40%, rgba(215, 69, 62,0.22), transparent 55%)",
+      background: "transparent",
       filter: "blur(40px)",
       animation: "ty-blob-a 14s ease-in-out infinite",
       pointerEvents: "none"
@@ -60,7 +49,7 @@ const ThankYou = ({
       width: 700,
       height: 700,
       borderRadius: "50%",
-      background: "radial-gradient(circle at 70% 60%, rgba(214,243,95,0.16), transparent 55%)",
+      background: "transparent",
       filter: "blur(40px)",
       animation: "ty-blob-b 18s ease-in-out infinite",
       pointerEvents: "none"
@@ -156,8 +145,7 @@ const ThankYou = ({
       border: "1px solid rgba(215, 69, 62,0.4)",
       display: "flex",
       alignItems: "center",
-      justifyContent: "center",
-      boxShadow: "0 0 0 1px rgba(215, 69, 62,0.2), 0 8px 32px rgba(215, 69, 62,0.25)"
+      justifyContent: "center"
     }
   }, /*#__PURE__*/React.createElement("svg", {
     width: "38",
@@ -212,7 +200,7 @@ const ThankYou = ({
       marginTop: 44
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/",
+    href: rel + "/",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -226,16 +214,16 @@ const ThankYou = ({
       fontWeight: 600,
       letterSpacing: "0.18em",
       textTransform: "uppercase",
-      boxShadow: "0 8px 32px rgba(215, 69, 62,0.35), 0 0 0 1px rgba(215, 69, 62,0.4)",
+      boxShadow: "0 8px 32px rgba(215, 69, 62,0.35), 0 0 0 1px rgba(215, 69, 62, 0.2)",
       transition: "transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out)"
     },
     onMouseEnter: e => {
       e.currentTarget.style.transform = "translateY(-2px)";
-      e.currentTarget.style.boxShadow = "0 12px 40px rgba(215, 69, 62,0.5), 0 0 0 1px rgba(215, 69, 62,0.5)";
+      e.currentTarget.style.boxShadow = "0 12px 40px rgba(215, 69, 62,0.5), 0 0 0 1px rgba(215, 69, 62, 0.25)";
     },
     onMouseLeave: e => {
       e.currentTarget.style.transform = "translateY(0)";
-      e.currentTarget.style.boxShadow = "0 8px 32px rgba(215, 69, 62,0.35), 0 0 0 1px rgba(215, 69, 62,0.4)";
+      e.currentTarget.style.boxShadow = "0 8px 32px rgba(215, 69, 62,0.35), 0 0 0 1px rgba(215, 69, 62, 0.2)";
     }
   }, /*#__PURE__*/React.createElement("svg", {
     width: "14",
@@ -253,3 +241,4 @@ const ThankYou = ({
 Object.assign(window, {
   ThankYou
 });
+})();

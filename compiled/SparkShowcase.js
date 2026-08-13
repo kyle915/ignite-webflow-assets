@@ -1,4 +1,4 @@
-(function(){if (typeof window !== "undefined" && window.SparkShowcase) return;
+(function(){if (typeof window !== "undefined" && window.CoverageMap) return;
 /* Live Spark dashboard moment — dark, the "wow" section */
 const {
   useState: shState,
@@ -7,186 +7,186 @@ const {
 } = React;
 const US_CITIES = [{
   name: "SEATTLE",
-  x: 16,
-  y: 20,
+  lat: 47.61,
+  lng: -122.33,
   brand: "White Claw",
   samples: 412,
   leads: 78,
   status: "ACTIVE"
 }, {
   name: "PORTLAND",
-  x: 13,
-  y: 26,
+  lat: 45.52,
+  lng: -122.68,
   brand: "Krispy Krunchy",
   samples: 268,
   leads: 41,
   status: "ACTIVE"
 }, {
   name: "SAN FRANCISCO",
-  x: 10,
-  y: 46,
+  lat: 37.77,
+  lng: -122.42,
   brand: "Liquid Death",
   samples: 522,
   leads: 96,
   status: "LIVE"
 }, {
   name: "LOS ANGELES",
-  x: 15,
-  y: 60,
+  lat: 34.05,
+  lng: -118.24,
   brand: "Dude Wipes",
   samples: 638,
   leads: 112,
   status: "LIVE"
 }, {
   name: "PHOENIX",
-  x: 25,
-  y: 62,
+  lat: 33.45,
+  lng: -112.07,
   brand: "Mas+",
   samples: 184,
   leads: 38,
   status: "ACTIVE"
 }, {
   name: "DENVER",
-  x: 35,
-  y: 44,
+  lat: 39.74,
+  lng: -104.99,
   brand: "Liquid Death",
   samples: 346,
   leads: 71,
   status: "LIVE"
 }, {
   name: "DALLAS",
-  x: 47,
-  y: 68,
+  lat: 32.78,
+  lng: -96.80,
   brand: "Smalls Sliders",
   samples: 412,
   leads: 58,
   status: "ACTIVE"
 }, {
   name: "HOUSTON",
-  x: 51,
-  y: 76,
+  lat: 29.76,
+  lng: -95.37,
   brand: "Total Wireless",
   samples: 388,
   leads: 84,
   status: "ACTIVE"
 }, {
   name: "AUSTIN",
-  x: 47,
-  y: 74,
+  lat: 30.27,
+  lng: -97.74,
   brand: "White Claw",
   samples: 327,
   leads: 68,
   status: "LIVE"
 }, {
   name: "MIAMI",
-  x: 76,
-  y: 82,
+  lat: 25.76,
+  lng: -80.19,
   brand: "Mark Anthony",
   samples: 504,
   leads: 102,
   status: "LIVE"
 }, {
   name: "ATLANTA",
-  x: 68,
-  y: 62,
+  lat: 33.75,
+  lng: -84.39,
   brand: "Krispy Krunchy",
   samples: 296,
   leads: 49,
   status: "ACTIVE"
 }, {
   name: "NASHVILLE",
-  x: 62,
-  y: 52,
+  lat: 36.16,
+  lng: -86.78,
   brand: "White Claw",
   samples: 218,
   leads: 36,
   status: "ACTIVE"
 }, {
   name: "CHICAGO",
-  x: 56,
-  y: 34,
+  lat: 41.88,
+  lng: -87.63,
   brand: "Total Wireless",
   samples: 432,
   leads: 88,
   status: "LIVE"
 }, {
   name: "DETROIT",
-  x: 63,
-  y: 32,
+  lat: 42.33,
+  lng: -83.05,
   brand: "Liquid Death",
   samples: 244,
   leads: 42,
   status: "ACTIVE"
 }, {
   name: "BROOKLYN",
-  x: 80,
-  y: 32,
+  lat: 40.65,
+  lng: -73.95,
   brand: "Liquid Death",
   samples: 586,
   leads: 124,
   status: "LIVE"
 }, {
   name: "BOSTON",
-  x: 85,
-  y: 26,
+  lat: 42.36,
+  lng: -71.06,
   brand: "White Claw",
   samples: 358,
   leads: 72,
   status: "ACTIVE"
 }, {
   name: "DC",
-  x: 76,
-  y: 42,
+  lat: 38.90,
+  lng: -77.04,
   brand: "Dude Wipes",
   samples: 312,
   leads: 64,
   status: "ACTIVE"
 }];
+
+/* Equirectangular projection tuned to the continental US, into a 1000x560 viewBox. */
+const MAP_W = 1000,
+  MAP_H = 560;
+const projX = lng => (lng + 125) / 59 * MAP_W;
+const projY = lat => (49.5 - lat) / 25.5 * MAP_H;
+
+/* Continental US border traced as (lng,lat) waypoints, projected at runtime so the
+   outline and the pins share one coordinate system (real geography). */
+const US_BORDER = [[-124.6, 48.4], [-123.0, 49.0], [-104.0, 49.0], [-95.2, 49.0], [-95.0, 49.4], [-94.6, 48.5], [-89.5, 48.0], [-88.0, 46.8], [-84.9, 46.5], [-83.4, 45.9], [-82.5, 44.0], [-82.9, 42.3], [-80.5, 42.3], [-79.0, 43.3], [-76.5, 43.6], [-74.9, 45.0], [-71.5, 45.0], [-69.2, 47.4], [-67.0, 44.8], [-70.2, 43.6], [-70.9, 42.3], [-71.9, 41.3], [-73.0, 40.9], [-74.0, 40.5], [-74.4, 39.4], [-75.5, 38.4], [-76.0, 37.0], [-75.6, 35.2], [-78.5, 33.9], [-80.9, 32.0], [-81.4, 30.7], [-80.1, 26.8], [-80.4, 25.2], [-81.8, 24.6], [-82.7, 27.8], [-83.7, 29.9], [-84.4, 30.0], [-88.0, 30.3], [-89.5, 29.1], [-91.5, 29.5], [-93.8, 29.7], [-97.0, 27.8], [-97.2, 26.0], [-99.2, 26.4], [-101.4, 29.8], [-102.6, 29.8], [-103.0, 29.0], [-104.9, 30.6], [-106.5, 31.8], [-108.2, 31.3], [-111.1, 31.3], [-114.8, 32.5], [-117.1, 32.5], [-118.4, 34.0], [-120.6, 34.5], [-121.9, 36.6], [-122.5, 37.8], [-124.0, 40.4], [-124.2, 43.3], [-124.1, 46.3]];
+const US_PATH = US_BORDER.map((p, i) => (i ? "L" : "M") + projX(p[0]).toFixed(1) + "," + projY(p[1]).toFixed(1)).join(" ") + " Z";
 const CoverageMap = () => {
   const [focus, setFocus] = shState(null);
   const [pulseIdx, setPulseIdx] = shState(0);
   shEffect(() => {
+    const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return;
     const id = setInterval(() => setPulseIdx(i => (i + 1) % US_CITIES.length), 900);
     return () => clearInterval(id);
   }, []);
   return /*#__PURE__*/React.createElement("div", {
     style: {
       position: "relative",
-      aspectRatio: "1.6 / 1",
+      aspectRatio: MAP_W + " / " + MAP_H,
       width: "100%"
     }
   }, /*#__PURE__*/React.createElement(GridOverlay, {
     size: 24,
     opacity: 0.06
   }), /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 100 65",
-    preserveAspectRatio: "none",
+    viewBox: "0 0 " + MAP_W + " " + MAP_H,
     style: {
       position: "absolute",
       inset: 0,
       width: "100%",
       height: "100%"
-    }
+    },
+    "aria-hidden": "true"
   }, /*#__PURE__*/React.createElement("path", {
-    d: "M 8,22 Q 4,28 6,38 Q 10,44 14,48 Q 18,56 22,58 Q 30,62 36,60 Q 42,58 48,60 Q 54,62 60,60 Q 66,58 72,56 Q 80,54 86,50 Q 92,44 92,36 Q 90,28 84,22 Q 78,18 72,18 Q 64,18 58,18 Q 50,18 42,18 Q 34,18 26,18 Q 18,18 14,18 Q 10,18 8,22 Z",
-    fill: "rgba(214,243,95,0.04)",
-    stroke: "rgba(214,243,95,0.22)",
-    strokeWidth: "0.18"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "M 73,56 Q 76,60 76,64",
-    fill: "none",
-    stroke: "rgba(214,243,95,0.22)",
-    strokeWidth: "0.18"
-  }), [15, 25, 35, 45, 55].map(y => /*#__PURE__*/React.createElement("line", {
-    key: y,
-    x1: "2",
-    y1: y,
-    x2: "98",
-    y2: y,
-    stroke: "rgba(255,255,255,0.04)",
-    strokeWidth: "0.08",
-    strokeDasharray: "0.5,0.5"
-  }))), US_CITIES.map((c, i) => {
+    d: US_PATH,
+    fill: "rgba(214,243,95,0.05)",
+    stroke: "rgba(214,243,95,0.30)",
+    strokeWidth: "1.4",
+    strokeLinejoin: "round"
+  })), US_CITIES.map((c, i) => {
     const isPulse = i === pulseIdx;
     const isFocus = focus === i;
     return /*#__PURE__*/React.createElement("div", {
@@ -195,8 +195,8 @@ const CoverageMap = () => {
       onMouseLeave: () => setFocus(null),
       style: {
         position: "absolute",
-        left: c.x + "%",
-        top: c.y + "%",
+        left: projX(c.lng) / MAP_W * 100 + "%",
+        top: projY(c.lat) / MAP_H * 100 + "%",
         transform: "translate(-50%, -50%)",
         cursor: "pointer",
         zIndex: isFocus ? 10 : 1
@@ -220,7 +220,6 @@ const CoverageMap = () => {
         height: isFocus ? 12 : 8,
         borderRadius: 999,
         background: "var(--spark-500)",
-        boxShadow: "0 0 10px rgba(214,243,95,0.8)",
         transition: "width 160ms, height 160ms"
       }
     }), isFocus ? /*#__PURE__*/React.createElement("div", {
@@ -236,7 +235,7 @@ const CoverageMap = () => {
         border: "1px solid rgba(214,243,95,0.4)",
         borderRadius: 8,
         pointerEvents: "none",
-        boxShadow: "0 12px 40px rgba(0,0,0,0.5), 0 0 30px rgba(214,243,95,0.15)",
+        boxShadow: "0 12px 40px rgba(0,0,0,0.5)",
         animation: "sp-pop 240ms cubic-bezier(0.2,0.9,0.3,1)"
       }
     }, /*#__PURE__*/React.createElement("div", {
@@ -276,7 +275,7 @@ const CoverageMap = () => {
       }
     }), c.status)), /*#__PURE__*/React.createElement("div", {
       style: {
-        fontFamily: "var(--font-display)",
+        fontFamily: "var(--font-mono)",
         fontWeight: 600,
         fontSize: 15,
         color: "var(--fg-1)",
@@ -293,7 +292,7 @@ const CoverageMap = () => {
       }
     }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
       style: {
-        fontFamily: "var(--font-display)",
+        fontFamily: "var(--font-mono)",
         fontWeight: 700,
         fontSize: 18,
         color: "var(--spark-500)",
@@ -310,7 +309,7 @@ const CoverageMap = () => {
       }
     }, "samples")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
       style: {
-        fontFamily: "var(--font-display)",
+        fontFamily: "var(--font-mono)",
         fontWeight: 700,
         fontSize: 18,
         color: "var(--fg-1)",
@@ -440,7 +439,7 @@ const ActivityRows = () => {
     }
   }, r.place), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: "var(--font-display)",
+      fontFamily: "var(--font-mono)",
       fontWeight: 500,
       fontSize: 13.5,
       marginTop: 2
@@ -454,6 +453,101 @@ const ActivityRows = () => {
       color: r.fg
     }
   }, r.status))));
+};
+const BROADCAST_PHOTOS = [{
+  src: window.__resources?.r_68962cc2d0a6bcf7ced84e53_WHITECLAW96_05_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/68962cc2d0a6bcf7ced84e53_WHITECLAW96_05_27_2025_Adia_Oshikoya_84db346d-29fd-6179-d310-6927f656bdca_0.jpg",
+  label: "WHITE CLAW · AUSTIN"
+}, {
+  src: window.__resources?.r_68962c63c89c6cf0f46a6b66_SMALLS93_11_15_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/68962c63c89c6cf0f46a6b66_SMALLS93_11_15_2024_Eva_Rowin_06080ec4-0c97-5fdb-74ec-ed3d6cd749a5_0.jpg",
+  label: "SMALLS SLIDERS · DALLAS"
+}, {
+  src: window.__resources?.r_6882bb7581d3d94867693919_liquid_death || "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882bb7581d3d94867693919_liquid-death.webp",
+  label: "LIQUID DEATH · LOS ANGELES"
+}, {
+  src: window.__resources?.r_688ce54c92fd540e9bdf283a_3 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688ce54c92fd540e9bdf283a_3.png",
+  label: "MAS+ · MIAMI"
+}];
+const BroadcastTile = () => {
+  const [i, setI] = shState(0);
+  shEffect(() => {
+    const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return;
+    const id = setInterval(() => setI(x => (x + 1) % BROADCAST_PHOTOS.length), 3800);
+    return () => clearInterval(id);
+  }, []);
+  const p = BROADCAST_PHOTOS[i];
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 10,
+      borderRadius: 10,
+      overflow: "hidden",
+      position: "relative",
+      border: "1px solid var(--ink-400)",
+      aspectRatio: "16 / 10",
+      background: "#000"
+    }
+  }, BROADCAST_PHOTOS.map((ph, idx) => /*#__PURE__*/React.createElement("img", {
+    key: idx,
+    src: ph.src,
+    alt: "",
+    style: {
+      position: "absolute",
+      inset: 0,
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      opacity: idx === i ? 1 : 0,
+      transition: "opacity 700ms var(--ease-out)"
+    },
+    loading: "lazy",
+    decoding: "async"
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      inset: 0,
+      background: "linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.78))"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      top: 8,
+      left: 8,
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 6,
+      padding: "3px 7px",
+      borderRadius: 5,
+      background: "rgba(0,0,0,0.55)",
+      border: "1px solid rgba(214,243,95,0.4)"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 6,
+      height: 6,
+      borderRadius: 999,
+      background: "var(--spark-500)",
+      animation: "sp-pulse-dot 1.6s infinite"
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 8.5,
+      letterSpacing: "0.2em",
+      color: "var(--spark-500)"
+    }
+  }, "LIVE")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      bottom: 7,
+      left: 9,
+      right: 9,
+      fontFamily: "var(--font-mono)",
+      fontSize: 9,
+      letterSpacing: "0.14em",
+      color: "rgba(255,255,255,0.92)",
+      textTransform: "uppercase"
+    }
+  }, p.label));
 };
 const SparkShowcase = () => {
   const [ref, inView] = useInView({
@@ -480,9 +574,8 @@ const SparkShowcase = () => {
     size: 48,
     opacity: 0.04
   }), /*#__PURE__*/React.createElement("img", {
-    src: "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-blob-medium.png",
     alt: "",
-    "aria-hidden": "true",
+    src: window.__resources?.r_assets_chrome_blob_medium_png || "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-blob-medium.png",
     style: {
       position: "absolute",
       left: "-10%",
@@ -491,7 +584,9 @@ const SparkShowcase = () => {
       opacity: 0.32,
       mixBlendMode: "screen",
       pointerEvents: "none"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   }), /*#__PURE__*/React.createElement(Container, {
     style: {
       position: "relative"
@@ -513,19 +608,21 @@ const SparkShowcase = () => {
       marginBottom: 16
     }
   }, /*#__PURE__*/React.createElement(SparkLockup, {
-    size: 22
+    size: 104
   }), /*#__PURE__*/React.createElement(LivePill, null)), /*#__PURE__*/React.createElement("h2", {
     style: {
-      fontFamily: "var(--font-display)",
+      fontFamily: "var(--font-mono)",
       fontWeight: 700,
-      fontSize: "clamp(44px, 6vw, 88px)",
-      letterSpacing: "-0.03em",
-      lineHeight: 0.96,
+      color: "var(--spark-500)",
+      fontSize: "clamp(28px, 3.6vw, 56px)",
+      letterSpacing: "-0.02em",
+      lineHeight: 1.08,
       maxWidth: 1000
     }
   }, /*#__PURE__*/React.createElement(Bracket, null, "Field marketing finally gets the intelligence it deserves."))), /*#__PURE__*/React.createElement(AccentBtn, {
     size: "lg",
-    onClick: () => location.href = "https://igniteproductions.co/spark"
+    accent: "spark",
+    onClick: () => location.href = "/spark"
   }, "Tour the platform")), /*#__PURE__*/React.createElement("div", {
     style: {
       background: "linear-gradient(180deg, #14161B 0%, #0F1115 100%)",
@@ -630,7 +727,11 @@ const SparkShowcase = () => {
       fontSize: 13,
       color: "var(--fg-2)"
     }
-  }, n)))), /*#__PURE__*/React.createElement("div", {
+  }, n))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 22
+    }
+  }, /*#__PURE__*/React.createElement(OpsLine, null, ">> BROADCAST")), /*#__PURE__*/React.createElement(BroadcastTile, null)), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 24
     }
@@ -671,7 +772,7 @@ const SparkShowcase = () => {
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: "var(--font-display)",
+      fontFamily: "var(--font-mono)",
       fontWeight: 700,
       fontSize: 26,
       letterSpacing: "-0.02em",
@@ -764,7 +865,7 @@ const SparkShowcase = () => {
     }
   }, "\u25B8"), /*#__PURE__*/React.createElement("h4", {
     style: {
-      fontFamily: "var(--font-display)",
+      fontFamily: "var(--font-mono)",
       fontWeight: 600,
       fontSize: 17,
       marginBottom: 8
@@ -782,6 +883,7 @@ Object.assign(window, {
   CoverageMap,
   SparkShowcase,
   BarChart,
-  ActivityRows
+  ActivityRows,
+  BroadcastTile
 });
 })();

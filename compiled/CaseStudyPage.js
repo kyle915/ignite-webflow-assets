@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.CaseStudyPage) return;
 /* Case Study detail template — driven by ?slug= query param */
 
 const {
@@ -113,19 +114,8 @@ const CaseHero = ({
   style: {
     position: "absolute",
     inset: 0,
-    background: `radial-gradient(900px 600px at 85% 30%, ${c.accent}33, transparent 60%),
-                  radial-gradient(600px 500px at 10% 100%, ${c.accent}22, transparent 65%)`,
+    background: "transparent",
     pointerEvents: "none"
-  }
-}), /*#__PURE__*/React.createElement("div", {
-  style: {
-    position: "absolute",
-    inset: 0,
-    opacity: 0.05,
-    pointerEvents: "none",
-    backgroundImage: `linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
-                       linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)`,
-    backgroundSize: "60px 60px"
   }
 }), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -175,7 +165,9 @@ const CaseHero = ({
     filter: "brightness(0) invert(1)",
     marginTop: 32,
     marginBottom: 32
-  }
+  },
+  loading: "lazy",
+  decoding: "async"
 }), /*#__PURE__*/React.createElement("h1", {
   style: {
     fontFamily: "var(--font-display)",
@@ -252,7 +244,9 @@ const CaseHero = ({
     width: "100%",
     height: "100%",
     objectFit: "cover"
-  }
+  },
+  loading: "lazy",
+  decoding: "async"
 }), /*#__PURE__*/React.createElement("div", {
   style: {
     position: "absolute",
@@ -709,6 +703,8 @@ const CaseGallery = ({
     src: c.gallery[open],
     alt: `${c.brand} ${open + 1}`,
     onClick: e => e.stopPropagation(),
+    loading: "lazy",
+    decoding: "async",
     style: {
       maxWidth: "90vw",
       maxHeight: "86vh",
@@ -730,6 +726,249 @@ const CaseGallery = ({
 };
 
 /* ------------------------------------------------------------------ MORE WORK */
+/* ------------------------------------------------------------------ RELATED LINKS — industry + markets + services for this case */
+const CaseRelatedLinks = ({
+  c
+}) => {
+  /* Sector → industry slug */
+  const sectorToIndustry = sector => {
+    const s = (sector || "").toLowerCase();
+    if (s.includes("spirit") || s.includes("alcohol")) return {
+      slug: "alcohol-spirits",
+      label: "Alcohol & Spirits"
+    };
+    if (s.includes("beverage")) return {
+      slug: "cpg-beverage",
+      label: "CPG Beverage"
+    };
+    if (s.includes("qsr") || s.includes("food")) return {
+      slug: "cpg-food-snack",
+      label: "CPG Food & Snack"
+    };
+    if (s.includes("cpg") || s.includes("personal")) return {
+      slug: "cpg-food-snack",
+      label: "CPG Food & Snack"
+    };
+    if (s.includes("telco") || s.includes("retail")) return {
+      slug: "qsr-restaurant",
+      label: "QSR & Restaurant"
+    };
+    if (s.includes("sport")) return {
+      slug: "sports-entertainment",
+      label: "Sports & Entertainment"
+    };
+    return null;
+  };
+  const industry = sectorToIndustry(c.sector);
+  /* Map common case tags to service slugs */
+  const tagToService = t => {
+    const x = (t || "").toLowerCase();
+    if (x.includes("sampling")) return {
+      slug: "product-sampling",
+      label: "Product Sampling"
+    };
+    if (x.includes("staff") || x.includes("ambassador")) return {
+      slug: "event-staffing",
+      label: "Event Staffing"
+    };
+    if (x.includes("mobile") || x.includes("tour") || x.includes("truck")) return {
+      slug: "mobile-tours",
+      label: "Mobile Tours"
+    };
+    if (x.includes("trade") || x.includes("show")) return {
+      slug: "trade-shows",
+      label: "Trade Show Support"
+    };
+    if (x.includes("experien") || x.includes("activation") || x.includes("event")) return {
+      slug: "experiential-marketing",
+      label: "Experiential Marketing"
+    };
+    if (x.includes("promo") || x.includes("co-op")) return {
+      slug: "promotional-products",
+      label: "Promotional Products"
+    };
+    if (x.includes("fabri") || x.includes("build")) return {
+      slug: "fabrication-builds",
+      label: "Fabrication & Builds"
+    };
+    return null;
+  };
+  const services = [];
+  const seenSvc = new Set();
+  (c.tags || []).forEach(t => {
+    const s = tagToService(t);
+    if (s && !seenSvc.has(s.slug)) {
+      services.push(s);
+      seenSvc.add(s.slug);
+    }
+  });
+  if (services.length === 0) {
+    const cat = tagToService(c.category);
+    if (cat) services.push(cat);
+  }
+  /* Markets — pull mentioned cities from headline / sub / metrics if any */
+  const allText = [c.headline, c.subhead || "", ...(c.tags || []), c.category || ""].join(" ").toLowerCase();
+  const cityHits = [];
+  const seenCity = new Set();
+  Object.values(window.MARKETS_BY_SLUG || {}).forEach(m => {
+    const lc = m.name.toLowerCase();
+    if (allText.includes(lc) && !seenCity.has(m.slug)) {
+      cityHits.push(m);
+      seenCity.add(m.slug);
+    }
+  });
+  if (!industry && services.length === 0 && cityHits.length === 0) return null;
+  return /*#__PURE__*/React.createElement("section", {
+    className: "paper",
+    style: {
+      padding: "70px 0",
+      borderTop: "1px solid var(--paper-200)",
+      borderBottom: "1px solid var(--paper-200)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1320,
+      margin: "0 auto",
+      padding: "0 32px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "baseline",
+      gap: 18,
+      marginBottom: 22,
+      flexWrap: "wrap"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 11,
+      fontWeight: 600,
+      letterSpacing: "0.22em",
+      textTransform: "uppercase",
+      color: c.accent || "var(--ignite-500)"
+    }
+  }, ">> ", "RELATED"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: 1,
+      height: 1,
+      background: "var(--paper-200)"
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+      gap: 28
+    }
+  }, industry && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 10,
+      letterSpacing: "0.22em",
+      color: "var(--fg-3-inv)",
+      textTransform: "uppercase",
+      marginBottom: 10
+    }
+  }, "INDUSTRY"), /*#__PURE__*/React.createElement("a", {
+    href: "/industries/" + industry.slug,
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 10,
+      padding: "12px 18px",
+      borderRadius: 999,
+      background: "var(--paper-100)",
+      border: "1px solid var(--paper-200)",
+      color: "var(--fg-1-inv)",
+      textDecoration: "none",
+      fontFamily: "var(--font-display)",
+      fontWeight: 600,
+      fontSize: 15
+    }
+  }, industry.label, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 12,
+      color: c.accent || "var(--ignite-500)"
+    }
+  }, "\u2197"))), services.length > 0 && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 10,
+      letterSpacing: "0.22em",
+      color: "var(--fg-3-inv)",
+      textTransform: "uppercase",
+      marginBottom: 10
+    }
+  }, "SERVICES"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: 8
+    }
+  }, services.map(s => /*#__PURE__*/React.createElement("a", {
+    key: s.slug,
+    href: "/services/" + s.slug,
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 8,
+      padding: "10px 14px",
+      borderRadius: 999,
+      background: "var(--paper-100)",
+      border: "1px solid var(--paper-200)",
+      color: "var(--fg-1-inv)",
+      textDecoration: "none",
+      fontFamily: "var(--font-display)",
+      fontWeight: 500,
+      fontSize: 14
+    }
+  }, s.label, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 11,
+      color: c.accent || "var(--ignite-500)"
+    }
+  }, "\u2197"))))), cityHits.length > 0 && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 10,
+      letterSpacing: "0.22em",
+      color: "var(--fg-3-inv)",
+      textTransform: "uppercase",
+      marginBottom: 10
+    }
+  }, "MARKETS"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: 8
+    }
+  }, cityHits.slice(0, 6).map(m => {
+    const href = window.CITY_URL ? window.CITY_URL(m.slug) : "/cities/" + m.slug;
+    return /*#__PURE__*/React.createElement("a", {
+      key: m.slug,
+      href: href,
+      style: {
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 6,
+        padding: "10px 14px",
+        borderRadius: 999,
+        background: "var(--paper-100)",
+        border: "1px solid var(--paper-200)",
+        color: "var(--fg-1-inv)",
+        textDecoration: "none",
+        fontFamily: "var(--font-mono)",
+        fontSize: 12,
+        letterSpacing: "0.04em"
+      }
+    }, m.name, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 10,
+        color: "var(--fg-3-inv)"
+      }
+    }, "/ ", m.state));
+  }))))));
+};
 const CaseMoreWork = ({
   c
 }) => {
@@ -799,7 +1038,7 @@ const CaseMoreWork = ({
     }
   }, list.map(n => /*#__PURE__*/React.createElement("a", {
     key: n.slug,
-    href: `case-study.html?slug=${n.slug}`,
+    href: `/case-studies?slug=${n.slug}`,
     style: {
       position: "relative",
       display: "block",
@@ -816,7 +1055,7 @@ const CaseMoreWork = ({
     style: {
       position: "absolute",
       inset: 0,
-      background: `radial-gradient(500px 400px at 80% 0%, ${n.accent}44, transparent 60%)`,
+      background: "transparent",
       pointerEvents: "none"
     }
   }), /*#__PURE__*/React.createElement("div", {
@@ -836,7 +1075,9 @@ const CaseMoreWork = ({
       objectPosition: "left",
       filter: "brightness(0) invert(1)",
       marginBottom: 18
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   }), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: "var(--font-display)",
@@ -892,7 +1133,7 @@ const CaseCTA = ({
   style: {
     position: "absolute",
     inset: 0,
-    background: `radial-gradient(800px 600px at 50% 0%, ${c.accent}33, transparent 60%)`,
+    background: "transparent",
     pointerEvents: "none"
   }
 }), /*#__PURE__*/React.createElement("div", {
@@ -962,50 +1203,8 @@ const CaseCTA = ({
 /* ------------------------------------------------------------------ ROOT */
 const CaseStudyPage = () => {
   const params = new URLSearchParams(window.location.search);
-  const slug = params.get("slug");
-  /* If someone lands on /case-study without a slug, render the WorkPage
-     (the case-study index) inline instead of defaulting to one case. */
-  if (!slug && typeof window !== "undefined" && typeof window.WorkPage === "function") {
-    return React.createElement(window.WorkPage);
-  }
+  const slug = params.get("slug") || "liquid-death";
   const c = (window.CASE_STUDIES || {})[slug];
-  React.useEffect(() => {
-    if (!c) return;
-    const url = `https://www.igniteproductions.co/case-study.html?slug=${c.slug}`;
-    if (typeof document !== "undefined") document.title = `${c.brand} — ${c.headline} | Ignite Productions Case Study`;
-    const cleanups = [];
-    cleanups.push(window.injectJsonLd && window.injectJsonLd("case-study", {
-      "@context": "https://schema.org",
-      "@graph": [{
-        "@type": "CreativeWork",
-        "@id": url + "#case-study",
-        name: `${c.brand} — ${c.headline}`,
-        headline: c.headline,
-        url,
-        image: [c.hero, ...(c.gallery || []).slice(0, 3)].filter(Boolean),
-        about: c.brand,
-        keywords: (c.tags || []).join(", "),
-        genre: c.category,
-        inLanguage: "en-US",
-        creator: window.IGNITE_ORG_LD,
-        author: window.IGNITE_ORG_LD,
-        publisher: window.IGNITE_ORG_LD,
-        datePublished: String(c.year || "").match(/\d{4}/) ? String(c.year).match(/\d{4}/)[0] : undefined,
-        description: c.challenge,
-        text: [c.challenge, c.solution].filter(Boolean).join(" "),
-        spatialCoverage: c.location ? { "@type": "Place", name: c.location } : undefined,
-        mentions: { "@type": "Brand", name: c.brand, logo: c.logo }
-      }, {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.igniteproductions.co/" },
-          { "@type": "ListItem", position: 2, name: "Our Work", item: "https://www.igniteproductions.co/work" },
-          { "@type": "ListItem", position: 3, name: c.brand, item: url }
-        ]
-      }]
-    }));
-    return () => cleanups.forEach(fn => fn && fn());
-  }, [c && c.slug]);
   return /*#__PURE__*/React.createElement("div", {
     "data-screen-label": c ? `Case · ${c.brand}` : "Case · 404"
   }, /*#__PURE__*/React.createElement(SiteNav, {
@@ -1015,6 +1214,8 @@ const CaseStudyPage = () => {
   }), /*#__PURE__*/React.createElement(CaseNarrative, {
     c: c
   }), /*#__PURE__*/React.createElement(CaseGallery, {
+    c: c
+  }), /*#__PURE__*/React.createElement(CaseRelatedLinks, {
     c: c
   }), /*#__PURE__*/React.createElement(CaseMoreWork, {
     c: c
@@ -1027,3 +1228,4 @@ const CaseStudyPage = () => {
 Object.assign(window, {
   CaseStudyPage
 });
+})();

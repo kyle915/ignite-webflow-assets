@@ -1,3 +1,4 @@
+(function(){
 // BlogIndex — editorial magazine-style index for the Ignite blog
 // Dark ground · ignite-orange accents · Space Grotesk display · JetBrains mono labels
 
@@ -53,15 +54,6 @@ function BlogIndex() {
       overflow: 'hidden'
     }
   }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: 'absolute',
-      inset: 0,
-      opacity: 0.18,
-      pointerEvents: 'none',
-      backgroundImage: `linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)`,
-      backgroundSize: '48px 48px'
-    }
-  }), /*#__PURE__*/React.createElement("div", {
     "aria-hidden": true,
     style: {
       position: 'absolute',
@@ -336,7 +328,7 @@ function BlogIndex() {
     }][i];
     return /*#__PURE__*/React.createElement("a", {
       key: p.slug,
-      href: `/blog-post?slug=${p.slug}`,
+      href: `/post/${p.slug}`,
       className: "blog-card",
       style: {
         position: 'absolute',
@@ -351,7 +343,7 @@ function BlogIndex() {
         textDecoration: 'none',
         color: '#fff',
         transition: 'transform 280ms var(--ease-spring), box-shadow 280ms',
-        boxShadow: '0 20px 48px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.08) inset',
+        boxShadow: '0 20px 48px rgba(0,0,0,0.55), 0 0 0 1px rgba(255, 255, 255, 0.04) inset',
         backgroundImage: `linear-gradient(135deg, ${p.accent}cc 0%, ${p.accent}99 50%, #000000ee 100%)${p.heroImage ? `, url(${p.heroImage})` : ''}`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -475,7 +467,7 @@ function BlogIndex() {
       marginBottom: 24
     }
   }, ">> LATEST DISPATCH"), /*#__PURE__*/React.createElement("a", {
-    href: `/blog-post?slug=${featured.slug}`,
+    href: `/post/${featured.slug}`,
     style: {
       textDecoration: 'none',
       color: 'inherit'
@@ -645,7 +637,7 @@ function BlogIndex() {
     }
   }, rest.map((p, i) => /*#__PURE__*/React.createElement("a", {
     key: p.slug,
-    href: `/blog-post?slug=${p.slug}`,
+    href: `/post/${p.slug}`,
     style: {
       textDecoration: 'none',
       color: 'inherit',
@@ -866,3 +858,4 @@ function BlogIndex() {
   }, "// 48-HOUR RESPONSE \xB7 ALL 50 STATES \xB7 NO RFP THEATER")))), /*#__PURE__*/React.createElement(SiteFooter, null));
 }
 window.BlogIndex = BlogIndex;
+})();

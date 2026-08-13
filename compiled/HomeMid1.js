@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.ClientMarquee) return;
 /* Marquee of REAL brand logos — pulled from the live site */
 const CLIENT_LOGOS = [{
   name: "Liquid Death",
@@ -90,7 +91,9 @@ const ClientMarquee = () => /*#__PURE__*/React.createElement("section", {
     objectFit: "contain",
     filter: "grayscale(1) brightness(0.25) contrast(1.2)",
     opacity: 0.85
-  }
+  },
+  loading: "lazy",
+  decoding: "async"
 })))));
 
 /* Two engines — Fractional + BA Staffing / Experiential */
@@ -161,10 +164,7 @@ const TwoEngines = () => /*#__PURE__*/React.createElement("section", {
   },
   onMouseEnter: e => e.currentTarget.style.transform = "translateY(-4px)",
   onMouseLeave: e => e.currentTarget.style.transform = "translateY(0)"
-}, /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 32,
-  opacity: 0.035
-}), /*#__PURE__*/React.createElement("div", {
+}, /*#__PURE__*/React.createElement("div", {
   style: {
     position: "relative",
     display: "flex",
@@ -267,17 +267,6 @@ const TwoEngines = () => /*#__PURE__*/React.createElement("section", {
   onMouseLeave: e => e.currentTarget.style.transform = "translateY(0)"
 }, /*#__PURE__*/React.createElement("div", {
   style: {
-    position: "absolute",
-    right: -80,
-    top: -80,
-    width: 320,
-    height: 320,
-    borderRadius: 999,
-    background: "radial-gradient(circle, rgba(215, 69, 62,0.22), transparent 70%)",
-    filter: "blur(20px)"
-  }
-}), /*#__PURE__*/React.createElement("div", {
-  style: {
     position: "relative",
     display: "flex",
     flexDirection: "column",
@@ -319,14 +308,14 @@ const TwoEngines = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2)",
     maxWidth: 440
   }
-}, "42,000+ vetted brand ambassadors in all 50 states. Full experiential production \u2014 sampling, mobile tours, ad trucks, fabricated builds, festival activations \u2014 scaled to any footprint."), /*#__PURE__*/React.createElement("div", {
+}, "257,000+ vetted brand ambassadors in all 50 states. Full experiential production \u2014 sampling, mobile tours, ad trucks, fabricated builds, festival activations \u2014 scaled to any footprint."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 28,
     display: "grid",
     gridTemplateColumns: "repeat(3,1fr)",
     gap: 10
   }
-}, [["42K+", "ambassadors"], ["50", "states"], ["48hr", "turnaround"]].map(([a, b]) => /*#__PURE__*/React.createElement("div", {
+}, [["257K+", "ambassadors"], ["50", "states"], ["48hr", "turnaround"]].map(([a, b]) => /*#__PURE__*/React.createElement("div", {
   key: a,
   style: {
     padding: "10px 12px",
@@ -445,3 +434,4 @@ Object.assign(window, {
   ClientMarquee,
   TwoEngines
 });
+})();

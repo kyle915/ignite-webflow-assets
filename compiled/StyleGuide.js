@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.StyleGuidePage) return;
 /* global React */
 const {
   useState
@@ -285,7 +286,9 @@ const LogoCard = ({
     width: "auto",
     height: "auto",
     display: "block"
-  }
+  },
+  loading: "lazy",
+  decoding: "async"
 })), /*#__PURE__*/React.createElement("div", {
   style: {
     padding: 24
@@ -489,10 +492,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     position: "relative",
     overflow: "hidden"
   }
-}, /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 48,
-  opacity: 0.04
-}), /*#__PURE__*/React.createElement(Container, {
+}, /*#__PURE__*/React.createElement(Container, {
   style: {
     position: "relative"
   }
@@ -622,7 +622,9 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     height: 56,
     width: "auto",
     display: "block"
-  }
+  },
+  loading: "lazy",
+  decoding: "async"
 }))), /*#__PURE__*/React.createElement("div", {
   style: {
     border: "1px solid var(--ink-400)",
@@ -677,7 +679,9 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     height: "auto",
     display: "block",
     margin: "0 auto 8px"
-  }
+  },
+  loading: "lazy",
+  decoding: "async"
 }), /*#__PURE__*/React.createElement("div", {
   style: {
     fontFamily: "var(--font-mono)",
@@ -698,7 +702,9 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     height: "auto",
     display: "block",
     margin: "0 auto 8px"
-  }
+  },
+  loading: "lazy",
+  decoding: "async"
 }), /*#__PURE__*/React.createElement("div", {
   style: {
     fontFamily: "var(--font-mono)",
@@ -746,7 +752,9 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
       height: 38,
       transform: "skewX(-12deg)",
       filter: "saturate(0)"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   }),
   text: "Don't re-skew or re-italicize. The mark already leans 12°."
 }, {
@@ -756,7 +764,9 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     style: {
       height: 38,
       transform: "scaleY(0.6)"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   }),
   text: "Don't squash or stretch. Scale uniformly."
 }, {
@@ -765,8 +775,10 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     alt: "",
     style: {
       height: 38,
-      filter: "drop-shadow(0 0 12px rgba(215, 69, 62,0.9))"
-    }
+      filter: "drop-shadow(0 0 12px rgba(215, 69, 62, 0.45))"
+    },
+    loading: "lazy",
+    decoding: "async"
   }),
   text: "Don't add glows, shadows, or strokes. The mark is solid."
 }, {
@@ -794,7 +806,9 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     style: {
       height: 30,
       filter: "hue-rotate(140deg) saturate(2)"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   })),
   text: "Don't recolor. Only black, white, or the supplied outline."
 }].map((d, i) => /*#__PURE__*/React.createElement("div", {
@@ -874,7 +888,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     background: "var(--ink-200)",
     borderRadius: 4
   }
-}, "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-*"))), /*#__PURE__*/React.createElement("a", {
+}, "/assets/ignite-*"))), /*#__PURE__*/React.createElement("a", {
   href: "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-full-white.png",
   download: true,
   className: "link-mono",
@@ -1058,7 +1072,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     lineHeight: 1.7,
     color: "var(--fg-1)"
   }
-}, /*#__PURE__*/React.createElement("li", null, "\"Stop being your own VP of Everything.\""), /*#__PURE__*/React.createElement("li", null, "\"Murdering thirst, coast to coast.\""), /*#__PURE__*/React.createElement("li", null, "\"42,000+ vetted ambassadors. All 50 states.\""), /*#__PURE__*/React.createElement("li", null, "\"Awareness is a side effect. The goal is trial.\""))), /*#__PURE__*/React.createElement("div", {
+}, /*#__PURE__*/React.createElement("li", null, "\"Stop being your own VP of Everything.\""), /*#__PURE__*/React.createElement("li", null, "\"Murdering thirst, coast to coast.\""), /*#__PURE__*/React.createElement("li", null, "\"257,000+ vetted ambassadors. All 50 states.\""), /*#__PURE__*/React.createElement("li", null, "\"Awareness is a side effect. The goal is trial.\""))), /*#__PURE__*/React.createElement("div", {
   style: {
     padding: 28,
     background: "rgba(255,105,105,0.06)",
@@ -1213,3 +1227,4 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
 Object.assign(window, {
   StyleGuidePage
 });
+})();

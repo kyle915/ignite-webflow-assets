@@ -1,4 +1,4 @@
-(function(){if (typeof window !== "undefined" && window.SparkPage) return;
+(function(){if (typeof window !== "undefined" && window.SparkHero) return;
 /* Spark product page — dark-dominant, with motion + pop */
 const {
   useState: spState,
@@ -155,7 +155,7 @@ const SparkHero = () => {
       position: "relative",
       background: "var(--ink-000)",
       overflow: "hidden",
-      padding: "120px 0 80px"
+      padding: "var(--hero-pad-standard) 0"
     }
   }, /*#__PURE__*/React.createElement(SparkAnimStyles, null), /*#__PURE__*/React.createElement(GridOverlay, {
     size: 48,
@@ -178,9 +178,8 @@ const SparkHero = () => {
       animation: "sp-glow 6s ease-in-out infinite"
     }
   }), /*#__PURE__*/React.createElement("img", {
-    src: "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-splash.png",
     alt: "",
-    "aria-hidden": "true",
+    src: window.__resources?.r_assets_chrome_splash_png || "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-splash.png",
     style: {
       position: "absolute",
       right: "-10%",
@@ -189,7 +188,9 @@ const SparkHero = () => {
       opacity: 0.32,
       mixBlendMode: "screen",
       pointerEvents: "none"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   }), /*#__PURE__*/React.createElement(Container, {
     style: {
       position: "relative"
@@ -203,7 +204,8 @@ const SparkHero = () => {
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement(SparkLockup, {
-    size: 26
+    size: 52,
+    rel: "../"
   }), /*#__PURE__*/React.createElement(OpsLine, {
     glow: true
   }, "* PRODUCT OVERVIEW"), /*#__PURE__*/React.createElement("div", {
@@ -235,11 +237,12 @@ const SparkHero = () => {
     }
   }, count.toLocaleString(), " samples today"))), /*#__PURE__*/React.createElement("h1", {
     style: {
-      fontFamily: "var(--font-display)",
+      fontFamily: "var(--font-mono)",
       fontWeight: 700,
-      fontSize: "clamp(60px, 8vw, 128px)",
-      lineHeight: 0.94,
-      letterSpacing: "-0.035em",
+      color: "var(--spark-500)",
+      fontSize: "clamp(32px, 4.6vw, 74px)",
+      lineHeight: 1.1,
+      letterSpacing: "-0.01em",
       maxWidth: 1100,
       margin: 0
     }
@@ -286,7 +289,7 @@ const SparkHero = () => {
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "https://igniteproductions.co/contact",
+    href: "/contact",
     className: "sp-cta-btn",
     style: {
       display: "inline-flex",
@@ -346,7 +349,7 @@ const SparkHero = () => {
   }, "STEP 0", i + 1), /*#__PURE__*/React.createElement("div", {
     className: "sp-step-h",
     style: {
-      fontFamily: "var(--font-display)",
+      fontFamily: "var(--font-mono)",
       fontWeight: 700,
       fontSize: 22,
       letterSpacing: "-0.02em"
@@ -405,7 +408,7 @@ const SparkFeatures = () => {
   }, /*#__PURE__*/React.createElement(OpsLine, null, ">> WHAT CLIENTS GET"), /*#__PURE__*/React.createElement("h2", {
     style: {
       marginTop: 14,
-      fontFamily: "var(--font-display)",
+      fontFamily: "var(--font-mono)",
       fontWeight: 700,
       fontSize: "clamp(40px, 5vw, 72px)",
       letterSpacing: "-0.03em",
@@ -466,7 +469,7 @@ const SparkFeatureRow = ({
   }, "* ", row.k), /*#__PURE__*/React.createElement("h3", {
     className: "sp-feat-h",
     style: {
-      fontFamily: "var(--font-display)",
+      fontFamily: "var(--font-mono)",
       fontWeight: 600,
       fontSize: "clamp(24px, 2.5vw, 36px)",
       letterSpacing: "-0.02em",
@@ -511,7 +514,7 @@ const SparkDeepDash = () => {
   }, /*#__PURE__*/React.createElement(OpsLine, null, ">> LIVE DASHBOARD"), /*#__PURE__*/React.createElement("h2", {
     style: {
       marginTop: 14,
-      fontFamily: "var(--font-display)",
+      fontFamily: "var(--font-mono)",
       fontWeight: 700,
       fontSize: "clamp(40px, 5vw, 72px)",
       letterSpacing: "-0.03em",
@@ -619,7 +622,7 @@ const SparkDeepDash = () => {
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: "var(--font-display)",
+      fontFamily: "var(--font-mono)",
       fontWeight: 700,
       fontSize: 26,
       color
@@ -738,14 +741,14 @@ const SparkMobile = () => /*#__PURE__*/React.createElement("section", {
 }, ">> FOR THE FIELD"), /*#__PURE__*/React.createElement("h2", {
   style: {
     marginTop: 14,
-    fontFamily: "var(--font-display)",
+    fontFamily: "var(--font-mono)",
     fontWeight: 700,
-    fontSize: "clamp(36px, 4vw, 64px)",
+    fontSize: "clamp(28px, 2.9vw, 46px)",
     letterSpacing: "-0.03em",
-    lineHeight: 1,
+    lineHeight: 1.05,
     color: "var(--fg-1-inv)"
   }
-}, "Ambassadors clock in", /*#__PURE__*/React.createElement("br", null), "from the actual venue."), /*#__PURE__*/React.createElement("p", {
+}, "Ambassadors clock in from the actual venue."), /*#__PURE__*/React.createElement("p", {
   style: {
     marginTop: 24,
     fontSize: 17,
@@ -813,7 +816,7 @@ const SparkMobile = () => /*#__PURE__*/React.createElement("section", {
   glow: true
 }, ">> TODAY'S SHIFT"), /*#__PURE__*/React.createElement("h4", {
   style: {
-    fontFamily: "var(--font-display)",
+    fontFamily: "var(--font-mono)",
     fontWeight: 700,
     fontSize: 22,
     marginTop: 10,
@@ -858,7 +861,7 @@ const SparkMobile = () => /*#__PURE__*/React.createElement("section", {
   }
 }, "GPS VERIFIED")), /*#__PURE__*/React.createElement("div", {
   style: {
-    fontFamily: "var(--font-display)",
+    fontFamily: "var(--font-mono)",
     fontWeight: 600,
     fontSize: 15,
     color: "var(--fg-1)"
@@ -872,7 +875,7 @@ const SparkMobile = () => /*#__PURE__*/React.createElement("section", {
     background: "var(--spark-500)",
     color: "#0A0B0D",
     border: "none",
-    fontFamily: "var(--font-display)",
+    fontFamily: "var(--font-mono)",
     fontWeight: 700,
     fontSize: 15,
     letterSpacing: "-0.01em",
@@ -902,7 +905,7 @@ const SparkMobile = () => /*#__PURE__*/React.createElement("section", {
   }
 }, "SAMPLES GOAL"), /*#__PURE__*/React.createElement("div", {
   style: {
-    fontFamily: "var(--font-display)",
+    fontFamily: "var(--font-mono)",
     fontWeight: 700,
     fontSize: 20,
     color: "var(--fg-1)",
@@ -925,7 +928,7 @@ const SparkMobile = () => /*#__PURE__*/React.createElement("section", {
   }
 }, "BRIEF"), /*#__PURE__*/React.createElement("div", {
   style: {
-    fontFamily: "var(--font-display)",
+    fontFamily: "var(--font-mono)",
     fontWeight: 700,
     fontSize: 20,
     color: "var(--spark-500)",

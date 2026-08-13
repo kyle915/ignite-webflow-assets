@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.SparkBeforeAfter) return;
 /* Spark page — extras: before/after, replaces strip, live toasts */
 const {
   useState: spxState,
@@ -174,7 +175,6 @@ const SparkBeforeAfter = () => {
       transitionDelay: "200ms",
       display: "flex",
       flexDirection: "column",
-      boxShadow: "0 0 60px rgba(214,243,95,0.08)",
       overflow: "hidden"
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -853,3 +853,4 @@ Object.assign(window, {
   SparkReplaces,
   SparkToasts
 });
+})();

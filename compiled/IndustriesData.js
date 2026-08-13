@@ -1,4 +1,4 @@
-(function(){if (typeof window !== "undefined" && window.INDUSTRIES_DATA) return;
+(function(){if (typeof window !== "undefined" && window.SPECTRUM_HEX) return;
 /* global React */
 /* ============================================================
    INDUSTRIES DATA — one source of truth for industry verticals.
@@ -51,7 +51,7 @@ const BRAND_LOGOS = {
   },
   "pressreader": {
     name: "PressReader",
-    url: "https://kyle915.github.io/ignite-webflow-https://kyle915.github.io/ignite-webflow-assets/assets/assets/pressreader-logo.png"
+    url: "https://kyle915.github.io/ignite-webflow-assets/assets/pressreader-logo.png"
   }
 };
 const INDUSTRIES_DATA = {
@@ -162,7 +162,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a beverage program.",
       body: "Single-market sampling through national rollouts. We'll come back with crew, compliance, and a quote inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "contact.html"
+      primaryHref: "/contact"
     }
   },
   /* ============= CPG FOOD & SNACK ============= */
@@ -266,7 +266,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a food sampling program.",
       body: "Single-store launch through 300-store national rollouts. We'll quote crew, compliance, and chain coordination inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "contact.html"
+      primaryHref: "/contact"
     }
   },
   /* ============= ALCOHOL & SPIRITS ============= */
@@ -385,7 +385,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a regulated activation.",
       body: "From a single tasting to a national distributor rollout — we handle the compliance, the crew, and the cardboard cutouts.",
       primaryLabel: "Start a brief",
-      primaryHref: "contact.html"
+      primaryHref: "/contact"
     }
   },
   /* ============= TECH & SAAS ============= */
@@ -489,7 +489,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a tech activation.",
       body: "Booth staffing, brand house, customer dinner, or full conference takeover. We'll scope and quote inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "contact.html"
+      primaryHref: "/contact"
     }
   },
   /* ============= AUTOMOTIVE ============= */
@@ -590,7 +590,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on an auto program.",
       body: "Single show, full season, or ride-and-drive tour. We'll scope crew, logistics, and vehicle handling inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "contact.html"
+      primaryHref: "/contact"
     }
   },
   /* ============= LIFESTYLE & BEAUTY ============= */
@@ -688,7 +688,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a beauty activation.",
       body: "Pop-up, retail trial, or multi-market launch — we'll scope crew, retailer compliance, and content strategy inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "contact.html"
+      primaryHref: "/contact"
     }
   },
   /* ============= CANNABIS & CBD ============= */
@@ -792,7 +792,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a cannabis program.",
       body: "Dispensary activation, budtender education, or compliant sampling in legal markets. We'll scope and quote inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "contact.html"
+      primaryHref: "/contact"
     }
   },
   /* ============= SPORTS & ENTERTAINMENT ============= */
@@ -896,7 +896,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a stadium program.",
       body: "Single game, multi-game tour, fan zone, or full season-long property activation. We'll scope crew, venue clearance, and game-day logistics inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "contact.html"
+      primaryHref: "/contact"
     }
   },
   /* ============= PET & ANIMAL ============= */
@@ -985,7 +985,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a pet program.",
       body: "Single chain rollout, lifestyle event, or multi-market trial. We'll scope crew, chain compliance, and adoption partnerships inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "contact.html"
+      primaryHref: "/contact"
     }
   },
   /* ============= HEALTH & WELLNESS ============= */
@@ -1077,7 +1077,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a wellness program.",
       body: "Single-channel trial through multi-market national rollouts. We'll scope crew, compliance, and channel mix inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "contact.html"
+      primaryHref: "/contact"
     }
   },
   /* ============= QSR & RESTAURANT ============= */
@@ -1172,7 +1172,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a QSR launch.",
       body: "Single-unit grand opening, LTO trial, or multi-unit franchise rollout. We'll scope crew, permits, and capture inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "contact.html"
+      primaryHref: "/contact"
     }
   },
   /* ============= GAMING & ESPORTS ============= */
@@ -1267,7 +1267,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a gaming program.",
       body: "Console launch, esports tournament, creator collab, or convention booth. We'll scope crew, hardware, and compliance inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "contact.html"
+      primaryHref: "/contact"
     }
   },
   /* ============= HOSPITALITY & TRAVEL ============= */
@@ -1362,12 +1362,44 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a hospitality program.",
       body: "Property opening, airline lounge, destination tour, or travel-trade conference. We'll scope crew, property clearances, and language coverage inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "contact.html"
+      primaryHref: "/contact"
     }
   }
 };
 const INDUSTRY_BY_SLUG = INDUSTRIES_DATA;
 const INDUSTRY_LIST = Object.values(INDUSTRIES_DATA);
+
+/* ------------------------------------------------------------
+   SPECTRUM ASSIGNMENT — color is assigned by function, never
+   hardcoded per card. Adding an industry/city auto-assigns a hue.
+   Hex values mirror tokens.css --spectrum-01..18 (resolved so the
+   pervasive `${accent}1c` alpha-suffix pattern keeps working).
+   ------------------------------------------------------------ */
+(function () {
+  if (window.SPECTRUM_HEX) return;
+  const SPECTRUM_HEX = ["#D7453E", "#E0663F", "#E68A4C", "#FFB627", "#E8C24A", "#CBD24A", "#9FC24E", "#6FBF6A", "#4FB58A", "#3FAEA8", "#3E9FC0", "#4F7DA6", "#4664C4", "#6A5CD1", "#8A5CD1", "#A85BC0", "#C85B9E", "#E27BA0"];
+  // Bounded, ordered collections (Industries): even positional spread.
+  const hueFor = (i, n) => SPECTRUM_HEX[Math.round(i * 18 / n) % 18];
+  // Unbounded collections (Markets/cities): stable per-slug hue, never shifts.
+  const hueForSlug = slug => {
+    slug = String(slug || "");
+    let h = 0;
+    for (let i = 0; i < slug.length; i++) h = h * 31 + slug.charCodeAt(i) >>> 0;
+    return SPECTRUM_HEX[h % 18];
+  };
+  Object.assign(window, {
+    SPECTRUM_HEX,
+    hueFor,
+    hueForSlug
+  });
+})();
+
+/* Assign each vertical its curated spectrum hue by position (replaces the old
+   hardcoded default-rainbow accents). Carries to both index card and detail page,
+   since every consumer reads `ind.accent`. */
+INDUSTRY_LIST.forEach((ind, i) => {
+  ind.accent = window.hueFor(i, INDUSTRY_LIST.length);
+});
 Object.assign(window, {
   INDUSTRIES_DATA,
   INDUSTRY_BY_SLUG,

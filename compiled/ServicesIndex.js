@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.ServicesIndexPage) return;
 /* Services index page — overview of all 7 lanes */
 
 const ServicesIndexHero = () => /*#__PURE__*/React.createElement("section", {
@@ -9,10 +10,7 @@ const ServicesIndexHero = () => /*#__PURE__*/React.createElement("section", {
     padding: "120px 48px 100px",
     overflow: "hidden"
   }
-}, /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 48,
-  opacity: 0.03
-}), /*#__PURE__*/React.createElement("div", {
+}, /*#__PURE__*/React.createElement("div", {
   style: {
     position: "absolute",
     inset: 0,
@@ -125,7 +123,9 @@ const ServicesIndexGrid = () => /*#__PURE__*/React.createElement("section", {
     objectFit: "cover",
     filter: "brightness(0.5) saturate(1.05)",
     transition: "transform 600ms var(--ease-out)"
-  }
+  },
+  loading: "lazy",
+  decoding: "async"
 }), /*#__PURE__*/React.createElement("div", {
   style: {
     position: "absolute",
@@ -282,3 +282,4 @@ const ServicesIndexPage = () => /*#__PURE__*/React.createElement("div", {
 Object.assign(window, {
   ServicesIndexPage
 });
+})();

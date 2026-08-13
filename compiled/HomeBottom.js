@@ -7,7 +7,8 @@ const FEATURED_CASES = [{
   tagline: "Murdering thirst, coast to coast.",
   category: "Brand Ambassador Program",
   stats: [["850+", "Events"], ["47", "Markets"], ["1.4M", "Consumers reached"]],
-  img: window.__resources?.r_6882bb7581d3d94867693919_liquid_death || "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882bb7581d3d94867693919_liquid-death.webp"
+  img: window.__resources?.r_6882bb7581d3d94867693919_liquid_death || "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882bb7581d3d94867693919_liquid-death.webp",
+  logo: window.__resources?.r_6882f25fd226513954e724e2_liquid_death_lo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882f25fd226513954e724e2_liquid-death-logo-transparent.webp"
 }, {
   brand: "WHITE CLAW",
   slug: "white-claw",
@@ -15,7 +16,8 @@ const FEATURED_CASES = [{
   tagline: "Cracking the spirits launch code.",
   category: "National Sampling Rollout",
   stats: [["500+", "In-store demos"], ["20%", "Conversion rate"], ["12", "Markets in 90d"]],
-  img: window.__resources?.r_688d8a159dce27cfc5ed905c_1 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688d8a159dce27cfc5ed905c_1.jpg"
+  img: window.__resources?.r_688d8a159dce27cfc5ed905c_1 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688d8a159dce27cfc5ed905c_1.jpg",
+  logo: window.__resources?.r_688c1b129ea08467c1137c5d_white_claw_logo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b129ea08467c1137c5d_white-claw-logo.webp"
 }, {
   brand: "MAS+",
   slug: "mas",
@@ -24,27 +26,16 @@ const FEATURED_CASES = [{
   category: "Street Sampling",
   stats: [["320", "Street events"], ["180K", "Samples"], ["6", "Stadium takeovers"]],
   img: window.__resources?.r_688ce54c92fd540e9bdf283a_3 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688ce54c92fd540e9bdf283a_3.png",
-  imgPos: "center"
+  imgPos: "center",
+  logo: window.__resources?.r_688c1c02300cc1480ff080dc_mas_messi_logo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1c02300cc1480ff080dc_mas-messi-logo.webp"
 }];
 const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
-  className: "paper home-case-section",
+  className: "paper",
   style: {
     padding: "120px 0",
     borderTop: "1px solid var(--paper-200)"
   }
-}, /*#__PURE__*/React.createElement("style", null, `
-      .home-case-section .home-case-tile h3,
-      .home-case-section .home-case-tile .home-case-tile-title,
-      section.home-case-section .home-case-tile h3 {
-        color: #ffffff !important;
-        text-shadow: 0 2px 24px rgba(0,0,0,0.85), 0 0 6px rgba(0,0,0,0.7) !important;
-      }
-      .home-case-section .home-case-tile .home-case-tile-stat-num { color: #FFB627 !important; }
-      .home-case-section .home-case-tile .home-case-tile-stat-lbl,
-      .home-case-section .home-case-tile .home-case-tile-meta { color: #ffffff !important; opacity: 0.9 !important; }
-      .home-case-section .home-case-tile .home-case-tile-cta { color: #FFB627 !important; }
-      .home-case-section .home-case-tile .home-case-tile-brand { color: #FFB627 !important; }
-    `), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+}, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
   style: {
     display: "flex",
     justifyContent: "space-between",
@@ -78,7 +69,7 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--ignite-500)"
   }
 }, "exceptional"), " people.")), /*#__PURE__*/React.createElement("a", {
-  href: "pages/work.html",
+  href: "/work",
   className: "link-mono",
   style: {
     color: "var(--fg-2-inv)"
@@ -91,8 +82,7 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
   }
 }, FEATURED_CASES.map((c, i) => /*#__PURE__*/React.createElement("a", {
   key: c.slug,
-  href: "pages/work.html#" + c.slug,
-  className: "home-case-tile",
+  href: "/work#" + c.slug,
   style: {
     position: "relative",
     display: "block",
@@ -126,7 +116,9 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
     objectPosition: c.imgPos || "center",
     transition: "transform 500ms var(--ease-out)",
     filter: "brightness(0.65) saturate(1.05)"
-  }
+  },
+  loading: "lazy",
+  decoding: "async"
 }), /*#__PURE__*/React.createElement("div", {
   style: {
     position: "absolute",
@@ -145,38 +137,32 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
 }, /*#__PURE__*/React.createElement("div", {
   style: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
     alignItems: "flex-start"
   }
-}, /*#__PURE__*/React.createElement("span", {
+}, /*#__PURE__*/React.createElement("img", {
+  src: c.logo,
+  alt: c.brand,
+  style: {
+    height: 132,
+    width: "auto",
+    maxWidth: 240,
+    display: "block",
+    objectFit: "contain",
+    filter: "brightness(0) invert(1) drop-shadow(0 2px 10px rgba(0,0,0,0.6))"
+  },
+  loading: "lazy",
+  decoding: "async"
+})), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
   style: {
     fontFamily: "var(--font-mono)",
     fontSize: 10,
     letterSpacing: "0.22em",
     textTransform: "uppercase",
-    padding: "4px 8px",
-    background: "rgba(255,255,255,0.1)",
-    borderRadius: 4,
-    backdropFilter: "blur(8px)"
-  }
-}, "* 0", i + 1), /*#__PURE__*/React.createElement("span", {
-  style: {
-    fontFamily: "var(--font-mono)",
-    fontSize: 10,
-    letterSpacing: "0.22em",
-    textTransform: "uppercase",
-    opacity: 0.7
-  }
-}, c.category)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-  style: {
-    fontFamily: "var(--font-stencil)",
-    fontSize: 13,
-    letterSpacing: "0.12em",
     color: "#FFB627",
-    marginBottom: 14
+    marginBottom: 12
   }
-}, c.brand), /*#__PURE__*/React.createElement("h3", {
-  className: "home-case-tile-title",
+}, c.category), /*#__PURE__*/React.createElement("h3", {
   style: {
     fontFamily: "var(--font-display)",
     fontWeight: 700,
@@ -216,13 +202,27 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
 }, l)))), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 24,
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 8,
+    padding: "9px 15px",
+    borderRadius: 999,
+    border: "1px solid rgba(255,255,255,0.5)",
+    background: "rgba(255,255,255,0.08)",
+    backdropFilter: "blur(6px)",
     fontFamily: "var(--font-mono)",
     fontSize: 11,
-    letterSpacing: "0.22em",
+    letterSpacing: "0.18em",
     textTransform: "uppercase",
-    color: "#FFB627"
+    color: "#fff",
+    whiteSpace: "nowrap"
   }
-}, "Read case study \u2192"))))))));
+}, "View case study ", /*#__PURE__*/React.createElement("span", {
+  style: {
+    fontSize: 13,
+    lineHeight: 1
+  }
+}, "\u2192")))))))));
 
 /* Core difference — 4-col dark strip */
 const CORE_DIFFERENCE = [{
@@ -240,7 +240,7 @@ const CORE_DIFFERENCE = [{
 }, {
   n: "04",
   t: "Nationwide scale",
-  d: "42,000+ vetted ambassadors in all 50 states. Execute anywhere — quality high, results consistent."
+  d: "257,000+ vetted ambassadors in all 50 states. Execute anywhere — quality high, results consistent."
 }, {
   n: "05",
   t: "Tech enabled",
@@ -255,10 +255,7 @@ const CoreDifference = () => /*#__PURE__*/React.createElement("section", {
     position: "relative",
     overflow: "hidden"
   }
-}, /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 40,
-  opacity: 0.03
-}), /*#__PURE__*/React.createElement(Container, {
+}, /*#__PURE__*/React.createElement(Container, {
   style: {
     position: "relative"
   }
@@ -286,22 +283,14 @@ const CoreDifference = () => /*#__PURE__*/React.createElement("section", {
     fontStyle: "italic",
     color: "#FFB627"
   }
-}, "years"), ", not quarters.")), /*#__PURE__*/React.createElement("div", {
+}, "years"), ", not quarters.")), /*#__PURE__*/React.createElement("a", {
+  href: "/about",
+  className: "link-mono",
   style: {
-    display: "inline-flex",
-    padding: "12px 16px",
-    borderRadius: 12,
-    background: "rgba(215, 69, 62,0.1)",
-    border: "1px solid rgba(215, 69, 62,0.3)",
-    fontFamily: "var(--font-mono)",
-    fontSize: 11,
-    letterSpacing: "0.18em",
-    textTransform: "uppercase",
-    color: "var(--ignite-500)",
-    alignItems: "center",
-    gap: 10
+    color: "var(--fg-2)",
+    flexShrink: 0
   }
-}, "\u2605 Veteran-Owned Since 2018")), /*#__PURE__*/React.createElement("div", {
+}, "Learn more about Ignite \u2192")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "repeat(5, 1fr)",
@@ -346,38 +335,33 @@ const CoreDifference = () => /*#__PURE__*/React.createElement("section", {
 
 /* Testimonial + CTA */
 const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
+  className: "paper",
   style: {
     padding: "60px 0 120px",
-    borderTop: "1px solid var(--ink-400)",
-    background: "var(--ink-000)",
-    color: "var(--fg-1)"
+    borderTop: "1px solid var(--paper-200)"
   }
 }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
-    gridTemplateColumns: "1fr 1fr",
+    gridTemplateColumns: "1fr 1.5fr",
     gap: 80,
-    alignItems: "center"
+    alignItems: "start"
   }
-}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(OpsLine, null, ">> WHAT CLIENTS SAY"), /*#__PURE__*/React.createElement("div", {
-  role: "blockquote",
+}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(OpsLine, null, ">> WHAT CLIENTS SAY"), /*#__PURE__*/React.createElement("blockquote", {
   style: {
     marginTop: 24,
-    fontFamily: "var(--font-display)",
+    fontFamily: "var(--font-serif)",
     fontWeight: 500,
     fontSize: "clamp(32px, 4vw, 54px)",
-    letterSpacing: "-0.025em",
-    lineHeight: 1.05,
-    color: "#FAFAF7",
-    margin: 0,
-    background: "transparent",
-    padding: 0,
-    border: 0
+    letterSpacing: "-0.015em",
+    lineHeight: 1.1,
+    color: "var(--fg-1-inv)",
+    margin: 0
   }
 }, /*#__PURE__*/React.createElement("span", {
   style: {
     color: "var(--ignite-500)",
-    fontSize: "1.4em",
+    fontSize: "1.0em",
     lineHeight: 0
   }
 }, "\u201C"), "Ignite's team drove a ", /*#__PURE__*/React.createElement("span", {
@@ -394,7 +378,7 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
     fontSize: 11,
     letterSpacing: "0.18em",
     textTransform: "uppercase",
-    color: "#9499A3"
+    color: "var(--fg-3-inv)"
   }
 }, "MARKETING DIRECTOR \xB7 CPG BEVERAGE BRAND"))), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -416,8 +400,9 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement("p", {
   style: {
-    fontSize: 14,
-    lineHeight: 1.5,
+    fontFamily: "var(--font-serif)",
+    fontSize: 32,
+    lineHeight: 1.45,
     color: "var(--fg-2-inv)",
     margin: 0,
     fontStyle: "italic"
@@ -433,86 +418,128 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
   }
 }, "\u25C9 ", b)))))));
 
-/* Final CTA */
+/* Final CTA — ambassador graphic emerging over a full-width card */
 const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
+  className: "svc-final",
   style: {
-    padding: "140px 0",
-    background: "var(--ink-000)",
-    color: "var(--fg-1)",
     position: "relative",
-    overflow: "hidden",
-    borderTop: "1px solid var(--ink-400)"
+    padding: "84px 0 96px",
+    background: "var(--ink-000)",
+    overflow: "hidden"
   }
-}, /*#__PURE__*/React.createElement("img", {
-  src: "https://kyle915.github.io/ignite-webflow-assets/assets/chrome-blob-large.png",
-  alt: "",
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
-    right: "-10%",
-    top: "50%",
-    transform: "translateY(-50%)",
-    width: "55%",
-    opacity: 0.3,
-    mixBlendMode: "screen",
-    pointerEvents: "none"
-  }
-}), /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 48,
-  opacity: 0.03
-}), /*#__PURE__*/React.createElement(Container, {
+}, /*#__PURE__*/React.createElement("style", null, `
+      .svc-final-stage { position: relative; }
+      .svc-final-card { position: relative; width: 100%;
+        border: 1px solid rgba(255,255,255,0.14); border-radius: 32px;
+        background: linear-gradient(160deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012) 60%, rgba(255,255,255,0));
+        padding: 48px 56px 0; z-index: 1; }
+      .svc-final-woman { position: absolute; right: -60px; top: 50%; transform: translateY(-50%);
+        height: 600px; width: auto; max-width: none; z-index: 2; pointer-events: none; user-select: none; }
+      .svc-final-ctas { position: relative; margin-top: 34px; transform: translateY(50%);
+        display: flex; gap: 14px; width: max-content; z-index: 3; }
+      @media (max-width: 1024px) {
+        .svc-final-card { width: 100%; padding: 40px 36px 0; }
+        .svc-final-woman { right: -100px; height: 520px; }
+      }
+      @media (max-width: 720px) {
+        .svc-final { padding: 0 0 72px; }
+        .svc-final-stage { display: flex; flex-direction: column; }
+        .svc-final-woman { order: -1; position: relative; right: auto; top: auto; transform: none; display: block;
+          height: 420px; width: 100%; max-width: 100%; object-fit: cover; object-position: 88% 50%;
+          margin: 0 auto 20px; }
+        .svc-final-card { position: relative; width: 100%; padding: 30px 22px 30px; border-radius: 22px; }
+        .svc-final-ctas { transform: none; margin-top: 24px; width: auto;
+          flex-direction: column; align-items: stretch; }
+        .svc-final-ctas a { justify-content: center; text-align: center; }
+      }
+    `), /*#__PURE__*/React.createElement(Container, {
   style: {
     position: "relative"
   }
-}, /*#__PURE__*/React.createElement(OpsLine, null, ">> READY WHEN YOU ARE"), /*#__PURE__*/React.createElement("h2", {
+}, /*#__PURE__*/React.createElement("div", {
+  className: "svc-final-stage"
+}, /*#__PURE__*/React.createElement("div", {
+  className: "svc-final-card"
+}, /*#__PURE__*/React.createElement("span", {
   style: {
-    marginTop: 16,
+    fontFamily: "var(--font-mono)",
+    fontSize: 11,
+    letterSpacing: "0.22em",
+    color: "var(--fg-3)",
+    textTransform: "uppercase"
+  }
+}, ">>", " READY WHEN YOU ARE"), /*#__PURE__*/React.createElement("h2", {
+  style: {
+    marginTop: 22,
     fontFamily: "var(--font-display)",
     fontWeight: 700,
-    fontSize: "clamp(56px, 9vw, 144px)",
+    fontSize: "clamp(30px, 3.7vw, 59px)",
     letterSpacing: "-0.035em",
-    lineHeight: 0.92,
-    maxWidth: 1200
+    lineHeight: 0.98,
+    margin: "22px 0 0",
+    maxWidth: 560,
+    color: "var(--fg-1)"
   }
-}, "Let's build the field team your brand ", /*#__PURE__*/React.createElement("span", {
+}, "Let's build the field team your brand", " ", /*#__PURE__*/React.createElement("span", {
   style: {
     fontStyle: "italic",
-    color: "var(--ignite-500)"
+    color: "var(--spark-500)"
   }
-}, "deserves"), "."), /*#__PURE__*/React.createElement("div", {
+}, "deserves.")), /*#__PURE__*/React.createElement("div", {
+  className: "svc-final-ctas"
+}, /*#__PURE__*/React.createElement("a", {
+  href: "/contact",
   style: {
-    marginTop: 48,
-    display: "flex",
-    gap: 14,
-    alignItems: "center",
-    flexWrap: "wrap"
-  }
-}, /*#__PURE__*/React.createElement(AccentBtn, {
-  size: "lg",
-  onClick: () => location.href = "https://igniteproductions.co/contact?urgent=1"
-}, "Request a quote"), /*#__PURE__*/React.createElement(GhostBtn, {
-  size: "lg",
-  onClick: () => location.href = "https://igniteproductions.co/contact?urgent=1",
-  icon: /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-mono)",
-      color: "#FF6969"
-    }
-  }, "\u25CF")
-}, "Request staff now"), /*#__PURE__*/React.createElement("a", {
-  href: "https://igniteproductions.co/spark",
-  style: {
-    marginLeft: 8,
     display: "inline-flex",
     alignItems: "center",
-    gap: 8,
-    fontFamily: "var(--font-mono)",
-    fontSize: 12,
-    letterSpacing: "0.22em",
-    textTransform: "uppercase",
-    color: "#FFB627"
+    gap: 10,
+    padding: "16px 24px",
+    borderRadius: 999,
+    background: "var(--spark-500)",
+    color: "#0A0B0D",
+    fontFamily: "var(--font-display)",
+    fontWeight: 700,
+    fontSize: 16,
+    letterSpacing: "-0.01em",
+    textDecoration: "none",
+    boxShadow: "0 14px 40px rgba(0,0,0,0.45)"
   }
-}, "OR TOUR SPARK \u2192"))));
+}, "Request a quote ", /*#__PURE__*/React.createElement("span", {
+  style: {
+    fontFamily: "var(--font-mono)"
+  }
+}, "\u2192")), /*#__PURE__*/React.createElement("a", {
+  href: "/contact?urgent=1",
+  style: {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 10,
+    padding: "16px 24px",
+    borderRadius: 999,
+    border: "1px solid rgba(255,255,255,0.24)",
+    background: "rgba(10,11,13,0.72)",
+    backdropFilter: "blur(8px)",
+    color: "var(--fg-1)",
+    fontFamily: "var(--font-display)",
+    fontWeight: 600,
+    fontSize: 16,
+    letterSpacing: "-0.01em",
+    textDecoration: "none"
+  }
+}, "Request staff now ", /*#__PURE__*/React.createElement("span", {
+  style: {
+    width: 8,
+    height: 8,
+    borderRadius: 999,
+    background: "var(--spark-500)"
+  }
+})))), /*#__PURE__*/React.createElement("img", {
+  className: "svc-final-woman",
+  src: window.__resources?.r_assets_cta_ambassador_png || "https://kyle915.github.io/ignite-webflow-assets/assets/cta-ambassador.png",
+  alt: "Ignite brand ambassador holding a phone",
+  loading: "lazy",
+  decoding: "async"
+}))));
 Object.assign(window, {
   CaseStudyCarousel,
   CoreDifference,

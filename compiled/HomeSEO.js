@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.HomeSEOBand) return;
 /* global React */
 /* ============================================================
    HOME SEO BAND — capabilities, industries, markets, FAQ,
@@ -19,7 +20,7 @@ const SEO_CAPS = [{
 }, {
   n: "04",
   t: "Event Staffing",
-  d: "42K+ vetted brand ambassadors, bilingual, hospitality, tour managers."
+  d: "257K+ vetted brand ambassadors, bilingual, hospitality, tour managers."
 }, {
   n: "05",
   t: "Product Sampling",
@@ -185,30 +186,46 @@ const SeoIndustries = () => /*#__PURE__*/React.createElement("section", {
     gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
     gap: 10
   }
-}, SEO_INDUSTRIES.map(i => /*#__PURE__*/React.createElement("div", {
-  key: i,
-  style: {
-    padding: "16px 18px",
-    background: "var(--ink-100)",
-    border: "1px solid var(--ink-400)",
-    borderRadius: 10,
-    display: "flex",
-    alignItems: "center",
-    gap: 12
-  }
-}, /*#__PURE__*/React.createElement("span", {
-  style: {
-    color: "var(--ignite-500)",
-    fontSize: 14
-  }
-}, "\u25C9"), /*#__PURE__*/React.createElement("span", {
-  style: {
-    fontFamily: "var(--font-display)",
-    fontWeight: 500,
-    fontSize: 15,
-    letterSpacing: "-0.005em"
-  }
-}, i)))))));
+}, SEO_INDUSTRIES.map((i, idx) => {
+  const hue = window.hueFor ? window.hueFor(idx, SEO_INDUSTRIES.length) : "var(--ignite-500)";
+  return /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      padding: "16px 18px",
+      background: "var(--ink-100)",
+      border: "1px solid var(--ink-400)",
+      borderRadius: 10,
+      display: "flex",
+      alignItems: "center",
+      gap: 12,
+      transition: "border-color 150ms var(--ease-out), background 150ms var(--ease-out)"
+    },
+    onMouseEnter: e => {
+      e.currentTarget.style.borderColor = hue;
+      e.currentTarget.style.background = "var(--ink-200)";
+      e.currentTarget.querySelector(".ind-dot").style.color = hue;
+    },
+    onMouseLeave: e => {
+      e.currentTarget.style.borderColor = "var(--ink-400)";
+      e.currentTarget.style.background = "var(--ink-100)";
+      e.currentTarget.querySelector(".ind-dot").style.color = "var(--fg-3)";
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "ind-dot",
+    style: {
+      color: "var(--fg-3)",
+      fontSize: 14,
+      transition: "color 150ms var(--ease-out)"
+    }
+  }, "\u25C9"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-display)",
+      fontWeight: 500,
+      fontSize: 15,
+      letterSpacing: "-0.005em"
+    }
+  }, i));
+})))));
 
 /* ---------- 3. MARKETS / CITIES ---------- */
 const SeoMarkets = () => /*#__PURE__*/React.createElement("section", {
@@ -250,9 +267,11 @@ const SeoMarkets = () => /*#__PURE__*/React.createElement("section", {
     gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
     gap: 8
   }
-}, SEO_MARKETS.map(m => /*#__PURE__*/React.createElement("div", {
-  key: m,
-  style: {
+}, SEO_MARKETS.map(m => {
+  const href = window.marketHrefFor ? window.marketHrefFor(m, "") : null;
+  const slug = window.NAME_TO_SLUG && window.NAME_TO_SLUG[m.toLowerCase().trim()] || m.toLowerCase().replace(/[^a-z]+/g, "-");
+  const hue = window.hueForSlug ? window.hueForSlug(slug) : "var(--ignite-500)";
+  const baseStyle = {
     padding: "12px 14px",
     background: "var(--ink-200)",
     border: "1px solid var(--ink-400)",
@@ -264,13 +283,44 @@ const SeoMarkets = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2)",
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
+    textDecoration: "none",
+    transition: "background 160ms, border-color 160ms, color 160ms"
+  };
+  if (href) {
+    return /*#__PURE__*/React.createElement("a", {
+      key: m,
+      href: href,
+      className: "seo-market-chip",
+      style: baseStyle,
+      onMouseEnter: e => {
+        e.currentTarget.style.background = hue;
+        e.currentTarget.style.borderColor = hue;
+        e.currentTarget.style.color = "#0A0B0D";
+        e.currentTarget.querySelector(".mk-arrow").style.color = "#0A0B0D";
+      },
+      onMouseLeave: e => {
+        e.currentTarget.style.background = "var(--ink-200)";
+        e.currentTarget.style.borderColor = "var(--ink-400)";
+        e.currentTarget.style.color = "var(--fg-2)";
+        e.currentTarget.querySelector(".mk-arrow").style.color = "var(--fg-3)";
+      }
+    }, /*#__PURE__*/React.createElement("span", null, m), /*#__PURE__*/React.createElement("span", {
+      className: "mk-arrow",
+      style: {
+        color: "var(--fg-3)"
+      }
+    }, "\u2197"));
   }
-}, /*#__PURE__*/React.createElement("span", null, m), /*#__PURE__*/React.createElement("span", {
-  style: {
-    color: "var(--ignite-500)"
-  }
-}, "\u25CF")))), /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/React.createElement("div", {
+    key: m,
+    style: baseStyle
+  }, /*#__PURE__*/React.createElement("span", null, m), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--fg-3)"
+    }
+  }, "\u25CF"));
+})), /*#__PURE__*/React.createElement("p", {
   style: {
     marginTop: 28,
     fontFamily: "var(--font-mono)",
@@ -279,7 +329,12 @@ const SeoMarkets = () => /*#__PURE__*/React.createElement("section", {
     textTransform: "uppercase",
     color: "var(--fg-3)"
   }
-}, "+ 170 ADDITIONAL METROS \xB7 ALASKA \xB7 HAWAII \xB7 PUERTO RICO")));
+}, /*#__PURE__*/React.createElement("a", {
+  href: "/markets",
+  style: {
+    color: "var(--ignite-500)"
+  }
+}, "SEE ALL MARKETS \u2192"), " · ", "+ 170 ADDITIONAL METROS \xB7 ALASKA \xB7 HAWAII \xB7 PUERTO RICO")));
 
 /* ---------- 4. CLIENT WALL ---------- */
 const SeoClients = () => /*#__PURE__*/React.createElement("section", {
@@ -332,7 +387,9 @@ const SeoClients = () => /*#__PURE__*/React.createElement("section", {
       objectFit: "contain",
       filter: "brightness(0) invert(1) opacity(0.55)",
       transition: "filter 200ms"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   }));
 }))));
 
@@ -459,7 +516,7 @@ const SeoLongform = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "var(--fg-2)"
   }
-}, "42,000+ vetted brand ambassadors"), " ", "covers 30+ primary metros \u2014 Los Angeles, New York, Chicago, Austin, Miami, Atlanta, Dallas, Houston, Seattle, Denver, Boston, San Francisco, Phoenix, Nashville, Philadelphia, San Diego, Tampa, Las Vegas, Charlotte, Orlando, Brooklyn, Washington DC, Detroit, Minneapolis, Portland, Indianapolis, Columbus, Pittsburgh, Kansas City, and Sacramento \u2014 plus surge capacity in another 170+ secondary markets including Alaska, Hawaii, and Puerto Rico."), /*#__PURE__*/React.createElement("p", {
+}, "257,000+ vetted brand ambassadors"), " ", "covers 30+ primary metros \u2014 Los Angeles, New York, Chicago, Austin, Miami, Atlanta, Dallas, Houston, Seattle, Denver, Boston, San Francisco, Phoenix, Nashville, Philadelphia, San Diego, Tampa, Las Vegas, Charlotte, Orlando, Brooklyn, Washington DC, Detroit, Minneapolis, Portland, Indianapolis, Columbus, Pittsburgh, Kansas City, and Sacramento \u2014 plus surge capacity in another 170+ secondary markets including Alaska, Hawaii, and Puerto Rico."), /*#__PURE__*/React.createElement("p", {
   style: {
     marginBottom: 16
   }
@@ -484,34 +541,7 @@ const SeoLongform = () => /*#__PURE__*/React.createElement("section", {
     marginBottom: 0
   }
 }, "As a certified Veteran-Owned Small Business (VOSB), Ignite Productions has been the field marketing partner for emerging and Fortune 500 brands since 2018. Whether you need a single-night activation in Austin, a 50-state tour, a custom-fabricated photo op, or a fractional VP of Sales \u2014 we run the whole stack under one roof."))));
-const HomeSEOBand = () => {
-  React.useEffect(() => {
-    const cleanup = window.injectJsonLd && window.injectJsonLd("home", {
-      "@context": "https://schema.org",
-      "@graph": [{
-        "@type": "FAQPage",
-        "@id": "https://www.igniteproductions.co/#faq",
-        mainEntity: SEO_FAQS.map(([q, a]) => ({
-          "@type": "Question",
-          name: q,
-          acceptedAnswer: { "@type": "Answer", text: a }
-        }))
-      }, {
-        "@type": "ItemList",
-        "@id": "https://www.igniteproductions.co/#services-offered",
-        name: "Ignite Productions — Capabilities",
-        itemListElement: SEO_CAPS.map((c, i) => ({
-          "@type": "ListItem",
-          position: i + 1,
-          name: c.t,
-          description: c.d
-        }))
-      }]
-    });
-    return () => cleanup && cleanup();
-  }, []);
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SeoCapabilities, null), /*#__PURE__*/React.createElement(SeoIndustries, null), /*#__PURE__*/React.createElement(SeoMarkets, null), /*#__PURE__*/React.createElement(SeoFaq, null), /*#__PURE__*/React.createElement(SeoLongform, null));
-};
+const HomeSEOBand = () => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SeoCapabilities, null), /*#__PURE__*/React.createElement(SeoIndustries, null), /*#__PURE__*/React.createElement(SeoMarkets, null), /*#__PURE__*/React.createElement(SeoFaq, null));
 Object.assign(window, {
   HomeSEOBand,
   SeoCapabilities,
@@ -521,3 +551,4 @@ Object.assign(window, {
   SeoFaq,
   SeoLongform
 });
+})();

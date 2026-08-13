@@ -9,6 +9,25 @@ const {
   useState: useStateMH
 } = React;
 
+/* Region primary colors — single source of truth lives in MarketsData
+   (window.REGION_HUES). Kept here as a fallback for isolated renders.
+   Every city chip in a region inherits its region's hue (via --chip). */
+const REGION_HUES = window.REGION_HUES || {
+  "northeast": "#5E8B7E",
+  // slate green — temperate deciduous
+  "southeast": "#E39A4C",
+  // warm amber — humid subtropical
+  "midwest": "#4F86C6",
+  // lake blue — Great Lakes
+  "southwest": "#CE6B3E",
+  // desert terracotta — arid
+  "west": "#E7B84A",
+  // coastal gold — Mediterranean
+  "pacific-northwest": "#3E8060",
+  // evergreen — temperate rainforest
+  "mountain": "#6C6FB2" // alpine slate-violet — high country
+};
+
 /* ---------- Hero band ---------- */
 const MARKETS_HERO_ANIM_CSS = `
 @keyframes mhGridDrift { from { background-position: 0 0, 0 0; } to { background-position: 96px 96px, 96px 96px; } }
@@ -20,7 +39,7 @@ const MARKETS_HERO_ANIM_CSS = `
 @keyframes mhNationalShimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 @keyframes mhStatBar { 0%, 100% { transform: scaleY(0.4); opacity: 0.4; } 50% { transform: scaleY(1); opacity: 1; } }
 @keyframes mhMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes mhTier1Pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,107,53,0.0); } 50% { box-shadow: 0 0 0 4px rgba(255,107,53,0.18); } }
+@keyframes mhTier1Pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,107,53,0.0); } 50% { box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.09); } }
 @media (prefers-reduced-motion: reduce) {
   .mh-anim, .mh-anim * { animation: none !important; }
 }
@@ -31,7 +50,7 @@ const MarketsHero = ({
   className: "mh-anim",
   style: {
     position: "relative",
-    padding: "150px 0 100px",
+    padding: "var(--hero-pad-compact) 0",
     background: "var(--ink-000)",
     color: "var(--fg-1)",
     borderTop: "1px solid var(--ink-400)",
@@ -45,23 +64,11 @@ const MarketsHero = ({
   "aria-hidden": "true",
   style: {
     position: "absolute",
-    inset: 0,
-    pointerEvents: "none",
-    backgroundImage: "linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), " + "linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)",
-    backgroundSize: "48px 48px, 48px 48px",
-    animation: "mhGridDrift 24s linear infinite",
-    maskImage: "radial-gradient(ellipse at center, black 40%, transparent 95%)",
-    WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 95%)"
-  }
-}), /*#__PURE__*/React.createElement("div", {
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
     left: "-10%",
     top: "-15%",
     width: "60%",
     height: "70%",
-    background: "radial-gradient(ellipse at center, rgba(255,107,53,0.28) 0%, rgba(255,107,53,0) 65%)",
+    background: "transparent",
     filter: "blur(20px)",
     pointerEvents: "none",
     animation: "mhGlowA 18s ease-in-out infinite"
@@ -74,7 +81,7 @@ const MarketsHero = ({
     bottom: "-20%",
     width: "55%",
     height: "70%",
-    background: "radial-gradient(ellipse at center, rgba(255,176,80,0.18) 0%, rgba(255,176,80,0) 65%)",
+    background: "transparent",
     filter: "blur(28px)",
     pointerEvents: "none",
     animation: "mhGlowB 22s ease-in-out infinite"
@@ -200,10 +207,9 @@ const MarketsHero = ({
     border: "1px solid var(--ink-400)",
     borderRadius: 12,
     overflow: "hidden",
-    background: "linear-gradient(180deg, rgba(17,19,23,0.92), rgba(10,11,13,0.92))",
-    boxShadow: "0 30px 80px -40px rgba(255,107,53,0.18)"
+    background: "linear-gradient(180deg, rgba(17,19,23,0.92), rgba(10,11,13,0.92))"
   }
-}, [["STATES", "50", "all of them"], ["NAMED METROS", "200+", "core + surge"], ["AMBASSADORS", "42,000+", "vetted, in-market"], ["RUSH WINDOW", "48 HR", "brief to boots"]].map(([k, v, sub], i, arr) => /*#__PURE__*/React.createElement("div", {
+}, [["STATES", "50", "all of them"], ["NAMED METROS", "200+", "core + surge"], ["AMBASSADORS", "257,000+", "vetted, in-market"], ["RUSH WINDOW", "48 HR", "brief to boots"]].map(([k, v, sub], i, arr) => /*#__PURE__*/React.createElement("div", {
   key: k,
   style: {
     padding: "28px 28px",
@@ -240,7 +246,7 @@ const MarketsHero = ({
     letterSpacing: "-0.035em",
     color: "var(--ignite-500)",
     lineHeight: 0.95,
-    textShadow: "0 0 30px rgba(255,107,53,0.35)"
+    textShadow: "0 0 30px rgba(255, 107, 53, 0.175)"
   }
 }, v), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -254,7 +260,7 @@ const MarketsHero = ({
 
 /* ---------- Marquee ticker band ---------- */
 const RegionTicker = () => {
-  const items = ["50 STATES", "200+ METROS", "42,000 AMBASSADORS", "48 HR RUSH WINDOW", "PERMITS HANDLED", "LOCAL CREWS", "NATIONAL ROLLOUTS", "SAMPLING", "MOBILE TOURS", "TRADE-SHOW STAFF", "POP-UPS", "BRAND AMBASSADORS", "FIELD MARKETING"];
+  const items = ["50 STATES", "200+ METROS", "257,000 AMBASSADORS", "48 HR RUSH WINDOW", "PERMITS HANDLED", "LOCAL CREWS", "NATIONAL ROLLOUTS", "SAMPLING", "MOBILE TOURS", "TRADE-SHOW STAFF", "POP-UPS", "BRAND AMBASSADORS", "FIELD MARKETING"];
   const row = [...items, ...items];
   return /*#__PURE__*/React.createElement("div", {
     className: "mh-anim",
@@ -314,6 +320,7 @@ const RegionCard = ({
   const q = filter.trim().toLowerCase();
   const matches = q ? region.cities.filter(c => c.name.toLowerCase().includes(q) || c.state.toLowerCase().includes(q) || c.slug.includes(q)) : region.cities;
   if (q && matches.length === 0) return null;
+  const regionHue = REGION_HUES[region.id] || "var(--ignite-500)";
   return /*#__PURE__*/React.createElement("div", {
     className: "mh-region-card",
     style: {
@@ -333,7 +340,7 @@ const RegionCard = ({
       right: 0,
       top: 0,
       height: 3,
-      background: "linear-gradient(90deg, var(--ignite-500) 0%, rgba(255,107,53,0) 60%)"
+      background: `linear-gradient(90deg, ${regionHue} 0%, transparent 60%)`
     }
   }), /*#__PURE__*/React.createElement("div", {
     "aria-hidden": "true",
@@ -370,7 +377,7 @@ const RegionCard = ({
     }
   }, region.label, /*#__PURE__*/React.createElement("span", {
     style: {
-      color: "var(--ignite-500)"
+      color: regionHue
     }
   }, ".")), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -389,34 +396,32 @@ const RegionCard = ({
       gap: 8
     }
   }, matches.map(c => {
-    const isLive = !!c.available;
-    const href = isLive ? window.CITY_URL ? window.CITY_URL(c.slug) : "/cities/" + c.slug : null;
-    const Tag = isLive ? "a" : "span";
-    const isTier1 = c.tier === 1 && isLive;
+    const href = window.CITY_URL ? window.CITY_URL(c.slug) : "/cities/" + c.slug;
+    const Tag = "a";
+    const isTier1 = c.tier === 1;
+    const hue = regionHue;
     return /*#__PURE__*/React.createElement(Tag, {
       key: c.slug,
       href: href || undefined,
-      className: isLive ? isTier1 ? "markets-chip markets-chip--live markets-chip--tier1" : "markets-chip markets-chip--live" : "markets-chip markets-chip--stub",
-      "aria-disabled": !isLive ? "true" : undefined,
-      title: !isLive ? "Coverage available — page coming soon" : undefined,
+      className: href ? isTier1 ? "markets-chip markets-chip--live markets-chip--tier1" : "markets-chip markets-chip--live" : "markets-chip markets-chip--stub",
       style: {
         display: "inline-flex",
         alignItems: "center",
         gap: 8,
+        "--chip": hue,
         padding: "10px 14px",
-        border: isTier1 ? "1px solid rgba(255,107,53,0.45)" : "1px solid var(--ink-400)",
+        border: `1px solid color-mix(in srgb, ${hue} ${isTier1 ? 55 : 32}%, var(--ink-400))`,
         borderRadius: 999,
         fontFamily: "var(--font-mono)",
         fontSize: 12,
         fontWeight: isTier1 ? 700 : 500,
         letterSpacing: "0.06em",
         textTransform: "none",
-        background: isLive ? isTier1 ? "rgba(255,107,53,0.08)" : "var(--ink-200)" : "transparent",
-        color: isLive ? "var(--fg-1)" : "var(--fg-3)",
-        opacity: isLive ? 1 : 0.55,
+        background: href ? isTier1 ? `color-mix(in srgb, ${hue} 10%, var(--ink-200))` : "var(--ink-200)" : "transparent",
+        color: href ? "var(--fg-1)" : "var(--fg-3)",
         textDecoration: "none",
         transition: "background 160ms, border-color 160ms, color 160ms, transform 160ms",
-        cursor: isLive ? "pointer" : "default"
+        cursor: href ? "pointer" : "default"
       }
     }, /*#__PURE__*/React.createElement("span", null, c.name), /*#__PURE__*/React.createElement("span", {
       style: {
@@ -424,13 +429,151 @@ const RegionCard = ({
         opacity: 0.65,
         letterSpacing: "0.18em"
       }
-    }, "/ ", c.state), isLive && /*#__PURE__*/React.createElement("span", {
+    }, "/ ", c.state), href && /*#__PURE__*/React.createElement("span", {
       style: {
         fontSize: 10,
-        color: "var(--ignite-500)",
+        color: hue,
         marginLeft: 2
       }
     }, "\u2197"));
+  })));
+};
+
+/* ---------- Coverage map — 50-state outline, regions stroked in their hues ---------- */
+const MHMAP_FIPS_USPS = {
+  "01": "AL",
+  "02": "AK",
+  "04": "AZ",
+  "05": "AR",
+  "06": "CA",
+  "08": "CO",
+  "09": "CT",
+  "10": "DE",
+  "11": "DC",
+  "12": "FL",
+  "13": "GA",
+  "15": "HI",
+  "16": "ID",
+  "17": "IL",
+  "18": "IN",
+  "19": "IA",
+  "20": "KS",
+  "21": "KY",
+  "22": "LA",
+  "23": "ME",
+  "24": "MD",
+  "25": "MA",
+  "26": "MI",
+  "27": "MN",
+  "28": "MS",
+  "29": "MO",
+  "30": "MT",
+  "31": "NE",
+  "32": "NV",
+  "33": "NH",
+  "34": "NJ",
+  "35": "NM",
+  "36": "NY",
+  "37": "NC",
+  "38": "ND",
+  "39": "OH",
+  "40": "OK",
+  "41": "OR",
+  "42": "PA",
+  "44": "RI",
+  "45": "SC",
+  "46": "SD",
+  "47": "TN",
+  "48": "TX",
+  "49": "UT",
+  "50": "VT",
+  "51": "VA",
+  "53": "WA",
+  "54": "WV",
+  "55": "WI",
+  "56": "WY"
+};
+const MHMAP_STATE_REGION = (() => {
+  const g = {
+    northeast: ["CT", "DE", "DC", "ME", "MD", "MA", "NH", "NJ", "NY", "PA", "RI", "VT"],
+    southeast: ["AL", "AR", "FL", "GA", "KY", "LA", "MS", "NC", "SC", "TN", "VA", "WV"],
+    midwest: ["IL", "IN", "IA", "KS", "MI", "MN", "MO", "NE", "ND", "OH", "SD", "WI"],
+    southwest: ["AZ", "NM", "OK", "TX"],
+    west: ["CA", "HI", "NV"],
+    "pacific-northwest": ["OR", "WA", "AK"],
+    mountain: ["CO", "ID", "MT", "UT", "WY"]
+  };
+  const out = {};
+  Object.entries(g).forEach(([r, arr]) => arr.forEach(s => {
+    out[s] = r;
+  }));
+  return out;
+})();
+const MarketsCoverageMap = () => {
+  const [paths, setPaths] = React.useState(null);
+  const hues = typeof window !== "undefined" && window.REGION_HUES || {};
+  React.useEffect(() => {
+    let alive = true;
+    (async () => {
+      try {
+        if (!window.d3 || !window.topojson) return;
+        const topo = await fetch("https://cdn.jsdelivr.net/npm/us-atlas@3.0.1/states-10m.json").then(r => r.json());
+        if (!alive) return;
+        const fc = window.topojson.feature(topo, topo.objects.states);
+        const feats = fc.features.filter(f => MHMAP_FIPS_USPS[String(f.id).padStart(2, "0")]);
+        const W = 640,
+          H = 400;
+        const proj = window.d3.geoAlbersUsa().fitSize([W, H], {
+          type: "FeatureCollection",
+          features: feats
+        });
+        const gp = window.d3.geoPath(proj);
+        const out = feats.map(f => {
+          const usps = MHMAP_FIPS_USPS[String(f.id).padStart(2, "0")];
+          const region = MHMAP_STATE_REGION[usps];
+          return {
+            d: gp(f),
+            region,
+            color: hues[region] || "#6b7280"
+          };
+        }).filter(p => p.d);
+        setPaths({
+          W,
+          H,
+          out
+        });
+      } catch (e) {/* leave unrendered on failure */}
+    })();
+    return () => {
+      alive = false;
+    };
+  }, []);
+  if (!paths) return /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: "100%",
+      aspectRatio: "640 / 400"
+    },
+    "aria-hidden": "true"
+  });
+  return /*#__PURE__*/React.createElement("svg", {
+    viewBox: `0 0 ${paths.W} ${paths.H}`,
+    role: "img",
+    "aria-label": "Ignite coverage across all 50 states, colored by region",
+    style: {
+      display: "block",
+      width: "100%",
+      height: "auto",
+      overflow: "visible"
+    }
+  }, paths.out.map((p, i) => /*#__PURE__*/React.createElement("path", {
+    key: i,
+    d: p.d,
+    fill: p.color,
+    fillOpacity: 0.16,
+    stroke: p.color,
+    strokeOpacity: 0.85,
+    strokeWidth: 1,
+    strokeLinejoin: "round"
   })));
 };
 
@@ -446,13 +589,14 @@ const MarketsHub = ({
   const visibleCount = q ? regions.reduce((n, r) => n + r.cities.filter(c => c.name.toLowerCase().includes(q) || c.state.toLowerCase().includes(q) || c.slug.includes(q)).length, 0) : totalCities;
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", null, `
         .markets-chip--live:hover {
-          background: var(--ignite-500) !important;
+          background: var(--chip, var(--ignite-500)) !important;
           color: #0A0B0D !important;
-          border-color: var(--ignite-500) !important;
+          border-color: var(--chip, var(--ignite-500)) !important;
           transform: translateY(-2px);
         }
         .markets-chip--live:hover span { color: #0A0B0D !important; }
-        .markets-chip--tier1::before { content: ""; width: 6px; height: 6px; border-radius: 999px; background: var(--ignite-500); box-shadow: 0 0 8px rgba(255,107,53,0.6); display: inline-block; margin-right: 2px; }
+        .markets-chip::before { content: ""; width: 7px; height: 7px; border-radius: 999px; background: var(--chip, var(--ignite-500)); display: inline-block; margin-right: 4px; flex: 0 0 auto; }
+        .markets-chip--tier1::before { box-shadow: 0 0 8px color-mix(in srgb, var(--chip, var(--ignite-500)) 45%, transparent); }
         .mh-region-card:hover { border-color: rgba(255,107,53,0.45) !important; transform: translateY(-3px); }
       `), /*#__PURE__*/React.createElement(MarketsHero, {
     rel: rel
@@ -470,7 +614,7 @@ const MarketsHub = ({
       gap: 14,
       marginBottom: 32
     }
-  }, /*#__PURE__*/React.createElement(OpsLine, null, ">> ", "MAJOR MARKETS ORGANIZED BY REGION"), /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement(OpsLine, null, ">> ", "BY REGION \xB7 ", visibleCount, "/", totalCities, " NAMED MARKETS \xB7 ", liveCities, " LIVE PAGES"), /*#__PURE__*/React.createElement("span", {
     style: {
       flex: 1,
       height: 1,
@@ -554,7 +698,7 @@ const MarketsHub = ({
       color: "var(--ignite-500)"
     }
   }, filter), "\u201D \u2014 we may still cover it. ", /*#__PURE__*/React.createElement("a", {
-    href: rel + "pages/contact.html",
+    href: rel + "/contact",
     style: {
       color: "var(--ignite-500)"
     }
@@ -576,10 +720,7 @@ const MarketsHub = ({
       position: "relative",
       overflow: "hidden"
     }
-  }, /*#__PURE__*/React.createElement(GridOverlay, {
-    size: 48,
-    opacity: 0.05
-  }), /*#__PURE__*/React.createElement(Container, {
+  }, /*#__PURE__*/React.createElement(Container, {
     style: {
       position: "relative",
       display: "grid",
@@ -621,9 +762,10 @@ const MarketsHub = ({
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement(AccentBtn, {
-    onClick: () => location.href = "https://igniteproductions.co/contact?urgent=1"
+    accent: "spark",
+    onClick: () => location.href = rel + "/contact"
   }, "Request staff now"), /*#__PURE__*/React.createElement("a", {
-    href: "https://igniteproductions.co/ignite-services",
+    href: rel + "/ignite-services",
     className: "link-mono",
     style: {
       display: "inline-flex",
@@ -635,19 +777,7 @@ const MarketsHub = ({
       letterSpacing: "0.22em",
       textTransform: "uppercase"
     }
-  }, "See services \u2192"))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      textAlign: "right",
-      fontFamily: "var(--font-stencil)",
-      color: "var(--ink-300)",
-      fontSize: "clamp(96px, 14vw, 220px)",
-      lineHeight: 0.85,
-      letterSpacing: "-0.02em",
-      textTransform: "uppercase",
-      opacity: 0.9,
-      userSelect: "none"
-    }
-  }, "ALL", /*#__PURE__*/React.createElement("br", null), "50."))));
+  }, "See services \u2192"))), /*#__PURE__*/React.createElement(MarketsCoverageMap, null))));
 };
 Object.assign(window, {
   MarketsHub,

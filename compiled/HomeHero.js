@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.HomeHero) return;
 /* Homepage hero — full-bleed video, big typographic spine */
 const {
   useState: hsState,
@@ -36,7 +37,6 @@ const HomeHero = () => {
       background: "#0A0A0A",
       color: "#fff",
       overflow: "hidden",
-      minHeight: "100vh",
       display: "flex",
       flexDirection: "column"
     }
@@ -67,8 +67,6 @@ const HomeHero = () => {
       position: "absolute",
       inset: 0,
       background: `
-            radial-gradient(ellipse at 82% 18%, rgba(215, 69, 62,0.32), transparent 45%),
-            radial-gradient(ellipse at 12% 85%, rgba(255,182,39,0.16), transparent 40%),
             linear-gradient(180deg, rgba(10,10,10,0.20) 0%, rgba(10,10,10,0.55) 55%, rgba(10,10,10,0.96) 100%)
           `
     }
@@ -92,7 +90,7 @@ const HomeHero = () => {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      paddingBottom: 14,
+      paddingBottom: 10,
       borderBottom: "1px solid rgba(255,255,255,0.12)",
       gap: 16,
       flexWrap: "wrap"
@@ -107,14 +105,15 @@ const HomeHero = () => {
   }, /*#__PURE__*/React.createElement("span", {
     style: {
       padding: "5px 10px",
-      background: "#D7453E",
-      color: "#fff",
+      background: "transparent",
+      color: "var(--fg)",
+      border: "1px solid var(--fg)",
       fontFamily: "var(--font-mono)",
       fontSize: 10,
       fontWeight: 700,
       letterSpacing: "0.22em",
       textTransform: "uppercase",
-      borderRadius: 3
+      borderRadius: 999
     }
   }, "\u2605 VETERAN-OWNED"), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -144,7 +143,23 @@ const HomeHero = () => {
     style: {
       color: "rgba(255,255,255,0.5)"
     }
-  }, "EST. 2018 \xB7 ALL 50 STATES")))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: "relative",
+      display: "inline-block"
+    }
+  }, "Don't show up", /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true",
+    style: {
+      position: "absolute",
+      left: 0,
+      right: 0,
+      top: "50%",
+      height: 1,
+      transform: "translateY(-50%)",
+      background: "linear-gradient(90deg, #4F86C6, #D7453E)"
+    }
+  })), " set it off")))), /*#__PURE__*/React.createElement("div", {
     className: "hero-main",
     style: {
       position: "relative",
@@ -152,15 +167,16 @@ const HomeHero = () => {
       flex: 1,
       display: "flex",
       flexDirection: "column",
-      justifyContent: "center"
+      justifyContent: "center",
+      paddingTop: 20
     }
   }, /*#__PURE__*/React.createElement("h1", {
     className: "hero-headline",
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 700,
-      fontSize: "clamp(56px, 11vw, 188px)",
-      lineHeight: 0.86,
+      fontSize: "clamp(40px, 8vw, 118px)",
+      lineHeight: 0.9,
       letterSpacing: "-0.05em",
       margin: 0
     }
@@ -201,17 +217,17 @@ const HomeHero = () => {
   }, "superfans."))), /*#__PURE__*/React.createElement("div", {
     className: "hero-grid",
     style: {
-      marginTop: 48,
+      marginTop: 16,
       display: "grid",
       gridTemplateColumns: "1.3fr 1fr",
-      gap: 56,
+      gap: 28,
       alignItems: "end"
     }
   }, /*#__PURE__*/React.createElement("p", {
     className: "hero-lede",
     style: {
-      fontSize: 19,
-      lineHeight: 1.5,
+      fontSize: 17,
+      lineHeight: 1.45,
       color: "rgba(255,255,255,0.92)",
       maxWidth: 600,
       fontWeight: 400,
@@ -230,8 +246,8 @@ const HomeHero = () => {
     }
   }, "beverage, alcohol, CPG, telecom, QSR, lifestyle, and whoever's next.")), /*#__PURE__*/React.createElement("div", {
     style: {
-      padding: "20px 22px",
-      borderRadius: 14,
+      padding: "13px 16px",
+      borderRadius: 12,
       background: "rgba(10,10,10,0.55)",
       backdropFilter: "blur(18px)",
       border: "1px solid rgba(255,255,255,0.14)",
@@ -274,7 +290,7 @@ const HomeHero = () => {
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 700,
-      fontSize: 28,
+      fontSize: 22,
       letterSpacing: "-0.02em",
       lineHeight: 1,
       marginBottom: 4
@@ -290,19 +306,19 @@ const HomeHero = () => {
   }, MOMENTS[idx][0], " \xB7 ", MOMENTS[idx][2]))), /*#__PURE__*/React.createElement("div", {
     className: "hero-ctas",
     style: {
-      marginTop: 40,
+      marginTop: 16,
       display: "flex",
       gap: 12,
       flexWrap: "wrap",
       alignItems: "center"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "https://igniteproductions.co/contact?urgent=1",
+    href: "/contact",
     style: {
       padding: "16px 24px",
       borderRadius: 999,
-      background: "#D7453E",
-      color: "#fff",
+      background: "var(--spark-500)",
+      color: "#0A0B0D",
       fontFamily: "var(--font-display)",
       fontWeight: 600,
       fontSize: 15.5,
@@ -311,18 +327,18 @@ const HomeHero = () => {
       alignItems: "center",
       gap: 10,
       transition: "transform 200ms, box-shadow 200ms",
-      boxShadow: "0 12px 32px rgba(215, 69, 62,0.35)"
+      boxShadow: "0 12px 32px rgba(214,243,95,0.32)"
     },
     onMouseEnter: e => {
       e.currentTarget.style.transform = "translateY(-2px)";
-      e.currentTarget.style.boxShadow = "0 20px 48px rgba(215, 69, 62,0.5)";
+      e.currentTarget.style.boxShadow = "0 20px 48px rgba(214,243,95,0.5)";
     },
     onMouseLeave: e => {
       e.currentTarget.style.transform = "translateY(0)";
-      e.currentTarget.style.boxShadow = "0 12px 32px rgba(215, 69, 62,0.35)";
+      e.currentTarget.style.boxShadow = "0 12px 32px rgba(214,243,95,0.32)";
     }
   }, "Request a quote ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "https://igniteproductions.co/contact?urgent=1",
+    href: "/contact?urgent=1",
     style: {
       padding: "16px 24px",
       borderRadius: 999,
@@ -348,7 +364,7 @@ const HomeHero = () => {
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
-      color: "#FF6969"
+      color: "var(--spark-500)"
     }
   }, "\u25CF"), " Request staff now"))), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -361,18 +377,18 @@ const HomeHero = () => {
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      padding: "18px 0",
+      padding: "13px 0",
       display: "flex",
       gap: 48,
       whiteSpace: "nowrap",
       animation: "marquee 48s linear infinite",
       width: "max-content"
     }
-  }, [...Array(2)].flatMap((_, r) => [["42,000+", "BRAND AMBASSADORS"], ["5,000+", "ACTIVATIONS / YEAR"], ["50", "STATES COVERED"], ["200+", "BRANDS ACTIVATED"], ["25M+", "CONSUMERS REACHED"], ["87%", "CLIENT RETENTION"], ["20%+", "DEMO CONVERSION"], ["48hr", "RUSH STAFFING"]].map(([n, l], i) => /*#__PURE__*/React.createElement("span", {
+  }, [...Array(2)].flatMap((_, r) => [["257,000+", "BRAND AMBASSADORS"], ["5,000+", "ACTIVATIONS / YEAR"], ["50", "STATES COVERED"], ["200+", "BRANDS ACTIVATED"], ["25M+", "CONSUMERS REACHED"], ["87%", "CLIENT RETENTION"], ["20%+", "DEMO CONVERSION"], ["48hr", "RUSH STAFFING"]].map(([n, l], i) => /*#__PURE__*/React.createElement("span", {
     key: r + "-" + i,
     style: {
       display: "inline-flex",
-      alignItems: "baseline",
+      alignItems: "center",
       gap: 14,
       paddingRight: 48,
       borderRight: "1px solid rgba(255,255,255,0.12)"
@@ -397,3 +413,4 @@ const HomeHero = () => {
 Object.assign(window, {
   HomeHero
 });
+})();

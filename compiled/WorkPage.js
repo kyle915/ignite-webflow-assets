@@ -1,4 +1,4 @@
-(function(){if (typeof window !== "undefined" && window.WorkPageFull) return;
+(function(){if (typeof window !== "undefined" && window.WorkPage) return;
 /* Our Work — case studies index. Editorial bento + imagery-driven. */
 
 const {
@@ -45,10 +45,6 @@ if (typeof document !== "undefined" && !document.getElementById("wk-kf")) {
 
     .wk-chip { transition: all 160ms ease; }
     .wk-chip:hover { background: var(--ignite-500); color: #fff; border-color: var(--ignite-500); }
-
-    /* Webflow has a global h3 color rule that beats inline styles — re-assert white inside dark case cards. */
-    .wk-card h3 { color: #fff !important; }
-    .wk-card .wk-card-h3 { color: #fff !important; }
   `;
   document.head.appendChild(_wk);
 }
@@ -212,8 +208,7 @@ const WorkBrandMarquee = () => {
       width: 8,
       height: 8,
       borderRadius: 99,
-      background: c.accent,
-      boxShadow: `0 0 14px ${c.accent}99`
+      background: c.accent
     }
   }), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -285,18 +280,7 @@ const WorkCyclingWord = () => {
       animation: anim,
       display: "inline-block"
     }
-  }, word)), /*#__PURE__*/React.createElement("span", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      left: 0,
-      right: 0,
-      bottom: 0,
-      height: "0.08em",
-      background: "var(--ignite-500)",
-      animation: "wkUnderline 3.1s cubic-bezier(.7,.1,.3,.9) infinite"
-    }
-  }));
+  }, word)));
 };
 const WorkHero = () => {
   const [tickerN, setTickerN] = wkState(0);
@@ -313,59 +297,9 @@ const WorkHero = () => {
       overflow: "hidden",
       background: "var(--ink-000)",
       color: "var(--fg-1)",
-      padding: "140px 0 90px"
+      padding: "64px 0"
     }
   }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: "absolute",
-      inset: 0,
-      pointerEvents: "none",
-      overflow: "hidden"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: "absolute",
-      top: "-20%",
-      left: "60%",
-      width: "50vw",
-      height: "50vw",
-      background: "radial-gradient(circle at center, rgba(215, 69, 62,0.30), transparent 60%)",
-      animation: "wkBlob1 22s ease-in-out infinite",
-      filter: "blur(10px)"
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: "absolute",
-      bottom: "-30%",
-      left: "-10%",
-      width: "60vw",
-      height: "60vw",
-      background: "radial-gradient(circle at center, rgba(255,45,45,0.20), transparent 65%)",
-      animation: "wkBlob2 28s ease-in-out infinite",
-      filter: "blur(10px)"
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: "absolute",
-      top: "40%",
-      right: "-15%",
-      width: "40vw",
-      height: "40vw",
-      background: "radial-gradient(circle at center, rgba(255,199,39,0.10), transparent 60%)",
-      animation: "wkBlob3 34s ease-in-out infinite",
-      filter: "blur(10px)"
-    }
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: "absolute",
-      inset: 0,
-      opacity: 0.07,
-      pointerEvents: "none",
-      backgroundImage: `linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)`,
-      backgroundSize: "80px 80px",
-      animation: "wkGridSlide 12s linear infinite"
-    }
-  }), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
       left: 0,
@@ -390,7 +324,7 @@ const WorkHero = () => {
       lineHeight: 1.8,
       pointerEvents: "none"
     }
-  }, /*#__PURE__*/React.createElement("div", null, "34.0522\xB0 N \xB7 118.2437\xB0 W"), /*#__PURE__*/React.createElement("div", null, "\u25CF transmitting")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, "\u25CF transmitting")), /*#__PURE__*/React.createElement("div", {
     style: {
       maxWidth: 1320,
       margin: "0 auto",
@@ -424,7 +358,7 @@ const WorkHero = () => {
   }, "\u25CF Live programs running today"))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
-      gridTemplateColumns: "1.6fr 1fr",
+      gridTemplateColumns: "1fr",
       gap: 80,
       alignItems: "end"
     }
@@ -432,17 +366,18 @@ const WorkHero = () => {
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 700,
-      fontSize: "clamp(72px, 13vw, 240px)",
-      letterSpacing: "-0.05em",
-      lineHeight: 0.82,
+      fontSize: "clamp(52px, 8vw, 120px)",
+      letterSpacing: "-0.04em",
+      lineHeight: 0.9,
       color: "var(--fg-1)",
       margin: 0,
-      textWrap: "balance"
+      whiteSpace: "nowrap"
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
       display: "inline-block",
-      overflow: "hidden"
+      overflow: "hidden",
+      paddingRight: "0.14em"
     }
   }, theChars.map((ch, i) => /*#__PURE__*/React.createElement("span", {
     key: i,
@@ -450,37 +385,16 @@ const WorkHero = () => {
     style: {
       animationDelay: `${i * 80}ms`
     }
-  }, ch))), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement(WorkCyclingWord, null)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+  }, ch))), " ", /*#__PURE__*/React.createElement(WorkCyclingWord, null))), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: "var(--font-display)",
-      fontWeight: 400,
-      fontSize: "clamp(20px, 1.6vw, 26px)",
-      lineHeight: 1.4,
-      color: "var(--fg-2)",
-      maxWidth: 480,
-      margin: 0,
-      textWrap: "pretty"
-    }
-  }, "Every case below is a real program \u2014 sampled, staffed, fabricated, and measured by Ignite."), /*#__PURE__*/React.createElement("p", {
-    style: {
-      marginTop: 18,
-      fontFamily: "var(--font-mono)",
-      fontSize: 13,
-      lineHeight: 1.7,
-      color: "var(--fg-3)",
-      letterSpacing: "0.04em",
-      maxWidth: 480
-    }
-  }, "No mood boards. No renders. No vibes-only decks. Real brands, real markets, real numbers."))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 80,
+      marginTop: 36,
       display: "grid",
       gridTemplateColumns: "repeat(5, 1fr)",
       gap: 0,
       borderTop: "1px solid var(--ink-400)",
       borderBottom: "1px solid var(--ink-400)"
     }
-  }, [["7,000+", "Activations\nsince 2018"], ["50", "States\ncovered"], ["42K+", "Vetted\nambassadors"], ["98%", "On-time\ndeployment"], ["9", "Featured\ncases"]].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
+  }, [["70K+", "Activations\nsince 2018"], ["50", "States\ncovered"], ["257K+", "Vetted\nambassadors"], ["98%", "On-time\ndeployment"], ["9", "Featured\ncases"]].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
     key: l,
     style: {
       padding: "28px 24px",
@@ -666,7 +580,9 @@ const WorkHeroRail = () => {
       objectFit: "cover",
       opacity: 0.8,
       transition: "transform 800ms cubic-bezier(.2,.7,.2,1)"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   })), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
@@ -677,7 +593,7 @@ const WorkHeroRail = () => {
     style: {
       position: "absolute",
       inset: 0,
-      background: `radial-gradient(500px 400px at 80% 0%, ${c.accent}22, transparent 60%)`
+      background: "transparent"
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -725,13 +641,15 @@ const WorkHeroRail = () => {
     src: c.logo,
     alt: c.brand,
     style: {
-      height: 54,
-      maxWidth: 240,
+      height: 108,
+      maxWidth: 480,
       objectFit: "contain",
       objectPosition: "left",
       filter: "brightness(0) invert(1)",
       marginBottom: 6
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   }), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: "var(--font-display)",
@@ -860,8 +778,8 @@ const WorkBento = () => {
     },
     "glendalough": {
       col: "span 12",
-      row: "span 1"
-    } // WIDE
+      row: "span 3"
+    } // WIDE + taller
   };
   return /*#__PURE__*/React.createElement("section", {
     "data-screen-label": "03 Bento Grid",
@@ -886,7 +804,7 @@ const WorkBento = () => {
       gap: 24,
       flexWrap: "wrap"
     }
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(WkOpsLine, null, ">>", " EDITORIAL VIEW \xB7 BENTO"), /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(WkOpsLine, null, ">>", " EDITORIAL VIEW"), /*#__PURE__*/React.createElement("h2", {
     style: {
       marginTop: 14,
       fontFamily: "var(--font-display)",
@@ -898,12 +816,12 @@ const WorkBento = () => {
       margin: "14px 0 0",
       textWrap: "balance"
     }
-  }, "Field photos.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+  }, "Client", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
       color: "var(--ignite-500)"
     }
-  }, "Real numbers."))), /*#__PURE__*/React.createElement("p", {
+  }, "case studies."))), /*#__PURE__*/React.createElement("p", {
     style: {
       fontSize: 14,
       color: "var(--fg-3-inv)",
@@ -914,7 +832,7 @@ const WorkBento = () => {
       textTransform: "uppercase",
       letterSpacing: "0.12em"
     }
-  }, "Sized by impact \u2014 bigger square, bigger program.")), /*#__PURE__*/React.createElement("div", {
+  }, "Field photos, real numbers.")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
       gridTemplateColumns: "repeat(12, 1fr)",
@@ -953,7 +871,9 @@ const WorkBento = () => {
       objectFit: "cover",
       opacity: 0.92,
       transition: "transform 800ms cubic-bezier(.2,.7,.2,1)"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   })), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
@@ -1008,18 +928,20 @@ const WorkBento = () => {
       padding: 24,
       display: "flex",
       flexDirection: "column",
-      gap: 12
+      gap: 6
     }
   }, /*#__PURE__*/React.createElement("img", {
     src: c.logo,
     alt: c.brand,
     style: {
-      height: plan[c.slug]?.col === "span 8" ? 52 : 36,
-      maxWidth: 200,
+      height: c.slug === "liquid-death" ? 216 : plan[c.slug]?.col === "span 8" ? 52 : 108,
+      maxWidth: c.slug === "liquid-death" ? 460 : 240,
       objectFit: "contain",
-      objectPosition: "left",
+      objectPosition: "left bottom",
       filter: "brightness(0) invert(1)"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   }), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: "var(--font-display)",
@@ -1206,7 +1128,9 @@ const WorkIndexList = () => {
       width: "100%",
       height: "100%",
       objectFit: "cover"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   })), /*#__PURE__*/React.createElement("span", {
     className: "wk-row-arrow",
     style: {
@@ -1564,7 +1488,7 @@ const WorkCTA = () => {
       gridTemplateColumns: "repeat(3, 1fr)",
       gap: 24
     }
-  }, [["48 hr", "Brief → first response"], ["50 states", "Coverage on day one"], ["7,000+", "Past activations"]].map(([n, l]) => /*#__PURE__*/React.createElement("div", {
+  }, [["48 hr", "Brief → first response"], ["50 states", "Coverage on day one"], ["70K+", "Past activations"]].map(([n, l]) => /*#__PURE__*/React.createElement("div", {
     key: l,
     style: {
       borderLeft: "2px solid var(--ignite-500)",
@@ -1629,7 +1553,7 @@ const WorkPage = () => /*#__PURE__*/React.createElement("div", {
   "data-screen-label": "Our Work"
 }, /*#__PURE__*/React.createElement(SiteNav, {
   active: "WORK"
-}), /*#__PURE__*/React.createElement(WorkHero, null), /*#__PURE__*/React.createElement(WorkBrandMarquee, null), /*#__PURE__*/React.createElement(WorkHeroRail, null), /*#__PURE__*/React.createElement(WorkBento, null), /*#__PURE__*/React.createElement(WorkCTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
+}), /*#__PURE__*/React.createElement(WorkHero, null), /*#__PURE__*/React.createElement(WorkBrandMarquee, null), /*#__PURE__*/React.createElement(WorkBento, null), /*#__PURE__*/React.createElement(WorkHeroRail, null), /*#__PURE__*/React.createElement(WorkCTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
 Object.assign(window, {
   WorkPage,
   WORK_CASES,

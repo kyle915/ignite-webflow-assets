@@ -2,12 +2,24 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-body { overflow-x: hidden; }
+html { scroll-behavior: smooth; }
+/* clip (not hidden) so the body never becomes a scroll container — hidden here
+   breaks position:sticky on the nav (notably iOS Safari + narrow viewports). */
+html, body { overflow-x: clip; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; }
 img { max-width: 100%; display: block; }
 
 ::selection { background: var(--ignite-500); color: #fff; }
+
+/* -------------------- HERO SIZE VARIANTS --------------------
+   Shared hero band. Height is content-driven; padding-block comes from the
+   --hero-pad-* tokens so every page's hero reads from one system.
+   Apply .hero-band + a variant, or reference the token inline. */
+.hero-band            { padding-block: var(--hero-pad-standard); }
+.hero-band--compact   { padding-block: var(--hero-pad-compact); }
+.hero-band--standard  { padding-block: var(--hero-pad-standard); }
+.hero-band--tall      { padding-block: var(--hero-pad-tall); min-height: min(86vh, 880px); }
 
 @keyframes livepulse {
   0%, 100% { opacity: 1; transform: scale(1); }
@@ -41,6 +53,14 @@ img { max-width: 100%; display: block; }
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+@keyframes sp-pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(0.8); }
+}
+@keyframes sp-pop {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(6px) scale(0.92); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
 
 .rise-on-view { opacity: 0; transform: translateY(16px); transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out); }
 .rise-on-view.in { opacity: 1; transform: translateY(0); }
@@ -52,287 +72,17 @@ img { max-width: 100%; display: block; }
 }
 .link-mono:hover { color: var(--ignite-500); }
 
+/* Circular "All capabilities" button */
+@keyframes capSpin { to { transform: rotate(360deg); } }
+.cap-circle { transition: background 220ms var(--ease-out), border-color 220ms var(--ease-out); }
+.cap-circle-spin { transform-origin: 50% 50%; animation: capSpin 22s linear infinite; }
+.cap-arc-txt { fill: var(--fg-1); transition: fill 220ms var(--ease-out); }
+.cap-arrow { transition: color 220ms var(--ease-out); }
+.cap-circle:hover { background: var(--spark-500) !important; border-color: var(--spark-500) !important; }
+.cap-circle:hover .cap-arc-txt { fill: #0A0B0D !important; }
+.cap-circle:hover .cap-arrow { color: #0A0B0D !important; }
+@media (prefers-reduced-motion: reduce) { .cap-circle-spin { animation: none; } }
+
 /* paper (light) section body tweaks */
 .paper { background: var(--paper-000); color: var(--fg-1-inv); }
 .paper h1, .paper h2, .paper h3, .paper h4 { color: var(--fg-1-inv); }
-
-/* ------------------------------------------------------------------
-   Webflow override scope
-   Webflow's Style Manager often sets `h1, h2, h3 { color: white }` and
-   `section { background: ... }` for the existing dark theme. Those tag-
-   selector rules outrank our component's parent `color:` inheritance,
-   causing dark-on-dark or white-on-cream rendering inside Embeds.
-   Below, we re-scope text and background ownership to our mounted
-   sections so React's inline styles + .paper class always win.
-   ------------------------------------------------------------------ */
-[id^="ignite-"], [id^="ignite-"] * {
-  /* let inline styles + className rules drive these — defeat Webflow tag rules */
-  font-family: inherit;
-}
-[id^="ignite-"] h1,
-[id^="ignite-"] h2,
-[id^="ignite-"] h3,
-[id^="ignite-"] h4,
-[id^="ignite-"] h5,
-[id^="ignite-"] h6 {
-  /* Webflow's tag-level color rule (often !important) beats our inline color.
-     Force inheritance so the parent section/card drives the color. */
-  color: inherit !important;
-}
-
-/* Blockquote: Webflow renders blockquote with a dark fill panel + dark text.
-   Force white text — span children with inline color (orange highlights)
-   still win because inline beats class without !important on their level. */
-[id^="ignite-"] blockquote {
-  color: #fff !important;
-}
-
-/* Case study cards: each card is an <a href="/case-studies?slug=..."> wrapping a
-   dark image overlay. Force white on the SLUG-linked card anchors only —
-   NOT on the section header h2 "Great brands deserve exceptional people."
-   which lives outside the cards and needs dark text on the cream paper bg. */
-#ignite-case-studies a[href*="?slug="],
-#ignite-case-studies a[href*="?slug="] *,
-#ignite-case-studies a[href*="?slug="] h1,
-#ignite-case-studies a[href*="?slug="] h2,
-#ignite-case-studies a[href*="?slug="] h3,
-#ignite-case-studies a[href*="?slug="] h4 {
-  color: #fff !important;
-}
-/* Preserve the orange brand badge + stats + "READ CASE STUDY →" inline colors.
-   Those span/div elements have inline color: #FFB627 — inline beats class without !important,
-   but since the rules above use !important on '*', we explicitly re-orange them. */
-#ignite-case-studies a [style*="#FFB627"] {
-  color: #FFB627 !important;
-}
-#ignite-case-studies a [style*="ignite-500"],
-#ignite-case-studies a [style*="var(--ignite-500)"] {
-  color: var(--ignite-500) !important;
-}
-/* Section header in case studies — these elements should stay readable on the cream
-   paper bg (NOT the cards). Section header text is inside Container > flex, not inside `a`. */
-#ignite-case-studies > section > div > div > h2,
-#ignite-case-studies > section > div > div > div > h2 {
-  /* leave default — handled by h1-h6 inherit rule above */
-}
-#ignite-case-studies a[href="/work"] {
-  /* "All case studies →" — paper bg, keep dark */
-  color: var(--fg-2-inv) !important;
-}
-[id^="ignite-"] section.paper {
-  background: var(--paper-000) !important;
-  color: var(--fg-1-inv) !important;
-}
-[id^="ignite-"] section.paper h1,
-[id^="ignite-"] section.paper h2,
-[id^="ignite-"] section.paper h3,
-[id^="ignite-"] section.paper h4,
-[id^="ignite-"] section.paper blockquote,
-[id^="ignite-"] section.paper p {
-  color: var(--fg-1-inv) !important;
-}
-/* Dark-themed sections (set via inline background: var(--ink-*)) — make sure
-   text inside them inherits white. The inline section already sets `color`,
-   but Webflow can re-color h1-h6, p, blockquote, div via tag rules. */
-[id^="ignite-"] section h1,
-[id^="ignite-"] section h2,
-[id^="ignite-"] section h3,
-[id^="ignite-"] section h4,
-[id^="ignite-"] section h5,
-[id^="ignite-"] section h6,
-[id^="ignite-"] section blockquote,
-[id^="ignite-"] section [role="blockquote"] {
-  color: inherit !important;
-}
-/* Webflow gives <blockquote> a dark background, padding, and left-border by
-   default. Neutralize those when our React renders one on a light .paper bg. */
-[id^="ignite-"] section.paper blockquote,
-[id^="ignite-"] section.paper [role="blockquote"] {
-  background: transparent !important;
-  padding: 0 !important;
-  border: 0 !important;
-  margin: 0 !important;
-}
-/* Case-study cards on home: the parent <a> has inline color:#fff, but
-   Webflow's link-color rule can override. Force the link's own color from inline. */
-[id^="ignite-"] a[href*="?slug="][style*="color"] {
-  color: #fff !important;
-}
-/* GLOBAL (unscoped) override for case-study card taglines on the home page.
-   Webflow paints <h3> with a dark color via a tag-level !important rule, so
-   we must match that specificity without needing an [id^="ignite-"] wrapper.
-   Case-study card links use either "?slug=" or "work.html#<slug>" anchors. */
-a[href*="?slug="] h3,
-a[href*="work.html#"] h3,
-a[href*="/work#"] h3,
-a[href*="/work?"] h3 {
-  color: #fff !important;
-  text-shadow: 0 2px 18px rgba(0,0,0,0.6);
-}
-a[href*="?slug="] h3 *,
-a[href*="work.html#"] h3 *,
-a[href*="/work#"] h3 *,
-a[href*="/work?"] h3 * {
-  color: inherit !important;
-}
-
-/* ============================================================
-   Mobile responsive patches (≤ 720px) — scoped to our embeds.
-   The source's responsive.css uses [style*="..."] substring matchers
-   that don't catch every grid declaration. These rules are explicit
-   fallbacks for any grid we missed AND restore the mobile nav.
-   ============================================================ */
-@media (max-width: 720px) {
-  /* Prevent horizontal overflow on every embed section */
-  [id^="ignite-"] { overflow-x: hidden; max-width: 100vw; }
-  [id^="ignite-"] section { overflow-x: hidden; max-width: 100vw; }
-  [id^="ignite-"] section > * { max-width: 100%; box-sizing: border-box; }
-
-  /* Restore nav on mobile (responsive.css set display: none with no replacement) */
-  [id^="ignite-nav"] header nav,
-  [id^="ignite-"] header nav {
-    display: flex !important;
-    overflow-x: auto !important;
-    scrollbar-width: none;
-    gap: 20px !important;
-    padding: 0 18px !important;
-    flex: 1 1 auto !important;
-    min-width: 0;
-    -webkit-overflow-scrolling: touch;
-  }
-  [id^="ignite-"] header nav::-webkit-scrollbar { display: none; }
-  [id^="ignite-"] header nav > * {
-    flex: 0 0 auto !important;
-    font-size: 12px !important;
-    letter-spacing: 0.05em !important;
-    white-space: nowrap !important;
-  }
-  /* Stack nav row vertically: logo + CTA on top, scrolling links below */
-  [id^="ignite-nav"] header > div:first-child {
-    flex-wrap: wrap !important;
-    height: auto !important;
-    padding: 12px 18px !important;
-    gap: 12px !important;
-  }
-  [id^="ignite-nav"] header > div:first-child > nav {
-    order: 99;
-    width: 100% !important;
-    flex-basis: 100% !important;
-    padding: 8px 0 0 !important;
-  }
-  /* Bring back contact CTA next to logo on mobile */
-  [id^="ignite-"] header a[href$="contact.html"].link-mono {
-    display: inline-flex !important;
-    font-size: 11px !important;
-  }
-
-  /* Universal grid stack — every grid inside our embeds collapses to 1 col */
-  [id^="ignite-"] [style*="grid-template-columns"],
-  [id^="ignite-"] [style*="gridTemplateColumns"] {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-
-  /* Spark dashboard — let it shrink + scroll horizontally if needed */
-  [id^="ignite-spark-showcase"] [style*="minHeight: 560"] { min-height: auto !important; }
-  [id^="ignite-spark-showcase"] [style*="min-height: 560"] { min-height: auto !important; }
-  [id^="ignite-spark-showcase"] img,
-  [id^="ignite-spark-showcase"] svg { max-width: 100% !important; height: auto !important; }
-
-  /* Tighten headline letter-spacing on small screens (already partially in responsive.css) */
-  [id^="ignite-"] h1, [id^="ignite-"] h2 {
-    letter-spacing: -0.025em !important;
-    word-break: break-word;
-  }
-
-  /* Engagement cards — ensure visible vertical rhythm */
-  [id^="ignite-engagement"] [style*="grid-template-columns"] > *,
-  [id^="ignite-engagement"] [style*="gridTemplateColumns"] > * {
-    min-height: auto !important;
-  }
-}
-
-/* Tablet (721px – 1024px) — partial 2-col layout */
-@media (min-width: 721px) and (max-width: 1024px) {
-  [id^="ignite-"] [style*="grid-template-columns: repeat(3,"],
-  [id^="ignite-"] [style*="grid-template-columns: repeat(4,"] {
-    grid-template-columns: 1fr 1fr !important;
-  }
-}
-
-/* ============================================================
-   Accessibility — WCAG 2.1 AA
-   ============================================================ */
-
-/* Keyboard focus ring — visible on any focusable element when navigating with Tab.
-   Uses :focus-visible so mouse clicks don't get an outline. */
-[id^="ignite-"] a:focus-visible,
-[id^="ignite-"] button:focus-visible,
-[id^="ignite-"] input:focus-visible,
-[id^="ignite-"] select:focus-visible,
-[id^="ignite-"] textarea:focus-visible,
-[id^="ignite-"] [tabindex]:focus-visible,
-body > [id="root"] a:focus-visible,
-body > [id="root"] button:focus-visible,
-body > [id="root"] input:focus-visible,
-body > [id="root"] select:focus-visible,
-body > [id="root"] textarea:focus-visible,
-body > [id="root"] [tabindex]:focus-visible {
-  outline: 2px solid #D7453E !important;
-  outline-offset: 3px !important;
-  border-radius: 4px;
-}
-
-/* Skip-link — first focusable element on every page.
-   Inserted by the embed code; styled here so it's hidden until tabbed. */
-.ignite-skip-link {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  z-index: 99999;
-}
-.ignite-skip-link:focus {
-  position: fixed;
-  left: 16px;
-  top: 16px;
-  width: auto;
-  height: auto;
-  padding: 12px 20px;
-  background: #D7453E;
-  color: #0A0B0D;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 6px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-}
-
-/* Visually-hidden — for screen-reader-only text */
-.ignite-sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0,0,0,0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-/* Reduced motion — disable animations for users who request it.
-   WCAG 2.3.3 (Animation from Interactions). */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-}

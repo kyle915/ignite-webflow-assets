@@ -1,3 +1,4 @@
+(function(){
 // BlogPost — long-form article view, editorial typography
 
 const fmtDate2 = iso => {
@@ -10,45 +11,121 @@ const fmtDate2 = iso => {
 };
 function BlogPost() {
   const slug = new URLSearchParams(window.location.search).get('slug');
-  /* If someone lands on /blog-post without a slug, render the BlogIndex
-     (the article listing) inline instead of showing the not-found state. */
-  if (!slug && typeof window !== "undefined" && typeof window.BlogIndex === "function") {
-    return React.createElement(window.BlogIndex);
-  }
   const post = BLOG_POSTS.find(p => p.slug === slug);
   React.useEffect(() => {
     if (!post) return;
     document.title = `${post.title} | Ignite Productions`;
-    const url = `https://www.igniteproductions.co/blog-post.html?slug=${post.slug}`;
-    const cleanup = window.injectJsonLd && window.injectJsonLd("blog-post", {
-      "@context": "https://schema.org",
-      "@graph": [{
-        "@type": "BlogPosting",
-        "@id": url + "#blogposting",
-        mainEntityOfPage: url,
-        headline: post.title,
-        description: post.dek,
-        image: post.heroImage,
-        datePublished: post.date,
-        dateModified: post.date,
-        articleSection: post.category,
-        keywords: (post.tags || []).join(", "),
-        wordCount: (post.body || []).join(" ").split(/\s+/).filter(Boolean).length,
-        inLanguage: "en-US",
-        author: { "@type": "Person", name: post.author, jobTitle: post.role, worksFor: window.IGNITE_ORG_LD },
-        publisher: window.IGNITE_ORG_LD,
-        url
-      }, {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.igniteproductions.co/" },
-          { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.igniteproductions.co/blog" },
-          { "@type": "ListItem", position: 3, name: post.title, item: url }
-        ]
-      }]
+
+    /* Description meta */
+    const md = document.querySelector("meta[name=description]");
+    if (md && post.dek) md.setAttribute("content", post.dek);
+
+    /* Canonical + hreflang + Open Graph */
+    const postUrl = "https://igniteproductions.co/blog/" + post.slug;
+    const ensure = (sel, factory) => {
+      let el = document.querySelector(sel);
+      if (!el) {
+        el = factory();
+        document.head.appendChild(el);
+      }
+      return el;
+    };
+    const canonical = ensure('link[rel="canonical"]', () => {
+      const l = document.createElement("link");
+      l.rel = "canonical";
+      return l;
     });
-    return () => cleanup && cleanup();
-  }, [post && post.slug]);
+    canonical.setAttribute("href", postUrl);
+    const hl1 = ensure('link[rel="alternate"][hreflang="en-us"]', () => {
+      const l = document.createElement("link");
+      l.rel = "alternate";
+      l.setAttribute("hreflang", "en-us");
+      return l;
+    });
+    hl1.setAttribute("href", postUrl);
+    const hl2 = ensure('link[rel="alternate"][hreflang="x-default"]', () => {
+      const l = document.createElement("link");
+      l.rel = "alternate";
+      l.setAttribute("hreflang", "x-default");
+      return l;
+    });
+    hl2.setAttribute("href", postUrl);
+    const setMeta = (prop, content) => {
+      let m = document.querySelector(`meta[property="${prop}"]`);
+      if (!m) {
+        m = document.createElement("meta");
+        m.setAttribute("property", prop);
+        document.head.appendChild(m);
+      }
+      m.setAttribute("content", content);
+    };
+    setMeta("og:title", post.title);
+    setMeta("og:description", post.dek || "");
+    setMeta("og:url", postUrl);
+    setMeta("og:type", "article");
+    if (post.heroImage) setMeta("og:image", post.heroImage);
+
+    /* Article + BreadcrumbList JSON-LD */
+    const injectLd = (obj, id) => {
+      const sel = `script[type="application/ld+json"][data-bp="${id}"]`;
+      let s = document.querySelector(sel);
+      if (!s) {
+        s = document.createElement("script");
+        s.type = "application/ld+json";
+        s.setAttribute("data-bp", id);
+        document.head.appendChild(s);
+      }
+      s.text = JSON.stringify(obj);
+    };
+    injectLd({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post.title,
+      "description": post.dek || "",
+      "image": post.heroImage ? [post.heroImage] : undefined,
+      "datePublished": post.date,
+      "dateModified": post.date,
+      "author": {
+        "@type": "Organization",
+        "name": "Ignite Productions",
+        "url": "https://igniteproductions.co/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ignite Productions",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://igniteproductions.co/assets/ignite-full-white.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": postUrl
+      },
+      "articleSection": post.category,
+      "keywords": (post.tags || []).join(", ")
+    }, "article");
+    injectLd({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://igniteproductions.co/"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://igniteproductions.co/blog"
+      }, {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": postUrl
+      }]
+    }, "crumbs");
+  }, [post]);
   if (!post) {
     return /*#__PURE__*/React.createElement("div", {
       style: {
@@ -297,7 +374,7 @@ function BlogPost() {
       borderLeft: '1px solid var(--ink-400)'
     }
   }, prev ? /*#__PURE__*/React.createElement("a", {
-    href: `/blog-post?slug=${prev.slug}`,
+    href: `/post/${prev.slug}`,
     style: {
       padding: '40px var(--grid-gutter)',
       borderRight: '1px solid var(--ink-400)',
@@ -323,7 +400,7 @@ function BlogPost() {
       borderRight: '1px solid var(--ink-400)'
     }
   }), next ? /*#__PURE__*/React.createElement("a", {
-    href: `/blog-post?slug=${next.slug}`,
+    href: `/post/${next.slug}`,
     style: {
       padding: '40px var(--grid-gutter)',
       borderRight: '1px solid var(--ink-400)',
@@ -373,7 +450,7 @@ function BlogPost() {
     }
   }, related.map(r => /*#__PURE__*/React.createElement("a", {
     key: r.slug,
-    href: `/blog-post?slug=${r.slug}`,
+    href: `/post/${r.slug}`,
     style: {
       textDecoration: 'none',
       color: 'inherit',
@@ -481,3 +558,4 @@ function BlogPost() {
   }, "Start a brief \u2192")))), /*#__PURE__*/React.createElement(SiteFooter, null));
 }
 window.BlogPost = BlogPost;
+})();

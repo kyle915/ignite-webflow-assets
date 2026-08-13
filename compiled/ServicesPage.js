@@ -1,3 +1,4 @@
+(function(){if (typeof window !== "undefined" && window.ServicesHero) return;
 /* Services page — sticky category navigator + rich panels */
 const {
   useState: svcState,
@@ -53,8 +54,8 @@ const SERVICE_CATEGORIES = [{
   id: "talent",
   num: "03",
   title: "Production & Talent",
-  kicker: "42K+ AMBASSADORS, 50 STATES",
-  intro: "42,000+ vetted brand ambassadors in all 50 states, ready to deploy. Professional teams that bring your brand to life with energy, expertise, and results you can measure.",
+  kicker: "257K+ AMBASSADORS, 50 STATES",
+  intro: "257,000+ vetted brand ambassadors in all 50 states, ready to deploy. Professional teams that bring your brand to life with energy, expertise, and results you can measure.",
   accent: "#D7453E",
   hero: window.__resources?.r_68962cc2d0a6bcf7ced84e53_WHITECLAW96_05_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/68962cc2d0a6bcf7ced84e53_WHITECLAW96_05_27_2025_Adia_Oshikoya_84db346d-29fd-6179-d310-6927f656bdca_0.jpg",
   items: [{
@@ -103,14 +104,11 @@ const ServicesHero = () => /*#__PURE__*/React.createElement("section", {
     overflow: "hidden",
     padding: "140px 0 120px"
   }
-}, /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 48,
-  opacity: 0.035
-}), /*#__PURE__*/React.createElement("div", {
+}, /*#__PURE__*/React.createElement("div", {
   style: {
     position: "absolute",
     inset: 0,
-    background: "radial-gradient(ellipse at 85% 15%, rgba(215, 69, 62,0.18), transparent 50%), radial-gradient(ellipse at 10% 90%, rgba(255,182,39,0.09), transparent 45%)"
+    background: "transparent"
   }
 }), /*#__PURE__*/React.createElement(Container, {
   style: {
@@ -224,7 +222,7 @@ const ServicesHero = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement("span", {
   style: {
-    color: "#FF6969"
+    color: "var(--spark-500)"
   }
 }, "\u25CF"), " Request staff now")))));
 
@@ -445,12 +443,14 @@ const CategoryPanel = ({
       height: "100%",
       objectFit: "cover",
       filter: "brightness(0.85) saturate(1.1)"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
       inset: 0,
-      background: "linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.6))"
+      background: "linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.3))"
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -540,7 +540,7 @@ const ServicesStats = () => /*#__PURE__*/React.createElement("section", {
     animation: "marquee 48s linear infinite",
     width: "max-content"
   }
-}, [...Array(2)].flatMap((_, r) => [["42,000+", "BRAND AMBASSADORS"], ["50", "STATES COVERED"], ["500+", "CAMPAIGNS EXECUTED"], ["100%", "REAL-TIME REPORTING"], ["5,000+", "ACTIVATIONS / YEAR"], ["200+", "BRANDS ACTIVATED"], ["48hr", "RUSH STAFFING"]].map(([n, l], i) => /*#__PURE__*/React.createElement("span", {
+}, [...Array(2)].flatMap((_, r) => [["257,000+", "BRAND AMBASSADORS"], ["50", "STATES COVERED"], ["500+", "CAMPAIGNS EXECUTED"], ["100%", "REAL-TIME REPORTING"], ["5,000+", "ACTIVATIONS / YEAR"], ["200+", "BRANDS ACTIVATED"], ["48hr", "RUSH STAFFING"]].map(([n, l], i) => /*#__PURE__*/React.createElement("span", {
   key: r + "-" + i,
   style: {
     display: "inline-flex",
@@ -631,7 +631,7 @@ const TwoWays = () => /*#__PURE__*/React.createElement("section", {
   kicker: "PROJECT · ON-DEMAND",
   label: "02 · STAFFING + EXPERIENTIAL",
   title: "BA Staffing & Experiential",
-  d: "42,000+ vetted brand ambassadors across 50 states. Full-scale experiential production — sampling, mobile tours, trade shows, custom builds — deployed in days, not months.",
+  d: "257,000+ vetted brand ambassadors across 50 states. Full-scale experiential production — sampling, mobile tours, trade shows, custom builds — deployed in days, not months.",
   best: "National sampling · trade shows · festival activations · retail sell-in",
   cta: "Explore Services →",
   accent: "#FFB627"
@@ -785,3 +785,4 @@ Object.assign(window, {
   ServicesStats,
   TwoWays
 });
+})();
