@@ -10,7 +10,7 @@ const BLOG_POSTS = [{
   role: "Founder & CEO",
   date: "2025-03-18",
   readTime: 7,
-  accent: "#FF5A1F",
+  accent: "#D7453E",
   tags: ["brand ambassadors", "event staffing", "hiring", "field marketing"],
   keywords: "brand ambassador hiring, event staffing tips, how to hire brand ambassadors, field marketing staff",
   body: ["There's a reason 'brand ambassador' is one of the most variable job descriptions in marketing. The same title can mean a college kid in a logo tee handing out koozies — or a trained product specialist closing a $400 sale at a trade show booth. The brief is everything, and so is the vetting.", "After staffing 1,400+ activations, here's the screen we run every applicant through: a recorded 90-second pitch on a fake product, a logistics scenario ('your event starts in 30 minutes and the truck didn't arrive — what now?'), and a reference call with their last lead. The pitch tells us if they can talk. The scenario tells us if they can think. The reference tells us if they'll show up.", "What we deprioritize: looks, social following, prior 'experience' from staffing agencies that don't actually train. What we prioritize: hospitality background, retail closing experience, anyone who's worked a holiday rush at a busy restaurant. Those people know how to read a crowd and recover from chaos.", "Pay matters too. The race-to-the-bottom on hourly rates is why so many activations feel limp. We pay 20–40% above market and the difference shows up in survey scores, sample-to-conversation ratios, and how many ambassadors come back for the next tour. Cheap staff is the most expensive line item on an activation, because it tanks everything else."]
@@ -94,7 +94,7 @@ const BLOG_POSTS = [{
   role: "Founder & CEO",
   date: "2024-12-05",
   readTime: 9,
-  accent: "#FF5A1F",
+  accent: "#D7453E",
   tags: ["ROI", "measurement", "analytics", "experiential"],
   keywords: "experiential marketing ROI, event marketing measurement, sampling ROI, brand activation analytics",
   body: ["Experiential is measurable. It's been measurable for a decade. The agencies that say otherwise are usually the ones whose activations don't survive measurement.", "Four metrics matter on every campaign: cost per meaningful interaction (CPMI — a 30+ second conversation), opt-in rate (email or SMS capture per interaction), trial-to-purchase conversion (track via unique promo codes), and recap velocity (how fast you can put a deck in front of the brand team while the campaign still has momentum). Three out of four good is a win. All four good is a renewal.", "CPMI is the metric most brands skip and they shouldn't. A $40K activation with 8,000 'samples handed out' but only 600 real conversations has a CPMI of $66 — which is fine for premium SKUs and terrible for impulse CPG. The same budget structured to drive 4,000 conversations puts CPMI under $10, which compounds across the funnel.", "Attribution gets messy across DTC and retail. The cleanest solution we've seen: unique promo codes per market, geo-fenced lift studies on POS data, and a brand-tracker survey at T-0, T+30, T+90 days. Run those three in parallel and the picture is undeniable within 90 days."]
@@ -206,7 +206,7 @@ const BLOG_POSTS = [{
   role: "Founder & CEO",
   date: "2024-08-15",
   readTime: 5,
-  accent: "#FF5A1F",
+  accent: "#D7453E",
   tags: ["staffing", "training", "rapid deployment", "operations"],
   keywords: "brand ambassador training, event staff briefing, rapid deployment marketing, quick-turn activations",
   body: ["A 48-hour brief is not the time to write a 30-slide training deck nobody will read. It's the time to deliver three things: a one-page brand fact sheet, a five-question script, and a 90-second video from the lead walking the team through the activation flow.", "The fact sheet is everything you'd want an ambassador to know if a consumer asks a pointed question. Product story in 50 words, three differentiators, where to buy, top three FAQ answers, and a hard list of what NOT to say. Single page. PDF. No fluff.", "The five-question script is the conversation flow. 'Have you tried [brand] before?' 'What do you usually drink/use/buy in this category?' If yes/no, branch. The script is a scaffold, not a robot. Drill it until everyone can do it in their sleep, then let them improvise inside it.", "The video brief is the unlock. A 90-second selfie video from the activation lead, walking the team through what the setup looks like, where the samples are stored, what to do if it rains, and who to call if anything breaks. Watched 3x by every team member en route. Eliminates 80% of day-of confusion."]
@@ -220,7 +220,7 @@ const BLOG_POSTS = [{
   role: "Founder & CEO",
   date: "2024-08-01",
   readTime: 7,
-  accent: "#FF5A1F",
+  accent: "#D7453E",
   tags: ["CPG", "brand management", "agency advice", "strategy"],
   keywords: "CPG field marketing, CPG brand manager, field marketing strategy, CPG activation mistakes",
   body: ["Mistake one: treating field as a tactical add-on instead of a brand-building investment. The brands that win with field treat it as a parallel channel to paid digital with its own annual plan, its own KPI architecture, and its own renewal cycle. The ones that don't, treat it as a $50K line item that gets approved or killed quarter to quarter.", "Mistake two: optimizing for sample volume instead of conversation quality. We've watched brand teams celebrate 12,000 samples handed out at a weekend festival and miss that only 400 of those were paired with a real conversation. Volume without depth is a logistics exercise.", "Mistake three: skipping the recap-to-renewal loop. Every activation should generate a brief for the next activation. The brands that compound on field marketing are running a continuous test plan — new market, new format, new SKU pairing — and the recap deck explicitly proposes the next test.", "Mistake four: over-rotating on permanent assets. A $200K custom-built brand vehicle that gets used four times a year is a worse investment than a $50K modular footprint that gets deployed 30 times. Mistake five: under-investing in the photographer. A great recap photo library is the highest-leverage asset to come out of any activation. Treat it that way."]
@@ -276,7 +276,7 @@ const BLOG_POSTS = [{
   role: "Founder & CEO",
   date: "2024-06-06",
   readTime: 6,
-  accent: "#FF5A1F",
+  accent: "#D7453E",
   tags: ["bilingual", "Hispanic marketing", "staffing", "multicultural"],
   keywords: "bilingual brand ambassadors, Hispanic market activation, Spanish-speaking event staff, multicultural marketing",
   body: ["There's a meaningful difference between an ambassador who learned Spanish in high school and one who grew up speaking Spanish at home. In Miami, Houston, LA, and the entire Rio Grande Valley, the second one is going to drive 2–3x the conversation depth. The first is going to deliver an awkward translated version of an English script.", "We staff bilingual activations with what we call 'Spanish-first' ambassadors — heritage speakers who actively use Spanish in their daily lives, who code-switch naturally, and who can read a consumer's preference for Spanish vs. English within the first three seconds of a conversation. That fluency isn't a checkbox on a casting sheet. It's the activation.", "Regional dialect matters. A Cuban-American ambassador in Miami is going to have a fundamentally different conversation than a Mexican-American ambassador in San Antonio. For national CPG brands targeting pan-Hispanic audiences, the answer is regional staffing — not a single bilingual team flown between cities.", "The brief and creative assets need to come in both languages from day one. If your script is written in English and 'translated' to Spanish a week before the event, your Spanish-language conversation is going to feel like a translation. Brief in parallel, in both languages, with native speakers writing both."]
@@ -318,7 +318,7 @@ const BLOG_POSTS = [{
   role: "Founder & CEO",
   date: "2024-04-25",
   readTime: 7,
-  accent: "#FF5A1F",
+  accent: "#D7453E",
   tags: ["agency selection", "RFP", "vendor management", "agency partnership"],
   keywords: "how to choose experiential agency, event marketing agency selection, agency RFP, hire experiential agency",
   body: ["Most agency selection processes are optimized for two things: best-looking creative deck and lowest hourly rate. Neither of those predicts whether the agency will actually deliver on activation day. The agency that wins on the deck is the agency that has the most senior creative people on the pitch. That's almost never the agency that has those people on your account post-signing.", "What we'd ask if we were on the brand side: 'Who specifically will be on this account day-to-day? Can we meet them before signing?' 'How many active accounts does that team currently support?' 'Can I call three reference clients whose campaigns are currently in-market?' Those three questions filter out 70% of the field.", "Don't decide on the basis of one big pitch presentation. Decide on the basis of a small, paid test — a single-market activation, a strategic POV document, a logistics deep-dive. Pay the agency for two weeks of real work and see what comes back. The cost is minor; the signal is enormous.", "Red flags: agencies that won't quote per-activation pricing, agencies that mark up production assets above 25%, agencies that don't have their own staffing roster (they're a middleman to a staffing agency, which is fine — but you should pay middleman rates not full agency rates). Green flags: photographic recap decks from prior clients, a real measurement framework, named staff leads on every market."]

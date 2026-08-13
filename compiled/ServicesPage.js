@@ -10,7 +10,7 @@ const SERVICE_CATEGORIES = [{
   title: "Strategy & Creative",
   kicker: "IDEATION → EXECUTION",
   intro: "From concept to execution, we build experiential campaigns that stop consumers in their tracks. Bold ideas, flawless logistics, measurable impact.",
-  accent: "#FF5A1F",
+  accent: "#D7453E",
   hero: window.__resources?.r_6882bb7581d3d94867693919_liquid_death || "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882bb7581d3d94867693919_liquid-death.webp",
   items: [{
     t: "Experiential Activations",
@@ -55,7 +55,7 @@ const SERVICE_CATEGORIES = [{
   title: "Production & Talent",
   kicker: "42K+ AMBASSADORS, 50 STATES",
   intro: "42,000+ vetted brand ambassadors in all 50 states, ready to deploy. Professional teams that bring your brand to life with energy, expertise, and results you can measure.",
-  accent: "#FF5A1F",
+  accent: "#D7453E",
   hero: window.__resources?.r_68962cc2d0a6bcf7ced84e53_WHITECLAW96_05_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/68962cc2d0a6bcf7ced84e53_WHITECLAW96_05_27_2025_Adia_Oshikoya_84db346d-29fd-6179-d310-6927f656bdca_0.jpg",
   items: [{
     t: "Brand Ambassadors",
@@ -110,7 +110,7 @@ const ServicesHero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "absolute",
     inset: 0,
-    background: "radial-gradient(ellipse at 85% 15%, rgba(255,90,31,0.18), transparent 50%), radial-gradient(ellipse at 10% 90%, rgba(255,182,39,0.09), transparent 45%)"
+    background: "radial-gradient(ellipse at 85% 15%, rgba(215, 69, 62,0.18), transparent 50%), radial-gradient(ellipse at 10% 90%, rgba(255,182,39,0.09), transparent 45%)"
   }
 }), /*#__PURE__*/React.createElement(Container, {
   style: {
@@ -126,7 +126,7 @@ const ServicesHero = () => /*#__PURE__*/React.createElement("section", {
 }, /*#__PURE__*/React.createElement("span", {
   style: {
     padding: "5px 10px",
-    background: "#FF5A1F",
+    background: "#D7453E",
     color: "#fff",
     fontFamily: "var(--font-mono)",
     fontSize: 10,
@@ -157,7 +157,7 @@ const ServicesHero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     fontStyle: "italic",
     fontWeight: 700,
-    background: "linear-gradient(135deg, #FF5A1F 0%, #FFB627 50%, #FF5A1F 100%)",
+    background: "linear-gradient(135deg, #D7453E 0%, #FFB627 50%, #D7453E 100%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     backgroundSize: "200% 200%",
@@ -195,7 +195,7 @@ const ServicesHero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     padding: "18px 26px",
     borderRadius: 999,
-    background: "#FF5A1F",
+    background: "#D7453E",
     color: "#fff",
     fontFamily: "var(--font-display)",
     fontWeight: 600,
@@ -204,7 +204,7 @@ const ServicesHero = () => /*#__PURE__*/React.createElement("section", {
     display: "inline-flex",
     alignItems: "center",
     gap: 10,
-    boxShadow: "0 12px 32px rgba(255,90,31,0.35)"
+    boxShadow: "0 12px 32px rgba(215, 69, 62,0.35)"
   }
 }, "Request a quote \u2192"), /*#__PURE__*/React.createElement("a", {
   href: "/contact?urgent=1",
@@ -625,7 +625,7 @@ const TwoWays = () => /*#__PURE__*/React.createElement("section", {
   d: "Dedicated team embedded in your brand to run retail strategy, field execution, and activations. Advisory, embedded, or full leadership — monthly retainer, no full-time overhead.",
   best: "Scaling into retail · launching a new line · post-Series A",
   cta: "Explore Fractional →",
-  accent: "#FF5A1F"
+  accent: "#D7453E"
 }, {
   href: "/ignite-services",
   kicker: "PROJECT · ON-DEMAND",

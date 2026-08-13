@@ -11,10 +11,9 @@ if (typeof document !== "undefined" && !document.getElementById("about-kf")) {
   _kf.id = "about-kf";
   _kf.textContent = `
     @keyframes abPulse { 0%,100%{opacity:.55;transform:scale(1)} 50%{opacity:1;transform:scale(1.06)} }
-    @keyframes abTextPulse { 0%,100%{text-shadow:0 0 18px rgba(255,90,31,.30)} 50%{text-shadow:0 0 38px rgba(255,90,31,.65)} }
+    @keyframes abTextPulse { 0%,100%{opacity:1} 50%{opacity:1} }
     @keyframes abBloom1 { 0%,100%{opacity:.55;transform:translate(-6%,6%) scale(1)} 50%{opacity:.9;transform:translate(-2%,2%) scale(1.1)} }
     @keyframes abBloom2 { 0%,100%{opacity:.35;transform:translate(6%,10%) scale(1)} 50%{opacity:.7;transform:translate(2%,4%) scale(1.15)} }
-    @keyframes abScan { 0%{transform:translateY(-20%);opacity:0} 10%{opacity:1} 90%{opacity:1} 100%{transform:translateY(120vh);opacity:0} }
     @keyframes abCount { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
     @keyframes abCaret { 0%,49%{opacity:1} 50%,100%{opacity:0} }
     @keyframes abSweepIn {
@@ -108,10 +107,10 @@ const ABOUT_LEADERS = [{
   resKey: "r_assets_team_myriant_webp",
   bio: "Coordinates the moving pieces — staffing, assets, vendors — so the field team can focus on the consumer."
 }, {
-  name: "Madi",
+  name: "Harris",
   role: "Account & Activation Manager",
-  img: "assets/team-madi.png",
-  resKey: "r_assets_team_madi_png",
+  img: "assets/team-harris.webp",
+  resKey: "r_assets_team_harris_webp",
   bio: "Runs accounts and activations end to end — from kickoff brief through live execution on the ground."
 }];
 const ABOUT_TIMELINE = [{
@@ -137,7 +136,7 @@ const ABOUT_TIMELINE = [{
 }, {
   y: "2026",
   t: "Today",
-  d: "42,000+ ambassadors. 50 states. 200+ brands activated. Still veteran-owned."
+  d: "257,000+ ambassadors. 50 states. 200+ brands activated. Still veteran-owned."
 }];
 
 /* Real client logos — same source as the homepage marquee */
@@ -246,16 +245,7 @@ const HeroProofCard = ({
       top: 0,
       bottom: 0,
       width: 3,
-      background: "linear-gradient(180deg, var(--ignite-500), rgba(255,90,31,0))",
-      boxShadow: "0 0 14px rgba(255,90,31,0.55)"
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      inset: -2,
-      background: "radial-gradient(circle at 12% 0%, rgba(255,90,31,0.10), transparent 55%)",
-      pointerEvents: "none"
+      background: "linear-gradient(180deg, var(--ignite-500), rgba(215, 69, 62,0))"
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -308,56 +298,9 @@ const AboutHero = () => {
       background: "var(--ink-000)",
       color: "var(--fg-1)",
       overflow: "hidden",
-      padding: "140px 0 90px"
+      padding: "var(--hero-pad-standard) 0"
     }
-  }, /*#__PURE__*/React.createElement(GridOverlay, {
-    size: 48,
-    opacity: 0.04
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      left: "-10%",
-      bottom: "-30%",
-      width: 760,
-      height: 760,
-      borderRadius: 999,
-      background: "radial-gradient(circle, rgba(255,90,31,0.32) 0%, rgba(255,90,31,0.10) 35%, transparent 65%)",
-      filter: "blur(40px)",
-      animation: "abBloom1 9s ease-in-out infinite",
-      pointerEvents: "none",
-      zIndex: 0
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      right: "-8%",
-      top: "10%",
-      width: 360,
-      height: 360,
-      borderRadius: 999,
-      background: "radial-gradient(circle, rgba(255,182,39,0.18) 0%, transparent 60%)",
-      filter: "blur(35px)",
-      animation: "abBloom2 11s ease-in-out infinite",
-      pointerEvents: "none",
-      zIndex: 0
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      left: 0,
-      right: 0,
-      top: 0,
-      height: 1,
-      background: "linear-gradient(90deg, transparent, rgba(255,90,31,0.6) 50%, transparent)",
-      boxShadow: "0 0 18px rgba(255,90,31,0.4)",
-      animation: "abScan 16s linear infinite",
-      pointerEvents: "none",
-      zIndex: 0
-    }
-  }), /*#__PURE__*/React.createElement(Container, {
+  }, /*#__PURE__*/React.createElement(Container, {
     style: {
       position: "relative"
     }
@@ -434,22 +377,7 @@ const AboutHero = () => {
       position: "relative",
       overflow: "hidden"
     }
-  }, showRest && /*#__PURE__*/React.createElement("span", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      left: 0,
-      right: 0,
-      top: "15%",
-      bottom: "15%",
-      background: "linear-gradient(90deg, transparent 0%, rgba(255,90,31,0.55) 45%, rgba(255,182,39,0.85) 55%, transparent 100%)",
-      filter: "blur(22px)",
-      transformOrigin: "right center",
-      animation: "abGlowTrail 900ms cubic-bezier(.2,.7,.2,1) forwards",
-      pointerEvents: "none",
-      zIndex: 0
-    }
-  }), /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("span", {
     style: {
       position: "relative",
       zIndex: 1,
@@ -468,17 +396,6 @@ const AboutHero = () => {
       display: "inline-block"
     }
   }, /*#__PURE__*/React.createElement("span", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      inset: "-14% -8%",
-      background: "radial-gradient(ellipse at center, rgba(255,90,31,0.40), transparent 65%)",
-      filter: "blur(18px)",
-      zIndex: 0,
-      pointerEvents: "none",
-      animation: "abPulse 2.6s ease-in-out infinite"
-    }
-  }), /*#__PURE__*/React.createElement("span", {
     style: {
       position: "relative",
       zIndex: 1,
@@ -498,7 +415,7 @@ const AboutHero = () => {
     style: {
       color: "var(--fg-1)"
     }
-  }, "veteran-owned brand activation agency"), " built on a different model: a senior, hands-on core team running a 42,000-person ambassador network \u2014 with the tech to prove every single activation worked."), /*#__PURE__*/React.createElement("div", {
+  }, "veteran-owned brand activation agency"), " built on a different model: a senior, hands-on core team running a 257,000-person ambassador network \u2014 with the tech to prove every single activation worked."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 28,
       display: "flex",
@@ -521,7 +438,7 @@ const AboutHero = () => {
       fontSize: 15,
       letterSpacing: "-0.01em",
       textDecoration: "none",
-      boxShadow: "0 8px 28px rgba(255,90,31,0.32)"
+      boxShadow: "0 8px 28px rgba(215, 69, 62,0.32)"
     }
   }, "Start a project ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
     href: "#leaders",
@@ -557,7 +474,7 @@ const AboutHero = () => {
     suffix: "",
     label: "States active"
   }, {
-    n: 42000,
+    n: 257000,
     suffix: "+",
     label: "Ambassador network"
   }].map((s, i) => /*#__PURE__*/React.createElement(HeroProofCard, {
@@ -626,14 +543,6 @@ const CounterTile = ({
       overflow: "hidden"
     }
   }, /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      inset: -2,
-      background: "radial-gradient(circle at 30% 0%, rgba(255,90,31,0.10), transparent 60%)",
-      pointerEvents: "none"
-    }
-  }), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "relative",
       fontFamily: "var(--font-display)",
@@ -701,7 +610,7 @@ const AboutCounters = () => /*#__PURE__*/React.createElement("section", {
   target: 50,
   label: "States. National coverage from one ops layer."
 }), /*#__PURE__*/React.createElement(CounterTile, {
-  target: 42000,
+  target: 257000,
   suffix: "+",
   label: "Ambassadors. Vetted, trained, deployable."
 }))));
@@ -728,7 +637,7 @@ const MODEL_LAYERS = [{
 }, {
   idx: "L4",
   label: "AMBASSADORS",
-  v: "42,000+",
+  v: "257,000+",
   tag: "network · 50 states, vetted",
   d: "Background-checked, trained, deployable. Cast by market — never by lottery."
 }];
@@ -756,24 +665,7 @@ const AboutModel = () => {
       position: "relative",
       overflow: "hidden"
     }
-  }, /*#__PURE__*/React.createElement(GridOverlay, {
-    size: 56,
-    opacity: 0.05
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      right: "-12%",
-      top: "5%",
-      width: 520,
-      height: 520,
-      borderRadius: 999,
-      background: "radial-gradient(circle, rgba(255,90,31,0.22) 0%, transparent 60%)",
-      filter: "blur(50px)",
-      animation: "abBloom2 12s ease-in-out infinite",
-      pointerEvents: "none"
-    }
-  }), /*#__PURE__*/React.createElement(Container, {
+  }, /*#__PURE__*/React.createElement(Container, {
     style: {
       position: "relative"
     }
@@ -860,8 +752,7 @@ const AboutModel = () => {
       top: 24,
       bottom: 24,
       width: 2,
-      background: "linear-gradient(180deg, rgba(255,90,31,0.0), rgba(255,90,31,0.65) 12%, rgba(255,90,31,0.65) 88%, rgba(255,90,31,0))",
-      boxShadow: "0 0 14px rgba(255,90,31,0.45)",
+      background: "linear-gradient(180deg, rgba(215, 69, 62,0.0), rgba(215, 69, 62,0.65) 12%, rgba(215, 69, 62,0.65) 88%, rgba(215, 69, 62,0))",
       zIndex: 0
     }
   }), MODEL_LAYERS.map((row, i) => {
@@ -877,8 +768,8 @@ const AboutModel = () => {
         alignItems: "center",
         gap: 32,
         padding: "28px 28px 28px 28px",
-        background: isActive ? "linear-gradient(90deg, rgba(255,90,31,0.10), rgba(255,90,31,0.02) 60%, transparent)" : "linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))",
-        border: "1px solid " + (isActive ? "rgba(255,90,31,0.45)" : "rgba(255,255,255,0.08)"),
+        background: isActive ? "linear-gradient(90deg, rgba(215, 69, 62,0.10), rgba(215, 69, 62,0.02) 60%, transparent)" : "linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))",
+        border: "1px solid " + (isActive ? "rgba(215, 69, 62,0.45)" : "rgba(255,255,255,0.08)"),
         borderRadius: 18,
         transition: "all 300ms cubic-bezier(.2,.7,.2,1)",
         transform: shown ? "translateX(0)" : "translateX(-24px)",
@@ -903,7 +794,6 @@ const AboutModel = () => {
         inset: 0,
         borderRadius: 999,
         background: isActive ? "var(--ignite-500)" : "rgba(255,255,255,0.06)",
-        boxShadow: isActive ? "0 0 24px rgba(255,90,31,0.6)" : "none",
         transition: "all 300ms ease"
       }
     }), /*#__PURE__*/React.createElement("span", {
@@ -952,17 +842,7 @@ const AboutModel = () => {
         position: "relative",
         textAlign: "right"
       }
-    }, isActive && /*#__PURE__*/React.createElement("span", {
-      "aria-hidden": "true",
-      style: {
-        position: "absolute",
-        inset: "-30% -10%",
-        background: "radial-gradient(ellipse at center, rgba(255,90,31,0.35), transparent 65%)",
-        filter: "blur(18px)",
-        zIndex: 0,
-        pointerEvents: "none"
-      }
-    }), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", {
       style: {
         position: "relative",
         fontFamily: "var(--font-display)",
@@ -999,7 +879,6 @@ const AboutModel = () => {
       height: 7,
       borderRadius: 999,
       background: "var(--ignite-500)",
-      boxShadow: "0 0 10px rgba(255,90,31,0.7)",
       animation: "abTextPulse 2.4s ease-in-out infinite"
     }
   }), "ALL FOUR LAYERS, IN-HOUSE \u2014 NO SUBCONTRACTED PROMISE-KEEPING"))));
@@ -1058,7 +937,7 @@ const AboutFounder = () => /*#__PURE__*/React.createElement("section", {
     position: "relative"
   }
 }, /*#__PURE__*/React.createElement("img", {
-  src: "https://kyle915.github.io/ignite-webflow-assets/assets/team-kyle.webp",
+  src: window.__resources?.r_assets_team_kyle_webp || "https://kyle915.github.io/ignite-webflow-assets/assets/team-kyle.webp",
   alt: "Kyle Christiansen, founder of Ignite Productions",
   loading: "lazy",
   style: {
@@ -1106,12 +985,12 @@ const AboutFounder = () => /*#__PURE__*/React.createElement("section", {
     margin: 0,
     textWrap: "balance"
   }
-}, "Built by someone who's ", /*#__PURE__*/React.createElement("span", {
+}, "Built by an ", /*#__PURE__*/React.createElement("span", {
   style: {
     fontStyle: "italic",
     color: "var(--ignite-500)"
   }
-}, "been in your seat.")), /*#__PURE__*/React.createElement("p", {
+}, "operator,"), " not an account manager."), /*#__PURE__*/React.createElement("p", {
   style: {
     marginTop: 28,
     fontSize: 17,
@@ -1186,72 +1065,9 @@ const AboutLeaders = () => /*#__PURE__*/React.createElement("section", {
     zIndex: 0,
     pointerEvents: "none"
   }
-}, /*#__PURE__*/React.createElement("div", {
-  style: {
-    position: "absolute",
-    inset: 0,
-    backgroundImage: "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-    backgroundSize: "56px 56px",
-    maskImage: "radial-gradient(ellipse at 50% 30%, #000 30%, transparent 75%)",
-    WebkitMaskImage: "radial-gradient(ellipse at 50% 30%, #000 30%, transparent 75%)"
-  }
-}), /*#__PURE__*/React.createElement("div", {
-  style: {
-    position: "absolute",
-    top: "-15%",
-    left: "55%",
-    width: "50%",
-    height: "60%",
-    background: "radial-gradient(closest-side, rgba(255,90,31,0.22), transparent 70%)",
-    filter: "blur(50px)",
-    animation: "abLdOrbA 16s ease-in-out infinite"
-  }
-}), /*#__PURE__*/React.createElement("div", {
-  style: {
-    position: "absolute",
-    top: "30%",
-    left: "-10%",
-    width: "45%",
-    height: "55%",
-    background: "radial-gradient(closest-side, rgba(255,140,80,0.16), transparent 70%)",
-    filter: "blur(50px)",
-    animation: "abLdOrbB 20s ease-in-out infinite"
-  }
-}), /*#__PURE__*/React.createElement("div", {
-  style: {
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    left: 0,
-    width: "40%",
-    background: "linear-gradient(90deg, transparent 0%, rgba(255,90,31,0.06) 45%, rgba(255,90,31,0.12) 50%, rgba(255,90,31,0.06) 55%, transparent 100%)",
-    animation: "abLdScan 9s linear infinite",
-    mixBlendMode: "screen"
-  }
-}), Array.from({
-  length: 14
-}).map((_, i) => {
-  const left = i * 73 % 100;
-  const top = i * 53 % 100;
-  const delay = i * 0.5 % 6;
-  const labels = ["//", "++", "↗", "●", "◆", "▲"];
-  return /*#__PURE__*/React.createElement("span", {
-    key: i,
-    style: {
-      position: "absolute",
-      left: `${left}%`,
-      top: `${top}%`,
-      fontFamily: "var(--font-mono)",
-      fontSize: 10,
-      letterSpacing: "0.2em",
-      color: "rgba(255,90,31,0.35)",
-      animation: `abLdBlink 4s ease-in-out ${delay}s infinite`
-    }
-  }, labels[i % labels.length]);
-})), /*#__PURE__*/React.createElement("style", null, `
+}), /*#__PURE__*/React.createElement("style", null, `
       @keyframes abLdOrbA { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-30px,40px) scale(1.08)} }
       @keyframes abLdOrbB { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(40px,-30px) scale(1.1)} }
-      @keyframes abLdScan { 0%{transform:translateX(-30%)} 100%{transform:translateX(280%)} }
       @keyframes abLdBlink { 0%,100%{opacity:0.15} 50%{opacity:0.55} }
     `), /*#__PURE__*/React.createElement(Container, {
   style: {
@@ -1321,7 +1137,7 @@ const AboutLeaders = () => /*#__PURE__*/React.createElement("section", {
   }
 }, ABOUT_LEADERS.map((m, i) => {
   const accent = i === 0 ? "var(--ignite-500)" : i % 3 === 1 ? "#FFB627" : i % 3 === 2 ? "#D6F35F" : "var(--ignite-500)";
-  const resolved = window.__resources && window.__resources[m.resKey] || m.img;
+  const resolved = window.__resources && window.__resources[m.resKey] || "https://kyle915.github.io/ignite-webflow-assets/" + m.img;
   return /*#__PURE__*/React.createElement("div", {
     key: m.name,
     style: {
@@ -1487,7 +1303,7 @@ const AboutValuesGrid = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 0.85,
     letterSpacing: "-0.06em",
     color: "transparent",
-    WebkitTextStroke: "1px rgba(255,90,31,0.18)",
+    WebkitTextStroke: "1px rgba(215, 69, 62,0.18)",
     pointerEvents: "none",
     userSelect: "none"
   }
@@ -1577,7 +1393,7 @@ const AboutTimeline = () => /*#__PURE__*/React.createElement("section", {
     right: 0,
     top: 64,
     height: 1,
-    background: "linear-gradient(90deg, var(--ignite-500), rgba(255,90,31,0.1))"
+    background: "linear-gradient(90deg, var(--ignite-500), rgba(215, 69, 62,0.1))"
   }
 }), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -1600,8 +1416,7 @@ const AboutTimeline = () => /*#__PURE__*/React.createElement("section", {
     height: 12,
     borderRadius: 999,
     background: i === ABOUT_TIMELINE.length - 1 ? "var(--ignite-500)" : "#1a1c20",
-    border: `2px solid var(--ignite-500)`,
-    boxShadow: i === ABOUT_TIMELINE.length - 1 ? "0 0 18px rgba(255,90,31,0.6)" : "none"
+    border: `2px solid var(--ignite-500)`
   }
 }), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -1850,7 +1665,7 @@ const AboutCaseSpotlight = () => /*#__PURE__*/React.createElement("section", {
     background: "#0b0c0e"
   }
 }, /*#__PURE__*/React.createElement("img", {
-  src: "https://kyle915.github.io/ignite-webflow-assets/assets/sampling-liquiddeath-petsmart.jpg",
+  src: window.__resources?.r_assets_sampling_liquiddeath_petsmart_jpg || "https://kyle915.github.io/ignite-webflow-assets/assets/sampling-liquiddeath-petsmart.jpg",
   alt: "Liquid Death sampling activation at PetSmart",
   loading: "lazy",
   style: {
@@ -1977,7 +1792,7 @@ const AboutCoverage = () => /*#__PURE__*/React.createElement("section", {
     width: 6,
     height: 6,
     borderRadius: 999,
-    background: i < 6 ? "var(--ignite-500)" : "rgba(255,90,31,0.4)"
+    background: i < 6 ? "var(--ignite-500)" : "rgba(215, 69, 62,0.4)"
   }
 }), m))), /*#__PURE__*/React.createElement("p", {
   style: {
@@ -2000,113 +1815,7 @@ const AboutVOSB = () => /*#__PURE__*/React.createElement("section", {
     position: "relative",
     overflow: "hidden"
   }
-}, /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 48,
-  opacity: 0.05
-}), /*#__PURE__*/React.createElement("div", {
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
-    left: "50%",
-    top: "50%",
-    width: 1400,
-    height: 1400,
-    marginLeft: -700,
-    marginTop: -700,
-    borderRadius: "50%",
-    background: "conic-gradient(from 0deg, rgba(255,90,31,0) 0deg, rgba(255,90,31,0) 320deg, rgba(255,90,31,0.18) 355deg, rgba(255,90,31,0.32) 360deg)",
-    filter: "blur(1px)",
-    animation: "abVosbSweep 7s linear infinite",
-    pointerEvents: "none",
-    opacity: 0.45,
-    maskImage: "radial-gradient(circle, black 0%, black 45%, transparent 70%)",
-    WebkitMaskImage: "radial-gradient(circle, black 0%, black 45%, transparent 70%)"
-  }
-}), /*#__PURE__*/React.createElement("svg", {
-  "aria-hidden": "true",
-  viewBox: "0 0 1000 1000",
-  preserveAspectRatio: "xMidYMid slice",
-  style: {
-    position: "absolute",
-    inset: 0,
-    width: "100%",
-    height: "100%",
-    pointerEvents: "none",
-    opacity: 0.18
-  }
-}, /*#__PURE__*/React.createElement("g", {
-  fill: "none",
-  stroke: "rgba(255,90,31,0.6)",
-  strokeWidth: "0.6"
-}, /*#__PURE__*/React.createElement("circle", {
-  cx: "500",
-  cy: "500",
-  r: "120"
-}), /*#__PURE__*/React.createElement("circle", {
-  cx: "500",
-  cy: "500",
-  r: "220"
-}), /*#__PURE__*/React.createElement("circle", {
-  cx: "500",
-  cy: "500",
-  r: "340"
-}), /*#__PURE__*/React.createElement("circle", {
-  cx: "500",
-  cy: "500",
-  r: "460"
-}), /*#__PURE__*/React.createElement("line", {
-  x1: "500",
-  y1: "20",
-  x2: "500",
-  y2: "980",
-  strokeDasharray: "2 6"
-}), /*#__PURE__*/React.createElement("line", {
-  x1: "20",
-  y1: "500",
-  x2: "980",
-  y2: "500",
-  strokeDasharray: "2 6"
-}))), /*#__PURE__*/React.createElement("div", {
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
-    left: 0,
-    right: 0,
-    height: 2,
-    background: "linear-gradient(90deg, transparent, rgba(255,90,31,0.55), transparent)",
-    boxShadow: "0 0 14px rgba(255,90,31,0.45)",
-    animation: "abVosbScan 6s ease-in-out infinite",
-    pointerEvents: "none"
-  }
-}), /*#__PURE__*/React.createElement("div", {
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
-    left: "-10%",
-    top: "-10%",
-    width: 560,
-    height: 560,
-    borderRadius: 999,
-    background: "radial-gradient(circle, rgba(255,90,31,0.22) 0%, transparent 60%)",
-    filter: "blur(60px)",
-    animation: "abBloom1 12s ease-in-out infinite",
-    pointerEvents: "none"
-  }
-}), /*#__PURE__*/React.createElement("div", {
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
-    right: "-8%",
-    bottom: "-10%",
-    width: 520,
-    height: 520,
-    borderRadius: 999,
-    background: "radial-gradient(circle, rgba(255,182,39,0.18) 0%, transparent 60%)",
-    filter: "blur(60px)",
-    animation: "abBloom2 14s ease-in-out infinite",
-    pointerEvents: "none"
-  }
-}), /*#__PURE__*/React.createElement("div", {
+}, /*#__PURE__*/React.createElement("div", {
   "aria-hidden": "true",
   style: {
     position: "absolute",
@@ -2114,12 +1823,10 @@ const AboutVOSB = () => /*#__PURE__*/React.createElement("section", {
     right: 0,
     top: 0,
     height: 1,
-    background: "linear-gradient(90deg, transparent, rgba(255,90,31,0.7) 50%, transparent)",
-    boxShadow: "0 0 16px rgba(255,90,31,0.5)"
+    background: "linear-gradient(90deg, transparent, rgba(215, 69, 62, 0.35) 50%, transparent)"
   }
 }), /*#__PURE__*/React.createElement("style", null, `
       @keyframes abVosbSweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-      @keyframes abVosbScan { 0% { top: 10%; opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { top: 90%; opacity: 0; } }
     `), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
   style: {
     display: "flex",
@@ -2140,7 +1847,6 @@ const AboutVOSB = () => /*#__PURE__*/React.createElement("section", {
     height: 7,
     borderRadius: 999,
     background: "var(--ignite-500)",
-    boxShadow: "0 0 10px rgba(255,90,31,0.7)",
     animation: "abTextPulse 2.4s ease-in-out infinite"
   }
 }), /*#__PURE__*/React.createElement("span", null, "// supplier diversity \xB7 veteran-owned"), /*#__PURE__*/React.createElement("span", {
@@ -2162,8 +1868,8 @@ const AboutVOSB = () => /*#__PURE__*/React.createElement("section", {
     padding: "48px 56px",
     borderRadius: 24,
     background: "linear-gradient(180deg, rgba(20,21,24,0.94) 0%, rgba(13,14,16,0.94) 100%)",
-    border: "1px solid rgba(255,90,31,0.32)",
-    boxShadow: "0 0 60px rgba(255,90,31,0.18), inset 0 1px 0 rgba(255,255,255,0.04)"
+    border: "1px solid rgba(215, 69, 62,0.32)",
+    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)"
   }
 }, [{
   t: 14,
@@ -2209,18 +1915,8 @@ const AboutVOSB = () => /*#__PURE__*/React.createElement("section", {
     alignItems: "center",
     justifyContent: "center"
   }
-}, /*#__PURE__*/React.createElement("div", {
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
-    inset: -20,
-    borderRadius: 999,
-    background: "radial-gradient(circle, rgba(255,90,31,0.28) 0%, transparent 65%)",
-    filter: "blur(24px)",
-    animation: "abTextPulse 3.2s ease-in-out infinite"
-  }
-}), /*#__PURE__*/React.createElement("img", {
-  src: "https://kyle915.github.io/ignite-webflow-assets/assets/vosb-logo.png",
+}, /*#__PURE__*/React.createElement("img", {
+  src: window.__resources?.r_assets_vosb_logo_png || "https://kyle915.github.io/ignite-webflow-assets/assets/vosb-logo.png",
   alt: "VOSB \u2014 Certified Veteran-Owned Small Business",
   width: "260",
   height: "260",
@@ -2231,7 +1927,9 @@ const AboutVOSB = () => /*#__PURE__*/React.createElement("section", {
     height: "auto",
     display: "block",
     filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.4))"
-  }
+  },
+  loading: "lazy",
+  decoding: "async"
 })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
   style: {
     display: "flex",
@@ -2288,7 +1986,6 @@ const AboutVOSB = () => /*#__PURE__*/React.createElement("section", {
   style: {
     display: "block",
     color: "var(--ignite-500)",
-    textShadow: "0 0 18px rgba(255,90,31,0.45)",
     fontSize: "1.15em",
     letterSpacing: "0.06em",
     marginTop: 6
@@ -2299,8 +1996,7 @@ const AboutVOSB = () => /*#__PURE__*/React.createElement("section", {
     marginTop: 16,
     height: 3,
     width: 140,
-    background: "linear-gradient(90deg, var(--ignite-500), rgba(255,90,31,0))",
-    boxShadow: "0 0 12px rgba(255,90,31,0.55)"
+    background: "linear-gradient(90deg, var(--ignite-500), rgba(215, 69, 62,0))"
   }
 }), /*#__PURE__*/React.createElement("p", {
   style: {
@@ -2330,8 +2026,8 @@ const AboutVOSB = () => /*#__PURE__*/React.createElement("section", {
   style: {
     padding: "14px 16px",
     borderRadius: 10,
-    background: "rgba(255,90,31,0.06)",
-    border: "1px solid rgba(255,90,31,0.22)"
+    background: "rgba(215, 69, 62,0.06)",
+    border: "1px solid rgba(215, 69, 62,0.22)"
   }
 }, /*#__PURE__*/React.createElement("div", {
   style: {
@@ -2413,8 +2109,8 @@ const AboutCareers = () => /*#__PURE__*/React.createElement("section", {
     margin: 0,
     maxWidth: 480
   }
-}, "42,000 ambassadors and counting. Energetic, professional, ready to represent the brands you love. Fill in your info and we'll be in touch.")), /*#__PURE__*/React.createElement("a", {
-  href: "https://igniteproductions.co/careers/brand-ambassador",
+}, "257,000 ambassadors and counting. Energetic, professional, ready to represent the brands you love. Fill in your info and we'll be in touch.")), /*#__PURE__*/React.createElement("a", {
+  href: "/careers/brand-ambassador",
   style: {
     display: "grid",
     gridTemplateColumns: "auto 1fr auto auto",
@@ -2491,18 +2187,7 @@ const AboutFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     borderTop: "1px solid var(--ink-400)",
     overflow: "hidden"
   }
-}, /*#__PURE__*/React.createElement(GridOverlay, {
-  size: 48,
-  opacity: 0.05
-}), /*#__PURE__*/React.createElement("div", {
-  "aria-hidden": "true",
-  style: {
-    position: "absolute",
-    inset: 0,
-    background: "radial-gradient(ellipse at 50% 60%, rgba(255,90,31,0.18), transparent 60%)",
-    pointerEvents: "none"
-  }
-}), /*#__PURE__*/React.createElement(Container, {
+}, /*#__PURE__*/React.createElement(Container, {
   style: {
     position: "relative",
     textAlign: "center"
@@ -2562,7 +2247,7 @@ const AboutFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     fontSize: 17,
     letterSpacing: "-0.01em",
     textDecoration: "none",
-    boxShadow: "0 12px 40px rgba(255,90,31,0.35)"
+    boxShadow: "0 12px 40px rgba(215, 69, 62,0.35)"
   }
 }, "Request a quote \u2192"), /*#__PURE__*/React.createElement("a", {
   href: "/work",
@@ -2610,38 +2295,7 @@ const AboutFounderQuote = () => {
       position: "relative",
       overflow: "hidden"
     }
-  }, /*#__PURE__*/React.createElement(GridOverlay, {
-    size: 56,
-    opacity: 0.05
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      left: "-8%",
-      top: "10%",
-      width: 540,
-      height: 540,
-      borderRadius: 999,
-      background: "radial-gradient(circle, rgba(255,90,31,0.30) 0%, transparent 60%)",
-      filter: "blur(50px)",
-      animation: "abBloom1 11s ease-in-out infinite",
-      pointerEvents: "none"
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      right: "-10%",
-      bottom: "-10%",
-      width: 620,
-      height: 620,
-      borderRadius: 999,
-      background: "radial-gradient(circle, rgba(255,182,39,0.16) 0%, transparent 60%)",
-      filter: "blur(60px)",
-      animation: "abBloom2 14s ease-in-out infinite",
-      pointerEvents: "none"
-    }
-  }), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     "aria-hidden": "true",
     style: {
       position: "absolute",
@@ -2649,12 +2303,11 @@ const AboutFounderQuote = () => {
       right: 0,
       top: 0,
       height: 1,
-      background: "linear-gradient(90deg, transparent, rgba(255,90,31,0.7) 50%, transparent)",
-      boxShadow: "0 0 18px rgba(255,90,31,0.55)"
+      background: "linear-gradient(90deg, transparent, rgba(215, 69, 62, 0.35) 50%, transparent)"
     }
   }), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 1280,
+      maxWidth: 1480,
       margin: "0 auto",
       position: "relative",
       zIndex: 1
@@ -2677,7 +2330,6 @@ const AboutFounderQuote = () => {
       height: 7,
       borderRadius: 999,
       background: "var(--ignite-500)",
-      boxShadow: "0 0 10px rgba(255,90,31,0.7)",
       animation: "abTextPulse 2.4s ease-in-out infinite"
     }
   }), /*#__PURE__*/React.createElement("span", null, "// from the founder"), /*#__PURE__*/React.createElement("span", {
@@ -2700,8 +2352,7 @@ const AboutFounderQuote = () => {
       fontWeight: 800,
       fontSize: "clamp(180px, 22vw, 320px)",
       color: "var(--ignite-500)",
-      opacity: 0.22,
-      textShadow: "0 0 60px rgba(255,90,31,0.45)"
+      opacity: 0.22
     }
   }, "\""), /*#__PURE__*/React.createElement("blockquote", {
     style: {
@@ -2732,8 +2383,7 @@ const AboutFounderQuote = () => {
       top: "56%",
       height: 4,
       borderRadius: 2,
-      background: "linear-gradient(90deg, rgba(255,90,31,0.95), rgba(255,182,39,0.85))",
-      boxShadow: "0 0 14px rgba(255,90,31,0.7)",
+      background: "linear-gradient(90deg, rgba(215, 69, 62,0.95), rgba(255,182,39,0.85))",
       transformOrigin: "left center",
       transform: shown ? "scaleX(1)" : "scaleX(0)",
       transition: "transform 700ms cubic-bezier(.2,.7,.2,1) 400ms"
@@ -2744,16 +2394,6 @@ const AboutFounderQuote = () => {
       display: "inline-block"
     }
   }, /*#__PURE__*/React.createElement("span", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      inset: "-18% -10%",
-      background: "radial-gradient(ellipse at center, rgba(255,90,31,0.45), transparent 65%)",
-      filter: "blur(18px)",
-      zIndex: 0,
-      pointerEvents: "none"
-    }
-  }), /*#__PURE__*/React.createElement("span", {
     style: {
       position: "relative",
       zIndex: 1,
@@ -2774,8 +2414,7 @@ const AboutFounderQuote = () => {
     style: {
       width: 64,
       height: 2,
-      background: "linear-gradient(90deg, var(--ignite-500), transparent)",
-      boxShadow: "0 0 10px rgba(255,90,31,0.6)"
+      background: "linear-gradient(90deg, var(--ignite-500), transparent)"
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -2785,9 +2424,8 @@ const AboutFounderQuote = () => {
       borderRadius: "50%",
       overflow: "hidden",
       background: "var(--ink-300)",
-      border: "2px solid rgba(255,90,31,0.45)",
-      flexShrink: 0,
-      boxShadow: "0 0 24px rgba(255,90,31,0.35)"
+      border: "2px solid rgba(215, 69, 62,0.45)",
+      flexShrink: 0
     }
   }, /*#__PURE__*/React.createElement("img", {
     src: resolveAsset("https://kyle915.github.io/ignite-webflow-assets/assets/team-kyle.webp"),
@@ -2796,7 +2434,9 @@ const AboutFounderQuote = () => {
       width: "100%",
       height: "100%",
       objectFit: "cover"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "var(--font-display)",
@@ -2842,36 +2482,7 @@ const AboutSpark = () => {
       position: "relative",
       overflow: "hidden"
     }
-  }, /*#__PURE__*/React.createElement(GridOverlay, {
-    size: 56,
-    opacity: 0.04
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      right: "-10%",
-      top: "-12%",
-      width: 560,
-      height: 560,
-      borderRadius: 999,
-      background: "radial-gradient(circle, rgba(214,243,95,0.16) 0%, transparent 60%)",
-      filter: "blur(70px)",
-      pointerEvents: "none"
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      left: "-8%",
-      bottom: "-12%",
-      width: 480,
-      height: 480,
-      borderRadius: 999,
-      background: "radial-gradient(circle, rgba(255,90,31,0.18) 0%, transparent 60%)",
-      filter: "blur(70px)",
-      pointerEvents: "none"
-    }
-  }), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       alignItems: "center",
@@ -2890,9 +2501,7 @@ const AboutSpark = () => {
       width: 7,
       height: 7,
       borderRadius: 999,
-      background: "#D6F35F",
-      boxShadow: "0 0 10px rgba(214,243,95,0.7)",
-      animation: "abTextPulse 2.4s ease-in-out infinite"
+      background: "#D6F35F"
     }
   }), /*#__PURE__*/React.createElement("span", null, "// proprietary tech \xB7 in-house engineering"), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -2982,7 +2591,7 @@ const AboutSpark = () => {
       fontSize: 14,
       letterSpacing: "-0.005em",
       textDecoration: "none",
-      boxShadow: "0 0 24px rgba(214,243,95,0.4)"
+      boxShadow: "0 0 24px rgba(214, 243, 95, 0.2)"
     }
   }, "See Spark in action \u2192"), /*#__PURE__*/React.createElement("a", {
     href: "/contact",
@@ -3014,7 +2623,7 @@ const AboutSpark = () => {
       borderRadius: 20,
       background: "linear-gradient(180deg, rgba(20,21,24,0.96) 0%, rgba(13,14,16,0.96) 100%)",
       border: "1px solid rgba(214,243,95,0.28)",
-      boxShadow: "0 0 40px rgba(214,243,95,0.12), inset 0 1px 0 rgba(255,255,255,0.04)"
+      boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -3024,13 +2633,15 @@ const AboutSpark = () => {
       marginBottom: 24
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png",
+    src: window.__resources?.r_assets_spark_logo_full_png || "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png",
     alt: "Spark by Ignite \u2014 proprietary field marketing platform",
     style: {
       height: 42,
       width: "auto",
       display: "block"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   }), /*#__PURE__*/React.createElement("span", {
     style: {
       padding: "4px 10px",
@@ -3162,7 +2773,9 @@ const AboutPhotos = () => {
       height: "100%",
       objectFit: "cover",
       display: "block"
-    }
+    },
+    loading: "lazy",
+    decoding: "async"
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
@@ -3291,8 +2904,8 @@ const AboutEngagement = () => /*#__PURE__*/React.createElement("section", {
 }, e.body), /*#__PURE__*/React.createElement("div", {
   style: {
     padding: "14px 16px",
-    background: "rgba(255,90,31,0.06)",
-    border: "1px solid rgba(255,90,31,0.18)",
+    background: "rgba(215, 69, 62,0.06)",
+    border: "1px solid rgba(215, 69, 62,0.18)",
     borderRadius: 10,
     fontFamily: "var(--font-mono)",
     fontSize: 11,
@@ -3339,64 +2952,9 @@ const AboutOffsite = () => /*#__PURE__*/React.createElement("section", {
     zIndex: 0,
     pointerEvents: "none"
   }
-}, /*#__PURE__*/React.createElement("div", {
-  style: {
-    position: "absolute",
-    top: "-20%",
-    left: "-10%",
-    width: "55%",
-    height: "70%",
-    background: "radial-gradient(closest-side, rgba(255,90,31,0.18), transparent 70%)",
-    filter: "blur(40px)",
-    animation: "abOrbA 14s ease-in-out infinite"
-  }
-}), /*#__PURE__*/React.createElement("div", {
-  style: {
-    position: "absolute",
-    bottom: "-20%",
-    right: "-15%",
-    width: "60%",
-    height: "75%",
-    background: "radial-gradient(closest-side, rgba(255,140,80,0.14), transparent 70%)",
-    filter: "blur(40px)",
-    animation: "abOrbB 18s ease-in-out infinite"
-  }
-}), Array.from({
-  length: 28
-}).map((_, i) => {
-  const colors = ["#FF5A1F", "#FFB680", "#F6F2EA", "#FF5A1F", "#7CB7FF"];
-  const c = colors[i % colors.length];
-  const left = i * 37 % 100;
-  const size = 4 + i % 4 * 3;
-  const delay = i * 0.7 % 14;
-  const dur = 12 + i % 6 * 2;
-  const rot = i * 23 % 360;
-  const shape = i % 3; // 0 dot, 1 square, 2 streamer
-  return /*#__PURE__*/React.createElement("span", {
-    key: i,
-    style: {
-      position: "absolute",
-      left: `${left}%`,
-      bottom: "-40px",
-      width: shape === 2 ? 2 : size,
-      height: shape === 2 ? size * 4 : size,
-      background: c,
-      borderRadius: shape === 0 ? "50%" : shape === 1 ? 2 : 1,
-      opacity: 0.55,
-      transform: `rotate(${rot}deg)`,
-      animation: `abConfetti ${dur}s linear ${delay}s infinite`,
-      boxShadow: c === "#FF5A1F" ? "0 0 6px rgba(255,90,31,0.45)" : "none"
-    }
-  });
-})), /*#__PURE__*/React.createElement("style", null, `
+}), /*#__PURE__*/React.createElement("style", null, `
       @keyframes abOrbA { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(40px,30px) scale(1.1)} }
       @keyframes abOrbB { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-50px,-20px) scale(1.08)} }
-      @keyframes abConfetti {
-        0%{transform:translateY(0) rotate(0deg);opacity:0}
-        10%{opacity:0.6}
-        90%{opacity:0.6}
-        100%{transform:translateY(-110vh) rotate(540deg);opacity:0}
-      }
       @keyframes abMarquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
       @keyframes abHeadlinePop { 0%,100%{transform:rotate(-2deg) scale(1)} 50%{transform:rotate(-2deg) scale(1.04)} }
     `), /*#__PURE__*/React.createElement(Container, {
@@ -3474,7 +3032,6 @@ const AboutOffsite = () => /*#__PURE__*/React.createElement("section", {
     background: "var(--ignite-500)",
     borderRadius: 3,
     transform: "translateY(-50%) rotate(-2deg)",
-    boxShadow: "0 0 12px rgba(255,90,31,0.6)",
     zIndex: 2
   }
 })), " ", /*#__PURE__*/React.createElement("span", {
@@ -3484,7 +3041,6 @@ const AboutOffsite = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--ignite-500)",
     transform: "rotate(-2deg)",
     transformOrigin: "left bottom",
-    textShadow: "0 0 24px rgba(255,90,31,0.35)",
     animation: "abHeadlinePop 3.2s ease-in-out infinite"
   }
 }, "Naturally"), " ", "we throw a good one for ourselves."), /*#__PURE__*/React.createElement("div", {
@@ -3626,7 +3182,7 @@ const AboutPage = () => /*#__PURE__*/React.createElement("div", {
   "data-screen-label": "01 About"
 }, /*#__PURE__*/React.createElement(SiteNav, {
   active: "ABOUT"
-}), /*#__PURE__*/React.createElement(AboutHero, null), /*#__PURE__*/React.createElement(AboutModel, null), /*#__PURE__*/React.createElement(AboutFounder, null), /*#__PURE__*/React.createElement(AboutFounderQuote, null), /*#__PURE__*/React.createElement(AboutLeaders, null), /*#__PURE__*/React.createElement(AboutOffsite, null), /*#__PURE__*/React.createElement(AboutValuesGrid, null), /*#__PURE__*/React.createElement(AboutCaseSpotlight, null), /*#__PURE__*/React.createElement(AboutSpark, null), /*#__PURE__*/React.createElement(AboutPhotos, null), /*#__PURE__*/React.createElement(AboutClients, null), /*#__PURE__*/React.createElement(AboutCoverage, null), /*#__PURE__*/React.createElement(AboutEngagement, null), /*#__PURE__*/React.createElement(AboutVOSB, null), /*#__PURE__*/React.createElement(AboutFinalCTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
+}), /*#__PURE__*/React.createElement(AboutHero, null), /*#__PURE__*/React.createElement(AboutModel, null), /*#__PURE__*/React.createElement(AboutFounder, null), /*#__PURE__*/React.createElement(AboutFounderQuote, null), /*#__PURE__*/React.createElement(AboutLeaders, null), /*#__PURE__*/React.createElement(AboutOffsite, null), /*#__PURE__*/React.createElement(AboutValuesGrid, null), /*#__PURE__*/React.createElement(AboutCaseSpotlight, null), /*#__PURE__*/React.createElement(AboutSpark, null), /*#__PURE__*/React.createElement(AboutPhotos, null), /*#__PURE__*/React.createElement(AboutClients, null), /*#__PURE__*/React.createElement(AboutCoverage, null), /*#__PURE__*/React.createElement(AboutEngagement, null), /*#__PURE__*/React.createElement(AboutVOSB, null), /*#__PURE__*/React.createElement(AboutCareers, null), /*#__PURE__*/React.createElement(AboutFinalCTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
 Object.assign(window, {
   AboutPage,
   ABOUT_VALUES,

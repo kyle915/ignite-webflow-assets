@@ -100,7 +100,7 @@ const SVC_LANES = [{
   slug: "experiential-marketing",
   n: "01",
   flag: true,
-  accent: "#FF5A1F",
+  accent: "#D7453E",
   title: "Experiential Marketing",
   sub: "Brand activations, festival footprints, immersive installations.",
   long: "Festival activations, pop-ups, brand activations, immersive installations, campus tours. We design the moment, build the set, staff the floor, and capture the metric — start to recap.",
@@ -124,7 +124,7 @@ const SVC_LANES = [{
   slug: "fabrication-builds",
   n: "03",
   flag: true,
-  accent: "#FF5A1F",
+  accent: "#D7453E",
   title: "Fabrication & Builds",
   sub: "Scenic fab, modular activations, touring builds, photo ops.",
   long: "In-house shop for custom builds and modular activations. We ship, set, strike, and store — and we engineer for road wear so your hero piece survives ten markets.",
@@ -168,7 +168,7 @@ const SVC_LANES = [{
 }, {
   slug: "promotional-products",
   n: "07",
-  accent: "#FF5A1F",
+  accent: "#D7453E",
   title: "Promotional Products & Premiums",
   sub: "Branded merch, swag kits, custom apparel, premium fulfillment.",
   long: "Sourced, designed, kitted, warehoused, and shipped — for a tour, a launch, a one-off VIP gift, or an evergreen program. We handle the boring parts so the merch lands hot.",
@@ -179,7 +179,7 @@ const SVC_LANES = [{
 }, {
   slug: "fractional",
   n: "08",
-  accent: "#FF5A1F",
+  accent: "#D7453E",
   title: "Fractional CPG Leadership",
   sub: "Embedded sales & marketing leadership — without the full-time overhead.",
   long: "Three engagement tiers — Advisory, Embedded, Leadership. We plug into your org chart and run retail strategy, field execution, sponsorships, and activations as a fractional team. Built for emerging CPG and beverage brands scaling into retail.",
@@ -235,7 +235,7 @@ const SvcHero = () => {
       width: 760,
       height: 760,
       borderRadius: 999,
-      background: "radial-gradient(circle, rgba(255,90,31,0.35) 0%, rgba(255,90,31,0.12) 35%, transparent 65%)",
+      background: "radial-gradient(circle, rgba(215, 69, 62,0.35) 0%, rgba(215, 69, 62,0.12) 35%, transparent 65%)",
       filter: "blur(40px)",
       animation: "svcBloomA 9s ease-in-out infinite",
       pointerEvents: "none",
@@ -297,7 +297,7 @@ const SvcHero = () => {
       lineHeight: 0.85,
       letterSpacing: "-0.06em",
       color: "transparent",
-      WebkitTextStroke: "1px rgba(255,90,31,0.18)",
+      WebkitTextStroke: "1px rgba(215, 69, 62,0.18)",
       animation: "svcDrift1 16s ease-in-out infinite",
       pointerEvents: "none",
       userSelect: "none",
@@ -460,7 +460,7 @@ const SvcHero = () => {
     style: {
       fontStyle: "italic",
       color: "var(--ignite-500)",
-      textShadow: "0 0 40px rgba(255,90,31,0.25)"
+      textShadow: "0 0 40px rgba(215, 69, 62,0.25)"
     }
   }, "experiential")), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -531,7 +531,7 @@ const SvcHero = () => {
       fontSize: 15,
       letterSpacing: "-0.01em",
       textDecoration: "none",
-      boxShadow: "0 8px 28px rgba(255,90,31,0.32)"
+      boxShadow: "0 8px 28px rgba(215, 69, 62,0.32)"
     }
   }, "Browse all nine lanes ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
     href: "/contact",
@@ -1132,7 +1132,7 @@ const SvcFinalCTA = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "absolute",
     inset: 0,
-    background: "radial-gradient(ellipse at 50% 60%, rgba(255,90,31,0.18), transparent 60%)",
+    background: "radial-gradient(ellipse at 50% 60%, rgba(215, 69, 62,0.18), transparent 60%)",
     pointerEvents: "none"
   }
 }), /*#__PURE__*/React.createElement(Container, {
@@ -1195,7 +1195,7 @@ const SvcFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     fontSize: 17,
     letterSpacing: "-0.01em",
     textDecoration: "none",
-    boxShadow: "0 12px 40px rgba(255,90,31,0.35)"
+    boxShadow: "0 12px 40px rgba(215, 69, 62,0.35)"
   }
 }, "Request a quote \u2192"), /*#__PURE__*/React.createElement("a", {
   href: "/work",

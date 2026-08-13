@@ -8,7 +8,7 @@ const SERVICES_DATA = {
   "experiential-marketing": {
     n: "01",
     flag: true,
-    accent: "#FF5A1F",
+    accent: "#D7453E",
     label: "Experiential Marketing",
     short: "Experiential",
     eyebrow: "FLAGSHIP // EXPERIENTIAL",
@@ -94,7 +94,7 @@ const SERVICES_DATA = {
   "fabrication-builds": {
     n: "03",
     flag: true,
-    accent: "#FF5A1F",
+    accent: "#D7453E",
     label: "Fabrication & Builds",
     short: "Fabrication",
     eyebrow: "FLAGSHIP // BUILD SHOP",
@@ -265,7 +265,7 @@ const SERVICES_DATA = {
   },
   "promotional-products": {
     n: "07",
-    accent: "#FF5A1F",
+    accent: "#D7453E",
     label: "Promotional Products & Premiums",
     short: "Premiums",
     eyebrow: "MERCH // FULFILLMENT",

@@ -273,7 +273,7 @@ const TwoEngines = () => /*#__PURE__*/React.createElement("section", {
     width: 320,
     height: 320,
     borderRadius: 999,
-    background: "radial-gradient(circle, rgba(255,90,31,0.22), transparent 70%)",
+    background: "radial-gradient(circle, rgba(215, 69, 62,0.22), transparent 70%)",
     filter: "blur(20px)"
   }
 }), /*#__PURE__*/React.createElement("div", {

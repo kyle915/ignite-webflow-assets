@@ -6,7 +6,7 @@
    pointing at fonts/.
    ------------------------------------------------------------ */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans:wght@700&display=swap');
 
 :root {
   /* -------------------- COLOR: CORE ------------------------- */
@@ -26,8 +26,8 @@
   /* Foreground */
   --fg-1: #FAFAF7;       /* primary text on dark */
   --fg-2: #B8BCC5;       /* secondary text on dark */
-  --fg-3: #9499A3;       /* tertiary / meta on dark — bumped to 6.5:1 AAA (was #7A7F8B = 4.3:1) */
-  --fg-4: #6B7080;       /* disabled / very quiet — 3.4:1 (large-text / UI-state only) */
+  --fg-3: #7A7F8B;       /* tertiary / meta on dark */
+  --fg-4: #4D5260;       /* disabled / very quiet */
 
   --fg-1-inv: #0A0B0D;   /* primary on light */
   --fg-2-inv: #3A4050;   /* secondary on light */
@@ -39,14 +39,51 @@
   --spark-400: #E2F785;
   --spark-600: #B8D43E;
   --spark-700: #8FA72D;
-  --spark-glow: rgba(214, 243, 95, 0.35);
+  --spark-glow: rgba(214, 243, 95, 0.175);
 
-  /* Ignite — fire-adjacent orange for the parent agency brand. */
-  --ignite-500: #FF5A1F;   /* primary Ignite accent */
-  --ignite-400: #FF7A47;
-  --ignite-600: #E04510;
-  --ignite-700: #B83206;
-  --ember-500: #FFB627;    /* warm amber highlight */
+  /* Ignite — the parent agency brand. Retired orange → hot red. */
+  --ignite-500: #D7453E;   /* primary Ignite accent (hot red) */
+  --ignite-400: #E86A5F;
+  --ignite-600: #B8322C;
+  --ignite-700: #8F2621;
+  --ember-500: #FFB627;    /* warm gold highlight (kept) */
+
+  /* Locked palette — red / purple / blue / gold. Orange is retired. */
+  --red-500: #D7453E;   --red-400: #E86A5F;   --red-600: #B8322C;
+  --purple-500: #4D43BB; --purple-400: #6B62D4; --purple-600: #3A32A0;
+  --blue-500: #2E55CA;   --blue-400: #5678E0;   --blue-600: #2143A0;
+  --gold-500: #FFB627;
+  /* Flame — the print-material gradient, for tasteful hero / divider moments. */
+  --gradient-flame: linear-gradient(115deg, #D7453E 0%, #4D43BB 46%, #2E55CA 74%, #0A0B0D 100%);
+
+  /* Fractional's brand "color" — a muted, metallic, pearlescent holographic gradient.
+     Used as one color on Fractional's brand moments (wordmark, hero headline). NOT a saturated rainbow. */
+  --fractional-prism: linear-gradient(100deg, #97A3B4, #B8B2D2, #A2CCCA, #D9CBB2, #C2B4CE, #AEB6C9);
+
+  /* Fractional / collection spectrum — 18-hue ordered ring.
+     Used by collections (industries, case studies, fractional services)
+     via positional assignment. 01 = brand red (merged), 04 = ember. */
+  --spectrum-01: var(--ignite-500);  --spectrum-02: #E0663F;
+  --spectrum-03: #E68A4C;            --spectrum-04: var(--ember-500);
+  --spectrum-05: #E8C24A;            --spectrum-06: #CBD24A;
+  --spectrum-07: #9FC24E;            --spectrum-08: #6FBF6A;
+  --spectrum-09: #4FB58A;            --spectrum-10: #3FAEA8;
+  --spectrum-11: #3E9FC0;            --spectrum-12: #4F7DA6;
+  --spectrum-13: #4664C4;            --spectrum-14: #6A5CD1;
+  --spectrum-15: #8A5CD1;            --spectrum-16: #A85BC0;
+  --spectrum-17: #C85B9E;            --spectrum-18: #E27BA0;
+
+  /* Services mega-menu — one color per category lane, inherited by children. */
+  --cat-staffing:            var(--spectrum-01);
+  --cat-sampling:            var(--spectrum-03);
+  --cat-retail-programs:     var(--spectrum-05);
+  --cat-trade-distributor:   var(--spectrum-07);
+  --cat-experiential:        var(--spectrum-09);
+  --cat-hospitality-events:  var(--spectrum-10);
+  --cat-creative-content:    var(--spectrum-12);
+  --cat-sales-distribution:  var(--spectrum-13);
+  --cat-strategy-growth:     var(--spectrum-15);
+  --cat-reporting:           #D6F35F;
 
   /* -------------------- COLOR: SEMANTIC --------------------- */
   --success: #6BE486;
@@ -55,17 +92,18 @@
   --info: #5AB8FF;
 
   /* Live / real-time indicator */
-  --live: #FF4D4D;
+  --live: #FF2D55;   /* cooler/magenta so it never reads as brand red */
 
   /* -------------------- TYPE -------------------------------- */
-  /* Display — Space Grotesk: confident geometric sans, slight warmth. */
-  --font-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
-  /* Body — Inter: workhorse sans for dense UI. */
-  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  /* Display + Body — Instrument Sans: clean workhorse across the whole site. */
+  --font-display: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+  /* Serif — Instrument Serif: reserved for select display moments ("Boots in 200 metros"). */
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
   /* Mono — JetBrains Mono: ops/tactical labels, ASCII markup. */
   --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
-  /* Stencil — Bungee: veteran-owned stencil nod. Use SPARINGLY. */
-  --font-stencil: 'Bungee', 'Impact', sans-serif;
+  /* Stencil — Noto Sans 700, all-caps: veteran-owned stencil nod. Use SPARINGLY. */
+  --font-stencil: 'Noto Sans', 'Impact', sans-serif;
 
   /* Type scale — tight, punchy, field-ready */
   --t-display-xl: clamp(72px, 10vw, 144px);   /* hero slabs */
@@ -109,6 +147,14 @@
   --s-24: 96px;
   --s-32: 128px;
 
+  /* -------------------- HERO SIZING ------------------------- */
+  /* Three standard hero vertical-padding variants. Height is content-driven;
+     these set consistent padding-block so pages stop rolling their own heights.
+     compact = utility/detail/long-tail · standard = primary pages · tall = flagship (home). */
+  --hero-pad-compact:  72px;
+  --hero-pad-standard: 112px;
+  --hero-pad-tall:     160px;
+
   /* -------------------- RADII ------------------------------- */
   /* Slightly generous, but never pill-soft. */
   --r-1: 4px;
@@ -124,8 +170,8 @@
   --shadow-1: 0 1px 0 rgba(255,255,255,0.04) inset, 0 1px 2px rgba(0,0,0,0.4);
   --shadow-2: 0 4px 16px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.04) inset;
   --shadow-3: 0 16px 48px rgba(0,0,0,0.55), 0 1px 0 rgba(255,255,255,0.06) inset;
-  --glow-spark: 0 0 0 1px rgba(214,243,95,0.3), 0 8px 32px rgba(214,243,95,0.18);
-  --glow-ignite: 0 0 0 1px rgba(255,90,31,0.3), 0 8px 32px rgba(255,90,31,0.18);
+  --glow-spark: 0 0 0 1px rgba(214, 243, 95, 0.15), 0 8px 32px rgba(214,243,95,0.18);
+  --glow-ignite: 0 0 0 1px rgba(215, 69, 62, 0.15), 0 8px 32px rgba(215,69,62,0.18);
 
   /* -------------------- BORDERS ----------------------------- */
   --border-1: 1px solid var(--ink-400);
@@ -141,7 +187,7 @@
   --dur-slow: 360ms;
 
   /* -------------------- GRID -------------------------------- */
-  --grid-max: 1280px;
+  --grid-max: 1480px;
   --grid-gutter: 24px;
 }
 
@@ -200,3 +246,7 @@ code, pre, kbd {
 
 /* Asterisk marker — * — used as footnote/accent */
 .asterisk { color: var(--spark-500); font-family: var(--font-mono); }
+
+/* Stencil (Noto Sans 700) is inherently bold + all-caps like the retired Bungee.
+   Force those traits wherever the stencil font is applied (inline var or class). */
+[style*="font-stencil"], .font-stencil { font-weight: 700 !important; text-transform: uppercase !important; }

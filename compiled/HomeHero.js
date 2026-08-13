@@ -67,7 +67,7 @@ const HomeHero = () => {
       position: "absolute",
       inset: 0,
       background: `
-            radial-gradient(ellipse at 82% 18%, rgba(255,90,31,0.32), transparent 45%),
+            radial-gradient(ellipse at 82% 18%, rgba(215, 69, 62,0.32), transparent 45%),
             radial-gradient(ellipse at 12% 85%, rgba(255,182,39,0.16), transparent 40%),
             linear-gradient(180deg, rgba(10,10,10,0.20) 0%, rgba(10,10,10,0.55) 55%, rgba(10,10,10,0.96) 100%)
           `
@@ -107,7 +107,7 @@ const HomeHero = () => {
   }, /*#__PURE__*/React.createElement("span", {
     style: {
       padding: "5px 10px",
-      background: "#FF5A1F",
+      background: "#D7453E",
       color: "#fff",
       fontFamily: "var(--font-mono)",
       fontSize: 10,
@@ -183,7 +183,7 @@ const HomeHero = () => {
       inset: 0,
       fontStyle: "italic",
       fontWeight: 700,
-      background: "linear-gradient(135deg, #FF5A1F 0%, #FFB627 45%, #FF8A3D 100%)",
+      background: "linear-gradient(135deg, #D7453E 0%, #FFB627 45%, #FF8A3D 100%)",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
       transform: i === wordIdx ? "translateY(0)" : i === (wordIdx - 1 + WORDS.length) % WORDS.length ? "translateY(-110%)" : "translateY(110%)",
@@ -245,7 +245,7 @@ const HomeHero = () => {
       left: 0,
       right: 0,
       height: 2,
-      background: "linear-gradient(90deg, transparent, #FF5A1F, transparent)",
+      background: "linear-gradient(90deg, transparent, #D7453E, transparent)",
       animation: "sweep 3s linear infinite"
     }
   }), /*#__PURE__*/React.createElement("div", {
@@ -261,7 +261,7 @@ const HomeHero = () => {
       fontSize: 10,
       letterSpacing: "0.24em",
       textTransform: "uppercase",
-      color: "#FF5A1F"
+      color: "#D7453E"
     }
   }, "\u25CF LIVE RIGHT NOW"), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -301,7 +301,7 @@ const HomeHero = () => {
     style: {
       padding: "16px 24px",
       borderRadius: 999,
-      background: "#FF5A1F",
+      background: "#D7453E",
       color: "#fff",
       fontFamily: "var(--font-display)",
       fontWeight: 600,
@@ -311,15 +311,15 @@ const HomeHero = () => {
       alignItems: "center",
       gap: 10,
       transition: "transform 200ms, box-shadow 200ms",
-      boxShadow: "0 12px 32px rgba(255,90,31,0.35)"
+      boxShadow: "0 12px 32px rgba(215, 69, 62,0.35)"
     },
     onMouseEnter: e => {
       e.currentTarget.style.transform = "translateY(-2px)";
-      e.currentTarget.style.boxShadow = "0 20px 48px rgba(255,90,31,0.5)";
+      e.currentTarget.style.boxShadow = "0 20px 48px rgba(215, 69, 62,0.5)";
     },
     onMouseLeave: e => {
       e.currentTarget.style.transform = "translateY(0)";
-      e.currentTarget.style.boxShadow = "0 12px 32px rgba(255,90,31,0.35)";
+      e.currentTarget.style.boxShadow = "0 12px 32px rgba(215, 69, 62,0.35)";
     }
   }, "Request a quote ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
     href: "https://igniteproductions.co/contact?urgent=1",

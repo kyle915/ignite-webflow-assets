@@ -29,7 +29,7 @@ const ServiceHero = ({
   style: {
     position: "absolute",
     inset: 0,
-    background: `radial-gradient(ellipse at 80% 15%, rgba(255,90,31,0.30), transparent 50%), linear-gradient(180deg, rgba(10,10,10,0.30) 0%, rgba(10,10,10,0.55) 55%, rgba(10,10,10,0.96) 100%)`
+    background: `radial-gradient(ellipse at 80% 15%, rgba(215, 69, 62,0.30), transparent 50%), linear-gradient(180deg, rgba(10,10,10,0.30) 0%, rgba(10,10,10,0.55) 55%, rgba(10,10,10,0.96) 100%)`
   }
 }), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -240,7 +240,7 @@ const ServicePOV = ({
         .ig-pov-lead { position: relative; display: inline-block; animation: ig-glitch-shift 6s steps(1,end) infinite; }
         .ig-pov-lead::before, .ig-pov-lead::after { content: attr(data-text); position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; }
         .ig-pov-lead::before { color: #00E5FF; transform: translate(-3px, 0); clip-path: polygon(0 0,100% 0,100% 33%,0 33%); opacity: 0.55; }
-        .ig-pov-lead::after { color: var(--accent-color, #FF5A1F); transform: translate(3px, 0); clip-path: polygon(0 66%,100% 66%,100% 100%,0 100%); opacity: 0.65; }
+        .ig-pov-lead::after { color: var(--accent-color, #D7453E); transform: translate(3px, 0); clip-path: polygon(0 66%,100% 66%,100% 100%,0 100%); opacity: 0.65; }
       `), /*#__PURE__*/React.createElement(GridOverlay, {
     size: 48,
     opacity: 0.04
@@ -899,7 +899,7 @@ const ServiceMarkets = ({
     style: {
       flex: 1,
       height: 1,
-      background: "linear-gradient(90deg, rgba(255,90,31,0.5), rgba(255,255,255,0.08))"
+      background: "linear-gradient(90deg, rgba(215, 69, 62,0.5), rgba(255,255,255,0.08))"
     }
   })), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -956,7 +956,7 @@ const ServiceMarkets = ({
       border: `2px solid ${s.accent}`,
       borderRadius: 4,
       transform: "rotate(-2deg)",
-      background: "rgba(255,90,31,0.08)"
+      background: "rgba(215, 69, 62,0.08)"
     }
   }, "+ EVERY ZIP\xA0IN\xA0BETWEEN"))), /*#__PURE__*/React.createElement("div", {
     style: {

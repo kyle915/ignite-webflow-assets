@@ -295,7 +295,7 @@ const PrivacyPolicy = () => {
         padding: "10px 12px",
         borderRadius: 8,
         textDecoration: "none",
-        background: isActive ? "rgba(255,90,31,0.10)" : "transparent",
+        background: isActive ? "rgba(215, 69, 62,0.10)" : "transparent",
         borderLeft: isActive ? "2px solid var(--ignite-500)" : "2px solid transparent",
         color: isActive ? "var(--fg-1)" : "var(--fg-2)",
         transition: "background 160ms var(--ease-out), color 160ms var(--ease-out)"
@@ -354,8 +354,8 @@ const PrivacyPolicy = () => {
     style: {
       marginTop: 72,
       padding: "24px 28px",
-      background: "rgba(255,90,31,0.06)",
-      border: "1px solid rgba(255,90,31,0.25)",
+      background: "rgba(215, 69, 62,0.06)",
+      border: "1px solid rgba(215, 69, 62,0.25)",
       borderRadius: 14,
       display: "flex",
       alignItems: "center",
@@ -386,7 +386,7 @@ const PrivacyPolicy = () => {
       letterSpacing: "0.18em",
       textTransform: "uppercase",
       textDecoration: "none",
-      boxShadow: "0 6px 24px rgba(255,90,31,0.3)"
+      boxShadow: "0 6px 24px rgba(215, 69, 62,0.3)"
     }
   }, "Email privacy@"))))), /*#__PURE__*/React.createElement("style", null, `
         @media (max-width: 900px) {

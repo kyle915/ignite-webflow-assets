@@ -34,7 +34,7 @@ const CASE_STUDIES = {
     sector: "Beverage · Sport",
     tags: ["Street Sampling", "Field Marketing", "Cultural Engagement"],
     services: ["Street Sampling", "Stadium Activation", "Cultural Marketing", "Retail Demos"],
-    accent: "#FF5A1F",
+    accent: "#D7453E",
     surface: "#1A0E0A",
     ink: "#FFFFFF",
     location: "LA · SF · San Diego · Las Vegas · Salt Lake City",

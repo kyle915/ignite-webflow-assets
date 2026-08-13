@@ -537,7 +537,7 @@ const VpCycler = () => {
       fontWeight: 400,
       display: "inline-block",
       animation: showFinal ? "vpLand 900ms cubic-bezier(.18,.9,.2,1.2) both" : "vpFlick 900ms cubic-bezier(.4,0,.2,1) both",
-      textShadow: showFinal ? "0 0 40px rgba(255,90,31,0.45)" : "none"
+      textShadow: showFinal ? "0 0 40px rgba(215, 69, 62,0.45)" : "none"
     }
   }, word), showFinal && /*#__PURE__*/React.createElement("span", {
     "aria-hidden": "true",
@@ -557,7 +557,7 @@ const VpCycler = () => {
         @keyframes vpUnderline { from{transform:scaleX(0);} to{transform:scaleX(1);} }
         @keyframes vpCaret { 0%,100%{opacity:1;} 50%{opacity:0;} }
         @keyframes vpJitter { 0%,100%{transform:translate(0,0);} 25%{transform:translate(-1px,1px);} 75%{transform:translate(1px,-1px);} }
-        @keyframes vpStatusBlink { 0%,100%{background:rgba(255,90,31,0.12);} 50%{background:rgba(255,90,31,0.28);} }
+        @keyframes vpStatusBlink { 0%,100%{background:rgba(215, 69, 62,0.12);} 50%{background:rgba(215, 69, 62,0.28);} }
         @keyframes vpMarquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
       `));
 };
@@ -577,7 +577,7 @@ const FractionalHero2 = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "absolute",
     inset: 0,
-    background: "radial-gradient(ellipse at 18% 30%, rgba(255,90,31,0.18), transparent 55%)",
+    background: "radial-gradient(ellipse at 18% 30%, rgba(215, 69, 62,0.18), transparent 55%)",
     pointerEvents: "none"
   }
 }), /*#__PURE__*/React.createElement("link", {
@@ -655,7 +655,7 @@ const FractionalHero2 = () => /*#__PURE__*/React.createElement("section", {
     padding: "6px 12px",
     borderRadius: 999,
     animation: "vpStatusBlink 1.8s ease-in-out infinite",
-    border: "1px solid rgba(255,90,31,0.4)",
+    border: "1px solid rgba(215, 69, 62,0.4)",
     fontFamily: "var(--font-mono)",
     fontSize: 11,
     letterSpacing: "0.22em",
@@ -781,7 +781,7 @@ const FractionalPainBanner = () => {
     style: {
       flex: 1,
       height: 1,
-      background: "linear-gradient(90deg, rgba(255,90,31,0.4), transparent)"
+      background: "linear-gradient(90deg, rgba(215, 69, 62,0.4), transparent)"
     }
   })), /*#__PURE__*/React.createElement("h2", {
     style: {
@@ -969,7 +969,7 @@ const FractionalEngines = () => /*#__PURE__*/React.createElement("section", {
     padding: "0.04em 0.22em 0.08em",
     transform: "rotate(-2deg)",
     borderRadius: 6,
-    boxShadow: "0 18px 44px rgba(255,90,31,0.4)",
+    boxShadow: "0 18px 44px rgba(215, 69, 62,0.4)",
     marginLeft: "0.12em"
   }
 }, " it's a fractional team plugged in by Monday."))), /*#__PURE__*/React.createElement("div", {
@@ -1159,7 +1159,7 @@ const FractionalFromTo = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1.45,
     color: "var(--fg-3)",
     textDecoration: "line-through",
-    textDecorationColor: "rgba(255,90,31,0.6)",
+    textDecorationColor: "rgba(215, 69, 62,0.6)",
     textDecorationThickness: 2
   }
 }, from), /*#__PURE__*/React.createElement("div", {
@@ -1227,7 +1227,7 @@ const FractionalBuiltFor = () => /*#__PURE__*/React.createElement("section", {
     padding: "0.12em 0.32em 0.18em",
     transform: "rotate(-1.5deg)",
     borderRadius: 8,
-    boxShadow: "0 18px 44px rgba(255,90,31,0.35)"
+    boxShadow: "0 18px 44px rgba(215, 69, 62,0.35)"
   }
 }, "Not the bandwidth to scale it."))), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -1300,7 +1300,7 @@ const FractionalBuiltFor = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "absolute",
     inset: 0,
-    background: "radial-gradient(circle at 80% 0%, rgba(255,90,31,0.18), transparent 50%)"
+    background: "radial-gradient(circle at 80% 0%, rgba(215, 69, 62,0.18), transparent 50%)"
   }
 }), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -1353,7 +1353,7 @@ const FractionalBuiltFor = () => /*#__PURE__*/React.createElement("section", {
   style: {
     marginTop: 32,
     padding: "16px 18px",
-    background: "rgba(255,90,31,0.08)",
+    background: "rgba(215, 69, 62,0.08)",
     borderRadius: 8,
     borderLeft: "3px solid var(--ignite-500)",
     fontFamily: "var(--font-mono)",
@@ -1437,7 +1437,7 @@ const FractionalCadence = () => /*#__PURE__*/React.createElement("section", {
     gap: 8,
     padding: "6px 10px",
     borderRadius: 999,
-    background: "rgba(255,90,31,0.12)",
+    background: "rgba(215, 69, 62,0.12)",
     fontFamily: "var(--font-mono)",
     fontSize: 11,
     letterSpacing: "0.22em",
@@ -1606,7 +1606,7 @@ const FractionalCompare = () => /*#__PURE__*/React.createElement("section", {
   key: j,
   style: {
     textAlign: "center",
-    background: j === 0 ? "rgba(255,90,31,0.06)" : "transparent",
+    background: j === 0 ? "rgba(215, 69, 62,0.06)" : "transparent",
     padding: j === 0 ? "10px 8px" : 0,
     borderRadius: j === 0 ? 8 : 0
   }
@@ -1707,7 +1707,7 @@ const Fractional90Days = () => /*#__PURE__*/React.createElement("section", {
     fontSize: 24,
     color: "var(--ignite-500)",
     margin: "0 auto",
-    boxShadow: "0 0 24px rgba(255,90,31,0.4)",
+    boxShadow: "0 0 24px rgba(215, 69, 62,0.4)",
     position: "relative",
     zIndex: 1
   }
@@ -1832,7 +1832,7 @@ const FractionalFinalCTA = () => {
       height: 1800,
       marginLeft: -900,
       marginTop: -900,
-      background: "conic-gradient(from 0deg, rgba(255,90,31,0) 0deg, rgba(255,90,31,0.18) 45deg, rgba(255,182,39,0.22) 90deg, rgba(255,90,31,0) 180deg, rgba(255,90,31,0.12) 270deg, rgba(255,90,31,0) 360deg)",
+      background: "conic-gradient(from 0deg, rgba(215, 69, 62,0) 0deg, rgba(215, 69, 62,0.18) 45deg, rgba(255,182,39,0.22) 90deg, rgba(215, 69, 62,0) 180deg, rgba(215, 69, 62,0.12) 270deg, rgba(215, 69, 62,0) 360deg)",
       animation: "ctaSweep 24s linear infinite",
       filter: "blur(30px)",
       opacity: 0.85
@@ -1842,7 +1842,7 @@ const FractionalFinalCTA = () => {
     style: {
       position: "absolute",
       inset: 0,
-      background: "radial-gradient(ellipse at 50% 50%, rgba(255,90,31,0.55) 0%, rgba(255,90,31,0.18) 30%, transparent 60%)",
+      background: "radial-gradient(ellipse at 50% 50%, rgba(215, 69, 62,0.55) 0%, rgba(215, 69, 62,0.18) 30%, transparent 60%)",
       animation: "ctaPulse 4.6s ease-in-out infinite"
     }
   }), /*#__PURE__*/React.createElement("div", {
@@ -1942,7 +1942,7 @@ const FractionalFinalCTA = () => {
     style: {
       flex: 1,
       height: 1,
-      background: "linear-gradient(90deg, rgba(255,90,31,0.5), transparent)"
+      background: "linear-gradient(90deg, rgba(215, 69, 62,0.5), transparent)"
     }
   }), /*#__PURE__*/React.createElement("span", null, "// IGNITE FRACTIONAL \xB7 DESK 01")), /*#__PURE__*/React.createElement("h2", {
     style: {
@@ -1966,12 +1966,12 @@ const FractionalFinalCTA = () => {
       fontStyle: "italic",
       fontFamily: "Georgia, 'Times New Roman', serif",
       fontWeight: 400,
-      backgroundImage: "linear-gradient(90deg, #FF5A1F 0%, #FFB627 50%, #FF5A1F 100%)",
+      backgroundImage: "linear-gradient(90deg, #D7453E 0%, #FFB627 50%, #D7453E 100%)",
       backgroundSize: "200% 100%",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
       animation: "ctaShimmer 5s linear infinite",
-      filter: "drop-shadow(0 0 36px rgba(255,90,31,0.55))"
+      filter: "drop-shadow(0 0 36px rgba(215, 69, 62,0.55))"
     }
   }, "growth."), /*#__PURE__*/React.createElement("span", {
     "aria-hidden": "true",
@@ -2009,8 +2009,8 @@ const FractionalFinalCTA = () => {
       color: "var(--ignite-500)",
       fontWeight: 700,
       padding: "6px 14px",
-      border: "1px solid rgba(255,90,31,0.5)",
-      background: "rgba(255,90,31,0.08)"
+      border: "1px solid rgba(215, 69, 62,0.5)",
+      background: "rgba(215, 69, 62,0.08)"
     }
   }, "\u25BC THE OFFER"), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -2054,7 +2054,7 @@ const FractionalFinalCTA = () => {
       background: "var(--ignite-500)",
       color: "#0b0905",
       transform: "skew(-6deg)",
-      boxShadow: "0 18px 50px rgba(255,90,31,0.45)"
+      boxShadow: "0 18px 50px rgba(215, 69, 62,0.45)"
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -2088,7 +2088,7 @@ const FractionalFinalCTA = () => {
       padding: "8px 14px",
       borderRadius: 999,
       background: "rgba(255,255,255,0.06)",
-      border: "1px solid rgba(255,90,31,0.35)",
+      border: "1px solid rgba(215, 69, 62,0.35)",
       fontFamily: "var(--font-mono)",
       fontSize: 10,
       letterSpacing: "0.22em",
@@ -2108,11 +2108,11 @@ const FractionalFinalCTA = () => {
     rel: "noopener",
     onMouseEnter: e => {
       e.currentTarget.style.transform = "translateY(-2px)";
-      e.currentTarget.style.boxShadow = "0 20px 50px rgba(255,90,31,0.55)";
+      e.currentTarget.style.boxShadow = "0 20px 50px rgba(215, 69, 62,0.55)";
     },
     onMouseLeave: e => {
       e.currentTarget.style.transform = "translateY(0)";
-      e.currentTarget.style.boxShadow = "0 12px 32px rgba(255,90,31,0.4)";
+      e.currentTarget.style.boxShadow = "0 12px 32px rgba(215, 69, 62,0.4)";
     },
     style: {
       display: "inline-flex",
@@ -2130,7 +2130,7 @@ const FractionalFinalCTA = () => {
       fontWeight: 700,
       textDecoration: "none",
       borderRadius: 4,
-      boxShadow: "0 12px 32px rgba(255,90,31,0.4)",
+      boxShadow: "0 12px 32px rgba(215, 69, 62,0.4)",
       transition: "transform 220ms var(--ease-spring), box-shadow 220ms"
     }
   }, /*#__PURE__*/React.createElement("span", null, "Book a 30-min call"), /*#__PURE__*/React.createElement("span", {
@@ -2188,7 +2188,7 @@ const FractionalFinalCTA = () => {
     style: {
       flex: "0 0 60px",
       height: 1,
-      background: "linear-gradient(90deg, transparent, rgba(255,90,31,0.5))"
+      background: "linear-gradient(90deg, transparent, rgba(215, 69, 62,0.5))"
     }
   }), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -2216,7 +2216,7 @@ const FractionalFinalCTA = () => {
     style: {
       flex: "0 0 60px",
       height: 1,
-      background: "linear-gradient(90deg, rgba(255,90,31,0.5), transparent)"
+      background: "linear-gradient(90deg, rgba(215, 69, 62,0.5), transparent)"
     }
   }))));
 };
@@ -2284,7 +2284,7 @@ const FractionalPrograms = () => /*#__PURE__*/React.createElement("section", {
     padding: "0.04em 0.22em 0.08em",
     transform: "rotate(-1.5deg)",
     borderRadius: 6,
-    boxShadow: "0 18px 44px rgba(255,90,31,0.35)"
+    boxShadow: "0 18px 44px rgba(215, 69, 62,0.35)"
   }
 }, "a broker, three agencies, and a trade marketing hire.")), /*#__PURE__*/React.createElement("p", {
   style: {

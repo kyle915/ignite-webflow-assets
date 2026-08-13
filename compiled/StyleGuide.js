@@ -56,22 +56,22 @@ const SG_COLOR_GROUPS = [{
   swatches: [{
     name: "Ignite 500",
     token: "--ignite-500",
-    hex: "#FF5A1F",
+    hex: "#D7453E",
     role: "Primary brand accent. Buttons, links, highlights."
   }, {
     name: "Ignite 400",
     token: "--ignite-400",
-    hex: "#FF7A47",
+    hex: "#E86A5F",
     role: "Hover, soft highlight."
   }, {
     name: "Ignite 600",
     token: "--ignite-600",
-    hex: "#E04510",
+    hex: "#B8322C",
     role: "Pressed state, deep accent."
   }, {
     name: "Ignite 700",
     token: "--ignite-700",
-    hex: "#B83206",
+    hex: "#8F2621",
     role: "Heavy emphasis, on-light contrast."
   }, {
     name: "Ember 500",
@@ -765,7 +765,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     alt: "",
     style: {
       height: 38,
-      filter: "drop-shadow(0 0 12px rgba(255,90,31,0.9))"
+      filter: "drop-shadow(0 0 12px rgba(215, 69, 62,0.9))"
     }
   }),
   text: "Don't add glows, shadows, or strokes. The mark is solid."
@@ -844,7 +844,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     padding: "20px 24px",
     border: "1px solid var(--ignite-500)",
     borderRadius: 12,
-    background: "rgba(255,90,31,0.06)",
+    background: "rgba(215, 69, 62,0.06)",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",

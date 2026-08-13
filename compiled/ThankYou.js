@@ -45,7 +45,7 @@ const ThankYou = ({
       width: 700,
       height: 700,
       borderRadius: "50%",
-      background: "radial-gradient(circle at 30% 40%, rgba(255,90,31,0.22), transparent 55%)",
+      background: "radial-gradient(circle at 30% 40%, rgba(215, 69, 62,0.22), transparent 55%)",
       filter: "blur(40px)",
       animation: "ty-blob-a 14s ease-in-out infinite",
       pointerEvents: "none"
@@ -71,7 +71,7 @@ const ThankYou = ({
       position: "absolute",
       inset: 0,
       pointerEvents: "none",
-      backgroundImage: "radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.6), transparent), radial-gradient(1px 1px at 78% 22%, rgba(255,255,255,0.4), transparent), radial-gradient(1.5px 1.5px at 33% 78%, rgba(214,243,95,0.5), transparent), radial-gradient(1px 1px at 88% 84%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 56% 12%, rgba(255,90,31,0.6), transparent), radial-gradient(1.5px 1.5px at 22% 52%, rgba(255,255,255,0.35), transparent), radial-gradient(1px 1px at 92% 48%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 8% 88%, rgba(255,255,255,0.4), transparent), radial-gradient(2px 2px at 64% 64%, rgba(214,243,95,0.3), transparent)",
+      backgroundImage: "radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.6), transparent), radial-gradient(1px 1px at 78% 22%, rgba(255,255,255,0.4), transparent), radial-gradient(1.5px 1.5px at 33% 78%, rgba(214,243,95,0.5), transparent), radial-gradient(1px 1px at 88% 84%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 56% 12%, rgba(215, 69, 62,0.6), transparent), radial-gradient(1.5px 1.5px at 22% 52%, rgba(255,255,255,0.35), transparent), radial-gradient(1px 1px at 92% 48%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 8% 88%, rgba(255,255,255,0.4), transparent), radial-gradient(2px 2px at 64% 64%, rgba(214,243,95,0.3), transparent)",
       animation: "ty-twinkle 6s ease-in-out infinite"
     }
   }), /*#__PURE__*/React.createElement("div", {
@@ -95,7 +95,7 @@ const ThankYou = ({
       width: 200,
       height: 200,
       borderRadius: "50%",
-      border: "1px solid rgba(255,90,31,0.4)",
+      border: "1px solid rgba(215, 69, 62,0.4)",
       animation: `radar 3.2s ease-out ${d}s infinite`
     }
   }))), /*#__PURE__*/React.createElement("div", {
@@ -106,7 +106,7 @@ const ThankYou = ({
       right: 0,
       top: "10%",
       height: 1,
-      background: "linear-gradient(90deg, transparent, rgba(255,90,31,0.3), transparent)",
+      background: "linear-gradient(90deg, transparent, rgba(215, 69, 62,0.3), transparent)",
       pointerEvents: "none"
     }
   }), /*#__PURE__*/React.createElement("div", {
@@ -152,12 +152,12 @@ const ThankYou = ({
       height: 84,
       borderRadius: "50%",
       margin: "0 auto 28px",
-      background: "linear-gradient(145deg, rgba(255,90,31,0.18), rgba(255,90,31,0.05))",
-      border: "1px solid rgba(255,90,31,0.4)",
+      background: "linear-gradient(145deg, rgba(215, 69, 62,0.18), rgba(215, 69, 62,0.05))",
+      border: "1px solid rgba(215, 69, 62,0.4)",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      boxShadow: "0 0 0 1px rgba(255,90,31,0.2), 0 8px 32px rgba(255,90,31,0.25)"
+      boxShadow: "0 0 0 1px rgba(215, 69, 62,0.2), 0 8px 32px rgba(215, 69, 62,0.25)"
     }
   }, /*#__PURE__*/React.createElement("svg", {
     width: "38",
@@ -226,16 +226,16 @@ const ThankYou = ({
       fontWeight: 600,
       letterSpacing: "0.18em",
       textTransform: "uppercase",
-      boxShadow: "0 8px 32px rgba(255,90,31,0.35), 0 0 0 1px rgba(255,90,31,0.4)",
+      boxShadow: "0 8px 32px rgba(215, 69, 62,0.35), 0 0 0 1px rgba(215, 69, 62,0.4)",
       transition: "transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out)"
     },
     onMouseEnter: e => {
       e.currentTarget.style.transform = "translateY(-2px)";
-      e.currentTarget.style.boxShadow = "0 12px 40px rgba(255,90,31,0.5), 0 0 0 1px rgba(255,90,31,0.5)";
+      e.currentTarget.style.boxShadow = "0 12px 40px rgba(215, 69, 62,0.5), 0 0 0 1px rgba(215, 69, 62,0.5)";
     },
     onMouseLeave: e => {
       e.currentTarget.style.transform = "translateY(0)";
-      e.currentTarget.style.boxShadow = "0 8px 32px rgba(255,90,31,0.35), 0 0 0 1px rgba(255,90,31,0.4)";
+      e.currentTarget.style.boxShadow = "0 8px 32px rgba(215, 69, 62,0.35), 0 0 0 1px rgba(215, 69, 62,0.4)";
     }
   }, /*#__PURE__*/React.createElement("svg", {
     width: "14",

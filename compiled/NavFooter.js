@@ -363,7 +363,7 @@ const StickyQuoteCTA = () => {
         .ig-sticky-cta__dot { animation: ig-sticky-pulse 1.8s ease-in-out infinite; }
         .ig-sticky-cta__brief:focus-visible,
         .ig-sticky-cta__dismiss:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
-        .ig-sticky-cta__dismiss:hover { color: #fff !important; background: rgba(255,90,31,0.12) !important; }
+        .ig-sticky-cta__dismiss:hover { color: #fff !important; background: rgba(215, 69, 62,0.12) !important; }
         @media (max-width: 720px) { .ig-sticky-cta-wrap { display: none !important; } }
         @media (prefers-reduced-motion: reduce) {
           .ig-sticky-cta, .ig-sticky-cta__dot { animation: none !important; }
@@ -384,10 +384,10 @@ const StickyQuoteCTA = () => {
       background: "rgba(10,11,13,0.78)",
       backdropFilter: "blur(10px)",
       WebkitBackdropFilter: "blur(10px)",
-      border: "1px solid rgba(255,90,31,0.45)",
+      border: "1px solid rgba(215, 69, 62,0.45)",
       borderRadius: 999,
       overflow: "hidden",
-      boxShadow: "0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,90,31,0.15), 0 0 48px rgba(255,90,31,0.18)"
+      boxShadow: "0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(215, 69, 62,0.15), 0 0 48px rgba(215, 69, 62,0.18)"
     }
   }, /*#__PURE__*/React.createElement("a", {
     className: "ig-sticky-cta__brief",
@@ -398,7 +398,7 @@ const StickyQuoteCTA = () => {
       alignItems: "center",
       gap: 12,
       padding: "12px 18px",
-      background: "linear-gradient(90deg, #FF5A1F 0%, #FF7A3F 100%)",
+      background: "linear-gradient(90deg, #D7453E 0%, #FF7A3F 100%)",
       color: "#0A0B0D",
       textDecoration: "none"
     }
@@ -448,7 +448,7 @@ const StickyQuoteCTA = () => {
     style: {
       width: 1,
       alignSelf: "stretch",
-      background: "rgba(255,90,31,0.35)"
+      background: "rgba(215, 69, 62,0.35)"
     }
   }), /*#__PURE__*/React.createElement("button", {
     className: "ig-sticky-cta__dismiss",
@@ -543,13 +543,13 @@ const SiteFooter = ({
     gap: 6,
     padding: "6px 10px",
     borderRadius: 6,
-    background: "rgba(255,90,31,0.12)",
+    background: "rgba(215, 69, 62,0.12)",
     color: "var(--ignite-500)",
     fontFamily: "var(--font-mono)",
     fontSize: 10,
     letterSpacing: "0.18em",
     textTransform: "uppercase",
-    border: "1px solid rgba(255,90,31,0.3)"
+    border: "1px solid rgba(215, 69, 62,0.3)"
   }
 }, "\u2605 Veteran-Owned"))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(OpsLine, null, ">> ", "SERVICES // 07 LANES"), /*#__PURE__*/React.createElement("ul", {
   style: {

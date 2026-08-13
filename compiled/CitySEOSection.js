@@ -254,7 +254,7 @@ const CityGridBg = ({
     position: "absolute",
     inset: 0,
     pointerEvents: "none",
-    background: "radial-gradient(ellipse 36% 50% at 20% 30%, rgba(255,90,31,0.16), transparent 60%)",
+    background: "radial-gradient(ellipse 36% 50% at 20% 30%, rgba(215, 69, 62,0.16), transparent 60%)",
     animation: "city-glow-a 14s ease-in-out infinite",
     mixBlendMode: "screen"
   }
@@ -298,9 +298,9 @@ const CITY_INTRO_KEYFRAMES = `
   70%, 80%      { opacity: 0.2; }
 }
 @keyframes city-intro-glow {
-  0%   { text-shadow: 0 0 0 rgba(255,90,31,0); }
-  60%  { text-shadow: 0 0 28px rgba(255,90,31,0.55); }
-  100% { text-shadow: 0 0 12px rgba(255,90,31,0.25); }
+  0%   { text-shadow: 0 0 0 rgba(215, 69, 62,0); }
+  60%  { text-shadow: 0 0 28px rgba(215, 69, 62,0.55); }
+  100% { text-shadow: 0 0 12px rgba(215, 69, 62,0.25); }
 }
 @keyframes city-grid-drift {
   0%   { background-position: 0 0, 0 0; }
@@ -504,16 +504,16 @@ const CitySeoIntro = ({
       fontSize: 15.5,
       letterSpacing: "-0.01em",
       textDecoration: "none",
-      boxShadow: "0 12px 32px rgba(255,90,31,0.35)",
+      boxShadow: "0 12px 32px rgba(215, 69, 62,0.35)",
       transition: "transform 200ms, box-shadow 200ms"
     },
     onMouseEnter: e => {
       e.currentTarget.style.transform = "translateY(-2px)";
-      e.currentTarget.style.boxShadow = "0 20px 48px rgba(255,90,31,0.5)";
+      e.currentTarget.style.boxShadow = "0 20px 48px rgba(215, 69, 62,0.5)";
     },
     onMouseLeave: e => {
       e.currentTarget.style.transform = "translateY(0)";
-      e.currentTarget.style.boxShadow = "0 12px 32px rgba(255,90,31,0.35)";
+      e.currentTarget.style.boxShadow = "0 12px 32px rgba(215, 69, 62,0.35)";
     }
   }, "Brief us on ", city.name, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -851,7 +851,7 @@ const CitySeoServices = ({
       onMouseEnter: e => {
         if (!s.href) return;
         e.currentTarget.style.borderColor = "var(--ignite-500)";
-        e.currentTarget.style.background = "rgba(255,90,31,0.04)";
+        e.currentTarget.style.background = "rgba(215, 69, 62,0.04)";
         const ar = e.currentTarget.querySelector("[data-arrow]");
         if (ar) {
           ar.style.color = "var(--ignite-500)";
@@ -1232,7 +1232,7 @@ const CitySeoCta = ({
     style: {
       position: "absolute",
       inset: 0,
-      background: "radial-gradient(ellipse 60% 80% at 90% 50%, rgba(255,90,31,0.18), transparent 60%)",
+      background: "radial-gradient(ellipse 60% 80% at 90% 50%, rgba(215, 69, 62,0.18), transparent 60%)",
       pointerEvents: "none"
     }
   }), /*#__PURE__*/React.createElement("div", {
@@ -1290,7 +1290,7 @@ const CitySeoCta = ({
       cursor: "pointer",
       background: "var(--ignite-500)",
       color: "#fff",
-      boxShadow: "0 0 0 1px rgba(255,90,31,0.3), 0 8px 32px rgba(255,90,31,0.25)",
+      boxShadow: "0 0 0 1px rgba(215, 69, 62,0.3), 0 8px 32px rgba(215, 69, 62,0.25)",
       display: "inline-flex",
       alignItems: "center",
       gap: 10,
@@ -1338,7 +1338,7 @@ const CitySeoCta = ({
         opacity: 0.92,
         userSelect: "none",
         animation: "city-ghost-pan 22s ease-in-out infinite",
-        filter: "drop-shadow(0 0 60px rgba(255,90,31,0.18))"
+        filter: "drop-shadow(0 0 60px rgba(215, 69, 62,0.18))"
       }
     }, /*#__PURE__*/React.createElement("text", {
       x: "100%",

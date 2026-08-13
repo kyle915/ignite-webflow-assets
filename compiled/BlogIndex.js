@@ -73,7 +73,7 @@ function BlogIndex() {
       fontSize: 'min(720px, 60vw)',
       lineHeight: 0.85,
       color: 'transparent',
-      WebkitTextStroke: '1px rgba(255,90,31,0.08)',
+      WebkitTextStroke: '1px rgba(215, 69, 62,0.08)',
       letterSpacing: '-0.06em',
       userSelect: 'none'
     }

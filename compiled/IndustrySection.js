@@ -24,7 +24,7 @@ const IND_KEYFRAMES = `
 `;
 const IndGridBg = ({
   animated = true,
-  accent = "#FF5A1F"
+  accent = "#D7453E"
 }) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
   "aria-hidden": "true",
   style: {

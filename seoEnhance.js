@@ -195,14 +195,14 @@
 
     inner.innerHTML =
       '<div style="display:flex;align-items:baseline;gap:18px;margin-bottom:22px;flex-wrap:wrap">' +
-      '<span style="font-family:var(--font-mono,monospace);font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--ignite-500,#FF5A1F)">&gt;&gt; RELATED</span>' +
+      '<span style="font-family:var(--font-mono,monospace);font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--ignite-500,#D7453E)">&gt;&gt; RELATED</span>' +
       '<span style="flex:1;height:1px;background:var(--paper-200,#E4DFCE)"></span></div>' +
       '<div id="ignite-related-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px"></div>';
 
     var grid = inner.querySelector("#ignite-related-grid");
 
     function pill(label, href, fontFamily) {
-      return '<a href="' + href + '" style="display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:var(--paper-100,#FBF8EE);border:1px solid var(--paper-200,#E4DFCE);color:var(--fg-1-inv,#0A0B0D);text-decoration:none;font-family:' + (fontFamily || 'var(--font-display,sans-serif)') + ';font-weight:500;font-size:14px">' + label + ' <span style="font-size:11px;color:var(--ignite-500,#FF5A1F)">↗</span></a>';
+      return '<a href="' + href + '" style="display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:var(--paper-100,#FBF8EE);border:1px solid var(--paper-200,#E4DFCE);color:var(--fg-1-inv,#0A0B0D);text-decoration:none;font-family:' + (fontFamily || 'var(--font-display,sans-serif)') + ';font-weight:500;font-size:14px">' + label + ' <span style="font-size:11px;color:var(--ignite-500,#D7453E)">↗</span></a>';
     }
     function col(label, html) {
       return '<div><div style="font-family:var(--font-mono,monospace);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#54585e;margin-bottom:10px">' + label + '</div><div style="display:flex;flex-wrap:wrap;gap:8px">' + html + '</div></div>';

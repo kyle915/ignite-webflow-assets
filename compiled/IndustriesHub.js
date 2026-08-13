@@ -386,7 +386,7 @@ const IndustriesHub = () => {
   }, /*#__PURE__*/React.createElement("style", null, `
           .ih-cv-faq h2,
           .ih-cv-faq .ih-cv-faq-title { color: #0A0B0D !important; }
-          .ih-cv-faq h2 .ih-cv-faq-accent { color: #FF5A1F !important; }
+          .ih-cv-faq h2 .ih-cv-faq-accent { color: #D7453E !important; }
         `), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",

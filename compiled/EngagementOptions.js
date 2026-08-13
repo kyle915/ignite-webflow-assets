@@ -75,7 +75,7 @@ const EngagementSpectrum = () => {
       width: 600,
       height: 600,
       borderRadius: 999,
-      background: `radial-gradient(circle, ${t.accent === "var(--ignite-500)" ? "rgba(255,90,31,0.18)" : t.accent === "#FFB627" ? "rgba(255,182,39,0.14)" : "rgba(214,243,95,0.14)"}, transparent 70%)`,
+      background: `radial-gradient(circle, ${t.accent === "var(--ignite-500)" ? "rgba(215, 69, 62,0.18)" : t.accent === "#FFB627" ? "rgba(255,182,39,0.14)" : "rgba(214,243,95,0.14)"}, transparent 70%)`,
       filter: "blur(60px)",
       transition: "left 600ms var(--ease-out)",
       pointerEvents: "none"
@@ -242,7 +242,7 @@ const EngagementSpectrum = () => {
       padding: "64px 56px",
       borderRadius: 24,
       background: "linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01))",
-      border: `2px solid ${t.accent === "var(--ignite-500)" ? "rgba(255,90,31,0.35)" : t.accent === "#FFB627" ? "rgba(255,182,39,0.3)" : "rgba(214,243,95,0.3)"}`,
+      border: `2px solid ${t.accent === "var(--ignite-500)" ? "rgba(215, 69, 62,0.35)" : t.accent === "#FFB627" ? "rgba(255,182,39,0.3)" : "rgba(214,243,95,0.3)"}`,
       display: "grid",
       gridTemplateColumns: "1.3fr 1fr",
       gap: 72,

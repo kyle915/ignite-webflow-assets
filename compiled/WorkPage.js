@@ -37,7 +37,7 @@ if (typeof document !== "undefined" && !document.getElementById("wk-kf")) {
     .wk-card:hover .wk-cta-ribbon { transform: translateY(0); opacity: 1; }
 
     .wk-row { transition: background 200ms ease; }
-    .wk-row:hover { background: rgba(255,90,31,0.04); }
+    .wk-row:hover { background: rgba(215, 69, 62,0.04); }
     .wk-row:hover .wk-row-num { color: var(--ignite-500); transform: translateX(4px); }
     .wk-row:hover .wk-row-brand { color: var(--ignite-500); }
     .wk-row:hover .wk-row-arrow { opacity: 1; transform: translate(0,0); }
@@ -77,7 +77,7 @@ const WORK_CASES = [{
 }, {
   slug: "mas",
   bento: "md",
-  accent: "#FF5A1F",
+  accent: "#D7453E",
   surface: "#1A0E0A",
   stats: [["75K+", "Samples 2025"], ["6", "West Coast mkts"], ["MLS", "+ fútbol"]]
 }, {
@@ -329,7 +329,7 @@ const WorkHero = () => {
       left: "60%",
       width: "50vw",
       height: "50vw",
-      background: "radial-gradient(circle at center, rgba(255,90,31,0.30), transparent 60%)",
+      background: "radial-gradient(circle at center, rgba(215, 69, 62,0.30), transparent 60%)",
       animation: "wkBlob1 22s ease-in-out infinite",
       filter: "blur(10px)"
     }
@@ -372,7 +372,7 @@ const WorkHero = () => {
       right: 0,
       height: "40vh",
       pointerEvents: "none",
-      background: "linear-gradient(180deg, transparent 0%, rgba(255,90,31,0.12) 50%, transparent 100%)",
+      background: "linear-gradient(180deg, transparent 0%, rgba(215, 69, 62,0.12) 50%, transparent 100%)",
       animation: "wkScanH 9s linear infinite"
     }
   }), /*#__PURE__*/React.createElement("div", {
@@ -510,9 +510,9 @@ const WorkHero = () => {
     style: {
       marginTop: 28,
       padding: "16px 20px",
-      border: "1px solid rgba(255,90,31,0.4)",
+      border: "1px solid rgba(215, 69, 62,0.4)",
       borderRadius: 8,
-      background: "rgba(255,90,31,0.06)",
+      background: "rgba(215, 69, 62,0.06)",
       display: "flex",
       alignItems: "center",
       gap: 14,

@@ -10,7 +10,7 @@ const HOME_SERVICES = [{
   bullets: ["Festival Activations", "Pop-Ups", "Brand Activations", "Immersive Installations", "Campus Tours"],
   img: "https://kyle915.github.io/ignite-webflow-assets/assets/experiential-liquiddeath-nascar.jpg",
   imgPos: "center 40%",
-  accent: "#FF5A1F"
+  accent: "#D7453E"
 }, {
   n: "02",
   slug: "mobile-tours",
@@ -29,7 +29,7 @@ const HOME_SERVICES = [{
   bullets: ["Custom Builds", "Scenic Fabrication", "Pop-Up Construction", "Modular Activations", "Touring Builds"],
   img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600&q=80",
   imgPos: "center 40%",
-  accent: "#FF5A1F"
+  accent: "#D7453E"
 }, {
   n: "04",
   slug: "event-staffing",
@@ -65,7 +65,7 @@ const HOME_SERVICES = [{
   bullets: ["Branded Merchandise", "Swag Kits", "Custom Apparel", "Premium Fulfillment"],
   img: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&q=80",
   imgPos: "center",
-  accent: "#FF5A1F"
+  accent: "#D7453E"
 }];
 const ServiceCard = ({
   s,
@@ -292,7 +292,7 @@ const ServicesGrid = () => /*#__PURE__*/React.createElement("section", {
   },
   onMouseEnter: e => {
     e.currentTarget.style.borderColor = "var(--ignite-500)";
-    e.currentTarget.style.background = "rgba(255,90,31,0.08)";
+    e.currentTarget.style.background = "rgba(215, 69, 62,0.08)";
   },
   onMouseLeave: e => {
     e.currentTarget.style.borderColor = "var(--ink-400)";
@@ -355,7 +355,7 @@ const ServicesGrid = () => /*#__PURE__*/React.createElement("section", {
     marginTop: 48,
     padding: "26px 32px",
     borderRadius: 14,
-    background: "linear-gradient(90deg, rgba(255,90,31,0.06), rgba(214,243,95,0.04))",
+    background: "linear-gradient(90deg, rgba(215, 69, 62,0.06), rgba(214,243,95,0.04))",
     border: "1px solid var(--ink-400)",
     display: "flex",
     alignItems: "center",

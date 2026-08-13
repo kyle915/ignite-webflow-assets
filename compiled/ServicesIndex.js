@@ -16,7 +16,7 @@ const ServicesIndexHero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "absolute",
     inset: 0,
-    background: "radial-gradient(ellipse at 80% 0%, rgba(255,90,31,0.18), transparent 50%)"
+    background: "radial-gradient(ellipse at 80% 0%, rgba(215, 69, 62,0.18), transparent 50%)"
   }
 }), /*#__PURE__*/React.createElement(Container, {
   style: {
@@ -244,7 +244,7 @@ const ServicesIndexGrid = () => /*#__PURE__*/React.createElement("section", {
     marginTop: 56,
     padding: "32px 36px",
     borderRadius: 14,
-    background: "linear-gradient(90deg, rgba(255,90,31,0.06), rgba(214,243,95,0.04))",
+    background: "linear-gradient(90deg, rgba(215, 69, 62,0.06), rgba(214,243,95,0.04))",
     border: "1px solid var(--ink-400)"
   }
 }, /*#__PURE__*/React.createElement(OpsLine, {

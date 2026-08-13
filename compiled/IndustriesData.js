@@ -60,7 +60,7 @@ const INDUSTRIES_DATA = {
     slug: "cpg-beverage",
     name: "CPG Beverage",
     short: "Beverage",
-    accent: "#FF5A1F",
+    accent: "#D7453E",
     hero: {
       eyebrow: "INDUSTRY · BEVERAGE",
       title: "Beverage activation, sampling, and retail support.",
@@ -497,7 +497,7 @@ const INDUSTRIES_DATA = {
     slug: "automotive",
     name: "Automotive",
     short: "Auto",
-    accent: "#FF5A1F",
+    accent: "#D7453E",
     hero: {
       eyebrow: "INDUSTRY · OEM · TIER 1 · DEALER",
       title: "Auto-show staffing, ride-and-drive programs, and dealer activation.",
@@ -800,7 +800,7 @@ const INDUSTRIES_DATA = {
     slug: "sports-entertainment",
     name: "Sports & Entertainment",
     short: "Sports",
-    accent: "#FF5A1F",
+    accent: "#D7453E",
     hero: {
       eyebrow: "INDUSTRY · SPORTS · ENTERTAINMENT · LIVE EVENTS",
       title: "Stadium activation, fan zones, and concourse staffing.",

@@ -97,7 +97,7 @@ const AccentBtn = ({
   const accent = window.__TWEAKS && window.__TWEAKS.accent || "ignite";
   const bg = accent === "spark" ? "var(--spark-500)" : accent === "ember" ? "#FFB627" : "var(--ignite-500)";
   const fg = accent === "ignite" ? "#fff" : "#0A0B0D";
-  const glow = accent === "spark" ? "0 0 0 1px rgba(214,243,95,0.3), 0 8px 32px rgba(214,243,95,0.22)" : accent === "ember" ? "0 0 0 1px rgba(255,182,39,0.35), 0 8px 32px rgba(255,182,39,0.28)" : "0 0 0 1px rgba(255,90,31,0.3), 0 8px 32px rgba(255,90,31,0.25)";
+  const glow = accent === "spark" ? "0 0 0 1px rgba(214,243,95,0.3), 0 8px 32px rgba(214,243,95,0.22)" : accent === "ember" ? "0 0 0 1px rgba(255,182,39,0.35), 0 8px 32px rgba(255,182,39,0.28)" : "0 0 0 1px rgba(215, 69, 62,0.3), 0 8px 32px rgba(215, 69, 62,0.25)";
   const sizes = {
     sm: "8px 12px",
     md: "12px 18px",
