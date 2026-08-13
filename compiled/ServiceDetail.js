@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.ServiceDetailPage) return;
 /* Shared renderer for an individual service detail page.
    Each /pages/services-{slug}.html sets window.__SERVICE_SLUG before mounting. */
 
@@ -560,7 +559,7 @@ const ServiceComparison = ({
   s
 }) => {
   if (!s.comparison || !s.comparison.length) return null;
-  const accent = s.paperAccent || accent;
+  const accent = s.paperAccent || s.accent || "var(--ignite-500)";
   return /*#__PURE__*/React.createElement("section", {
     style: {
       padding: "120px 0",
@@ -1123,7 +1122,7 @@ const ServiceMarkets = ({
 const ServiceIntro = ({
   s
 }) => {
-  const accent = s.paperAccent || accent;
+  const accent = s.paperAccent || s.accent || "var(--ignite-500)";
   return /*#__PURE__*/React.createElement("section", {
     className: "paper",
     style: {
@@ -1255,7 +1254,7 @@ const SubServicesGrid = ({
 const ServiceProcess = ({
   s
 }) => {
-  const accent = s.paperAccent || accent;
+  const accent = s.paperAccent || s.accent || "var(--ignite-500)";
   const defaultSteps = [["BRIEF", "Quick 30-min call. We scope, ballpark, and align on the goal."], ["DESIGN", "Concept, footprint, route, or kit — engineered for the goal, not for the deck."], ["BUILD/STAFF", "In-house fabrication, vetted ambassadors, full kit and logistics."], ["EXECUTE", "Spark live-tracks every shift, every check-in, every count, every mile."], ["RECAP", "Same-week recap with photos, metrics, and what we'd change next round."]];
   const steps = s.process && s.process.length ? s.process : defaultSteps;
   return /*#__PURE__*/React.createElement("section", {
@@ -1532,7 +1531,7 @@ const ServiceMarketsBlock = ({
 const AdjacentServices = ({
   s
 }) => {
-  const accent = s.paperAccent || accent;
+  const accent = s.paperAccent || s.accent || "var(--ignite-500)";
   return /*#__PURE__*/React.createElement("section", {
     className: "paper",
     style: {
@@ -2556,7 +2555,7 @@ const ServiceComplianceBelt = ({
 const ServiceReceipts = ({
   s
 }) => {
-  const accent = s.paperAccent || accent;
+  const accent = s.paperAccent || s.accent || "var(--ignite-500)";
   return /*#__PURE__*/React.createElement("section", {
     className: "paper",
     style: {
@@ -9442,4 +9441,3 @@ const ServiceDetailPage = ({
 Object.assign(window, {
   ServiceDetailPage
 });
-})();

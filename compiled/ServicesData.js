@@ -1,4 +1,3 @@
-(function(){if (typeof window !== "undefined" && window.SERVICES_DATA) return;
 /* ============================================================
    IGNITE — Services data
    Drives /pages/services.html (index) + /pages/services-{slug}.html (details).
@@ -501,4 +500,3 @@ if (typeof SERVICES_DATA === "object") {
     if (SERVICES_DATA[k]) SERVICES_DATA[k].faqs = SERVICE_FAQS[k];
   }
 }
-})();

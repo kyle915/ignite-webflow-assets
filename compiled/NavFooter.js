@@ -14,7 +14,7 @@ const SITE_SERVICE_GROUPS = [{
     slug: "brand-ambassador-agency",
     label: "Brand Ambassador Agency",
     sub: "257K+ vetted ambassadors, all 50 states",
-    href: "/services/brand-ambassador-agency"
+    href: "/brand-ambassador-agency"
   }, {
     slug: "event-staffing",
     label: "Event Staffing",
