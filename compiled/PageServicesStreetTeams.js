@@ -296,7 +296,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "absolute",
     inset: 0,
-    backgroundImage: "url(../assets/street-team-liquid-death-miami.jpg)",
+    backgroundImage: "url(https://kyle915.github.io/ignite-webflow-assets/assets/street-team-liquid-death-miami.jpg)",
     backgroundSize: "cover",
     backgroundPosition: "60% 40%",
     filter: "brightness(0.5) saturate(1.05)"

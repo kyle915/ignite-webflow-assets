@@ -1019,7 +1019,7 @@ const Proof = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "absolute",
     inset: 0,
-    backgroundImage: "url(../assets/staffing-liquid-death-acl.jpg)",
+    backgroundImage: "url(https://kyle915.github.io/ignite-webflow-assets/assets/staffing-liquid-death-acl.jpg)",
     backgroundSize: "cover",
     backgroundPosition: "center 42%"
   }

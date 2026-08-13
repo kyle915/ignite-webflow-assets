@@ -259,7 +259,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "absolute",
     inset: 0,
-    backgroundImage: "url(../assets/on-premise-white-claw-bar.jpg)",
+    backgroundImage: "url(https://kyle915.github.io/ignite-webflow-assets/assets/on-premise-white-claw-bar.jpg)",
     backgroundSize: "cover",
     backgroundPosition: "center 40%"
   }
