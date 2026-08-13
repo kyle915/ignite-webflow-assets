@@ -21,7 +21,7 @@
   /* Site nav — collapse links, keep logo + CTA */
   header nav { display: none !important; }
   header > div:first-child { padding: 0 18px !important; height: 60px !important; gap: 8px !important; }
-  header a[href$="contact.html"].link-mono { display: none !important; }
+  header a[href="/contact"].link-mono { display: none !important; }
 
   /* Hero */
   .hero-meta { padding: 24px 20px 0 !important; }
@@ -155,3 +155,13 @@ section[style*="background: var(--ink-100)"] p { color: rgba(255, 255, 255, 0.78
 /* Tighter dark-card body copy */
 section[style*="background: var(--ink-000)"] [style*="color: var(--fg-2)"],
 section[style*="background: var(--ink-100)"] [style*="color: var(--fg-2)"] { color: rgba(255,255,255,0.78) !important; }
+
+/* ============================================================
+   Tablet (<= 991px) — nav collapse
+   The desktop nav is ~867px wide; below ~960px it overflows the
+   viewport. The burger + drawer in NavFooter cover this range.
+   ============================================================ */
+@media (max-width: 991px) {
+  header nav { display: none !important; }
+  .nav-cta-desktop { display: none !important; }
+}

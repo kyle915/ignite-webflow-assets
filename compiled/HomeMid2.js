@@ -55,7 +55,7 @@ const HOME_SERVICES = [{
   title: "Trade Show Support",
   sub: "Booth staffing, lead capture, demos, full show management",
   bullets: ["Booth Staffing", "Lead Capture", "Show Management", "Demos"],
-  img: window.__resources?.r_assets_pressreader_tradeshow_webp || "https://kyle915.github.io/ignite-webflow-assets/assets/pressreader-tradeshow.webp",
+  img: window.__resources?.r_assets_pressreader_tradeshow_webp || "https://kyle915.github.io/ignite-webflow-assets/assets/pressreader-tradeshow.jpg",
   imgPos: "center 35%",
   accent: "#FFB627"
 }, {

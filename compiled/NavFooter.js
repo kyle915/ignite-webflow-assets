@@ -360,7 +360,7 @@ const SiteNav = ({
     };
   }, []);
   useNavEffect(() => {
-    const mq = window.matchMedia("(max-width: 900px)");
+    const mq = window.matchMedia("(max-width: 991px)");
     const on = () => setIsTouch(mq.matches);
     on();
     mq.addEventListener ? mq.addEventListener("change", on) : mq.addListener(on);
@@ -673,11 +673,12 @@ const SiteNav = ({
     strokeLinecap: "round"
   }))))), /*#__PURE__*/React.createElement("style", null, `
         .nav-burger { display: none; }
-        @media (max-width: 720px) {
+        @media (max-width: 991px) {
           .nav-burger { display: inline-flex !important; }
           .nav-cta-desktop { display: none !important; }
+          header nav { display: none !important; }
         }
-        @media (min-width: 721px) { .nav-drawer { display: none !important; } }
+        @media (min-width: 992px) { .nav-drawer { display: none !important; } }
         .nav-drawer-link { display: flex; align-items: center; min-height: 54px; font-family: var(--font-mono); font-size: 14px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
         .nav-drawer-row { width: 100%; display: flex; align-items: center; justify-content: space-between; min-height: 54px; font-family: var(--font-mono); font-size: 14px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.08); cursor: pointer; text-align: left; }
         .svc-child { transition: background 130ms var(--ease-out); }

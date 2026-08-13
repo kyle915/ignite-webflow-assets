@@ -235,7 +235,7 @@ const SERVICES_DATA = {
     eyebrow: "B2B // SHOW FLOOR",
     tagline: "Booths that book meetings.",
     intro: "Booth staffing, lead-capture teams, demo specialists, and end-to-end show management. We partner with your team or fully run your floor — from pre-show training through post-show CRM hand-off.",
-    hero: "https://kyle915.github.io/ignite-webflow-assets/assets/trade-show-pressreader-booth.webp",
+    hero: "https://kyle915.github.io/ignite-webflow-assets/assets/trade-show-pressreader-booth.jpg",
     sub: [{
       t: "Booth Staffing",
       d: "On-brand reps trained on product, script, and qualifying questions."

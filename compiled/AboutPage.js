@@ -61,13 +61,13 @@ const ABOUT_LEADERS = [{
 }, {
   name: "Baesha",
   role: "Director, Experiential Sales",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-baesha.png",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-baesha.jpg",
   resKey: "r_assets_team_baesha_png",
   bio: "Runs the experiential pipeline end-to-end — from scoping the brief to deploying the team in market."
 }, {
   name: "Junior",
   role: "Director of Sales",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-junior.png",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-junior.jpg",
   resKey: "r_assets_team_junior_png",
   bio: "Owns CPG and retail accounts. The one your brand manager will know on a first-name basis."
 }, {
@@ -97,7 +97,7 @@ const ABOUT_LEADERS = [{
 }, {
   name: "Brad",
   role: "Account Manager",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-brad.png",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-brad.jpg",
   resKey: "r_assets_team_brad_png",
   bio: "Day-to-day account lead. Keeps activations on schedule, on budget, and on-brief from kickoff to recap."
 }, {
@@ -109,7 +109,7 @@ const ABOUT_LEADERS = [{
 }, {
   name: "Harris",
   role: "Account & Activation Manager",
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-harris.webp",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-harris.jpg",
   resKey: "r_assets_team_harris_webp",
   bio: "Runs accounts and activations end to end — from kickoff brief through live execution on the ground."
 }];
@@ -2720,7 +2720,7 @@ const AboutPhotos = () => {
     src: "https://kyle915.github.io/ignite-webflow-assets/assets/sampling-liquiddeath-petsmart.jpg",
     label: "Liquid Death · Target retail sampling"
   }, {
-    src: "https://kyle915.github.io/ignite-webflow-assets/assets/pressreader-tradeshow.webp",
+    src: "https://kyle915.github.io/ignite-webflow-assets/assets/pressreader-tradeshow.jpg",
     label: "PressReader · trade show floor"
   }];
   return /*#__PURE__*/React.createElement("section", {

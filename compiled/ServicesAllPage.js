@@ -162,7 +162,7 @@ const SVC_LANES = [{
   sub: "Booth staffing, lead capture, demos, full show management.",
   long: "Booth staffing, lead capture, on-stand demos, and full pre/at/post show management. The team that makes your booth the busiest one on the floor.",
   bullets: ["Booth Staffing", "Lead Capture", "Show Management", "Product Demos", "Speaker Support", "Hospitality Suites"],
-  img: "https://kyle915.github.io/ignite-webflow-assets/assets/pressreader-tradeshow.webp",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/pressreader-tradeshow.jpg",
   imgPos: "center 35%",
   meta: ["CES · NAB · NRF", "Lead-cap integration", "On-stand demos"]
 }, {

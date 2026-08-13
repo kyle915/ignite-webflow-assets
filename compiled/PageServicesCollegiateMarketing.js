@@ -977,7 +977,7 @@ const LANES = [{
   d: "The first two weeks of fall semester set the brand defaults for the next four years. We hit dorm row, welcome fairs, off-campus rows, and the first home football game in one coordinated sweep.",
   tag: "PEAK DENSITY",
   color: ACCENT,
-  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-3-fuel-focus.png",
+  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-3-fuel-focus.jpg",
   rot: -0.8,
   span: "span 4"
 }, {
@@ -986,7 +986,7 @@ const LANES = [{
   d: "Vetted student reps who live on campus, post to their followers, and feed you cultural intel no agency deck can fake. Tracked through Spark all semester.",
   tag: "EMBEDDED",
   color: LIME,
-  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-2-fuel-your-day.png",
+  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-2-fuel-your-day.jpg",
   rot: 0.6,
   span: "span 4"
 }, {
@@ -995,7 +995,7 @@ const LANES = [{
   d: "Free product in the hands of the kids whose roommates already listen to them. RAs, chapter presidents, club leadership, student creators.",
   tag: "PEER-LED",
   color: ACCENT,
-  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-6-owala-engraving.png",
+  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-6-owala-engraving.jpg",
   rot: -0.4,
   span: "span 4"
 }, {
@@ -1004,7 +1004,7 @@ const LANES = [{
   d: "Off-campus apartment rows where the sample truck can't reach upperclassmen. Walked block by block, tied to QR or coupon redemption.",
   tag: "REDEMPTION-TRACKED",
   color: LIME,
-  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-5-liquid-death-dorm.png",
+  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-5-liquid-death-dorm.jpg",
   rot: 0.8,
   span: "span 4"
 }, {
@@ -1013,7 +1013,7 @@ const LANES = [{
   d: "Quad takeovers, rec center installs, tailgate footprints, student union booths. Permits, vendor coordination, staffing, recap. You show up to a finished activation.",
   tag: "TURNKEY",
   color: ACCENT,
-  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-1-tailgate.png",
+  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-1-tailgate.jpg",
   rot: -0.6,
   span: "span 4"
 }, {
@@ -1022,7 +1022,7 @@ const LANES = [{
   d: "Branded gifting straight into Greek life — chapter houses, recruitment week, formals, philanthropy events, big/little reveals. Get your product into the highest-influence social networks on campus, hand-delivered.",
   tag: "GREEK NETWORK",
   color: LIME,
-  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-4-apartment-pool.png",
+  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-4-apartment-pool.jpg",
   rot: 0.4,
   span: "span 4"
 }, {
@@ -1031,7 +1031,7 @@ const LANES = [{
   d: "A branded footprint that travels — multi-campus tours hitting a new school every few days. Custom builds, photo moments, sampling, and content capture, rolled out city to city on a single coordinated route.",
   tag: "MULTI-CAMPUS ROUTE",
   color: ACCENT,
-  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-7-owala-team.png",
+  photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-7-owala-team.jpg",
   rot: -0.5,
   span: "span 6"
 }];
@@ -2268,38 +2268,38 @@ const Campuses = () => /*#__PURE__*/React.createElement("section", {
    06.5 / ON THE GROUND — real photo gallery of campus work
 ========================================================= */
 const PHOTOS = [{
-  src: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-1-tailgate.png",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-1-tailgate.jpg",
   lane: "GAME-DAY TAILGATE",
   title: "Tailgate footprint · home opener",
   detail: "Branded canopy. Coolers stocked. Sample-to-attendee handoffs in front of the stadium gates.",
   aspect: "4 / 5",
   span: "row 1 / span 2"
 }, {
-  src: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-5-liquid-death-dorm.png",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-5-liquid-death-dorm.jpg",
   lane: "DOOR HANGER PROGRAM",
   title: "Liquid Death · dorm door drop",
   detail: "Branded door hangers + cans, walked floor by floor. The package waits on the door until they get home.",
   aspect: "1 / 1"
 }, {
-  src: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-2-fuel-your-day.png",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-2-fuel-your-day.jpg",
   lane: "ON-CAMPUS ACTIVATION",
   title: "Quad takeover · daytime traffic",
   detail: "Branded tent + sampling + take-home tote. Catches every class commuter between buildings.",
   aspect: "4 / 5"
 }, {
-  src: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-3-fuel-focus.png",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-3-fuel-focus.jpg",
   lane: "BACK-TO-SCHOOL SAMPLING",
   title: "Welcome week sampling station",
   detail: "Sample-and-sign-up flow. Branded merch handoff. Clipboard captures opt-ins for follow-up.",
   aspect: "4 / 5"
 }, {
-  src: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-4-apartment-pool.png",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-4-apartment-pool.jpg",
   lane: "OFF-CAMPUS ACTIVATION",
   title: "Apartment pool deck · move-in week",
   detail: "Off-campus apartment community activation. Welcome-to-the-neighborhood sampling around the pool.",
   aspect: "4 / 5"
 }, {
-  src: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-6-owala-engraving.png",
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-6-owala-engraving.jpg",
   lane: "ON-CAMPUS ACTIVATION",
   title: "Owala · custom engraving station",
   detail: "Branded experience that pulls a line. Personalized product creates earned social moments.",
