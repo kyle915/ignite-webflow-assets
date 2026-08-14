@@ -360,7 +360,7 @@ const SiteNav = ({
     };
   }, []);
   useNavEffect(() => {
-    const mq = window.matchMedia("(max-width: 991px)");
+    const mq = window.matchMedia("(max-width: 1199px)");
     const on = () => setIsTouch(mq.matches);
     on();
     mq.addEventListener ? mq.addEventListener("change", on) : mq.addListener(on);
@@ -673,12 +673,12 @@ const SiteNav = ({
     strokeLinecap: "round"
   }))))), /*#__PURE__*/React.createElement("style", null, `
         .nav-burger { display: none; }
-        @media (max-width: 991px) {
+        @media (max-width: 1199px) {
           .nav-burger { display: inline-flex !important; }
           .nav-cta-desktop { display: none !important; }
           header nav { display: none !important; }
         }
-        @media (min-width: 992px) { .nav-drawer { display: none !important; } }
+        @media (min-width: 1200px) { .nav-drawer { display: none !important; } }
         .nav-drawer-link { display: flex; align-items: center; min-height: 54px; font-family: var(--font-mono); font-size: 14px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
         .nav-drawer-row { width: 100%; display: flex; align-items: center; justify-content: space-between; min-height: 54px; font-family: var(--font-mono); font-size: 14px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.08); cursor: pointer; text-align: left; }
         .svc-child { transition: background 130ms var(--ease-out); }
@@ -1441,6 +1441,7 @@ const StickyQuoteCta = ({
 }) => {
   const [shown, setShown] = useNavState(false);
   const [dismissed, setDismissed] = useNavState(false);
+  const [blocked, setBlocked] = useNavState(false);
   useNavEffect(() => {
     if (typeof window === "undefined") return;
     try {
@@ -1449,14 +1450,37 @@ const StickyQuoteCta = ({
         return;
       }
     } catch (e) {}
-    const onScroll = () => setShown(window.scrollY > 600);
+    const pillBox = () => {
+      const vw = window.innerWidth,
+        vh = window.innerHeight;
+      return {
+        left: vw - 320,
+        top: vh - 100,
+        right: vw - 8,
+        bottom: vh - 8
+      };
+    };
+    const overlaps = (a, b) => a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+    const onScroll = () => {
+      setShown(window.scrollY > 600);
+      const circle = document.querySelector(".cap-circle");
+      if (!circle) {
+        setBlocked(false);
+        return;
+      }
+      setBlocked(overlaps(circle.getBoundingClientRect(), pillBox()));
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, {
       passive: true
     });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
-  if (dismissed || !shown) return null;
+  if (dismissed || !shown || blocked) return null;
   // Hide on small screens via CSS media query (also kept out for narrow widths)
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", null, `
         @keyframes igq-rise { 0% { opacity: 0; transform: translateY(20px) scale(0.95); } 100% { opacity: 1; transform: translateY(0) scale(1); } }

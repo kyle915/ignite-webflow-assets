@@ -10,6 +10,25 @@ a { color: inherit; text-decoration: none; }
 button { font-family: inherit; }
 img { max-width: 100%; display: block; }
 
+/* Hero set-off line — 50% white on video failed WCAG */
+.hero-setoff { color: rgba(255,255,255,0.92) !important; }
+
+/* Client marquee — `img { max-width: 100% }` + overflow:hidden clipped
+   the White Claw mark (circular, taller than the 88px row). */
+.client-marquee-item { overflow: visible !important; height: 96px !important; }
+.client-marquee-logo {
+  max-width: none !important;
+  width: auto !important;
+  height: auto !important;
+  max-height: 56px !important;
+  object-fit: contain !important;
+  object-position: center;
+}
+.client-marquee-logo[alt="White Claw"] {
+  max-height: 72px !important;
+  max-width: 220px !important;
+}
+
 ::selection { background: var(--ignite-500); color: #fff; }
 
 /* -------------------- HERO SIZE VARIANTS --------------------
