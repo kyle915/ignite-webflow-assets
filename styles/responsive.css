@@ -129,6 +129,18 @@
 }
 
 /* ============================================================
+   Tablet + small laptop (<= 1199px) — nav collapse
+   Logo + 8 nav labels + CTA is ~1200px. 991px still wrapped
+   the desktop cluster at iPad landscape / 1024–1180.
+   ============================================================ */
+@media (max-width: 1199px) {
+  header nav { display: none !important; }
+  .nav-cta-desktop { display: none !important; }
+  .nav-burger { display: inline-flex !important; }
+  header > div:first-child { height: 72px !important; gap: 12px !important; }
+}
+
+/* ============================================================
    Services Index hero — hide decorative city ticker + the "nine lanes"
    list on tablet & mobile (they get cut off), and let the headline column
    span full width once the right column is gone.
@@ -155,13 +167,3 @@ section[style*="background: var(--ink-100)"] p { color: rgba(255, 255, 255, 0.78
 /* Tighter dark-card body copy */
 section[style*="background: var(--ink-000)"] [style*="color: var(--fg-2)"],
 section[style*="background: var(--ink-100)"] [style*="color: var(--fg-2)"] { color: rgba(255,255,255,0.78) !important; }
-
-/* ============================================================
-   Tablet (<= 991px) — nav collapse
-   The desktop nav is ~867px wide; below ~960px it overflows the
-   viewport. The burger + drawer in NavFooter cover this range.
-   ============================================================ */
-@media (max-width: 991px) {
-  header nav { display: none !important; }
-  .nav-cta-desktop { display: none !important; }
-}

@@ -28,7 +28,7 @@ const CLIENT_LOGOS = [{
   url: window.__resources?.r_688c378239e6dc2ebedde728_marc_anthony_lo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c378239e6dc2ebedde728_marc-anthony-logo.webp"
 }];
 const ClientMarquee = () => /*#__PURE__*/React.createElement("section", {
-  className: "paper",
+  className: "paper client-marquee",
   style: {
     padding: "56px 0",
     borderTop: "1px solid var(--paper-200)",
@@ -66,6 +66,7 @@ const ClientMarquee = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-3-inv)"
   }
 }, "+ 200 BRANDS SINCE 2018"))), /*#__PURE__*/React.createElement("div", {
+  className: "client-marquee-track",
   style: {
     display: "flex",
     width: "max-content",
@@ -74,20 +75,25 @@ const ClientMarquee = () => /*#__PURE__*/React.createElement("section", {
   }
 }, [...CLIENT_LOGOS, ...CLIENT_LOGOS].map((c, i) => /*#__PURE__*/React.createElement("div", {
   key: i,
+  className: "client-marquee-item",
   style: {
     padding: "0 56px",
     display: "inline-flex",
     alignItems: "center",
-    height: 88
+    height: 96,
+    overflow: "visible"
   }
 }, /*#__PURE__*/React.createElement("img", {
   src: c.url,
   alt: c.name,
+  className: "client-marquee-logo",
   style: {
-    maxHeight: 64,
-    maxWidth: 200,
+    maxHeight: c.name === "White Claw" ? 72 : 56,
+    maxWidth: c.name === "White Claw" ? 220 : 200,
     width: "auto",
+    height: "auto",
     objectFit: "contain",
+    objectPosition: "center",
     filter: "grayscale(1) brightness(0.25) contrast(1.2)",
     opacity: 0.85
   },
