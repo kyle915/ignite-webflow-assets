@@ -635,7 +635,7 @@ const SparkIntegrations = () => {
       fontFamily: "var(--font-mono)"
     }
   }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "/spark-demo",
+    href: "https://kyle915.github.io/ignite-webflow-assets/spark-demo/",
     style: {
       padding: "16px 24px",
       borderRadius: 999,
