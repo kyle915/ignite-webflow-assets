@@ -326,7 +326,24 @@ const SparkHero = () => {
       fontSize: 16,
       textDecoration: "none"
     }
-  }, "See the dashboard")), /*#__PURE__*/React.createElement("div", {
+  }, "See the dashboard")), /*#__PURE__*/React.createElement("a", {
+    href: "https://client.igniteproductions.co/login",
+    className: "sp-cta-btn",
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 10,
+      padding: "16px 28px",
+      borderRadius: 999,
+      background: "var(--spark-500)",
+      color: "#0A0A0A",
+      fontFamily: "var(--font-body)",
+      fontWeight: 600,
+      fontSize: 16,
+      textDecoration: "none",
+      transition: "transform 160ms, background 160ms"
+    }
+  }, "Client login")), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 72,
       display: "grid",
@@ -492,6 +509,12 @@ const SparkDeepDash = () => {
   const [ref, inView] = useInView({
     threshold: 0.18
   });
+  const [count, setCount] = spState(4228);
+  spEffect(() => {
+    if (!inView) return;
+    const id = setInterval(() => setCount(c => c + Math.floor(Math.random() * 5 + 2)), 1100);
+    return () => clearInterval(id);
+  }, [inView]);
   return /*#__PURE__*/React.createElement("section", {
     id: "dashboard",
     style: {
@@ -517,10 +540,171 @@ const SparkDeepDash = () => {
     }
   }, "The command center for", /*#__PURE__*/React.createElement("br", null), "every program you run.")), /*#__PURE__*/React.createElement("div", {
     ref: ref,
-    className: "sp-dash-frame " + (inView ? "in" : "")
-  }, typeof SparkInteractiveDash === "function" ? React.createElement(SparkInteractiveDash, {
+    className: "sp-dash-frame " + (inView ? "in" : ""),
+    style: {
+      background: "linear-gradient(180deg, #14161B 0%, #0F1115 100%)",
+      border: "1px solid var(--ink-400)",
+      borderRadius: 20,
+      overflow: "hidden",
+      boxShadow: "0 40px 120px rgba(0,0,0,0.6)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 12,
+      padding: "12px 20px",
+      borderBottom: "1px solid var(--ink-400)",
+      background: "rgba(255,255,255,0.02)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 6
+    }
+  }, ["#FF5F57", "#FFBD2E", "#28C840"].map(c => /*#__PURE__*/React.createElement("span", {
+    key: c,
+    style: {
+      width: 11,
+      height: 11,
+      borderRadius: 999,
+      background: c
+    }
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      textAlign: "center",
+      fontFamily: "var(--font-mono)",
+      fontSize: 11,
+      color: "var(--fg-3)"
+    }
+  }, "spark.igniteproductions.co / dashboard"), /*#__PURE__*/React.createElement(LivePill, null)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "240px 1fr",
+      minHeight: 520
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      borderRight: "1px solid var(--ink-400)",
+      padding: 20,
+      background: "rgba(0,0,0,0.15)"
+    }
+  }, /*#__PURE__*/React.createElement(OpsLine, null, ">> PROGRAMS"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 8,
+      display: "flex",
+      flexDirection: "column",
+      gap: 2
+    }
+  }, [["Liquid Death / Q2 Tour", true], ["White Claw / Retail", false], ["Mark Anthony / Sampling", false], ["Dude Wipes / Festivals", false]].map(([n, a]) => /*#__PURE__*/React.createElement("div", {
+    key: n,
+    style: {
+      padding: "10px 12px",
+      borderRadius: 8,
+      background: a ? "rgba(214,243,95,0.1)" : "transparent",
+      border: "1px solid " + (a ? "rgba(214,243,95,0.3)" : "transparent"),
+      color: a ? "var(--spark-500)" : "var(--fg-2)",
+      fontSize: 13,
+      fontWeight: a ? 600 : 400,
+      display: "flex",
+      alignItems: "center",
+      gap: 8,
+      transition: "all 200ms"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 9,
+      animation: a ? "sp-pulse-dot 1.6s infinite" : "none"
+    }
+  }, a ? "◉" : "○"), " ", n)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: 24
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "repeat(4, 1fr)",
+      gap: 12,
+      marginBottom: 24
+    }
+  }, [[count.toLocaleString(), "Samples today", "+14%", "var(--spark-500)"], ["142", "On-site now", "live", "var(--fg-1)"], ["23", "Events", "6 markets", "var(--fg-1)"], ["91%", "On-time", "7d avg", "var(--success)"]].map(([n, l, d, color]) => /*#__PURE__*/React.createElement("div", {
+    key: l,
+    className: "sp-stat-card",
+    style: {
+      padding: "14px 16px",
+      background: "var(--ink-200)",
+      borderRadius: 10,
+      border: "1px solid var(--ink-400)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontWeight: 700,
+      fontSize: 26,
+      color
+    }
+  }, n), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 6,
+      display: "flex",
+      justifyContent: "space-between"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 10,
+      letterSpacing: "0.16em",
+      color: "var(--fg-3)",
+      textTransform: "uppercase"
+    }
+  }, l), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: 9,
+      color: "var(--fg-3)",
+      letterSpacing: "0.12em",
+      textTransform: "uppercase"
+    }
+  }, d))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "1.4fr 1fr",
+      gap: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: "var(--ink-100)",
+      border: "1px solid var(--ink-400)",
+      borderRadius: 12,
+      padding: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      marginBottom: 10
+    }
+  }, /*#__PURE__*/React.createElement(OpsLine, null, ">> COVERAGE // LIVE"), /*#__PURE__*/React.createElement(OpsLine, {
+    glow: true
+  }, "17 MARKETS")), /*#__PURE__*/React.createElement(CoverageMap, null)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: "var(--ink-100)",
+      border: "1px solid var(--ink-400)",
+      borderRadius: 12,
+      padding: 16
+    }
+  }, /*#__PURE__*/React.createElement(OpsLine, null, ">> ACTIVITY FEED"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 14
+    }
+  }, /*#__PURE__*/React.createElement(ActivityRows, null)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/React.createElement(OpsLine, null, ">> SAMPLES / HOUR"), /*#__PURE__*/React.createElement(SparkBars, {
     animate: inView
-  }) : null)));
+  })))))))));
 };
 const SparkBars = ({
   animate

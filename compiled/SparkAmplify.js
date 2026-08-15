@@ -635,7 +635,7 @@ const SparkIntegrations = () => {
       fontFamily: "var(--font-mono)"
     }
   }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "https://kyle915.github.io/ignite-webflow-assets/spark-demo/",
+    href: "/spark-demo",
     style: {
       padding: "16px 24px",
       borderRadius: 999,
@@ -647,7 +647,19 @@ const SparkIntegrations = () => {
       fontSize: 15,
       textDecoration: "none"
     }
-  }, "See a live walkthrough"))));
+  }, "See a live walkthrough")), /*#__PURE__*/React.createElement("a", {
+    href: "https://client.igniteproductions.co/login",
+    style: {
+      padding: "16px 24px",
+      borderRadius: 999,
+      background: SAMP_LIME,
+      color: "#0A0B0D",
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: 15,
+      textDecoration: "none"
+    }
+  }, "Client login"))));
 };
 Object.assign(window, {
   SparkAmpStyles,
