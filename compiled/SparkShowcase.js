@@ -44,8 +44,8 @@ const VIEWS = [{
 }];
 const PROGRAMS = [{
   id: "ld",
-  name: "Liquid Death / Q2 Tour",
-  short: "Liquid Death",
+  name: "Northline / Q2 Tour",
+  short: "Northline",
   kpis: {
     samples: 1842,
     onsite: 38,
@@ -56,7 +56,7 @@ const PROGRAMS = [{
   bars: [42, 58, 51, 66, 74, 61, 88, 79, 93, 71, 84, 97, 90, 76, 94, 100, 86, 91],
   broadcast: {
     src: IMG.ldNascar,
-    label: "LIQUID DEATH · LOS ANGELES"
+    label: "NORTHLINE · LOS ANGELES"
   },
   cities: [{
     name: "SAN FRANCISCO",
@@ -125,7 +125,7 @@ const PROGRAMS = [{
     status: "photo upload",
     fg: "var(--info)",
     who: "Marisol Vega",
-    detail: "12 photos · Murdered Out cans"
+    detail: "12 photos · core tallboy"
   }, {
     t: "08:21",
     place: "SAN FRANCISCO, CA",
@@ -143,7 +143,7 @@ const PROGRAMS = [{
     leads: 124,
     status: "Ready",
     photos: [IMG.ldMiami, IMG.ldNascar, IMG.ldWeb],
-    note: "Line held past 6pm. Tallboy Murdered Out moved fastest. Two store managers asked for a restock window."
+    note: "Line held past 6pm. Core tallboy moved fastest. Two store managers asked for a restock window."
   }, {
     id: "ld-2",
     market: "San Francisco, CA",
@@ -153,7 +153,7 @@ const PROGRAMS = [{
     leads: 96,
     status: "Ready",
     photos: [IMG.ldPet, IMG.ldDorm],
-    note: "College crowd, high dwell. Sparkling Mountain Water outpaced flavored SKUs 3:2."
+    note: "College crowd, high dwell. Unflavored still outpaced flavored SKUs 3:2."
   }, {
     id: "ld-3",
     market: "Denver, CO",
@@ -207,7 +207,7 @@ const PROGRAMS = [{
     type: "Street sampling"
   }, {
     id: "r2",
-    title: "PetSmart aisle demo",
+    title: "Pet retailer aisle demo",
     market: "San Francisco",
     when: "Aug 18 · 10–4",
     status: "Needs 1 BA",
@@ -222,8 +222,8 @@ const PROGRAMS = [{
   }]
 }, {
   id: "wc",
-  name: "White Claw / Retail Demos",
-  short: "White Claw",
+  name: "Tidewater / Retail Demos",
+  short: "Tidewater",
   kpis: {
     samples: 1264,
     onsite: 31,
@@ -234,7 +234,7 @@ const PROGRAMS = [{
   bars: [36, 44, 48, 55, 62, 58, 70, 66, 78, 74, 81, 76, 88, 82, 90, 86, 93, 89],
   broadcast: {
     src: IMG.wcAustin,
-    label: "WHITE CLAW · AUSTIN"
+    label: "TIDEWATER · AUSTIN"
   },
   cities: [{
     name: "SEATTLE",
@@ -393,8 +393,8 @@ const PROGRAMS = [{
   }]
 }, {
   id: "ma",
-  name: "Mark Anthony / Sampling",
-  short: "Mark Anthony",
+  name: "Harbor & Co / Sampling",
+  short: "Harbor & Co",
   kpis: {
     samples: 968,
     onsite: 24,
@@ -405,7 +405,7 @@ const PROGRAMS = [{
   bars: [28, 34, 40, 38, 46, 52, 49, 58, 61, 55, 64, 70, 68, 74, 72, 78, 76, 82],
   broadcast: {
     src: IMG.mas,
-    label: "MARK ANTHONY · MIAMI"
+    label: "HARBOR & CO · MIAMI"
   },
   cities: [{
     name: "MIAMI",
@@ -517,8 +517,8 @@ const PROGRAMS = [{
   }]
 }, {
   id: "dw",
-  name: "Dude Wipes / Festivals",
-  short: "Dude Wipes",
+  name: "Ridge Supply / Festivals",
+  short: "Ridge Supply",
   kpis: {
     samples: 2106,
     onsite: 49,
@@ -529,7 +529,7 @@ const PROGRAMS = [{
   bars: [50, 62, 58, 70, 77, 81, 74, 88, 92, 85, 94, 90, 97, 93, 100, 96, 98, 95],
   broadcast: {
     src: IMG.dude,
-    label: "DUDE WIPES · LOS ANGELES"
+    label: "RIDGE SUPPLY · LOS ANGELES"
   },
   cities: [{
     name: "LOS ANGELES",
@@ -1143,7 +1143,7 @@ const BroadcastTile = ({
 }) => {
   const p = photo || {
     src: IMG.wcAustin,
-    label: "WHITE CLAW · AUSTIN"
+    label: "TIDEWATER · AUSTIN"
   };
   return /*#__PURE__*/React.createElement("button", {
     type: "button",
