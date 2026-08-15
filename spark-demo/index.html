@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spark demo · Ignite Productions</title>
+  <meta name="description" content="Clickable demo of Spark, Ignite's field marketing command center. Switch programs, open recaps, and walk the dashboard without a login.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../assets/spark-logomark-pixel.png">
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/responsive.css">
+  <style>
+    html, body { margin: 0; background: #0A0B0D; }
+    #spark-demo-root { min-height: 100dvh; }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+</head>
+<body>
+  <div id="spark-demo-root"></div>
+  <script>
+    window.__assetsBase = "../assets/";
+    window.__resources = {
+      r_assets_spark_logo_full_png: "../assets/spark-logo-full.png",
+      r_assets_spark_logomark_pixel_png: "../assets/spark-logomark-pixel.png",
+      r_assets_chrome_blob_medium_png: "../assets/chrome-blob-medium.png"
+    };
+  </script>
+  <script src="../compiled/Shared.js"></script>
+  <script src="../compiled/Primitives.js"></script>
+  <script src="../compiled/SparkShowcase.js"></script>
+  <script>
+    (function () {
+      var root = document.getElementById("spark-demo-root");
+      var App = window.SparkDemoApp || window.SparkShowcase;
+      if (!root || !window.React || !window.ReactDOM || typeof App === "undefined") {
+        root.innerHTML = "<p style='color:#FAFAF7;font-family:monospace;padding:40px'>Demo failed to load. Refresh, or open the homepage Spark section.</p>";
+        return;
+      }
+      ReactDOM.createRoot(root).render(React.createElement(App));
+    })();
+  </script>
+</body>
+</html>
