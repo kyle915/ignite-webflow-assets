@@ -367,7 +367,7 @@ const HomeHero = () => {
     style: {
       color: "var(--spark-500)"
     }
-  }, "\u25CF"), " Request staff now"))), /*#__PURE__*/React.createElement("div", {
+  }, "\u25CF"), " Get In Touch"))), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "relative",
       zIndex: 3,
