@@ -637,7 +637,7 @@ const SiteNav = ({
     size: "sm",
     accent: "spark",
     onClick: () => location.href = rel + "/contact?urgent=1"
-  }, "Request staff now")), /*#__PURE__*/React.createElement("button", {
+  }, "Get In Touch")), /*#__PURE__*/React.createElement("button", {
     className: "nav-burger",
     "aria-label": mobileOpen ? "Close menu" : "Open menu",
     "aria-expanded": mobileOpen,
@@ -1216,7 +1216,7 @@ const SiteNav = ({
       fontSize: 16,
       textDecoration: "none"
     }
-  }, "Request staff now ", /*#__PURE__*/React.createElement("span", {
+  }, "Get In Touch ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-mono)"
     }

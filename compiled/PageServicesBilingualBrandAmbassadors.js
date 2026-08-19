@@ -364,7 +364,7 @@ const BL_DICT = {
   "INDUSTRIES": "INDUSTRIAS",
   "MARKETS": "MERCADOS",
   "SERVICES": "SERVICIOS",
-  "Request staff now": "Solicitar personal ya",
+  "Get In Touch": "Contáctanos",
   "Staffing & Talent": "Personal y Talento",
   "Sampling": "Muestreo",
   "Retail Programs": "Programas de Retail",
