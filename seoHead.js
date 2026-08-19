@@ -11,7 +11,7 @@
   if (window.__igniteSeoHeadLoaded) return;
   window.__igniteSeoHeadLoaded = true;
 
-  var ROOT = "https://igniteproductions.co";
+  var ROOT = "https://www.igniteproductions.co";
   var path = (location.pathname || "/").replace(/\/+$/, "") || "/";
   var canonical = (ROOT + (path === "/" ? "/" : path)).replace(/\/{2,}/g, function(m, off){ return off === 6 ? m : "/"; });
 
