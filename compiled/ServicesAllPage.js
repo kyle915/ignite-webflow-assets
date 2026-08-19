@@ -137,12 +137,12 @@ const SVC_LANES = [{
   n: "04",
   accent: "#FFB627",
   title: "Event Staffing",
-  sub: "42K+ vetted ambassadors, all 50 states, 48-hour rush.",
+  sub: "257,000+ vetted ambassadors, all 50 states, 48-hour rush.",
   long: "Brand ambassadors, street teams, bilingual staff, and tour managers — vetted, trained, and dispatched fast. Real people who learn your brand and report what mattered.",
   bullets: ["Brand Ambassadors", "Street Teams", "Bilingual Staff", "Tour Managers", "Booth Staff", "Mascots & Costume"],
   img: window.__resources?.r_68962cc2d0a6bcf7ced84e53_WHITECLAW96_05_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/68962cc2d0a6bcf7ced84e53_WHITECLAW96_05_27_2025_Adia_Oshikoya_84db346d-29fd-6179-d310-6927f656bdca_0.jpg",
   imgPos: "center 30%",
-  meta: ["42K+ roster", "All 50 states", "48-hr rush"]
+  meta: ["257,000+ roster", "All 50 states", "48-hr rush"]
 }, {
   slug: "product-sampling",
   n: "05",
@@ -448,54 +448,7 @@ const SvcHero = () => {
       textWrap: "balance",
       position: "relative"
     }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: "block"
-    }
-  }, "Everything"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: "block"
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontStyle: "italic",
-      color: "var(--ignite-500)",
-      textShadow: "0 0 40px rgba(215, 69, 62,0.25)"
-    }
-  }, "experiential")), /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: "block",
-      marginTop: "0.04em"
-    }
-  }, "built, staffed,", " ", /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: "var(--fg-3)"
-    }
-  }, "and"), " ", /*#__PURE__*/React.createElement("span", {
-    style: {
-      position: "relative",
-      display: "inline-block"
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    "aria-hidden": "true",
-    style: {
-      position: "absolute",
-      inset: "-14% -8%",
-      background: "radial-gradient(ellipse at center, rgba(214,243,95,0.4), transparent 65%)",
-      filter: "blur(18px)",
-      zIndex: 0,
-      pointerEvents: "none",
-      animation: "svcMeasuredPulse 2.6s ease-in-out infinite"
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    style: {
-      position: "relative",
-      zIndex: 1,
-      color: "var(--spark-500)",
-      textShadow: "0 0 28px rgba(214,243,95,0.45)",
-      animation: "svcMeasuredTextPulse 2.6s ease-in-out infinite"
-    }
-  }, "measured.")))), /*#__PURE__*/React.createElement("p", {
+  }, "Event Marketing"), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 32,
       fontSize: 19,
@@ -1084,7 +1037,7 @@ const SvcStats = () => /*#__PURE__*/React.createElement("section", {
     gridTemplateColumns: "repeat(4, 1fr)",
     gap: 24
   }
-}, [["42K+", "vetted ambassadors", "var(--spark-500)"], ["50", "states active · national coverage", "var(--ignite-500)"], ["12yrs", "running, still veteran-owned", "var(--ember-500)"], ["48hr", "rush staffing, anywhere", "var(--spark-500)"]].map(([n, l, c]) => /*#__PURE__*/React.createElement("div", {
+}, [["257,000+", "vetted ambassadors", "var(--spark-500)"], ["50", "states active · national coverage", "var(--ignite-500)"], ["12yrs", "running, still veteran-owned", "var(--ember-500)"], ["48hr", "rush staffing, anywhere", "var(--spark-500)"]].map(([n, l, c]) => /*#__PURE__*/React.createElement("div", {
   key: l,
   style: {
     paddingTop: 14,
