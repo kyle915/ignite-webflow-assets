@@ -326,7 +326,24 @@ const SparkHero = () => {
       fontSize: 16,
       textDecoration: "none"
     }
-  }, "See the dashboard")), /*#__PURE__*/React.createElement("div", {
+  }, "See the dashboard")), /*#__PURE__*/React.createElement("a", {
+    href: "https://client.igniteproductions.co/login",
+    className: "sp-cta-btn",
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 10,
+      padding: "16px 28px",
+      borderRadius: 999,
+      background: "var(--spark-500)",
+      color: "#0A0A0A",
+      fontFamily: "var(--font-body)",
+      fontWeight: 600,
+      fontSize: 16,
+      textDecoration: "none",
+      transition: "transform 160ms, background 160ms"
+    }
+  }, "Client login")), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 72,
       display: "grid",
