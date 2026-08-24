@@ -141,7 +141,7 @@ const SERVICES_DATA = {
     short: "Staffing",
     eyebrow: "STAFFING // 257K+ ROSTER",
     tagline: "257,000 ambassadors. 50 states. 48 hours.",
-    intro: "Brand ambassadors, street teams, tour managers, and bilingual specialists — vetted, trained on your brand, dispatched anywhere in the country. Spark gives you live check-ins, GPS-verified attendance, and recap-ready reporting on every shift.",
+    intro: "Ignite Productions is a veteran-owned (VOSB) event staffing agency founded in 2018 in Sparks, Nevada. We recruit, vet, and deploy 257,000+ brand ambassadors in all 50 states. Contact staffing@igniteproductions.co or 775.406.0435.",
     hero: "https://kyle915.github.io/ignite-webflow-assets/assets/staffing-liquid-death-acl.jpg",
     sub: [{
       t: "Brand Ambassadors",
