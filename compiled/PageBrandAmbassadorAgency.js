@@ -1087,77 +1087,61 @@ const Spark = () => {
   }, l)))))))));
 };
 
-/* ---------- FAQ ---------- */
-const FAQS = [["What does a brand ambassador agency do?", "It recruits, vets, trains, schedules, and manages the people who represent a brand in the field — sampling, demos, festivals, trade shows, activations. Ignite runs the full cycle through real-time reporting, in all 50 states."], ["How many brand ambassadors does Ignite have?", "A vetted network of 257,000+ across all 50 states, so programs scale from a single market to a national rollout."], ["How fast can you staff a program?", "For most markets, within days. A 30-minute scoping call gives us what we need to ballpark timing, coverage, and budget."], ["Do you train and brief the ambassadors?", "Yes. Every ambassador is briefed and trained on your brand, the activation goal, and the conversion ask — not handed a script."], ["How do I know the ambassadors actually showed up?", "Spark gives you GPS-verified clock-in, photo uploads, and real-time reporting — you see each shift as it happens, not weeks later."], ["Are you a nationwide brand ambassador agency?", "Yes. We staff all 50 states from one vetted national network, so you get one consistent partner instead of a different local vendor in every market."]];
-const Faq = () => {
-  const [open, setOpen] = React.useState(0);
-  return /*#__PURE__*/React.createElement("section", {
-    style: {
-      background: "#0C0E13",
-      color: "#fff",
-      padding: "110px 0",
-      borderBottom: "1px solid rgba(255,255,255,0.08)"
-    }
-  }, /*#__PURE__*/React.createElement(Container, {
-    style: {
-      maxWidth: 880
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "ba-reveal",
-    style: {
-      marginBottom: 34
-    }
-  }, /*#__PURE__*/React.createElement(Mono, {
-    color: ORANGE
-  }, "// QUESTIONS BUYERS ASK"), /*#__PURE__*/React.createElement("h2", {
-    style: {
-      marginTop: 14,
-      fontFamily: "var(--font-display)",
-      fontWeight: 800,
-      fontSize: "clamp(30px,4vw,56px)",
-      letterSpacing: "-0.03em"
-    }
-  }, "Straight answers.")), /*#__PURE__*/React.createElement("div", {
-    className: "ba-reveal"
-  }, FAQS.map(([q, a], i) => /*#__PURE__*/React.createElement("div", {
-    key: i,
-    onClick: () => setOpen(open === i ? -1 : i),
-    style: {
-      borderBottom: "1px solid rgba(255,255,255,0.12)",
-      padding: "22px 0",
-      cursor: "pointer"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: "flex",
-      justifyContent: "space-between",
-      gap: 20,
-      alignItems: "center"
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-display)",
-      fontWeight: 700,
-      fontSize: 19
-    }
-  }, q), /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: ORANGE,
-      fontSize: 22,
-      fontFamily: "var(--font-mono)",
-      transform: open === i ? "rotate(45deg)" : "none",
-      transition: "transform 300ms"
-    }
-  }, "+")), open === i && /*#__PURE__*/React.createElement("p", {
-    style: {
-      marginTop: 12,
-      fontSize: 15.5,
-      lineHeight: 1.6,
-      color: "rgba(255,255,255,0.72)",
-      maxWidth: 700
-    }
-  }, a))))));
-};
+/* ---------- FAQ (crawlable single Q/A) ---------- */
+const FAQ_QUESTION = "What is a brand ambassador agency?";
+const FAQ_ANSWER = "A brand ambassador agency recruits, vets, trains, and deploys people who represent a brand at sampling, retail demos, festivals, and trade shows. Ignite Productions is a veteran-owned (VOSB) brand ambassador agency founded in 2018 in Sparks, Nevada. We staff 257,000+ vetted brand ambassadors in all 50 states. Contact staffing@igniteproductions.co or 775.406.0435.";
+const Faq = () => /*#__PURE__*/React.createElement("section", {
+  id: "faq",
+  "aria-labelledby": "baa-faq-heading",
+  style: {
+    background: "#0C0E13",
+    color: "#fff",
+    padding: "110px 0",
+    borderBottom: "1px solid rgba(255,255,255,0.08)"
+  }
+}, /*#__PURE__*/React.createElement(Container, {
+  style: {
+    maxWidth: 880
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  className: "ba-reveal",
+  style: {
+    marginBottom: 34
+  }
+}, /*#__PURE__*/React.createElement(Mono, {
+  color: ORANGE
+}, "// QUESTIONS BUYERS ASK"), /*#__PURE__*/React.createElement("h2", {
+  id: "baa-faq-heading",
+  style: {
+    marginTop: 14,
+    fontFamily: "var(--font-display)",
+    fontWeight: 800,
+    fontSize: "clamp(30px,4vw,56px)",
+    letterSpacing: "-0.03em"
+  }
+}, "Straight answers.")), /*#__PURE__*/React.createElement("article", {
+  className: "ba-reveal",
+  style: {
+    borderBottom: "1px solid rgba(255,255,255,0.12)",
+    padding: "22px 0"
+  }
+}, /*#__PURE__*/React.createElement("h3", {
+  style: {
+    fontFamily: "var(--font-display)",
+    fontWeight: 700,
+    fontSize: 19,
+    margin: 0
+  }
+}, FAQ_QUESTION), /*#__PURE__*/React.createElement("p", {
+  style: {
+    marginTop: 12,
+    marginBottom: 0,
+    fontSize: 15.5,
+    lineHeight: 1.6,
+    color: "rgba(255,255,255,0.72)",
+    maxWidth: 700
+  }
+}, FAQ_ANSWER))));
 
 /* ---------- CTA ---------- */
 const CTA = () => /*#__PURE__*/React.createElement("section", {

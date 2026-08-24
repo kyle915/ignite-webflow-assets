@@ -3,8 +3,9 @@
      - <link rel="canonical"> (self-referencing current URL, stripped of query/hash)
      - <link rel="alternate" hreflang="en-us"> + hreflang="x-default"
    On homepage only:
-     - Organization + LocalBusiness JSON-LD with sameAs array
-     - Site-wide FAQPage JSON-LD
+     - Organization JSON-LD (single block; no LocalBusiness)
+   On /brand-ambassador-agency only:
+     - FAQPage JSON-LD (one Q/A)
    On every page, ensures og:url is set to canonical.
    Idempotent — does nothing if SeoHead has already run. */
 (function(){
@@ -50,44 +51,45 @@
   ensureLink("alternate", "x-default", canonical);
   ensureMeta("og:url", canonical);
 
-  /* Homepage-only payloads */
+  /* Homepage-only Organization schema */
   if (path === "/" || path === "") {
-    injectLd({
-      "@context": "https://schema.org",
-      "@type": ["Organization", "LocalBusiness"],
-      "name": "Ignite Productions",
-      "alternateName": "Ignite",
-      "description": "Veteran-owned experiential marketing and brand activation agency. Event staffing, product sampling, mobile tours, fabrication, trade shows, promotional products across all 50 states.",
-      "url": ROOT,
-      "logo": ROOT + "/assets/ignite-full-black.png",
-      "foundingDate": "2018",
-      "areaServed": "United States",
-      "sameAs": [
-        "https://www.linkedin.com/company/ignite-productionsllc/",
-        "https://www.instagram.com/igniteproductionsllc/",
-        "https://www.facebook.com/igniteproductionsllc/"
-      ],
-      "makesOffer": [
-        { "@type": "Offer", "name": "Experiential Marketing" },
-        { "@type": "Offer", "name": "Mobile Marketing Tours" },
-        { "@type": "Offer", "name": "Fabrication & Builds" },
-        { "@type": "Offer", "name": "Event Staffing" },
-        { "@type": "Offer", "name": "Product Sampling" },
-        { "@type": "Offer", "name": "Trade Show Support" },
-        { "@type": "Offer", "name": "Promotional Products" }
-      ]
-    }, "org");
+    var staleFaq = document.querySelector('script[type="application/ld+json"][data-seo="home-faq"]');
+    if (staleFaq) staleFaq.remove();
 
     injectLd({
       "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Ignite Productions",
+      "legalName": "Ignite Productions LLC",
+      "description": "Veteran-owned (VOSB) field marketing, event marketing, event staffing, and brand ambassador agency with 257,000+ vetted brand ambassadors. Founded 2018 in Sparks, Nevada.",
+      "url": ROOT,
+      "foundingDate": "2018",
+      "email": "staffing@igniteproductions.co",
+      "telephone": "775.406.0435",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sparks",
+        "addressRegion": "NV",
+        "addressCountry": "US"
+      },
+      "areaServed": "US",
+      "sameAs": "https://www.linkedin.com/company/ignite-productionsllc/"
+    }, "org");
+  }
+
+  /* Brand ambassador agency FAQ schema */
+  if (path === "/brand-ambassador-agency") {
+    injectLd({
+      "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "How fast can you staff an activation?", "acceptedAnswer": { "@type": "Answer", "text": "Rush queue runs at 48 hours from brief to boots on the ground. Standard staffing books 5-10 business days out. We staff in all 50 states." } },
-        { "@type": "Question", "name": "Do you handle permits, COIs, and on-site logistics?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Permits, certificates of insurance, transport, storage, install, and strike are all in scope. We are a turnkey field-to-finish shop." } },
-        { "@type": "Question", "name": "What's the minimum engagement?", "acceptedAnswer": { "@type": "Answer", "text": "Single-event activations through national multi-market tours. No long-term contract required. We scope to fit your campaign." } },
-        { "@type": "Question", "name": "Can you run alcohol sampling programs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We staff TIPS / TABC / RBS certified ambassadors in every market that requires them." } },
-        { "@type": "Question", "name": "Which markets do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "All 50 states and 200+ named metros. Core network runs 30 primary markets daily with surge capacity in 170+ more." } }
-      ]
-    }, "home-faq");
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is a brand ambassador agency?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brand ambassador agency recruits, vets, trains, and deploys people who represent a brand at sampling, retail demos, festivals, and trade shows. Ignite Productions is a veteran-owned (VOSB) brand ambassador agency founded in 2018 in Sparks, Nevada. We staff 257,000+ vetted brand ambassadors in all 50 states. Contact staffing@igniteproductions.co or 775.406.0435."
+        }
+      }]
+    }, "baa-faq");
   }
 })();
