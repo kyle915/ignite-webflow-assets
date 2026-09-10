@@ -488,7 +488,7 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
 }, "deserves.")), /*#__PURE__*/React.createElement("div", {
   className: "svc-final-ctas"
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     display: "inline-flex",
     alignItems: "center",
@@ -509,7 +509,7 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
     fontFamily: "var(--font-mono)"
   }
 }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "/contact?urgent=1",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     display: "inline-flex",
     alignItems: "center",
