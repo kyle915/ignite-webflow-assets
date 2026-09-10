@@ -30,7 +30,7 @@ const CITY_FALLBACK_CTA = {
   heading: "Let's run something here.",
   body: "Brief us on the program. Single-night activation through national tour — we'll scope it to fit.",
   primaryLabel: "Start a brief",
-  primaryHref: "/contact",
+  primaryHref: "https://www.igniteproductions.co/contact?urgent=1",
   secondaryLabel: "See the work",
   secondaryHref: "/work"
 };

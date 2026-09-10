@@ -822,7 +822,7 @@ function BlogIndex() {
       gap: 16
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact?urgent=1",
     style: {
       display: 'flex',
       justifyContent: 'space-between',

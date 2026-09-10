@@ -60,7 +60,7 @@ const FractionalHero = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(AccentBtn, {
   size: "lg",
-  onClick: () => location.href = "/contact"
+  onClick: () => location.href = "https://www.igniteproductions.co/contact?urgent=1"
 }, "Book a strategy call"), /*#__PURE__*/React.createElement(GhostBtn, {
   size: "lg"
 }, "See how it works"))));
@@ -196,7 +196,7 @@ const FractionalTiers = () => /*#__PURE__*/React.createElement("section", {
     marginTop: 32
   }
 }, /*#__PURE__*/React.createElement(AccentBtn, {
-  onClick: () => location.href = "/contact",
+  onClick: () => location.href = "https://www.igniteproductions.co/contact?urgent=1",
   style: {
     width: "100%",
     justifyContent: "center"

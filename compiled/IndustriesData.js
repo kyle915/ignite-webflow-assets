@@ -106,7 +106,7 @@ const INDUSTRIES_DATA = {
       line: "Distributor-led demos"
     }],
     faqs: [{
-      q: "Can you staff a beverage program in every state we sell in?",
+      q: "Can a beverage brand staff field marketing programs in all 50 states?",
       a: "Yes. We staff in all 50 states with in-market crew. For alcohol-adjacent or alcohol categories, we deploy TIPS / TABC / RBS-certified ambassadors where state law requires."
     }, {
       q: "How do you track samples and conversions?",
@@ -162,7 +162,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a beverage program.",
       body: "Single-market sampling through national rollouts. We'll come back with crew, compliance, and a quote inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "/contact"
+      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
     }
   },
   /* ============= CPG FOOD & SNACK ============= */
@@ -213,7 +213,7 @@ const INDUSTRIES_DATA = {
       line: "Health & wellness retail trial"
     }],
     faqs: [{
-      q: "Can you sample inside major grocery chains?",
+      q: "Can you run product sampling inside major grocery chains like Whole Foods and Kroger?",
       a: "Yes — we staff inside Whole Foods, Sprouts, Wegmans, Target, Costco, Publix, Kroger, and most regional banners. We handle the demo permit, COI, and chain-specific paperwork."
     }, {
       q: "Do your ambassadors have food handler certifications?",
@@ -266,7 +266,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a food sampling program.",
       body: "Single-store launch through 300-store national rollouts. We'll quote crew, compliance, and chain coordination inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "/contact"
+      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
     }
   },
   /* ============= ALCOHOL & SPIRITS ============= */
@@ -326,7 +326,7 @@ const INDUSTRIES_DATA = {
       line: "Distributor demos with full TIPS coverage"
     }],
     faqs: [{
-      q: "Are all your alcohol ambassadors TIPS / TABC / RBS certified?",
+      q: "Are your alcohol brand ambassadors TIPS, TABC, and RBS certified?",
       a: "Yes. We don't staff a regulated pour with anyone who isn't currently certified. Cards on file, refreshed before expiry, available for distributor audit."
     }, {
       q: "Can you coordinate with our distributor for an in-store demo?",
@@ -385,7 +385,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a regulated activation.",
       body: "From a single tasting to a national distributor rollout — we handle the compliance, the crew, and the cardboard cutouts.",
       primaryLabel: "Start a brief",
-      primaryHref: "/contact"
+      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
     }
   },
   /* ============= TECH & SAAS ============= */
@@ -433,7 +433,7 @@ const INDUSTRIES_DATA = {
       line: "Money 20/20, Dreamforce, AWS re:Invent"
     }],
     faqs: [{
-      q: "Can your booth staff actually demo our product?",
+      q: "Can trade show booth staff demo a SaaS or tech product?",
       a: "Yes — for a brief. We staff demo specialists when the product needs it, brief them on your messaging and demo flow before the event, and pair them with technical leads from your team for the deep questions."
     }, {
       q: "How do you handle lead capture and CRM handoff?",
@@ -489,7 +489,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a tech activation.",
       body: "Booth staffing, brand house, customer dinner, or full conference takeover. We'll scope and quote inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "/contact"
+      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
     }
   },
   /* ============= AUTOMOTIVE ============= */
@@ -537,7 +537,7 @@ const INDUSTRIES_DATA = {
       line: "Multi-stop dealer event tour"
     }],
     faqs: [{
-      q: "Can your team actually answer technical product questions?",
+      q: "Can automotive event staff answer technical product questions at a show?",
       a: "We staff a mix: product specialists trained on your model lineup before deployment, plus floor team for traffic and lead capture. For deep technical Q&A we pair with your OEM rep or a brand-certified specialist."
     }, {
       q: "Do you handle ride-and-drive operations?",
@@ -590,7 +590,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on an auto program.",
       body: "Single show, full season, or ride-and-drive tour. We'll scope crew, logistics, and vehicle handling inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "/contact"
+      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
     }
   },
   /* ============= LIFESTYLE & BEAUTY ============= */
@@ -632,7 +632,7 @@ const INDUSTRIES_DATA = {
     }],
     proofPoints: [],
     faqs: [{
-      q: "Do your ambassadors know how to actually demo a beauty product?",
+      q: "Can brand ambassadors demo beauty and skincare products at retail?",
       a: "For application-heavy categories (color, fragrance, skincare) we staff crew with relevant retail or cosmetology backgrounds and run product-specific training before deployment."
     }, {
       q: "Can you activate inside Sephora or Ulta?",
@@ -688,7 +688,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a beauty activation.",
       body: "Pop-up, retail trial, or multi-market launch — we'll scope crew, retailer compliance, and content strategy inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "/contact"
+      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
     }
   },
   /* ============= CANNABIS & CBD ============= */
@@ -779,7 +779,7 @@ const INDUSTRIES_DATA = {
       points: ["21+ ID-check completion rate per shift", "Refusal-to-serve incident log", "State / jurisdiction compliance flag per program", "Dispensary partner-ready recap exports"]
     },
     faqs: [{
-      q: "Where can you legally run cannabis sampling?",
+      q: "Where is cannabis sampling and dispensary activation legal?",
       a: "Where state and local law explicitly permit it. We won't fudge it — if your target market doesn't allow sampling, we'll propose a budtender-education or hemp-derived alternative."
     }, {
       q: "Are your ambassadors trained on cannabis compliance?",
@@ -792,7 +792,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a cannabis program.",
       body: "Dispensary activation, budtender education, or compliant sampling in legal markets. We'll scope and quote inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "/contact"
+      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
     }
   },
   /* ============= SPORTS & ENTERTAINMENT ============= */
@@ -883,7 +883,7 @@ const INDUSTRIES_DATA = {
       points: ["Per-section / per-gate sampling counts", "Fan-zone dwell + engagement time", "Broadcast-window activation windows logged", "Game-day weather impact tagged to KPIs"]
     },
     faqs: [{
-      q: "Can you activate inside major stadiums?",
+      q: "Can you run brand activations inside NFL, MLB, and NBA stadiums?",
       a: "Yes. We've staffed concourse, fan zone, and on-field programs across NFL, MLB, NBA, NHL, MLS, and motorsports venues. We coordinate with the team, the venue, and (where needed) the league office."
     }, {
       q: "How early do we need to plan a game-day program?",
@@ -896,7 +896,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a stadium program.",
       body: "Single game, multi-game tour, fan zone, or full season-long property activation. We'll scope crew, venue clearance, and game-day logistics inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "/contact"
+      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
     }
   },
   /* ============= PET & ANIMAL ============= */
@@ -975,7 +975,7 @@ const INDUSTRIES_DATA = {
       points: ["Per-store unit counts at retail", "Pet-parent demographic capture", "Content release rights captured for socials"]
     },
     faqs: [{
-      q: "Can you activate inside PetSmart and Petco?",
+      q: "Can you run in-store pet brand sampling inside PetSmart and Petco?",
       a: "Yes. We've run programs inside PetSmart at national scale, and we handle the chain-specific paperwork, demo permits, and store-level coordination."
     }, {
       q: "How do you handle sampling around live pets?",
@@ -985,7 +985,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a pet program.",
       body: "Single chain rollout, lifestyle event, or multi-market trial. We'll scope crew, chain compliance, and adoption partnerships inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "/contact"
+      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
     }
   },
   /* ============= HEALTH & WELLNESS ============= */
@@ -1067,7 +1067,7 @@ const INDUSTRIES_DATA = {
       points: ["Claims-compliance check per ambassador", "Per-ingredient disclosure log", "Channel-by-channel conversion intent"]
     },
     faqs: [{
-      q: "Are your ambassadors briefed on FDA compliance?",
+      q: "How do you keep supplement and wellness sampling FDA-compliant?",
       a: "Yes. For any supplement, functional, or claims-sensitive program, crew gets a written briefing on what they can and can't say — reviewed against your label and legal team before deployment."
     }, {
       q: "Can you sample inside gyms and fitness studios?",
@@ -1077,7 +1077,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a wellness program.",
       body: "Single-channel trial through multi-market national rollouts. We'll scope crew, compliance, and channel mix inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "/contact"
+      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
     }
   },
   /* ============= QSR & RESTAURANT ============= */
@@ -1162,7 +1162,7 @@ const INDUSTRIES_DATA = {
       points: ["Line length + capture rate per unit", "Sample-to-purchase conversion", "Loyalty enrollment captured per shift", "Multi-unit rollout pacing"]
     },
     faqs: [{
-      q: "Can you support a multi-unit franchise launch?",
+      q: "Can you staff a multi-unit QSR or restaurant franchise grand opening?",
       a: "Yes. We've run sequenced multi-unit grand openings — staffing rotations, vehicle staging, supply chain on swag and signage, plus a single PM coordinating across all units."
     }, {
       q: "How much lead time for a grand opening?",
@@ -1172,7 +1172,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a QSR launch.",
       body: "Single-unit grand opening, LTO trial, or multi-unit franchise rollout. We'll scope crew, permits, and capture inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "/contact"
+      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
     }
   },
   /* ============= GAMING & ESPORTS ============= */
@@ -1257,7 +1257,7 @@ const INDUSTRIES_DATA = {
       points: ["Per-station demo session count", "Hardware uptime + controller cycles", "Creator-collab attendance + content rights", "Booth dwell + community capture"]
     },
     faqs: [{
-      q: "Can your crew actually play the game?",
+      q: "Can event staff actually demo a video game at a convention or esports event?",
       a: "For demo-heavy programs, yes. We staff demo specialists from the gaming community — Twitch streamers, esports vets, console+PC players — and run pre-event training on your specific title."
     }, {
       q: "Do you handle NDAs for unreleased content?",
@@ -1267,7 +1267,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a gaming program.",
       body: "Console launch, esports tournament, creator collab, or convention booth. We'll scope crew, hardware, and compliance inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "/contact"
+      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
     }
   },
   /* ============= HOSPITALITY & TRAVEL ============= */
@@ -1349,7 +1349,7 @@ const INDUSTRIES_DATA = {
       points: ["Per-property interaction count", "Service-standard compliance per shift", "Multi-language interactions captured", "Luxury-brand-ready recap exports"]
     },
     faqs: [{
-      q: "Can you run a property opening across multiple hotels in one chain?",
+      q: "Can you staff hotel property openings across multiple locations in one chain?",
       a: "Yes. We've sequenced multi-property opening tours — staffing rotations, brand-standard briefings per property, plus a single PM coordinating across the chain."
     }, {
       q: "Do you have airport-cleared crew?",
@@ -1362,7 +1362,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a hospitality program.",
       body: "Property opening, airline lounge, destination tour, or travel-trade conference. We'll scope crew, property clearances, and language coverage inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "/contact"
+      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
     }
   }
 };

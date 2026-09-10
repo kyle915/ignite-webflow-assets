@@ -424,7 +424,7 @@ const AboutHero = () => {
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact?urgent=1",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -2236,7 +2236,7 @@ const AboutFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     justifyContent: "center"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact",
+  href: "https://www.igniteproductions.co/contact?urgent=1",
   style: {
     padding: "18px 26px",
     borderRadius: 999,
@@ -2594,7 +2594,7 @@ const AboutSpark = () => {
       boxShadow: "0 0 24px rgba(214, 243, 95, 0.2)"
     }
   }, "See Spark in action \u2192"), /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact?urgent=1",
     style: {
       padding: "15px 24px",
       borderRadius: 999,
@@ -2805,14 +2805,14 @@ const ABOUT_ENGAGEMENT = [{
   body: "A launch, a tour leg, a stadium takeover. We scope, build, staff, run, and measure a single campaign — then hand you the recap.",
   best: "Best for: a defined moment with a clear date.",
   cta: "Request a quote",
-  href: "/contact"
+  href: "https://www.igniteproductions.co/contact?urgent=1"
 }, {
   tag: "02 · RETAINER",
   title: "Always-on field execution.",
   body: "We become your field marketing arm. Recurring sampling, demo cycles, regional tours, ambassador programs — measured continuously through Spark.",
   best: "Best for: programs running 6+ months.",
   cta: "Talk through scope",
-  href: "/contact"
+  href: "https://www.igniteproductions.co/contact?urgent=1"
 }, {
   tag: "03 · FRACTIONAL",
   title: "Embedded leadership.",
@@ -3129,14 +3129,17 @@ const AboutOffsite = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "absolute",
     left: 18,
+    right: 18,
     bottom: 16,
+    width: "fit-content",
+    maxWidth: "calc(100% - 36px)",
     padding: "8px 12px",
     borderRadius: 999,
     background: "rgba(10,11,13,0.7)",
     backdropFilter: "blur(8px)",
     fontFamily: "var(--font-mono)",
     fontSize: 10,
-    letterSpacing: "0.22em",
+    letterSpacing: "0.18em",
     color: "var(--fg-1)",
     textTransform: "uppercase"
   }
@@ -3164,14 +3167,17 @@ const AboutOffsite = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "absolute",
     left: 18,
+    right: 18,
     bottom: 16,
+    width: "fit-content",
+    maxWidth: "calc(100% - 36px)",
     padding: "8px 12px",
     borderRadius: 999,
     background: "rgba(10,11,13,0.7)",
     backdropFilter: "blur(8px)",
     fontFamily: "var(--font-mono)",
     fontSize: 10,
-    letterSpacing: "0.22em",
+    letterSpacing: "0.18em",
     color: "var(--fg-1)",
     textTransform: "uppercase"
   }

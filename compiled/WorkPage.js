@@ -1434,7 +1434,7 @@ const WorkCTA = () => {
       alignItems: "center"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact?urgent=1",
     style: {
       padding: "24px 38px",
       borderRadius: 99,

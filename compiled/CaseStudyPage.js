@@ -1169,7 +1169,7 @@ const CaseCTA = ({
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact",
+  href: "https://www.igniteproductions.co/contact?urgent=1",
   style: {
     padding: "20px 30px",
     borderRadius: 99,

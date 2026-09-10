@@ -1,4 +1,4 @@
-(function(){if (typeof window !== "undefined" && window.SiteNav) return;
+(function(){if (typeof window !== "undefined" && window.BrandBar) return;
 /* Top nav + footer — used on every page. SERVICES exposes a hover mega-menu. */
 const {
   useState: useNavState,
@@ -243,7 +243,8 @@ const CAT_VARS = ["--cat-staffing", "--cat-sampling", "--cat-retail-programs", "
 const svcHref = (rel, s) => s.href ? rel + s.href : "/services/" + s.slug;
 const NAV_ITEMS = [{
   label: "SPARK",
-  href: "/spark"
+  href: "/spark",
+  spark: true
 }, {
   label: "FRACTIONAL",
   href: "/fractional"
@@ -264,14 +265,90 @@ const NAV_ITEMS = [{
   href: "/work"
 }, {
   label: "ABOUT US",
-  children: [["About Ignite", "/about"], ["Blog", "/blog"], ["Contact", "/contact"]]
+  children: [["About Ignite", "/about"], ["Blog", "/blog"], ["Contact", "https://www.igniteproductions.co/contact?urgent=1"]]
 }];
+
+/* ============================================================
+   BRAND BAR — parent switcher above every site header.
+   Two brands under one house: Ignite (services) / Spark (software).
+   rel: "" on root, "../" inside /pages/. brand: "ignite" | "spark".
+   ============================================================ */
+const BRAND_BAR_CSS = `
+.bb-bar{background:#000;border-bottom:1px solid rgba(255,255,255,0.16);position:relative;z-index:90}
+.bb-in{max-width:1480px;margin:0 auto;padding:0 32px;height:46px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.bb-tabs{display:flex;align-items:stretch;height:46px;gap:40px}
+.bb-tab{display:inline-flex;align-items:center;padding:0;position:relative;text-decoration:none;opacity:.4;transition:opacity 180ms var(--ease-out)}
+.bb-tab:hover,.bb-tab:focus-visible{opacity:.85}
+.bb-tab[aria-current="page"]{opacity:1}
+.bb-tab[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--bb-accent)}
+.bb-ig{height:15px;width:auto;display:block}
+.bb-sp{height:18px;width:auto;display:block}
+.bb-cross{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:9.5px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,250,247,0.5);text-decoration:none;white-space:nowrap;transition:color 160ms var(--ease-out)}
+.bb-cross:hover{color:#FAFAF7;animation-play-state:paused}
+.bb-bar[data-brand="ignite"] .bb-cross,.bb-bar[data-brand="spark"] .bb-cross{color:#D6F35F;animation:bb-pulse 2.2s ease-in-out infinite}
+@keyframes bb-pulse{0%,100%{color:rgba(214,243,95,.55);text-shadow:0 0 0 rgba(214,243,95,0)}50%{color:#D6F35F;text-shadow:0 0 12px rgba(214,243,95,.7)}}
+@media (prefers-reduced-motion:reduce){.bb-cross{animation:none!important;color:#D6F35F}}
+@keyframes nav-spark-dot{0%,100%{opacity:1}50%{opacity:.3}}
+.bb-cross .bb-arr{transition:transform 160ms var(--ease-out)}
+.bb-cross:hover .bb-arr{transform:translateX(3px)}
+@media (max-width:760px){.bb-in{padding:0 18px;height:42px}.bb-tabs{height:42px;gap:28px}.bb-cross{display:none}}
+`;
+const BrandBar = ({
+  rel = "",
+  brand = "ignite"
+}) => {
+  const igniteHref = rel + "/";
+  const sparkHref = rel + "/spark";
+  const onSpark = brand === "spark";
+  return /*#__PURE__*/React.createElement("div", {
+    className: "bb-bar",
+    "data-brand": brand
+  }, /*#__PURE__*/React.createElement("style", null, BRAND_BAR_CSS), /*#__PURE__*/React.createElement("div", {
+    className: "bb-in"
+  }, /*#__PURE__*/React.createElement("nav", {
+    className: "bb-tabs",
+    "aria-label": "Ignite brands"
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "bb-tab",
+    href: igniteHref,
+    "aria-current": onSpark ? undefined : "page",
+    style: {
+      "--bb-accent": "var(--ignite-500)"
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    className: "bb-ig",
+    src: window.__resources?.r_assets_ignite_typemark_white_png || "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
+    alt: "Ignite Productions",
+    loading: "lazy",
+    decoding: "async"
+  })), /*#__PURE__*/React.createElement("a", {
+    className: "bb-tab",
+    href: sparkHref,
+    "aria-current": onSpark ? "page" : undefined,
+    style: {
+      "--bb-accent": "var(--spark-500)"
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    className: "bb-sp",
+    src: window.__resources?.r_assets_spark_logo_full_white_webp || "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full-white.webp",
+    alt: "Spark by Ignite",
+    loading: "lazy",
+    decoding: "async"
+  }))), /*#__PURE__*/React.createElement("a", {
+    className: "bb-cross",
+    href: onSpark ? igniteHref : sparkHref
+  }, onSpark ? "Spark is by Ignite. See the full agency" : "See the software behind every program", /*#__PURE__*/React.createElement("span", {
+    className: "bb-arr",
+    "aria-hidden": "true"
+  }, "\u2192"))));
+};
 
 /* rel: "" when on root, "../" when on a page inside /pages/ */
 const SiteNav = ({
   rel = "",
   active = "",
-  activeService = ""
+  activeService = "",
+  brand = "ignite"
 }) => {
   const [scrolled, setScrolled] = useNavState(false);
   const [megaOpen, setMegaOpen] = useNavState(null);
@@ -292,75 +369,11 @@ const SiteNav = ({
     return () => window.removeEventListener("scroll", h);
   }, []);
 
-  /* Subtle wheel-lerp smooth scroll. Animates window scroll only (no transform
-     wrapper / overlay), so sticky/fixed layout and all pointer interactions stay
-     intact. Disabled on touch + reduced-motion; passes through inner scrollers. */
+  /* Wheel-lerp smooth scroll now lives in styles/smooth-scroll.js, loaded by
+     every page so pages without this nav get it too. */
+
   useNavEffect(() => {
-    if (window.__igniteSmoothScroll) return; // install once per page
-    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const coarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
-    if (reduce || coarse) return;
-    window.__igniteSmoothScroll = true;
-    let target = window.scrollY,
-      current = window.scrollY,
-      raf = null,
-      running = false;
-    const ease = 0.112;
-    const maxScroll = () => Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-    const canNativeScroll = node => {
-      for (let el = node; el && el !== document.body && el.nodeType === 1; el = el.parentElement) {
-        const s = getComputedStyle(el);
-        if (/(auto|scroll)/.test(s.overflowY) && el.scrollHeight > el.clientHeight + 2) return true;
-      }
-      return false;
-    };
-    const tick = () => {
-      current += (target - current) * ease;
-      if (Math.abs(target - current) < 0.4) {
-        current = target;
-        running = false;
-      }
-      window.scrollTo({
-        top: current,
-        behavior: "instant"
-      });
-      if (running) raf = requestAnimationFrame(tick);else raf = null;
-    };
-    const onWheel = e => {
-      if (e.ctrlKey || e.deltaMode !== 0) return; // pinch-zoom / line mode → native
-      if (canNativeScroll(e.target)) return; // let inner scrollers scroll
-      e.preventDefault();
-      if (!running) {
-        current = window.scrollY;
-        target = window.scrollY;
-      } // resync if user native-scrolled
-      target = Math.min(Math.max(0, target + e.deltaY * 1.2), maxScroll());
-      if (!running) {
-        running = true;
-        raf = requestAnimationFrame(tick);
-      }
-    };
-    const onKeyOrTouch = () => {
-      target = window.scrollY;
-      current = window.scrollY;
-    };
-    window.addEventListener("wheel", onWheel, {
-      passive: false
-    });
-    window.addEventListener("touchstart", onKeyOrTouch, {
-      passive: true
-    });
-    window.addEventListener("keydown", onKeyOrTouch);
-    return () => {
-      window.removeEventListener("wheel", onWheel);
-      window.removeEventListener("touchstart", onKeyOrTouch);
-      window.removeEventListener("keydown", onKeyOrTouch);
-      if (raf) cancelAnimationFrame(raf);
-      window.__igniteSmoothScroll = false;
-    };
-  }, []);
-  useNavEffect(() => {
-    const mq = window.matchMedia("(max-width: 1199px)");
+    const mq = window.matchMedia("(max-width: 1080px)");
     const on = () => setIsTouch(mq.matches);
     on();
     mq.addEventListener ? mq.addEventListener("change", on) : mq.addListener(on);
@@ -406,7 +419,10 @@ const SiteNav = ({
       if (el) el.focus();
     }
   };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("header", {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BrandBar, {
+    rel: rel,
+    brand: brand
+  }), /*#__PURE__*/React.createElement("header", {
     style: {
       position: "sticky",
       top: 0,
@@ -422,7 +438,7 @@ const SiteNav = ({
       maxWidth: 1480,
       margin: "0 auto",
       padding: "0 32px",
-      height: 128,
+      height: 98,
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
@@ -439,9 +455,9 @@ const SiteNav = ({
   }, /*#__PURE__*/React.createElement("img", {
     src: window.__resources?.r_assets_ignite_typemark_white_png || "https://kyle915.github.io/ignite-webflow-assets/assets/ignite-typemark-white.png",
     alt: "Ignite",
-    height: "22",
+    height: "41",
     style: {
-      height: 22,
+      height: 41,
       width: "auto",
       display: "block"
     },
@@ -590,7 +606,7 @@ const SiteNav = ({
         fontWeight: 500,
         letterSpacing: "0.22em",
         textTransform: "uppercase",
-        color: isActive ? activeInk : "var(--fg-2)",
+        color: isActive ? activeInk : isSpark ? "var(--spark-500)" : "var(--fg-2)",
         ...(gradientActive ? {
           background: "var(--fractional-prism)",
           WebkitBackgroundClip: "text",
@@ -606,8 +622,18 @@ const SiteNav = ({
         transition: "color 160ms var(--ease-out)"
       },
       onMouseEnter: e => !isActive && (e.currentTarget.style.color = "var(--fg-1)"),
-      onMouseLeave: e => !isActive && (e.currentTarget.style.color = "var(--fg-2)")
-    }, it.label, hasMega && /*#__PURE__*/React.createElement("svg", {
+      onMouseLeave: e => !isActive && (e.currentTarget.style.color = isSpark ? "var(--spark-500)" : "var(--fg-2)")
+    }, isSpark && /*#__PURE__*/React.createElement("span", {
+      "aria-hidden": "true",
+      style: {
+        width: 6,
+        height: 6,
+        borderRadius: 999,
+        background: "var(--spark-500)",
+        boxShadow: "0 0 8px var(--spark-500)",
+        animation: "nav-spark-dot 1.6s ease-in-out infinite"
+      }
+    }), it.label, hasMega && /*#__PURE__*/React.createElement("svg", {
       width: "9",
       height: "9",
       viewBox: "0 0 10 10",
@@ -636,7 +662,7 @@ const SiteNav = ({
   }, /*#__PURE__*/React.createElement(AccentBtn, {
     size: "sm",
     accent: "spark",
-    onClick: () => location.href = rel + "/contact?urgent=1"
+    onClick: () => location.href = "https://www.igniteproductions.co/contact?urgent=1"
   }, "Get In Touch")), /*#__PURE__*/React.createElement("button", {
     className: "nav-burger",
     "aria-label": mobileOpen ? "Close menu" : "Open menu",
@@ -673,12 +699,11 @@ const SiteNav = ({
     strokeLinecap: "round"
   }))))), /*#__PURE__*/React.createElement("style", null, `
         .nav-burger { display: none; }
-        @media (max-width: 1199px) {
+        @media (max-width: 1080px) {
           .nav-burger { display: inline-flex !important; }
           .nav-cta-desktop { display: none !important; }
-          header nav { display: none !important; }
         }
-        @media (min-width: 1200px) { .nav-drawer { display: none !important; } }
+        @media (min-width: 1081px) { .nav-drawer { display: none !important; } }
         .nav-drawer-link { display: flex; align-items: center; min-height: 54px; font-family: var(--font-mono); font-size: 14px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
         .nav-drawer-row { width: 100%; display: flex; align-items: center; justify-content: space-between; min-height: 54px; font-family: var(--font-mono); font-size: 14px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.08); cursor: pointer; text-align: left; }
         .svc-child { transition: background 130ms var(--ease-out); }
@@ -709,7 +734,7 @@ const SiteNav = ({
   /* ---------- Mobile / tablet: accordion ---------- */
   React.createElement("div", {
     style: {
-      maxHeight: "calc(100vh - 128px)",
+      maxHeight: "calc(100vh - 98px)",
       overflowY: "auto",
       padding: "8px 20px 20px"
     }
@@ -836,7 +861,7 @@ const SiteNav = ({
       display: "grid",
       gridTemplateColumns: "minmax(240px, 1fr) 3fr",
       gap: 40,
-      maxHeight: "calc(100vh - 128px)",
+      maxHeight: "calc(100vh - 98px)",
       overflowY: "auto"
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -1068,10 +1093,6 @@ const SiteNav = ({
     }
   }, /*#__PURE__*/React.createElement("a", {
     className: "nav-drawer-link",
-    href: rel + "/spark",
-    onClick: () => setMobileOpen(false)
-  }, "SPARK"), /*#__PURE__*/React.createElement("a", {
-    className: "nav-drawer-link",
     href: rel + "/fractional",
     onClick: () => setMobileOpen(false)
   }, "FRACTIONAL"), /*#__PURE__*/React.createElement("button", {
@@ -1183,7 +1204,7 @@ const SiteNav = ({
       flexDirection: "column",
       padding: "6px 0 10px"
     }
-  }, [["About Ignite", "/about"], ["Blog", "/blog"], ["Contact", "/contact"]].map(([l, h]) => /*#__PURE__*/React.createElement("a", {
+  }, [["About Ignite", "/about"], ["Blog", "/blog"], ["Contact", "https://www.igniteproductions.co/contact?urgent=1"]].map(([l, h]) => /*#__PURE__*/React.createElement("a", {
     key: l,
     href: rel + h,
     onClick: () => setMobileOpen(false),
@@ -1199,7 +1220,7 @@ const SiteNav = ({
       textDecoration: "none"
     }
   }, l))), /*#__PURE__*/React.createElement("a", {
-    href: rel + "/contact?urgent=1",
+    href: "https://www.igniteproductions.co/contact?urgent=1",
     onClick: () => setMobileOpen(false),
     style: {
       display: "flex",
@@ -1301,7 +1322,7 @@ const SiteFooter = ({
     textTransform: "uppercase",
     border: "1px solid rgba(93, 190, 90,0.3)"
   }
-}, "\u25CF Online Now"))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Request a Quote", "/contact"], ["Markets", "/markets"], ["Industries", "/industries"], ["Weddings", "/weddings"], ["Group Travel", "/travel"], ["Compare", "/compare"], ["Blog", "/blog"], ["Glossary", "/glossary"], ["Spark Platform", "/spark"], ["Fractional", "/fractional"]]], ["TALENT", [["Apply", "/contact?role=ambassador"], ["LinkedIn", "#"], ["Press", "#"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
+}, "\u25CF Online Now"))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Request a Quote", "https://www.igniteproductions.co/contact?urgent=1"], ["Markets", "/markets"], ["Industries", "/industries"], ["Weddings", "/weddings"], ["Group Travel", "/travel"], ["Compare", "/compare"], ["Blog", "/blog"], ["Glossary", "/glossary"], ["Spark Platform", "/spark"], ["Fractional", "/fractional"]]], ["TALENT", [["Apply", "https://www.igniteproductions.co/contact?urgent=1"], ["LinkedIn", "#"], ["Press", "#"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
   key: h
 }, /*#__PURE__*/React.createElement(OpsLine, null, ">> " + h), /*#__PURE__*/React.createElement("ul", {
   style: {
@@ -1441,7 +1462,6 @@ const StickyQuoteCta = ({
 }) => {
   const [shown, setShown] = useNavState(false);
   const [dismissed, setDismissed] = useNavState(false);
-  const [blocked, setBlocked] = useNavState(false);
   useNavEffect(() => {
     if (typeof window === "undefined") return;
     try {
@@ -1450,37 +1470,14 @@ const StickyQuoteCta = ({
         return;
       }
     } catch (e) {}
-    const pillBox = () => {
-      const vw = window.innerWidth,
-        vh = window.innerHeight;
-      return {
-        left: vw - 320,
-        top: vh - 100,
-        right: vw - 8,
-        bottom: vh - 8
-      };
-    };
-    const overlaps = (a, b) => a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
-    const onScroll = () => {
-      setShown(window.scrollY > 600);
-      const circle = document.querySelector(".cap-circle");
-      if (!circle) {
-        setBlocked(false);
-        return;
-      }
-      setBlocked(overlaps(circle.getBoundingClientRect(), pillBox()));
-    };
+    const onScroll = () => setShown(window.scrollY > 600);
     onScroll();
     window.addEventListener("scroll", onScroll, {
       passive: true
     });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  if (dismissed || !shown || blocked) return null;
+  if (dismissed || !shown) return null;
   // Hide on small screens via CSS media query (also kept out for narrow widths)
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", null, `
         @keyframes igq-rise { 0% { opacity: 0; transform: translateY(20px) scale(0.95); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
@@ -1507,7 +1504,7 @@ const StickyQuoteCta = ({
       fontFamily: "var(--font-body)"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: rel + "/contact",
+    href: "https://www.igniteproductions.co/contact?urgent=1",
     style: {
       display: "flex",
       alignItems: "center",
@@ -1665,6 +1662,7 @@ const StickyBreadcrumb = ({
   }, (label || "").toUpperCase())));
 };
 Object.assign(window, {
+  BrandBar,
   SiteNav,
   SiteFooter,
   SITE_SERVICES,

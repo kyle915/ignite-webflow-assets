@@ -252,7 +252,7 @@ const ServiceHero = ({
     alignItems: "center"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact",
+  href: "https://www.igniteproductions.co/contact?urgent=1",
   style: {
     padding: "16px 24px",
     borderRadius: 999,
@@ -267,7 +267,7 @@ const ServiceHero = ({
     gap: 10
   }
 }, "Brief us on a ", s.short.toLowerCase(), " project ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "/contact?urgent=1",
+  href: "https://www.igniteproductions.co/contact?urgent=1",
   style: {
     padding: "16px 24px",
     borderRadius: 999,
@@ -1822,7 +1822,7 @@ const ServiceSparkSection = ({
       textDecoration: "none"
     }
   }, "Tour Spark ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact?urgent=1",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -2077,7 +2077,7 @@ const ServiceCTA = ({
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact",
+  href: "https://www.igniteproductions.co/contact?urgent=1",
   style: {
     padding: "18px 28px",
     borderRadius: 999,
@@ -2098,7 +2098,7 @@ const ServiceCTA = ({
     fontFamily: "var(--font-mono)"
   }
 }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "/contact?urgent=1",
+  href: "https://www.igniteproductions.co/contact?urgent=1",
   style: {
     padding: "18px 24px",
     borderRadius: 999,
@@ -2649,7 +2649,7 @@ const ServiceReceipts = ({
       fontFamily: "var(--font-mono)"
     }
   }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact?urgent=1",
     style: {
       display: "inline-flex",
       alignItems: "center",
