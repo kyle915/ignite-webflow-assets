@@ -139,8 +139,9 @@ const HomeHero = () => {
       color: "rgba(255,255,255,0.7)"
     }
   }, /*#__PURE__*/React.createElement("span", {
+    className: "hero-setoff",
     style: {
-      color: "rgba(255,255,255,0.5)"
+      color: "rgba(255,255,255,0.92)"
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -151,12 +152,13 @@ const HomeHero = () => {
     "aria-hidden": "true",
     style: {
       position: "absolute",
-      left: 0,
-      right: 0,
+      left: "-2%",
+      right: "-2%",
       top: "50%",
-      height: 1,
+      height: 2,
       transform: "translateY(-50%)",
-      background: "linear-gradient(90deg, #4F86C6, #D7453E)"
+      background: "linear-gradient(90deg, #FFB627, #D7453E)",
+      boxShadow: "0 0 0 1px rgba(10,10,10,0.45)"
     }
   })), " set it off")))), /*#__PURE__*/React.createElement("div", {
     className: "hero-main",
@@ -312,7 +314,7 @@ const HomeHero = () => {
       alignItems: "center"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "https://www.igniteproductions.co/contact?urgent=1",
+    href: "/contact",
     style: {
       padding: "16px 24px",
       borderRadius: 999,
@@ -337,7 +339,7 @@ const HomeHero = () => {
       e.currentTarget.style.boxShadow = "0 12px 32px rgba(214,243,95,0.32)";
     }
   }, "Request a quote ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "https://www.igniteproductions.co/contact?urgent=1",
+    href: "/contact?urgent=1",
     style: {
       padding: "16px 24px",
       borderRadius: 999,

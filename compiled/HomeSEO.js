@@ -430,7 +430,7 @@ const SeoFaq = () => {
       color: "var(--fg-2-inv)"
     }
   }, "Don't see yours?", " ", /*#__PURE__*/React.createElement("a", {
-    href: "https://www.igniteproductions.co/contact?urgent=1",
+    href: "/contact",
     style: {
       color: "var(--ignite-500)",
       textDecoration: "underline"
