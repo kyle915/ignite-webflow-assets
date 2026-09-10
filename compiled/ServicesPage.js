@@ -204,7 +204,7 @@ const ServicesHero = () => /*#__PURE__*/React.createElement("section", {
     boxShadow: "0 12px 32px rgba(215, 69, 62,0.35)"
   }
 }, "Request a quote \u2192"), /*#__PURE__*/React.createElement("a", {
-  href: "/contact?urgent=1",
+  href: "/contact",
   style: {
     padding: "18px 26px",
     borderRadius: 999,

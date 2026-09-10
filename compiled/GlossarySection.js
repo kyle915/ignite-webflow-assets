@@ -441,7 +441,7 @@ const GlossaryTerm = ({
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement(AccentBtn, {
-    onClick: () => location.href = "https://igniteproductions.co/contact?urgent=1"
+    onClick: () => location.href = "https://igniteproductions.co/contact"
   }, "Start a brief"), /*#__PURE__*/React.createElement("a", {
     href: "/glossary",
     className: "link-mono",

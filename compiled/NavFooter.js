@@ -265,7 +265,7 @@ const NAV_ITEMS = [{
   href: "/work"
 }, {
   label: "ABOUT US",
-  children: [["About Ignite", "/about"], ["Blog", "/blog"], ["Contact", "https://www.igniteproductions.co/contact?urgent=1"]]
+  children: [["About Ignite", "/about"], ["Blog", "/blog"], ["Contact", "https://www.igniteproductions.co/contact"]]
 }];
 
 /* ============================================================
@@ -662,7 +662,7 @@ const SiteNav = ({
   }, /*#__PURE__*/React.createElement(AccentBtn, {
     size: "sm",
     accent: "spark",
-    onClick: () => location.href = "https://www.igniteproductions.co/contact?urgent=1"
+    onClick: () => location.href = "https://www.igniteproductions.co/contact"
   }, "Get In Touch")), /*#__PURE__*/React.createElement("button", {
     className: "nav-burger",
     "aria-label": mobileOpen ? "Close menu" : "Open menu",
@@ -1204,7 +1204,7 @@ const SiteNav = ({
       flexDirection: "column",
       padding: "6px 0 10px"
     }
-  }, [["About Ignite", "/about"], ["Blog", "/blog"], ["Contact", "https://www.igniteproductions.co/contact?urgent=1"]].map(([l, h]) => /*#__PURE__*/React.createElement("a", {
+  }, [["About Ignite", "/about"], ["Blog", "/blog"], ["Contact", "https://www.igniteproductions.co/contact"]].map(([l, h]) => /*#__PURE__*/React.createElement("a", {
     key: l,
     href: rel + h,
     onClick: () => setMobileOpen(false),
@@ -1220,7 +1220,7 @@ const SiteNav = ({
       textDecoration: "none"
     }
   }, l))), /*#__PURE__*/React.createElement("a", {
-    href: "https://www.igniteproductions.co/contact?urgent=1",
+    href: "https://www.igniteproductions.co/contact",
     onClick: () => setMobileOpen(false),
     style: {
       display: "flex",
@@ -1322,7 +1322,7 @@ const SiteFooter = ({
     textTransform: "uppercase",
     border: "1px solid rgba(93, 190, 90,0.3)"
   }
-}, "\u25CF Online Now"))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Request a Quote", "https://www.igniteproductions.co/contact?urgent=1"], ["Markets", "/markets"], ["Industries", "/industries"], ["Weddings", "/weddings"], ["Group Travel", "/travel"], ["Compare", "/compare"], ["Blog", "/blog"], ["Glossary", "/glossary"], ["Spark Platform", "/spark"], ["Fractional", "/fractional"]]], ["TALENT", [["Apply", "https://www.igniteproductions.co/contact?urgent=1"], ["LinkedIn", "#"], ["Press", "#"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
+}, "\u25CF Online Now"))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Request a Quote", "https://www.igniteproductions.co/contact"], ["Markets", "/markets"], ["Industries", "/industries"], ["Weddings", "/weddings"], ["Group Travel", "/travel"], ["Compare", "/compare"], ["Blog", "/blog"], ["Glossary", "/glossary"], ["Spark Platform", "/spark"], ["Fractional", "/fractional"]]], ["TALENT", [["Apply", "https://www.igniteproductions.co/contact"], ["LinkedIn", "#"], ["Press", "#"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
   key: h
 }, /*#__PURE__*/React.createElement(OpsLine, null, ">> " + h), /*#__PURE__*/React.createElement("ul", {
   style: {
@@ -1504,7 +1504,7 @@ const StickyQuoteCta = ({
       fontFamily: "var(--font-body)"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "https://www.igniteproductions.co/contact?urgent=1",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "flex",
       alignItems: "center",

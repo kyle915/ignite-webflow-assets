@@ -298,4 +298,51 @@ Object.assign(window, {
   GridOverlay,
   OpsLine
 });
+
+/* ---------------------------------------------------------------------------
+   TEMPORARY BRIDGE — CTA destination normalizer
+   Every CTA lands on /contact (no ?urgent=1). 45 of the 47 links were fixed at
+   source, but HomeHero and HomeBottom are loaded on the homepage as Webflow
+   *registered hosted scripts*, which carry a required SRI integrity hash. Their
+   bytes therefore cannot change without breaking the homepage, so those 2 links
+   are normalized here at runtime instead.
+   REMOVE THIS once those 7 registered scripts are moved into the homepage
+   footer custom code as plain <script defer> tags (no integrity).
+   See memory: feedback_webflow_homepage_sri_pins
+   --------------------------------------------------------------------------- */
+(function () {
+  if (typeof document === "undefined" || window.__igniteCtaNorm) return;
+  window.__igniteCtaNorm = true;
+  var RE = /([?&])urgent=1(&|$)/;
+  function strip(h) {
+    if (!h || h.indexOf("urgent=1") === -1) return null;
+    var out = h.replace(RE, function (m, pre, post) {
+      return post === "&" ? pre : "";
+    });
+    return out.replace(/[?&]$/, "");
+  }
+  function sweep() {
+    var as = document.querySelectorAll('a[href*="urgent=1"]');
+    for (var i = 0; i < as.length; i++) {
+      var next = strip(as[i].getAttribute("href"));
+      if (next) as[i].setAttribute("href", next);
+    }
+  }
+  sweep();
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", sweep);
+  window.addEventListener("load", sweep);
+  var obs = new MutationObserver(sweep);
+  try {
+    obs.observe(document.documentElement, {
+      childList: true,
+      subtree: true
+    });
+  } catch (e) {}
+  setTimeout(function () {
+    try {
+      obs.disconnect();
+    } catch (e) {}
+    sweep();
+  }, 12000);
+})();
 })();

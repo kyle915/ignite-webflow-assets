@@ -1468,7 +1468,7 @@ const SvcFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     fontFamily: "var(--font-mono)"
   }
 }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "/contact?urgent=1",
+  href: "/contact",
   style: {
     display: "inline-flex",
     alignItems: "center",

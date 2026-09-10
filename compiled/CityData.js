@@ -72,7 +72,7 @@ window.CITY_DATA = {
       heading: "Run something in {city}.",
       body: "Brief us on the program — single-night Riverwalk activation through multi-week Tahoe coverage. We'll scope it to fit.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://igniteproductions.co/contact?urgent=1",
+      primaryHref: "https://igniteproductions.co/contact",
       secondaryLabel: "See the work",
       secondaryHref: "https://igniteproductions.co/work"
     }

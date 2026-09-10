@@ -424,7 +424,7 @@ const AboutHero = () => {
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "https://www.igniteproductions.co/contact?urgent=1",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -2236,7 +2236,7 @@ const AboutFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     justifyContent: "center"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "https://www.igniteproductions.co/contact?urgent=1",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "18px 26px",
     borderRadius: 999,
@@ -2594,7 +2594,7 @@ const AboutSpark = () => {
       boxShadow: "0 0 24px rgba(214, 243, 95, 0.2)"
     }
   }, "See Spark in action \u2192"), /*#__PURE__*/React.createElement("a", {
-    href: "https://www.igniteproductions.co/contact?urgent=1",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       padding: "15px 24px",
       borderRadius: 999,
@@ -2805,14 +2805,14 @@ const ABOUT_ENGAGEMENT = [{
   body: "A launch, a tour leg, a stadium takeover. We scope, build, staff, run, and measure a single campaign — then hand you the recap.",
   best: "Best for: a defined moment with a clear date.",
   cta: "Request a quote",
-  href: "https://www.igniteproductions.co/contact?urgent=1"
+  href: "https://www.igniteproductions.co/contact"
 }, {
   tag: "02 · RETAINER",
   title: "Always-on field execution.",
   body: "We become your field marketing arm. Recurring sampling, demo cycles, regional tours, ambassador programs — measured continuously through Spark.",
   best: "Best for: programs running 6+ months.",
   cta: "Talk through scope",
-  href: "https://www.igniteproductions.co/contact?urgent=1"
+  href: "https://www.igniteproductions.co/contact"
 }, {
   tag: "03 · FRACTIONAL",
   title: "Embedded leadership.",

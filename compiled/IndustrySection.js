@@ -836,7 +836,7 @@ const IndustryCta = ({
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: cta.primaryHref || "https://www.igniteproductions.co/contact?urgent=1",
+    href: cta.primaryHref || "https://www.igniteproductions.co/contact",
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 600,
@@ -1328,7 +1328,7 @@ const IndustrySparkCallout = ({
       textDecoration: "none"
     }
   }, "Tour Spark ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "https://www.igniteproductions.co/contact?urgent=1",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",

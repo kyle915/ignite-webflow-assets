@@ -162,7 +162,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a beverage program.",
       body: "Single-market sampling through national rollouts. We'll come back with crew, compliance, and a quote inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
+      primaryHref: "https://www.igniteproductions.co/contact"
     }
   },
   /* ============= CPG FOOD & SNACK ============= */
@@ -266,7 +266,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a food sampling program.",
       body: "Single-store launch through 300-store national rollouts. We'll quote crew, compliance, and chain coordination inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
+      primaryHref: "https://www.igniteproductions.co/contact"
     }
   },
   /* ============= ALCOHOL & SPIRITS ============= */
@@ -385,7 +385,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a regulated activation.",
       body: "From a single tasting to a national distributor rollout — we handle the compliance, the crew, and the cardboard cutouts.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
+      primaryHref: "https://www.igniteproductions.co/contact"
     }
   },
   /* ============= TECH & SAAS ============= */
@@ -489,7 +489,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a tech activation.",
       body: "Booth staffing, brand house, customer dinner, or full conference takeover. We'll scope and quote inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
+      primaryHref: "https://www.igniteproductions.co/contact"
     }
   },
   /* ============= AUTOMOTIVE ============= */
@@ -590,7 +590,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on an auto program.",
       body: "Single show, full season, or ride-and-drive tour. We'll scope crew, logistics, and vehicle handling inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
+      primaryHref: "https://www.igniteproductions.co/contact"
     }
   },
   /* ============= LIFESTYLE & BEAUTY ============= */
@@ -688,7 +688,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a beauty activation.",
       body: "Pop-up, retail trial, or multi-market launch — we'll scope crew, retailer compliance, and content strategy inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
+      primaryHref: "https://www.igniteproductions.co/contact"
     }
   },
   /* ============= CANNABIS & CBD ============= */
@@ -792,7 +792,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a cannabis program.",
       body: "Dispensary activation, budtender education, or compliant sampling in legal markets. We'll scope and quote inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
+      primaryHref: "https://www.igniteproductions.co/contact"
     }
   },
   /* ============= SPORTS & ENTERTAINMENT ============= */
@@ -896,7 +896,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a stadium program.",
       body: "Single game, multi-game tour, fan zone, or full season-long property activation. We'll scope crew, venue clearance, and game-day logistics inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
+      primaryHref: "https://www.igniteproductions.co/contact"
     }
   },
   /* ============= PET & ANIMAL ============= */
@@ -985,7 +985,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a pet program.",
       body: "Single chain rollout, lifestyle event, or multi-market trial. We'll scope crew, chain compliance, and adoption partnerships inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
+      primaryHref: "https://www.igniteproductions.co/contact"
     }
   },
   /* ============= HEALTH & WELLNESS ============= */
@@ -1077,7 +1077,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a wellness program.",
       body: "Single-channel trial through multi-market national rollouts. We'll scope crew, compliance, and channel mix inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
+      primaryHref: "https://www.igniteproductions.co/contact"
     }
   },
   /* ============= QSR & RESTAURANT ============= */
@@ -1172,7 +1172,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a QSR launch.",
       body: "Single-unit grand opening, LTO trial, or multi-unit franchise rollout. We'll scope crew, permits, and capture inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
+      primaryHref: "https://www.igniteproductions.co/contact"
     }
   },
   /* ============= GAMING & ESPORTS ============= */
@@ -1267,7 +1267,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a gaming program.",
       body: "Console launch, esports tournament, creator collab, or convention booth. We'll scope crew, hardware, and compliance inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
+      primaryHref: "https://www.igniteproductions.co/contact"
     }
   },
   /* ============= HOSPITALITY & TRAVEL ============= */
@@ -1362,7 +1362,7 @@ const INDUSTRIES_DATA = {
       heading: "Brief us on a hospitality program.",
       body: "Property opening, airline lounge, destination tour, or travel-trade conference. We'll scope crew, property clearances, and language coverage inside 48 hours.",
       primaryLabel: "Start a brief",
-      primaryHref: "https://www.igniteproductions.co/contact?urgent=1"
+      primaryHref: "https://www.igniteproductions.co/contact"
     }
   }
 };
