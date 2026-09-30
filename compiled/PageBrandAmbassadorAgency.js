@@ -123,11 +123,6 @@ const ROSTER = [{
   c: AMBER
 }];
 const Hero = () => {
-  const [n, setN] = React.useState(41980);
-  React.useEffect(() => {
-    const id = setInterval(() => setN(v => v + Math.floor(Math.random() * 4)), 900);
-    return () => clearInterval(id);
-  }, []);
   const [feed, setFeed] = React.useState(3);
   React.useEffect(() => {
     const id = setInterval(() => setFeed(f => f >= ROSTER.length ? 3 : f + 1), 1500);
@@ -201,7 +196,7 @@ const Hero = () => {
     }
   }), /*#__PURE__*/React.createElement(Mono, {
     color: ORANGE
-  }, n.toLocaleString(), " VETTED \xB7 ON CALL"))), /*#__PURE__*/React.createElement("div", {
+  }, "257,000+ vetted brand ambassadors"))), /*#__PURE__*/React.createElement("div", {
     className: "ba-hero-grid",
     style: {
       display: "grid",
@@ -1249,7 +1244,7 @@ const Page = () => {
     accent: "#D7453E",
     label: "Brand Ambassador Agency",
     rel: "../"
-  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Ticker, null), /*#__PURE__*/React.createElement(WhatIs, null), /*#__PURE__*/React.createElement(Funnel, null), /*#__PURE__*/React.createElement(Versus, null), /*#__PURE__*/React.createElement(How, null), /*#__PURE__*/React.createElement(Spark, null), /*#__PURE__*/React.createElement(Faq, null), /*#__PURE__*/React.createElement(CTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
+  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Ticker, null), /*#__PURE__*/React.createElement(WhatIs, null), /*#__PURE__*/React.createElement(Funnel, null), /*#__PURE__*/React.createElement(Versus, null), /*#__PURE__*/React.createElement(How, null), /*#__PURE__*/React.createElement(Spark, null), /*#__PURE__*/React.createElement(Faq, null), /*#__PURE__*/React.createElement(CTA, null), /*#__PURE__*/React.createElement(SiteFooter, null), /*#__PURE__*/React.createElement("style", null, `@media (max-width: 900px){ .ba-hero-grid{ grid-template-columns: 1fr !important; } }`));
 };
 Object.assign(window, {
   PageBrandAmbassadorAgency: Page
