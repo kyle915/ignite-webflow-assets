@@ -284,6 +284,14 @@ const BLOG_AUTHORS = {
     url: "/about"
   }
 };
+/* HELD 2026-10-01: the older BlogData posts are not in the Webflow CMS yet
+   (they quote rates/budgets and need owner sign-off), so they 404. Only list
+   posts that are published, so no card links to a missing page. Delete this
+   block once the held posts are published. */
+(function () {
+  const LIVE = new Set(NEW_POSTS.map(p => p.slug));
+  for (let i = BLOG_POSTS.length - 1; i >= 0; i--) if (!LIVE.has(BLOG_POSTS[i].slug)) BLOG_POSTS.splice(i, 1);
+})();
 Object.assign(window, {
   BLOG_POSTS,
   BLOG_AUTHORS

@@ -507,52 +507,52 @@ const DEFAULT_SERVICES = [{
   slug: "event-staffing",
   title: "Event Staffing",
   desc: "Vetted field teams for festivals, trade shows, retail programs, nightlife, and private events.",
-  href: "../Ignite Services.html#event-staffing"
+  href: "/services/event-staffing"
 }, {
   slug: "brand-ambassadors",
   title: "Brand Ambassadors",
   desc: "Trained ambassadors who represent your brand, capture leads, distribute samples, and drive guest interaction.",
-  href: "../Ignite Brand Ambassadors.html"
+  href: "/brand-ambassador-agency"
 }, {
   slug: "product-sampling",
   title: "Product Sampling",
   desc: "Compliant, high-volume sampling teams for CPG, beverage, food, wellness, and lifestyle brands.",
-  href: "../Ignite Services.html#product-sampling"
+  href: "/services/product-sampling"
 }, {
   slug: "experiential-marketing",
   title: "Experiential Marketing",
   desc: "Pop-ups, launch events, mobile activations, street teams, and brand experiences built for attention.",
-  href: "../Ignite Services.html#experiential-marketing"
+  href: "/services/experiential-marketing"
 }, {
   slug: "mobile-tours",
   title: "Mobile Tours",
   desc: "Route planning, staffing, logistics, and market support for regional or national mobile campaigns.",
-  href: "../Ignite Services.html#mobile-tours"
+  href: "/services/mobile-tours"
 }, {
   slug: "trade-shows",
   title: "Trade Shows",
   desc: "Booth staff, lead capture, demo support, hospitality teams, and post-show reporting.",
-  href: "../Trade Show Staffing.html"
+  href: "/services/trade-shows"
 }, {
   slug: "custom-fabrication",
   title: "Custom Fabrication",
   desc: "Branded displays, photo moments, sampling carts, event assets, and activation builds.",
-  href: "../Ignite Services.html#fabrication-builds"
+  href: "/services/fabrication-builds"
 }, {
   slug: "promotional-products",
   title: "Promotional Products",
   desc: "Sourcing, kitting, shipping, and on-site distribution for branded merchandise.",
-  href: "../Ignite Services.html#promotional-products"
+  href: "/services/promotional-products"
 }, {
   slug: "spark-reporting",
   title: "Spark Reporting",
   desc: "Field recaps, photos, attendance notes, lead capture, and activation reporting.",
-  href: "../Ignite Spark.html"
+  href: "https://sparkbyignite.igniteproductions.co/"
 }, {
   slug: "logistics-permitting",
   title: "Logistics & Permitting",
   desc: "Local planning support for venues, public spaces, routes, permits, and production details.",
-  href: "../Ignite Services.html#logistics"
+  href: "/services/logistics-kitting"
 }];
 const resolveServices = input => {
   if (!Array.isArray(input) || input.length === 0) return DEFAULT_SERVICES;
