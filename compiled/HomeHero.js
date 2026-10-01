@@ -153,8 +153,9 @@ const HomeHero = () => {
       position: "absolute",
       left: 0,
       right: 0,
-      top: "50%",
-      height: 1,
+      top: "52%",
+      height: 2,
+      borderRadius: 2,
       transform: "translateY(-50%)",
       background: "linear-gradient(90deg, #4F86C6, #D7453E)"
     }
