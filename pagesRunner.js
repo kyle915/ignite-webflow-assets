@@ -192,6 +192,14 @@
       "deps": [
         "SparkSite"
       ]
+    },
+    "/thank-you": {
+      "global": "ThankYou",
+      "bundle": "ThankYou",
+      "deps": [],
+      "props": {
+        "rel": ""
+      }
     }
   };
   var SERVICE = {
@@ -275,7 +283,7 @@
     if (Object.prototype.hasOwnProperty.call(BESPOKE, p)) {
       var b = BESPOKE[p];
       loadAll((b.deps || []).concat([b.bundle]))
-        .then(function () { render(window[b.global]); })
+        .then(function () { render(window[b.global], b.props); })
         .catch(function (e) { console.error("[PagesRunner]", e); });
       return;
     }
