@@ -1,0 +1,1675 @@
+/* =========================================================================
+   FRACTIONAL — service page (reworked)
+   Source of truth: Ignite Fractional · Sales Sheet
+   ========================================================================= */
+const { useState: fpUseState, useEffect: fpUseEffect, useRef: fpUseRef } = React;
+
+/* Fractalizing — distinct sections/cards each take a solid spectrum hue (accents only). */
+const FP_SPECTRUM = Array.from({ length: 18 }, (_, i) => `var(--spectrum-${String(i + 1).padStart(2, "0")})`);
+const fpHue = (i, n) => FP_SPECTRUM[Math.round(i * 18 / n) % 18];
+
+/* ------- shared primitives (local copies; named to avoid collisions) ----- */
+const FpOpsLine = ({ children, color = "var(--ignite-500)" }) => (
+  <span style={{
+    display: "inline-flex", alignItems: "center", gap: 8,
+    fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.24em",
+    textTransform: "uppercase", color,
+  }}>
+    <span aria-hidden="true" style={{
+      width: 6, height: 6, borderRadius: 999, background: color,
+      animation: "fpPulse 1.8s infinite",
+    }}/>
+    {children}
+  </span>
+);
+
+const FpDisplay = ({ children, dark = false, size = "clamp(56px, 8vw, 124px)", maxWidth = 1200 }) => (
+  <h2 style={{
+    fontFamily: "var(--font-display)", fontWeight: 700, fontSize: size,
+    letterSpacing: "-0.035em", lineHeight: 0.92, maxWidth, textWrap: "balance",
+    color: dark ? "var(--fg-1-inv)" : "var(--fg-1)",
+  }}>{children}</h2>
+);
+
+const FpItalic = ({ children, color = "var(--ignite-500)" }) => (
+  <span style={{ fontStyle: "italic", color, fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400 }}>
+    {children}
+  </span>
+);
+
+/* ==================================================================
+   01 · HERO — animated "founder's to-do" chaos
+   ================================================================== */
+
+/* a curated, slightly absurd inbox of founder-as-VP tasks */
+const FOUNDER_TASKS = [
+  { t: "Pitch Whole Foods Northeast buyer (again)", tag: "SALES" },
+  { t: "Refresh sell sheet — investor sees deck Friday", tag: "MKTG" },
+  { t: "Find 4 demo staff for Costco roadshow Sat", tag: "OPS" },
+  { t: "Reconcile slotting fees w/ broker invoice", tag: "FIN" },
+  { t: "Reply to Sprouts category review email", tag: "SALES" },
+  { t: "Approve trade show booth mockup", tag: "MKTG" },
+  { t: "Reorder samples — 2 events out of stock", tag: "OPS" },
+  { t: "Schedule QBR w/ KeHE", tag: "SALES" },
+  { t: "Update CRM accounts (3 weeks behind)", tag: "OPS" },
+  { t: "Draft promo cadence for Q3", tag: "MKTG" },
+  { t: "Sign event insurance COI for Austin", tag: "OPS" },
+  { t: "Review velocity dip — store #12, store #44", tag: "DATA" },
+  { t: "Confirm broker meeting in Dallas", tag: "SALES" },
+  { t: "Photos from Saturday demo — where are they?", tag: "MKTG" },
+  { t: "Push back launch ship date w/ co-packer", tag: "OPS" },
+  { t: "Build trade calendar tied to P&L (Q4)", tag: "FIN" },
+  { t: "Train 6 new ambassadors for tour leg 2", tag: "OPS" },
+  { t: "Negotiate slotting at H-E-B", tag: "SALES" },
+  { t: "Sample drop — 14 buyers, hand-deliver", tag: "MKTG" },
+  { t: "Read 47 unread Slack threads from staff", tag: "OPS" },
+];
+
+/* small map of tag → accent */
+const TAG_COLORS = {
+  SALES: "var(--ignite-500)", MKTG: "#FFB627",
+  OPS:   "#9AD7E0",          DATA: "#C7B8FF", FIN: "#85E0A3",
+};
+
+const TodoChaos = () => {
+  const [items, setItems] = fpUseState(() => {
+    /* seed with 5 items so the panel isn't empty on first paint */
+    return FOUNDER_TASKS.slice(0, 5).map((task, i) => ({
+      id: i, ...task, done: false, age: 5 - i,
+    }));
+  });
+  const [tick, setTick] = fpUseState(0);
+  const counterRef = fpUseRef(0);
+  counterRef.current = items.length ? Math.max(...items.map(i => i.id)) : 0;
+
+  fpUseEffect(() => {
+    /* main heartbeat — add a task most ticks; very rarely cross one off */
+    const iv = setInterval(() => {
+      setTick(t => t + 1);
+      setItems(prev => {
+        const next = [...prev];
+        /* 1-in-7 chance: cross off the oldest unchecked item */
+        if (Math.random() < 0.14 && next.some(it => !it.done)) {
+          const oldest = next.find(it => !it.done);
+          if (oldest) oldest.done = true;
+        }
+        /* every tick: push a new item on top */
+        const taskIdx = (tick + counterRef.current) % FOUNDER_TASKS.length;
+        const task = FOUNDER_TASKS[Math.floor(Math.random() * FOUNDER_TASKS.length)];
+        next.unshift({
+          id: counterRef.current + 1, ...task, done: false, age: 0,
+        });
+        /* keep list bounded — drop checked-off items first, then oldest */
+        while (next.length > 9) {
+          const doneIdx = next.findIndex(it => it.done);
+          if (doneIdx !== -1) next.splice(doneIdx, 1);
+          else next.pop();
+        }
+        return next;
+      });
+    }, 1700);
+    return () => clearInterval(iv);
+    // eslint-disable-next-line
+  }, []);
+
+  /* clock that races forward */
+  fpUseEffect(() => {
+    const iv = setInterval(() => setTick(t => t + 0.001), 50);
+    return () => clearInterval(iv);
+  }, []);
+
+  /* fake racing timestamp */
+  const baseMs = 60 * 60 * 23 * 1000 + 47 * 60 * 1000; // 23:47
+  const offsetMs = (Date.now() % 60000) * 4;
+  const totalMs = baseMs + offsetMs;
+  const hh = String(Math.floor(totalMs / 3600000) % 24).padStart(2, "0");
+  const mm = String(Math.floor(totalMs / 60000) % 60).padStart(2, "0");
+  const ss = String(Math.floor(totalMs / 1000) % 60).padStart(2, "0");
+
+  return (
+    <div className="frac-todo-chaos" style={{
+      position: "relative", width: "100%", height: 560,
+      perspective: 1400,
+    }}>
+      <style>{`
+        @keyframes fpTodoIn {
+          0%   { opacity:0; transform: translateY(-22px) rotate(var(--rot, 0deg)) scale(0.96); }
+          60%  { opacity:1; }
+          100% { opacity:1; transform: translateY(0) rotate(var(--rot, 0deg)) scale(1); }
+        }
+        @keyframes fpStrike {
+          from { transform: scaleX(0); }
+          to   { transform: scaleX(1); }
+        }
+        @keyframes fpJitter {
+          0%,100% { transform: translate(0,0) rotate(-0.4deg); }
+          50%     { transform: translate(1px, -1px) rotate(0.4deg); }
+        }
+        @keyframes fpPulse {
+          0%,100% { opacity: 1; }
+          50%     { opacity: 0.35; }
+        }
+        @keyframes fpClockTick {
+          0%,100% { transform: translate(0,0); }
+          50%     { transform: translate(0, -1px); }
+        }
+        @keyframes fpStampIn {
+          0%   { opacity:0; transform: rotate(-12deg) scale(2); }
+          70%  { opacity:1; transform: rotate(-12deg) scale(0.95); }
+          100% { opacity:0.9; transform: rotate(-12deg) scale(1); }
+        }
+        @keyframes fpScribble {
+          0%   { transform: rotate(8deg) translateX(-3px); }
+          100% { transform: rotate(8deg) translateX(3px); }
+        }
+      `}</style>
+
+      {/* paper / clipboard background */}
+      <div style={{
+        position: "absolute", inset: 0,
+        background: "linear-gradient(180deg, #f6f1e6 0%, #efe7d6 100%)",
+        borderRadius: 8,
+        boxShadow: "0 30px 80px rgba(0,0,0,0.45), 0 4px 0 #c8bd9c inset",
+        transform: "rotate(2deg)",
+        animation: "fpJitter 3.6s ease-in-out infinite",
+        overflow: "hidden",
+      }}>
+        {/* horizontal rules */}
+        {Array.from({ length: 18 }).map((_, i) => (
+          <div key={i} style={{
+            position: "absolute", left: 56, right: 24,
+            top: 72 + i * 36, height: 1, background: "rgba(70,40,30,0.10)",
+          }}/>
+        ))}
+        {/* red margin */}
+        <div style={{
+          position: "absolute", top: 0, bottom: 0, left: 44, width: 1,
+          background: "rgba(200,40,30,0.5)",
+        }}/>
+        {/* coffee ring */}
+        <div aria-hidden="true" style={{
+          position: "absolute", right: 28, top: 24, width: 64, height: 64, borderRadius: 999,
+          border: "3px solid rgba(120,60,30,0.18)",
+          boxShadow: "inset 0 0 0 6px transparent, 0 0 0 2px rgba(120, 60, 30, 0.04)",
+          transform: "rotate(-8deg)",
+        }}/>
+        {/* clipboard clip */}
+        <div style={{
+          position: "absolute", left: "50%", top: -18, transform: "translateX(-50%)",
+          width: 110, height: 36, background: "#3a3a3a",
+          borderRadius: "6px 6px 12px 12px",
+          boxShadow: "0 6px 12px rgba(0,0,0,0.3)",
+        }}>
+          <div style={{
+            position: "absolute", left: "50%", bottom: -8, transform: "translateX(-50%)",
+            width: 18, height: 18, borderRadius: 999, background: "#1c1c1c",
+            border: "2px solid #555",
+          }}/>
+        </div>
+
+        {/* header strip */}
+        <div style={{
+          position: "absolute", left: 56, right: 24, top: 18,
+          display: "flex", justifyContent: "space-between", alignItems: "baseline",
+          fontFamily: "var(--font-mono)", color: "rgba(40,25,15,0.7)",
+          fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase",
+        }}>
+          <span>★ FOUNDER&apos;S TO-DO · TUESDAY</span>
+          <span style={{ animation: "fpClockTick 0.5s ease-in-out infinite", color: "rgba(200,40,30,0.85)", fontWeight: 700 }}>
+            {hh}:{mm}:{ss}
+          </span>
+        </div>
+        <div style={{
+          position: "absolute", left: 56, right: 24, top: 40,
+          fontFamily: "Georgia, serif", fontStyle: "italic",
+          fontSize: 13, color: "rgba(40,25,15,0.55)",
+        }}>
+          "Just one more thing before bed…"
+        </div>
+
+        {/* the list */}
+        <div style={{ position: "absolute", left: 56, right: 18, top: 78, bottom: 56 }}>
+          {items.map((it, i) => {
+            const rot = ((it.id * 37) % 7 - 3) * 0.3;
+            const tagColor = TAG_COLORS[it.tag] || "#444";
+            return (
+              <div key={it.id} style={{
+                "--rot": `${rot}deg`,
+                position: "absolute", left: 0, right: 0, top: i * 36,
+                display: "flex", alignItems: "center", gap: 12,
+                animation: "fpTodoIn 380ms cubic-bezier(.2,.8,.2,1) both",
+                transform: `rotate(${rot}deg)`,
+                fontFamily: "'Caveat', 'Bradley Hand', 'Comic Sans MS', cursive",
+                color: it.done ? "rgba(40,25,15,0.45)" : "rgba(35,20,10,0.92)",
+                fontSize: 22, lineHeight: 1, paddingTop: 2,
+              }}>
+                {/* checkbox */}
+                <div style={{
+                  position: "relative", flex: "0 0 22px", width: 22, height: 22,
+                  border: "1.5px solid rgba(40,25,15,0.5)", borderRadius: 3,
+                  background: "rgba(255,250,240,0.4)",
+                }}>
+                  {it.done && (
+                    <svg viewBox="0 0 24 24" width="22" height="22" style={{ position: "absolute", inset: -2, color: "rgb(200,40,30)" }}>
+                      <path d="M3 13l6 6L22 4" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  )}
+                </div>
+                <span style={{ flex: 1, position: "relative" }}>
+                  {it.t}
+                  {it.done && (
+                    <span style={{
+                      position: "absolute", left: -2, right: -2, top: "55%",
+                      height: 3, background: "rgb(200,40,30)", borderRadius: 2,
+                      transformOrigin: "left center", animation: "fpStrike 360ms ease-out both",
+                    }}/>
+                  )}
+                </span>
+                {/* tag chip */}
+                <span style={{
+                  fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.2em",
+                  textTransform: "uppercase", fontWeight: 700,
+                  padding: "2px 6px", borderRadius: 3,
+                  background: tagColor, color: "#1a1208",
+                }}>{it.tag}</span>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* footer counter */}
+        <div style={{
+          position: "absolute", left: 56, right: 24, bottom: 18,
+          display: "flex", justifyContent: "space-between", alignItems: "baseline",
+          fontFamily: "var(--font-mono)", color: "rgba(40,25,15,0.6)",
+          fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase",
+        }}>
+          <span>{items.filter(i => !i.done).length} OPEN · {items.filter(i => i.done).length} DONE TODAY</span>
+          <span style={{ color: "rgba(200,40,30,0.85)", fontWeight: 700 }}>QUEUE: ∞</span>
+        </div>
+
+        {/* OVERDUE stamp */}
+        <div aria-hidden="true" style={{
+          position: "absolute", right: 18, top: 220,
+          padding: "6px 18px",
+          border: "3px solid rgba(200,40,30,0.85)",
+          color: "rgba(200,40,30,0.85)",
+          fontFamily: "var(--font-mono)", fontWeight: 800,
+          fontSize: 22, letterSpacing: "0.12em",
+          transform: "rotate(-12deg)",
+          animation: "fpStampIn 600ms cubic-bezier(.2,.8,.2,1) both",
+          background: "rgba(246,241,230,0.5)",
+        }}>OVERDUE</div>
+
+        {/* scribbled "URGENT" margin note */}
+        <div aria-hidden="true" style={{
+          position: "absolute", right: 12, bottom: 100,
+          fontFamily: "'Caveat', cursive", color: "rgba(200,40,30,0.85)",
+          fontSize: 26, transform: "rotate(8deg)",
+          
+        }}>!! URGENT</div>
+      </div>
+
+      {/* "We take this list" floating card — over the chaos */}
+      <div style={{
+        position: "absolute", right: -28, bottom: -28,
+        background: "var(--fractional-prism)", color: "#0b0905",
+        padding: "18px 22px", borderRadius: 6,
+        boxShadow: "0 30px 60px rgba(0,0,0,0.45)",
+        transform: "rotate(-3deg)",
+        maxWidth: 280,
+      }}>
+        <div style={{
+          fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.22em",
+          textTransform: "uppercase", marginBottom: 6, opacity: 0.85,
+        }}>// IGNITE · MONDAY</div>
+        <div style={{
+          fontFamily: "var(--font-display)", fontWeight: 700,
+          fontSize: 22, letterSpacing: "-0.02em", lineHeight: 1.05,
+        }}>We take this whole list off your desk.</div>
+      </div>
+    </div>
+  );
+};
+
+/* "VP of [cycling role]" — rotates through founder-as-VP roles, lands on Everything */
+const VP_ROLES = [
+  "Sales.", "Marketing.", "Demos.", "Slotting.", "Brokers.",
+  "Trade Shows.", "Sampling.", "Field Ops.", "Hiring.", "Logistics.",
+  "Everything.",
+];
+const VpCycler = () => {
+  const [idx, setIdx] = fpUseState(0);
+  fpUseEffect(() => {
+    const iv = setInterval(() => {
+      setIdx(c => (c + 1) % VP_ROLES.length);
+    }, 2100);
+    return () => clearInterval(iv);
+  }, []);
+  const word = VP_ROLES[idx];
+  const showFinal = word === "Everything.";
+  return (
+    <span style={{ position: "relative", display: "inline", alignItems: "baseline" }}>
+      <FpItalic color="#fff">VP&nbsp;of&nbsp;</FpItalic>
+      <span className="fp-vp-cycle" style={{
+        position: "relative", display: "inline-block",
+        minWidth: "7ch", whiteSpace: "nowrap",
+      }}>
+        <span key={word} className={showFinal ? undefined : "fp-prism-text"} style={{
+          fontStyle: "italic", color: showFinal ? "var(--ignite-500)" : undefined,
+          fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400,
+          display: "inline-block",
+          animation: showFinal
+            ? "vpLand 900ms cubic-bezier(.18,.9,.2,1.2) both"
+            : "vpFlick 900ms cubic-bezier(.4,0,.2,1) both",
+          
+        }}>{word}</span>
+        {/* underline pulse on landing */}
+        {showFinal && (
+          <span aria-hidden="true" style={{
+            position: "absolute", left: 0, right: "0.1em", bottom: "0.04em",
+            height: 4, background: "var(--ignite-500)",
+            transformOrigin: "left center",
+            animation: "vpUnderline 540ms cubic-bezier(.2,.8,.2,1) 180ms both",
+          }}/>
+        )}
+      </span>
+      <style>{`
+        @keyframes vpFlick { 0%{opacity:0;transform:translateY(-8px) skewX(-6deg);} 60%{opacity:1;} 100%{opacity:1;transform:translateY(0) skewX(0);} }
+        @keyframes vpLand  { 0%{opacity:0;transform:translateY(14px) scale(0.92);} 60%{opacity:1;transform:translateY(-3px) scale(1.04);} 100%{opacity:1;transform:translateY(0) scale(1);} }
+        @keyframes vpUnderline { from{transform:scaleX(0);} to{transform:scaleX(1);} }
+        @keyframes vpCaret { 0%,100%{opacity:1;} 50%{opacity:0;} }
+        @keyframes vpJitter { 0%,100%{transform:translate(0,0);} 25%{transform:translate(-1px,1px);} 75%{transform:translate(1px,-1px);} }
+        @keyframes vpStatusBlink { 0%,100%{background:rgba(215, 69, 62,0.12);} 50%{background:rgba(215, 69, 62,0.28);} }
+        @keyframes vpMarquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+      `}</style>
+    </span>
+  );
+};
+
+const FractionalHero2 = () => (
+  <section style={{
+    position: "relative", background: "var(--ink-000)",
+    padding: "var(--hero-pad-standard) 0", overflow: "hidden",
+    borderBottom: "1px solid var(--ink-400)",
+  }}>
+    <div aria-hidden="true" style={{
+      position: "absolute", inset: 0,
+      background: "transparent",
+      pointerEvents: "none",
+    }}/>
+    {/* hand-loaded Caveat for to-do scribble */}
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap"/>
+
+    <style>{`
+      @property --fp-ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+      @keyframes fpPrismShift{from{background-position:0% 50%}to{background-position:200% 50%}}
+      .fp-prism-text{background:var(--fractional-prism);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:fpPrismShift 9s linear infinite}
+      .fp-live{position:relative;display:inline-flex;align-items:center;gap:12px;padding:11px 18px;border-radius:8px;margin-bottom:28px}
+      .fp-live::before{content:"";position:absolute;inset:0;border-radius:8px;padding:1.5px;background:conic-gradient(from var(--fp-ang,0deg),var(--ignite-500),#FFB627,var(--ignite-500),#FFB627,var(--ignite-500));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:fpLiveSpin 4s linear infinite}
+      @keyframes fpLiveSpin{to{--fp-ang:360deg}}
+      @media (prefers-reduced-motion: reduce){.fp-prism-text{animation:none}.fp-live::before{animation:none}}
+    `}</style>
+
+    {/* top "system status" rail */}
+    <div style={{
+      position: "absolute", top: 0, left: 0, right: 0,
+      borderBottom: "1px solid var(--ink-400)",
+      background: "rgba(0,0,0,0.4)", backdropFilter: "blur(6px)",
+      fontFamily: "var(--font-mono)", fontSize: 10,
+      letterSpacing: "0.22em", textTransform: "uppercase",
+      color: "var(--fg-3)", overflow: "hidden",
+    }}>
+      <div style={{
+        display: "flex", gap: 36, padding: "10px 0",
+        animation: "vpMarquee 38s linear infinite",
+        whiteSpace: "nowrap", width: "max-content",
+      }}>
+        {Array.from({ length: 2 }).map((_, k) => (
+          <React.Fragment key={k}>
+            <span style={{ color: "var(--ignite-500)" }}>● SYSTEM STATUS</span>
+            <span>FOUNDER CPU · OVERLOADED</span>
+            <span style={{ color: "#FFB627" }}>◆ INBOX: 247 UNREAD</span>
+            <span>BUYER PIPELINE · STALLED</span>
+            <span style={{ color: "var(--ignite-500)" }}>◆ DEMO STAFF · 4 NO-SHOWS</span>
+            <span>SELL SHEET · 17 MONTHS OLD</span>
+            <span style={{ color: "#FFB627" }}>● SLOTTING FEES · UNRECONCILED</span>
+            <span>BROKER LAST CONTACT · 23 DAYS</span>
+            <span style={{ color: "var(--ignite-500)" }}>◆ Q3 PLAN · NOT STARTED</span>
+            <span>★ IGNITE · STANDING BY</span>
+          </React.Fragment>
+        ))}
+      </div>
+    </div>
+
+    <Container style={{ position: "relative", marginTop: 24 }}>
+      <div className="frac-hero-grid" style={{
+        display: "grid", gridTemplateColumns: "minmax(0, 1.05fr) 520px",
+        gap: 80, alignItems: "start",
+      }}>
+        {/* LEFT — copy */}
+        <div>
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: 10,
+            padding: "6px 12px", borderRadius: 999,
+            animation: "vpStatusBlink 1.8s ease-in-out infinite",
+            border: "1px solid rgba(215, 69, 62,0.4)",
+            fontFamily: "var(--font-mono)", fontSize: 11,
+            letterSpacing: "0.22em", textTransform: "uppercase",
+            color: "var(--ignite-500)", marginBottom: 22,
+          }}>
+            <span style={{ width: 6, height: 6, borderRadius: 999, background: "var(--ignite-500)" }}/>
+            FRACTIONAL · VETERAN-OWNED · 50 STATES
+          </div>
+          <h1 style={{
+            marginTop: 4, fontFamily: "var(--font-display)", fontWeight: 700,
+            letterSpacing: "-0.03em", lineHeight: 1, textWrap: "balance",
+            margin: 0,
+          }}>
+            <span className="fp-prism-text" style={{
+              display: "block",
+              fontSize: "clamp(36px, 4.2vw, 64px)",
+              fontWeight: 600, letterSpacing: "-0.02em",
+              lineHeight: 1.02,
+            }}>Stop being your own</span>
+            <span style={{
+              display: "block", marginTop: 6,
+              fontSize: "clamp(34px, 8.2vw, 124px)",
+              letterSpacing: "-0.04em", lineHeight: 1.08,
+              color: "var(--fg-1)",
+              minHeight: "2.16em",
+            }}>
+              <VpCycler/>
+            </span>
+          </h1>
+          <p style={{
+            marginTop: 32, fontSize: 21, lineHeight: 1.5,
+            color: "var(--fg-2)", maxWidth: 560,
+          }}>
+            Senior CPG <b style={{ color: "var(--fg-1)" }}>Sales, Trade Marketing & Field</b> embedded in your brand for a fraction of the cost of hiring it. One team for the work most brands split across a broker, a trade marketing manager, and three agencies. In-market in <b style={{ color: "var(--fg-1)" }}>~2 weeks</b>. Month-to-month after the first 90 days.
+          </p>
+          <div style={{ marginTop: 40, display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <AccentBtn size="lg" style={{ background: "var(--fractional-prism)", backgroundSize: "220% 100%", color: "#0b0905" }} onClick={() => window.open("https://calendly.com/kyle-igniteproductions/30min?back=1", "_blank")}>Book a 30-min call</AccentBtn>
+            <GhostBtn size="lg" onClick={() => location.href = "https://www.igniteproductions.co/contact"}>Get in touch</GhostBtn>
+          </div>
+          <div style={{
+            marginTop: 36, display: "flex", gap: 18, flexWrap: "wrap",
+            fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.22em",
+            textTransform: "uppercase", color: "var(--fg-3)",
+          }}>
+            <span>↳ 12+ YRS IN CPG</span>
+            <span>↳ 50 STATES</span>
+            <span>↳ NO LOCKED CONTRACTS</span>
+          </div>
+        </div>
+
+        {/* RIGHT — chaos */}
+        <TodoChaos/>
+      </div>
+    </Container>
+  </section>
+);
+
+/* ==================================================================
+   01.5 · PAIN BANNER — "we've all been there" scrolling confessions
+   ================================================================== */
+const PAIN_POINTS = [
+  "Building a sell sheet in Canva at 2am",
+  "Hoping the buyer calls you back after that last-ditch text",
+  "Three Slack DMs to the broker. Two unread. One \"k.\"",
+  "Forecasting Q4 in a spreadsheet you don't fully trust",
+  "Booking a flight to meet a buyer who already rescheduled twice",
+  "Approving a demo team you've never met for a Saturday at Costco",
+  "Reconciling slotting fees against a P&L that hasn't been updated since March",
+  "Re-saving \"FINAL_v9_USE_THIS_ONE.pdf\"",
+  "Following up on the Sprouts review three Mondays in a row",
+  "Wondering why velocity is flat at store #44",
+  "Lying awake doing trade math instead of sleeping",
+  "Posting a job for a VP of Sales you can't actually afford",
+  "Realizing the photos from Saturday's activation never came in",
+  "Negotiating slotting on the same call as picking up your kid",
+  "Showing up to a trade show with a booth and zero leads queued",
+  "Telling your investors \"we just need one more hire\" — again",
+  "Eating a granola bar at your desk because the team needs a recap deck by EOD",
+  "Pretending the broker scorecard isn't a vibe check",
+  "Re-reading the MDF agreement at midnight trying to find the loophole",
+  "Submitting a co-op claim with 90% of receipts and praying",
+  "Burning through scan-back budget on a promo that didn't move units",
+  "Signing a festival sponsorship and realizing nobody's running activation",
+  "An athlete partnership that's basically just a UPS shipping address",
+  "Watching a competitor walk away with the endcap you wanted",
+  "Building the Q4 trade calendar in the parking lot before a buyer meeting",
+  "Three Instagram DMs from agencies pitching you the same deck",
+  "Approving sponsorship spend before approving payroll",
+  "Buyer asking for a TPR and you're not 100% sure what TPR stands for",
+  "Reading a Nielsen report you didn't pay for and don't fully trust",
+  "Realizing the partnership lead never got handed off after the trade show",
+  "Pulling category review insights from three different broker emails",
+  "Saying \"we'll figure out KPIs after launch\" — again",
+  "Trying to remember which retailer wants the SRP at 3.99 vs 4.49",
+];
+
+const FractionalPainBanner = () => {
+  /* split into 3 staggered rows for variety */
+  const rows = [
+    [PAIN_POINTS.slice(0, 12),  100, "var(--ignite-500)"],
+    [PAIN_POINTS.slice(12, 23), 130, "#FFB627"],
+    [PAIN_POINTS.slice(23),     115, "var(--ignite-500)"],
+  ];
+  return (
+    <section style={{
+      background: "var(--ink-100)", color: "var(--fg-1)",
+      borderTop: "1px solid var(--ink-400)",
+      borderBottom: "1px solid var(--ink-400)",
+      padding: "70px 0", position: "relative", overflow: "hidden",
+    }}>
+      <style>{`
+        @keyframes pnMarq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      `}</style>
+
+      {/* opener */}
+      <Container>
+        <div style={{
+          display: "flex", alignItems: "center", gap: 18, marginBottom: 40,
+        }}>
+          <span style={{
+            fontFamily: "var(--font-mono)", fontSize: 11,
+            letterSpacing: "0.24em", textTransform: "uppercase",
+            color: "var(--ignite-500)", fontWeight: 700,
+          }}>// CONFESSIONS · ANONYMOUS · CPG FOUNDERS</span>
+          <span style={{ flex: 1, height: 1,
+            background: "linear-gradient(90deg, rgba(215, 69, 62,0.4), transparent)" }}/>
+        </div>
+        <h2 style={{
+          fontFamily: "var(--font-display)", fontWeight: 700,
+          fontSize: "clamp(48px, 6.4vw, 104px)", letterSpacing: "-0.04em",
+          lineHeight: 0.92, textWrap: "balance", maxWidth: 1200,
+        }}>
+          We&apos;ve all been there{" "}
+          <span style={{
+            fontStyle: "italic", color: "var(--ignite-500)",
+            fontFamily: "Georgia, serif", fontWeight: 400,
+          }}>…</span>
+        </h2>
+      </Container>
+
+      {/* scrolling rows */}
+      <div style={{ marginTop: 56, display: "flex", flexDirection: "column", gap: 18 }}>
+        {rows.map(([items, speed, color], ri) => (
+          <div key={ri} style={{
+            overflow: "hidden",
+            maskImage: "linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%)",
+          }}>
+            <div style={{
+              display: "flex", gap: 24, width: "max-content",
+              animation: `pnMarq ${speed}s linear infinite`,
+              animationDirection: ri % 2 ? "reverse" : "normal",
+            }}>
+              {[...items, ...items].map((line, i) => (
+                <div key={i} style={{
+                  display: "inline-flex", alignItems: "center", gap: 14,
+                  padding: "16px 24px", borderRadius: 999,
+                  border: "1px solid var(--ink-400)",
+                  background: "var(--ink-000)",
+                  fontFamily: "var(--font-display)", fontWeight: 500,
+                  fontSize: 22, letterSpacing: "-0.01em",
+                  color: "var(--fg-1)", whiteSpace: "nowrap",
+                  flex: "0 0 auto",
+                }}>
+                  <span style={{ color, fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.16em" }}>
+                    ✕
+                  </span>
+                  <span>{line}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* sinker */}
+      <Container style={{ marginTop: 56 }}>
+        <div style={{
+          display: "flex", alignItems: "baseline", gap: 18, flexWrap: "wrap",
+        }}>
+          <span style={{
+            fontFamily: "var(--font-display)", fontWeight: 700,
+            fontSize: "clamp(28px, 3.2vw, 52px)", letterSpacing: "-0.025em",
+            lineHeight: 1.05, textWrap: "balance",
+          }}>
+            And now you&apos;re reading the
+            <span style={{ color: "var(--ignite-500)", fontStyle: "italic",
+              fontFamily: "Georgia, serif", fontWeight: 400 }}> page that fixes it.</span>
+          </span>
+          <span style={{
+            fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.22em",
+            textTransform: "uppercase", color: "var(--ignite-500)",
+          }}>↓ KEEP READING</span>
+        </div>
+      </Container>
+    </section>
+  );
+};
+
+/* ==================================================================
+   02 · STATS
+   ================================================================== */
+const FractionalStats = () => (
+  <section style={{
+    background: "var(--ink-100)", borderTop: "1px solid var(--ink-400)",
+    borderBottom: "1px solid var(--ink-400)", padding: "56px 0",
+  }}>
+    <Container>
+      <div style={{
+        display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
+        gap: 32, alignItems: "baseline",
+      }}>
+        {[
+          ["12+", "Years in CPG"],
+          ["257K+", "Brand ambassadors"],
+          ["50", "States covered"],
+          ["~2 wk", "Time to in-market"],
+        ].map(([n, l], i) => (
+          <div key={l} style={{
+            display: "flex", flexDirection: "column", gap: 10,
+            borderLeft: i === 0 ? "none" : "1px solid var(--ink-400)",
+            paddingLeft: i === 0 ? 0 : 32,
+          }}>
+            <div style={{
+              fontFamily: "var(--font-display)", fontWeight: 700,
+              fontSize: "clamp(48px, 6vw, 96px)", letterSpacing: "-0.035em",
+              lineHeight: 0.95, whiteSpace: "nowrap",
+              background: "linear-gradient(180deg, #fff 0%, #ffb8a3 100%)",
+              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+            }}>{n}</div>
+            <div style={{
+              fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.22em",
+              textTransform: "uppercase", color: "var(--fg-3)",
+            }}>{l}</div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+);
+
+/* ==================================================================
+   03 · TWO ENGINES — Sales & Marketing side-by-side
+   ================================================================== */
+const FractionalEngines = () => (
+  <section className="paper" style={{ padding: "120px 0", borderTop: "1px solid var(--paper-200)" }}>
+    <Container>
+      <div style={{ maxWidth: 980, marginBottom: 64 }}>
+        <FpOpsLine color="var(--spectrum-03)">{">>"} SALES-LED · MARKETING THAT BACKS IT UP</FpOpsLine>
+        <h2 style={{
+          marginTop: 16, fontFamily: "var(--font-display)", fontWeight: 700,
+          fontSize: "clamp(44px, 5.6vw, 88px)", letterSpacing: "-0.035em",
+          lineHeight: 0.94, color: "var(--fg-1-inv)", textWrap: "balance",
+        }}>
+          The fastest way to grow a CPG brand isn't another hire —
+          <span style={{
+            display: "inline-block",
+            fontStyle: "italic", fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400,
+            color: "#0b0905",
+            background: "var(--fractional-prism)",
+            padding: "0.12em 0.32em 0.18em",
+            transform: "rotate(-2deg)",
+            borderRadius: 6,
+            
+            marginLeft: "0.12em",
+          }}> it's a sales team plugged in by Monday.</span>
+        </h2>
+      </div>
+
+      <div className="frac-engines" style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: 20 }}>
+        {[
+          {
+            icon: "⚡", tag: "ENGINE 01 · THE LEAD", title: "CPG Sales",
+            head: "Get on shelf. Stay on shelf.",
+            blurb: "Senior sales leadership without the full-time overhead. We own buyer pitching, broker management, distribution, slotting, and trade — end-to-end, accountable to revenue.",
+            chips: [
+              ["Fractional sales team", "services-fractional-sales-team.html"],
+              ["Broker management", "services-retail-sales-broker-management.html"],
+              ["Buyer pitch & line reviews", "services-buyer-pitch-line-reviews.html"],
+              ["Trade marketing", "services-trade-marketing-management.html"],
+              ["Distribution expansion", "services-distribution-expansion.html"],
+              ["Retail readiness & margin", "services-retail-readiness.html"],
+            ],
+            accent: "var(--ignite-500)",
+            lead: true,
+          },
+          {
+            icon: "✦", tag: "ENGINE 02 · THE SUPPORT", title: "Marketing",
+            head: "Make them remember you.",
+            blurb: "Sell sheets, sponsorships, demo & sampling, and experiential — the presence that backs the sell-in and keeps you bought.",
+            chips: [
+              ["Sell sheets", null], ["Sponsorships", null], ["Sampling", null],
+              ["Trade shows", null], ["Activations", null],
+            ],
+            accent: "#FFB627",
+          },
+        ].map(e => (
+          <div key={e.tag} style={{
+            position: "relative",
+            background: e.lead ? "var(--ink-000)" : "var(--paper-000)",
+            border: e.lead ? "1px solid var(--ink-400)" : "1px solid var(--paper-200)",
+            borderRadius: 20, padding: 44, overflow: "hidden",
+          }}>
+            <div aria-hidden="true" style={{
+              position: "absolute", top: -120, right: -80, width: 320, height: 320,
+              borderRadius: 999, background: "transparent",
+              filter: "blur(20px)", pointerEvents: "none",
+            }}/>
+            <div style={{ position: "relative" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 28 }}>
+                <span style={{
+                  width: 44, height: 44, borderRadius: 8,
+                  background: e.accent, color: "#0b0905",
+                  display: "grid", placeItems: "center",
+                  fontSize: 22, fontWeight: 700,
+                }}>{e.icon}</span>
+                <div style={{
+                  fontFamily: "var(--font-stencil)", fontSize: 13,
+                  letterSpacing: "0.16em", color: e.accent,
+                }}>{e.tag}</div>
+              </div>
+              <h3 style={{
+                fontFamily: "var(--font-display)", fontWeight: 700,
+                fontSize: 18, letterSpacing: "0.04em", textTransform: "uppercase",
+                color: e.lead ? "var(--fg-3)" : "var(--fg-3-inv)", marginBottom: 14,
+              }}>{e.title}</h3>
+              <div style={{
+                fontFamily: "var(--font-display)", fontWeight: 700,
+                fontSize: e.lead ? "clamp(40px, 4.2vw, 64px)" : "clamp(30px, 3vw, 44px)", letterSpacing: "-0.025em",
+                lineHeight: 1.02, color: e.lead ? "var(--fg-1)" : "var(--fg-1-inv)", marginBottom: 22,
+                textWrap: "balance",
+              }}>{e.head}</div>
+              <p style={{
+                fontSize: 16, lineHeight: 1.55, color: e.lead ? "var(--fg-2)" : "var(--fg-2-inv)", marginBottom: 28,
+              }}>{e.blurb}</p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {e.chips.map(([c, href]) => (
+                  href ? (
+                    <a key={c} href={href} style={{
+                      padding: "9px 15px", borderRadius: 999,
+                      background: "rgba(215, 69, 62,0.12)", color: "var(--ignite-500)",
+                      fontFamily: "var(--font-mono)", fontSize: 11,
+                      letterSpacing: "0.12em", textTransform: "uppercase",
+                      border: "1px solid rgba(215, 69, 62,0.4)", textDecoration: "none",
+                      display: "inline-flex", alignItems: "center", gap: 6,
+                    }}>{c} <span style={{ opacity: 0.7 }}>→</span></a>
+                  ) : (
+                    <span key={c} style={{
+                      padding: "8px 14px", borderRadius: 999,
+                      background: "var(--paper-100)", color: "var(--fg-1-inv)",
+                      fontFamily: "var(--font-mono)", fontSize: 11,
+                      letterSpacing: "0.14em", textTransform: "uppercase",
+                      border: "1px solid var(--paper-200)",
+                    }}>{c}</span>
+                  )
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+);
+
+/* ==================================================================
+   04 · FROM → TO — transformation pairs
+   ================================================================== */
+const FROM_TO = [
+  ["Founder pitching buyers at 11pm",   "Senior CPG closer in your seat"],
+  ["Brokers you can't reach",           "Weekly read-outs & scorecards"],
+  ["Slotting fees with no plan",        "Trade calendar tied to P&L"],
+  ["Demos run by no-shows",             "257K vetted ambassadors"],
+  ["Sell sheet from 2022",              "Buyer-ready brand kit"],
+  ["$240K+ for two FT hires",           "A retainer that flexes monthly"],
+];
+
+const FractionalFromTo = () => (
+  <section style={{
+    background: "var(--ink-000)", borderTop: "1px solid var(--ink-400)",
+    padding: "120px 0", position: "relative", overflow: "hidden",
+  }}>
+    <Container style={{ position: "relative" }}>
+      <FpOpsLine color="var(--spectrum-06)">{">>"} FROM → TO</FpOpsLine>
+      <h2 style={{
+        marginTop: 14, fontFamily: "var(--font-display)", fontWeight: 700,
+        fontSize: "clamp(44px, 5.6vw, 88px)", letterSpacing: "-0.035em",
+        lineHeight: 0.94, maxWidth: 1100, textWrap: "balance",
+      }}>
+        What changes <span className="fp-prism-text" style={{ fontStyle: "italic", fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400, display: "inline-block" }}>by month two.</span>
+      </h2>
+
+      <div style={{
+        marginTop: 56, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16,
+      }}>
+        {FROM_TO.map(([from, to], i) => (
+          <div key={i} style={{
+            display: "grid", gridTemplateColumns: "auto 1fr auto 1fr",
+            alignItems: "center", gap: 18,
+            padding: "22px 24px",
+            background: "var(--ink-100)", border: "1px solid var(--ink-400)",
+            borderRadius: 12,
+          }}>
+            <div style={{
+              fontFamily: "var(--font-stencil)", fontSize: 13,
+              letterSpacing: "0.16em", color: "var(--fg-3)",
+            }}>0{i + 1}</div>
+            <div style={{
+              fontFamily: "var(--font-mono)", fontSize: 13, lineHeight: 1.45,
+              color: "var(--fg-3)", textDecoration: "line-through",
+              textDecorationColor: "rgba(215, 69, 62,0.6)",
+              textDecorationThickness: 2,
+            }}>{from}</div>
+            <div style={{
+              fontFamily: "var(--font-mono)", fontSize: 16,
+              color: "var(--ignite-500)", letterSpacing: "0.1em",
+            }}>→</div>
+            <div style={{
+              fontFamily: "var(--font-display)", fontWeight: 600,
+              fontSize: 17, lineHeight: 1.3, color: "var(--fg-1)",
+              letterSpacing: "-0.01em",
+            }}>{to}</div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+);
+
+/* ==================================================================
+   05 · BUILT FOR + WEEK ONE — two-column promise
+   ================================================================== */
+const BUILT_FOR = [
+  "Are doing $1M–$50M and ready to scale",
+  "Need senior CPG leadership without $250K+ overhead",
+  "Are stuck managing brokers & demos themselves",
+  "Want results before another funding round",
+  "Have product-market fit but flat velocity",
+  "Are losing time to \"founder-as-VP\" syndrome",
+];
+const WEEK_ONE = [
+  ["DAY 1",     "Embedded senior team plugged into your stack"],
+  ["WEEK 1",    "Brand & account audit — buyer-by-buyer"],
+  ["WEEK 2",    "Custom 90-day playbook delivered & approved"],
+  ["WEEK 3",    "First buyer pitches & sample drops out the door"],
+  ["ONGOING",   "Friday read-outs — what shipped, stuck, next"],
+];
+
+const FractionalBuiltFor = () => (
+  <section className="paper" style={{
+    padding: "120px 0", borderTop: "1px solid var(--paper-200)",
+  }}>
+    <Container>
+      <div style={{ maxWidth: 920, marginBottom: 64 }}>
+        <FpOpsLine color="var(--spectrum-09)">{">>"} BEST FOR · $1M–$50M BRANDS SCALING DISTRIBUTION</FpOpsLine>
+        <h2 style={{
+          marginTop: 16, fontFamily: "var(--font-display)", fontWeight: 900,
+          fontSize: "clamp(44px, 5.6vw, 88px)", letterSpacing: "-0.04em",
+          lineHeight: 0.95, color: "var(--fg-1-inv)", textWrap: "balance",
+          margin: 0,
+        }}>
+          Built for brands that have product-market fit.
+        </h2>
+        <div style={{ marginTop: 22, display: "inline-block" }}>
+          <span style={{
+            display: "inline-block",
+            fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: "italic", fontWeight: 400,
+            fontSize: "clamp(28px, 3.4vw, 52px)",
+            letterSpacing: "-0.015em", lineHeight: 1.1,
+            color: "#0b0905", background: "var(--fractional-prism)",
+            padding: "0.12em 0.32em 0.18em",
+            transform: "rotate(-1.5deg)",
+            borderRadius: 8,
+            
+          }}>Not the bandwidth to scale it.</span>
+        </div>
+      </div>
+
+      <div style={{
+        display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20,
+      }}>
+        {/* Built for */}
+        <div style={{
+          padding: 40, background: "var(--paper-000)",
+          border: "1px solid var(--paper-200)", borderRadius: 20,
+        }}>
+          <div style={{
+            fontFamily: "var(--font-stencil)", fontSize: 13,
+            letterSpacing: "0.18em", color: "var(--ignite-500)", marginBottom: 24,
+          }}>● BUILT FOR BRANDS THAT…</div>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0,
+                       display: "flex", flexDirection: "column", gap: 14 }}>
+            {BUILT_FOR.map((line, i) => (
+              <li key={i} style={{
+                display: "flex", gap: 16, alignItems: "flex-start",
+                paddingBottom: 14, borderBottom: i === BUILT_FOR.length - 1 ? "none" : "1px solid var(--paper-200)",
+              }}>
+                <span style={{
+                  flex: "0 0 24px", color: "var(--ignite-500)", fontSize: 22, lineHeight: 1,
+                }}>✓</span>
+                <span style={{
+                  fontFamily: "var(--font-display)", fontWeight: 500,
+                  fontSize: 17, lineHeight: 1.35, color: "var(--fg-1-inv)",
+                  letterSpacing: "-0.01em", whiteSpace: "nowrap",
+                }}>{line}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Week one */}
+        <div style={{
+          padding: 40, background: "var(--ink-000)", color: "var(--fg-1)",
+          border: "1px solid var(--ink-400)", borderRadius: 20,
+          position: "relative", overflow: "hidden",
+        }}>
+          <div aria-hidden="true" style={{
+            position: "absolute", inset: 0,
+            background: "transparent",
+          }}/>
+          <div style={{ position: "relative" }}>
+            <div style={{
+              fontFamily: "var(--font-stencil)", fontSize: 13,
+              letterSpacing: "0.18em", color: "var(--ignite-500)", marginBottom: 24,
+            }}>● WHAT YOU GET, WEEK ONE</div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+              {WEEK_ONE.map(([when, what], i) => (
+                <div key={i} style={{
+                  display: "grid", gridTemplateColumns: "90px 1fr",
+                  alignItems: "baseline", gap: 18,
+                  padding: "16px 0",
+                  borderTop: "1px dashed var(--ink-400)",
+                }}>
+                  <span style={{
+                    fontFamily: "var(--font-mono)", fontSize: 11,
+                    letterSpacing: "0.22em", color: "var(--ignite-500)",
+                    textTransform: "uppercase", fontWeight: 700,
+                  }}>{when}</span>
+                  <span style={{
+                    fontFamily: "var(--font-display)", fontWeight: 500,
+                    fontSize: 16, lineHeight: 1.35, color: "var(--fg-1)",
+                    letterSpacing: "-0.01em", whiteSpace: "nowrap",
+                  }}>{what}</span>
+                </div>
+              ))}
+            </div>
+            <div style={{
+              marginTop: 32, padding: "16px 18px",
+              background: "rgba(215, 69, 62,0.08)", borderRadius: 8,
+              borderLeft: "3px solid var(--ignite-500)",
+              fontFamily: "var(--font-mono)", fontSize: 12,
+              letterSpacing: "0.06em", color: "var(--fg-2)", lineHeight: 1.55,
+            }}>
+              No proposal-then-silence cycle. Senior people, embedded inside your tools — Slack, Notion, CRM — on day one.
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+);
+
+/* ==================================================================
+   06 · CADENCE — Weekly / Monthly / Quarterly
+   ================================================================== */
+const CADENCE = [
+  {
+    when: "WEEKLY", head: "Pipeline review · daily Slack",
+    body: "Friday read-out on hot accounts. Daily comms on what just shipped, what just stuck, what's next.",
+    bullets: ["Hot-account read", "Daily standups", "Slack-native"],
+  },
+  {
+    when: "MONTHLY", head: "P&L impact · trade calendar",
+    body: "Account-by-account performance read. Slotting & spend reconciliation. Trade calendar planning for the next 60 days.",
+    bullets: ["Per-account P&L", "Slot/spend recon", "60-day plan"],
+  },
+  {
+    when: "QUARTERLY", head: "Joint business plan refresh",
+    body: "Brand health check. Broker scorecards. Trade ROI deep-dive. One QBR for the founder — not two siloed updates.",
+    bullets: ["Brand health", "Broker scorecards", "Single QBR"],
+  },
+];
+
+const FractionalCadence = () => (
+  <section id="how-we-plug-in" style={{
+    background: "var(--ink-000)", borderTop: "1px solid var(--ink-400)",
+    padding: "120px 0", position: "relative", overflow: "hidden",
+  }}>
+    <Container style={{ position: "relative" }}>
+      <FpOpsLine>{">>"} HOW WE PLUG IN</FpOpsLine>
+      <h2 style={{
+        marginTop: 14, fontFamily: "var(--font-display)", fontWeight: 700,
+        fontSize: "clamp(44px, 5.6vw, 88px)", letterSpacing: "-0.035em",
+        lineHeight: 0.94, maxWidth: 1100, textWrap: "balance",
+      }}>
+        A real cadence —
+        <span className="fp-prism-text" style={{ fontStyle: "italic", fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400, display: "inline-block" }}> not a check-in call.</span>
+      </h2>
+
+      <div style={{
+        marginTop: 64, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20,
+      }}>
+        {CADENCE.map((c, i) => { const accent = fpHue(i, CADENCE.length); return (
+          <div key={c.when} style={{
+            position: "relative", padding: 36, borderRadius: 16,
+            background: "var(--ink-100)", border: "1px solid var(--ink-400)",
+            display: "flex", flexDirection: "column", justifyContent: "space-between",
+            minHeight: 360,
+          }}>
+            <div>
+              <div style={{
+                display: "inline-flex", alignItems: "center", gap: 8,
+                padding: "6px 10px", borderRadius: 999,
+                background: `color-mix(in srgb, ${accent} 14%, transparent)`,
+                fontFamily: "var(--font-mono)", fontSize: 11,
+                letterSpacing: "0.22em", color: accent,
+                textTransform: "uppercase", marginBottom: 24,
+              }}>{c.when}</div>
+              <h3 style={{
+                fontFamily: "var(--font-display)", fontWeight: 700,
+                fontSize: 26, letterSpacing: "-0.02em", lineHeight: 1.1,
+                marginBottom: 16, textWrap: "balance",
+              }}>{c.head}</h3>
+              <p style={{
+                fontSize: 15, lineHeight: 1.55, color: "var(--fg-2)",
+              }}>{c.body}</p>
+            </div>
+            <ul style={{ listStyle: "none", padding: 0, margin: "28px 0 0",
+                         display: "flex", flexDirection: "column", gap: 8 }}>
+              {c.bullets.map(b => (
+                <li key={b} style={{
+                  display: "flex", gap: 10, alignItems: "center",
+                  fontFamily: "var(--font-mono)", fontSize: 11,
+                  letterSpacing: "0.18em", color: "var(--fg-3)",
+                  textTransform: "uppercase",
+                }}>
+                  <span style={{ color: accent }}>↳</span>{b}
+                </li>
+              ))}
+            </ul>
+            <div aria-hidden="true" style={{
+              position: "absolute", top: 24, right: 24,
+              fontFamily: "var(--font-stencil)", fontSize: 28,
+              color: accent, opacity: 0.5,
+            }}>0{i + 1}</div>
+          </div>
+        ); })}
+      </div>
+    </Container>
+  </section>
+);
+
+/* ==================================================================
+   07 · COMPARISON — Ignite vs FT Hire vs Agency
+   ================================================================== */
+const COMPARE_ROWS = [
+  ["Time to start",                                  "~2 weeks",  "3–6 mos",     "4–8 wks"],
+  ["CPG-specific senior leadership",                 true,         "maybe",       false],
+  ["257K+ ambassadors / boots-on-ground",             true,         false,         "subbed"],
+  ["Sales + Marketing under one roof",               true,         "2 hires",     "usually one"],
+  ["Scale up / down monthly",                        true,         "severance",   "annual"],
+  ["Skin in the game on revenue",                    true,         "salary only", false],
+];
+
+const cellRender = (v) => {
+  if (v === true)  return <span style={{ color: "var(--ignite-500)", fontSize: 22, fontWeight: 700 }}>✓</span>;
+  if (v === false) return <span style={{ color: "var(--fg-3)", fontSize: 22 }}>✕</span>;
+  return (
+    <span style={{
+      fontFamily: "var(--font-mono)", fontSize: 12,
+      letterSpacing: "0.14em", color: "var(--fg-2)",
+      textTransform: "uppercase",
+    }}>{v}</span>
+  );
+};
+
+const FractionalCompare = () => (
+  <section className="paper" style={{
+    padding: "120px 0", borderTop: "1px solid var(--paper-200)",
+  }}>
+    <Container>
+      <div style={{ maxWidth: 920, marginBottom: 56 }}>
+        <FpOpsLine color="var(--spectrum-13)">{">>"} HONEST COMPARISON</FpOpsLine>
+        <h2 style={{
+          marginTop: 14, fontFamily: "var(--font-display)", fontWeight: 700,
+          fontSize: "clamp(44px, 5.6vw, 88px)", letterSpacing: "-0.035em",
+          lineHeight: 0.94, color: "var(--fg-1-inv)", textWrap: "balance",
+        }}>
+          Fractional vs <FpItalic>everything else.</FpItalic>
+        </h2>
+      </div>
+
+      <div style={{
+        background: "var(--paper-000)", borderRadius: 20,
+        border: "1px solid var(--paper-200)", overflow: "hidden",
+      }}>
+        {/* header row */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "1.6fr 1fr 1fr 1fr",
+          padding: "20px 28px",
+          background: "var(--ink-000)", color: "var(--fg-1)",
+          alignItems: "center", gap: 24,
+        }}>
+          <div style={{
+            fontFamily: "var(--font-mono)", fontSize: 11,
+            letterSpacing: "0.22em", color: "var(--fg-3)",
+            textTransform: "uppercase",
+          }}>// WHAT MATTERS</div>
+          {["IGNITE FRACTIONAL", "FULL-TIME HIRE", "TYPICAL AGENCY"].map((h, i) => (
+            <div key={h} style={{
+              fontFamily: "var(--font-stencil)", fontSize: 14,
+              letterSpacing: "0.14em",
+              color: i === 0 ? "var(--ignite-500)" : "var(--fg-2)",
+              textAlign: "center",
+            }}>{h}</div>
+          ))}
+        </div>
+        {/* rows */}
+        {COMPARE_ROWS.map((row, i) => (
+          <div key={i} style={{
+            display: "grid",
+            gridTemplateColumns: "1.6fr 1fr 1fr 1fr",
+            padding: "22px 28px",
+            alignItems: "center", gap: 24,
+            background: i % 2 ? "var(--paper-050, #f1ebde)" : "var(--paper-000)",
+            borderTop: "1px solid var(--paper-200)",
+          }}>
+            <div style={{
+              fontFamily: "var(--font-display)", fontWeight: 600,
+              fontSize: 17, color: "var(--fg-1-inv)",
+              letterSpacing: "-0.01em",
+            }}>{row[0]}</div>
+            {row.slice(1).map((v, j) => (
+              <div key={j} style={{
+                textAlign: "center",
+                background: j === 0 ? "rgba(215, 69, 62,0.06)" : "transparent",
+                padding: j === 0 ? "10px 8px" : 0,
+                borderRadius: j === 0 ? 8 : 0,
+              }}>{cellRender(v)}</div>
+            ))}
+          </div>
+        ))}
+      </div>
+
+      <p style={{
+        marginTop: 28, fontFamily: "var(--font-mono)", fontSize: 11,
+        letterSpacing: "0.18em", textTransform: "uppercase",
+        color: "var(--fg-3-inv)",
+      }}>// SAME WORK · ⅓ THE COST · MONTH-TO-MONTH</p>
+    </Container>
+  </section>
+);
+
+/* ==================================================================
+   08 · FIRST 90 DAYS — three-phase timeline
+   ================================================================== */
+const PHASES = [
+  {
+    range: "DAYS 1–14", name: "Embed",
+    body: "Brand audit. Account mapping. Quick-win ID. Tooling embedded inside your stack — Slack, Notion, CRM.",
+    out: "Custom 90-day playbook",
+  },
+  {
+    range: "DAYS 15–45", name: "First Wins",
+    body: "First buyer pitches go out. Sell sheet refresh. First demo / sampling activation in-market. Weekly Friday read-outs.",
+    out: "First chain meetings booked",
+  },
+  {
+    range: "DAYS 46–90", name: "Compounding",
+    body: "First POs land. Velocity baselines set. Trade show or activation executed. Decision point: scale up, narrow scope, or stay course.",
+    out: "Measurable lift on doors / velocity",
+  },
+];
+
+const Fractional90Days = () => (
+  <section style={{
+    background: "var(--ink-000)", borderTop: "1px solid var(--ink-400)",
+    padding: "120px 0", position: "relative", overflow: "hidden",
+  }}>
+    <Container style={{ position: "relative" }}>
+      <FpOpsLine>{">>"} THE FIRST 90 DAYS</FpOpsLine>
+      <h2 style={{
+        marginTop: 14, fontFamily: "var(--font-display)", fontWeight: 700,
+        fontSize: "clamp(44px, 5.6vw, 88px)", letterSpacing: "-0.035em",
+        lineHeight: 0.94, maxWidth: 1100, textWrap: "balance",
+      }}>
+        From signed to in-market —
+        <FpItalic> in three phases.</FpItalic>
+      </h2>
+
+      {/* timeline */}
+      <div style={{ position: "relative", marginTop: 80 }}>
+        {/* the spine */}
+        <div aria-hidden="true" style={{
+          position: "absolute", left: "8.33%", right: "8.33%", top: 32,
+          height: 2, background: "linear-gradient(90deg, var(--ignite-500) 0%, #FFB627 50%, #85E0A3 100%)",
+          opacity: 0.5,
+        }}/>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+          {PHASES.map((p, i) => { const accent = fpHue(i, PHASES.length); return (
+            <div key={p.name} style={{ position: "relative" }}>
+              {/* node */}
+              <div style={{
+                width: 64, height: 64, borderRadius: 999,
+                background: "var(--ink-100)", border: `2px solid ${accent}`,
+                display: "grid", placeItems: "center",
+                fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 24,
+                lineHeight: 1, whiteSpace: "nowrap",
+                color: accent, margin: "0 auto",
+                
+                position: "relative", zIndex: 1,
+              }}>0{i + 1}</div>
+              <div style={{
+                marginTop: 28, padding: 28,
+                background: "var(--ink-100)", border: "1px solid var(--ink-400)",
+                borderRadius: 14, minHeight: 280,
+              }}>
+                <div style={{
+                  fontFamily: "var(--font-mono)", fontSize: 11,
+                  letterSpacing: "0.22em", color: accent,
+                  textTransform: "uppercase", marginBottom: 8,
+                }}>{p.range}</div>
+                <h3 style={{
+                  fontFamily: "var(--font-display)", fontWeight: 700,
+                  fontSize: 32, letterSpacing: "-0.025em", lineHeight: 1.05,
+                  marginBottom: 14,
+                }}>{p.name}</h3>
+                <p style={{
+                  fontSize: 15, lineHeight: 1.55, color: "var(--fg-2)",
+                  marginBottom: 24,
+                }}>{p.body}</p>
+                <div style={{
+                  paddingTop: 18, borderTop: "1px dashed var(--ink-400)",
+                  display: "flex", alignItems: "center", gap: 10,
+                }}>
+                  <span style={{
+                    fontFamily: "var(--font-mono)", fontSize: 10,
+                    letterSpacing: "0.22em", color: "var(--fg-3)",
+                    textTransform: "uppercase",
+                  }}>OUTPUT →</span>
+                  <span style={{
+                    fontFamily: "var(--font-display)", fontWeight: 600,
+                    fontSize: 15, color: "var(--fg-1)", lineHeight: 1.3,
+                  }}>{p.out}</span>
+                </div>
+              </div>
+            </div>
+          ); })}
+        </div>
+      </div>
+    </Container>
+  </section>
+);
+
+/* ==================================================================
+   09 · FINAL CTA — match the sales sheet voice
+   ================================================================== */
+const FractionalFinalCTA = () => {
+  const [t, setT] = fpUseState(0);
+  fpUseEffect(() => {
+    const iv = setInterval(() => setT(x => x + 1), 90);
+    return () => clearInterval(iv);
+  }, []);
+  return (
+  <section style={{
+    position: "relative", padding: "180px 0 160px",
+    background: "#0b0905", color: "#fff", overflow: "hidden",
+    borderTop: "1px solid var(--ink-400)",
+  }}>
+    <style>{`
+      @keyframes ctaSweep {
+        0%   { transform: translate(-30%, -30%) rotate(0deg); }
+        100% { transform: translate(-30%, -30%) rotate(360deg); }
+      }
+      @keyframes ctaPulse {
+        0%,100% { opacity: 0.7; transform: scale(1); }
+        50%     { opacity: 1;   transform: scale(1.08); }
+      }
+      @keyframes ctaShimmer {
+        0%   { background-position:   0% 50%; }
+        100% { background-position: 200% 50%; }
+      }
+      @keyframes ctaStripe {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-80px); }
+      }
+      @keyframes ctaTickerDot {
+        0%,100% { transform: scale(1); opacity: 1; }
+        50%     { transform: scale(1.6); opacity: 0.4; }
+      }
+      @keyframes ctaArrow {
+        0%,100% { transform: translateX(0); }
+        50%     { transform: translateX(6px); }
+      }
+      @keyframes ctaUnderlineDraw {
+        from { transform: scaleX(0); }
+        to   { transform: scaleX(1); }
+      }
+      @keyframes ctaStarSpin {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+      }
+    `}</style>
+
+    {/* animated conic sweep */}
+    <div aria-hidden="true" style={{
+      position: "absolute", left: "50%", top: "50%",
+      width: 1800, height: 1800, marginLeft: -900, marginTop: -900,
+      background: "transparent",
+      animation: "ctaSweep 24s linear infinite",
+      filter: "blur(30px)", opacity: 0.85,
+    }}/>
+    {/* primary radial glow */}
+    <div aria-hidden="true" style={{
+      position: "absolute", inset: 0,
+      background: "transparent",
+      animation: "ctaPulse 4.6s ease-in-out infinite",
+    }}/>
+    {/* secondary amber glow */}
+    <div aria-hidden="true" style={{
+      position: "absolute", left: "75%", top: "20%", width: 520, height: 520,
+      borderRadius: 999,
+      background: "transparent",
+      filter: "blur(20px)",
+      animation: "ctaPulse 5.4s ease-in-out infinite 0.8s",
+    }}/>
+    {/* grid overlay */}
+
+    <Container style={{ position: "relative" }}>
+      {/* tiny system-line opener */}
+      <div className="fp-live" style={{
+        fontFamily: "var(--font-mono)", fontSize: 11,
+        letterSpacing: "0.24em", textTransform: "uppercase",
+        color: "rgba(255,255,255,0.7)",
+      }}>
+        <span style={{
+          width: 8, height: 8, borderRadius: 999, background: "var(--ignite-500)",
+          animation: "ctaTickerDot 1.2s ease-in-out infinite",
+        }}/>
+        <span style={{ color: "var(--ignite-500)", fontWeight: 700 }}>LIVE TRANSMISSION</span>
+        <span style={{ opacity: 0.5 }}>·</span>
+        <span>// IGNITE FRACTIONAL · DESK 01</span>
+      </div>
+
+      {/* HOOK — horizontal band, no vertical stack */}
+      <h2 style={{
+        fontFamily: "var(--font-display)", fontWeight: 800,
+        fontSize: "clamp(44px, 6vw, 96px)", letterSpacing: "-0.04em",
+        lineHeight: 0.95, color: "#fff", textWrap: "balance",
+        marginBottom: 14, margin: 0,
+      }}>
+        Let&apos;s stop talking about{" "}
+        <span style={{ position: "relative", display: "inline-block" }}>
+          <span style={{
+            fontStyle: "italic", fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400,
+            backgroundImage: "var(--fractional-prism)",
+            backgroundSize: "200% 100%",
+            WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+            animation: "ctaShimmer 5s linear infinite",
+            
+          }}>growth.</span>
+        </span>
+      </h2>
+
+      {/* calm divider */}
+      <div style={{ margin: "30px 0 26px", height: 1, background: "rgba(255,255,255,0.08)" }}/>
+
+      {/* SINKER — bold, knife-sharp, with a stamp feel */}
+      <div style={{
+        display: "flex", alignItems: "flex-end", gap: 28, flexWrap: "wrap",
+        justifyContent: "space-between",
+      }}>
+        <h3 style={{
+          fontFamily: "var(--font-display)", fontWeight: 800,
+          fontSize: "clamp(32px, 4.4vw, 72px)", letterSpacing: "-0.035em",
+          lineHeight: 0.95, color: "#fff", textWrap: "balance",
+          textTransform: "uppercase", margin: 0,
+        }}>
+          And{" "}
+          <span className="fp-prism-text" style={{
+            fontStyle: "italic", fontFamily: "Georgia, serif", fontWeight: 400,
+            textTransform: "none",
+          }}>actually</span>{" "}
+          <span style={{
+            display: "inline-block",
+            padding: "0 18px",
+            background: "var(--fractional-prism)", color: "#0b0905",
+            transform: "skew(-6deg)",
+            
+          }}>
+            <span style={{ display: "inline-block", transform: "skew(6deg)" }}>do&nbsp;it.</span>
+          </span>
+        </h3>
+        <p style={{
+          fontSize: 16, lineHeight: 1.55, maxWidth: 320, margin: 0,
+          color: "rgba(255,255,255,0.72)",
+          borderLeft: "2px solid var(--ignite-500)", paddingLeft: 18,
+        }}>
+          30-min strategy call. Custom-scoped retainer.
+          Month-to-month after the first 90 days. <b style={{ color: "#fff" }}>No locked-in contracts.</b>
+        </p>
+      </div>
+
+      {/* mini commit-row */}
+      <div style={{
+        marginTop: 44, display: "flex", flexWrap: "wrap", gap: 12,
+      }}>
+        {["~2 WK TO IN-MARKET", "MONTH-TO-MONTH", "VETERAN-OWNED", "12+ YRS CPG"].map((tag, i) => (
+          <span key={tag} style={{
+            padding: "8px 14px", borderRadius: 999,
+            background: "rgba(255,255,255,0.06)",
+            border: "1px solid rgba(215, 69, 62,0.35)",
+            fontFamily: "var(--font-mono)", fontSize: 10,
+            letterSpacing: "0.22em", textTransform: "uppercase",
+            color: i % 2 ? "#FFB627" : "var(--ignite-500)",
+          }}>★ {tag}</span>
+        ))}
+      </div>
+
+      <div style={{ marginTop: 28, display: "flex", gap: 14, flexWrap: "wrap" }}>
+        <a href="https://calendly.com/kyle-igniteproductions/30min?back=1" target="_blank" rel="noopener"
+          onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 20px 50px rgba(215, 69, 62,0.55)"; }}
+          onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(215, 69, 62,0.4)"; }}
+          style={{
+          display: "inline-flex", alignItems: "center", gap: 14,
+          padding: "22px 30px",
+          background: "var(--fractional-prism)",
+          backgroundSize: "200% 100%",
+          animation: "ctaShimmer 5s linear infinite",
+          color: "#0b0905",
+          fontFamily: "var(--font-mono)", fontSize: 14, letterSpacing: "0.18em",
+          textTransform: "uppercase", fontWeight: 700, textDecoration: "none",
+          borderRadius: 4, boxShadow: "0 12px 32px rgba(215, 69, 62,0.4)",
+          transition: "transform 220ms var(--ease-spring), box-shadow 220ms",
+        }}>
+          <span>Book a 30-min call</span>
+          <span style={{ fontSize: 18, animation: "ctaArrow 1.4s ease-in-out infinite" }}>→</span>
+        </a>
+        <a href="https://www.igniteproductions.co/contact" style={{
+          display: "inline-flex", alignItems: "center", gap: 14,
+          padding: "22px 30px", background: "rgba(255,255,255,0.05)", color: "#fff",
+          fontFamily: "var(--font-mono)", fontSize: 14, letterSpacing: "0.18em",
+          textTransform: "uppercase", fontWeight: 700, textDecoration: "none",
+          border: "1px solid rgba(255,255,255,0.2)", borderRadius: 4,
+          backdropFilter: "blur(8px)",
+        }}>
+          <span>Get in touch</span>
+        </a>
+        <a href="mailto:staffing@igniteproductions.co" style={{
+          display: "inline-flex", alignItems: "center", gap: 14,
+          padding: "22px 30px", background: "rgba(255,255,255,0.05)", color: "#fff",
+          fontFamily: "var(--font-mono)", fontSize: 14, letterSpacing: "0.18em",
+          textTransform: "uppercase", fontWeight: 700, textDecoration: "none",
+          border: "1px solid rgba(255,255,255,0.2)", borderRadius: 4,
+          backdropFilter: "blur(8px)",
+        }}>
+          <span>staffing@igniteproductions.co</span>
+        </a>
+      </div>
+
+    </Container>
+  </section>
+  );
+};
+
+/* ==================================================================
+   03.5 · PROGRAMS WE RUN — agency-breadth matrix
+   ================================================================== */
+const PROGRAMS = [
+  {
+    icon: "◆", accent: "var(--ignite-500)",
+    cat: "01 · Sales & Account Mgmt",
+    title: "Owning the buyer relationship.",
+    items: [
+      "Buyer pitching & line reviews",
+      "Broker management & scorecards",
+      "Slotting negotiation & trade math",
+      "Distribution expansion plans",
+      "Velocity diagnostics by store",
+    ],
+  },
+  {
+    icon: "✦", accent: "#FFB627",
+    cat: "02 · Trade Marketing",
+    title: "Where the money actually moves.",
+    items: [
+      "Co-op & MDF program planning",
+      "Scan-back & coupon math",
+      "Retailer-funded ad placements",
+      "Trade calendar tied to P&L",
+      "Promo plan vs. lift modeling",
+    ],
+  },
+  {
+    icon: "★", accent: "var(--ignite-500)",
+    cat: "03 · Sponsorship & Partnerships",
+    title: "Buying attention that converts.",
+    items: [
+      "Festival & event sponsorships",
+      "Athlete, creator & team deals",
+      "League / venue / property partnerships",
+      "Brand-to-brand collabs & swaps",
+      "Activation rights & on-site execution",
+    ],
+  },
+  {
+    icon: "▲", accent: "#FFB627",
+    cat: "04 · Field & Experiential",
+    title: "Boots on the ground, statewide.",
+    items: [
+      "Costco roadshows & demo programs",
+      "Retail sampling & in-store activations",
+      "Mobile tours & pop-ups",
+      "Trade shows & booth builds",
+      "257K+ vetted ambassadors, 50 states",
+    ],
+  },
+];
+
+const FractionalPrograms = () => (
+  <section className="paper" style={{
+    padding: "120px 0", borderTop: "1px solid var(--paper-200)",
+    background: "var(--paper-100)",
+  }}>
+    <Container>
+      <div style={{ maxWidth: 980, marginBottom: 56 }}>
+        <FpOpsLine>{">>"} PROGRAMS WE RUN · ONE TEAM, FOUR DISCIPLINES</FpOpsLine>
+        <h2 style={{
+          marginTop: 16, fontFamily: "var(--font-display)", fontWeight: 900,
+          fontSize: "clamp(48px, 6.2vw, 104px)", letterSpacing: "-0.04em",
+          lineHeight: 0.92, color: "var(--fg-1-inv)", textWrap: "balance",
+          margin: 0,
+        }}>
+          The work most brands split across&nbsp;
+          <span style={{
+            display: "inline-block",
+            fontStyle: "italic", fontFamily: "Georgia, serif", fontWeight: 400,
+            color: "#0b0905", background: "var(--fractional-prism)",
+            padding: "0.12em 0.32em 0.18em", transform: "rotate(-1.5deg)",
+            borderRadius: 6, 
+          }}>a broker, three agencies, and a trade marketing hire.</span>
+        </h2>
+        <p style={{
+          marginTop: 28, fontSize: 19, lineHeight: 1.55,
+          color: "var(--fg-2-inv)", maxWidth: 740,
+        }}>
+          Trade marketing, co-op math, sponsorship deals, field execution — managed by one senior team that already knows CPG retail. Pick the lanes you need; we run them together.
+        </p>
+      </div>
+
+      <div style={{
+        display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 18,
+      }}>
+        {PROGRAMS.map((p, pi) => { const accent = fpHue(pi, PROGRAMS.length); return (
+          <div key={p.cat} style={{
+            position: "relative", background: "var(--paper-000)",
+            border: "1px solid var(--paper-200)", borderRadius: 16,
+            padding: 36, overflow: "hidden",
+          }}>
+            <div aria-hidden="true" style={{
+              position: "absolute", top: -80, right: -60, width: 240, height: 240,
+              borderRadius: 999,
+              background: "transparent",
+              filter: "blur(20px)", pointerEvents: "none",
+            }}/>
+            <div style={{ position: "relative" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                <span style={{
+                  width: 36, height: 36, borderRadius: 6, background: accent,
+                  color: "#0b0905", display: "grid", placeItems: "center",
+                  fontSize: 18, fontWeight: 700,
+                }}>{p.icon}</span>
+                <span style={{
+                  fontFamily: "var(--font-stencil)", fontSize: 12,
+                  letterSpacing: "0.18em", color: accent,
+                }}>{p.cat}</span>
+              </div>
+              <h3 style={{
+                fontFamily: "var(--font-display)", fontWeight: 700,
+                fontSize: "clamp(24px, 2.2vw, 32px)", letterSpacing: "-0.02em",
+                lineHeight: 1.1, color: "var(--fg-1-inv)", margin: "0 0 22px",
+                textWrap: "balance",
+              }}>{p.title}</h3>
+              <ul style={{
+                listStyle: "none", padding: 0, margin: 0,
+                display: "flex", flexDirection: "column", gap: 10,
+              }}>
+                {p.items.map((it, i) => (
+                  <li key={i} style={{
+                    display: "flex", gap: 12, alignItems: "flex-start",
+                    paddingBottom: 10,
+                    borderBottom: i === p.items.length - 1 ? "none" : "1px dashed var(--paper-200)",
+                  }}>
+                    <span style={{
+                      flex: "0 0 18px", color: accent, fontFamily: "var(--font-mono)",
+                      fontSize: 11, fontWeight: 700, paddingTop: 3,
+                    }}>0{i + 1}</span>
+                    <span style={{
+                      fontFamily: "var(--font-display)", fontWeight: 500,
+                      fontSize: 15.5, lineHeight: 1.4, color: "var(--fg-2-inv)",
+                      letterSpacing: "-0.005em",
+                    }}>{it}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ); })}
+      </div>
+    </Container>
+  </section>
+);
+
+Object.assign(window, {
+  FractionalHero2, FractionalStats, FractionalEngines, FractionalFromTo,
+  FractionalBuiltFor, FractionalCadence, FractionalCompare, Fractional90Days,
+  FractionalFinalCTA, FractionalPainBanner, FractionalPrograms,
+});

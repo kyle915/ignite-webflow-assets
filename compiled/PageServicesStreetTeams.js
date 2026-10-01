@@ -357,7 +357,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     fontFamily: "var(--font-display)",
     fontWeight: 500
   }
-}, "Guerilla sampling that hits the corridor, not the office park. ", /*#__PURE__*/React.createElement("b", {
+}, "Guerrilla sampling that hits the corridor, not the office park. ", /*#__PURE__*/React.createElement("b", {
   style: {
     color: "#fff"
   }
@@ -370,7 +370,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=street-teams",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     display: "inline-flex",
     alignItems: "center",
@@ -523,7 +523,7 @@ const Velocity = () => {
       letterSpacing: "-0.035em",
       lineHeight: 0.98
     }
-  }, "Guerilla is a ", /*#__PURE__*/React.createElement("span", {
+  }, "Guerrilla is a ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
       color: ORANGE
@@ -649,7 +649,7 @@ const Kit = () => {
       color: "rgba(255,255,255,0.68)",
       maxWidth: 620
     }
-  }, "Guerilla works when the crew can pour, log, and refill without going back to the truck. The kit is engineered for the corridor \u2014 light, branded, restock-ready.")), /*#__PURE__*/React.createElement("div", {
+  }, "Guerrilla works when the crew can pour, log, and refill without going back to the truck. The kit is engineered for the corridor \u2014 light, branded, restock-ready.")), /*#__PURE__*/React.createElement("div", {
     className: "st-kit",
     style: {
       display: "grid",
@@ -919,7 +919,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/spark",
+  href: "https://sparkbyignite.igniteproductions.co/",
   style: {
     display: "inline-flex",
     alignItems: "center",
@@ -935,7 +935,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
     boxShadow: `0 8px 28px ${ORANGE}44`
   }
 }, "Explore Spark \u2192"), /*#__PURE__*/React.createElement("a", {
-  href: "/contact",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     display: "inline-flex",
     alignItems: "center",
@@ -950,7 +950,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
     fontSize: 14,
     textDecoration: "none"
   }
-}, "Book a demo"))), /*#__PURE__*/React.createElement("div", {
+}, "Get a staffing quote"))), /*#__PURE__*/React.createElement("div", {
   className: "st-reveal",
   style: {
     background: "linear-gradient(180deg,#14161B,#0F1115)",
@@ -989,7 +989,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
 
 /* ============ FAQ ============ */
 const FAQ = () => {
-  const items = [["What kinds of street teams do you run?", "Sampling drops, flyer runs, branded moments, guerilla activation, pop-up corridors, branded bike and pedicab routes, and combined foot-plus-vehicle teams. Programs scale from one-day drops to multi-market national tours."], ["How do you make sure samples reach the right audience?", "Route design upfront. We map your sampling against the audience profile you're after — neighborhoods, venues, transit corridors, event ingress paths — then brief the crew on who to engage. Spark logs every drop with location and time."], ["Do you handle permits for street sampling?", "Yes. Where the city or jurisdiction requires permits, we file them. Where street sampling is restricted, we route around it and tell you up front before the program ships."], ["Can you scale to multiple markets at once?", "Yes. Our 257,000+ ambassador bench covers all 50 states. We've run national multi-market street programs across 12–18 metros in a single weekend, coordinated through a single PM."], ["What reporting do we get from a street program?", "Route-level recap end of day — drops per location, photo evidence, GPS verification of route completion, and ambassador notes. Full program recap with photo galleries and per-market breakdowns ships within hours."]];
+  const items = [["What kinds of street teams do you run?", "Sampling drops, flyer runs, branded moments, guerrilla activation, pop-up corridors, branded bike and pedicab routes, and combined foot-plus-vehicle teams. Programs scale from one-day drops to multi-market national tours."], ["How do you make sure samples reach the right audience?", "Route design upfront. We map your sampling against the audience profile you're after — neighborhoods, venues, transit corridors, event ingress paths — then brief the crew on who to engage. Spark logs every drop with location and time."], ["Do you handle permits for street sampling?", "Yes. Where the city or jurisdiction requires permits, we file them. Where street sampling is restricted, we route around it and tell you up front before the program ships."], ["Can you scale to multiple markets at once?", "Yes. Our 257,000+ ambassador bench covers all 50 states. We've run national multi-market street programs across 12–18 metros in a single weekend, coordinated through a single PM."], ["What reporting do we get from a street program?", "Route-level recap end of day — drops per location, photo evidence, GPS verification of route completion, and ambassador notes. Full program recap with photo galleries and per-market breakdowns ships within hours."]];
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
     style: {
@@ -1083,7 +1083,7 @@ const Related = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap",
     gap: 12
   }
-}, [["Product Sampling", "/services/product-sampling"], ["Experiential Marketing", "/services/experiential-marketing"], ["Mobile Tours", "/services/mobile-tours"], ["Festival Activations", "/services/festival-brand-activations"], ["Sports & Entertainment", "/industries/sports-entertainment"], ["CPG Beverage", "/industries/cpg-beverage"], ["Spark", "/spark"]].map(([l, h]) => /*#__PURE__*/React.createElement("a", {
+}, [["Product Sampling", "/services/product-sampling"], ["Experiential Marketing", "/services/experiential-marketing"], ["Mobile Tours", "/services/mobile-tours"], ["Festival Activations", "/services/festival-brand-activations"], ["Sports & Entertainment", "/industries/sports-entertainment"], ["CPG Beverage", "/industries/cpg-beverage"], ["Spark", "https://sparkbyignite.igniteproductions.co/"]].map(([l, h]) => /*#__PURE__*/React.createElement("a", {
   key: l,
   href: h,
   style: {
@@ -1153,7 +1153,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=street-teams",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "18px 34px",
     borderRadius: 999,
@@ -1165,7 +1165,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     textDecoration: "none"
   }
 }, "Start planning"), /*#__PURE__*/React.createElement("a", {
-  href: "/spark",
+  href: "https://sparkbyignite.igniteproductions.co/",
   style: {
     padding: "18px 30px",
     borderRadius: 999,
@@ -1188,7 +1188,10 @@ const App = () => {
     accent: "#E68A4C",
     label: "Street Teams",
     rel: "../"
-  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Counters, null), /*#__PURE__*/React.createElement(Velocity, null), /*#__PURE__*/React.createElement(Kit, null), /*#__PURE__*/React.createElement(Moments, null), /*#__PURE__*/React.createElement(Spark, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Related, null), /*#__PURE__*/React.createElement(CTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
+  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Counters, null), /*#__PURE__*/React.createElement(Velocity, null), /*#__PURE__*/React.createElement(Kit, null), /*#__PURE__*/React.createElement(Moments, null), /*#__PURE__*/React.createElement(Spark, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Related, null), /*#__PURE__*/React.createElement(CTA, null), window.RelatedCases ? React.createElement(window.RelatedCases, {
+    ctx: "service",
+    slug: "street-teams"
+  }) : null, /*#__PURE__*/React.createElement(SiteFooter, null));
 };
 Object.assign(window, {
   PageServicesStreetTeams: App

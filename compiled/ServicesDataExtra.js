@@ -279,7 +279,7 @@
       "href": "/services/on-premise-sampling"
     }, {
       "label": "Spark",
-      "href": "/spark"
+      "href": "https://sparkbyignite.igniteproductions.co/"
     }, {
       "label": "Our Work",
       "href": "/work"
@@ -373,7 +373,7 @@
       "href": "/services/ai-management"
     }, {
       "label": "Spark",
-      "href": "/spark"
+      "href": "https://sparkbyignite.igniteproductions.co/"
     }, {
       "label": "Our Work",
       "href": "/work"
@@ -481,7 +481,7 @@
       "href": "/fractional"
     }, {
       "label": "Contact",
-      "href": "/contact"
+      "href": "https://www.igniteproductions.co/contact"
     }],
     "sparkAngle": {
       "headline": "Spark for the pitch",
@@ -577,7 +577,7 @@
       "href": "/services/ai-management"
     }, {
       "label": "Spark",
-      "href": "/spark"
+      "href": "https://sparkbyignite.igniteproductions.co/"
     }, {
       "label": "Our Work",
       "href": "/work"
@@ -676,7 +676,7 @@
       "href": "/services/ai-management"
     }, {
       "label": "Spark",
-      "href": "/spark"
+      "href": "https://sparkbyignite.igniteproductions.co/"
     }, {
       "label": "Our Work",
       "href": "/work"
@@ -781,7 +781,7 @@
       "href": "/fractional"
     }, {
       "label": "Contact",
-      "href": "/contact"
+      "href": "https://www.igniteproductions.co/contact"
     }],
     "sparkAngle": {
       "headline": "Spark for expansion",
@@ -1078,7 +1078,7 @@
       "href": "/industries/cpg-beverage"
     }, {
       "label": "Spark",
-      "href": "/spark"
+      "href": "https://sparkbyignite.igniteproductions.co/"
     }, {
       "label": "Our Work",
       "href": "/work"
@@ -1189,7 +1189,7 @@
       "href": "/industries/cpg-beverage"
     }, {
       "label": "Spark",
-      "href": "/spark"
+      "href": "https://sparkbyignite.igniteproductions.co/"
     }, {
       "label": "Our Work",
       "href": "/work"
@@ -1286,10 +1286,10 @@
       "href": "/fractional"
     }, {
       "label": "Spark",
-      "href": "/spark"
+      "href": "https://sparkbyignite.igniteproductions.co/"
     }, {
       "label": "Contact",
-      "href": "/contact"
+      "href": "https://www.igniteproductions.co/contact"
     }],
     "sparkAngle": {
       "headline": "Spark for your sales team",
@@ -1385,7 +1385,7 @@
       "href": "/services/ai-management"
     }, {
       "label": "Spark",
-      "href": "/spark"
+      "href": "https://sparkbyignite.igniteproductions.co/"
     }, {
       "label": "Our Work",
       "href": "/work"
@@ -1484,7 +1484,7 @@
       "href": "/services/ai-management"
     }, {
       "label": "Spark",
-      "href": "/spark"
+      "href": "https://sparkbyignite.igniteproductions.co/"
     }, {
       "label": "Our Work",
       "href": "/work"
@@ -1583,7 +1583,7 @@
       "href": "/services/ai-management"
     }, {
       "label": "Spark",
-      "href": "/spark"
+      "href": "https://sparkbyignite.igniteproductions.co/"
     }, {
       "label": "Our Work",
       "href": "/work"
@@ -1698,7 +1698,7 @@
       "href": "/industries/cpg-food-snack"
     }, {
       "label": "Spark",
-      "href": "/spark"
+      "href": "https://sparkbyignite.igniteproductions.co/"
     }, {
       "label": "Our Work",
       "href": "/work"
@@ -1798,7 +1798,7 @@
       "href": "/fractional"
     }, {
       "label": "Contact",
-      "href": "/contact"
+      "href": "https://www.igniteproductions.co/contact"
     }],
     "sparkAngle": {
       "headline": "Spark once you're on shelf",
@@ -1906,111 +1906,12 @@
       "href": "/industries/cpg-beverage"
     }, {
       "label": "Contact",
-      "href": "/contact"
+      "href": "https://www.igniteproductions.co/contact"
     }],
     "sparkAngle": {
       "headline": "Spark for sales",
       "lede": "Broker scorecards, account activity, and field execution in one view — so your sales reporting isn't a spreadsheet you don't trust.",
       "points": ["Broker + account scorecards in one dashboard", "Field demo execution tied to the accounts that need it", "QBR-ready exports, not hand-built decks", "Brand and broker see the same numbers"]
-    }
-  };
-})();
-
-/* services-sponsorship-partnerships.html */
-(function () {
-  var SERVICES_DATA = window.SERVICES_DATA;
-  SERVICES_DATA["sponsorship-partnerships"] = {
-    "n": "24",
-    "accent": "#FFB627",
-    "label": "Sponsorship & Partnership Management",
-    "short": "Sponsorship",
-    "eyebrow": "GROWTH // PARTNERSHIPS",
-    "heroSplit": ["We don't just activate deals.", "We run them."],
-    "tagline": "Sourcing, negotiation, activation, and proof — the whole sponsorship lifecycle, run by the team that's already on the ground.",
-    "intro": "Most brands buy a sponsorship and then scramble to activate it. We manage the entire lifecycle — identifying the right festivals, leagues, venues, and creators, negotiating the terms, building and staffing the on-site activation, and measuring what it actually returned. Because we already run the field, the deal and the execution live under one roof.",
-    "hero": "https://cdn.prod.website-files.com/688129f3841088c282c32750/68969885b06252e2493e0556_MAS%2B9AAF0FDB_0EBA_4666_BABC_E6CC9A62D622_1f3a5c7b-6814-43bd-bd29-38ccc6748928.jpg",
-    "heroPos": "center 45%",
-    "sub": [{
-      "t": "Opportunity sourcing",
-      "d": "We map the festivals, leagues, venues, and tentpole moments that match your brand, audience, and markets."
-    }, {
-      "t": "Negotiation & terms",
-      "d": "Rights, assets, exclusivity, hospitality, and activation windows negotiated in your favor."
-    }, {
-      "t": "Activation build + staff",
-      "d": "Footprints, fan zones, sampling, and hospitality — designed, fabricated, and staffed by our crews."
-    }, {
-      "t": "Hospitality & VIP",
-      "d": "Suites, meet-and-greets, and client hosting run end to end."
-    }, {
-      "t": "Compliance & venue ops",
-      "d": "Permits, COIs, venue rules, and union requirements handled before load-in."
-    }, {
-      "t": "Measurement & recap",
-      "d": "Impressions, samples, leads, content, and earned value — quantified in Spark, not guessed."
-    }],
-    "stats": [["50", "states + DC"], ["257K+", "activation bench"], ["<48hr", "post-event recap"]],
-    "adjacent": ["field-marketing", "experiential-marketing", "event-staffing"],
-    "pov": {
-      "lead": "A sponsorship is a receipt, not a logo on a banner.",
-      "body": "Brands overpay for rights and underspend on activation, then can't prove it worked. We flip it — negotiate hard, activate harder, and hand you a measured return the Monday after.",
-      "marquee": ["SOURCE", "NEGOTIATE", "ACTIVATE", "MEASURE", "VETERAN-OWNED"]
-    },
-    "pains": {
-      "opener": "If you manage brand sponsorships, you've probably…",
-      "sinker": "We run the whole lifecycle — one team from term sheet to recap.",
-      "items": ["Paid for rights you never fully activated", "Found out attendance numbers after the check cleared", "Stitched together a property, an agency, and a staffing vendor", "Had no clean way to prove sponsorship ROI", "Watched a competitor out-activate you at the same event", "Built the recap deck yourself from scattered photos"]
-    },
-    "comparison": [["Property sells you rights, you figure out activation", "One partner from sourcing through measured recap"], ["Separate agency, staffing vendor, and fabricator", "Negotiation, build, staff, and report under one roof"], ["ROI is a guess in a wrap deck", "Impressions, samples, leads, and earned value in Spark"], ["Activation designed in a vacuum", "Built by the crew that knows the venue and the rules"]],
-    "proof": {
-      "logos": ["LIQUID DEATH", "WHITE CLAW", "MARC ANTHONY", "MAS+", "TOTAL WIRELESS", "DUDE WIPES"],
-      "note": "Brands we've activated at festivals, stadiums, and venues nationwide."
-    },
-    "industries": ["CPG Beverage", "CPG Food & Snack", "Alcohol & Spirits", "Pet", "Health & Wellness", "Beauty", "QSR & Restaurant", "Sports & Entertainment", "Cannabis"],
-    "seoBlock": {
-      "eyebrow": "DEEP DIVE",
-      "head": "The sponsorship partner that owns the deal and the execution.",
-      "paras": ["Sponsorship and partnership management is the discipline of sourcing, negotiating, activating, and measuring brand partnerships — festival footprints, league deals, venue rights, and creator collaborations. Ignite manages the full lifecycle so the strategy and the execution never live in different buildings.", "Because we already run sampling, staffing, fabrication, and experiential activation, we activate the rights we negotiate — instead of handing you a rights package and walking away. That means tighter activation, better venue execution, and cleaner accountability.", "Every partnership runs through <a href='/spark' style='color:#FFB627'>Spark</a>, our field platform — so impressions, samples, leads, content captured, and earned media value are quantified, not estimated in a wrap deck.", "Best for CPG and beverage brands investing in festival, sports, and cultural sponsorships who want one accountable partner from term sheet to measured recap."],
-      "chips": ["sponsorship management agency", "brand partnership management", "festival sponsorship activation", "sports sponsorship agency", "sponsorship ROI measurement", "experiential sponsorship", "venue activation", "cultural partnership marketing"]
-    },
-    "faqs": [["Do you source sponsorships or just activate ones we have?", "Both. We identify and negotiate new partnerships that fit your brand and markets, and we activate rights you've already secured."], ["Can you prove sponsorship ROI?", "Yes. Through Spark we quantify impressions, samples, leads, content captured, and earned value — delivered within 48 hours of the event, not weeks later."], ["Do you handle venue compliance and union rules?", "Yes. Permits, COIs, venue regulations, and union/labor requirements are handled before load-in as part of the activation scope."], ["Can you manage hospitality and VIP programs?", "Yes. Suites, meet-and-greets, client hosting, and credential management are run end to end."], ["How is this different from a sponsorship sales agency?", "Sales agencies sell you rights. We manage the partnership — sourcing, negotiation, activation, staffing, and measurement — as one accountable operation."]],
-    "compliance": [{
-      "lab": "Venue & permits",
-      "desc": "Venue rules, municipal permits, and load-in logistics handled in advance."
-    }, {
-      "lab": "COIs + insurance",
-      "desc": "General liability, liquor liability, and vehicle riders per activation."
-    }, {
-      "lab": "Union / labor",
-      "desc": "Union venue requirements and labor coordination managed where applicable."
-    }, {
-      "lab": "Measurement",
-      "desc": "Live Spark dashboard for impressions, samples, leads, and earned value."
-    }],
-    "process": [["SOURCE", "Map and prioritize the partnerships that fit your brand, audience, and markets."], ["NEGOTIATE", "Lock rights, assets, exclusivity, and activation windows in your favor."], ["ACTIVATE", "Design, fabricate, and staff the on-site footprint and hospitality."], ["MEASURE", "Quantify impressions, samples, leads, and earned value in Spark."]],
-    "pairedChips": [{
-      "label": "Field Marketing",
-      "href": "/services/field-marketing"
-    }, {
-      "label": "Experiential Marketing",
-      "href": "/services/experiential-marketing"
-    }, {
-      "label": "Event Recap & Reporting",
-      "href": "/services/event-reporting-recaps"
-    }, {
-      "label": "AI Management",
-      "href": "/services/ai-management"
-    }, {
-      "label": "Spark",
-      "href": "/spark"
-    }, {
-      "label": "Our Work",
-      "href": "/work"
-    }],
-    "sparkAngle": {
-      "headline": "Spark for sponsorship",
-      "lede": "Every sponsorship activation tracked live — samples, leads, content, and earned value quantified for the brand and the property simultaneously.",
-      "points": ["Live activation dashboard per property", "GPS + photo proof from every footprint", "Leads and samples logged in real time", "Measured recap within 48 hours of strike"]
     }
   };
 })();
@@ -2370,7 +2271,7 @@
       "href": "/industries/alcohol-spirits"
     }, {
       "label": "Spark",
-      "href": "/spark"
+      "href": "https://sparkbyignite.igniteproductions.co/"
     }, {
       "label": "Our Work",
       "href": "/work"
@@ -2681,7 +2582,7 @@
       "href": "/industries/cpg-beverage"
     }, {
       "label": "Spark",
-      "href": "/spark"
+      "href": "https://sparkbyignite.igniteproductions.co/"
     }, {
       "label": "Our Work",
       "href": "/work"
@@ -2781,7 +2682,7 @@
       "href": "/fractional"
     }, {
       "label": "Contact",
-      "href": "/contact"
+      "href": "https://www.igniteproductions.co/contact"
     }],
     "sparkAngle": {
       "headline": "Spark for trade",

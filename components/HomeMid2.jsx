@@ -1,0 +1,256 @@
+/* Homepage services taxonomy — bold dark grid w/ photo backgrounds.
+   Maps 1:1 to the 7-page service nav: each card → its dedicated page. */
+
+const HOME_SERVICES = [
+  {
+    n: "01", slug: "experiential-marketing", flag: true,
+    title: "Experiential Marketing",
+    sub:  "Brand activations, festival footprints, immersive installations",
+    bullets: ["Festival Activations", "Pop-Ups", "Brand Activations", "Immersive Installations", "Campus Tours"],
+    img: (window.__resources?.r_assets_experiential_liquiddeath_nascar_jpg || "assets/experiential-liquiddeath-nascar.jpg"),
+    imgPos: "center 40%",
+    accent: "#D7453E",
+  },
+  {
+    n: "EP", slug: "event-production", flag: true,
+    title: "Event Production",
+    sub:  "Brief to strike: show flow, vendors, AV, permits, crew",
+    bullets: ["Run-of-Show", "Show Calling", "AV + Staging", "Permits + Insurance", "Load-in + Strike"],
+    img: (window.__resources?.r_assets_openai_devday_keynote_jpg || "assets/openai-devday-keynote.jpg"),
+    accent: "#D7453E",
+  },
+  {
+    n: "02", slug: "mobile-tours", flag: true,
+    title: "Mobile Marketing Tours",
+    sub:  "Ad trucks, branded bikes, sprinter vans, sampling tours",
+    bullets: ["Ad Trucks", "Mobile Billboards", "Branded Bikes", "Sprinter Vans", "Roadshows"],
+    img: (window.__resources?.r_68962c63c89c6cf0f46a6b66_SMALLS93_11_15_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/68962c63c89c6cf0f46a6b66_SMALLS93_11_15_2024_Eva_Rowin_06080ec4-0c97-5fdb-74ec-ed3d6cd749a5_0.jpg"),
+    accent: "#FFB627",
+  },
+  {
+    n: "03", slug: "fabrication-builds", flag: true,
+    title: "Fabrication & Builds",
+    sub:  "Scenic fab, modular activations, touring builds, photo ops",
+    bullets: ["Custom Builds", "Scenic Fabrication", "Pop-Up Construction", "Modular Activations", "Touring Builds"],
+    img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600&q=80",
+    imgPos: "center 40%",
+    accent: "#D7453E",
+  },
+  {
+    n: "04", slug: "event-staffing",
+    title: "Event Staffing",
+    sub:  "257K+ vetted ambassadors, all 50 states, 48hr rush",
+    bullets: ["Brand Ambassadors", "Street Teams", "Bilingual Staff", "Tour Managers"],
+    img: (window.__resources?.r_68962cc2d0a6bcf7ced84e53_WHITECLAW96_05_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/68962cc2d0a6bcf7ced84e53_WHITECLAW96_05_27_2025_Adia_Oshikoya_84db346d-29fd-6179-d310-6927f656bdca_0.jpg"),
+    imgPos: "center 30%",
+    accent: "#FFB627",
+  },
+  {
+    n: "05", slug: "product-sampling",
+    title: "Product Sampling",
+    sub:  "GPS-verified counts, retail demos, street + event sampling",
+    bullets: ["In-Store Sampling", "Retail Demo Programs", "Street Sampling", "Campus Sampling"],
+    img: (window.__resources?.r_6882bb7581d3d94867693919_liquid_death || "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882bb7581d3d94867693919_liquid-death.webp"),
+    imgPos: "center",
+    accent: "#D6F35F",
+  },
+  {
+    n: "06", slug: "trade-shows",
+    title: "Trade Show Support",
+    sub:  "Booth staffing, lead capture, demos, full show management",
+    bullets: ["Booth Staffing", "Lead Capture", "Show Management", "Demos"],
+    img: (window.__resources?.r_assets_pressreader_tradeshow_webp || "assets/pressreader-tradeshow.webp"),
+    imgPos: "center 35%",
+    accent: "#FFB627",
+  },
+  {
+    n: "07", slug: "promotional-products",
+    title: "Promotional Products & Premiums",
+    sub:  "Branded merch, swag kits, custom apparel, premium fulfillment",
+    bullets: ["Branded Merchandise", "Swag Kits", "Custom Apparel", "Premium Fulfillment"],
+    img: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&q=80",
+    imgPos: "center",
+    accent: "#D7453E",
+  },
+];
+
+const ServiceCard = ({ s, large = false, accent }) => {
+  const ac = accent || s.accent;
+  return (
+  <a href={`pages/services-${s.slug}.html`} style={{
+    position: "relative", display: "block", borderRadius: 18, overflow: "hidden",
+    background: "#0F1014",
+    minHeight: large ? 460 : 320,
+    transition: "transform 240ms var(--ease-out)",
+    border: "1px solid rgba(255,255,255,0.06)",
+  }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = "translateY(-4px)";
+      const img = e.currentTarget.querySelector("img");
+      if (img) img.style.transform = "scale(1.04)";
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = "translateY(0)";
+      const img = e.currentTarget.querySelector("img");
+      if (img) img.style.transform = "scale(1)";
+    }}
+  >
+    <div aria-hidden="true" style={{ position: "absolute", top: 0, left: 0, right: 0, height: 4, background: ac, zIndex: 3 }}/>
+    <img src={s.img} alt={s.title} style={{
+      position: "absolute", inset: 0, width: "100%", height: "100%",
+      objectFit: "cover", objectPosition: s.imgPos || "center", transition: "transform 600ms var(--ease-out)",
+      filter: "brightness(0.55) saturate(1.05) contrast(1.05)",
+    }} loading="lazy" decoding="async"/>
+    <div style={{
+      position: "absolute", inset: 0,
+      background: `linear-gradient(180deg, rgba(10,11,13,0.15) 0%, rgba(10,11,13,0.55) 50%, rgba(10,11,13,0.95) 100%)`,
+    }}/>
+    {/* number stencil */}
+    <div style={{
+      position: "absolute", top: 24, left: 24,
+      fontFamily: "var(--font-stencil)", fontSize: large ? 28 : 22, letterSpacing: "0.04em",
+      color: ac, opacity: 0.95,
+    }}>{s.n}</div>
+    {/* flagship badge */}
+    {s.flag && (
+      <div style={{
+        position: "absolute", top: 26, right: 24,
+        padding: "5px 10px", borderRadius: 4,
+        background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)",
+        backdropFilter: "blur(8px)",
+        fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.22em",
+        textTransform: "uppercase", color: "#fff",
+      }}>★ FLAGSHIP</div>
+    )}
+    <div style={{
+      position: "absolute", inset: 0, padding: large ? 36 : 24,
+      display: "flex", flexDirection: "column", justifyContent: "flex-end", color: "#fff",
+    }}>
+      <h3 style={{
+        fontFamily: "var(--font-display)", fontWeight: 700,
+        fontSize: large ? "clamp(34px, 3.3vw, 48px)" : "clamp(22px, 2vw, 28px)",
+        letterSpacing: "-0.025em", lineHeight: 1, marginBottom: 12,
+      }}>
+        {s.title}
+      </h3>
+      <p style={{
+        fontSize: large ? 16 : 13.5, lineHeight: 1.45,
+        color: "rgba(255,255,255,0.78)", margin: 0, marginBottom: large ? 20 : 14,
+        maxWidth: large ? 460 : "100%",
+      }}>{s.sub}</p>
+      <div style={{
+        display: "flex", gap: 6, flexWrap: "wrap", marginBottom: large ? 24 : 16,
+      }}>
+        {s.bullets.slice(0, large ? 5 : 3).map(b => (
+          <span key={b} style={{
+            padding: "4px 9px", borderRadius: 4,
+            background: `${ac}22`, border: `1px solid ${ac}66`,
+            fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em",
+            textTransform: "uppercase", color: "rgba(255,255,255,0.9)", whiteSpace: "nowrap",
+          }}>{b}</span>
+        ))}
+        {!large && s.bullets.length > 3 && (
+          <span style={{
+            padding: "4px 9px", fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em",
+            color: "rgba(255,255,255,0.6)", textTransform: "uppercase",
+          }}>+{s.bullets.length - 3}</span>
+        )}
+      </div>
+      <div style={{
+        display: "flex", justifyContent: "space-between", alignItems: "center",
+        paddingTop: 14, borderTop: "1px solid rgba(255,255,255,0.14)",
+      }}>
+        <span style={{
+          fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.22em",
+          textTransform: "uppercase", color: ac,
+        }}>EXPLORE →</span>
+        <span style={{
+          fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.22em",
+          textTransform: "uppercase", color: "rgba(255,255,255,0.5)",
+        }}>/ {s.slug.replace(/-/g, " · ")}</span>
+      </div>
+    </div>
+  </a>
+  );
+};
+
+const ServicesGrid = () => (
+  <section style={{
+    padding: "140px 0 120px", background: "var(--ink-000)", color: "var(--fg-1)",
+    position: "relative", overflow: "hidden", borderTop: "1px solid var(--ink-400)",
+  }}>
+    <Container style={{ position: "relative" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 64, gap: 32, flexWrap: "wrap" }}>
+        <div>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--ignite-500)" }}>
+            {">>"} CAPABILITIES // 07 SERVICE LANES
+          </span>
+          <h2 style={{
+            marginTop: 16, fontFamily: "var(--font-display)", fontWeight: 700,
+            fontSize: "clamp(48px, 6.5vw, 96px)", letterSpacing: "-0.035em", lineHeight: 0.94, maxWidth: 1100,
+          }}>
+            Field marketing,<br/><span style={{ fontStyle: "italic", color: "#FFB627" }}>full-stack.</span>
+          </h2>
+          <p style={{ marginTop: 22, fontSize: 18, lineHeight: 1.5, color: "var(--fg-2)", maxWidth: 640 }}>
+            From strategy to fabrication to 257,000 ambassadors on the ground, we operate every lane of activation under one roof.
+          </p>
+        </div>
+        <a href="pages/services.html" className="cap-circle" aria-label="All capabilities" style={{
+          position: "relative", flexShrink: 0,
+          width: 172, height: 172, borderRadius: "50%",
+          border: "1px solid var(--fg-1)", background: "transparent",
+          display: "inline-flex", alignItems: "center", justifyContent: "center",
+          textDecoration: "none",
+        }}>
+          <svg viewBox="0 0 172 172" className="cap-circle-spin" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} aria-hidden="true">
+            <defs>
+              <path id="capArcPath" d="M 86,86 m -66,0 a 66,66 0 1,1 132,0 a 66,66 0 1,1 -132,0"/>
+            </defs>
+            <text className="cap-arc-txt" style={{ fontFamily: "var(--font-mono)", fontSize: 13, letterSpacing: "0.28em" }}>
+              <textPath href="#capArcPath" startOffset="0">ALL CAPABILITIES · ALL CAPABILITIES · </textPath>
+            </text>
+          </svg>
+          <span className="cap-arrow" aria-hidden="true" style={{ fontFamily: "var(--font-mono)", fontSize: 56, lineHeight: 1, color: "var(--fg-1)" }}>→</span>
+        </a>
+      </div>
+
+      {/* Asymmetric grid: 3 large flagships top row, 4 standard cards bottom */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 16, gridAutoRows: "minmax(0, auto)" }}>
+        {/* Row 1 — three flagships */}
+        <div style={{ gridColumn: "span 2" }}><ServiceCard s={HOME_SERVICES[0]} large accent="#D7453E"/></div>
+        <div style={{ gridColumn: "span 2" }}><ServiceCard s={HOME_SERVICES[1]} large accent="#4D43BB"/></div>
+        <div style={{ gridColumn: "span 2" }}><ServiceCard s={HOME_SERVICES[2]} large accent="#2E55CA"/></div>
+        {/* Row 2 — four standard, 6/4 = 1.5; do 3 cols of 2 */}
+        <div style={{ gridColumn: "span 3" }}><ServiceCard s={HOME_SERVICES[3]} accent="#FFB627"/></div>
+        <div style={{ gridColumn: "span 3" }}><ServiceCard s={HOME_SERVICES[4]} accent="#D7453E"/></div>
+        <div style={{ gridColumn: "span 3" }}><ServiceCard s={HOME_SERVICES[5]} accent="#4D43BB"/></div>
+        <div style={{ gridColumn: "span 3" }}><ServiceCard s={HOME_SERVICES[6]} accent="#2E55CA"/></div>
+      </div>
+
+      {/* Cross-disciplinary stripe — these sit ACROSS every engagement */}
+      <div style={{
+        marginTop: 48, padding: "26px 32px", borderRadius: 14,
+        background: "linear-gradient(90deg, rgba(215, 69, 62,0.06), rgba(214,243,95,0.04))",
+        border: "1px solid var(--ink-400)",
+        display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flexWrap: "wrap",
+      }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+          <OpsLine>{">> "}WRAPPED AROUND EVERY ENGAGEMENT</OpsLine>
+          <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, letterSpacing: "-0.015em" }}>
+            <span style={{ color: "var(--ignite-500)" }}>Creative & Strategy</span>
+            <span style={{ color: "var(--fg-3)", margin: "0 14px" }}>·</span>
+            <span style={{ color: "#FFB627" }}>Logistics & Production</span>
+            <span style={{ color: "var(--fg-3)", margin: "0 14px" }}>·</span>
+            <span style={{ color: "var(--spark-500)" }}>Spark Tech Stack</span>
+          </div>
+        </div>
+        <a href="pages/services.html" style={{
+          fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.22em",
+          textTransform: "uppercase", color: "var(--fg-2)",
+        }}>SEE THE FULL CAPABILITIES MAP →</a>
+      </div>
+    </Container>
+  </section>
+);
+
+Object.assign(window, { ServicesGrid, HOME_SERVICES });

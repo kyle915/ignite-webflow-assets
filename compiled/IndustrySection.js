@@ -1312,7 +1312,7 @@ const IndustrySparkCallout = ({
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/spark",
+    href: "https://sparkbyignite.igniteproductions.co/",
     style: {
       display: "inline-flex",
       alignItems: "center",

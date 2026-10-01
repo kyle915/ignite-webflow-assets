@@ -353,7 +353,7 @@ function BlogPost() {
       "Staffing": [["Event staffing", "/services/event-staffing"], ["Brand ambassador agency", "/brand-ambassador-agency"], ["Our work", "/work"]],
       "Strategy": [["Experiential marketing", "/services/experiential-marketing"], ["Event production", "/services/event-production"], ["Our work", "/work"]],
       "Logistics": [["Mobile marketing tours", "/services/mobile-tours"], ["Trade show staffing", "/services/trade-shows"], ["Markets we cover", "/markets"]],
-      "Measurement": [["Spark field reporting", "/spark"], ["Event recap and reporting", "/services/event-reporting-recaps"], ["Our work", "/work"]],
+      "Measurement": [["Spark field reporting", "https://sparkbyignite.igniteproductions.co/"], ["Event recap and reporting", "/services/event-reporting-recaps"], ["Our work", "/work"]],
       "Industry": [["Industries", "/industries"], ["Product sampling", "/services/product-sampling"], ["Our work", "/work"]]
     };
     const links = post.links || DEF[post.category] || DEF.Strategy;

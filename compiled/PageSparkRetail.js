@@ -241,7 +241,7 @@ const Hero = () => {
       animationDelay: "460ms"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/contact?intent=spark-retail",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -1614,7 +1614,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=spark-retail",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "22px 34px",
     borderRadius: 999,
@@ -1653,9 +1653,7 @@ const SparkRetailPage = () => {
   useReveal();
   return /*#__PURE__*/React.createElement("div", {
     "data-screen-label": "Spark Retail"
-  }, /*#__PURE__*/React.createElement(SiteNav, {
-    active: "SPARK"
-  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Ticker, null), /*#__PURE__*/React.createElement(Problem, null), /*#__PURE__*/React.createElement(How, null), /*#__PURE__*/React.createElement(Dashboard, null), /*#__PURE__*/React.createElement(Tasks, null), /*#__PURE__*/React.createElement(Versus, null), /*#__PURE__*/React.createElement(Stats, null), /*#__PURE__*/React.createElement(CTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
+  }, /*#__PURE__*/React.createElement(SparkNav, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Ticker, null), /*#__PURE__*/React.createElement(Problem, null), /*#__PURE__*/React.createElement(How, null), /*#__PURE__*/React.createElement(Dashboard, null), /*#__PURE__*/React.createElement(Tasks, null), /*#__PURE__*/React.createElement(Stats, null), /*#__PURE__*/React.createElement(CTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
 };
 document.title = "Spark Retail Execution | Crowdsourced In-Store Intelligence — Ignite";
 Object.assign(window, {

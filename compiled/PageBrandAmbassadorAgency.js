@@ -245,7 +245,7 @@ const Hero = () => {
       animationDelay: "360ms"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/contact?intent=brand-ambassadors",
+    href: "/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -928,7 +928,7 @@ const Spark = () => {
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/spark",
+    href: "https://sparkbyignite.igniteproductions.co/",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -1187,7 +1187,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=brand-ambassadors",
+  href: "/contact",
   style: {
     padding: "20px 32px",
     borderRadius: 999,

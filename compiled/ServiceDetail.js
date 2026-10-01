@@ -1809,7 +1809,7 @@ const ServiceSparkSection = ({
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/spark",
+    href: "https://sparkbyignite.igniteproductions.co/",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -2101,7 +2101,7 @@ const ServiceCTA = ({
     fontFamily: "var(--font-mono)"
   }
 }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "https://www.igniteproductions.co/contact?urgent=1",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "18px 24px",
     borderRadius: 999,

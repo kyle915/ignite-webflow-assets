@@ -1052,7 +1052,7 @@ const CaseMoreWork = ({
     }
   }, list.map(n => /*#__PURE__*/React.createElement("a", {
     key: n.slug,
-    href: `/case-studies?slug=${n.slug}`,
+    href: `/portfolio/${n.slug}`,
     style: {
       position: "relative",
       display: "block",

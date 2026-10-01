@@ -1012,7 +1012,7 @@ const StyleGuidePage = () => /*#__PURE__*/React.createElement(React.Fragment, nu
     gap: 20,
     marginBottom: 48
   }
-}, [["Specific over flowery", "Say '850 events, 47 markets, 1.4M reached.' Not 'a strategic, scalable solution that drives meaningful impact.'"], ["Active, not passive", "Write 'We staffed it.' Not 'The activation was successfully executed by our team.'"], ["Short sentences", "Then longer ones, when the point earns the room to breathe. Vary the rhythm so it sounds like a person."], ["Receipts > claims", "Every promise should pair with a number, a market, or a brand name. If you can't, cut the claim."]].map(([t, d]) => /*#__PURE__*/React.createElement("div", {
+}, [["Specific over flowery", "Say '850 events, 200+ metros, 1.4M reached.' Not 'a strategic, scalable solution that drives meaningful impact.'"], ["Active, not passive", "Write 'We staffed it.' Not 'The activation was successfully executed by our team.'"], ["Short sentences", "Then longer ones, when the point earns the room to breathe. Vary the rhythm so it sounds like a person."], ["Receipts > claims", "Every promise should pair with a number, a market, or a brand name. If you can't, cut the claim."]].map(([t, d]) => /*#__PURE__*/React.createElement("div", {
   key: t,
   style: {
     padding: 28,

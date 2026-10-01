@@ -6,7 +6,7 @@ const HOME_EXPANDED = [{
   n: "08",
   title: "Sales & Distribution",
   accent: "#D7453E",
-  sub: "Fractional CPG sales — brokers, buyer pitches, trade, and distribution that sticks.",
+  sub: "Fractional CPG sales, brokers, buyer pitches, trade, and distribution that sticks.",
   tags: ["Fractional Sales", "Broker Mgmt", "Buyer Pitch", "Trade", "Retail Readiness"],
   href: "/services/fractional-sales-team",
   foot: "fractional sales team"
@@ -14,7 +14,7 @@ const HOME_EXPANDED = [{
   n: "09",
   title: "AI Management",
   accent: "#2DE2E6",
-  sub: "We run the AI layer of your marketing — recaps, forecasting, creative, audience scoring.",
+  sub: "We run the AI layer of your marketing, recaps, forecasting, creative, audience scoring.",
   tags: ["Recap Automation", "Forecasting", "Vision OOS", "Audience"],
   href: "/services/ai-management",
   foot: "ai management"
@@ -22,7 +22,7 @@ const HOME_EXPANDED = [{
   n: "10",
   title: "Spark Retail Execution",
   accent: "#D6F35F",
-  sub: "Crowdsourced in-store audits, OOS + price checks — run by a vetted 257K field force.",
+  sub: "Crowdsourced in-store audits, OOS + price checks, run by a vetted 257K field force.",
   tags: ["Audits", "OOS Detection", "Photo Proof", "Live Board"],
   href: "/spark-retail",
   foot: "spark retail"
@@ -46,7 +46,7 @@ const HOME_EXPANDED = [{
   n: "13",
   title: "Sponsorship & Partnerships",
   accent: "#D7453E",
-  sub: "Deal sourcing to on-site activation — sponsorships managed end to end, measured for ROI.",
+  sub: "Deal sourcing to on-site activation, sponsorships managed end to end, measured for ROI.",
   tags: ["Sponsorship", "Partnerships", "Activation", "Measurement"],
   href: "/services/sponsorship-partnerships",
   foot: "sponsorship"
@@ -181,7 +181,7 @@ const HomeExpanded = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-1)",
     maxWidth: 760
   }
-}, "Field execution is the floor, not the ceiling. Sales, AI, retail intelligence, creative, hospitality, and sponsorships \u2014 run by the same operators, so the brief and the receipts never get lost in a handoff.")), /*#__PURE__*/React.createElement("div", {
+}, "Field execution is the floor, not the ceiling. Sales, AI, retail intelligence, creative, hospitality, and sponsorships, run by the same operators, so the brief and the receipts never get lost in a handoff.")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",

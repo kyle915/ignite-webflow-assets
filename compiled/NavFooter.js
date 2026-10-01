@@ -224,7 +224,7 @@ const SITE_SERVICE_GROUPS = [{
     slug: "spark",
     label: "Spark Platform",
     sub: "The field-marketing dashboard — GPS, photos, samples, auto recaps",
-    href: "/spark"
+    href: "https://sparkbyignite.igniteproductions.co/"
   }, {
     slug: "spark-retail",
     label: "Spark Retail Execution",
@@ -247,7 +247,7 @@ const CAT_VARS = ["--cat-staffing", "--cat-sampling", "--cat-retail-programs", "
 const svcHref = (rel, s) => s.href ? rel + s.href : "/services/" + s.slug;
 const NAV_ITEMS = [{
   label: "SPARK",
-  href: "/spark",
+  href: "https://sparkbyignite.igniteproductions.co/",
   spark: true
 }, {
   label: "FRACTIONAL",
@@ -302,7 +302,7 @@ const BrandBar = ({
   brand = "ignite"
 }) => {
   const igniteHref = rel + "/";
-  const sparkHref = rel + "/spark";
+  const sparkHref = rel + "https://sparkbyignite.igniteproductions.co/";
   const onSpark = brand === "spark";
   return /*#__PURE__*/React.createElement("div", {
     className: "bb-bar",
@@ -666,7 +666,7 @@ const SiteNav = ({
   }, /*#__PURE__*/React.createElement(AccentBtn, {
     size: "sm",
     accent: "spark",
-    onClick: () => location.href = "https://www.igniteproductions.co/contact?urgent=1"
+    onClick: () => location.href = "https://www.igniteproductions.co/contact"
   }, "Request staff now")), /*#__PURE__*/React.createElement("button", {
     className: "nav-burger",
     "aria-label": mobileOpen ? "Close menu" : "Open menu",
@@ -1224,7 +1224,7 @@ const SiteNav = ({
       textDecoration: "none"
     }
   }, l))), /*#__PURE__*/React.createElement("a", {
-    href: "https://www.igniteproductions.co/contact?urgent=1",
+    href: "https://www.igniteproductions.co/contact",
     onClick: () => setMobileOpen(false),
     style: {
       display: "flex",
@@ -1326,7 +1326,7 @@ const SiteFooter = ({
     textTransform: "uppercase",
     border: "1px solid rgba(93, 190, 90,0.3)"
   }
-}, "\u25CF Online Now"))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Request a Quote", "https://www.igniteproductions.co/contact"], ["Agency of Record", "/agency-of-record"], ["Markets", "/markets"], ["Industries", "/industries"], ["Weddings", "/weddings"], ["Group Travel", "/travel"], ["Compare", "/compare"], ["Blog", "/blog"], ["Glossary", "/glossary"], ["Spark Platform", "/spark"], ["Fractional", "/fractional"]]], ["TALENT", [["Apply", "https://www.igniteproductions.co/contact"], ["LinkedIn", "https://www.linkedin.com/company/ignite-productionsllc"], ["Press", "#"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
+}, "\u25CF Online Now"))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Request a Quote", "https://www.igniteproductions.co/contact"], ["Agency of Record", "/agency-of-record"], ["Markets", "/markets"], ["Industries", "/industries"], ["Weddings", "/weddings"], ["Group Travel", "/travel"], ["Compare", "/compare"], ["Blog", "/blog"], ["Glossary", "/glossary"], ["Spark Platform", "https://sparkbyignite.igniteproductions.co/"], ["Fractional", "/fractional"]]], ["TALENT", [["Apply", "https://www.igniteproductions.co/contact"], ["LinkedIn", "https://www.linkedin.com/company/ignite-productionsllc"], ["Press", "#"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
   key: h
 }, /*#__PURE__*/React.createElement(OpsLine, null, ">> " + h), /*#__PURE__*/React.createElement("ul", {
   style: {

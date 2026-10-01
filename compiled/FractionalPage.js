@@ -746,7 +746,7 @@ const FractionalHero2 = () => /*#__PURE__*/React.createElement("section", {
   onClick: () => window.open("https://calendly.com/kyle-igniteproductions/30min?back=1", "_blank")
 }, "Book a 30-min call"), /*#__PURE__*/React.createElement(GhostBtn, {
   size: "lg",
-  onClick: () => location.href = "/contact"
+  onClick: () => location.href = "https://www.igniteproductions.co/contact"
 }, "Get in touch")), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 36,
@@ -2104,7 +2104,7 @@ const FractionalFinalCTA = () => {
       animation: "ctaArrow 1.4s ease-in-out infinite"
     }
   }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",

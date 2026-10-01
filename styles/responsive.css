@@ -18,9 +18,8 @@
     --hero-pad-tall:     96px;
   }
 
-  /* Site nav — collapse links, keep logo + CTA */
-  header nav { display: none !important; }
-  header > div:first-child { padding: 0 18px !important; height: 60px !important; gap: 8px !important; }
+  /* Site nav — mobile drawer takes over at ≤1024px (see the 1024 block below);
+     only the contact micro-link is dropped here. */
   header a[href="/contact"].link-mono { display: none !important; }
 
   /* Hero */
@@ -99,8 +98,7 @@
   /* Marquee numbers */
   section [style*="font-size: 30px"] { font-size: 22px !important; }
 
-  /* Sticky breadcrumb sits under the 60px mobile header, not the 128px desktop one */
-  .sticky-breadcrumb { top: 60px !important; }
+  /* Sticky breadcrumb inner spacing */
   .sticky-breadcrumb > div { padding: 0 20px !important; font-size: 10px !important; gap: 10px !important; }
 
   /* Hero sits right under the breadcrumb, which already adds its own bar height.
@@ -111,6 +109,71 @@
   /* Never let anything bleed past the viewport width.
      Use clip (not hidden) so it doesn't create a scroll container that kills position:sticky */
   html, body { overflow-x: clip !important; max-width: 100% !important; }
+}
+
+/* ============================================================
+   Mobile hardening (≤ 720px)
+   Catches the inline-styled cases the section-scoped rules above miss:
+   nothing may be clipped, unreadable, or too small to tap on a phone.
+   ============================================================ */
+@media (max-width: 720px) {
+  /* Grid/flex children default to min-width:auto and refuse to shrink,
+     which is what pushes card content past its own edge. */
+  #root [style*="grid-template-columns"] > *,
+  #root [style*="display: flex"] > * { min-width: 0; }
+
+  /* Long tokens (emails, URLs, slugs) wrap instead of widening the card */
+  #root p, #root li, #root h1, #root h2, #root h3, #root h4, #root a, #root span { overflow-wrap: break-word; }
+
+  /* Inline `white-space: nowrap` copy wraps on phones.
+     Animated tickers/marquees (inline animation, width:max-content, or a
+     marquee/ticker/march class) keep theirs — they scroll by design. */
+  #root [style*="white-space: nowrap"]:not([style*="animation"]):not([style*="max-content"]):not([class*="marquee"]):not([class*="ticker"]):not([class*="march"]):not([class*="cycle"]) { white-space: normal !important; }
+
+  /* Column grids declared outside a <section> stack too */
+  #root [style*="grid-template-columns: repeat(3,"] { grid-template-columns: 1fr !important; }
+  /* Fixed-width first tracks (sidebar/logo columns) stack */
+  #root [style*="grid-template-columns: 320px"], #root [style*="grid-template-columns: 300px"],
+  #root [style*="grid-template-columns: 280px"], #root [style*="grid-template-columns: 260px"],
+  #root [style*="grid-template-columns: 240px"], #root [style*="grid-template-columns: 220px"],
+  #root [style*="grid-template-columns: 200px"] { grid-template-columns: 1fr !important; }
+  #root [style*="grid-template-columns: repeat(4,"],
+  #root [style*="grid-template-columns: repeat(5,"],
+  #root [style*="grid-template-columns: repeat(6,"] { grid-template-columns: 1fr 1fr !important; }
+
+  /* Minimum legible type: mono micro-labels come up to 12px */
+  #root [style*="font-size: 9px"], #root [style*="font-size: 9.5px"],
+  #root [style*="font-size: 10px"], #root [style*="font-size: 10.5px"],
+  #root [style*="font-size: 8px"], #root [style*="font-size: 8.5px"],
+  #root [style*="font-size: 11px"], #root [style*="font-size: 11.5px"] { font-size: 12px !important; }
+
+  /* Tap targets: standalone links get a finger-sized box (display left alone on
+     buttons — many are cards, and flipping them to flex collapses their fill) */
+  #root footer a, #root nav a, #root header a,
+  #root a.link-mono, #root a[class*="cta"] { min-height: 40px; display: inline-flex; align-items: center; }
+  #root button { min-height: 40px; }
+  #root p a { min-height: 0; display: inline; }
+}
+
+/* ============================================================
+   Nav collapse (≤ 1080px)
+   The full desktop nav + CTA can't fit under ~1024px — labels wrap mid-word
+   and the CTA pill breaks over three lines. Hand off to the burger drawer
+   (NavFooter shows .nav-burger at the same breakpoint) for the whole
+   tablet / small-laptop range.
+   ============================================================ */
+@media (max-width: 1080px) {
+  header nav { display: none !important; }
+  header > div:first-child { padding: 0 18px !important; height: 60px !important; gap: 8px !important; }
+  /* breadcrumb rides under the 60px compact header, not the 128px desktop one */
+  .sticky-breadcrumb { top: 60px !important; }
+}
+/* Just above the breakpoint the labels still need help: never break a label,
+   and tighten the rhythm until there's room for the full desktop spacing. */
+header nav a { white-space: nowrap; }
+@media (min-width: 1081px) and (max-width: 1240px) {
+  header nav { gap: 0 !important; }
+  header nav a { padding-left: 9px !important; padding-right: 9px !important; font-size: 12px !important; letter-spacing: 0.1em !important; }
 }
 
 /* ============================================================
@@ -126,18 +189,6 @@
   section [style*="grid-template-columns: repeat(5,"] { grid-template-columns: 1fr 1fr 1fr !important; }
   section [style*="grid-template-columns: repeat(6, 1fr)"] { grid-template-columns: 1fr 1fr !important; }
   section [style*="grid-template-columns: repeat(6, 1fr)"] > div { grid-column: span 2 !important; }
-}
-
-/* ============================================================
-   Tablet + small laptop (<= 1199px) — nav collapse
-   Logo + 8 nav labels + CTA is ~1200px. 991px still wrapped
-   the desktop cluster at iPad landscape / 1024–1180.
-   ============================================================ */
-@media (max-width: 1199px) {
-  header nav { display: none !important; }
-  .nav-cta-desktop { display: none !important; }
-  .nav-burger { display: inline-flex !important; }
-  header > div:first-child { height: 72px !important; gap: 12px !important; }
 }
 
 /* ============================================================
@@ -167,3 +218,15 @@ section[style*="background: var(--ink-100)"] p { color: rgba(255, 255, 255, 0.78
 /* Tighter dark-card body copy */
 section[style*="background: var(--ink-000)"] [style*="color: var(--fg-2)"],
 section[style*="background: var(--ink-100)"] [style*="color: var(--fg-2)"] { color: rgba(255,255,255,0.78) !important; }
+
+/* ============================================================
+   Tablet + small laptop (<= 1199px) — nav collapse
+   Logo + 8 nav labels + CTA is ~1200px. 991px still wrapped
+   the desktop cluster at iPad landscape / 1024–1180.
+   ============================================================ */
+@media (max-width: 1199px) {
+  header nav { display: none !important; }
+  .nav-cta-desktop { display: none !important; }
+  .nav-burger { display: inline-flex !important; }
+  header > div:first-child { height: 72px !important; gap: 12px !important; }
+}

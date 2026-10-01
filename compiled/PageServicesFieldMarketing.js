@@ -382,7 +382,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=field-marketing",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     display: "inline-flex",
     alignItems: "center",
@@ -861,7 +861,7 @@ const Spark = () => {
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/spark",
+    href: "https://sparkbyignite.igniteproductions.co/",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -877,7 +877,7 @@ const Spark = () => {
       boxShadow: `0 8px 28px ${MINT}44`
     }
   }, "Explore Spark \u2192"), /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -892,7 +892,7 @@ const Spark = () => {
       fontSize: 14,
       textDecoration: "none"
     }
-  }, "Book a demo"))), /*#__PURE__*/React.createElement("div", {
+  }, "Get a staffing quote"))), /*#__PURE__*/React.createElement("div", {
     className: "fm-reveal",
     style: {
       background: "linear-gradient(180deg,#14161B,#0F1115)",
@@ -1172,7 +1172,7 @@ const Related = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap",
     gap: 12
   }
-}, [["Event Staffing", "/services/event-staffing"], ["Product Sampling", "/services/product-sampling"], ["Experiential Marketing", "/services/experiential-marketing"], ["Mobile Tours", "/services/mobile-tours"], ["Retail Demo Programs", "/services/retail-demo-programs"], ["CPG Beverage", "/industries/cpg-beverage"], ["Spark", "/spark"]].map(([l, h]) => /*#__PURE__*/React.createElement("a", {
+}, [["Event Staffing", "/services/event-staffing"], ["Product Sampling", "/services/product-sampling"], ["Experiential Marketing", "/services/experiential-marketing"], ["Mobile Tours", "/services/mobile-tours"], ["Retail Demo Programs", "/services/retail-demo-programs"], ["CPG Beverage", "/industries/cpg-beverage"], ["Spark", "https://sparkbyignite.igniteproductions.co/"]].map(([l, h]) => /*#__PURE__*/React.createElement("a", {
   key: l,
   href: h,
   style: {
@@ -1242,7 +1242,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=field-marketing",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "18px 34px",
     borderRadius: 999,
@@ -1254,7 +1254,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     textDecoration: "none"
   }
 }, "Start planning"), /*#__PURE__*/React.createElement("a", {
-  href: "/spark",
+  href: "https://sparkbyignite.igniteproductions.co/",
   style: {
     padding: "18px 30px",
     borderRadius: 999,
@@ -1277,7 +1277,10 @@ const App = () => {
     accent: "#8A5CD1",
     label: "Field Marketing",
     rel: "../"
-  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Counters, null), /*#__PURE__*/React.createElement(Spine, null), /*#__PURE__*/React.createElement(Included, null), /*#__PURE__*/React.createElement(Flow, null), /*#__PURE__*/React.createElement(Spark, null), /*#__PURE__*/React.createElement(Proof, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Related, null), /*#__PURE__*/React.createElement(CTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
+  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Counters, null), /*#__PURE__*/React.createElement(Spine, null), /*#__PURE__*/React.createElement(Included, null), /*#__PURE__*/React.createElement(Flow, null), /*#__PURE__*/React.createElement(Spark, null), /*#__PURE__*/React.createElement(Proof, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Related, null), /*#__PURE__*/React.createElement(CTA, null), window.RelatedCases ? React.createElement(window.RelatedCases, {
+    ctx: "service",
+    slug: "field-marketing"
+  }) : null, /*#__PURE__*/React.createElement(SiteFooter, null));
 };
 Object.assign(window, {
   PageServicesFieldMarketing: App

@@ -268,7 +268,7 @@ const Hero = () => {
       animationDelay: "560ms"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/contact?intent=campus",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -1352,7 +1352,7 @@ const FiveLanes = () => /*#__PURE__*/React.createElement("section", {
     margin: "14px 0 0"
   }
 }, "One captain. One PM. One recap dashboard. Seven lanes operating in concert across a semester.")), /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=campus",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     display: "inline-flex",
     alignItems: "center",
@@ -3352,7 +3352,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=campus",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "22px 32px",
     borderRadius: 999,
@@ -3403,7 +3403,10 @@ const CollegiatePage = () => {
     accent: "#9FC24E",
     label: "Collegiate Marketing",
     rel: "../"
-  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Manifesto, null), /*#__PURE__*/React.createElement(FiveLanes, null), /*#__PURE__*/React.createElement(Tactics, null), /*#__PURE__*/React.createElement(OnTheGround, null), /*#__PURE__*/React.createElement(SparkField, null), /*#__PURE__*/React.createElement(Pedigree, null), /*#__PURE__*/React.createElement(Campuses, null), /*#__PURE__*/React.createElement(CampusCalendar, null), /*#__PURE__*/React.createElement(GreekLife, null), /*#__PURE__*/React.createElement(CampusCompliance, null), /*#__PURE__*/React.createElement(CTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
+  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Manifesto, null), /*#__PURE__*/React.createElement(FiveLanes, null), /*#__PURE__*/React.createElement(Tactics, null), /*#__PURE__*/React.createElement(OnTheGround, null), /*#__PURE__*/React.createElement(SparkField, null), /*#__PURE__*/React.createElement(Pedigree, null), /*#__PURE__*/React.createElement(Campuses, null), /*#__PURE__*/React.createElement(CampusCalendar, null), /*#__PURE__*/React.createElement(GreekLife, null), /*#__PURE__*/React.createElement(CampusCompliance, null), /*#__PURE__*/React.createElement(CTA, null), window.RelatedCases ? React.createElement(window.RelatedCases, {
+    ctx: "service",
+    slug: "collegiate-marketing"
+  }) : null, /*#__PURE__*/React.createElement(SiteFooter, null));
 };
 document.title = "Collegiate Marketing | Gen-Z Campus Activation — Ignite";
 Object.assign(window, {

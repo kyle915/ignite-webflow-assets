@@ -171,7 +171,7 @@ const SVC_LANES = [{
   bullets: ["GPS Check-ins", "Sample Counts", "Lead Capture", "Photo Uploads", "Live Dashboards", "Auto Recaps", "Per-SKU Breakdown", "Same-Day Data"],
   img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80",
   imgPos: "center",
-  href: "/spark",
+  href: "https://sparkbyignite.igniteproductions.co/",
   meta: ["Free with engagements", "Live data", "Auto recaps"]
 }];
 
@@ -722,7 +722,7 @@ const SVC_GROUPS = [{
     slug: "spark",
     label: "Spark Platform",
     sub: "The field-marketing dashboard — GPS, photos, samples, auto recaps",
-    href: "/spark"
+    href: "https://sparkbyignite.igniteproductions.co/"
   }, {
     slug: "spark-retail",
     label: "Spark Retail Execution",
@@ -1484,7 +1484,7 @@ const SvcFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     fontFamily: "var(--font-mono)"
   }
 }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "https://www.igniteproductions.co/contact?urgent=1",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     display: "inline-flex",
     alignItems: "center",

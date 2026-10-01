@@ -160,7 +160,7 @@ const SparkVsSoftware = () => {
   }, /*#__PURE__*/React.createElement("span", {
     "aria-hidden": true,
     style: {
-      color: "var(--danger)",
+      color: "#D7453E",
       marginRight: 8,
       fontFamily: "var(--font-mono)"
     }
@@ -615,7 +615,7 @@ const SparkIntegrations = () => {
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/contact?intent=spark-demo",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -635,7 +635,7 @@ const SparkIntegrations = () => {
       fontFamily: "var(--font-mono)"
     }
   }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "https://kyle915.github.io/ignite-webflow-assets/spark-demo/",
+    href: "/spark-demo",
     style: {
       padding: "16px 24px",
       borderRadius: 999,

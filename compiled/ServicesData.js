@@ -43,7 +43,7 @@ const SERVICES_DATA = {
     stats: [["1.2M+", "consumers reached / yr"], ["320+", "festivals & tours"], ["28%", "trial → purchase lift"]],
     featured: {
       brand: "LIQUID DEATH",
-      line: "850+ events. 47 markets. Zero water bottles.",
+      line: "850+ events. 200+ metros. Zero water bottles.",
       img: window.__resources?.r_6882bb7581d3d94867693919_liquid_death || "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882bb7581d3d94867693919_liquid-death.webp"
     },
     adjacent: ["fabrication-builds", "event-staffing", "mobile-tours"]

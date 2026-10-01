@@ -214,7 +214,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     animationDelay: "340ms"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=creative",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "18px 28px",
     borderRadius: 999,
@@ -787,7 +787,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=creative",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "20px 32px",
     borderRadius: 999,

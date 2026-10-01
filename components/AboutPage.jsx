@@ -1,0 +1,1035 @@
+/* About Ignite — restructured: small core team, national-scale network */
+
+const { useState: abState, useEffect: abEffect, useRef: abRef } = React;
+
+if (typeof document !== "undefined" && !document.getElementById("about-kf")) {
+  const _kf = document.createElement("style");
+  _kf.id = "about-kf";
+  _kf.textContent = `
+    @keyframes abPulse { 0%,100%{opacity:.55;transform:scale(1)} 50%{opacity:1;transform:scale(1.06)} }
+    @keyframes abTextPulse { 0%,100%{opacity:1} 50%{opacity:1} }
+    @keyframes abBloom1 { 0%,100%{opacity:.55;transform:translate(-6%,6%) scale(1)} 50%{opacity:.9;transform:translate(-2%,2%) scale(1.1)} }
+    @keyframes abBloom2 { 0%,100%{opacity:.35;transform:translate(6%,10%) scale(1)} 50%{opacity:.7;transform:translate(2%,4%) scale(1.15)} }
+    @keyframes abCount { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes abCaret { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+    @keyframes abSweepIn {
+      0%   { opacity:0; transform:translateX(60%); filter:blur(8px); }
+      60%  { opacity:1; filter:blur(0); }
+      100% { opacity:1; transform:translateX(0);   filter:blur(0); }
+    }
+    @keyframes abGlowTrail {
+      0%   { opacity:0; transform:translateX(80%) scaleX(0.4); }
+      40%  { opacity:0.95; }
+      100% { opacity:0; transform:translateX(-20%) scaleX(1.2); }
+    }
+    @keyframes abLineFadeUp {
+      from { opacity:0; transform:translateY(14px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+  `;
+  document.head.appendChild(_kf);
+}
+
+/* ---------- DATA ---------- */
+const ABOUT_VALUES = [
+  { n: "01", t: "Show up ready",     d: "We prep, brief, and rehearse. Our ambassadors are trained on your brand — not reading a script off their phone." },
+  { n: "02", t: "Prove it. Don't pitch it.", d: "Every program is measured. Spark shows you what happened in real time. No post-event PDFs." },
+  { n: "03", t: "Move the product",  d: "Awareness is a side effect. The goal is trial, conversion, and repeat purchase. We optimize for that." },
+  { n: "04", t: "Excellence over apology",  d: "Good isn't enough. We deliver at a level that makes brands proud and consumers loyal." },
+];
+
+const ABOUT_LEADERS = [
+  { name: "Kyle Christiansen", role: "Founder · Senior Director", img: "assets/team-kyle.webp", resKey: "r_assets_team_kyle_webp",
+    bio: "20+ years CPG marketing. Red Bull, 160over90, Amazon. Veteran. Built Ignite to do experiential the way operators actually want it run." },
+  { name: "Baesha", role: "Director, Experiential Sales", img: "assets/team-baesha.png", resKey: "r_assets_team_baesha_png",
+    bio: "Runs the experiential pipeline end-to-end — from scoping the brief to deploying the team in market." },
+  { name: "Junior", role: "Director of Sales", img: "assets/team-junior.png", resKey: "r_assets_team_junior_png",
+    bio: "Owns CPG and retail accounts. The one your brand manager will know on a first-name basis." },
+  { name: "Sara", role: "Account Director", img: "assets/team-sara.webp", resKey: "r_assets_team_sara_webp",
+    bio: "Senior account oversight. Keeps the brief, the budget, and the brand all pointing the same direction." },
+  { name: "Taylor", role: "Creative Director", img: "assets/team-taylor.jpg", resKey: "r_assets_team_taylor_jpg",
+    bio: "Owns the look and feel of every activation — from booth concept to ambassador wardrobe to recap design." },
+  { name: "Keis", role: "Project Coordinator", img: "assets/team-keis.png", resKey: "r_assets_team_keis_png",
+    bio: "The operational backbone. Schedules, staffing, logistics — the work that makes the work happen." },
+  { name: "Nena", role: "Data Analyst", img: "assets/team-nena.webp", resKey: "r_assets_team_nena_webp",
+    bio: "Turns raw activation data into the recap that wins next year's program. Lives in Spark." },
+  { name: "Brad", role: "Account Manager", img: "assets/team-brad.png", resKey: "r_assets_team_brad_png",
+    bio: "Day-to-day account lead. Keeps activations on schedule, on budget, and on-brief from kickoff to recap." },
+  { name: "Myriant", role: "Sr. Account Coordinator", img: "assets/team-myriant.webp", resKey: "r_assets_team_myriant_webp",
+    bio: "Coordinates the moving pieces — staffing, assets, vendors — so the field team can focus on the consumer." },
+  { name: "Harris", role: "Account & Activation Manager", img: "assets/team-harris.webp", resKey: "r_assets_team_harris_webp",
+    bio: "Runs accounts and activations end to end — from kickoff brief through live execution on the ground." },
+];
+
+const ABOUT_TIMELINE = [
+  { y: "2018", t: "Founded", d: "Kyle launches Ignite Productions — CPG-focused, veteran-operated." },
+  { y: "2020", t: "VOSB Certified", d: "Officially recognized as a Veteran-Owned Small Business." },
+  { y: "2021", t: "Liquid Death", d: "First multi-market national tour. 200+ metros, 5,000+ events." },
+  { y: "2023", t: "Build shop online", d: "In-house fabrication. Custom booths, mobile units, retail displays." },
+  { y: "2024", t: "Spark launches", d: "Real-time field marketing platform. Replaces post-event PDFs forever." },
+  { y: "2026", t: "Today",    d: "257,000+ ambassadors. 50 states. 200+ brands activated. Still veteran-owned." },
+];
+
+/* Real client logos — same source as the homepage marquee */
+const ABOUT_CLIENT_LOGOS = [
+  { name: "Liquid Death",   url: (window.__resources?.r_6882f25fd226513954e724e2_liquid_death_lo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882f25fd226513954e724e2_liquid-death-logo-transparent.webp") },
+  { name: "White Claw",     url: (window.__resources?.r_688c1b129ea08467c1137c5d_white_claw_logo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b129ea08467c1137c5d_white-claw-logo.webp") },
+  { name: "Mas+ Messi",     url: (window.__resources?.r_688c1c02300cc1480ff080dc_mas_messi_logo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1c02300cc1480ff080dc_mas-messi-logo.webp") },
+  { name: "Krispy Krunchy", url: (window.__resources?.r_688c1b20a33960875f5d7bc0_krispy_krunchy_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b20a33960875f5d7bc0_krispy-krunchy-logo.webp") },
+  { name: "Total Wireless", url: (window.__resources?.r_688c1bb2f2c798b4cb850d2e_total_wireless_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1bb2f2c798b4cb850d2e_total-wireless-logo.webp") },
+  { name: "Dude Wipes",     url: (window.__resources?.r_688c3839708ed185c2de5ba9_dude_wipes || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3839708ed185c2de5ba9_dude-wipes.webp") },
+  { name: "Glendonough",    url: (window.__resources?.r_688c3841bacf82489917b2b9_glendonough_dis || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3841bacf82489917b2b9_glendonough-distillery.webp") },
+  { name: "Smalls Sliders", url: (window.__resources?.r_688c377975c7a23684962d73_smalls_sliders || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c377975c7a23684962d73_smalls-sliders.webp") },
+  { name: "Marc Anthony",   url: (window.__resources?.r_688c378239e6dc2ebedde728_marc_anthony_lo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c378239e6dc2ebedde728_marc-anthony-logo.webp") },
+];
+
+const ABOUT_KEY_MARKETS = [
+  "Los Angeles","New York","Chicago","Dallas","Houston","Miami","Atlanta",
+  "Phoenix","Denver","Seattle","Boston","San Francisco","Austin","Nashville",
+  "Philadelphia","Las Vegas","Charlotte","Minneapolis","Portland","San Diego",
+];
+
+/* Hero typewriter — types the first line, then triggers the sweep-in for the rest */
+const useTypewriter = (text, speed = 55, startDelay = 250) => {
+  const [out, setOut] = abState("");
+  const [done, setDone] = abState(false);
+  abEffect(() => {
+    let i = 0; let cancelled = false;
+    const start = setTimeout(() => {
+      const tick = () => {
+        if (cancelled) return;
+        i++; setOut(text.slice(0, i));
+        if (i < text.length) setTimeout(tick, speed);
+        else setDone(true);
+      };
+      tick();
+    }, startDelay);
+    return () => { cancelled = true; clearTimeout(start); };
+  }, [text, speed, startDelay]);
+  return [out, done];
+};
+
+/* Hero proof card — count-up tile (or text tile when `text` is supplied) */
+const HeroProofCard = ({ target, suffix = "", label, delay = 0, text = null }) => {
+  const [v, setV] = abState(0);
+  const [shown, setShown] = abState(false);
+  abEffect(() => {
+    const showT = setTimeout(() => setShown(true), delay + 200);
+    if (text != null) return () => clearTimeout(showT);
+    const start = performance.now() + delay + 250;
+    let raf;
+    const tick = (now) => {
+      if (now < start) { raf = requestAnimationFrame(tick); return; }
+      const t = Math.min(1, (now - start) / 1600);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setV(Math.round(target * eased));
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => { clearTimeout(showT); cancelAnimationFrame(raf); };
+  }, [target, delay, text]);
+  return (
+    <div style={{
+      position:"relative", padding:"22px 24px", borderRadius:14,
+      background:"linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015))",
+      border:"1px solid rgba(255,255,255,0.10)", overflow:"hidden",
+      opacity: shown ? 1 : 0, transform: shown ? "translateY(0)" : "translateY(8px)",
+      transition:"opacity 600ms ease, transform 600ms cubic-bezier(.2,.7,.2,1)",
+    }}>
+      <div aria-hidden="true" style={{position:"absolute",left:0,top:0,bottom:0,width:3,background:"linear-gradient(180deg, var(--ignite-500), rgba(215, 69, 62,0))"}}/>
+      <div style={{position:"relative",display:"flex",alignItems:"baseline",justifyContent:"space-between",gap:18}}>
+        <div style={{fontFamily:"var(--font-display)",fontWeight:800,fontSize: text ? "clamp(28px, 3.2vw, 44px)" : "clamp(40px, 4.4vw, 64px)",lineHeight:0.95,letterSpacing:"-0.03em",color:"var(--fg-1)"}}>
+          {text != null ? text : <>{v.toLocaleString()}<span style={{color:"var(--ignite-500)"}}>{suffix}</span></>}
+        </div>
+        <div style={{fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.22em",color:"var(--fg-3)",textTransform:"uppercase",textAlign:"right",maxWidth:160,lineHeight:1.4}}>{label}</div>
+      </div>
+    </div>
+  );
+};
+
+/* ============================================================ HERO */
+const AboutHero = () => {
+  const [typed, typedDone] = useTypewriter("A tight core team.", 55, 250);
+  const [showRest, setShowRest] = abState(false);
+  abEffect(() => {
+    if (!typedDone) return;
+    const t = setTimeout(() => setShowRest(true), 550); // hold a beat
+    return () => clearTimeout(t);
+  }, [typedDone]);
+  return (
+  <section data-screen-label="01 About Hero" style={{
+    position:"relative", background:"var(--ink-000)", color:"var(--fg-1)",
+    overflow:"hidden", padding:"var(--hero-pad-standard) 0",
+  }}>
+
+    <Container style={{position:"relative"}}>
+      <div style={{display:"flex",alignItems:"center",gap:14,marginBottom:36,flexWrap:"wrap"}}>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:8}}>
+          <span style={{width:7,height:7,borderRadius:999,background:"var(--ignite-500)"}}/>
+          &gt;&gt; ABOUT IGNITE
+        </span>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.2em",color:"var(--fg-3)"}}>VETERAN-OWNED · FOUNDED 2018 · ALL 50 STATES</span>
+      </div>
+
+      <div style={{display:"grid",gridTemplateColumns:"1.55fr 1fr",gap:64,alignItems:"start"}}>
+        <div>
+          <h1 style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(44px, 5.6vw, 92px)",lineHeight:0.94,letterSpacing:"-0.04em",margin:0,textWrap:"balance"}}>
+            {/* Line 1 — typewriter */}
+            <span style={{display:"block"}}>
+              {typed}
+              <span aria-hidden="true" style={{display:"inline-block",width:"0.06em",height:"0.85em",marginLeft:"0.06em",verticalAlign:"-0.08em",background:"var(--ignite-500)",animation:"abCaret 0.85s steps(1) infinite",opacity: typedDone ? 0 : 1, transition: typedDone ? "opacity 220ms ease 350ms" : "none"}}/>
+            </span>
+
+            {/* Line 2 — sweep in + glow trail, then "network." pulses */}
+            <span style={{display:"block",position:"relative",overflow:"hidden"}}>
+              <span style={{position:"relative",zIndex:1,display:"inline-block",opacity: showRest ? 1 : 0, animation: showRest ? "abSweepIn 800ms cubic-bezier(.2,.7,.2,1) forwards" : "none"}}>
+                A <span style={{fontStyle:"italic",color:"var(--ignite-500)"}}>national-scale</span>{" "}
+                <span style={{position:"relative",display:"inline-block"}}>
+                  <span style={{position:"relative",zIndex:1,color:"var(--ignite-500)",animation:"abTextPulse 2.6s ease-in-out infinite"}}>network.</span>
+                </span>
+              </span>
+            </span>
+          </h1>
+          <p style={{marginTop:28,fontSize:18,lineHeight:1.55,color:"rgba(245,242,236,0.85)",margin:"28px 0 0",maxWidth:580}}>
+            Ignite is a <strong style={{color:"var(--fg-1)"}}>veteran-owned brand activation agency</strong> built on a different model: a senior, hands-on core team running a 257,000-person ambassador network — with the tech to prove every single activation worked.
+          </p>
+          <div style={{marginTop:28,display:"flex",gap:14,alignItems:"center",flexWrap:"wrap"}}>
+            <a href="https://www.igniteproductions.co/contact" style={{display:"inline-flex",alignItems:"center",gap:12,padding:"15px 22px",borderRadius:999,background:"var(--ignite-500)",color:"#0A0B0D",fontFamily:"var(--font-display)",fontWeight:700,fontSize:15,letterSpacing:"-0.01em",textDecoration:"none",boxShadow:"0 8px 28px rgba(215, 69, 62,0.32)"}}>Start a project <span>→</span></a>
+            <a href="#leaders" style={{display:"inline-flex",alignItems:"center",gap:8,padding:"13px 20px",borderRadius:999,border:"1px solid rgba(255,255,255,0.18)",color:"var(--fg-1)",fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",textTransform:"uppercase",textDecoration:"none"}}>Meet the team <span style={{color:"var(--ignite-500)"}}>↓</span></a>
+          </div>
+        </div>
+
+        {/* Right column — proof stack */}
+        <div style={{display:"flex",flexDirection:"column",gap:14}}>
+          {[
+            { text: "One unified team", label: "Senior on every brief" },
+            { n: 50, suffix: "", label: "States active" },
+            { n: 257000, suffix: "+", label: "Ambassador network" },
+          ].map((s, i) => (
+            <HeroProofCard key={s.label} text={s.text} target={s.n} suffix={s.suffix} label={s.label} delay={i * 140}/>
+          ))}
+          <div style={{marginTop:6,fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.24em",color:"var(--fg-3)",textTransform:"uppercase"}}>// updated weekly</div>
+        </div>
+      </div>
+    </Container>
+  </section>
+  );
+};
+
+/* ============================================================ COUNTER CAMEOS */
+const useCountUp = (target, duration = 1800) => {
+  const [val, setVal] = abState(0);
+  const ref = abRef(null);
+  const started = abRef(false);
+  abEffect(() => {
+    const el = ref.current; if (!el) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting && !started.current) {
+          started.current = true;
+          const start = performance.now();
+          const tick = (now) => {
+            const t = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - t, 3);
+            setVal(Math.round(target * eased));
+            if (t < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }
+      });
+    }, { threshold: 0.4 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [target, duration]);
+  return [val, ref];
+};
+
+const CounterTile = ({ target, suffix = "", label }) => {
+  const [v, ref] = useCountUp(target);
+  return (
+    <div ref={ref} style={{padding:"40px 28px",background:"var(--ink-000)",borderRadius:18,border:"1px solid var(--ink-400)",position:"relative",overflow:"hidden"}}>
+      <div style={{position:"relative",fontFamily:"var(--font-display)",fontWeight:800,fontSize:"clamp(56px, 7vw, 96px)",lineHeight:0.9,letterSpacing:"-0.04em",color:"var(--fg-1)"}}>
+        {v.toLocaleString()}<span style={{color:"var(--ignite-500)"}}>{suffix}</span>
+      </div>
+      <div style={{position:"relative",marginTop:16,fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--fg-3)",textTransform:"uppercase"}}>{label}</div>
+    </div>
+  );
+};
+
+const AboutCounters = () => (
+  <section style={{background:"var(--ink-000)",borderTop:"1px solid var(--ink-400)",padding:"100px 0"}}>
+    <Container>
+      <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:36}}>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>// the math</span>
+        <span style={{height:1,flex:1,background:"var(--ignite-500)",opacity:0.3,maxWidth:120}}/>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(3, 1fr)",gap:18}}>
+        <CounterTile target={1} label="Team. Same faces, brief to debrief." />
+        <CounterTile target={50} label="States. National coverage from one ops layer." />
+        <CounterTile target={257000} suffix="+" label="Ambassadors. Vetted, trained, deployable." />
+      </div>
+    </Container>
+  </section>
+);
+
+/* ============================================================ THE MODEL */
+const MODEL_LAYERS = [
+  { idx:"L1", label:"CORE TEAM",      v:"10",      tag:"senior · same faces, brief to debrief",
+    d:"Directors, producers, creatives. The names on your kickoff are the names on your debrief." },
+  { idx:"L2", label:"BUILD SHOP",     v:"IN-HOUSE", tag:"fab · booths, mobile, retail",
+    d:"Booths, mobile units, retail displays — fabricated by people we know, not a vendor we found." },
+  { idx:"L3", label:"SPARK PLATFORM", v:"LIVE",    tag:"tech · photos, geo, KPIs",
+    d:"Real-time activation tracking. The recap exists before the event is over." },
+  { idx:"L4", label:"AMBASSADORS",    v:"257,000+", tag:"network · 50 states, vetted",
+    d:"Background-checked, trained, deployable. Cast by market — never by lottery." },
+];
+
+const AboutModel = () => {
+  const [active, setActive] = abState(0);
+  const [shown, setShown] = abState(false);
+  const wrapRef = abRef(null);
+  abEffect(() => {
+    const el = wrapRef.current; if (!el) return;
+    const obs = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) setShown(true); }), { threshold: 0.18 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return (
+  <section ref={wrapRef} style={{background:"var(--ink-100)",borderTop:"1px solid var(--ink-400)",padding:"120px 0",position:"relative",overflow:"hidden"}}>
+    <Container style={{position:"relative"}}>
+      <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:24}}>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>// our model</span>
+        <span style={{height:1,flex:1,background:"var(--ignite-500)",opacity:0.3,maxWidth:120}}/>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.24em",color:"var(--fg-3)",textTransform:"uppercase"}}>FOUR LAYERS · ONE STACK</span>
+      </div>
+
+      <div style={{display:"grid",gridTemplateColumns:"1.1fr 1fr",gap:64,alignItems:"start",marginBottom:64}}>
+        <h2 style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(40px, 5vw, 80px)",letterSpacing:"-0.035em",lineHeight:0.96,margin:0,textWrap:"balance"}}>
+          Built like a <span style={{fontStyle:"italic",color:"var(--ignite-500)"}}>stack,</span> not a building.
+        </h2>
+        <p style={{fontSize:18,lineHeight:1.6,color:"var(--fg-2)",margin:0,maxWidth:540}}>
+          Agencies usually outsource one of these four things. We don't. Senior strategy, in-house fabrication, real-time tech, and a vetted national network — <em style={{color:"var(--fg-1)",fontStyle:"normal",fontWeight:600}}>owned end to end, so the brief and the debrief are run by the same people.</em>
+        </p>
+      </div>
+
+      {/* The stack */}
+      <div style={{position:"relative",display:"flex",flexDirection:"column",gap:12}}>
+        {/* connecting spine */}
+        <div aria-hidden="true" style={{position:"absolute",left:"calc(56px + 16px)",top:24,bottom:24,width:2,background:"linear-gradient(180deg, rgba(215, 69, 62,0.0), rgba(215, 69, 62,0.65) 12%, rgba(215, 69, 62,0.65) 88%, rgba(215, 69, 62,0))",zIndex:0}}/>
+
+        {MODEL_LAYERS.map((row, i) => {
+          const isActive = active === i;
+          return (
+            <div
+              key={row.idx}
+              onMouseEnter={() => setActive(i)}
+              style={{
+                position:"relative", zIndex:1, display:"grid",
+                gridTemplateColumns:"56px 1fr auto",
+                alignItems:"center", gap:32,
+                padding:"28px 28px 28px 28px",
+                background: isActive
+                  ? "linear-gradient(90deg, rgba(215, 69, 62,0.10), rgba(215, 69, 62,0.02) 60%, transparent)"
+                  : "linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))",
+                border:"1px solid " + (isActive ? "rgba(215, 69, 62,0.45)" : "rgba(255,255,255,0.08)"),
+                borderRadius:18,
+                transition:"all 300ms cubic-bezier(.2,.7,.2,1)",
+                transform: shown ? "translateX(0)" : "translateX(-24px)",
+                opacity: shown ? 1 : 0,
+                transitionDelay: (i * 110) + "ms",
+                cursor:"pointer", overflow:"hidden",
+              }}
+            >
+              {/* layer index node */}
+              <div style={{position:"relative",width:56,height:56,display:"flex",alignItems:"center",justifyContent:"center"}}>
+                <div aria-hidden="true" style={{position:"absolute",inset:0,borderRadius:999,background: isActive ? "var(--ignite-500)" : "rgba(255,255,255,0.06)",transition:"all 300ms ease"}}/>
+                <span style={{position:"relative",fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.16em",color: isActive ? "#0A0B0D" : "var(--fg-3)",fontWeight:700}}>{row.idx}</span>
+              </div>
+
+              {/* label + description */}
+              <div>
+                <div style={{display:"flex",alignItems:"baseline",gap:14,flexWrap:"wrap"}}>
+                  <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color: isActive ? "var(--ignite-500)" : "var(--fg-3)",textTransform:"uppercase"}}>{row.label}</span>
+                  <span style={{fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.2em",color:"var(--fg-3)",textTransform:"uppercase",opacity:0.7}}>// {row.tag}</span>
+                </div>
+                <p style={{margin:"10px 0 0",fontSize:15.5,lineHeight:1.5,color:"var(--fg-2)",maxWidth:680}}>{row.d}</p>
+              </div>
+
+              {/* big value on the right */}
+              <div style={{position:"relative",textAlign:"right"}}>
+                <div style={{position:"relative",fontFamily:"var(--font-display)",fontWeight:800,fontSize: row.v.length>4 ? "clamp(28px, 3.4vw, 48px)" : "clamp(40px, 5vw, 76px)",lineHeight:0.95,letterSpacing:"-0.04em",color: isActive ? "var(--ignite-500)" : "var(--fg-1)",transition:"color 300ms ease"}}>
+                  {row.v}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* footer caption */}
+      <div style={{marginTop:32,display:"flex",alignItems:"center",gap:14,flexWrap:"wrap",fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--fg-3)",textTransform:"uppercase"}}>
+        <span style={{display:"inline-flex",alignItems:"center",gap:8}}>
+          <span style={{width:7,height:7,borderRadius:999,background:"var(--ignite-500)",animation:"abTextPulse 2.4s ease-in-out infinite"}}/>
+          ALL FOUR LAYERS, IN-HOUSE — NO SUBCONTRACTED PROMISE-KEEPING
+        </span>
+      </div>
+    </Container>
+  </section>
+  );
+};
+
+/* ============================================================ FOUNDER */
+const AboutFounder = () => (
+  <section style={{background:"var(--ink-000)",borderTop:"1px solid var(--ink-400)",padding:"120px 0",position:"relative",overflow:"hidden"}}>
+    <Container>
+      <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:28}}>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>// the founder</span>
+        <span style={{height:1,flex:1,background:"var(--ignite-500)",opacity:0.3,maxWidth:120}}/>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1.2fr",gap:64,alignItems:"center"}}>
+        <div style={{position:"relative"}}>
+          <div style={{aspectRatio:"4 / 5",borderRadius:20,overflow:"hidden",border:"1px solid rgba(255,255,255,0.1)",background:"#0b0c0e",position:"relative"}}>
+            <img src={(window.__resources?.r_assets_team_kyle_webp) || "../assets/team-kyle.webp"} alt="Kyle Christiansen, founder of Ignite Productions" loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+            <div style={{position:"absolute",inset:0,background:"linear-gradient(180deg, transparent 55%, rgba(10,11,13,0.85) 100%)"}}/>
+            <div style={{position:"absolute",left:24,right:24,bottom:22}}>
+              <div style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:26,color:"var(--fg-1)",letterSpacing:"-0.01em"}}>Kyle Christiansen</div>
+              <div style={{marginTop:6,fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>FOUNDER · SENIOR DIRECTOR</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(36px, 4.4vw, 60px)",letterSpacing:"-0.03em",lineHeight:1.02,margin:0,textWrap:"balance"}}>
+            Built by an <span style={{fontStyle:"italic",color:"var(--ignite-500)"}}>operator,</span> not an account manager.
+          </h2>
+          <p style={{marginTop:28,fontSize:17,lineHeight:1.65,color:"var(--fg-2)"}}>
+            <strong style={{color:"var(--fg-1)"}}>Kyle Christiansen</strong> spent 20+ years in CPG marketing — leadership stints at <strong style={{color:"var(--fg-1)"}}>Red Bull</strong>, <strong style={{color:"var(--fg-1)"}}>160over90</strong>, and <strong style={{color:"var(--fg-1)"}}>Amazon</strong>, agency-side and client-side. He's been the one writing the brief, hiring the agency, watching activations go sideways, and rebuilding them better.
+          </p>
+          <p style={{marginTop:18,fontSize:17,lineHeight:1.65,color:"var(--fg-2)"}}>
+            He founded Ignite in 2018 to do experiential the way operators actually want it run: senior people on every program, real proof of execution, and an answer to "what happened?" before the post-event PDF would've even been due.
+          </p>
+          <p style={{marginTop:18,fontSize:17,lineHeight:1.65,color:"var(--fg-2)"}}>
+            We hire for <strong style={{color:"var(--fg-1)"}}>taste, hustle, and a sense of humor.</strong> Field marketing is hard; pretending it isn't is worse.
+          </p>
+          <blockquote style={{marginTop:36,paddingLeft:24,borderLeft:"3px solid var(--ignite-500)",fontFamily:"var(--font-display)",fontStyle:"italic",fontWeight:500,fontSize:22,lineHeight:1.4,color:"var(--fg-1)",letterSpacing:"-0.015em"}}>
+            "I built Ignite to be the agency I always wished I could hire."
+          </blockquote>
+        </div>
+      </div>
+    </Container>
+  </section>
+);
+
+/* ============================================================ LEADERS (5) */
+const AboutLeaders = () => (
+  <section id="leaders" style={{background:"var(--ink-100)",borderTop:"1px solid var(--ink-400)",padding:"120px 0",position:"relative",overflow:"hidden",isolation:"isolate"}}>
+    {/* Animated on-brand background */}
+    <div aria-hidden="true" style={{position:"absolute",inset:0,zIndex:0,pointerEvents:"none"}}>
+      {/* orange spotlight orbs */}
+    </div>
+    <style>{`
+      @keyframes abLdOrbA { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-30px,40px) scale(1.08)} }
+      @keyframes abLdOrbB { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(40px,-30px) scale(1.1)} }
+      @keyframes abLdBlink { 0%,100%{opacity:0.15} 50%{opacity:0.55} }
+    `}</style>
+    <Container style={{position:"relative",zIndex:1}}>
+      <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:20}}>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>// senior team</span>
+        <span style={{height:1,flex:1,background:"var(--ignite-500)",opacity:0.3,maxWidth:120}}/>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"1.4fr 1fr",gap:48,alignItems:"end",marginBottom:56}}>
+        <h2 style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(40px, 5vw, 76px)",letterSpacing:"-0.03em",lineHeight:1,margin:0,textWrap:"balance"}}>
+          The people who'll <span style={{fontStyle:"italic",color:"var(--ignite-500)"}}>actually be on your program.</span>
+        </h2>
+        <p style={{fontSize:17,lineHeight:1.6,color:"var(--fg-2)",margin:0,maxWidth:520}}>
+          No bait-and-switch. The people pitching you are the people running your program.
+        </p>
+      </div>
+      <div style={{display:"flex",flexWrap:"wrap",gap:18,justifyContent:"center"}}>
+        {ABOUT_LEADERS.map((m,i) => {
+          const accent = i===0 ? "var(--ignite-500)" : (i%3===1 ? "#FFB627" : (i%3===2 ? "#D6F35F" : "var(--ignite-500)"));
+          const resolved = (window.__resources && window.__resources[m.resKey]) || ("../" + m.img);
+          return (
+            <div key={m.name} style={{flex:"0 0 calc((100% - 54px) / 4)",minWidth:220,background:"var(--ink-000)",borderRadius:16,border:"1px solid var(--ink-400)",overflow:"hidden",display:"flex",flexDirection:"column"}}>
+              <div style={{aspectRatio:"4 / 5",background:"linear-gradient(180deg, #16181c 0%, #0b0c0e 100%)",position:"relative",overflow:"hidden"}}>
+                <img src={resolved} alt={`${m.name} — ${m.role}`} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+                <div style={{position:"absolute",left:14,top:14,fontFamily:"var(--font-mono)",fontSize:9,letterSpacing:"0.22em",color:accent,textTransform:"uppercase",padding:"4px 8px",borderRadius:999,background:"rgba(10,11,13,0.7)",border:`1px solid ${accent}`}}>0{i+1}</div>
+              </div>
+              <div style={{padding:"18px 18px 22px",display:"flex",flexDirection:"column",gap:8}}>
+                <div style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:18,color:"var(--fg-1)",letterSpacing:"-0.01em"}}>{m.name}</div>
+                <div style={{fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.18em",color:accent,textTransform:"uppercase"}}>{m.role}</div>
+                <p style={{marginTop:6,fontSize:13,lineHeight:1.55,color:"var(--fg-2)",margin:"6px 0 0"}}>{m.bio}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <p style={{marginTop:36,fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--fg-3)",textTransform:"uppercase",textAlign:"center"}}>
+        + a tight production, ops, and analytics bench
+      </p>
+    </Container>
+  </section>
+);
+
+/* ============================================================ VALUES */
+const AboutValuesGrid = () => (
+  <section id="values" style={{background:"var(--ink-000)",borderTop:"1px solid var(--ink-400)",padding:"120px 0"}}>
+    <Container>
+      <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:20}}>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>// how we operate</span>
+        <span style={{height:1,flex:1,background:"var(--ignite-500)",opacity:0.3,maxWidth:120}}/>
+      </div>
+      <h2 style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(40px, 5vw, 76px)",letterSpacing:"-0.03em",lineHeight:1,margin:"0 0 64px",maxWidth:1000,textWrap:"balance"}}>
+        Four rules. <span style={{fontStyle:"italic",color:"var(--ignite-500)"}}>No exceptions.</span>
+      </h2>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(4, 1fr)",gap:18}}>
+        {ABOUT_VALUES.map(v => (
+          <div key={v.n} style={{padding:"32px 28px",background:"var(--ink-100)",borderRadius:18,border:"1px solid var(--ink-400)",position:"relative",overflow:"hidden",minHeight:260,display:"flex",flexDirection:"column"}}>
+            <div aria-hidden="true" style={{position:"absolute",right:-14,bottom:-32,fontFamily:"var(--font-display)",fontWeight:900,fontSize:180,lineHeight:0.85,letterSpacing:"-0.06em",color:"transparent",WebkitTextStroke:"1px rgba(215, 69, 62,0.18)",pointerEvents:"none",userSelect:"none"}}>{v.n}</div>
+            <div style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>{v.n}</div>
+            <h3 style={{marginTop:12,fontFamily:"var(--font-display)",fontWeight:700,fontSize:22,letterSpacing:"-0.015em",color:"var(--fg-1)"}}>{v.t}</h3>
+            <p style={{marginTop:12,fontSize:14.5,lineHeight:1.6,color:"var(--fg-2)",margin:"12px 0 0",position:"relative"}}>{v.d}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+);
+
+/* ============================================================ TIMELINE */
+const AboutTimeline = () => (
+  <section style={{background:"var(--ink-100)",borderTop:"1px solid var(--ink-400)",padding:"120px 0"}}>
+    <Container>
+      <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:20}}>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>// trajectory</span>
+        <span style={{height:1,flex:1,background:"var(--ignite-500)",opacity:0.3,maxWidth:120}}/>
+      </div>
+      <h2 style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(40px, 5vw, 76px)",letterSpacing:"-0.03em",lineHeight:1,margin:"0 0 56px",maxWidth:1100,textWrap:"balance"}}>
+        Eight years. <span style={{fontStyle:"italic",color:"var(--ignite-500)"}}>One trajectory.</span>
+      </h2>
+      <div style={{position:"relative"}}>
+        <div aria-hidden="true" style={{position:"absolute",left:0,right:0,top:64,height:1,background:"linear-gradient(90deg, var(--ignite-500), rgba(215, 69, 62,0.1))"}}/>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(6, 1fr)",gap:14}}>
+          {ABOUT_TIMELINE.map((m,i) => (
+            <div key={m.y} style={{position:"relative",paddingTop:78}}>
+              <div style={{position:"absolute",top:58,left:0,width:12,height:12,borderRadius:999,background:i===ABOUT_TIMELINE.length-1?"var(--ignite-500)":"#1a1c20",border:`2px solid var(--ignite-500)`}}/>
+              <div style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:32,letterSpacing:"-0.02em",color:"var(--fg-1)"}}>{m.y}</div>
+              <div style={{marginTop:8,fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>{m.t}</div>
+              <p style={{marginTop:10,fontSize:13.5,lineHeight:1.55,color:"var(--fg-2)",margin:"10px 0 0"}}>{m.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Container>
+  </section>
+);
+
+/* ============================================================ CLIENT LOGOS (real, from home) */
+const AboutClients = () => (
+  <section style={{background:"var(--ink-000)",borderTop:"1px solid var(--ink-400)",padding:"100px 0"}}>
+    <Container>
+      <div style={{display:"flex",alignItems:"baseline",gap:16,marginBottom:36,flexWrap:"wrap"}}>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>★ TRUSTED BY</span>
+        <span style={{flex:1,height:1,background:"rgba(255,255,255,0.12)",minWidth:80}}/>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--fg-3)",textTransform:"uppercase"}}>+ 200 BRANDS SINCE 2018</span>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(3, 1fr)",border:"1px solid var(--ink-400)",borderRadius:14,overflow:"hidden"}}>
+        {ABOUT_CLIENT_LOGOS.map((c,i) => {
+          const col = i % 3, row = Math.floor(i / 3), total = ABOUT_CLIENT_LOGOS.length;
+          const isLastRow = row === Math.floor((total - 1) / 3);
+          return (
+            <div key={c.name} style={{
+              padding:"40px 24px", display:"flex",alignItems:"center",justifyContent:"center",
+              minHeight:128, background:"var(--ink-100)",
+              borderRight: col<2 ? "1px solid var(--ink-400)" : "none",
+              borderBottom: !isLastRow ? "1px solid var(--ink-400)" : "none",
+            }}>
+              <img src={c.url} alt={c.name} loading="lazy" style={{
+                maxHeight:96, maxWidth:240, width:"auto", objectFit:"contain",
+                filter:"grayscale(1) brightness(2.2) contrast(1.05)", opacity:0.85,
+              }}/>
+            </div>
+          );
+        })}
+      </div>
+    </Container>
+  </section>
+);
+
+/* ============================================================ CASE STUDY SPOTLIGHT */
+const AboutCaseSpotlight = () => (
+  <section style={{background:"var(--ink-100)",borderTop:"1px solid var(--ink-400)",padding:"120px 0",position:"relative",overflow:"hidden"}}>
+    <Container>
+      <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:28}}>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>// case spotlight</span>
+        <span style={{height:1,flex:1,background:"var(--ignite-500)",opacity:0.3,maxWidth:120}}/>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"1.2fr 1fr",gap:64,alignItems:"start"}}>
+        <div>
+          <div style={{fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.22em",color:"var(--fg-3)",textTransform:"uppercase",marginBottom:14}}>2021 — PRESENT · NATIONAL TOUR</div>
+          <h2 style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(40px, 5vw, 76px)",letterSpacing:"-0.03em",lineHeight:1,margin:0,textWrap:"balance"}}>
+            <span style={{color:"var(--fg-1)"}}>5,000+ events.</span><br/>
+            <span style={{color:"var(--fg-1)"}}>200+ metros.</span><br/>
+            <span style={{fontStyle:"italic",color:"var(--ignite-500)"}}>Millions sampled.</span>
+          </h2>
+          <p style={{marginTop:28,fontSize:17,lineHeight:1.65,color:"var(--fg-2)",maxWidth:560}}>
+            Multi-year national field marketing program for Liquid Death — sampling, retail demos, festivals, and tour activations across 47 U.S. markets. Every can tracked. Every sample geo-stamped. Every recap delivered before the next event began.
+          </p>
+          <div style={{marginTop:36,display:"grid",gridTemplateColumns:"repeat(4, 1fr)",gap:12}}>
+            {[["850+","Events"],["47","Markets"],["3.4M","Samples served"],["38%","Avg trial→repeat"]].map(([n,l]) => (
+              <div key={l} style={{padding:"18px 14px",background:"var(--ink-000)",border:"1px solid var(--ink-400)",borderRadius:12}}>
+                <div style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:24,letterSpacing:"-0.02em",color:"var(--fg-1)"}}>{n}</div>
+                <div style={{marginTop:6,fontFamily:"var(--font-mono)",fontSize:9,letterSpacing:"0.18em",color:"var(--fg-3)",textTransform:"uppercase"}}>{l}</div>
+              </div>
+            ))}
+          </div>
+          <a href="work.html" style={{marginTop:36,display:"inline-flex",alignItems:"center",gap:10,padding:"15px 22px",borderRadius:999,border:"1px solid rgba(255,255,255,0.18)",color:"var(--fg-1)",fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",textTransform:"uppercase",textDecoration:"none"}}>See the work <span style={{color:"var(--ignite-500)"}}>→</span></a>
+        </div>
+        <div>
+          <div style={{aspectRatio:"4 / 5",borderRadius:18,overflow:"hidden",border:"1px solid var(--ink-400)",position:"relative",background:"#0b0c0e"}}>
+            <img src={(window.__resources?.r_assets_sampling_liquiddeath_petsmart_jpg) || "../assets/sampling-liquiddeath-petsmart.jpg"} alt="Liquid Death sampling activation at PetSmart" loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+            <div style={{position:"absolute",inset:0,background:"linear-gradient(180deg, transparent 55%, rgba(10,11,13,0.85) 100%)"}}/>
+            <div style={{position:"absolute",left:22,right:22,bottom:22}}>
+              <div style={{fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>★ LIQUID DEATH</div>
+              <div style={{marginTop:8,fontFamily:"var(--font-display)",fontWeight:700,fontSize:22,color:"var(--fg-1)",letterSpacing:"-0.01em"}}>Multi-year sampling, retail, and tour</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+);
+
+/* ============================================================ WHERE WE WORK */
+const AboutCoverage = () => (
+  <section style={{background:"var(--ink-000)",borderTop:"1px solid var(--ink-400)",padding:"120px 0"}}>
+    <Container>
+      <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:20}}>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>// where we work</span>
+        <span style={{height:1,flex:1,background:"var(--ignite-500)",opacity:0.3,maxWidth:120}}/>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"1.1fr 1fr",gap:64,alignItems:"end",marginBottom:48}}>
+        <h2 style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(40px, 5vw, 76px)",letterSpacing:"-0.03em",lineHeight:1,margin:0,textWrap:"balance"}}>
+          All 50 states. <span style={{fontStyle:"italic",color:"var(--ignite-500)"}}>One brief.</span>
+        </h2>
+        <p style={{fontSize:17,lineHeight:1.6,color:"var(--fg-2)",margin:0,maxWidth:480}}>
+          National coverage with local-market knowledge. Our ambassador network is deep in every major DMA — and on call in the secondary ones, too.
+        </p>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(5, 1fr)",gap:10}}>
+        {ABOUT_KEY_MARKETS.map((m,i) => (
+          <div key={m} style={{padding:"16px 14px",border:"1px solid var(--ink-400)",borderRadius:10,fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.18em",color:"var(--fg-2)",textTransform:"uppercase",display:"flex",alignItems:"center",gap:10}}>
+            <span style={{width:6,height:6,borderRadius:999,background:i<6 ? "var(--ignite-500)" : "rgba(215, 69, 62,0.4)"}}/>
+            {m}
+          </div>
+        ))}
+      </div>
+      <p style={{marginTop:24,fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.22em",color:"var(--fg-3)",textTransform:"uppercase"}}>+ 200 secondary markets · ambassadors deployed within 48hrs</p>
+    </Container>
+  </section>
+);
+
+/* ============================================================ VOSB */
+const AboutVOSB = () => (
+  <section style={{background:"var(--ink-100)",borderTop:"1px solid var(--ink-400)",borderBottom:"1px solid var(--ink-400)",padding:"140px 0",position:"relative",overflow:"hidden"}}>
+    {/* twin glow blooms — patriotic red/gold */}
+    <div aria-hidden="true" style={{position:"absolute",left:0,right:0,top:0,height:1,background:"linear-gradient(90deg, transparent, rgba(215, 69, 62, 0.35) 50%, transparent)"}}/>
+    <style>{`
+      @keyframes abVosbSweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    `}</style>
+
+    <Container>
+      {/* eyebrow */}
+      <div style={{display:"flex",alignItems:"center",gap:14,marginBottom:36,fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.24em",color:"var(--ignite-500)",textTransform:"uppercase",position:"relative",zIndex:1}}>
+        <span style={{width:7,height:7,borderRadius:999,background:"var(--ignite-500)",animation:"abTextPulse 2.4s ease-in-out infinite"}}/>
+        <span>// supplier diversity · veteran-owned</span>
+        <span style={{height:1,flex:1,maxWidth:120,background:"var(--ignite-500)",opacity:0.3}}/>
+      </div>
+
+      {/* certificate frame */}
+      <div style={{position:"relative",zIndex:1,display:"grid",gridTemplateColumns:"320px 1fr",gap:64,alignItems:"center",padding:"48px 56px",borderRadius:24,background:"linear-gradient(180deg, rgba(20,21,24,0.94) 0%, rgba(13,14,16,0.94) 100%)",border:"1px solid rgba(215, 69, 62,0.32)",boxShadow:"inset 0 1px 0 rgba(255,255,255,0.04)"}}>
+        {/* corner crosshairs */}
+        {[{t:14,l:14,b:"auto",r:"auto"},{t:14,r:14,b:"auto",l:"auto"},{b:14,l:14,t:"auto",r:"auto"},{b:14,r:14,t:"auto",l:"auto"}].map((p,i)=>(
+          <span key={i} aria-hidden="true" style={{position:"absolute",top:p.t,left:p.l,right:p.r,bottom:p.b,width:18,height:18,borderTop:p.t!=="auto"?"1.5px solid var(--ignite-500)":"none",borderBottom:p.b!=="auto"?"1.5px solid var(--ignite-500)":"none",borderLeft:p.l!=="auto"?"1.5px solid var(--ignite-500)":"none",borderRight:p.r!=="auto"?"1.5px solid var(--ignite-500)":"none",opacity:0.7}}/>
+        ))}
+
+        {/* VOSB logo */}
+        <div style={{position:"relative",display:"flex",alignItems:"center",justifyContent:"center"}}>
+          <img src={(window.__resources?.r_assets_vosb_logo_png || "../assets/vosb-logo.png")} alt="VOSB — Certified Veteran-Owned Small Business" width="260" height="260" style={{position:"relative",zIndex:1,width:260,height:"auto",display:"block",filter:"drop-shadow(0 8px 24px rgba(0,0,0,0.4))"}} loading="lazy" decoding="async"/>
+        </div>
+
+        {/* copy + proof points */}
+        <div>
+          {/* Military-stencil heading — two lines, all caps, mono */}
+          <div style={{display:"flex",alignItems:"flex-start",gap:14}}>
+            <span aria-hidden="true" style={{display:"inline-flex",flexDirection:"column",gap:3,color:"var(--ignite-500)",marginTop:10,flexShrink:0}}>
+              <span style={{display:"block",width:14,height:2,background:"currentColor"}}/>
+              <span style={{display:"block",width:14,height:2,background:"currentColor"}}/>
+              <span style={{display:"block",width:14,height:2,background:"currentColor"}}/>
+            </span>
+            <h3 style={{margin:0,fontFamily:"var(--font-mono)",fontWeight:700,fontSize:"clamp(20px, 2.2vw, 30px)",letterSpacing:"0.04em",lineHeight:1.1,color:"var(--fg-1)",textTransform:"uppercase"}}>
+              <span style={{display:"block"}}>Certified veteran-owned.</span>
+              <span style={{display:"block",color:"var(--ignite-500)",fontSize:"1.15em",letterSpacing:"0.06em",marginTop:6}}>Operated like it.</span>
+            </h3>
+          </div>
+
+          {/* Stencil orange underline rule */}
+          <div aria-hidden="true" style={{marginTop:16,height:3,width:140,background:"linear-gradient(90deg, var(--ignite-500), rgba(215, 69, 62,0))"}}/>
+
+          <p style={{marginTop:20,fontSize:17,lineHeight:1.6,color:"var(--fg-2)",maxWidth:680}}>
+            Licensed, insured, and run with veteran discipline. Eligible for <strong style={{color:"var(--fg-1)",fontWeight:700}}>VOSB set-aside spend</strong> at brands and agencies that prioritize supplier diversity.
+          </p>
+
+          {/* proof grid */}
+          <div style={{marginTop:28,display:"grid",gridTemplateColumns:"repeat(3, 1fr)",gap:14}}>
+            {[
+              {l:"COVERAGE",v:"All 50 states"},
+            ].map((p, i) => (
+              <div key={i} style={{padding:"14px 16px",borderRadius:10,background:"rgba(215, 69, 62,0.06)",border:"1px solid rgba(215, 69, 62,0.22)"}}>
+                <div style={{fontFamily:"var(--font-mono)",fontSize:9.5,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>{p.l}</div>
+                <div style={{marginTop:6,fontFamily:"var(--font-display)",fontWeight:700,fontSize:15,color:"var(--fg-1)",letterSpacing:"-0.005em"}}>{p.v}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+);
+
+/* ============================================================ CAREERS */
+const AboutCareers = () => (
+  <section style={{background:"var(--ink-000)",borderTop:"1px solid var(--ink-400)",padding:"120px 0"}}>
+    <Container>
+      <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:20}}>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>// careers</span>
+        <span style={{height:1,flex:1,background:"var(--ignite-500)",opacity:0.3,maxWidth:120}}/>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"1.2fr 1fr",gap:64,alignItems:"end",marginBottom:48}}>
+        <h2 style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(40px, 5vw, 76px)",letterSpacing:"-0.03em",lineHeight:1,margin:0,textWrap:"balance"}}>
+          Join the <span style={{fontStyle:"italic",color:"var(--ignite-500)"}}>network.</span>
+        </h2>
+        <p style={{fontSize:17,lineHeight:1.6,color:"var(--fg-2)",margin:0,maxWidth:480}}>
+          257,000 ambassadors and counting. Energetic, professional, ready to represent the brands you love. Fill in your info and we'll be in touch.
+        </p>
+      </div>
+      <a href="https://www.igniteproductions.co/careers/brand-ambassador" style={{display:"grid",gridTemplateColumns:"auto 1fr auto auto",gap:32,alignItems:"center",padding:"28px 32px",borderRadius:18,background:"var(--ink-100)",border:"1px solid var(--ink-400)",textDecoration:"none",transition:"all 200ms"}}
+        onMouseEnter={(e) => { e.currentTarget.style.borderColor="var(--ignite-500)"; e.currentTarget.style.transform="translateY(-2px)"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.borderColor="var(--ink-400)"; e.currentTarget.style.transform="translateY(0)"; }}>
+        <div style={{fontFamily:"var(--font-stencil)",fontSize:20,color:"var(--ignite-500)",letterSpacing:"0.04em"}}>01</div>
+        <div>
+          <div style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:22,color:"var(--fg-1)",letterSpacing:"-0.01em"}}>Brand Ambassador</div>
+          <div style={{marginTop:8,fontSize:14.5,lineHeight:1.55,color:"var(--fg-2)",maxWidth:720}}>Represent leading brands at live events, retail activations, and community engagements across the U.S.</div>
+        </div>
+        <div style={{display:"flex",flexDirection:"column",gap:6,textAlign:"right",fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.18em",color:"var(--fg-3)",textTransform:"uppercase"}}>
+          <span>United States</span>
+          <span style={{color:"var(--ignite-500)"}}>Part time</span>
+        </div>
+        <span style={{color:"var(--ignite-500)",fontFamily:"var(--font-mono)",fontSize:18}}>→</span>
+      </a>
+    </Container>
+  </section>
+);
+
+/* ============================================================ FINAL CTA */
+const AboutFinalCTA = () => (
+  <section style={{position:"relative",padding:"160px 0",background:"var(--ink-000)",borderTop:"1px solid var(--ink-400)",overflow:"hidden"}}>
+    <Container style={{position:"relative",textAlign:"center"}}>
+      <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>&gt;&gt; READY WHEN YOU ARE</span>
+      <h2 style={{marginTop:18,fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(56px, 8vw, 140px)",letterSpacing:"-0.045em",lineHeight:0.9,margin:"18px auto 0",maxWidth:1200,textWrap:"balance"}}>
+        Let's turn sparks into <span style={{fontStyle:"italic",color:"var(--ignite-500)",whiteSpace:"nowrap"}}>superfans.</span>
+      </h2>
+      <p style={{marginTop:32,fontSize:20,lineHeight:1.5,color:"var(--fg-2)",maxWidth:720,margin:"32px auto 0"}}>Tell us the brief — we'll bring the team, the tech, and the receipts.</p>
+      <div style={{marginTop:44,display:"inline-flex",gap:14,flexWrap:"wrap",justifyContent:"center"}}>
+        <a href="https://www.igniteproductions.co/contact" style={{padding:"18px 26px",borderRadius:999,background:"var(--ignite-500)",color:"#0A0B0D",fontFamily:"var(--font-display)",fontWeight:700,fontSize:17,letterSpacing:"-0.01em",textDecoration:"none",boxShadow:"0 12px 40px rgba(215, 69, 62,0.35)"}}>Request a quote →</a>
+        <a href="work.html" style={{padding:"18px 26px",borderRadius:999,border:"1px solid rgba(255,255,255,0.2)",color:"var(--fg-1)",fontFamily:"var(--font-mono)",fontSize:12,letterSpacing:"0.22em",textTransform:"uppercase",textDecoration:"none"}}>See the work →</a>
+      </div>
+    </Container>
+  </section>
+);
+
+/* helper for new sections — maps an asset path to a bundled resource if present */
+const resolveAsset = (p) => {
+  const k = "r_" + p.replace(/^\.\.\//,"").replace(/[\/.\-]/g,"_");
+  return (typeof window !== "undefined" && window.__resources && window.__resources[k]) || p;
+};
+
+/* ============================================================ FOUNDER QUOTE — big pull-quote moment */
+const AboutFounderQuote = () => {
+  const [shown, setShown] = abState(false);
+  const wrapRef = abRef(null);
+  abEffect(() => {
+    const el = wrapRef.current; if (!el) return;
+    const obs = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) setShown(true); }), { threshold: 0.25 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return (
+  <section ref={wrapRef} style={{background:"var(--ink-100)",borderTop:"1px solid var(--ink-400)",borderBottom:"1px solid var(--ink-400)",padding:"160px 0",position:"relative",overflow:"hidden"}}>
+    {/* twin glow blooms */}
+    {/* top accent rule */}
+    <div aria-hidden="true" style={{position:"absolute",left:0,right:0,top:0,height:1,background:"linear-gradient(90deg, transparent, rgba(215, 69, 62, 0.35) 50%, transparent)"}}/>
+    <Container>
+      <div style={{maxWidth: 1480,margin:"0 auto",position:"relative",zIndex:1}}>
+        {/* mono eyebrow */}
+        <div style={{display:"flex",alignItems:"center",gap:14,marginBottom:32,fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.24em",color:"var(--ignite-500)",textTransform:"uppercase"}}>
+          <span style={{width:7,height:7,borderRadius:999,background:"var(--ignite-500)",animation:"abTextPulse 2.4s ease-in-out infinite"}}/>
+          <span>// from the founder</span>
+          <span style={{height:1,flex:1,maxWidth:120,background:"var(--ignite-500)",opacity:0.3}}/>
+        </div>
+
+        {/* giant glowing quote mark */}
+        <div aria-hidden="true" style={{position:"relative",marginBottom:-44,marginLeft:-12,userSelect:"none",lineHeight:0.55,fontFamily:"var(--font-display)",fontWeight:800,fontSize:"clamp(180px, 22vw, 320px)",color:"var(--ignite-500)",opacity:0.22}}>
+          "
+        </div>
+
+        <blockquote style={{margin:0,fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(40px, 5.6vw, 84px)",lineHeight:1.04,letterSpacing:"-0.035em",color:"var(--fg-1)",textWrap:"balance",maxWidth:1180,position:"relative",zIndex:1}}>
+          Strategy lives in{" "}
+          <span style={{position:"relative",display:"inline-block",color:"var(--fg-3)"}}>
+            slides
+            {/* animated strikethrough */}
+            <span aria-hidden="true" style={{
+              position:"absolute",left:-4,right:-4,top:"56%",height:4,borderRadius:2,
+              background:"linear-gradient(90deg, rgba(215, 69, 62,0.95), rgba(255,182,39,0.85))",
+              transformOrigin:"left center",
+              transform: shown ? "scaleX(1)" : "scaleX(0)",
+              transition:"transform 700ms cubic-bezier(.2,.7,.2,1) 400ms",
+            }}/>
+          </span>{" "}
+          until somebody puts the product in a stranger's hand. We're the{" "}
+          <span style={{position:"relative",display:"inline-block"}}>
+            <span style={{position:"relative",zIndex:1,fontStyle:"italic",color:"var(--ignite-500)",animation:"abTextPulse 2.6s ease-in-out infinite"}}>somebody.</span>
+          </span>
+        </blockquote>
+
+        {/* attribution */}
+        <div style={{marginTop:64,display:"flex",alignItems:"center",gap:22,flexWrap:"wrap"}}>
+          {/* thin orange accent bar */}
+          <div aria-hidden="true" style={{width:64,height:2,background:"linear-gradient(90deg, var(--ignite-500), transparent)"}}/>
+          <div style={{position:"relative",width:76,height:76,borderRadius:"50%",overflow:"hidden",background:"var(--ink-300)",border:"2px solid rgba(215, 69, 62,0.45)",flexShrink:0}}>
+            <img src={resolveAsset("../assets/team-kyle.webp")} alt="Kyle Christiansen" style={{width:"100%",height:"100%",objectFit:"cover"}} loading="lazy" decoding="async"/>
+          </div>
+          <div>
+            <div style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:20,letterSpacing:"-0.01em",color:"var(--fg-1)"}}>Kyle Christiansen</div>
+            <div style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",textTransform:"uppercase",color:"var(--fg-3)",marginTop:6}}>Founder &amp; CEO · 20+ yrs CPG · Red Bull · 160over90 · Amazon</div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+  );
+};
+
+/* ============================================================ SPARK — proprietary tech / SEO */
+const AboutSpark = () => {
+  const proof = [
+    { l: "BUILT IN-HOUSE",    v: "By our engineering team",  d: "Not licensed. Not white-labeled. Ours." },
+    { l: "REAL-TIME DATA",    v: "GPS · photos · counts",    d: "Field activity lands in the dashboard while the event is still live." },
+    { l: "OWNED IP",          v: "Proprietary platform",     d: "We control the roadmap. Brand-specific features ship in days, not quarters." },
+  ];
+  return (
+    <section id="spark" style={{background:"var(--ink-000)",borderTop:"1px solid var(--ink-400)",borderBottom:"1px solid var(--ink-400)",padding:"140px 0",position:"relative",overflow:"hidden"}}>
+
+      <Container>
+        <div style={{display:"flex",alignItems:"center",gap:14,marginBottom:32,fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.24em",color:"var(--ignite-500)",textTransform:"uppercase",position:"relative",zIndex:1}}>
+          <span style={{width:7,height:7,borderRadius:999,background:"#D6F35F"}}/>
+          <span>// proprietary tech · in-house engineering</span>
+          <span style={{height:1,flex:1,maxWidth:120,background:"var(--ignite-500)",opacity:0.3}}/>
+        </div>
+
+        <div style={{display:"grid",gridTemplateColumns:"1.15fr 1fr",gap:72,alignItems:"start",position:"relative",zIndex:1}}>
+          <div>
+            <h2 style={{margin:0,fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(44px, 5.4vw, 80px)",letterSpacing:"-0.032em",lineHeight:0.98,color:"var(--fg-1)",textWrap:"balance"}}>
+              We built our own tech. Most agencies <span style={{fontStyle:"italic",color:"#D6F35F"}}>rent theirs.</span>
+            </h2>
+            <p style={{marginTop:24,fontSize:18,lineHeight:1.6,color:"var(--fg-2)",maxWidth:620}}>
+              Ignite is one of the few <strong style={{color:"var(--fg-1)",fontWeight:700}}>veteran-owned experiential marketing agencies</strong> with a <strong style={{color:"var(--fg-1)",fontWeight:700}}>proprietary, in-house field marketing platform</strong>. We call it <strong style={{color:"#D6F35F",fontWeight:700}}>Spark</strong> — and our engineering team designs, ships, and runs every line of it.
+            </p>
+            <p style={{marginTop:14,fontSize:16,lineHeight:1.65,color:"var(--fg-3)",maxWidth:620}}>
+              Most experiential agencies stitch together licensed CRMs, generic reporting tools, and post-event PDFs. We replaced all of it with one platform purpose-built for CPG activations, mobile tours, product sampling, and brand ambassador programs — with <strong style={{color:"var(--fg-2)",fontWeight:600}}>GPS-verified check-ins, live photo capture, sample counts, lead capture, and real-time dashboards</strong> you can watch while your activation is still in market.
+            </p>
+
+            <div style={{marginTop:36,display:"flex",gap:14,flexWrap:"wrap"}}>
+              <a href="spark.html" style={{padding:"15px 24px",borderRadius:999,background:"#D6F35F",color:"#0A0B0D",fontFamily:"var(--font-display)",fontWeight:700,fontSize:14,letterSpacing:"-0.005em",textDecoration:"none",boxShadow:"0 0 24px rgba(214, 243, 95, 0.2)"}}>See Spark in action →</a>
+              <a href="https://www.igniteproductions.co/contact" style={{padding:"15px 24px",borderRadius:999,border:"1px solid rgba(255,255,255,0.18)",color:"var(--fg-1)",fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",textTransform:"uppercase",textDecoration:"none"}}>Request a demo →</a>
+            </div>
+
+            <p style={{marginTop:24,fontFamily:"var(--font-mono)",fontSize:10.5,letterSpacing:"0.22em",color:"var(--fg-3)",textTransform:"uppercase",maxWidth:520}}>
+              Field marketing software · activation reporting platform · real-time experiential data · CPG sampling analytics
+            </p>
+          </div>
+
+          <div>
+            {/* Spark logo card */}
+            <div style={{position:"relative",padding:"40px 36px 36px",borderRadius:20,background:"linear-gradient(180deg, rgba(20,21,24,0.96) 0%, rgba(13,14,16,0.96) 100%)",border:"1px solid rgba(214,243,95,0.28)",boxShadow:"inset 0 1px 0 rgba(255,255,255,0.04)"}}>
+              <div style={{display:"flex",alignItems:"center",gap:16,marginBottom:24}}>
+                <img src={(window.__resources?.r_assets_spark_logo_full_png || "../assets/spark-logo-full.png")} alt="Spark by Ignite — proprietary field marketing platform" style={{height:42,width:"auto",display:"block"}} loading="lazy" decoding="async"/>
+                <span style={{padding:"4px 10px",borderRadius:999,fontFamily:"var(--font-mono)",fontSize:9.5,letterSpacing:"0.2em",color:"#D6F35F",textTransform:"uppercase",border:"1px solid rgba(214,243,95,0.4)",background:"rgba(214,243,95,0.06)"}}>v3.2 · live</span>
+              </div>
+              <div style={{display:"flex",flexDirection:"column",gap:14}}>
+                {proof.map((p,i)=>(
+                  <div key={i} style={{padding:"16px 18px",borderRadius:12,background:"rgba(214,243,95,0.04)",border:"1px solid rgba(214,243,95,0.18)"}}>
+                    <div style={{display:"flex",alignItems:"baseline",justifyContent:"space-between",gap:12}}>
+                      <span style={{fontFamily:"var(--font-mono)",fontSize:9.5,letterSpacing:"0.22em",color:"#D6F35F",textTransform:"uppercase"}}>{p.l}</span>
+                      <span style={{fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.16em",color:"var(--fg-3)",textTransform:"uppercase"}}>{p.v}</span>
+                    </div>
+                    <p style={{margin:"8px 0 0",fontSize:13.5,lineHeight:1.5,color:"var(--fg-2)"}}>{p.d}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <p style={{marginTop:18,fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.22em",color:"var(--fg-3)",textTransform:"uppercase",textAlign:"center"}}>
+              // few agencies own their stack. we do.
+            </p>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+};
+
+/* ============================================================ PHOTO STRIP — on-the-ground proof */
+const AboutPhotos = () => {
+  const photos = [
+    {src:"../assets/experiential-liquiddeath-nascar.jpg",label:"Liquid Death · NASCAR activation"},
+    {src:"../assets/sampling-liquiddeath-petsmart.jpg",label:"Liquid Death · Target retail sampling"},
+    {src:"../assets/pressreader-tradeshow.webp",label:"PressReader · trade show floor"},
+  ];
+  return (
+    <section style={{background:"var(--ink-000)",borderTop:"1px solid var(--ink-400)",padding:"120px 0"}}>
+      <Container>
+        <div style={{maxWidth:900,marginBottom:48}}>
+          <OpsLine>&gt;&gt; ON THE GROUND</OpsLine>
+          <h2 style={{marginTop:14,fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(40px, 5vw, 72px)",letterSpacing:"-0.03em",lineHeight:0.98,color:"var(--fg-1)"}}>This is what<br/>the <span style={{fontStyle:"italic",color:"var(--ignite-500)"}}>work</span> looks like.</h2>
+        </div>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(3, 1fr)",gap:20}}>
+          {photos.map((p, i) => (
+            <div key={i} style={{position:"relative",aspectRatio:"4/5",borderRadius:14,overflow:"hidden",background:"var(--ink-300)",border:"1px solid var(--ink-400)"}}>
+              <img src={resolveAsset(p.src)} alt={p.label} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} loading="lazy" decoding="async"/>
+              <div style={{position:"absolute",inset:0,background:"linear-gradient(to top, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0) 45%)",pointerEvents:"none"}}/>
+              <div style={{position:"absolute",left:18,right:18,bottom:18,fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.18em",textTransform:"uppercase",color:"var(--fg-1)"}}>{p.label}</div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+};
+
+/* ============================================================ ENGAGEMENT MODEL — how to hire us */
+const ABOUT_ENGAGEMENT = [
+  {tag:"01 · PROJECT", title:"One activation, end-to-end.", body:"A launch, a tour leg, a stadium takeover. We scope, build, staff, run, and measure a single campaign — then hand you the recap.", best:"Best for: a defined moment with a clear date.",cta:"Request a quote",href:"https://www.igniteproductions.co/contact"},
+  {tag:"02 · RETAINER", title:"Always-on field execution.", body:"We become your field marketing arm. Recurring sampling, demo cycles, regional tours, ambassador programs — measured continuously through Spark.", best:"Best for: programs running 6+ months.",cta:"Talk through scope",href:"https://www.igniteproductions.co/contact"},
+  {tag:"03 · FRACTIONAL", title:"Embedded leadership.", body:"Senior CPG marketing leadership inside your team without the FTE cost. Retail strategy, sponsorship management, GTM planning — by the quarter.", best:"Best for: brands $5M–$100M without a VP yet.",cta:"See Fractional →",href:"fractional.html"},
+];
+
+const AboutEngagement = () => (
+  <section style={{background:"var(--ink-100)",borderTop:"1px solid var(--ink-400)",padding:"140px 0"}}>
+    <Container>
+      <div style={{maxWidth:900,marginBottom:56}}>
+        <OpsLine>&gt;&gt; HOW TO PARTNER</OpsLine>
+        <h2 style={{marginTop:14,fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(40px, 5vw, 72px)",letterSpacing:"-0.03em",lineHeight:0.98,color:"var(--fg-1)"}}>Three ways to <span style={{fontStyle:"italic",color:"var(--ignite-500)",whiteSpace:"nowrap",animation:"abTextPulse 2.6s ease-in-out infinite",display:"inline-block"}}>work with us.</span></h2>
+        <p style={{marginTop:20,fontSize:18,lineHeight:1.55,color:"var(--fg-2)",maxWidth:680}}>Whether you've got a single launch or you need a permanent field marketing arm, there's a way in that fits.</p>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(3, 1fr)",gap:20}}>
+        {ABOUT_ENGAGEMENT.map((e) => (
+          <div key={e.tag} style={{padding:36,background:"var(--ink-000)",border:"1px solid var(--ink-400)",borderRadius:18,display:"flex",flexDirection:"column",gap:18,minHeight:480}}>
+            <div style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",textTransform:"uppercase",color:"var(--ignite-500)"}}>{e.tag}</div>
+            <h3 style={{margin:0,fontFamily:"var(--font-display)",fontWeight:700,fontSize:28,letterSpacing:"-0.02em",lineHeight:1.05,color:"var(--fg-1)"}}>{e.title}</h3>
+            <p style={{margin:0,fontSize:15,lineHeight:1.6,color:"var(--fg-2)"}}>{e.body}</p>
+            <div style={{padding:"14px 16px",background:"rgba(215, 69, 62,0.06)",border:"1px solid rgba(215, 69, 62,0.18)",borderRadius:10,fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.14em",textTransform:"uppercase",color:"var(--ignite-500)"}}>{e.best}</div>
+            <div style={{marginTop:"auto",paddingTop:8}}>
+              <a href={e.href} style={{display:"inline-block",padding:"14px 22px",borderRadius:999,background:"var(--ignite-500)",color:"#0A0B0D",fontFamily:"var(--font-display)",fontWeight:700,fontSize:14,letterSpacing:"-0.01em",textDecoration:"none"}}>{e.cta} →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+);
+
+/* ============================================================ OFFSITE PHOTO — candid team moment */
+const AboutOffsite = () => (
+  <section style={{background:"var(--ink-000)",borderTop:"1px solid var(--ink-400)",padding:"120px 0",position:"relative",overflow:"hidden",isolation:"isolate"}}>
+    {/* Animated party background — glow orbs + marquee */}
+    <div aria-hidden="true" style={{position:"absolute",inset:0,zIndex:0,pointerEvents:"none"}}>
+    </div>
+    <style>{`
+      @keyframes abOrbA { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(40px,30px) scale(1.1)} }
+      @keyframes abOrbB { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-50px,-20px) scale(1.08)} }
+      @keyframes abMarquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+      @keyframes abHeadlinePop { 0%,100%{transform:rotate(-2deg) scale(1)} 50%{transform:rotate(-2deg) scale(1.04)} }
+    `}</style>
+    <Container style={{position:"relative",zIndex:1}}>
+      <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:36}}>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,letterSpacing:"0.22em",color:"var(--ignite-500)",textTransform:"uppercase"}}>// the whole crew</span>
+        <span style={{height:1,flex:1,background:"var(--ignite-500)",opacity:0.3,maxWidth:120}}/>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.22em",color:"var(--fg-3)",textTransform:"uppercase"}}>est. 2008 · 17 years of offsites</span>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"1.6fr 1fr",gap:48,alignItems:"end"}}>
+        <h2 style={{fontFamily:"var(--font-display)",fontWeight:700,fontSize:"clamp(36px, 4.4vw, 64px)",letterSpacing:"-0.03em",lineHeight:1,margin:0,textWrap:"balance"}}>
+          We throw events for a living.{" "}
+          <span style={{position:"relative",display:"inline-block",color:"var(--fg-3)"}}>
+            <span style={{position:"relative",zIndex:1}}>Obviously</span>
+            <span aria-hidden="true" style={{position:"absolute",left:"-4%",right:"-4%",top:"50%",height:"6px",background:"var(--ignite-500)",borderRadius:3,transform:"translateY(-50%) rotate(-2deg)",zIndex:2}}/>
+          </span>{" "}
+          <span style={{display:"inline-block",fontStyle:"italic",color:"var(--ignite-500)",transform:"rotate(-2deg)",transformOrigin:"left bottom",animation:"abHeadlinePop 3.2s ease-in-out infinite"}}>Naturally</span>{" "}
+          we throw a good one for ourselves.
+        </h2>
+        <div style={{display:"flex",flexDirection:"column",gap:18,maxWidth:460}}>
+          <p style={{fontSize:16,lineHeight:1.6,color:"var(--fg-2)",margin:0}}>
+            Offsites, kickoffs, late-night load-ins, build days. The faces above are the faces on your program.
+          </p>
+        </div>
+      </div>
+      <div style={{margin:"48px 0 0",display:"grid",gridTemplateColumns:"1.55fr 1fr",gap:20}}>
+        <figure style={{margin:0,position:"relative",borderRadius:22,overflow:"hidden",border:"1px solid rgba(255,255,255,0.12)",background:"#0b0c0e",minHeight:520}}>
+          <img src={resolveAsset("../assets/team-group-newyear.jpg")} alt="The Ignite team and families ringing in 2026 in Bali" loading="lazy" style={{display:"block",width:"100%",height:"100%",objectFit:"cover"}}/>
+          <figcaption style={{position:"absolute",left:24,bottom:20,padding:"10px 14px",borderRadius:999,background:"rgba(10,11,13,0.7)",backdropFilter:"blur(8px)",fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.22em",color:"var(--fg-1)",textTransform:"uppercase"}}>
+            Bali · NYE 2026 · the whole crew
+          </figcaption>
+        </figure>
+        <div style={{display:"grid",gridTemplateRows:"1fr 1fr",gap:20}}>
+          <figure style={{margin:0,position:"relative",borderRadius:22,overflow:"hidden",border:"1px solid rgba(255,255,255,0.12)",background:"#0b0c0e",minHeight:250}}>
+            <img src={resolveAsset("../assets/team-group-sunrise.jpg")} alt="Ignite team at sunrise on Mt. Batur, Bali" loading="lazy" style={{display:"block",width:"100%",height:"100%",objectFit:"cover"}}/>
+            <figcaption style={{position:"absolute",left:18,right:18,bottom:16,width:"fit-content",maxWidth:"calc(100% - 36px)",padding:"8px 12px",borderRadius:999,background:"rgba(10,11,13,0.7)",backdropFilter:"blur(8px)",fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.18em",color:"var(--fg-1)",textTransform:"uppercase"}}>
+              Mt. Batur · 4am summit
+            </figcaption>
+          </figure>
+          <figure style={{margin:0,position:"relative",borderRadius:22,overflow:"hidden",border:"1px solid rgba(255,255,255,0.12)",background:"#0b0c0e",minHeight:250}}>
+            <img src={resolveAsset("../assets/team-group-tropical.jpg")} alt="Ignite leadership at an evening event" loading="lazy" style={{display:"block",width:"100%",height:"100%",objectFit:"cover"}}/>
+            <figcaption style={{position:"absolute",left:18,right:18,bottom:16,width:"fit-content",maxWidth:"calc(100% - 36px)",padding:"8px 12px",borderRadius:999,background:"rgba(10,11,13,0.7)",backdropFilter:"blur(8px)",fontFamily:"var(--font-mono)",fontSize:10,letterSpacing:"0.18em",color:"var(--fg-1)",textTransform:"uppercase"}}>
+              Leadership · night out
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </Container>
+  </section>
+);
+
+/* ============================================================ ROOT */
+const AboutPage = () => (
+  <div data-screen-label="01 About">
+    <SiteNav rel="../" active="ABOUT"/>
+    <AboutHero/>
+    <AboutModel/>
+    <AboutFounder/>
+    <AboutFounderQuote/>
+    <AboutLeaders/>
+    <AboutOffsite/>
+    <AboutValuesGrid/>
+    <AboutCaseSpotlight/>
+    <AboutSpark/>
+    <AboutPhotos/>
+    <AboutClients/>
+    <AboutCoverage/>
+    <AboutEngagement/>
+    <AboutVOSB/>
+    <AboutCareers/>
+    <AboutFinalCTA/>
+    <SiteFooter rel="../"/>
+  </div>
+);
+
+Object.assign(window, { AboutPage, ABOUT_VALUES, ABOUT_LEADERS, ABOUT_TIMELINE, ABOUT_CLIENT_LOGOS, ABOUT_KEY_MARKETS });

@@ -1,0 +1,387 @@
+// BlogPost — long-form article view, editorial typography
+
+const fmtDate2 = (iso) => {
+  const d = new Date(iso + 'T12:00:00');
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+};
+
+function BlogPost() {
+  const slug = new URLSearchParams(window.location.search).get('slug');
+  const post = BLOG_POSTS.find(p => p.slug === slug);
+
+  React.useEffect(() => {
+    if (!post) return;
+    document.title = `${post.title} | Ignite Productions`;
+
+    /* Description meta */
+    const md = document.querySelector("meta[name=description]");
+    if (md && post.dek) md.setAttribute("content", post.dek);
+
+    /* Canonical + hreflang + Open Graph */
+    const postUrl = "https://igniteproductions.co/blog/" + post.slug;
+    const ensure = (sel, factory) => {
+      let el = document.querySelector(sel);
+      if (!el) { el = factory(); document.head.appendChild(el); }
+      return el;
+    };
+    const canonical = ensure('link[rel="canonical"]', () => { const l = document.createElement("link"); l.rel = "canonical"; return l; });
+    canonical.setAttribute("href", postUrl);
+    const hl1 = ensure('link[rel="alternate"][hreflang="en-us"]', () => { const l = document.createElement("link"); l.rel = "alternate"; l.setAttribute("hreflang", "en-us"); return l; });
+    hl1.setAttribute("href", postUrl);
+    const hl2 = ensure('link[rel="alternate"][hreflang="x-default"]', () => { const l = document.createElement("link"); l.rel = "alternate"; l.setAttribute("hreflang", "x-default"); return l; });
+    hl2.setAttribute("href", postUrl);
+    const setMeta = (prop, content) => {
+      let m = document.querySelector(`meta[property="${prop}"]`);
+      if (!m) { m = document.createElement("meta"); m.setAttribute("property", prop); document.head.appendChild(m); }
+      m.setAttribute("content", content);
+    };
+    setMeta("og:title", post.title);
+    setMeta("og:description", post.dek || "");
+    setMeta("og:url", postUrl);
+    setMeta("og:type", "article");
+    if (post.heroImage) setMeta("og:image", post.heroImage);
+
+    /* Article + BreadcrumbList JSON-LD */
+    const injectLd = (obj, id) => {
+      const sel = `script[type="application/ld+json"][data-bp="${id}"]`;
+      let s = document.querySelector(sel);
+      if (!s) {
+        s = document.createElement("script");
+        s.type = "application/ld+json";
+        s.setAttribute("data-bp", id);
+        document.head.appendChild(s);
+      }
+      s.text = JSON.stringify(obj);
+    };
+    injectLd({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post.title,
+      "description": post.dek || "",
+      "image": post.heroImage ? [post.heroImage] : undefined,
+      "datePublished": post.date,
+      "dateModified": post.date,
+      "author": (post.author && post.author !== "Ignite Team") ? { "@type": "Person", "name": post.author, "jobTitle": post.role || undefined, "worksFor": { "@type": "Organization", "name": "Ignite Productions" }, "url": "https://igniteproductions.co/about" } : { "@type": "Organization", "name": "Ignite Productions", "url": "https://igniteproductions.co/" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ignite Productions",
+        "logo": { "@type": "ImageObject", "url": "https://igniteproductions.co/assets/ignite-full-white.png" },
+      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": postUrl },
+      "articleSection": post.category,
+      "keywords": (post.tags || []).join(", "),
+    }, "article");
+    injectLd({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://igniteproductions.co/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://igniteproductions.co/blog" },
+        { "@type": "ListItem", "position": 3, "name": post.title, "item": postUrl },
+      ],
+    }, "crumbs");
+    if (post.faq && post.faq.length) injectLd({ "@context":"https://schema.org", "@type":"FAQPage", "mainEntity": post.faq.map(([q,a]) => ({ "@type":"Question", "name": q, "acceptedAnswer": { "@type":"Answer", "text": a } })) }, "faq");
+  }, [post]);
+
+  if (!post) {
+    return (
+      <div style={{background:'var(--ink-000)', color:'var(--fg-1)', minHeight:'100vh'}}>
+        <SiteNav rel="../" active="BLOG" />
+        <div style={{maxWidth:600, margin:'200px auto', padding:'0 24px', textAlign:'center'}}>
+          <div className="eyebrow eyebrow--ignite" style={{marginBottom:24}}>// 404 / DISPATCH NOT FOUND</div>
+          <h1 style={{fontSize:48, marginBottom:24}}>This post doesn't exist.</h1>
+          <a href="blog.html" style={{
+            color:'var(--ignite-500)', fontFamily:'var(--font-mono)',
+            letterSpacing:'0.12em', textTransform:'uppercase', fontSize:14
+          }}>← Back to all field notes</a>
+        </div>
+        <SiteFooter rel="../" />
+      </div>
+    );
+  }
+
+  // Related: same category, excluding current. Fall back to most recent others.
+  const related = [
+    ...BLOG_POSTS.filter(p => p.category === post.category && p.slug !== post.slug),
+    ...BLOG_POSTS.filter(p => p.category !== post.category && p.slug !== post.slug)
+  ].slice(0, 3);
+
+  // Index in archive (for prev/next)
+  const idx = BLOG_POSTS.indexOf(post);
+  const prev = idx > 0 ? BLOG_POSTS[idx - 1] : null;
+  const next = idx < BLOG_POSTS.length - 1 ? BLOG_POSTS[idx + 1] : null;
+
+  return (
+    <div style={{background:'var(--ink-000)', color:'var(--fg-1)', minHeight:'100vh'}}>
+      <SiteNav rel="../" active="BLOG" />
+
+      {/* ============ ARTICLE HEADER ============ */}
+      <article>
+        {/* div, not <header>: global responsive.css pins "header > div:first-child" to the nav height */}
+        <div className="bp-head" style={{
+          padding:'120px 0 60px',
+          borderBottom:'1px solid var(--ink-400)'
+        }}>
+          <div style={{maxWidth:840, margin:'0 auto', padding:'0 var(--grid-gutter)'}}>
+            <a href="blog.html" style={{
+              fontFamily:'var(--font-mono)', fontSize:12, color:'var(--fg-3)',
+              letterSpacing:'0.15em', textTransform:'uppercase',
+              display:'inline-flex', gap:8, alignItems:'center', marginBottom:40, whiteSpace:'nowrap',
+              transition:'color 160ms'
+            }}
+            onMouseEnter={e=>e.currentTarget.style.color='var(--ignite-500)'}
+            onMouseLeave={e=>e.currentTarget.style.color='var(--fg-3)'}
+            >← All field notes</a>
+
+            <div style={{display:'flex', gap:16, marginBottom:32, alignItems:'center', flexWrap:'wrap'}}>
+              <span style={{
+                fontFamily:'var(--font-mono)', fontSize:11, letterSpacing:'0.18em',
+                textTransform:'uppercase', padding:'5px 12px',
+                background:post.accent, color: post.accent === '#1A1A1A' ? '#fff' : '#000'
+              }}>{post.category}</span>
+              <span className="eyebrow" style={{whiteSpace:'nowrap'}}>{fmtDate2(post.date).toUpperCase()} · {post.readTime} MIN READ</span>
+            </div>
+
+            <h1 style={{
+              fontSize:'clamp(34px, 5.2vw, 68px)', textWrap:'balance',
+              lineHeight:1.02, letterSpacing:'-0.025em',
+              fontWeight:600, marginBottom:32
+            }}>{post.title}</h1>
+
+            <p style={{
+              fontSize:24, lineHeight:1.4, color:'var(--fg-2)',
+              fontFamily:'Georgia, "Times New Roman", serif',
+              fontStyle:'italic', marginBottom:48
+            }}>{post.dek}</p>
+          </div>
+        </div>
+
+        {/* ============ HERO POSTER ============ */}
+        <div style={{
+          maxWidth:1200, margin:'0 auto', padding:'48px var(--grid-gutter) 0'
+        }}>
+          <div style={{
+            aspectRatio:'21/9',
+            backgroundImage:`linear-gradient(135deg, ${post.accent}cc 0%, ${post.accent}99 50%, #000000dd 100%)${post.heroImage ? `, url(${post.heroImage})` : ''}`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundBlendMode: 'multiply',
+            color:'#fff',
+            padding:'48px 64px',
+            display:'flex', flexDirection:'column', justifyContent:'space-between',
+            position:'relative', overflow:'hidden'
+          }}>
+            <div style={{
+              fontFamily:'var(--font-mono)', fontSize:12, letterSpacing:'0.22em',
+              textTransform:'uppercase', opacity:0.6
+            }}>IGNITE / FIELD NOTES / №{String(idx+1).padStart(2,'0')}</div>
+            <div style={{
+              fontSize:'clamp(56px, 8vw, 128px)', lineHeight:0.88,
+              fontWeight:700, letterSpacing:'-0.04em',
+              fontFamily:'var(--font-display)', maxWidth:'80%'
+            }}>{post.title.split(' ').slice(0,5).join(' ')}</div>
+            <div style={{
+              display:'flex', justifyContent:'space-between', alignItems:'flex-end',
+              fontFamily:'var(--font-mono)', fontSize:12, letterSpacing:'0.18em',
+              textTransform:'uppercase', opacity:0.6
+            }}>
+              <span>{post.category}</span>
+              <span>{fmtDate2(post.date)}</span>
+              <span>{post.readTime} MIN</span>
+            </div>
+          </div>
+        </div>
+
+        {/* ============ BODY ============ */}
+        <div style={{
+          maxWidth:720, margin:'0 auto', padding:'80px var(--grid-gutter) 80px'
+        }}>
+          {post.body.map((para, i) => (
+            <p key={i} style={{
+              fontSize:20, lineHeight:1.65, color:'var(--fg-1)',
+              marginBottom:32,
+              ...(i === 0 ? {
+                fontSize:22,
+                textWrap:'pretty'
+              } : {})
+            }}>
+              {i === 0 ? (
+                <>
+                  <span style={{
+                    float:'left', fontSize:80, lineHeight:0.85,
+                    fontFamily:'var(--font-display)', fontWeight:700,
+                    color:'var(--ignite-500)', marginRight:12, marginTop:6,
+                    letterSpacing:'-0.04em'
+                  }}>{para[0]}</span>
+                  {para.slice(1)}
+                </>
+              ) : para}
+            </p>
+          ))}
+
+          {/* Keep going — internal links */}
+          {(() => { const DEF = {"Staffing":[["Event staffing","services-event-staffing.html"],["Brand ambassador agency","brand-ambassador-agency.html"],["Our work","work.html"]],"Strategy":[["Experiential marketing","services-experiential-marketing.html"],["Event production","services-event-production.html"],["Our work","work.html"]],"Logistics":[["Mobile marketing tours","services-mobile-tours.html"],["Trade show staffing","services-trade-shows.html"],["Markets we cover","markets.html"]],"Measurement":[["Spark field reporting","spark-platform.html"],["Event recap and reporting","services-event-reporting-recaps.html"],["Our work","work.html"]],"Industry":[["Industries","industries.html"],["Product sampling","services-product-sampling.html"],["Our work","work.html"]]}; const links = post.links || DEF[post.category] || DEF.Strategy; return (
+            <div style={{marginTop:16, padding:'28px 28px 24px', borderRadius:16, background:'var(--ink-100)', border:'1px solid var(--ink-400)'}}>
+              <div className="eyebrow eyebrow--ignite" style={{marginBottom:14}}>{'>> KEEP GOING'}</div>
+              <div style={{display:'grid', gap:10}}>
+                {links.map(([l,h]) => (<a key={h} href={h} style={{display:'flex', justifyContent:'space-between', alignItems:'center', gap:16, fontFamily:'var(--font-display)', fontWeight:600, fontSize:18, color:'var(--fg-1)', textDecoration:'none', paddingBottom:10, borderBottom:'1px solid var(--ink-400)'}}><span>{l}</span><span style={{color:'var(--ignite-500)'}}>→</span></a>))}
+              </div>
+            </div>); })()}
+
+          {/* FAQ */}
+          {post.faq && post.faq.length ? (
+            <div style={{marginTop:48}}>
+              <div className="eyebrow eyebrow--ignite" style={{marginBottom:12}}>{'>> QUESTIONS'}</div>
+              {post.faq.map(([q,a],i) => (
+                <details key={q} open={i===0} style={{borderTop:'1px solid var(--ink-400)', padding:'16px 0'}}>
+                  <summary style={{cursor:'pointer', fontFamily:'var(--font-display)', fontWeight:600, fontSize:19, color:'var(--fg-1)'}}>{q}</summary>
+                  <p style={{marginTop:10, fontSize:17, lineHeight:1.6, color:'var(--fg-2)'}}>{a}</p>
+                </details>
+              ))}
+            </div>
+          ) : null}
+
+          {/* Author card */}
+          {(() => { const A = (window.BLOG_AUTHORS || {})[post.author]; if (!A) return null; return (
+            <div style={{marginTop:48, display:'flex', gap:18, alignItems:'flex-start', padding:'24px 0', borderTop:'1px solid var(--ink-400)'}}>
+              <div aria-hidden style={{flexShrink:0, width:52, height:52, borderRadius:52, background:'var(--ignite-500)', display:'grid', placeItems:'center', fontFamily:'var(--font-display)', fontWeight:800, fontSize:20, color:'#0A0B0D'}}>{post.author.split(' ').map(w=>w[0]).join('').slice(0,2)}</div>
+              <div>
+                <div style={{fontFamily:'var(--font-display)', fontWeight:700, fontSize:18, color:'var(--fg-1)'}}>{post.author}</div>
+                {post.role && <div className="eyebrow" style={{marginTop:4}}>{post.role}</div>}
+                <p style={{marginTop:10, fontSize:15.5, lineHeight:1.6, color:'var(--fg-2)'}}>{A.bio} <a href={A.url} style={{color:'var(--ignite-500)'}}>About Ignite →</a></p>
+              </div>
+            </div>); })()}
+
+          {/* Tags */}
+          <div style={{
+            paddingTop:48, marginTop:48, borderTop:'1px solid var(--ink-400)',
+            display:'flex', gap:8, flexWrap:'wrap'
+          }}>
+            <span className="eyebrow" style={{marginRight:8}}>FILED UNDER:</span>
+            {(post.tags || []).map(t => (
+              <a key={t} href={`blog.html`} style={{
+                padding:'5px 10px', border:'1px solid var(--ink-400)',
+                fontFamily:'var(--font-mono)', fontSize:11,
+                letterSpacing:'0.1em', textTransform:'uppercase',
+                color:'var(--fg-2)', transition:'all 160ms'
+              }}
+              onMouseEnter={e=>{e.currentTarget.style.borderColor='var(--ignite-500)'; e.currentTarget.style.color='var(--ignite-500)';}}
+              onMouseLeave={e=>{e.currentTarget.style.borderColor='var(--ink-400)'; e.currentTarget.style.color='var(--fg-2)';}}
+              >{t}</a>
+            ))}
+          </div>
+
+        </div>
+
+        {/* ============ PREV / NEXT ============ */}
+        <nav style={{
+          borderTop:'1px solid var(--ink-400)',
+          borderBottom:'1px solid var(--ink-400)',
+          background:'var(--ink-100)'
+        }}>
+          <div style={{
+            maxWidth:'var(--grid-max)', margin:'0 auto',
+            display:'grid', gridTemplateColumns:'1fr 1fr',
+            borderLeft:'1px solid var(--ink-400)'
+          }}>
+            {prev ? (
+              <a href={`blog-post.html?slug=${prev.slug}`} style={{
+                padding:'40px var(--grid-gutter)',
+                borderRight:'1px solid var(--ink-400)',
+                display:'block', transition:'background 160ms', cursor:'pointer'
+              }}
+              onMouseEnter={e=>e.currentTarget.style.background='var(--ink-200)'}
+              onMouseLeave={e=>e.currentTarget.style.background='transparent'}
+              >
+                <div className="eyebrow eyebrow--ignite" style={{marginBottom:12}}>← NEWER</div>
+                <div style={{fontSize:18, fontWeight:600, lineHeight:1.2}}>{prev.title}</div>
+              </a>
+            ) : <div style={{borderRight:'1px solid var(--ink-400)'}}/>}
+            {next ? (
+              <a href={`blog-post.html?slug=${next.slug}`} style={{
+                padding:'40px var(--grid-gutter)',
+                borderRight:'1px solid var(--ink-400)',
+                display:'block', textAlign:'right',
+                transition:'background 160ms', cursor:'pointer'
+              }}
+              onMouseEnter={e=>e.currentTarget.style.background='var(--ink-200)'}
+              onMouseLeave={e=>e.currentTarget.style.background='transparent'}
+              >
+                <div className="eyebrow eyebrow--ignite" style={{marginBottom:12}}>OLDER →</div>
+                <div style={{fontSize:18, fontWeight:600, lineHeight:1.2}}>{next.title}</div>
+              </a>
+            ) : <div style={{borderRight:'1px solid var(--ink-400)'}}/>}
+          </div>
+        </nav>
+
+        {/* ============ RELATED ============ */}
+        <section style={{padding:'80px 0', borderBottom:'1px solid var(--ink-400)'}}>
+          <div style={{maxWidth:'var(--grid-max)', margin:'0 auto', padding:'0 var(--grid-gutter)'}}>
+            <div className="eyebrow eyebrow--ignite" style={{marginBottom:32}}>>> RELATED DISPATCHES</div>
+            <div style={{display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:32}}>
+              {related.map(r => (
+                <a key={r.slug} href={`blog-post.html?slug=${r.slug}`} style={{
+                  textDecoration:'none', color:'inherit', display:'block'
+                }}>
+                  <div style={{
+                    aspectRatio:'4/3', marginBottom:16,
+                    backgroundImage:`linear-gradient(135deg, ${r.accent}cc 0%, ${r.accent}99 50%, #000000dd 100%)${r.heroImage ? `, url(${r.heroImage})` : ''}`,
+                    backgroundSize:'cover', backgroundPosition:'center',
+                    backgroundBlendMode:'multiply',
+                    padding:20, color:'#fff',
+                    display:'flex', flexDirection:'column', justifyContent:'space-between',
+                    transition:'transform 240ms'
+                  }}
+                  onMouseEnter={e=>e.currentTarget.style.transform='translateY(-4px)'}
+                  onMouseLeave={e=>e.currentTarget.style.transform='translateY(0)'}
+                  >
+                    <div style={{fontFamily:'var(--font-mono)', fontSize:10, letterSpacing:'0.2em', opacity:0.6}}>
+                      №{String(BLOG_POSTS.indexOf(r)+1).padStart(2,'0')} / {r.category.toUpperCase()}
+                    </div>
+                    <div style={{fontSize:22, lineHeight:0.95, fontWeight:700, letterSpacing:'-0.03em', fontFamily:'var(--font-display)'}}>
+                      {r.title.split(' ').slice(0,4).join(' ')}{r.title.split(' ').length > 4 ? '…' : ''}
+                    </div>
+                  </div>
+                  <div style={{display:'flex', gap:10, marginBottom:8}}>
+                    <span className="eyebrow">{fmtDate2(r.date).toUpperCase()}</span>
+                    <span className="eyebrow">· {r.readTime}M</span>
+                  </div>
+                  <h3 style={{fontSize:18, lineHeight:1.2, marginBottom:0}}>{r.title}</h3>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ============ CTA ============ */}
+        <section style={{
+          background:'var(--ignite-500)', color:'#000',
+          padding:'80px 0', textAlign:'center'
+        }}>
+          <div style={{maxWidth:680, margin:'0 auto', padding:'0 var(--grid-gutter)'}}>
+            <div style={{fontFamily:'var(--font-mono)', fontSize:11, letterSpacing:'0.22em', textTransform:'uppercase', marginBottom:24}}>
+              // GOT AN ACTIVATION COMING UP?
+            </div>
+            <h2 style={{fontSize:'clamp(36px, 4vw, 56px)', lineHeight:1.0, letterSpacing:'-0.02em', fontWeight:600, marginBottom:24}}>
+              Let's run the math on it.
+            </h2>
+            <p style={{fontSize:18, lineHeight:1.5, marginBottom:32, opacity:0.85}}>
+              Send us the brief. We'll come back with a real budget structure, a staffing plan,
+              and a measurement framework — usually within 48 hours.
+            </p>
+            <a href="https://www.igniteproductions.co/contact" style={{
+              display:'inline-flex', gap:12, alignItems:'center',
+              padding:'18px 32px', background:'#000', color:'var(--ignite-500)',
+              fontFamily:'var(--font-mono)', fontSize:14, letterSpacing:'0.15em',
+              textTransform:'uppercase', fontWeight:600
+            }}>Start a brief →</a>
+          </div>
+        </section>
+      </article>
+
+      <SiteFooter rel="../" />
+    </div>
+  );
+}
+
+window.BlogPost = BlogPost;

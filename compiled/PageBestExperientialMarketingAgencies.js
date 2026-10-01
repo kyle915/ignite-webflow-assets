@@ -210,7 +210,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     textDecoration: "none"
   }
 }, "See the ranking \u2193"), /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=experiential",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "18px 26px",
     borderRadius: 999,
@@ -423,7 +423,7 @@ const Ranking = () => /*#__PURE__*/React.createElement("section", {
     background: a.us ? ORANGE + "1c" : "rgba(255,255,255,0.04)"
   }
 }, b))), a.us && /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=experiential",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     marginTop: 20,
     display: "inline-flex",
@@ -494,7 +494,7 @@ const Cta = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=experiential",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "20px 32px",
     borderRadius: 999,

@@ -232,7 +232,7 @@ const NotFound = () => {
       animation: "nf-cta-pulse 2.4s ease-in-out infinite"
     }
   }, /*#__PURE__*/React.createElement("span", null, "\u21A9"), " Back to homepage"), /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",

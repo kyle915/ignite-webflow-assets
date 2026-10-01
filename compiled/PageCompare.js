@@ -506,7 +506,7 @@ const ComparePage = () => /*#__PURE__*/React.createElement(React.Fragment, null,
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement(AccentBtn, {
-  onClick: () => location.href = "/contact"
+  onClick: () => location.href = "https://www.igniteproductions.co/contact"
 }, "Start a brief"), /*#__PURE__*/React.createElement("a", {
   href: "/work",
   className: "link-mono",

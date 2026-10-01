@@ -735,7 +735,7 @@ const SparkPreviewLightbox = ({
       overflow: "hidden",
       textOverflow: "ellipsis"
     }
-  }, "sparkbyignite.igniteproductions.co / dashboard")), /*#__PURE__*/React.createElement("div", {
+  }, "spark.igniteproductions.co / dashboard")), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "relative",
       height: "min(70vh, 720px)"
@@ -743,7 +743,7 @@ const SparkPreviewLightbox = ({
   }, /*#__PURE__*/React.createElement(SparkAppFrame, {
     interactive: true,
     fill: true,
-    label: "Spark dashboard \u2014 interactive preview"
+    label: "Spark dashboard, interactive preview"
   }))), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 16,
@@ -755,7 +755,7 @@ const SparkPreviewLightbox = ({
   }, /*#__PURE__*/React.createElement(AccentBtn, {
     size: "lg",
     accent: "spark",
-    onClick: () => location.href = "/spark"
+    onClick: () => location.href = "https://sparkbyignite.igniteproductions.co/"
   }, "Tour the platform"))));
 };
 const LiveDashboard = () => {
@@ -781,7 +781,7 @@ const LiveDashboard = () => {
   }), /*#__PURE__*/React.createElement("div", {
     className: "spk-screen"
   }, /*#__PURE__*/React.createElement(SparkAppFrame, {
-    label: "Spark dashboard \u2014 program overview"
+    label: "Spark dashboard, program overview"
   }))), /*#__PURE__*/React.createElement("div", {
     className: "spk-base"
   }, /*#__PURE__*/React.createElement("span", {
@@ -878,10 +878,10 @@ const SparkShowcase = () => {
       fontStyle: "italic",
       color: "var(--spark-500)"
     }
-  }, "Spark"), " \u2014 live dashboards.", /*#__PURE__*/React.createElement("br", null), "GPS check-ins. Instant recaps."), /*#__PURE__*/React.createElement(AccentBtn, {
+  }, "Spark"), ", live dashboards.", /*#__PURE__*/React.createElement("br", null), "GPS check-ins. Instant recaps."), /*#__PURE__*/React.createElement(AccentBtn, {
     size: "lg",
     accent: "spark",
-    onClick: () => location.href = "/spark"
+    onClick: () => location.href = "https://sparkbyignite.igniteproductions.co/"
   }, "Tour the platform")), /*#__PURE__*/React.createElement(LiveDashboard, null), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 56,
@@ -889,7 +889,7 @@ const SparkShowcase = () => {
       gridTemplateColumns: "repeat(4, 1fr)",
       gap: 24
     }
-  }, [["GPS-verified check-ins", "Every ambassador clocks in from the actual venue. No paper sign-in sheets, no fudged timesheets."], ["Auto-generated recaps", "Event summaries write themselves — photos, notes, counts, attendance — sent to your inbox within hours."], ["Real-time dashboards", "Watch 17 markets at once. Leadership shouldn't have to ask 'what did we get?' — they should already see it."], ["Self-service requests", "Your team submits activation requests through Spark. Staffing, permits, briefs — all tracked."]].map(([h, d]) => /*#__PURE__*/React.createElement("div", {
+  }, [["GPS-verified check-ins", "Every ambassador clocks in from the actual venue. No paper sign-in sheets, no fudged timesheets."], ["Auto-generated recaps", "Event summaries write themselves, photos, notes, counts, attendance, sent to your inbox within hours."], ["Real-time dashboards", "Watch 17 markets at once. Leadership shouldn't have to ask 'what did we get?', they should already see it."], ["Self-service requests", "Your team submits activation requests through Spark. Staffing, permits, briefs, all tracked."]].map(([h, d]) => /*#__PURE__*/React.createElement("div", {
     key: h
   }, /*#__PURE__*/React.createElement("div", {
     style: {

@@ -188,7 +188,7 @@ const ServicesHero = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "18px 26px",
     borderRadius: 999,
@@ -204,7 +204,7 @@ const ServicesHero = () => /*#__PURE__*/React.createElement("section", {
     boxShadow: "0 12px 32px rgba(215, 69, 62,0.35)"
   }
 }, "Request a quote \u2192"), /*#__PURE__*/React.createElement("a", {
-  href: "/contact",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "18px 26px",
     borderRadius: 999,
@@ -539,7 +539,7 @@ const ServicesStats = () => /*#__PURE__*/React.createElement("section", {
     animation: "marquee 48s linear infinite",
     width: "max-content"
   }
-}, [...Array(2)].flatMap((_, r) => [["257,000+", "BRAND AMBASSADORS"], ["50", "STATES COVERED"], ["500+", "CAMPAIGNS EXECUTED"], ["100%", "REAL-TIME REPORTING"], ["5,000+", "ACTIVATIONS / YEAR"], ["200+", "BRANDS ACTIVATED"], ["48hr", "RUSH STAFFING"]].map(([n, l], i) => /*#__PURE__*/React.createElement("span", {
+}, [...Array(2)].flatMap((_, r) => [["257,000+", "BRAND AMBASSADORS"], ["50", "STATES COVERED"], ["500+", "CAMPAIGNS EXECUTED"], ["100%", "REAL-TIME REPORTING"], ["5,000+", "EVENTS EXECUTED"], ["200+", "BRANDS ACTIVATED"], ["48hr", "RUSH STAFFING"]].map(([n, l], i) => /*#__PURE__*/React.createElement("span", {
   key: r + "-" + i,
   style: {
     display: "inline-flex",
@@ -608,7 +608,7 @@ const TwoWays = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 620,
     margin: "16px auto 0"
   }
-}, "Most clients use both \u2014 a fractional team driving strategy, plus project-based staffing when national activations hit. Either way, Spark comes free.")), /*#__PURE__*/React.createElement("div", {
+}, "Most clients use both \u2014 a fractional team driving strategy, plus project-based staffing when national activations hit. Either way, Spark is included at no additional cost.")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
@@ -708,7 +708,7 @@ const TwoWays = () => /*#__PURE__*/React.createElement("section", {
     color: c.accent
   }
 }, c.cta)))), /*#__PURE__*/React.createElement("a", {
-  href: "/spark",
+  href: "https://sparkbyignite.igniteproductions.co/",
   style: {
     display: "flex",
     alignItems: "center",

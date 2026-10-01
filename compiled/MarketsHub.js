@@ -698,7 +698,7 @@ const MarketsHub = ({
       color: "var(--ignite-500)"
     }
   }, filter), "\u201D \u2014 we may still cover it. ", /*#__PURE__*/React.createElement("a", {
-    href: rel + "/contact",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       color: "var(--ignite-500)"
     }
@@ -763,7 +763,7 @@ const MarketsHub = ({
     }
   }, /*#__PURE__*/React.createElement(AccentBtn, {
     accent: "spark",
-    onClick: () => location.href = rel + "/contact"
+    onClick: () => location.href = "https://www.igniteproductions.co/contact"
   }, "Request staff now"), /*#__PURE__*/React.createElement("a", {
     href: rel + "/ignite-services",
     className: "link-mono",

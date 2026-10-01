@@ -2580,7 +2580,7 @@ const AboutSpark = () => {
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/spark",
+    href: "https://sparkbyignite.igniteproductions.co/",
     style: {
       padding: "15px 24px",
       borderRadius: 999,

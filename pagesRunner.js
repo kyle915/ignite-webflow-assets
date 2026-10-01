@@ -17,12 +17,15 @@
     "/services/collegiate-marketing": {
       "global": "PageServicesCollegiateMarketing",
       "bundle": "PageServicesCollegiateMarketing",
-      "deps": []
+      "deps": [
+        "RelatedCases"
+      ]
     },
     "/services/bilingual-brand-ambassadors": {
       "global": "PageServicesBilingualBrandAmbassadors",
       "bundle": "PageServicesBilingualBrandAmbassadors",
       "deps": [
+        "RelatedCases",
         "MarketsData",
         "ServicesData",
         "ServiceDetail"
@@ -31,27 +34,37 @@
     "/spark-retail": {
       "global": "PageSparkRetail",
       "bundle": "PageSparkRetail",
-      "deps": []
+      "deps": [
+        "SparkSite"
+      ]
     },
     "/services/distributor-demo-programs": {
       "global": "PageServicesDistributorDemoPrograms",
       "bundle": "PageServicesDistributorDemoPrograms",
-      "deps": []
+      "deps": [
+        "RelatedCases"
+      ]
     },
     "/services/on-premise-sampling": {
       "global": "PageServicesOnPremiseSampling",
       "bundle": "PageServicesOnPremiseSampling",
-      "deps": []
+      "deps": [
+        "RelatedCases"
+      ]
     },
     "/services/shopper-marketing": {
       "global": "PageServicesShopperMarketing",
       "bundle": "PageServicesShopperMarketing",
-      "deps": []
+      "deps": [
+        "RelatedCases"
+      ]
     },
     "/services/field-marketing": {
       "global": "PageServicesFieldMarketing",
       "bundle": "PageServicesFieldMarketing",
-      "deps": []
+      "deps": [
+        "RelatedCases"
+      ]
     },
     "/brand-ambassador-agency": {
       "global": "PageBrandAmbassadorAgency",
@@ -61,37 +74,124 @@
     "/services/retail-merchandising": {
       "global": "PageServicesRetailMerchandising",
       "bundle": "PageServicesRetailMerchandising",
-      "deps": []
+      "deps": [
+        "RelatedCases"
+      ]
     },
     "/services/street-teams": {
       "global": "PageServicesStreetTeams",
       "bundle": "PageServicesStreetTeams",
-      "deps": []
+      "deps": [
+        "RelatedCases"
+      ]
     },
     "/services/retail-demo-programs": {
       "global": "PageServicesRetailDemoPrograms",
       "bundle": "PageServicesRetailDemoPrograms",
-      "deps": []
+      "deps": [
+        "RelatedCases"
+      ]
     },
     "/services/ai-management": {
       "global": "PageServicesAiManagement",
       "bundle": "PageServicesAiManagement",
-      "deps": []
+      "deps": [
+        "RelatedCases"
+      ]
+    },
+    "/spark-compare": {
+      "global": "PageSparkCompare",
+      "bundle": "PageSparkCompare",
+      "deps": [
+        "SparkSite"
+      ]
     },
     "/services/creative-design-studio": {
       "global": "PageServicesCreativeDesignStudio",
       "bundle": "PageServicesCreativeDesignStudio",
-      "deps": []
+      "deps": [
+        "RelatedCases"
+      ]
+    },
+    "/spark-for-brands": {
+      "global": "PageSparkForBrands",
+      "bundle": "PageSparkForBrands",
+      "deps": [
+        "SparkSite"
+      ]
     },
     "/compare": {
       "global": "PageCompare",
       "bundle": "PageCompare",
       "deps": []
     },
+    "/spark-trust": {
+      "global": "PageSparkTrust",
+      "bundle": "PageSparkTrust",
+      "deps": [
+        "SparkSite"
+      ]
+    },
+    "/services/event-production": {
+      "global": "PageServicesEventProduction",
+      "bundle": "PageServicesEventProduction",
+      "deps": [
+        "RelatedCases"
+      ]
+    },
     "/best-experiential-marketing-agencies": {
       "global": "PageBestExperientialMarketingAgencies",
       "bundle": "PageBestExperientialMarketingAgencies",
       "deps": []
+    },
+    "/spark-pricing": {
+      "global": "PageSparkPricing",
+      "bundle": "PageSparkPricing",
+      "deps": [
+        "SparkSite"
+      ]
+    },
+    "/agency-of-record": {
+      "global": "PageAgencyOfRecord",
+      "bundle": "PageAgencyOfRecord",
+      "deps": [
+        "RelatedCases"
+      ]
+    },
+    "/services/sponsorship-partnerships": {
+      "global": "PageServicesSponsorshipPartnerships",
+      "bundle": "PageServicesSponsorshipPartnerships",
+      "deps": [
+        "RelatedCases"
+      ]
+    },
+    "/spark-solution": {
+      "global": "PageSparkSolution",
+      "bundle": "PageSparkSolution",
+      "deps": [
+        "SparkSite"
+      ]
+    },
+    "/spark-use-case": {
+      "global": "PageSparkUseCase",
+      "bundle": "PageSparkUseCase",
+      "deps": [
+        "SparkSite"
+      ]
+    },
+    "/spark-product": {
+      "global": "PageSparkProduct",
+      "bundle": "PageSparkProduct",
+      "deps": [
+        "SparkSite"
+      ]
+    },
+    "/spark-explore": {
+      "global": "PageSparkExplore",
+      "bundle": "PageSparkExplore",
+      "deps": [
+        "SparkSite"
+      ]
     }
   };
   var SERVICE = {
@@ -110,14 +210,13 @@
     "/services/qsr-restaurant-activations": "qsr-restaurant-activations",
     "/services/retail-readiness": "retail-readiness",
     "/services/retail-sales-broker-management": "retail-sales-broker-management",
-    "/services/sponsorship-partnerships": "sponsorship-partnerships",
     "/services/sports-marketing-activations": "sports-marketing-activations",
     "/services/sweepstakes-activations": "sweepstakes-activations",
     "/services/trade-marketing-management": "trade-marketing-management",
     "/travel": "travel",
     "/weddings": "weddings"
   };
-  var SERVICE_DEPS = ["MarketsData","ServicesData","ServiceDetail","ServicesDataExtra"];
+  var SERVICE_DEPS = ["RelatedCases","MarketsData","ServicesData","ServiceDetail","ServicesDataExtra"];
 
   function currentPath() {
     var p = (location.pathname || "").replace(/\/+$/, "").toLowerCase();

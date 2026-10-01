@@ -332,7 +332,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=on-premise-sampling",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     display: "inline-flex",
     alignItems: "center",
@@ -1144,7 +1144,7 @@ const Spark = () => {
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/spark",
+    href: "https://sparkbyignite.igniteproductions.co/",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -1160,7 +1160,7 @@ const Spark = () => {
       boxShadow: `0 8px 28px ${ORANGE}44`
     }
   }, "Explore Spark \u2192"), /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -1175,7 +1175,7 @@ const Spark = () => {
       fontSize: 14,
       textDecoration: "none"
     }
-  }, "Book a demo"))), /*#__PURE__*/React.createElement("div", {
+  }, "Get a staffing quote"))), /*#__PURE__*/React.createElement("div", {
     className: "op-reveal",
     style: {
       background: "linear-gradient(180deg,#14161B,#0F1115)",
@@ -1385,7 +1385,7 @@ const Related = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap",
     gap: 12
   }
-}, [["Product Sampling", "/services/product-sampling"], ["Event Staffing", "/services/event-staffing"], ["Distributor Demo Programs", "/services/distributor-demo-programs"], ["Field Marketing", "/services/field-marketing"], ["Alcohol & Spirits", "/industries/alcohol-spirits"], ["Hospitality & Travel", "/industries/hospitality-travel"], ["Spark", "/spark"]].map(([l, h]) => /*#__PURE__*/React.createElement("a", {
+}, [["Product Sampling", "/services/product-sampling"], ["Event Staffing", "/services/event-staffing"], ["Distributor Demo Programs", "/services/distributor-demo-programs"], ["Field Marketing", "/services/field-marketing"], ["Alcohol & Spirits", "/industries/alcohol-spirits"], ["Hospitality & Travel", "/industries/hospitality-travel"], ["Spark", "https://sparkbyignite.igniteproductions.co/"]].map(([l, h]) => /*#__PURE__*/React.createElement("a", {
   key: l,
   href: h,
   style: {
@@ -1455,7 +1455,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=on-premise-sampling",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "18px 34px",
     borderRadius: 999,
@@ -1467,7 +1467,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     textDecoration: "none"
   }
 }, "Start planning"), /*#__PURE__*/React.createElement("a", {
-  href: "/spark",
+  href: "https://sparkbyignite.igniteproductions.co/",
   style: {
     padding: "18px 30px",
     borderRadius: 999,
@@ -1490,7 +1490,10 @@ const App = () => {
     accent: "#E68A4C",
     label: "On-Premise Sampling",
     rel: "../"
-  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Timeline, null), /*#__PURE__*/React.createElement(PourNight, null), /*#__PURE__*/React.createElement(RefusalSOP, null), /*#__PURE__*/React.createElement(Liability, null), /*#__PURE__*/React.createElement(Roster, null), /*#__PURE__*/React.createElement(Spark, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Related, null), /*#__PURE__*/React.createElement(CTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
+  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Timeline, null), /*#__PURE__*/React.createElement(PourNight, null), /*#__PURE__*/React.createElement(RefusalSOP, null), /*#__PURE__*/React.createElement(Liability, null), /*#__PURE__*/React.createElement(Roster, null), /*#__PURE__*/React.createElement(Spark, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Related, null), /*#__PURE__*/React.createElement(CTA, null), window.RelatedCases ? React.createElement(window.RelatedCases, {
+    ctx: "service",
+    slug: "on-premise-sampling"
+  }) : null, /*#__PURE__*/React.createElement(SiteFooter, null));
 };
 Object.assign(window, {
   PageServicesOnPremiseSampling: App

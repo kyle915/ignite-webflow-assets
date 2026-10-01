@@ -549,7 +549,7 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
     fontFamily: "var(--font-mono)"
   }
 }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "https://www.igniteproductions.co/contact?urgent=1",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     display: "inline-flex",
     alignItems: "center",

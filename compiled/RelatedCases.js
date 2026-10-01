@@ -121,7 +121,7 @@ const RelatedCases = ({
   const list = ((RC_MAP[ctx] || {})[slug] || []).filter(k => RC_CASES[k]);
   if (!list.length) return null;
   const asset = n => window.__resources && window.__resources["r_assets_" + n.replace(/[^a-z0-9]/gi, "_")] || "https://kyle915.github.io/ignite-webflow-assets/assets/" + n;
-  const href = k => rel + "/case-studies?slug=" + k;
+  const href = k => rel + "/portfolio/" + k;
   return /*#__PURE__*/React.createElement("section", {
     "data-screen-label": "Related case studies",
     style: {

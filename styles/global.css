@@ -2,32 +2,30 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+/* -------------------- SMOOTH SCROLL --------------------
+   Site-wide glide for anchor jumps, in-page nav, and scrollIntoView. The
+   scroll-padding keeps landing targets clear of the sticky nav; [id] targets
+   get the same offset so deep links don't tuck under it. */
+html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+:target, [id] { scroll-margin-top: 92px; }
+@media (max-width: 760px) { html { scroll-padding-top: 68px; } :target, [id] { scroll-margin-top: 68px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 /* clip (not hidden) so the body never becomes a scroll container — hidden here
    breaks position:sticky on the nav (notably iOS Safari + narrow viewports). */
 html, body { overflow-x: clip; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
+
+/* -------------------- PAGE SHELL --------------------
+   Every page rides inside one rounded panel on a darker ground, matching the
+   Spark platform shell. Pages that ship their own shell (.v2-shellpad) reset
+   #root in their own stylesheet. */
+html { background: #07080A; }
+body { padding: 14px; background: #07080A; }
+#root { max-width: 1792px; margin: 0 auto; background: var(--ink-000); border: 1px solid rgba(250,250,247,0.14); border-radius: 26px; overflow: clip; }
+@media (max-width: 760px) { body { padding: 7px; } #root { border-radius: 16px; } }
+@media print { body { padding: 0; background: #fff; } #root { max-width: none; border: 0; border-radius: 0; overflow: visible; } }
 button { font-family: inherit; }
 img { max-width: 100%; display: block; }
-
-/* Hero set-off line — 50% white on video failed WCAG */
-.hero-setoff { color: rgba(255,255,255,0.92) !important; }
-
-/* Client marquee — `img { max-width: 100% }` + overflow:hidden clipped
-   the White Claw mark (circular, taller than the 88px row). */
-.client-marquee-item { overflow: visible !important; height: 96px !important; }
-.client-marquee-logo {
-  max-width: none !important;
-  width: auto !important;
-  height: auto !important;
-  max-height: 56px !important;
-  object-fit: contain !important;
-  object-position: center;
-}
-.client-marquee-logo[alt="White Claw"] {
-  max-height: 72px !important;
-  max-width: 220px !important;
-}
 
 ::selection { background: var(--ignite-500); color: #fff; }
 
@@ -105,6 +103,24 @@ img { max-width: 100%; display: block; }
 /* paper (light) section body tweaks */
 .paper { background: var(--paper-000); color: var(--fg-1-inv); }
 .paper h1, .paper h2, .paper h3, .paper h4 { color: var(--fg-1-inv); }
+
+/* Hero set-off line — 50% white on video failed WCAG */
+.hero-setoff { color: rgba(255,255,255,0.92) !important; }
+
+/* Client marquee — img{max-width:100%} clipped White Claw */
+.client-marquee-item { overflow: visible !important; height: 96px !important; }
+.client-marquee-logo {
+  max-width: none !important;
+  width: auto !important;
+  height: auto !important;
+  max-height: 56px !important;
+  object-fit: contain !important;
+  object-position: center;
+}
+.client-marquee-logo[alt="White Claw"] {
+  max-height: 72px !important;
+  max-width: 220px !important;
+}
 
 /* ============================================================
    Webflow base-element reset

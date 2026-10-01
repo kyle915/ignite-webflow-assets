@@ -345,7 +345,7 @@ SERVICES_DATA["bilingual-brand-ambassadors"] = {
     "href": "/industries/sports-entertainment"
   }, {
     "label": "Spark",
-    "href": "/spark"
+    "href": "https://sparkbyignite.igniteproductions.co/"
   }, {
     "label": "Our Work",
     "href": "/work"
@@ -364,7 +364,7 @@ const BL_DICT = {
   "INDUSTRIES": "INDUSTRIAS",
   "MARKETS": "MERCADOS",
   "SERVICES": "SERVICIOS",
-  "Get In Touch": "Contáctanos",
+  "Request staff now": "Solicitar personal ya",
   "Staffing & Talent": "Personal y Talento",
   "Sampling": "Muestreo",
   "Retail Programs": "Programas de Retail",
@@ -397,7 +397,7 @@ const BL_DICT = {
   "states + DC": "estados + DC",
   "languages on roster": "idiomas en el roster",
   "Brief us on a": "Cuéntanos sobre un",
-  "bilingual bas": "embajadores bilingües",
+  "bilingual brand ambassadors": "embajadores bilingües",
   "project": "proyecto",
   "Need it fast? Rush queue": "¿Lo necesitas rápido? Fila urgente",
   // POV
@@ -625,7 +625,7 @@ const BL_DICT = {
   "Audience capture for Spanish-language CRM": "Captura de audiencia para CRM en español",
   "Market-by-market Hispanic activation rollup": "Consolidado de activación hispana mercado por mercado",
   "Tour Spark": "Recorrer Spark",
-  "Book a demo": "Agendar una demo",
+  "Get a staffing quote": "Agendar una demo",
   "tracking": "seguimiento",
   "ready": "listo",
   "LAST 30 MIN": "ÚLTIMOS 30 MIN",

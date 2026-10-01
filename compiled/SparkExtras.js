@@ -314,7 +314,7 @@ const SparkBeforeAfter = () => {
       color: "var(--fg-3)",
       marginTop: 3
     }
-  }, "3h after event")))), /*#__PURE__*/React.createElement("div", {
+  }, "24h after event")))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
       gridTemplateColumns: "1fr 1fr 1fr 1fr",
@@ -498,7 +498,7 @@ const SparkBeforeAfter = () => {
       color: "var(--spark-500)",
       textTransform: "uppercase"
     }
-  }, "// live in dashboard \xB7 3h after event \xB7 0 follow-ups")))));
+  }, "// live in dashboard \xB7 24h after event \xB7 0 follow-ups")))));
 };
 
 /* ---------- #5: WHAT SPARK REPLACES ---------- */
@@ -847,8 +847,147 @@ const SparkToasts = () => {
     }
   }), enabled ? "LIVE FEED" : "PAUSED"));
 };
+
+/* ---------- SECOND DOOR: license Spark without the agency ---------- */
+const SparkSecondDoor = () => /*#__PURE__*/React.createElement("section", {
+  "data-screen-label": "Spark Second Door",
+  style: {
+    background: "#0A0B0D",
+    color: "#FAFAF7",
+    padding: "110px 0",
+    borderTop: "1px solid rgba(250,250,247,0.08)",
+    borderBottom: "1px solid rgba(250,250,247,0.08)"
+  }
+}, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+  style: {
+    background: "#111317",
+    border: "1px solid rgba(250,250,247,0.08)",
+    borderLeft: "3px solid #D6F35F",
+    borderRadius: 2,
+    padding: "clamp(32px,4vw,60px)",
+    display: "grid",
+    gridTemplateColumns: "minmax(0,1.55fr) minmax(0,0.45fr)",
+    gap: 48,
+    alignItems: "center"
+  },
+  className: "sd-grid"
+}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+  style: {
+    fontFamily: "var(--font-mono)",
+    fontSize: 11,
+    letterSpacing: "0.1em",
+    textTransform: "uppercase",
+    color: "#D6F35F"
+  }
+}, ">> NEW"), /*#__PURE__*/React.createElement("h2", {
+  style: {
+    margin: "16px 0 0",
+    fontFamily: "var(--font-display)",
+    fontWeight: 700,
+    fontSize: "clamp(30px,3.6vw,52px)",
+    letterSpacing: "-0.03em",
+    lineHeight: 1.02,
+    color: "#FAFAF7"
+  }
+}, "Want Spark without the agency?"), /*#__PURE__*/React.createElement("p", {
+  style: {
+    margin: "20px 0 0",
+    fontSize: "clamp(17px,1.5vw,21px)",
+    lineHeight: 1.45,
+    color: "#FAFAF7",
+    fontWeight: 500,
+    maxWidth: 620
+  }
+}, "Spark is included at no additional cost with every Ignite program. It's also available on its own."), /*#__PURE__*/React.createElement("p", {
+  style: {
+    margin: "14px 0 0",
+    fontSize: 16,
+    lineHeight: 1.6,
+    color: "#B8BCC5",
+    maxWidth: 640
+  }
+}, "License the platform, run it with your own staff, your own agencies, or your distributor reps. Same live dashboard. Same GPS-verified proof. Same auto-generated recaps. And when a market goes uncovered, flip on our bench of 257K+ ambassadors without leaving the screen."), /*#__PURE__*/React.createElement("div", {
+  style: {
+    marginTop: 30,
+    display: "flex",
+    gap: 12,
+    flexWrap: "wrap"
+  }
+}, /*#__PURE__*/React.createElement("a", {
+  href: "https://sparkbyignite.igniteproductions.co/",
+  style: {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 9,
+    padding: "16px 26px",
+    borderRadius: 2,
+    background: "#D6F35F",
+    color: "#0A0B0D",
+    fontFamily: "var(--font-display)",
+    fontWeight: 700,
+    fontSize: 15,
+    textDecoration: "none"
+  }
+}, "Explore Spark Platform ", /*#__PURE__*/React.createElement("span", {
+  style: {
+    fontFamily: "var(--font-mono)"
+  }
+}, "\u2192")), /*#__PURE__*/React.createElement("a", {
+  href: "https://www.igniteproductions.co/contact",
+  style: {
+    padding: "16px 24px",
+    borderRadius: 2,
+    background: "transparent",
+    color: "#FAFAF7",
+    border: "1px solid rgba(250,250,247,0.28)",
+    fontFamily: "var(--font-display)",
+    fontWeight: 600,
+    fontSize: 15,
+    textDecoration: "none"
+  }
+}, "See Spark on a live program")), /*#__PURE__*/React.createElement("div", {
+  style: {
+    marginTop: 26,
+    fontFamily: "var(--font-mono)",
+    fontSize: 10.5,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    color: "#7A7F8B"
+  }
+}, "// SOFTWARE WHEN YOU WANT IT \xB7 STAFF WHEN YOU NEED IT")), /*#__PURE__*/React.createElement("div", {
+  style: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 10
+  }
+}, [["257K+", "AMBASSADORS"], ["50", "STATES"], ["48HR", "RUSH"]].map(([v, l]) => /*#__PURE__*/React.createElement("div", {
+  key: l,
+  style: {
+    border: "1px solid rgba(250,250,247,0.08)",
+    borderRadius: 2,
+    padding: "16px 18px",
+    background: "#0A0B0D"
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  style: {
+    fontFamily: "var(--font-mono)",
+    fontWeight: 700,
+    fontSize: 22,
+    color: "#D6F35F",
+    letterSpacing: "-0.01em"
+  }
+}, v), /*#__PURE__*/React.createElement("div", {
+  style: {
+    marginTop: 4,
+    fontFamily: "var(--font-mono)",
+    fontSize: 9.5,
+    letterSpacing: "0.14em",
+    color: "#7A7F8B"
+  }
+}, l)))))), /*#__PURE__*/React.createElement("style", null, `@media (max-width:860px){.sd-grid{grid-template-columns:1fr !important;gap:28px !important;}}`));
 Object.assign(window, {
   SparkBeforeAfter,
   SparkReplaces,
-  SparkToasts
+  SparkToasts,
+  SparkSecondDoor
 });

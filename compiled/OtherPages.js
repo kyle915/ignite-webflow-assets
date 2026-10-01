@@ -515,7 +515,7 @@ const AboutHero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "var(--fg-1)"
   }
-}, "257,000+ brand ambassadors"), " running 5,000+ activations a year for the brands that define culture \u2014 and the agency-run Spark platform has changed how clients see field marketing forever."))));
+}, "257,000+ brand ambassadors"), " running 5,000+ events executed for the brands that define culture \u2014 and the agency-run Spark platform has changed how clients see field marketing forever."))));
 const AboutStats = () => /*#__PURE__*/React.createElement("section", {
   id: "impact",
   className: "paper",
@@ -660,7 +660,7 @@ const CONTACT_DOORS = [{
   lead: "I need to see what's actually happening.",
   d: "Real-time field marketing intelligence. Live check-ins, sample tracking, conversion data, and post-event recaps — all in one dashboard.",
   tag: "Spark by Ignite",
-  href: "/spark"
+  href: "https://sparkbyignite.igniteproductions.co/"
 }];
 const ContactForm = () => {
   const urgent = typeof window !== "undefined" && new URLSearchParams(window.location.search).get("urgent");

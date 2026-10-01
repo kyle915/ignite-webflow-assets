@@ -295,7 +295,7 @@ const Hero = () => {
       animationDelay: "460ms"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/contact?intent=ai-management",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -1023,7 +1023,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact?intent=ai-management",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "22px 34px",
     borderRadius: 999,
@@ -1043,7 +1043,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     fontFamily: "var(--font-mono)"
   }
 }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "/spark",
+  href: "https://sparkbyignite.igniteproductions.co/",
   style: {
     padding: "22px 30px",
     borderRadius: 999,
@@ -1064,7 +1064,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     color: "rgba(255,255,255,0.4)"
   }
 }, "Pairs with ", /*#__PURE__*/React.createElement("a", {
-  href: "/spark",
+  href: "https://sparkbyignite.igniteproductions.co/",
   style: {
     color: CYAN,
     textDecoration: "none"

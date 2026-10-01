@@ -170,7 +170,7 @@ const HomeReach = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2)",
     maxWidth: 640
   }
-}, "200+ named metros and a category playbook for every vertical we run. Find your city or your industry \u2014 the team and the SOPs are already there.")), /*#__PURE__*/React.createElement("div", {
+}, "200+ named metros and a category playbook for every vertical we run. Find your city or your industry, the team and the SOPs are already there.")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
@@ -193,7 +193,7 @@ const HomeReach = () => /*#__PURE__*/React.createElement("section", {
   eyebrow: ">> INDUSTRIES // 13 VERTICALS",
   title: "A playbook for",
   italic: "your category.",
-  body: "Beverage, spirits, tech, sports, cannabis, QSR and more \u2014 each with category-specific compliance, staffing, and proof. Browse by vertical.",
+  body: "Beverage, spirits, tech, sports, cannabis, QSR and more, each with category-specific compliance, staffing, and proof. Browse by vertical.",
   chips: HOME_INDUSTRY_CHIPS,
   chipBase: "/industries/",
   hubLabel: "All industries",

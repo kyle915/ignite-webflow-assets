@@ -1,6 +1,6 @@
 /* global React */
 /* ============================================================
-   ENGAGEMENT SPECTRUM — Option 1, bolder rev.
+   ENGAGEMENT SPECTRUM, Option 1, bolder rev.
    Full-bleed dark, dramatic stencil numerals, big type,
    color-flooded active tier. Matrix kept for reference.
    ============================================================ */
@@ -14,7 +14,7 @@ const SPECTRUM_TIERS = [{
   title: "Project.",
   depth: "SHALLOW · TACTICAL",
   sub: "One-off campaigns, staffing, single activations.",
-  body: "Drop us into a specific moment — a festival weekend, a campus tour, a trade show booth, a sampling sprint. We handle the brief, scale to the footprint, and break it back down.",
+  body: "Drop us into a specific moment, a festival weekend, a campus tour, a trade show booth, a sampling sprint. We handle the brief, scale to the footprint, and break it back down.",
   best: "FOR · single activations · trade shows · seasonal pushes",
   includes: ["Brand ambassadors", "Mobile tours", "Trade show staff", "Sampling programs"],
   cta: "Explore services",
@@ -28,7 +28,7 @@ const SPECTRUM_TIERS = [{
   prism: true,
   title: "Embedded.",
   depth: "MEDIUM · FUNCTIONAL",
-  sub: "A discipline-as-a-service — sponsorships, sales, marketing, OR key accounts.",
+  sub: "A discipline-as-a-service, sponsorships, sales, marketing, OR key accounts.",
   body: "Pick a function. We run it like in-house. Sponsorship ops without hiring a sponsorship team. Field sales without a sales VP. Brand marketing without the agency overhead. One discipline, fully managed.",
   best: "FOR · brands scaling one channel · post-Series-A teams · pre-IPO ops",
   includes: ["Sponsorship management", "Field sales programs", "Brand & marketing ops", "Retail strategy"],
@@ -43,7 +43,7 @@ const SPECTRUM_TIERS = [{
   title: "Leadership.",
   depth: "DEEP · FULL-STACK",
   sub: "Full retail engine. Sponsorships + sales + marketing + key accounts, run end-to-end.",
-  body: "We become the team. Fractional leadership across every consumer-facing function — sponsorships, sales, marketing, activations. Strategy, execution, measurement. Reports into your CEO.",
+  body: "We become the team. Fractional leadership across every consumer-facing function, sponsorships, sales, marketing, activations. Strategy, execution, measurement. Reports into your CEO.",
   best: "FOR · emerging CPG · launching a line · DTC going retail",
   includes: ["Full fractional team", "Senior leadership", "Cross-functional ops", "Quarterly roadmaps"],
   cta: "Explore leadership",
@@ -109,7 +109,7 @@ const EngagementSpectrum = () => {
       maxWidth: 760,
       fontWeight: 400
     }
-  }, "Sponsorships, sales, marketing, key accounts, activations \u2014 at any depth, in any combination. Same operators. Same Spark dashboard. Different scope."), /*#__PURE__*/React.createElement("div", {
+  }, "Sponsorships, sales, marketing, key accounts, activations, at any depth, in any combination. Same operators. Same Spark dashboard. Different scope."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 48,
       padding: "24px 32px",
@@ -344,74 +344,7 @@ const EngagementSpectrum = () => {
       color: t.accent,
       fontSize: 20
     }
-  }, "\u25B8"), " ", inc)))))), /*#__PURE__*/React.createElement("a", {
-    href: "/spark",
-    style: {
-      marginTop: 24,
-      padding: "28px 36px",
-      borderRadius: 16,
-      background: "rgba(214,243,95,0.06)",
-      border: "1px solid rgba(214,243,95,0.25)",
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      gap: 32,
-      flexWrap: "wrap",
-      textDecoration: "none"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: "flex",
-      alignItems: "center",
-      gap: 24
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      width: 56,
-      height: 56,
-      borderRadius: 12,
-      background: "var(--spark-500)",
-      color: "#0a0a0a",
-      fontFamily: "var(--font-stencil)",
-      fontSize: 24,
-      letterSpacing: "0.04em",
-      fontWeight: 700
-    }
-  }, "\u2726"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: "var(--font-mono)",
-      fontSize: 11,
-      letterSpacing: "0.24em",
-      textTransform: "uppercase",
-      color: "var(--spark-500)"
-    }
-  }, "\u25C9 INCLUDED AT EVERY TIER"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 6,
-      fontFamily: "var(--font-display)",
-      fontSize: 22,
-      fontWeight: 600,
-      letterSpacing: "-0.015em",
-      color: "#fff"
-    }
-  }, "Every engagement runs on ", /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontStyle: "italic",
-      color: "var(--spark-500)"
-    }
-  }, "Spark"), " \u2014 live dashboards. GPS check-ins. Instant recaps."))), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-mono)",
-      fontSize: 13,
-      letterSpacing: "0.22em",
-      textTransform: "uppercase",
-      color: "var(--spark-500)",
-      fontWeight: 700
-    }
-  }, "SEE THE PLATFORM \u2192"))));
+  }, "\u25B8"), " ", inc))))))));
 };
 Object.assign(window, {
   EngagementSpectrum
