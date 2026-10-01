@@ -67,7 +67,8 @@ const TopicsHub = () => {
     }
   }, list.map((t, i) => /*#__PURE__*/React.createElement("a", {
     key: t.slug,
-    href: "/topics/" + t.slug,
+    /* /topics/<slug> pages are held back (not built); link the matching live service instead. */
+    href: ({ "field-marketing": "/services/field-marketing", "experiential-activation": "/services/experiential-marketing", "brand-sampling": "/services/product-sampling", "trade-show-staffing": "/services/trade-shows", "mobile-tours": "/services/mobile-tours" })[t.slug] || "/ignite-services",
     className: "tp-card",
     style: {
       position: "relative",
