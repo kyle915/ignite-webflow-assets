@@ -274,7 +274,7 @@ const WORK_CASES = [{
   brand: "WHITE CLAW",
   tagline: "Cracking the spirits launch code.",
   category: "National Sampling Rollout",
-  stats: [["500+", "Demos"], ["20%", "Conversion"], ["12", "Markets"]],
+  stats: [],
   img: window.__resources?.r_688d8a159dce27cfc5ed905c_1 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688d8a159dce27cfc5ed905c_1.jpg"
 }, {
   slug: "mas",
@@ -444,7 +444,7 @@ const WorkGrid = () => /*#__PURE__*/React.createElement("section", {
     display: "flex",
     gap: 24
   }
-}, c.stats.map(([n, l]) => /*#__PURE__*/React.createElement("div", {
+}, (c.stats || []).map(([n, l]) => /*#__PURE__*/React.createElement("div", {
   key: l
 }, /*#__PURE__*/React.createElement("div", {
   style: {
@@ -553,7 +553,7 @@ const AboutStats = () => /*#__PURE__*/React.createElement("section", {
     gridTemplateColumns: "repeat(4, 1fr)",
     gap: 20
   }
-}, [["257,000+", "Vetted ambassadors"], ["5,000+", "Activations per year"], ["200+", "Brands served"], ["50", "States covered"], ["8", "Years in business"], ["25M+", "Consumers reached"], ["87%", "Client retention"], ["20%+", "Avg demo conversion"]].map(([n, l]) => /*#__PURE__*/React.createElement("div", {
+}, [["257,000+", "Vetted ambassadors"], ["5,000+", "Activations per year"], ["200+", "Brands served"], ["50", "States covered"], ["2018", "Founded"], ["VETERAN", "Owned · VOSB"]].map(([n, l]) => /*#__PURE__*/React.createElement("div", {
   key: l,
   style: {
     padding: 24,

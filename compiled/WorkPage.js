@@ -144,7 +144,7 @@ const WORK_CASES = [{
   bento: "lg-wide",
   accent: "#7BD0E8",
   surface: "#0B1A22",
-  stats: [["1,400+", "Demos"], ["35%", "Conversion"], ["+7%", "Sales lift"]]
+  stats: []
 }, {
   slug: "smalls-sliders",
   bento: "md",
@@ -758,7 +758,7 @@ const WorkHeroRail = () => {
       gap: 18,
       marginTop: 6
     }
-  }, c.stats.slice(0, 3).map(([n, l]) => /*#__PURE__*/React.createElement("div", {
+  }, (c.stats || []).slice(0, 3).map(([n, l]) => /*#__PURE__*/React.createElement("div", {
     key: l
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1091,7 +1091,7 @@ const WorkBento = () => {
       textWrap: "balance",
       maxWidth: plan[c.slug]?.col === "span 8" ? 520 : plan[c.slug]?.col === "span 12" ? 720 : 320
     }
-  }, c.headline), (plan[c.slug]?.col === "span 8" || plan[c.slug]?.col === "span 12") && /*#__PURE__*/React.createElement("div", {
+  }, c.headline), (plan[c.slug]?.col === "span 8" || plan[c.slug]?.col === "span 12") && (c.stats || []).length > 0 && /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 6,
       display: "flex",
@@ -1099,7 +1099,7 @@ const WorkBento = () => {
       paddingTop: 14,
       borderTop: `1px solid ${c.accent}33`
     }
-  }, c.stats.slice(0, 3).map(([n, l]) => /*#__PURE__*/React.createElement("div", {
+  }, (c.stats || []).slice(0, 3).map(([n, l]) => /*#__PURE__*/React.createElement("div", {
     key: l
   }, /*#__PURE__*/React.createElement("div", {
     style: {
