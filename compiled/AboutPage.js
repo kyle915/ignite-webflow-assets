@@ -124,7 +124,7 @@ const ABOUT_TIMELINE = [{
 }, {
   y: "2021",
   t: "Liquid Death",
-  d: "First multi-market national tour. 47 markets, 3,000+ events."
+  d: "First multi-market national tour. 200+ metros, 5,000+ events."
 }, {
   y: "2023",
   t: "Build shop online",
@@ -1585,11 +1585,11 @@ const AboutCaseSpotlight = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "var(--fg-1)"
   }
-}, "3,000+ events."), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+}, "5,000+ events."), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
   style: {
     color: "var(--fg-1)"
   }
-}, "47 markets."), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+}, "200+ metros."), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
   style: {
     fontStyle: "italic",
     color: "var(--ignite-500)"

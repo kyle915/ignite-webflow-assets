@@ -1,5 +1,18 @@
 /* Marquee of REAL brand logos — pulled from the live site */
+const IG_ASSET = n => window.__resources && window.__resources["r_assets_" + n.replace(/[^a-z0-9]/gi, "_")] || (location.pathname.includes("/pages/") ? "https://kyle915.github.io/ignite-webflow-assets/assets/" : "https://kyle915.github.io/ignite-webflow-assets/assets/") + n;
 const CLIENT_LOGOS = [{
+  name: "OpenAI",
+  url: IG_ASSET("logo-openai-mark.png"),
+  ink: true,
+  maxH: 26,
+  maxW: 120
+}, {
+  name: "Claude",
+  url: IG_ASSET("logo-claude.png"),
+  ink: true,
+  maxH: 24,
+  maxW: 120
+}, {
   name: "Liquid Death",
   url: window.__resources?.r_6882f25fd226513954e724e2_liquid_death_lo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882f25fd226513954e724e2_liquid-death-logo-transparent.webp"
 }, {
@@ -9,8 +22,29 @@ const CLIENT_LOGOS = [{
   name: "Mas+ Messi",
   url: window.__resources?.r_688c1c02300cc1480ff080dc_mas_messi_logo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1c02300cc1480ff080dc_mas-messi-logo.webp"
 }, {
-  name: "Krispy Krunchy",
-  url: window.__resources?.r_688c1b20a33960875f5d7bc0_krispy_krunchy_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b20a33960875f5d7bc0_krispy-krunchy-logo.webp"
+  name: "Luckin Coffee",
+  url: IG_ASSET("logo-luckin-coffee.png"),
+  ink: true,
+  maxH: 48,
+  maxW: 80
+}, {
+  name: "Grubhub",
+  url: IG_ASSET("logo-grubhub.png"),
+  ink: true,
+  maxH: 24,
+  maxW: 130
+}, {
+  name: "Torch THC Beverages",
+  url: IG_ASSET("logo-torch-thc.png"),
+  ink: true,
+  maxH: 34,
+  maxW: 110
+}, {
+  name: "Brew Dr. Kombucha",
+  url: IG_ASSET("logo-brew-dr.png"),
+  ink: true,
+  maxH: 32,
+  maxW: 110
 }, {
   name: "Total Wireless",
   url: window.__resources?.r_688c1bb2f2c798b4cb850d2e_total_wireless_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1bb2f2c798b4cb850d2e_total-wireless-logo.webp"
@@ -18,17 +52,74 @@ const CLIENT_LOGOS = [{
   name: "Dude Wipes",
   url: window.__resources?.r_688c3839708ed185c2de5ba9_dude_wipes || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3839708ed185c2de5ba9_dude-wipes.webp"
 }, {
-  name: "Glendonough",
-  url: window.__resources?.r_688c3841bacf82489917b2b9_glendonough_dis || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3841bacf82489917b2b9_glendonough-distillery.webp"
+  name: "Krispy Krunchy",
+  url: window.__resources?.r_688c1b20a33960875f5d7bc0_krispy_krunchy_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b20a33960875f5d7bc0_krispy-krunchy-logo.webp"
+}, {
+  name: "Marc Anthony",
+  url: window.__resources?.r_688c378239e6dc2ebedde728_marc_anthony_lo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c378239e6dc2ebedde728_marc-anthony-logo.webp"
+}, {
+  name: "Breakaway",
+  url: IG_ASSET("logo-breakaway.png"),
+  ink: true,
+  maxH: 30,
+  maxW: 110
+}, {
+  name: "BeGoat",
+  url: IG_ASSET("logo-begoat.png"),
+  ink: true,
+  maxH: 34,
+  maxW: 110
+}, {
+  name: "Drekker Brewing Co.",
+  url: IG_ASSET("logo-drekker.png"),
+  ink: true,
+  maxH: 52,
+  maxW: 70
+}, {
+  name: "PressReader",
+  url: IG_ASSET("logo-pressreader.png"),
+  ink: true,
+  maxH: 28,
+  maxW: 130
+}, {
+  name: "Feel Free",
+  url: IG_ASSET("logo-feel-free.png"),
+  ink: true,
+  maxH: 34,
+  maxW: 130
+}, {
+  name: "PIVOT Performance Energy",
+  url: IG_ASSET("logo-pivot.png"),
+  ink: true,
+  maxH: 30,
+  maxW: 120
 }, {
   name: "Smalls Sliders",
   url: window.__resources?.r_688c377975c7a23684962d73_smalls_sliders || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c377975c7a23684962d73_smalls-sliders.webp"
 }, {
-  name: "Marc Anthony",
-  url: window.__resources?.r_688c378239e6dc2ebedde728_marc_anthony_lo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c378239e6dc2ebedde728_marc-anthony-logo.webp"
+  name: "Glendonough",
+  url: window.__resources?.r_688c3841bacf82489917b2b9_glendonough_dis || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3841bacf82489917b2b9_glendonough-distillery.webp"
+}, {
+  name: "Stone House Bread",
+  url: IG_ASSET("logo-stone-house-bread.png"),
+  ink: true,
+  maxH: 52,
+  maxW: 52
+}, {
+  name: "Circle House Coffee",
+  url: IG_ASSET("logo-circle-house-coffee.png"),
+  ink: true,
+  maxH: 40,
+  maxW: 110
+}, {
+  name: "Free Rein Coffee",
+  url: IG_ASSET("logo-free-rein.png"),
+  ink: true,
+  maxH: 36,
+  maxW: 120
 }];
 const ClientMarquee = () => /*#__PURE__*/React.createElement("section", {
-  className: "paper client-marquee",
+  className: "paper",
   style: {
     padding: "56px 0",
     borderTop: "1px solid var(--paper-200)",
@@ -66,7 +157,6 @@ const ClientMarquee = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-3-inv)"
   }
 }, "+ 200 BRANDS SINCE 2018"))), /*#__PURE__*/React.createElement("div", {
-  className: "client-marquee-track",
   style: {
     display: "flex",
     width: "max-content",
@@ -75,27 +165,22 @@ const ClientMarquee = () => /*#__PURE__*/React.createElement("section", {
   }
 }, [...CLIENT_LOGOS, ...CLIENT_LOGOS].map((c, i) => /*#__PURE__*/React.createElement("div", {
   key: i,
-  className: "client-marquee-item",
   style: {
     padding: "0 56px",
     display: "inline-flex",
     alignItems: "center",
-    height: 96,
-    overflow: "visible"
+    height: 88
   }
 }, /*#__PURE__*/React.createElement("img", {
   src: c.url,
   alt: c.name,
-  className: "client-marquee-logo",
   style: {
-    maxHeight: c.name === "White Claw" ? 72 : 56,
-    maxWidth: c.name === "White Claw" ? 220 : 200,
+    maxHeight: c.maxH || 64,
+    maxWidth: c.maxW || 200,
     width: "auto",
-    height: "auto",
     objectFit: "contain",
-    objectPosition: "center",
-    filter: "grayscale(1) brightness(0.25) contrast(1.2)",
-    opacity: 0.85
+    filter: c.ink ? "grayscale(1)" : "grayscale(1) brightness(0.25) contrast(1.2)",
+    opacity: c.ink ? 0.62 : 0.85
   },
   loading: "lazy",
   decoding: "async"
@@ -148,7 +233,7 @@ const TwoEngines = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2-inv)",
     maxWidth: 380
   }
-}, "Most clients use both \u2014 a fractional team running strategy, plus project-based staffing when a national activation hits. Either way, Spark comes free.")), /*#__PURE__*/React.createElement("div", {
+}, "Most clients use both, a fractional team running strategy, plus project-based staffing when a national activation hits. Either way, Spark is included at no additional cost.")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
@@ -212,14 +297,14 @@ const TwoEngines = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2)",
     maxWidth: 440
   }
-}, "Dedicated fractional team plugs into your brand to run retail strategy, field execution, and activations \u2014 without the full-time overhead."), /*#__PURE__*/React.createElement("div", {
+}, "Dedicated fractional team plugs into your brand to run retail strategy, field execution, and activations, without the full-time overhead."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 28,
     display: "flex",
     flexDirection: "column",
     gap: 8
   }
-}, ["Advisory — strategic counsel", "Embedded — fractional VP", "Leadership — turnkey engagement"].map(t => /*#__PURE__*/React.createElement("div", {
+}, ["Advisory, strategic counsel", "Embedded, fractional VP", "Leadership, turnkey engagement"].map(t => /*#__PURE__*/React.createElement("div", {
   key: t,
   style: {
     display: "flex",
@@ -313,7 +398,7 @@ const TwoEngines = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2)",
     maxWidth: 440
   }
-}, "257,000+ vetted brand ambassadors in all 50 states. Full experiential production \u2014 sampling, mobile tours, ad trucks, fabricated builds, festival activations \u2014 scaled to any footprint."), /*#__PURE__*/React.createElement("div", {
+}, "257,000+ vetted brand ambassadors in all 50 states. Full experiential production, sampling, mobile tours, ad trucks, fabricated builds, festival activations, scaled to any footprint."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 28,
     display: "grid",
@@ -426,7 +511,7 @@ const TwoEngines = () => /*#__PURE__*/React.createElement("section", {
     fontStyle: "italic",
     color: "var(--spark-500)"
   }
-}, "Spark"), " \u2014 live dashboards, GPS-verified check-ins, instant recaps. Zero extra cost."))), /*#__PURE__*/React.createElement("div", {
+}, "Spark"), ", live dashboards, GPS-verified check-ins, instant recaps. Zero extra cost."))), /*#__PURE__*/React.createElement("div", {
   style: {
     fontFamily: "var(--font-mono)",
     fontSize: 12,

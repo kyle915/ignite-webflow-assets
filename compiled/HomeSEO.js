@@ -1,6 +1,6 @@
 /* global React */
 /* ============================================================
-   HOME SEO BAND — capabilities, industries, markets, FAQ,
+   HOME SEO BAND, capabilities, industries, markets, FAQ,
    client wall, long-form footer copy. Pure SEO + scannability.
    ============================================================ */
 
@@ -11,7 +11,7 @@ const SEO_CAPS = [{
 }, {
   n: "02",
   t: "Mobile Marketing Tours",
-  d: "Ad trucks, branded bikes, sprinter vans, transit takeovers."
+  d: "Coast-to-coast routes with LED trucks, wrapped vans and bike crews, planned stop by stop."
 }, {
   n: "03",
   t: "Fabrication & Builds",
@@ -31,15 +31,15 @@ const SEO_CAPS = [{
 }, {
   n: "07",
   t: "Promotional Products",
-  d: "Branded merch, swag kits, custom apparel, premium fulfillment."
+  d: "Kitted premiums and apparel shipped to every market on time, tracked to the shift."
 }, {
   n: "+",
   t: "Creative & Strategy",
-  d: "Concepting, naming, art direction — wrapped around every engagement."
+  d: "Concepting, naming, art direction, wrapped around every engagement."
 }, {
   n: "+",
   t: "Logistics & Production",
-  d: "Permits, transport, storage, install/strike — handled end-to-end."
+  d: "Permits, transport, storage, install/strike, handled end-to-end."
 }];
 const SEO_INDUSTRIES = ["Beverage & Alcohol", "CPG Food & Snack", "Telecom & Wireless", "Automotive", "Tech & SaaS", "Lifestyle & Fashion", "QSR & Restaurant", "Health & Wellness", "Gaming & Entertainment", "Financial Services", "Cannabis", "Pet & Family"];
 const SEO_MARKETS = ["Los Angeles", "New York", "Chicago", "Austin", "Miami", "Phoenix", "Atlanta", "Dallas", "Houston", "Seattle", "Denver", "Boston", "San Francisco", "Portland", "Nashville", "Philadelphia", "Detroit", "Minneapolis", "San Diego", "Tampa", "Las Vegas", "Charlotte", "Orlando", "Brooklyn", "Washington DC", "Indianapolis", "Columbus", "Pittsburgh", "Kansas City", "Sacramento"];
@@ -69,7 +69,7 @@ const SEO_CLIENT_LOGOS = [{
   url: window.__resources?.r_688c378239e6dc2ebedde728_marc_anthony_lo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c378239e6dc2ebedde728_marc-anthony-logo.webp"
 }];
 const SEO_CLIENTS = ["LIQUID DEATH", "WHITE CLAW", "TOTAL WIRELESS", "MAS+", "DUDE WIPES", "MARK ANTHONY", "SMALLS SLIDERS", "KRISPY KRUNCHY"];
-const SEO_FAQS = [["How fast can you staff an activation?", "Rush queue runs at 48 hours from brief to boots on the ground. Standard staffing books 5–10 business days out. We staff in all 50 states."], ["Do you handle permits, COIs, and on-site logistics?", "Yes. Permits, certificates of insurance, transport, storage, install, and strike are all in scope. We're a turnkey field-to-finish shop."], ["What's the minimum engagement?", "Single-event activations through national multi-market tours. No long-term contract required. We scope to fit your campaign — not the other way around."], ["Can you run alcohol sampling programs?", "Yes. We staff TIPS / TABC / RBS certified ambassadors in every market that requires them, and we manage the compliance paperwork."], ["Which markets do you cover?", "All 50 states and 200+ named metros. The core network runs 30 primary markets daily, with surge capacity in another 170+."], ["What does pricing look like?", "Per-rep, per-shift staffing with a market modifier. Build, fabrication, and tour programs quote against your brief. Volume pricing at 100+ shift-days."], ["Can you produce custom builds and scenic?", "Yes — in-house fab shop and partner network for everything from booth scenic to touring rigs, branded vehicles, and photo-op installations."], ["Do you measure activation performance?", "Yes. Every program ships with real-time reporting via Spark — our in-house dashboard for sampling, engagement, and lead capture metrics."]];
+const SEO_FAQS = [["How fast can you staff an activation?", "Rush queue runs at 48 hours from brief to boots on the ground. Standard staffing books 5 to 10 business days out. We staff in all 50 states."], ["Do you handle permits, COIs, and on-site logistics?", "Yes. Permits, certificates of insurance, transport, storage, install, and strike are all in scope. We're a turnkey field-to-finish shop."], ["What's the minimum engagement?", "Single-event activations through national multi-market tours. No long-term contract required. We scope to fit your campaign, not the other way around."], ["Can you run alcohol sampling programs?", "Yes. We staff TIPS / TABC / RBS certified ambassadors in every market that requires them, and we manage the compliance paperwork."], ["Which markets do you cover?", "All 50 states and 200+ named metros. The core network runs 30 primary markets daily, with surge capacity in another 170+."], ["What does pricing look like?", "Per-rep, per-shift staffing with a market modifier. Build, fabrication, and tour programs quote against your brief. Volume pricing at 100+ shift-days."], ["Can you produce custom builds and scenic?", "Yes, in-house fab shop and partner network for everything from booth scenic to touring rigs, branded vehicles, and photo-op installations."], ["Do you measure activation performance?", "Yes. Every program ships with real-time reporting via Spark, our in-house dashboard for sampling, engagement, and lead capture metrics."]];
 
 /* ---------- 1. CAPABILITIES MATRIX ---------- */
 const SeoCapabilities = () => /*#__PURE__*/React.createElement("section", {
@@ -103,7 +103,7 @@ const SeoCapabilities = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2-inv)",
     maxWidth: 720
   }
-}, "From experiential marketing to event staffing to custom fabrication \u2014 we run the whole field marketing stack under one roof. No agency stack to coordinate. No handoffs to lose."), /*#__PURE__*/React.createElement("div", {
+}, "From experiential marketing to event staffing to custom fabrication, we run the whole field marketing stack under one roof. No agency stack to coordinate. No handoffs to lose."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 56,
     display: "grid",
@@ -335,6 +335,71 @@ const SeoMarkets = () => /*#__PURE__*/React.createElement("section", {
   }
 }, "SEE ALL MARKETS \u2192"), " · ", "+ 170 ADDITIONAL METROS \xB7 ALASKA \xB7 HAWAII \xB7 PUERTO RICO")));
 
+/* ---------- 3b. PLANNING TOOLS: links to the new child pages ---------- */
+const SEO_TOOLS = [["COST GUIDE", "What trade show staffing costs", "https://www.igniteproductions.co/trade-show-staffing/cost"], ["CALCULATOR", "How many booth staff you need", "https://www.igniteproductions.co/trade-show-staffing/calculator"], ["CALENDAR", "Trade show calendar", "https://www.igniteproductions.co/trade-show-calendar"], ["CHECKLIST", "Booth staffing checklist", "https://www.igniteproductions.co/booth-staffing-checklist"], ["SPARK", "See a sample recap", "https://www.igniteproductions.co/spark/sample-recap"], ["PROCUREMENT", "Veteran-owned vendor", "https://www.igniteproductions.co/veteran-owned"], ["LAS VEGAS", "Trade show staffing, Las Vegas", "https://www.igniteproductions.co/trade-show-staffing/las-vegas"], ["ORLANDO", "Trade show staffing, Orlando", "https://www.igniteproductions.co/trade-show-staffing/orlando"], ["CHICAGO", "Trade show staffing, Chicago", "https://www.igniteproductions.co/trade-show-staffing/chicago"], ["INDUSTRY", "Beverage alcohol", "https://www.igniteproductions.co/industries/beverage-alcohol"], ["INDUSTRY", "Food + beverage CPG", "https://www.igniteproductions.co/industries/food-beverage-cpg"], ["INDUSTRY", "Consumer tech + AI", "https://www.igniteproductions.co/industries/consumer-tech-ai"], ["INDUSTRY", "Telecom + retail", "https://www.igniteproductions.co/industries/telecom-retail"]];
+const SeoTools = () => /*#__PURE__*/React.createElement("section", {
+  style: {
+    padding: "80px 0",
+    background: "var(--ink-000)",
+    borderTop: "1px solid var(--ink-400)"
+  }
+}, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement(OpsLine, {
+  glow: true
+}, ">> ", "PLAN THE NEXT ONE"), /*#__PURE__*/React.createElement("h2", {
+  style: {
+    marginTop: 14,
+    fontFamily: "var(--font-display)",
+    fontWeight: 700,
+    fontSize: "clamp(30px, 3.4vw, 46px)",
+    letterSpacing: "-0.03em",
+    lineHeight: 1.02,
+    color: "var(--fg-1)",
+    maxWidth: 760
+  }
+}, "Tools, guides and pages buyers use before they call."), /*#__PURE__*/React.createElement("div", {
+  style: {
+    marginTop: 32,
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+    gap: 10
+  }
+}, SEO_TOOLS.map(([tag, label, href]) => /*#__PURE__*/React.createElement("a", {
+  key: href,
+  href: href,
+  style: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 6,
+    padding: "18px 20px",
+    borderRadius: 12,
+    border: "1px solid var(--ink-400)",
+    background: "var(--ink-100)",
+    color: "var(--fg-1)",
+    textDecoration: "none",
+    transition: "border-color 160ms"
+  },
+  onMouseEnter: e => e.currentTarget.style.borderColor = "var(--spark-500)",
+  onMouseLeave: e => e.currentTarget.style.borderColor = "var(--ink-400)"
+}, /*#__PURE__*/React.createElement("span", {
+  style: {
+    fontFamily: "var(--font-mono)",
+    fontSize: 10.5,
+    letterSpacing: "0.2em",
+    color: "var(--ignite-500)"
+  }
+}, tag), /*#__PURE__*/React.createElement("span", {
+  style: {
+    fontFamily: "var(--font-display)",
+    fontWeight: 600,
+    fontSize: 17,
+    letterSpacing: "-0.01em"
+  }
+}, label, " ", /*#__PURE__*/React.createElement("span", {
+  style: {
+    color: "var(--spark-500)"
+  }
+}, "\u2192")))))));
+
 /* ---------- 4. CLIENT WALL ---------- */
 const SeoClients = () => /*#__PURE__*/React.createElement("section", {
   style: {
@@ -515,7 +580,7 @@ const SeoLongform = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "var(--fg-2)"
   }
-}, "257,000+ vetted brand ambassadors"), " ", "covers 30+ primary metros \u2014 Los Angeles, New York, Chicago, Austin, Miami, Atlanta, Dallas, Houston, Seattle, Denver, Boston, San Francisco, Phoenix, Nashville, Philadelphia, San Diego, Tampa, Las Vegas, Charlotte, Orlando, Brooklyn, Washington DC, Detroit, Minneapolis, Portland, Indianapolis, Columbus, Pittsburgh, Kansas City, and Sacramento \u2014 plus surge capacity in another 170+ secondary markets including Alaska, Hawaii, and Puerto Rico."), /*#__PURE__*/React.createElement("p", {
+}, "257,000+ vetted brand ambassadors"), " ", "covers 30+ primary metros, Los Angeles, New York, Chicago, Austin, Miami, Atlanta, Dallas, Houston, Seattle, Denver, Boston, San Francisco, Phoenix, Nashville, Philadelphia, San Diego, Tampa, Las Vegas, Charlotte, Orlando, Brooklyn, Washington DC, Detroit, Minneapolis, Portland, Indianapolis, Columbus, Pittsburgh, Kansas City, and Sacramento, plus surge capacity in another 170+ secondary markets including Alaska, Hawaii, and Puerto Rico."), /*#__PURE__*/React.createElement("p", {
   style: {
     marginBottom: 16
   }
@@ -523,7 +588,7 @@ const SeoLongform = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "var(--fg-2)"
   }
-}, "5,000+ activations a year"), " ", "for the brands that define their categories: Liquid Death, White Claw, Total Wireless, Mas+, Dude Wipes, Mark Anthony, Smalls Sliders, and Krispy Krunchy. Programs include festival activations, college campus tours, in-store demos, alcohol sampling, ad truck tours, branded bike fleets, sprinter van tours, pop-up retail, immersive installations, photo-op builds, transit takeovers, guerilla marketing, street teams, trade show booth staffing, lead capture programs, and full premium fulfillment."), /*#__PURE__*/React.createElement("p", {
+}, "5,000+ events executed"), " ", "for the brands that define their categories: Liquid Death, White Claw, Total Wireless, Mas+, Dude Wipes, Mark Anthony, Smalls Sliders, and Krispy Krunchy. Programs include festival activations, college campus tours, in-store demos, alcohol sampling, ad truck tours, branded bike fleets, sprinter van tours, pop-up retail, immersive installations, photo-op builds, transit takeovers, guerrilla marketing, street teams, trade show booth staffing, lead capture programs, and full premium fulfillment."), /*#__PURE__*/React.createElement("p", {
   style: {
     marginBottom: 16
   }
@@ -531,7 +596,7 @@ const SeoLongform = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "var(--fg-2)"
   }
-}, "fractional retail leadership"), " ", "\u2014 advisory, embedded, and full-leadership engagements for emerging CPG and beverage brands that need senior sales and marketing horsepower without the full-time hire. Every program ships with measurement via", " ", /*#__PURE__*/React.createElement("strong", {
+}, "fractional retail leadership"), " ", ", advisory, embedded, and full-leadership engagements for emerging CPG and beverage brands that need senior sales and marketing horsepower without the full-time hire. Every program ships with measurement via", " ", /*#__PURE__*/React.createElement("strong", {
   style: {
     color: "var(--fg-2)"
   }
@@ -539,8 +604,8 @@ const SeoLongform = () => /*#__PURE__*/React.createElement("section", {
   style: {
     marginBottom: 0
   }
-}, "As a certified Veteran-Owned Small Business (VOSB), Ignite Productions has been the field marketing partner for emerging and Fortune 500 brands since 2018. Whether you need a single-night activation in Austin, a 50-state tour, a custom-fabricated photo op, or a fractional VP of Sales \u2014 we run the whole stack under one roof."))));
-const HomeSEOBand = () => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SeoCapabilities, null), /*#__PURE__*/React.createElement(SeoIndustries, null), /*#__PURE__*/React.createElement(SeoMarkets, null), /*#__PURE__*/React.createElement(SeoFaq, null));
+}, "As a certified Veteran-Owned Small Business (VOSB), Ignite Productions has been the field marketing partner for emerging and Fortune 500 brands since 2018. Whether you need a single-night activation in Austin, a 50-state tour, a custom-fabricated photo op, or a fractional VP of Sales, we run the whole stack under one roof."))));
+const HomeSEOBand = () => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SeoCapabilities, null), /*#__PURE__*/React.createElement(SeoTools, null), /*#__PURE__*/React.createElement(SeoIndustries, null), /*#__PURE__*/React.createElement(SeoMarkets, null), /*#__PURE__*/React.createElement(SeoFaq, null));
 Object.assign(window, {
   HomeSEOBand,
   SeoCapabilities,

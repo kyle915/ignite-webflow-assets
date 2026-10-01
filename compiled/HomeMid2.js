@@ -12,6 +12,15 @@ const HOME_SERVICES = [{
   imgPos: "center 40%",
   accent: "#D7453E"
 }, {
+  n: "EP",
+  slug: "event-production",
+  flag: true,
+  title: "Event Production",
+  sub: "Brief to strike: show flow, vendors, AV, permits, crew",
+  bullets: ["Run-of-Show", "Show Calling", "AV + Staging", "Permits + Insurance", "Load-in + Strike"],
+  img: window.__resources?.r_assets_openai_devday_keynote_jpg || "https://kyle915.github.io/ignite-webflow-assets/assets/openai-devday-keynote.jpg",
+  accent: "#D7453E"
+}, {
   n: "02",
   slug: "mobile-tours",
   flag: true,
@@ -291,7 +300,7 @@ const ServicesGrid = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2)",
     maxWidth: 640
   }
-}, "From strategy to fabrication to 257,000 ambassadors on the ground \u2014 we operate every lane of activation under one roof.")), /*#__PURE__*/React.createElement("a", {
+}, "From strategy to fabrication to 257,000 ambassadors on the ground, we operate every lane of activation under one roof.")), /*#__PURE__*/React.createElement("a", {
   href: "/ignite-services",
   className: "cap-circle",
   "aria-label": "All capabilities",

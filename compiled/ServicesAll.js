@@ -70,6 +70,18 @@ const SVC_LANES = [{
   imgPos: "center 40%",
   meta: ["48 markets / yr", "350+ activations", "12 yrs running"]
 }, {
+  slug: "event-production",
+  n: "EP",
+  flag: true,
+  accent: "#D7453E",
+  title: "Event Production",
+  sub: "One producer from brief to strike.",
+  long: "Run-of-show, vendor and AV coordination, permits and insurance, staging, load-in, on-site show calling, crew and a recap within hours. Launches, pop-ups, festival footprints and developer events.",
+  bullets: ["Run-of-Show", "Show Calling", "AV + Staging", "Permits + Insurance", "Load-in + Strike", "Spark Recap"],
+  img: window.__resources?.r_assets_openai_devday_keynote_jpg || "https://kyle915.github.io/ignite-webflow-assets/assets/openai-devday-keynote.jpg",
+  imgPos: "center 40%",
+  meta: ["OpenAI Dev Day", "12-city Claude tour", "12 Breakaway festivals"]
+}, {
   slug: "mobile-tours",
   n: "02",
   flag: true,
@@ -155,7 +167,7 @@ const SVC_LANES = [{
   accent: "#D6F35F",
   title: "Spark Platform",
   sub: "The field-marketing dashboard — live GPS, photos, samples, auto recaps.",
-  long: "Spark is the operational layer underneath every activation we run. GPS check-ins, sample counts, lead capture, photo uploads, and live dashboards. Recaps generate themselves — no PDFs, no 9-day waits. Included free with every engagement.",
+  long: "Spark is the operational layer underneath every activation we run. GPS check-ins, sample counts, lead capture, photo uploads, and live dashboards. Recaps generate themselves — no PDFs, no 9-day waits. Included at no additional cost with every engagement.",
   bullets: ["GPS Check-ins", "Sample Counts", "Lead Capture", "Photo Uploads", "Live Dashboards", "Auto Recaps", "Per-SKU Breakdown", "Same-Day Data"],
   img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80",
   imgPos: "center",
@@ -499,7 +511,7 @@ const SvcHero = () => {
       boxShadow: "0 8px 28px rgba(215, 69, 62,0.32)"
     }
   }, "Browse all nine lanes ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -617,7 +629,7 @@ const SVC_GROUPS = [{
   }, {
     slug: "street-teams",
     label: "Street Teams",
-    sub: "Cans in hands · festival corridors · guerilla"
+    sub: "Cans in hands · festival corridors · guerrilla"
   }]
 }, {
   name: "Retail Programs",
@@ -670,6 +682,10 @@ const SVC_GROUPS = [{
     slug: "experiential-marketing",
     label: "Experiential Marketing",
     sub: "Pop-ups · immersive · brand worlds"
+  }, {
+    slug: "event-production",
+    label: "Event Production",
+    sub: "Show flow · vendors · AV · crew"
   }, {
     slug: "mobile-tours",
     label: "Mobile Marketing Tours",
@@ -1158,7 +1174,7 @@ const SvcLane = ({
       textDecoration: "none"
     }
   }, "Explore ", s.title.split(" ")[0].toLowerCase(), " ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: 11,
@@ -1447,7 +1463,7 @@ const SvcFinalCTA = () => /*#__PURE__*/React.createElement("section", {
 }, "deserves.")), /*#__PURE__*/React.createElement("div", {
   className: "svc-final-ctas"
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     display: "inline-flex",
     alignItems: "center",
@@ -1468,7 +1484,7 @@ const SvcFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     fontFamily: "var(--font-mono)"
   }
 }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "/contact",
+  href: "https://www.igniteproductions.co/contact?urgent=1",
   style: {
     display: "inline-flex",
     alignItems: "center",

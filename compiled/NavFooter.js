@@ -27,11 +27,6 @@ const SITE_SERVICE_GROUPS = [{
     slug: "brand-ambassador-management",
     label: "BA Management",
     sub: "Managed bench, not a marketplace"
-  }, {
-    slug: "best-experiential-marketing-agencies",
-    label: "Best Agencies (2026 Guide)",
-    sub: "How to choose an experiential agency",
-    href: "/best-experiential-marketing-agencies"
   }]
 }, {
   name: "Sampling",
@@ -47,7 +42,7 @@ const SITE_SERVICE_GROUPS = [{
   }, {
     slug: "street-teams",
     label: "Street Teams",
-    sub: "Cans in hands, festival corridors, guerilla"
+    sub: "Cans in hands, festival corridors, guerrilla"
   }]
 }, {
   name: "Retail Programs",
@@ -101,6 +96,10 @@ const SITE_SERVICE_GROUPS = [{
     label: "Experiential Marketing",
     sub: "Pop-ups, immersive installations, brand worlds"
   }, {
+    slug: "event-production",
+    label: "Event Production",
+    sub: "Brief to strike: show flow, vendors, AV, crew"
+  }, {
     slug: "mobile-tours",
     label: "Mobile Marketing Tours",
     sub: "Ad trucks, branded bikes, sprinter vans"
@@ -108,6 +107,14 @@ const SITE_SERVICE_GROUPS = [{
     slug: "fabrication-builds",
     label: "Fabrication & Builds",
     sub: "Custom builds, scenic fab, photo ops"
+  }, {
+    slug: "field-marketing",
+    label: "Field Marketing",
+    sub: "Always-on field force, route + cadence"
+  }, {
+    slug: "sponsorship-partnerships",
+    label: "Sponsorship & Partnerships",
+    sub: "Source, negotiate, activate, measure"
   }]
 }, {
   name: "Hospitality & Events",
@@ -185,13 +192,10 @@ const SITE_SERVICE_GROUPS = [{
     label: "Brand & Activation Strategy",
     sub: "Positioning, channel + market planning, calendars"
   }, {
-    slug: "field-marketing",
-    label: "Field Marketing",
-    sub: "Always-on field force, route + cadence"
-  }, {
-    slug: "sponsorship-partnerships",
-    label: "Sponsorship & Partnerships",
-    sub: "Source, negotiate, activate, measure"
+    slug: "agency-of-record",
+    href: "/agency-of-record",
+    label: "Agency of Record",
+    sub: "One team for field + experiential, all year"
   }, {
     slug: "sweepstakes-activations",
     label: "Sweepstakes & Contests",
@@ -662,8 +666,8 @@ const SiteNav = ({
   }, /*#__PURE__*/React.createElement(AccentBtn, {
     size: "sm",
     accent: "spark",
-    onClick: () => location.href = "https://www.igniteproductions.co/contact"
-  }, "Get In Touch")), /*#__PURE__*/React.createElement("button", {
+    onClick: () => location.href = "https://www.igniteproductions.co/contact?urgent=1"
+  }, "Request staff now")), /*#__PURE__*/React.createElement("button", {
     className: "nav-burger",
     "aria-label": mobileOpen ? "Close menu" : "Open menu",
     "aria-expanded": mobileOpen,
@@ -1220,7 +1224,7 @@ const SiteNav = ({
       textDecoration: "none"
     }
   }, l))), /*#__PURE__*/React.createElement("a", {
-    href: "https://www.igniteproductions.co/contact",
+    href: "https://www.igniteproductions.co/contact?urgent=1",
     onClick: () => setMobileOpen(false),
     style: {
       display: "flex",
@@ -1237,7 +1241,7 @@ const SiteNav = ({
       fontSize: 16,
       textDecoration: "none"
     }
-  }, "Get In Touch ", /*#__PURE__*/React.createElement("span", {
+  }, "Request staff now ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-mono)"
     }
@@ -1322,7 +1326,7 @@ const SiteFooter = ({
     textTransform: "uppercase",
     border: "1px solid rgba(93, 190, 90,0.3)"
   }
-}, "\u25CF Online Now"))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Request a Quote", "https://www.igniteproductions.co/contact"], ["Markets", "/markets"], ["Industries", "/industries"], ["Weddings", "/weddings"], ["Group Travel", "/travel"], ["Compare", "/compare"], ["Blog", "/blog"], ["Glossary", "/glossary"], ["Spark Platform", "/spark"], ["Fractional", "/fractional"]]], ["TALENT", [["Apply", "https://www.igniteproductions.co/contact"], ["LinkedIn", "#"], ["Press", "#"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
+}, "\u25CF Online Now"))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Request a Quote", "https://www.igniteproductions.co/contact"], ["Agency of Record", "/agency-of-record"], ["Markets", "/markets"], ["Industries", "/industries"], ["Weddings", "/weddings"], ["Group Travel", "/travel"], ["Compare", "/compare"], ["Blog", "/blog"], ["Glossary", "/glossary"], ["Spark Platform", "/spark"], ["Fractional", "/fractional"]]], ["TALENT", [["Apply", "https://www.igniteproductions.co/contact"], ["LinkedIn", "https://www.linkedin.com/company/ignite-productionsllc"], ["Press", "#"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
   key: h
 }, /*#__PURE__*/React.createElement(OpsLine, null, ">> " + h), /*#__PURE__*/React.createElement("ul", {
   style: {
@@ -1336,7 +1340,7 @@ const SiteFooter = ({
 }, items.map(([l, href]) => /*#__PURE__*/React.createElement("li", {
   key: l
 }, /*#__PURE__*/React.createElement("a", {
-  href: rel + href,
+  href: /^https?:/.test(href) ? href : rel + href,
   style: {
     fontSize: 14,
     color: "var(--fg-2)"

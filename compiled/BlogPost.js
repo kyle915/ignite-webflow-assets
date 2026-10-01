@@ -20,7 +20,7 @@ function BlogPost() {
     if (md && post.dek) md.setAttribute("content", post.dek);
 
     /* Canonical + hreflang + Open Graph */
-    const postUrl = "https://igniteproductions.co/blog/" + post.slug;
+    const postUrl = "https://www.igniteproductions.co/post/" + post.slug;
     const ensure = (sel, factory) => {
       let el = document.querySelector(sel);
       if (!el) {
@@ -84,17 +84,26 @@ function BlogPost() {
       "image": post.heroImage ? [post.heroImage] : undefined,
       "datePublished": post.date,
       "dateModified": post.date,
-      "author": {
+      "author": post.author && post.author !== "Ignite Team" ? {
+        "@type": "Person",
+        "name": post.author,
+        "jobTitle": post.role || undefined,
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Ignite Productions"
+        },
+        "url": "https://www.igniteproductions.co/about"
+      } : {
         "@type": "Organization",
         "name": "Ignite Productions",
-        "url": "https://igniteproductions.co/"
+        "url": "https://www.igniteproductions.co/"
       },
       "publisher": {
         "@type": "Organization",
         "name": "Ignite Productions",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://igniteproductions.co/assets/ignite-full-white.png"
+          "url": "https://www.igniteproductions.co/assets/ignite-full-white.png"
         }
       },
       "mainEntityOfPage": {
@@ -111,12 +120,12 @@ function BlogPost() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://igniteproductions.co/"
+        "item": "https://www.igniteproductions.co/"
       }, {
         "@type": "ListItem",
         "position": 2,
         "name": "Blog",
-        "item": "https://igniteproductions.co/blog"
+        "item": "https://www.igniteproductions.co/blog"
       }, {
         "@type": "ListItem",
         "position": 3,
@@ -124,6 +133,18 @@ function BlogPost() {
         "item": postUrl
       }]
     }, "crumbs");
+    if (post.faq && post.faq.length) injectLd({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": post.faq.map(([q, a]) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": a
+        }
+      }))
+    }, "faq");
   }, [post]);
   if (!post) {
     return /*#__PURE__*/React.createElement("div", {
@@ -178,7 +199,8 @@ function BlogPost() {
     }
   }, /*#__PURE__*/React.createElement(SiteNav, {
     active: "BLOG"
-  }), /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("header", {
+  }), /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("div", {
+    className: "bp-head",
     style: {
       padding: '120px 0 60px',
       borderBottom: '1px solid var(--ink-400)'
@@ -201,6 +223,7 @@ function BlogPost() {
       gap: 8,
       alignItems: 'center',
       marginBottom: 40,
+      whiteSpace: 'nowrap',
       transition: 'color 160ms'
     },
     onMouseEnter: e => e.currentTarget.style.color = 'var(--ignite-500)',
@@ -224,12 +247,14 @@ function BlogPost() {
       color: post.accent === '#1A1A1A' ? '#fff' : '#000'
     }
   }, post.category), /*#__PURE__*/React.createElement("span", {
-    className: "eyebrow"
-  }, fmtDate2(post.date).toUpperCase()), /*#__PURE__*/React.createElement("span", {
-    className: "eyebrow"
-  }, "\xB7 ", post.readTime, " MIN READ")), /*#__PURE__*/React.createElement("h1", {
+    className: "eyebrow",
     style: {
-      fontSize: 'clamp(40px, 5.5vw, 72px)',
+      whiteSpace: 'nowrap'
+    }
+  }, fmtDate2(post.date).toUpperCase(), " \xB7 ", post.readTime, " MIN READ")), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontSize: 'clamp(34px, 5.2vw, 68px)',
+      textWrap: 'balance',
       lineHeight: 1.02,
       letterSpacing: '-0.025em',
       fontWeight: 600,
@@ -323,7 +348,138 @@ function BlogPost() {
       marginTop: 6,
       letterSpacing: '-0.04em'
     }
-  }, para[0]), para.slice(1)) : para)), /*#__PURE__*/React.createElement("div", {
+  }, para[0]), para.slice(1)) : para)), (() => {
+    const DEF = {
+      "Staffing": [["Event staffing", "/services/event-staffing"], ["Brand ambassador agency", "/brand-ambassador-agency"], ["Our work", "/work"]],
+      "Strategy": [["Experiential marketing", "/services/experiential-marketing"], ["Event production", "/services/event-production"], ["Our work", "/work"]],
+      "Logistics": [["Mobile marketing tours", "/services/mobile-tours"], ["Trade show staffing", "/services/trade-shows"], ["Markets we cover", "/markets"]],
+      "Measurement": [["Spark field reporting", "/spark"], ["Event recap and reporting", "/services/event-reporting-recaps"], ["Our work", "/work"]],
+      "Industry": [["Industries", "/industries"], ["Product sampling", "/services/product-sampling"], ["Our work", "/work"]]
+    };
+    const links = post.links || DEF[post.category] || DEF.Strategy;
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 16,
+        padding: '28px 28px 24px',
+        borderRadius: 16,
+        background: 'var(--ink-100)',
+        border: '1px solid var(--ink-400)'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow eyebrow--ignite",
+      style: {
+        marginBottom: 14
+      }
+    }, '>> KEEP GOING'), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'grid',
+        gap: 10
+      }
+    }, links.map(([l, h]) => /*#__PURE__*/React.createElement("a", {
+      key: h,
+      href: h,
+      style: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        gap: 16,
+        fontFamily: 'var(--font-display)',
+        fontWeight: 600,
+        fontSize: 18,
+        color: 'var(--fg-1)',
+        textDecoration: 'none',
+        paddingBottom: 10,
+        borderBottom: '1px solid var(--ink-400)'
+      }
+    }, /*#__PURE__*/React.createElement("span", null, l), /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: 'var(--ignite-500)'
+      }
+    }, "\u2192")))));
+  })(), post.faq && post.faq.length ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 48
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "eyebrow eyebrow--ignite",
+    style: {
+      marginBottom: 12
+    }
+  }, '>> QUESTIONS'), post.faq.map(([q, a], i) => /*#__PURE__*/React.createElement("details", {
+    key: q,
+    open: i === 0,
+    style: {
+      borderTop: '1px solid var(--ink-400)',
+      padding: '16px 0'
+    }
+  }, /*#__PURE__*/React.createElement("summary", {
+    style: {
+      cursor: 'pointer',
+      fontFamily: 'var(--font-display)',
+      fontWeight: 600,
+      fontSize: 19,
+      color: 'var(--fg-1)'
+    }
+  }, q), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 10,
+      fontSize: 17,
+      lineHeight: 1.6,
+      color: 'var(--fg-2)'
+    }
+  }, a)))) : null, (() => {
+    const A = (window.BLOG_AUTHORS || {})[post.author];
+    if (!A) return null;
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 48,
+        display: 'flex',
+        gap: 18,
+        alignItems: 'flex-start',
+        padding: '24px 0',
+        borderTop: '1px solid var(--ink-400)'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      "aria-hidden": true,
+      style: {
+        flexShrink: 0,
+        width: 52,
+        height: 52,
+        borderRadius: 52,
+        background: 'var(--ignite-500)',
+        display: 'grid',
+        placeItems: 'center',
+        fontFamily: 'var(--font-display)',
+        fontWeight: 800,
+        fontSize: 20,
+        color: '#0A0B0D'
+      }
+    }, post.author.split(' ').map(w => w[0]).join('').slice(0, 2)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: 'var(--font-display)',
+        fontWeight: 700,
+        fontSize: 18,
+        color: 'var(--fg-1)'
+      }
+    }, post.author), post.role && /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginTop: 4
+      }
+    }, post.role), /*#__PURE__*/React.createElement("p", {
+      style: {
+        marginTop: 10,
+        fontSize: 15.5,
+        lineHeight: 1.6,
+        color: 'var(--fg-2)'
+      }
+    }, A.bio, " ", /*#__PURE__*/React.createElement("a", {
+      href: A.url,
+      style: {
+        color: 'var(--ignite-500)'
+      }
+    }, "About Ignite \u2192"))));
+  })(), /*#__PURE__*/React.createElement("div", {
     style: {
       paddingTop: 48,
       marginTop: 48,

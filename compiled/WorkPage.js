@@ -54,12 +54,21 @@ const WORK_BRAND_LOGOS = {
   "liquid-death": "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882f25fd226513954e724e2_liquid-death-logo-transparent.webp",
   "white-claw": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b129ea08467c1137c5d_white-claw-logo.webp",
   "mas": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1c02300cc1480ff080dc_mas-messi-logo.webp",
-  "krispy-krunchy": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b20a33960875f5d7bc0_krispy-krunchy-logo.webp",
+  "krispy-krunchy-chicken": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b20a33960875f5d7bc0_krispy-krunchy-logo.webp",
   "total-wireless": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1bb2f2c798b4cb850d2e_total-wireless-logo.webp",
+  "openai-devday": "https://kyle915.github.io/ignite-webflow-assets/assets/logo-openai-mark.png",
+  "claude-code-workshops": "https://kyle915.github.io/ignite-webflow-assets/assets/logo-claude.png",
+  "breakaway": "https://kyle915.github.io/ignite-webflow-assets/assets/logo-breakaway.png",
+  "begoat": "https://kyle915.github.io/ignite-webflow-assets/assets/logo-begoat.png",
+  "brew-dr": "https://kyle915.github.io/ignite-webflow-assets/assets/logo-brew-dr.png",
+  "drekker": "https://kyle915.github.io/ignite-webflow-assets/assets/logo-drekker-dark-bg.png",
+  "luckin": "https://kyle915.github.io/ignite-webflow-assets/assets/logo-luckin-coffee.png",
+  "torch-thc": "https://kyle915.github.io/ignite-webflow-assets/assets/logo-torch-thc.png",
+  "stone-house-bread": "https://kyle915.github.io/ignite-webflow-assets/assets/logo-stone-house-bread-dark-bg.png",
   "dude-wipes": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3839708ed185c2de5ba9_dude-wipes.webp",
-  "glendalough": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3841bacf82489917b2b9_glendonough-distillery.webp",
+  "glendalough-distillery": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3841bacf82489917b2b9_glendonough-distillery.webp",
   "smalls-sliders": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c377975c7a23684962d73_smalls-sliders.webp",
-  "marc-anthony": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c378239e6dc2ebedde728_marc-anthony-logo.webp"
+  "marc-anthony-brands": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c378239e6dc2ebedde728_marc-anthony-logo.webp"
 };
 
 /* Pull hero imagery + canonical headlines from CASE_STUDIES for accurate visuals */
@@ -69,7 +78,61 @@ const WORK_CASES = [{
   featured: true,
   accent: "#FF2D2D",
   surface: "#0A0A0A",
-  stats: [["500+", "Activations / yr"], ["All US", "Markets"], ["7yr", "Partner"]]
+  stats: [["1,000+", "Retail demos / yr"], ["Nationwide", "Coverage"], ["2018", "Partner since"]]
+}, {
+  slug: "openai-devday",
+  bento: "md",
+  accent: "#10A37F",
+  surface: "#07130F",
+  stats: [["87", "Ambassadors"], ["5", "Role areas"], ["Dev Day", "2026"]]
+}, {
+  slug: "claude-code-workshops",
+  bento: "md",
+  accent: "#D97757",
+  surface: "#1A0E09",
+  stats: [["12", "Cities"], ["Local", "Teams"], ["Ongoing", "Tour"]]
+}, {
+  slug: "breakaway",
+  bento: "md",
+  accent: "#E8102E",
+  surface: "#1A0809",
+  stats: [["12", "Festivals"], ["2", "Brands"], ["Exit", "Sampling"]]
+}, {
+  slug: "torch-thc",
+  bento: "md",
+  accent: "#F04E23",
+  surface: "#1A0B06",
+  stats: [["2,500+", "Activations / yr"], ["National", "Retail"], ["1", "Agency"]]
+}, {
+  slug: "stone-house-bread",
+  bento: "md",
+  accent: "#D7282F",
+  surface: "#1A0909",
+  stats: [["32", "Events"], ["19", "Kroger stores"], ["16", "MI cities"]]
+}, {
+  slug: "luckin",
+  bento: "md",
+  accent: "#3D52D5",
+  surface: "#0B0E1F",
+  stats: [["NYC", "Openings"], ["App", "Signups"], ["Campus", "Promos"]]
+}, {
+  slug: "drekker",
+  bento: "md",
+  accent: "#E8742C",
+  surface: "#1A0F08",
+  stats: [["Total Wine", "Partner"], ["In-store", "Tastings"], ["Ongoing", "Rollout"]]
+}, {
+  slug: "brew-dr",
+  bento: "md",
+  accent: "#00A3AD",
+  surface: "#071518",
+  stats: [["~150", "Demos / mo"], ["PNW+", "Expanding"], ["1", "Partner"]]
+}, {
+  slug: "begoat",
+  bento: "md",
+  accent: "#C93A8E",
+  surface: "#170A14",
+  stats: [["Fred Meyer", "Rollout"], ["PNW", "Region"], ["In-store", "Sampling"]]
 }, {
   slug: "mas",
   bento: "md",
@@ -95,13 +158,13 @@ const WORK_CASES = [{
   surface: "#1A0606",
   stats: [["300+", "Stores"], ["9", "TX markets"], ["VR", "Build"]]
 }, {
-  slug: "krispy-krunchy",
+  slug: "krispy-krunchy-chicken",
   bento: "md",
   accent: "#F5B83A",
   surface: "#1F1408",
   stats: [["10", "Cities"], ["100K+", "Reached"], ["Doug", "The Nug"]]
 }, {
-  slug: "marc-anthony",
+  slug: "marc-anthony-brands",
   bento: "md",
   accent: "#C99C5E",
   surface: "#1A140C",
@@ -113,7 +176,7 @@ const WORK_CASES = [{
   surface: "#06101F",
   stats: [["100K+", "Sampled"], ["Super", "Bowl"], ["NFL", "Sundays"]]
 }, {
-  slug: "glendalough",
+  slug: "glendalough-distillery",
   bento: "md",
   accent: "#7FB069",
   surface: "#0E1A0B",
@@ -135,14 +198,17 @@ const wkLookupCase = slug => {
     logo: WORK_BRAND_LOGOS[slug] || detail.logo
   };
 };
-const WORK_FILTERS = ["All work", "Sampling", "Mobile tours", "Retail", "Stadium & sport", "Spirits", "Premium"];
+const WORK_FILTERS = ["All work", "AI + Tech", "Sampling", "Mobile tours", "Retail", "Stadium & sport", "Spirits", "Cannabis", "Coffee", "Premium"];
 const WORK_FILTER_MAP = {
   "All work": () => true,
+  "AI + Tech": c => /ai \+ tech|tech/i.test(c.sector || ""),
   "Sampling": c => /sampling|demo/i.test((c.category || "") + " " + (c.services || []).join(" ")),
   "Mobile tours": c => /mobile|tour/i.test((c.category || "") + " " + (c.services || []).join(" ")),
   "Retail": c => /retail|store/i.test((c.category || "") + " " + (c.services || []).join(" ")),
   "Stadium & sport": c => /stadium|sport|nascar|nfl|mls|fútbol|futbol|game/i.test((c.headline || "") + " " + (c.solution || "") + " " + (c.sector || "")),
   "Spirits": c => /spirits|whiskey|liquor/i.test((c.sector || "") + " " + (c.category || "")),
+  "Cannabis": c => /cannabis|thc/i.test((c.sector || "") + " " + (c.brand || "") + " " + (c.category || "")),
+  "Coffee": c => /coffee/i.test((c.sector || "") + " " + (c.brand || "")),
   "Premium": c => /premium|education/i.test((c.sector || "") + " " + (c.category || "") + " " + (c.services || []).join(" "))
 };
 
@@ -210,7 +276,20 @@ const WorkBrandMarquee = () => {
       borderRadius: 99,
       background: c.accent
     }
-  }), /*#__PURE__*/React.createElement("span", {
+  }), c.logo ? /*#__PURE__*/React.createElement("img", {
+    src: c.logo,
+    alt: c.brand || c.slug,
+    loading: "lazy",
+    decoding: "async",
+    style: {
+      height: c.slug === "openai-devday" || c.slug === "claude-code-workshops" ? 26 : 40,
+      maxWidth: 150,
+      width: "auto",
+      objectFit: "contain",
+      display: "block",
+      filter: "brightness(0) invert(1)"
+    }
+  }) : /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-display)",
       fontSize: 28,
@@ -394,7 +473,7 @@ const WorkHero = () => {
       borderTop: "1px solid var(--ink-400)",
       borderBottom: "1px solid var(--ink-400)"
     }
-  }, [["70K+", "Activations\nsince 2018"], ["50", "States\ncovered"], ["257K+", "Vetted\nambassadors"], ["98%", "On-time\ndeployment"], ["9", "Featured\ncases"]].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
+  }, [["70K+", "Activations\nsince 2018"], ["50", "States\ncovered"], ["257K+", "Vetted\nambassadors"], ["98%", "On-time\ndeployment"], [String(WORK_CASES.filter(c => window.CASE_STUDIES && window.CASE_STUDIES[c.slug]).length), "Featured\ncases"]].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
     key: l,
     style: {
       padding: "28px 24px",
@@ -637,7 +716,7 @@ const WorkHeroRail = () => {
       flexDirection: "column",
       gap: 18
     }
-  }, /*#__PURE__*/React.createElement("img", {
+  }, c.logo ? /*#__PURE__*/React.createElement("img", {
     src: c.logo,
     alt: c.brand,
     style: {
@@ -650,7 +729,18 @@ const WorkHeroRail = () => {
     },
     loading: "lazy",
     decoding: "async"
-  }), /*#__PURE__*/React.createElement("h3", {
+  }) : /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "block",
+      fontFamily: "var(--font-display)",
+      fontWeight: 800,
+      fontSize: "clamp(26px,3vw,44px)",
+      letterSpacing: "-0.03em",
+      lineHeight: 1,
+      color: "#fff",
+      margin: "12px 0"
+    }
+  }, c.brand), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 700,
@@ -748,6 +838,42 @@ const WorkBento = () => {
       row: "span 2"
     },
     // BIG
+    "openai-devday": {
+      col: "span 4",
+      row: "span 1"
+    },
+    "claude-code-workshops": {
+      col: "span 4",
+      row: "span 1"
+    },
+    "breakaway": {
+      col: "span 4",
+      row: "span 1"
+    },
+    "begoat": {
+      col: "span 4",
+      row: "span 1"
+    },
+    "brew-dr": {
+      col: "span 4",
+      row: "span 1"
+    },
+    "drekker": {
+      col: "span 4",
+      row: "span 1"
+    },
+    "luckin": {
+      col: "span 4",
+      row: "span 1"
+    },
+    "stone-house-bread": {
+      col: "span 4",
+      row: "span 1"
+    },
+    "torch-thc": {
+      col: "span 4",
+      row: "span 1"
+    },
     "mas": {
       col: "span 4",
       row: "span 1"
@@ -761,22 +887,22 @@ const WorkBento = () => {
       row: "span 1"
     },
     "total-wireless": {
-      col: "span 4",
+      col: "span 6",
       row: "span 1"
     },
-    "krispy-krunchy": {
-      col: "span 4",
+    "krispy-krunchy-chicken": {
+      col: "span 6",
       row: "span 1"
     },
     "dude-wipes": {
       col: "span 6",
       row: "span 1"
     },
-    "marc-anthony": {
+    "marc-anthony-brands": {
       col: "span 6",
       row: "span 1"
     },
-    "glendalough": {
+    "glendalough-distillery": {
       col: "span 12",
       row: "span 3"
     } // WIDE + taller
@@ -930,7 +1056,7 @@ const WorkBento = () => {
       flexDirection: "column",
       gap: 6
     }
-  }, /*#__PURE__*/React.createElement("img", {
+  }, c.logo ? /*#__PURE__*/React.createElement("img", {
     src: c.logo,
     alt: c.brand,
     style: {
@@ -942,7 +1068,18 @@ const WorkBento = () => {
     },
     loading: "lazy",
     decoding: "async"
-  }), /*#__PURE__*/React.createElement("h3", {
+  }) : /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "block",
+      fontFamily: "var(--font-display)",
+      fontWeight: 800,
+      fontSize: "clamp(26px,3vw,44px)",
+      letterSpacing: "-0.03em",
+      lineHeight: 1,
+      color: "#fff",
+      margin: "12px 0"
+    }
+  }, c.brand), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 700,

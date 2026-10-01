@@ -1343,7 +1343,7 @@ const IndustrySparkCallout = ({
       border: "1px solid var(--ink-400)",
       textDecoration: "none"
     }
-  }, "Book a demo"))), /*#__PURE__*/React.createElement("div", {
+  }, "Get a staffing quote"))), /*#__PURE__*/React.createElement("div", {
     className: "spk-anim",
     style: {
       background: "linear-gradient(180deg, #14161B 0%, #0F1115 100%)",
@@ -1790,7 +1790,10 @@ const IndustrySection = ({
     ind: ind
   }), /*#__PURE__*/React.createElement(IndustryRelated, {
     ind: ind
-  }), /*#__PURE__*/React.createElement(IndustryFaqs, {
+  }), window.RelatedCases ? React.createElement(window.RelatedCases, {
+    ctx: "industry",
+    slug: ind.slug
+  }) : null, /*#__PURE__*/React.createElement(IndustryFaqs, {
     ind: ind
   }), /*#__PURE__*/React.createElement(IndustryCta, {
     ind: ind

@@ -153,7 +153,7 @@ const CaseHero = ({
   }
 }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(CsOpsLine, {
   color: c.accent
-}, ">>", " CASE STUDY \xB7 ", c.year), /*#__PURE__*/React.createElement("img", {
+}, ">>", " CASE STUDY \xB7 ", c.year), c.logo ? /*#__PURE__*/React.createElement("img", {
   src: c.logo,
   alt: c.brand,
   style: {
@@ -167,7 +167,18 @@ const CaseHero = ({
   },
   loading: "lazy",
   decoding: "async"
-}), /*#__PURE__*/React.createElement("h1", {
+}) : /*#__PURE__*/React.createElement("span", {
+  style: {
+    display: "block",
+    fontFamily: "var(--font-display)",
+    fontWeight: 800,
+    fontSize: "clamp(26px,3vw,44px)",
+    letterSpacing: "-0.03em",
+    lineHeight: 1,
+    color: "#fff",
+    margin: "12px 0"
+  }
+}, c.brand), /*#__PURE__*/React.createElement("h1", {
   style: {
     fontFamily: "var(--font-display)",
     fontWeight: 700,
@@ -581,7 +592,13 @@ const CaseGallery = ({
     } = sizeFor(i);
     /* Support optional #pos=... hash to override object-position */
     const posMatch = (src || "").match(/#pos=([^&]+)/);
-    const objPos = posMatch ? decodeURIComponent(posMatch[1]) : "center";
+    const objPos = posMatch ? (() => {
+      try {
+        return decodeURIComponent(posMatch[1]);
+      } catch (e) {
+        return posMatch[1];
+      }
+    })() : "center";
     return /*#__PURE__*/React.createElement("button", {
       key: i,
       onClick: () => setOpen(i),
@@ -702,8 +719,6 @@ const CaseGallery = ({
     src: c.gallery[open],
     alt: `${c.brand} ${open + 1}`,
     onClick: e => e.stopPropagation(),
-    loading: "lazy",
-    decoding: "async",
     style: {
       maxWidth: "90vw",
       maxHeight: "86vh",
@@ -1029,7 +1044,7 @@ const CaseMoreWork = ({
       fontWeight: 700,
       textDecoration: "none"
     }
-  }, "See all 9 cases \u2192")), /*#__PURE__*/React.createElement("div", {
+  }, "See all ", (window.WORK_CASES || []).filter(x => window.CASE_STUDIES && window.CASE_STUDIES[x.slug]).length || Object.keys(window.CASE_STUDIES || {}).length, " cases \u2192")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
       gridTemplateColumns: "repeat(3, 1fr)",
@@ -1064,8 +1079,8 @@ const CaseMoreWork = ({
       flexDirection: "column",
       height: "100%"
     }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: window.WORK_BRAND_LOGOS && window.WORK_BRAND_LOGOS[n.slug] || "",
+  }, window.WORK_BRAND_LOGOS && window.WORK_BRAND_LOGOS[n.slug] ? /*#__PURE__*/React.createElement("img", {
+    src: window.WORK_BRAND_LOGOS[n.slug],
     alt: n.brand,
     style: {
       height: 44,
@@ -1077,7 +1092,16 @@ const CaseMoreWork = ({
     },
     loading: "lazy",
     decoding: "async"
-  }), /*#__PURE__*/React.createElement("h3", {
+  }) : /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "block",
+      fontFamily: "var(--font-display)",
+      fontWeight: 800,
+      fontSize: 22,
+      letterSpacing: "-0.02em",
+      marginBottom: 18
+    }
+  }, n.brand), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 700,

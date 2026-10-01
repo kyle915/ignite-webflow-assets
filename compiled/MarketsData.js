@@ -336,7 +336,7 @@ const MARKETS_REGIONS = [{
     name: "Detroit",
     state: "MI",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "minneapolis",
     name: "Minneapolis",
@@ -408,7 +408,7 @@ const MARKETS_REGIONS = [{
     name: "Grand Rapids",
     state: "MI",
     tier: 2,
-    available: false
+    available: true
   }, {
     slug: "akron",
     name: "Akron",
@@ -651,13 +651,13 @@ const MARKETS_REGIONS = [{
     name: "Seattle",
     state: "WA",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "portland",
     name: "Portland",
     state: "OR",
     tier: 1,
-    available: false
+    available: true
   }, {
     slug: "tacoma",
     name: "Tacoma",

@@ -1,3 +1,6 @@
+/* Lowercase a service name for inline copy but keep acronyms (BA, BAs, QSR, AI, CPG, CRM) intact */
+const svcLower = t => String(t || "").split(" ").map(w => /^[A-Z0-9+&]{2,}s?$/.test(w) ? w : w.toLowerCase()).join(" ");
+const svcArticle = t => /^[aeiou]/i.test(svcLower(t)) ? "an" : "a";
 /* Shared renderer for an individual service detail page.
    Each /pages/services-{slug}.html sets window.__SERVICE_SLUG before mounting. */
 
@@ -266,7 +269,7 @@ const ServiceHero = ({
     alignItems: "center",
     gap: 10
   }
-}, "Brief us on a ", s.short.toLowerCase(), " project ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
+}, "Brief us on ", svcArticle(s.short), " ", svcLower(s.short), " project ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
   href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "16px 24px",
@@ -764,7 +767,7 @@ const ServiceProofBar = ({
       letterSpacing: "-0.025em",
       lineHeight: 1
     }
-  }, "Brands running ", s.short.toLowerCase(), " on us.")), /*#__PURE__*/React.createElement("span", {
+  }, "Brands running ", svcLower(s.short), " on us.")), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: 11,
@@ -1191,7 +1194,7 @@ const SubServicesGrid = ({
       fontStyle: "italic",
       color: s.accent
     }
-  }, s.short.toLowerCase()), "."))), /*#__PURE__*/React.createElement("div", {
+  }, svcLower(s.short)), "."))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
       gridTemplateColumns: `repeat(${cols}, 1fr)`,
@@ -1461,7 +1464,7 @@ const ServiceMarketsBlock = ({
       lineHeight: 1.1,
       maxWidth: 520
     }
-  }, "Ignite supports ", s.label.toLowerCase(), " in major markets nationwide."), /*#__PURE__*/React.createElement("p", {
+  }, "Ignite supports ", svcLower(s.label), " in major markets nationwide."), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 16,
       fontSize: 14.5,
@@ -1837,7 +1840,7 @@ const ServiceSparkSection = ({
       border: "1px solid var(--ink-400)",
       textDecoration: "none"
     }
-  }, "Book a demo"))), /*#__PURE__*/React.createElement("div", {
+  }, "Get a staffing quote"))), /*#__PURE__*/React.createElement("div", {
     className: "svc-spark-anim",
     style: {
       background: "linear-gradient(180deg, #14161B 0%, #0F1115 100%)",
@@ -2060,7 +2063,7 @@ const ServiceCTA = ({
     fontStyle: "italic",
     color: s.accent
   }
-}, s.short.toLowerCase()), " program."), /*#__PURE__*/React.createElement("p", {
+}, svcLower(s.short)), " program."), /*#__PURE__*/React.createElement("p", {
   style: {
     marginTop: 22,
     fontSize: 18,
@@ -2098,7 +2101,7 @@ const ServiceCTA = ({
     fontFamily: "var(--font-mono)"
   }
 }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "https://www.igniteproductions.co/contact",
+  href: "https://www.igniteproductions.co/contact?urgent=1",
   style: {
     padding: "18px 24px",
     borderRadius: 999,
@@ -9432,7 +9435,10 @@ const ServiceDetailPage = ({
     s: s
   }), /*#__PURE__*/React.createElement(AdjacentServices, {
     s: s
-  }), /*#__PURE__*/React.createElement(ServiceCTA, {
+  }), window.RelatedCases ? React.createElement(window.RelatedCases, {
+    ctx: "service",
+    slug: slug
+  }) : null, /*#__PURE__*/React.createElement(ServiceCTA, {
     s: s
   }), /*#__PURE__*/React.createElement(ServicePairedChips, {
     s: s

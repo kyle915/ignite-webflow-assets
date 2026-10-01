@@ -1,12 +1,41 @@
 (function(){if (typeof window !== "undefined" && window.CaseStudyCarousel) return;
 /* Featured case studies carousel + Core Difference + CTA footer */
 const FEATURED_CASES = [{
+  brand: "OPENAI",
+  slug: "openai-devday",
+  color: "#0B1A14",
+  tagline: "87 ambassadors. One Dev Day.",
+  category: "Event Execution · Brand Ambassador Staffing",
+  stats: [["87", "Ambassadors"], ["5", "Role areas"], ["2026", "Dev Day"]],
+  img: window.__resources?.r_assets_openai_devday_keynote_jpg || "https://kyle915.github.io/ignite-webflow-assets/assets/openai-devday-keynote.jpg",
+  logo: window.__resources?.r_assets_logo_openai_mark_png || "https://kyle915.github.io/ignite-webflow-assets/assets/logo-openai-mark.png"
+}, {
+  brand: "TORCH THC",
+  slug: "torch-thc",
+  color: "#2A0E07",
+  tagline: "National retail, planned to the shelf.",
+  category: "National Retail Marketing · Field Activations",
+  stats: [["2,500+", "Activations / yr"], ["National", "U.S. retail"], ["1", "Agency"]],
+  img: window.__resources?.r_assets_torch_thc_kings_liquor_activation_png || "https://kyle915.github.io/ignite-webflow-assets/assets/torch-thc-kings-liquor-activation.png",
+  imgPos: "center 30%",
+  logo: window.__resources?.r_assets_logo_torch_thc_png || "https://kyle915.github.io/ignite-webflow-assets/assets/logo-torch-thc.png"
+}, {
+  brand: "BREW DR.",
+  slug: "brew-dr",
+  color: "#06282B",
+  tagline: "From the Pacific Northwest to new markets.",
+  category: "Retail Sampling Program",
+  stats: [["~150", "Demos / month"], ["PNW+", "Expanding"], ["1", "Partner"]],
+  img: window.__resources?.r_assets_brewdr_king_soopers_demo_jpg || "https://kyle915.github.io/ignite-webflow-assets/assets/brewdr-king-soopers-demo.jpg",
+  imgPos: "center 40%",
+  logo: window.__resources?.r_assets_logo_brew_dr_png || "https://kyle915.github.io/ignite-webflow-assets/assets/logo-brew-dr.png"
+}, {
   brand: "LIQUID DEATH",
   slug: "liquid-death",
   color: "#000",
   tagline: "Murdering thirst, coast to coast.",
-  category: "Brand Ambassador Program",
-  stats: [["850+", "Events"], ["47", "Markets"], ["1.4M", "Consumers reached"]],
+  category: "Experiential · Field Events · Retail Sampling",
+  stats: [["1,000+", "Retail demos / yr"], ["Nationwide", "Coverage"], ["2018", "Partner since"]],
   img: window.__resources?.r_6882bb7581d3d94867693919_liquid_death || "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882bb7581d3d94867693919_liquid-death.webp",
   logo: window.__resources?.r_6882f25fd226513954e724e2_liquid_death_lo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882f25fd226513954e724e2_liquid-death-logo-transparent.webp"
 }, {
@@ -140,7 +169,7 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
     justifyContent: "flex-start",
     alignItems: "flex-start"
   }
-}, /*#__PURE__*/React.createElement("img", {
+}, c.logo ? /*#__PURE__*/React.createElement("img", {
   src: c.logo,
   alt: c.brand,
   style: {
@@ -153,7 +182,18 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
   },
   loading: "lazy",
   decoding: "async"
-})), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+}) : /*#__PURE__*/React.createElement("span", {
+  style: {
+    display: "block",
+    fontFamily: "var(--font-display)",
+    fontWeight: 800,
+    fontSize: "clamp(26px,3vw,44px)",
+    letterSpacing: "-0.03em",
+    lineHeight: 1,
+    color: "#fff",
+    margin: "12px 0"
+  }
+}, c.brand)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
   style: {
     fontFamily: "var(--font-mono)",
     fontSize: 10,
@@ -232,7 +272,7 @@ const CORE_DIFFERENCE = [{
 }, {
   n: "02",
   t: "Truly full service",
-  d: "Strategy to creative to field execution — one team, full accountability. No agency runaround."
+  d: "Strategy to creative to field execution, one team, full accountability. No agency runaround."
 }, {
   n: "03",
   t: "Retail-first, consumer-driven",
@@ -240,7 +280,7 @@ const CORE_DIFFERENCE = [{
 }, {
   n: "04",
   t: "Nationwide scale",
-  d: "257,000+ vetted ambassadors in all 50 states. Execute anywhere — quality high, results consistent."
+  d: "257,000+ vetted ambassadors in all 50 states. Execute anywhere, quality high, results consistent."
 }, {
   n: "05",
   t: "Tech enabled",
@@ -386,7 +426,7 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
     gridTemplateColumns: "1fr 1fr",
     gap: 12
   }
-}, [["Liquid Death", "Their execution and attention to detail sets them apart."], ["Total Wireless", "Their team is the secret to our success."], ["White Claw", "Ignite delivered — from creative to execution."], ["Krispy Krunchy", "They don't just staff events — they create unforgettable brand experiences."]].map(([b, q]) => /*#__PURE__*/React.createElement("div", {
+}, [["Liquid Death", "Their execution and attention to detail sets them apart."], ["Total Wireless", "Their team is the secret to our success."], ["White Claw", "Ignite delivered, from creative to execution."], ["Krispy Krunchy", "They don't just staff events, they create unforgettable brand experiences."]].map(([b, q]) => /*#__PURE__*/React.createElement("div", {
   key: b,
   style: {
     padding: 20,
@@ -509,7 +549,7 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
     fontFamily: "var(--font-mono)"
   }
 }, "\u2192")), /*#__PURE__*/React.createElement("a", {
-  href: "https://www.igniteproductions.co/contact",
+  href: "https://www.igniteproductions.co/contact?urgent=1",
   style: {
     display: "inline-flex",
     alignItems: "center",
@@ -526,7 +566,7 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
     letterSpacing: "-0.01em",
     textDecoration: "none"
   }
-}, "Get In Touch ", /*#__PURE__*/React.createElement("span", {
+}, "Request staff now ", /*#__PURE__*/React.createElement("span", {
   style: {
     width: 8,
     height: 8,
