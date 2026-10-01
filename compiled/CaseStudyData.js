@@ -195,7 +195,7 @@ const CASE_STUDIES = {
     brand: "OpenAI",
     slug: "openai-devday",
     year: "2026",
-    logo: "https://kyle915.github.io/ignite-webflow-assets/assets/logo-openai-mark.png",
+    logo: "https://kyle915.github.io/ignite-webflow-assets/assets/logo-openai-mark-white.png",
     hero: "https://kyle915.github.io/ignite-webflow-assets/assets/openai-devday-exterior.jpg",
     headline: "87 ambassadors. One event. Support across the entire attendee experience.",
     category: "Event Execution",
