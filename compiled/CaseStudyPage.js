@@ -209,8 +209,8 @@ const CaseHero = ({
     color: "rgba(255,255,255,0.85)",
     border: "1px solid rgba(255,255,255,0.18)"
   }
-}, t))), /*#__PURE__*/React.createElement("div", {
-  style: {
+}, t))), (c.stats || []).length > 0 && /*#__PURE__*/React.createElement("div", {
+    style: {
     marginTop: 48,
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",

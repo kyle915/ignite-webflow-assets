@@ -390,7 +390,7 @@ const HomeHero = () => {
       animation: "marquee 48s linear infinite",
       width: "max-content"
     }
-  }, [...Array(2)].flatMap((_, r) => [["257,000+", "BRAND AMBASSADORS"], ["5,000+", "EVENTS EXECUTED"], ["50", "STATES COVERED"], ["200+", "BRANDS ACTIVATED"], ["25M+", "CONSUMERS REACHED"], ["87%", "CLIENT RETENTION"], ["20%+", "DEMO CONVERSION"], ["48hr", "RUSH STAFFING"]].map(([n, l], i) => /*#__PURE__*/React.createElement("span", {
+  }, [...Array(2)].flatMap((_, r) => [["257,000+", "VETTED AMBASSADORS"], ["5,000+", "EVENTS EXECUTED"], ["50", "STATES + DC"], ["VETERAN", "OWNED · VOSB"], ["2018", "FOUNDED"]].map(([n, l], i) => /*#__PURE__*/React.createElement("span", {
     key: r + "-" + i,
     style: {
       display: "inline-flex",

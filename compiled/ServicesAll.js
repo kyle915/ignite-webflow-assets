@@ -68,7 +68,7 @@ const SVC_LANES = [{
   bullets: ["Festival Activations", "Pop-Ups", "Brand Activations", "Immersive Installations", "Campus Tours", "Mall & Lifestyle Centers"],
   img: window.__resources?.r_assets_experiential_liquiddeath_nascar_jpg || "https://kyle915.github.io/ignite-webflow-assets/assets/experiential-liquiddeath-nascar.jpg",
   imgPos: "center 40%",
-  meta: ["48 markets / yr", "350+ activations", "12 yrs running"]
+  meta: ["48 markets / yr", "350+ activations", "2018 founded"]
 }, {
   slug: "event-production",
   n: "EP",
@@ -1364,7 +1364,7 @@ const SvcStats = () => /*#__PURE__*/React.createElement("section", {
     gridTemplateColumns: "repeat(4, 1fr)",
     gap: 24
   }
-}, [["257K+", "vetted ambassadors", "var(--spark-500)"], ["50", "states active · national coverage", "var(--ignite-500)"], ["12yrs", "running, still veteran-owned", "var(--ember-500)"], ["48hr", "rush staffing, anywhere", "var(--spark-500)"]].map(([n, l, c]) => /*#__PURE__*/React.createElement("div", {
+}, [["257K+", "vetted ambassadors", "var(--spark-500)"], ["50", "states active · national coverage", "var(--ignite-500)"], ["2018", "founded, still veteran-owned", "var(--ember-500)"], ["48hr", "rush staffing, anywhere", "var(--spark-500)"]].map(([n, l, c]) => /*#__PURE__*/React.createElement("div", {
   key: l,
   style: {
     paddingTop: 14,

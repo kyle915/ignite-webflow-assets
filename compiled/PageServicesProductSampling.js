@@ -253,7 +253,7 @@ const Hero = () => {
       flexWrap: "wrap",
       animationDelay: "460ms"
     }
-  }, [["2.4M+", "samples / year"], ["20%+", "trial → purchase"], ["100%", "GPS-verified"]].map(([v, l]) => /*#__PURE__*/React.createElement("div", {
+  }, [["2.4M+", "samples / year"], ["100%", "GPS-verified"]].map(([v, l]) => /*#__PURE__*/React.createElement("div", {
     key: l
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -482,7 +482,7 @@ const WhatIs = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "#fff"
   }
-}, "GPS-verified counts"), " and 20%+ trial-to-purchase conversion \u2014 so sampling stops being a cost line and starts being a measurable trial engine."))));
+}, "GPS-verified counts"), " \u2014 so sampling stops being a cost line and starts being a measurable trial engine."))));
 
 /* ---------- CONVERSION FUNNEL ---------- */
 const Funnel = () => {
@@ -758,7 +758,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
     color: "rgba(255,255,255,0.6)"
   }
 }, l)))))));
-const FAQS = [["How do you measure sampling ROI?", "GPS-verified sample counts, per-SKU velocity, trial-to-purchase conversion, and post-sampling intercept research — delivered same-day in the Spark dashboard."], ["What channels do you sample in?", "Grocery, mass, c-store, natural, on-premise, campus, street, festivals, sporting events, and B2B trade shows — with channel-specific staffing and compliance."], ["Do you sample alcohol and regulated categories?", "Yes. TIPS-certified staff, state-by-state alcohol compliance, and food-handler certs for all F&B sampling."], ["What's typical conversion?", "20%+ trial-to-purchase across our CPG programs; top-quartile category-fit demos hit 28–34%."], ["How fast is data turnaround?", "Same-day. Counts, photos, and dashboards are available within hours of shift completion."]];
+const FAQS = [["How do you measure sampling ROI?", "GPS-verified sample counts, per-SKU velocity, trial-to-purchase conversion, and post-sampling intercept research — delivered same-day in the Spark dashboard."], ["What channels do you sample in?", "Grocery, mass, c-store, natural, on-premise, campus, street, festivals, sporting events, and B2B trade shows — with channel-specific staffing and compliance."], ["Do you sample alcohol and regulated categories?", "Yes. TIPS-certified staff, state-by-state alcohol compliance, and food-handler certs for all F&B sampling."], ["What's typical conversion?", "Conversion varies by category, retailer, and how the demo is staffed. Ignite reports trial-to-purchase from GPS-verified counts after each program."], ["How fast is data turnaround?", "Same-day. Counts, photos, and dashboards are available within hours of shift completion."]];
 const Faq = () => {
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {

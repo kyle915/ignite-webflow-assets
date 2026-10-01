@@ -2,7 +2,9 @@
 // Dark ground · ignite-orange accents · Space Grotesk display · JetBrains mono labels
 
 const fmtDate = iso => {
+  if (!iso) return '';
   const d = new Date(iso + 'T12:00:00');
+  if (Number.isNaN(d.getTime())) return '';
   return d.toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
@@ -18,7 +20,7 @@ function BlogIndex() {
     if (filter !== 'all') posts = posts.filter(p => p.category === filter);
     if (search.trim()) {
       const q = search.toLowerCase();
-      posts = posts.filter(p => p.title.toLowerCase().includes(q) || p.dek.toLowerCase().includes(q) || (p.tags || []).some(t => t.toLowerCase().includes(q)));
+      posts = posts.filter(p => p.title.toLowerCase().includes(q) || (p.dek || '').toLowerCase().includes(q) || (p.tags || []).some(t => t.toLowerCase().includes(q)));
     }
     return posts;
   }, [filter, search]);
@@ -217,7 +219,7 @@ function BlogIndex() {
     n: BLOG_CATEGORIES.length - 1,
     l: 'CATEGORIES'
   }, {
-    n: '7K+',
+    n: '257,000+',
     l: 'AMBASSADORS'
   }, {
     n: '50',
@@ -370,7 +372,7 @@ function BlogIndex() {
         textTransform: 'uppercase',
         opacity: 0.75
       }
-    }, "\u2116", String(BLOG_POSTS.indexOf(p) + 1).padStart(2, '0'), " / ", p.category.toUpperCase()), /*#__PURE__*/React.createElement("div", {
+    }, "\u2116", String(BLOG_POSTS.indexOf(p) + 1).padStart(2, '0'), " / ", (p.category || '').toUpperCase()), /*#__PURE__*/React.createElement("div", {
       style: {
         fontSize: 17,
         lineHeight: 0.95,
@@ -387,7 +389,7 @@ function BlogIndex() {
         display: 'flex',
         justifyContent: 'space-between'
       }
-    }, /*#__PURE__*/React.createElement("span", null, p.readTime, " MIN"), /*#__PURE__*/React.createElement("span", null, "READ \u2192")));
+    }, /*#__PURE__*/React.createElement("span", null, p.readTime ? p.readTime + " MIN" : "READ"), /*#__PURE__*/React.createElement("span", null, "READ \u2192")));
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'absolute',
@@ -449,7 +451,44 @@ function BlogIndex() {
         opacity: 0.6
       }
     }, "\xB7 ", c.count));
-  }))), filter === 'all' && !search.trim() && /*#__PURE__*/React.createElement("section", {
+  }))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      borderBottom: '1px solid var(--ink-400)',
+      background: 'var(--ink-000)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 'var(--grid-max)',
+      margin: '0 auto',
+      padding: '16px var(--grid-gutter)',
+      display: 'flex',
+      gap: 8,
+      flexWrap: 'wrap',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow",
+    style: {
+      marginRight: 8
+    }
+  }, "BROWSE BY CATEGORY:"), [["industry", "Industry"], ["logistics", "Logistics"], ["measurement", "Measurement"], ["staffing", "Staffing"], ["strategy", "Strategy"]].map(([slug, label]) => /*#__PURE__*/React.createElement("a", {
+    key: slug,
+    href: "/blog-categories/" + slug,
+    style: {
+      padding: '8px 16px',
+      border: '1px solid var(--ink-400)',
+      background: 'transparent',
+      color: 'var(--fg-1)',
+      fontFamily: 'var(--font-mono)',
+      fontSize: 12,
+      letterSpacing: '0.12em',
+      textTransform: 'uppercase',
+      textDecoration: 'none',
+      display: 'flex',
+      gap: 6,
+      alignItems: 'center'
+    }
+  }, label)))), filter === 'all' && !search.trim() && /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '80px 0 40px',
       borderBottom: '1px solid var(--ink-400)'
@@ -681,7 +720,7 @@ function BlogIndex() {
       textTransform: 'uppercase',
       opacity: 0.6
     }
-  }, "\u2116", String(BLOG_POSTS.indexOf(p) + 1).padStart(2, '0'), " / ", p.category.toUpperCase()), /*#__PURE__*/React.createElement("div", {
+  }, "\u2116", String(BLOG_POSTS.indexOf(p) + 1).padStart(2, '0'), " / ", (p.category || '').toUpperCase()), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 26,
       lineHeight: 0.95,
@@ -696,18 +735,18 @@ function BlogIndex() {
       marginBottom: 12,
       alignItems: 'center'
     }
-  }, /*#__PURE__*/React.createElement("span", {
+  }, p.date ? /*#__PURE__*/React.createElement("span", {
     className: "eyebrow"
-  }, fmtDate(p.date)), /*#__PURE__*/React.createElement("span", {
+  }, fmtDate(p.date)) : null, p.date && p.readTime ? /*#__PURE__*/React.createElement("span", {
     style: {
       width: 3,
       height: 3,
       borderRadius: '50%',
       background: 'var(--fg-3)'
     }
-  }), /*#__PURE__*/React.createElement("span", {
+  }) : null, p.readTime ? /*#__PURE__*/React.createElement("span", {
     className: "eyebrow"
-  }, p.readTime, " MIN")), /*#__PURE__*/React.createElement("h3", {
+  }, p.readTime, " MIN") : null), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontSize: 22,
       lineHeight: 1.15,
