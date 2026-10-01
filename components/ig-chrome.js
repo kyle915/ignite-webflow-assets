@@ -1,5 +1,5 @@
 /* ig-chrome.js: swaps legacy Webflow header + footer for the React BrandBar/SiteNav/SiteFooter
-   on CMS templates (blog posts, blog categories, team, careers). Needs React, ReactDOM and
+   on CMS templates (blog posts, blog categories, team, careers) and the hand-built /contact page. Needs React, ReactDOM and
    NavFooter.js (all loaded site-wide). Idempotent. */
 (function () {
   if (window.IgChrome) return; window.IgChrome = true;
@@ -10,7 +10,7 @@
   }
   if (!document.getElementById("ig-chrome-hide")) {
     var st = document.createElement("style"); st.id = "ig-chrome-hide";
-    st.textContent = "html.ig-chrome-on .header-wrapper---absolute,html.ig-chrome-on .header-wrapper,html.ig-chrome-on [data-ig-old-footer]{display:none !important}";
+    st.textContent = "html.ig-chrome-on .header-wrapper---absolute,html.ig-chrome-on .header-wrapper,html.ig-chrome-on header.ig-nav,html.ig-chrome-on [data-ig-old-footer]{display:none !important}";
     document.head.appendChild(st);
   }
   function findOldFooter() {
