@@ -2817,7 +2817,7 @@ const ABOUT_ENGAGEMENT = [{
   tag: "03 · FRACTIONAL",
   title: "Embedded leadership.",
   body: "Senior CPG marketing leadership inside your team without the FTE cost. Retail strategy, sponsorship management, GTM planning — by the quarter.",
-  best: "Best for: brands $5M–$100M without a VP yet.",
+  best: "Best for: emerging and mid-market brands without a VP yet.",
   cta: "See Fractional →",
   href: "/fractional"
 }];
