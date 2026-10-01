@@ -4,6 +4,13 @@
  * page runner can render it on the matching Webflow route.
  * Regenerate with extract-pages.js — do not hand-edit. */
 
+(function () {
+  if (typeof document === "undefined" || document.getElementById("pagecss-services-retail-merchandising")) return;
+  var s = document.createElement("style");
+  s.id = "pagecss-services-retail-merchandising";
+  s.textContent = ":root { --rm-ink:#0A0B0D; --rm-blue:#E8C24A; --rm-orange:#D7453E; }\n  body { background:#0A0B0D; margin:0; }\n  @keyframes rm-rise { 0%{opacity:0;transform:translateY(22px)} 100%{opacity:1;transform:translateY(0)} }\n  @keyframes rm-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.2)} }\n  @keyframes rm-fill { 0%{width:0} 100%{width:var(--w)} }\n  .rm-reveal { opacity:1; transform:none; }\n  .rm-reveal.rm-armed { opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }\n  .rm-reveal.rm-armed.rm-in { opacity:1; transform:none; }\n  .rm-bar-in { width:0; transition:width 1s cubic-bezier(.2,.8,.2,1); }\n  .rm-reveal.rm-in .rm-bar-in { width:var(--w); }\n  @media (max-width:900px){\n    .rm-hero-grid,.rm-spark-grid,.rm-flow,.rm-chan { grid-template-columns:1fr !important; }\n  }\n  @media (max-width:720px){\n    [data-screen-label=\"01 Merchandising Hero\"] > div:not([aria-hidden]){ padding-top:0 !important; padding-bottom:48px !important; }\n  }\n  @media (prefers-reduced-motion: reduce){\n  .rm-reveal, .rm-reveal.rm-armed{opacity:1 !important;transform:none !important;transition:none !important;}\n  .rm-bar-in{transition:none !important;width:var(--w) !important;}\n    .rm-dot{animation:none !important;}\n  }";
+  document.head.appendChild(s);
+})();
 const INK = "#0A0B0D",
   BLUE = "#E8C24A",
   ORANGE = "#D7453E",

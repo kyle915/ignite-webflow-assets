@@ -4,6 +4,13 @@
  * page runner can render it on the matching Webflow route.
  * Regenerate with extract-pages.js — do not hand-edit. */
 
+(function () {
+  if (typeof document === "undefined" || document.getElementById("pagecss-services-creative-design-studio")) return;
+  var s = document.createElement("style");
+  s.id = "pagecss-services-creative-design-studio";
+  s.textContent = ":root { --cs-paper: #F3EFE6; --cs-ink: #14110C; --cs-orange: #4F7DA6; --cs-clay: #3A6086; }\n  body { background: var(--cs-paper); }\n  @keyframes cs-rise { 0% { opacity: 0; transform: translateY(26px); } 100% { opacity: 1; transform: translateY(0); } }\n  @keyframes cs-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }\n  @keyframes cs-spin { to { transform: rotate(360deg); } }\n  .cs-rise { animation: cs-rise 800ms cubic-bezier(0.16,0.84,0.3,1) both; }\n  .cs-reveal { opacity: 0; transform: translateY(28px); transition: opacity 820ms cubic-bezier(0.16,0.84,0.3,1), transform 820ms cubic-bezier(0.16,0.84,0.3,1); }\n  .cs-reveal.in { opacity: 1; transform: none; }\n  .cs-mq { display: inline-flex; gap: 38px; white-space: nowrap; padding-right: 38px; animation: cs-marquee 30s linear infinite; }\n  .cs-tile { transition: transform 480ms cubic-bezier(0.16,0.84,0.3,1), box-shadow 480ms; }\n  .cs-tile:hover { transform: translateY(-8px) rotate(-0.6deg); box-shadow: 0 30px 70px rgba(20,17,12,0.22); }\n  .cs-slot-label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; }\n  @media (prefers-reduced-motion: reduce) { [class*=\"cs-\"] { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; } }\n  @media (max-width: 920px) {\n    .cs-hero-grid { grid-template-columns: 1fr !important; }\n    .cs-gallery { grid-template-columns: repeat(2,1fr) !important; }\n    .cs-two { grid-template-columns: 1fr !important; }\n  }";
+  document.head.appendChild(s);
+})();
 const PAPER = "#F3EFE6",
   INK = "#14110C",
   ORANGE = "#4F7DA6",

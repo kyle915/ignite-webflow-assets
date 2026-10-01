@@ -4,6 +4,13 @@
  * page runner can render it on the matching Webflow route.
  * Regenerate with extract-pages.js — do not hand-edit. */
 
+(function () {
+  if (typeof document === "undefined" || document.getElementById("pagecss-services-shopper-marketing")) return;
+  var s = document.createElement("style");
+  s.id = "pagecss-services-shopper-marketing";
+  s.textContent = ":root { --sm-ink:#0A0B0D; --sm-amber:#E8C24A; --sm-orange:#D7453E; }\n  body { background:#0A0B0D; margin:0; }\n  @keyframes sm-rise { 0%{opacity:0;transform:translateY(22px)} 100%{opacity:1;transform:translateY(0)} }\n  @keyframes sm-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.2)} }\n  @keyframes sm-audit { 0%{top:-4%} 100%{top:104%} }\n  @keyframes sm-pop { 0%{opacity:0;transform:scale(.5)} 60%{transform:scale(1.15)} 100%{opacity:1;transform:scale(1)} }\n  .sm-reveal { opacity:1; transform:none; }\n  .sm-reveal.sm-armed { opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }\n  .sm-reveal.sm-armed.sm-in { opacity:1; transform:none; }\n  @media (max-width:900px){\n    .sm-hero-grid,.sm-spark-grid,.sm-funnel,.sm-pos-grid,.sm-scan,.sm-chan { grid-template-columns:1fr !important; }\n  }\n  @media (max-width:720px){\n    [data-screen-label=\"01 Shopper Hero\"] > div:not([aria-hidden]){ padding-top:0 !important; padding-bottom:48px !important; }\n  }\n  @media (prefers-reduced-motion: reduce){\n    .sm-reveal, .sm-reveal.sm-armed{opacity:1 !important;transform:none !important;transition:none !important;}\n    .sm-audit-line,.sm-badge{animation:none !important;}\n  }";
+  document.head.appendChild(s);
+})();
 const INK = "#0A0B0D",
   AMBER = "#E8C24A",
   ORANGE = "#D7453E";

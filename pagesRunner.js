@@ -66,6 +66,13 @@
         "RelatedCases"
       ]
     },
+    "/services/mobile-tours": {
+      "global": "PageServicesMobileTours",
+      "bundle": "PageServicesMobileTours",
+      "deps": [
+        "RelatedCases"
+      ]
+    },
     "/brand-ambassador-agency": {
       "global": "PageBrandAmbassadorAgency",
       "bundle": "PageBrandAmbassadorAgency",
@@ -99,18 +106,12 @@
         "RelatedCases"
       ]
     },
-    "/spark-compare": {
-      "global": "PageSparkCompare",
-      "bundle": "PageSparkCompare",
+    "/services/event-staffing": {
+      "global": "PageServicesEventStaffing",
+      "bundle": "PageServicesEventStaffing",
       "deps": [
-        "SparkSite"
-      ]
-    },
-    "/services/creative-design-studio": {
-      "global": "PageServicesCreativeDesignStudio",
-      "bundle": "PageServicesCreativeDesignStudio",
-      "deps": [
-        "RelatedCases"
+        "RelatedCases",
+        "AiCaseStudies"
       ]
     },
     "/spark-for-brands": {
@@ -120,14 +121,50 @@
         "SparkSite"
       ]
     },
+    "/services/fabrication-builds": {
+      "global": "PageServicesFabricationBuilds",
+      "bundle": "PageServicesFabricationBuilds",
+      "deps": [
+        "RelatedCases"
+      ]
+    },
+    "/services/creative-design-studio": {
+      "global": "PageServicesCreativeDesignStudio",
+      "bundle": "PageServicesCreativeDesignStudio",
+      "deps": [
+        "RelatedCases"
+      ]
+    },
+    "/services/trade-shows": {
+      "global": "PageServicesTradeShows",
+      "bundle": "PageServicesTradeShows",
+      "deps": [
+        "RelatedCases",
+        "AiCaseStudies"
+      ]
+    },
+    "/services/product-sampling": {
+      "global": "PageServicesProductSampling",
+      "bundle": "PageServicesProductSampling",
+      "deps": [
+        "RelatedCases"
+      ]
+    },
+    "/spark-compare": {
+      "global": "PageSparkCompare",
+      "bundle": "PageSparkCompare",
+      "deps": [
+        "SparkSite"
+      ]
+    },
     "/compare": {
       "global": "PageCompare",
       "bundle": "PageCompare",
       "deps": []
     },
-    "/spark-trust": {
-      "global": "PageSparkTrust",
-      "bundle": "PageSparkTrust",
+    "/spark-pricing": {
+      "global": "PageSparkPricing",
+      "bundle": "PageSparkPricing",
       "deps": [
         "SparkSite"
       ]
@@ -144,9 +181,9 @@
       "bundle": "PageBestExperientialMarketingAgencies",
       "deps": []
     },
-    "/spark-pricing": {
-      "global": "PageSparkPricing",
-      "bundle": "PageSparkPricing",
+    "/spark-trust": {
+      "global": "PageSparkTrust",
+      "bundle": "PageSparkTrust",
       "deps": [
         "SparkSite"
       ]
@@ -172,6 +209,13 @@
         "SparkSite"
       ]
     },
+    "/spark-explore": {
+      "global": "PageSparkExplore",
+      "bundle": "PageSparkExplore",
+      "deps": [
+        "SparkSite"
+      ]
+    },
     "/spark-use-case": {
       "global": "PageSparkUseCase",
       "bundle": "PageSparkUseCase",
@@ -182,13 +226,6 @@
     "/spark-product": {
       "global": "PageSparkProduct",
       "bundle": "PageSparkProduct",
-      "deps": [
-        "SparkSite"
-      ]
-    },
-    "/spark-explore": {
-      "global": "PageSparkExplore",
-      "bundle": "PageSparkExplore",
       "deps": [
         "SparkSite"
       ]

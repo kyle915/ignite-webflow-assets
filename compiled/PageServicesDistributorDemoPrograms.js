@@ -4,6 +4,13 @@
  * page runner can render it on the matching Webflow route.
  * Regenerate with extract-pages.js — do not hand-edit. */
 
+(function () {
+  if (typeof document === "undefined" || document.getElementById("pagecss-services-distributor-demo-programs")) return;
+  var s = document.createElement("style");
+  s.id = "pagecss-services-distributor-demo-programs";
+  s.textContent = ":root { --dd-ink:#0A0B0D; --dd-orange:#9FC24E; }\n  body { background:#0A0B0D; margin:0; }\n  @keyframes dd-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.2)} }\n  .dd-reveal { opacity:1; transform:none; }\n  .dd-reveal.dd-armed { opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }\n  .dd-reveal.dd-armed.dd-in { opacity:1; transform:none; }\n  @media (max-width:900px){\n    .dd-hero-grid,.dd-spark-grid,.dd-ladder,.dd-chan,.dd-kit { grid-template-columns:1fr !important; }\n    .dd-week { grid-template-columns:1fr 1fr !important; }\n  }\n  @media (max-width:720px){\n    [data-screen-label=\"01 Distributor Demo Hero\"]{ padding-top:28px !important; }\n    [data-screen-label=\"01 Distributor Demo Hero\"] > div:not([aria-hidden]){ padding-top:0 !important; padding-bottom:48px !important; }\n  }\n  @media (prefers-reduced-motion: reduce){\n    .dd-reveal, .dd-reveal.dd-armed{opacity:1 !important;transform:none !important;transition:none !important;}\n    .dd-dot{animation:none !important;}\n  }";
+  document.head.appendChild(s);
+})();
 const INK = "#0A0B0D",
   ORANGE = "#9FC24E",
   GREEN = "#1F9D62",

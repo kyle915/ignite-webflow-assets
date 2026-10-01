@@ -4,6 +4,13 @@
  * page runner can render it on the matching Webflow route.
  * Regenerate with extract-pages.js — do not hand-edit. */
 
+(function () {
+  if (typeof document === "undefined" || document.getElementById("pagecss-services-on-premise-sampling")) return;
+  var s = document.createElement("style");
+  s.id = "pagecss-services-on-premise-sampling";
+  s.textContent = ":root { --op-ink:#0A0B0D; --op-orange:#E68A4C; }\n  body { background:#0A0B0D; margin:0; }\n  @keyframes op-rise { 0%{opacity:0;transform:translateY(22px)} 100%{opacity:1;transform:translateY(0)} }\n  @keyframes op-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.2)} }\n  @keyframes op-grow { 0%{transform:scaleY(0)} 100%{transform:scaleY(1)} }\n  .op-reveal { opacity:0; }\n  .op-reveal.op-in { animation: op-rise .7s cubic-bezier(.2,.7,.2,1) forwards; }\n  .op-bar { transform-origin:bottom; }\n  .op-reveal.op-in .op-bar { animation: op-grow .9s cubic-bezier(.2,.8,.2,1) forwards; }\n  @media (max-width:900px){\n    .op-hero-grid,.op-spark-grid,.op-liab,.op-roster,.op-sop { grid-template-columns:1fr !important; }\n  }\n  @media (max-width:720px){\n    [data-screen-label=\"01 On-Premise Hero\"] > div:not([aria-hidden]){ padding-top:0 !important; padding-bottom:48px !important; }\n  }\n  @media (prefers-reduced-motion: reduce){\n    .op-reveal{opacity:1 !important;animation:none !important;}\n    .op-bar{animation:none !important;transform:none !important;}\n    .op-badge,.op-dot{animation:none !important;}\n  }";
+  document.head.appendChild(s);
+})();
 const INK = "#0A0B0D",
   ORANGE = "#E68A4C",
   GREEN = "#1F9D62";

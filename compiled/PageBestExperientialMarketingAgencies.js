@@ -4,6 +4,13 @@
  * page runner can render it on the matching Webflow route.
  * Regenerate with extract-pages.js — do not hand-edit. */
 
+(function () {
+  if (typeof document === "undefined" || document.getElementById("pagecss-best-experiential-marketing-agencies")) return;
+  var s = document.createElement("style");
+  s.id = "pagecss-best-experiential-marketing-agencies";
+  s.textContent = ":root { --ba-ink: #0A0B0D; --ba-orange: #D7453E; --ba-paper: #F3EFE6; }\n  @keyframes ba-rise { 0% { opacity: 0; transform: translateY(22px); } 100% { opacity: 1; transform: translateY(0); } }\n  .ba-rise { animation: ba-rise 760ms cubic-bezier(0.16,0.84,0.3,1) both; }\n  .ba-reveal { opacity: 0; transform: translateY(24px); transition: opacity 760ms cubic-bezier(0.16,0.84,0.3,1), transform 760ms; }\n  .ba-reveal.in { opacity: 1; transform: none; }\n  @media (prefers-reduced-motion: reduce){ [class*=\"ba-\"]{ animation:none!important; transition:none!important; opacity:1!important; transform:none!important; } }\n  @media (max-width: 820px){ .ba-rank-row{ grid-template-columns: 1fr !important; } }";
+  document.head.appendChild(s);
+})();
 const INK = "#0A0B0D",
   ORANGE = "#D7453E",
   PAPER = "#F3EFE6";

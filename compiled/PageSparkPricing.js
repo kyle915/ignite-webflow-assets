@@ -4,6 +4,13 @@
  * page runner can render it on the matching Webflow route.
  * Regenerate with extract-pages.js — do not hand-edit. */
 
+(function () {
+  if (typeof document === "undefined" || document.getElementById("pagecss-spark-pricing")) return;
+  var s = document.createElement("style");
+  s.id = "pagecss-spark-pricing";
+  s.textContent = ".sp-plans{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:stretch}\n  .sp-plan{background:var(--sp-card);border:1px solid var(--sp-line);border-radius:14px;padding:26px 22px;display:flex;flex-direction:column;position:relative}\n  .sp-plan.sp-pop{border-color:rgba(214,243,95,.55);background:linear-gradient(180deg,rgba(214,243,95,.08),var(--sp-card) 40%);box-shadow:0 0 0 1px rgba(214,243,95,.12),0 24px 70px rgba(214,243,95,.07)}\n  .sp-plan .sp-price{font-family:var(--sp-mono);font-weight:700;font-size:34px;letter-spacing:-.02em;color:var(--sp-fg);margin-top:16px}\n  .sp-plan .sp-price small{font-size:13px;color:var(--sp-mut);font-weight:500;margin-left:4px}\n  .sp-plan ul{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:9px;flex:1}\n  .sp-plan li{display:flex;gap:9px;font-size:13.5px;line-height:1.45;color:var(--sp-fg2)}\n  .sp-plan li.off{color:var(--sp-mut);opacity:.6}\n  .sp-plan li i{font-family:var(--sp-mono);font-style:normal;flex-shrink:0;color:var(--sp-lime)}\n  .sp-plan li.off i{color:var(--sp-mut)}\n  .sp-seg{display:inline-flex;padding:3px;background:rgba(250,250,247,.05);border:1px solid var(--sp-line);border-radius:999px}\n  .sp-seg button{padding:8px 16px;border-radius:999px;border:0;cursor:pointer;background:transparent;color:var(--sp-mut);font-family:var(--sp-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}\n  .sp-seg button[aria-pressed=\"true\"]{background:var(--sp-lime);color:#0F0F0D;font-weight:700}\n  .sp-cmp{width:100%;border-collapse:collapse;font-size:13.5px;min-width:820px}\n  .sp-cmp th,.sp-cmp td{padding:13px 14px;border-bottom:1px solid var(--sp-line);text-align:center}\n  .sp-cmp th:first-child,.sp-cmp td:first-child{text-align:left;color:var(--sp-fg2);position:sticky;left:0;background:var(--sp-bg);z-index:1}\n  .sp-cmp thead th{font-family:var(--sp-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--sp-mut)}\n  .sp-cmp thead th.sp-pop{color:var(--sp-lime);background:rgba(214,243,95,.06)}\n  .sp-cmp td.sp-pop{background:rgba(214,243,95,.06)}\n  @media (max-width:1180px){.sp-plans{grid-template-columns:repeat(3,1fr)}}\n  @media (max-width:760px){.sp-plans{grid-template-columns:1fr}}";
+  document.head.appendChild(s);
+})();
 const {
   LIME,
   RED,

@@ -4,6 +4,13 @@
  * page runner can render it on the matching Webflow route.
  * Regenerate with extract-pages.js — do not hand-edit. */
 
+(function () {
+  if (typeof document === "undefined" || document.getElementById("pagecss-services-field-marketing")) return;
+  var s = document.createElement("style");
+  s.id = "pagecss-services-field-marketing";
+  s.textContent = ":root { --fm-ink:#0A0B0D; --fm-orange:#8A5CD1; --fm-mint:#A87CE0; }\n  body { background:#0A0B0D; margin:0; }\n  @keyframes fm-rise { 0%{opacity:0;transform:translateY(22px)} 100%{opacity:1;transform:translateY(0)} }\n  @keyframes fm-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.25)} }\n  @keyframes fm-ping { 0%{transform:scale(.6);opacity:.7} 100%{transform:scale(2.6);opacity:0} }\n  @keyframes fm-scan { 0%{transform:translateY(-100%)} 100%{transform:translateY(2400%)} }\n  .fm-reveal { opacity:1; transform:none; }\n  .fm-reveal.fm-armed { opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }\n  .fm-reveal.fm-armed.fm-in { opacity:1; transform:none; }\n  .fm-3col { }\n  @media (max-width: 900px){\n    .fm-hero-grid { grid-template-columns:1fr !important; }\n    .fm-cmp-grid { grid-template-columns:1fr !important; }\n    .fm-flow { grid-template-columns:1fr !important; }\n    .fm-spark-grid { grid-template-columns:1fr !important; }\n  }\n  @media (max-width: 720px){\n    [data-screen-label=\"01 Field Marketing Hero\"]{ padding-top:28px !important; }\n    [data-screen-label=\"01 Field Marketing Hero\"] > div:not([aria-hidden]){ padding-top:0 !important; padding-bottom:48px !important; }\n  }\n  @media (prefers-reduced-motion: reduce){\n    .fm-reveal, .fm-reveal.fm-armed{opacity:1 !important;transform:none !important;transition:none !important;}\n    .fm-dot, .fm-ping, .fm-scan-line { animation:none !important; }\n  }";
+  document.head.appendChild(s);
+})();
 const INK = "#0A0B0D",
   ORANGE = "#8A5CD1",
   MINT = "#A87CE0";

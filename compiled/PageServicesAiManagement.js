@@ -4,6 +4,13 @@
  * page runner can render it on the matching Webflow route.
  * Regenerate with extract-pages.js — do not hand-edit. */
 
+(function () {
+  if (typeof document === "undefined" || document.getElementById("pagecss-services-ai-management")) return;
+  var s = document.createElement("style");
+  s.id = "pagecss-services-ai-management";
+  s.textContent = ":root { --ai-ink: #0A0B0D; --ai-cyan: #D6F35F; --ai-violet: #B7E23A; --ai-orange: #D7453E; --ai-paper: #F5F2EC; }\n  @keyframes ai-rise { 0% { opacity: 0; transform: translateY(24px); } 100% { opacity: 1; transform: translateY(0); } }\n  @keyframes ai-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }\n  @keyframes ai-blob-a { 0%,100% { transform: translate(-5%,-3%) scale(1); } 50% { transform: translate(8%,6%) scale(1.18); } }\n  @keyframes ai-blob-b { 0%,100% { transform: translate(5%,4%) scale(1.05); } 50% { transform: translate(-6%,-6%) scale(0.9); } }\n  @keyframes ai-scan { 0% { transform: translateY(-100vh); } 100% { transform: translateY(100vh); } }\n  @keyframes ai-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }\n  @keyframes ai-ping { 0% { transform: scale(0.6); opacity: 0.9; } 100% { transform: scale(2.8); opacity: 0; } }\n  @keyframes ai-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }\n  @keyframes ai-blink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }\n  @keyframes ai-dash { to { stroke-dashoffset: -24; } }\n  @keyframes ai-spin { to { transform: rotate(360deg); } }\n  @keyframes ai-flow { 0% { transform: translateX(-120%); } 100% { transform: translateX(420%); } }\n  .ai-rise { animation: ai-rise 850ms cubic-bezier(0.16,0.84,0.3,1) both; }\n  .ai-marquee-track { display: inline-flex; gap: 44px; padding-right: 44px; white-space: nowrap; animation: ai-marquee 32s linear infinite; }\n  .ai-reveal { opacity: 0; transform: translateY(26px); transition: opacity 800ms cubic-bezier(0.16,0.84,0.3,1), transform 800ms cubic-bezier(0.16,0.84,0.3,1); }\n  .ai-reveal.in { opacity: 1; transform: translateY(0); }\n  .ai-cursor::after { content: \"▋\"; margin-left: 2px; animation: ai-blink 1s steps(1) infinite; color: var(--ai-cyan); }\n  @media (prefers-reduced-motion: reduce) { [class*=\"ai-\"] { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; } }\n  @media (max-width: 920px) {\n    .ai-hero-grid { grid-template-columns: 1fr !important; }\n    .ai-two-col { grid-template-columns: 1fr !important; }\n    .ai-vs-row { grid-template-columns: 1fr !important; }\n  }";
+  document.head.appendChild(s);
+})();
 const INK = "#0A0B0D",
   CYAN = "#D6F35F",
   VIOLET = "#B7E23A",

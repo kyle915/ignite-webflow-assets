@@ -667,7 +667,7 @@ const SiteNav = ({
     size: "sm",
     accent: "spark",
     onClick: () => location.href = "https://www.igniteproductions.co/contact"
-  }, "Request staff now")), /*#__PURE__*/React.createElement("button", {
+  }, "Get a quote")), /*#__PURE__*/React.createElement("button", {
     className: "nav-burger",
     "aria-label": mobileOpen ? "Close menu" : "Open menu",
     "aria-expanded": mobileOpen,
@@ -1241,7 +1241,7 @@ const SiteNav = ({
       fontSize: 16,
       textDecoration: "none"
     }
-  }, "Request staff now ", /*#__PURE__*/React.createElement("span", {
+  }, "Get a quote ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-mono)"
     }

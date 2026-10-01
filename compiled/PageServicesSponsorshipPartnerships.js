@@ -4,6 +4,13 @@
  * page runner can render it on the matching Webflow route.
  * Regenerate with extract-pages.js — do not hand-edit. */
 
+(function () {
+  if (typeof document === "undefined" || document.getElementById("pagecss-services-sponsorship-partnerships")) return;
+  var s = document.createElement("style");
+  s.id = "pagecss-services-sponsorship-partnerships";
+  s.textContent = "body{background:#0A0B0D}\n@keyframes ep-rise{0%{opacity:0;transform:translateY(24px)}100%{opacity:1;transform:none}}\n@keyframes ep-pulse{0%,100%{opacity:1}50%{opacity:.3}}\n.ep-rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,.84,.3,1),transform .7s cubic-bezier(.16,.84,.3,1)}.ep-rv.in{opacity:1;transform:none}\n.ep-ros{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;border-top:1px solid rgba(255,255,255,.12)}\n.ep-ros>div{position:relative;padding:28px 18px 0 0}.ep-ros>div::before{content:\"\";position:absolute;left:0;top:-5px;width:9px;height:9px;border-radius:9px;background:#0A0B0D;border:2px solid #D7453E}.ep-ros>div.on::before{background:#D7453E;box-shadow:0 0 12px #D7453E}\n.ep-grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}\n.ep-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:52px;align-items:center}\n@media (prefers-reduced-motion:reduce){.ep-rv{opacity:1;transform:none;transition:none}[style*=\"ep-pulse\"]{animation:none!important}}\n@media (max-width:980px){.ep-ros{grid-template-columns:1fr 1fr;row-gap:28px}.ep-grid3,.ep-hero{grid-template-columns:1fr}}\n@media (max-width:560px){.ep-ros{grid-template-columns:1fr}}";
+  document.head.appendChild(s);
+})();
 const OR = "#D7453E",
   LIME = "#D6F35F";
 const QUOTE = "https://www.igniteproductions.co/contact";

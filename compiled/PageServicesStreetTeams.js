@@ -4,6 +4,13 @@
  * page runner can render it on the matching Webflow route.
  * Regenerate with extract-pages.js — do not hand-edit. */
 
+(function () {
+  if (typeof document === "undefined" || document.getElementById("pagecss-services-street-teams")) return;
+  var s = document.createElement("style");
+  s.id = "pagecss-services-street-teams";
+  s.textContent = ":root { --st-ink:#0A0B0D; --st-orange:#E68A4C; }\n  body { background:#0A0B0D; margin:0; }\n  @keyframes st-rise { 0%{opacity:0;transform:translateY(22px)} 100%{opacity:1;transform:translateY(0)} }\n  @keyframes st-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.2)} }\n  @keyframes st-grow { 0%{transform:scaleX(0)} 100%{transform:scaleX(1)} }\n  .st-reveal { opacity:1; transform:none; }\n  .st-reveal.st-armed { opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }\n  .st-reveal.st-armed.st-in { opacity:1; transform:none; }\n  .st-densebar { transform:scaleX(0); transform-origin:left; transition:transform .8s cubic-bezier(.2,.8,.2,1); }\n  .st-reveal.st-in .st-densebar { transform:scaleX(1); }\n  @media (max-width:900px){\n    .st-hero-grid,.st-spark-grid,.st-velo,.st-kit,.st-moments { grid-template-columns:1fr !important; }\n  }\n  @media (max-width:720px){\n    [data-screen-label=\"01 Street Teams Hero\"] > div:not([aria-hidden]){ padding-top:0 !important; padding-bottom:48px !important; }\n  }\n  @media (prefers-reduced-motion: reduce){\n    .st-reveal, .st-reveal.st-armed{opacity:1 !important;transform:none !important;transition:none !important;}\n    .st-densebar{transition:none !important;transform:scaleX(1) !important;}\n    .st-dot{animation:none !important;}\n  }";
+  document.head.appendChild(s);
+})();
 const INK = "#0A0B0D",
   ORANGE = "#E68A4C",
   GREEN = "#1F9D62";
