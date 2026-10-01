@@ -1,0 +1,222 @@
+/* ig-chrome.css: tokens + nav/footer rules for CMS templates that mount the React
+   SiteNav/SiteFooter over legacy Webflow chrome. Every rule is scoped to [data-ig-chrome]
+   so it never restyles the Webflow page content around it. */
+@import below for local @font-face rules
+   pointing at fonts/.
+   ------------------------------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;
+:root {
+  /* -------------------- COLOR: CORE ------------------------- */
+  /* Dark ground — the default surface. Ignite lives in the dark. */
+  --ink-000: #0A0B0D;   /* page background, max black-navy */
+  --ink-100: #111317;   /* elevated panel */
+  --ink-200: #1A1D23;   /* card */
+  --ink-300: #242830;   /* raised card, inputs */
+  --ink-400: #2F343E;   /* borders on dark */
+  --ink-500: #3A4050;   /* muted dividers */
+
+  /* Paper — inverse surfaces for light sections */
+  --paper-000: #FAFAF7;  /* off-white page */
+  --paper-100: #F0EFE9;  /* light panel */
+  --paper-200: #E4E2D8;  /* borders, dividers */
+
+  /* Foreground */
+  --fg-1: #FAFAF7;       /* primary text on dark */
+  --fg-2: #B8BCC5;       /* secondary text on dark */
+  --fg-3: #7A7F8B;       /* tertiary / meta on dark */
+  --fg-4: #4D5260;       /* disabled / very quiet */
+
+  --fg-1-inv: #0A0B0D;   /* primary on light */
+  --fg-2-inv: #3A4050;   /* secondary on light */
+  --fg-3-inv: #7A7F8B;   /* tertiary on light */
+
+  /* -------------------- COLOR: BRAND ------------------------ */
+  /* Spark — the electric lime from the Spark pixel logomark. */
+  --spark-500: #D6F35F;   /* primary Spark accent */
+  --spark-400: #E2F785;
+  --spark-600: #B8D43E;
+  --spark-700: #8FA72D;
+  --spark-glow: rgba(214, 243, 95, 0.175);
+
+  /* Ignite — the parent agency brand. Retired orange → hot red. */
+  --ignite-500: #D7453E;   /* primary Ignite accent (hot red) */
+  --ignite-400: #E86A5F;
+  --ignite-600: #B8322C;
+  --ignite-700: #8F2621;
+  --ember-500: #FFB627;    /* warm gold highlight (kept) */
+
+  /* Locked palette — red / purple / blue / gold. Orange is retired. */
+  --red-500: #D7453E;   --red-400: #E86A5F;   --red-600: #B8322C;
+  --purple-500: #4D43BB; --purple-400: #6B62D4; --purple-600: #3A32A0;
+  --blue-500: #2E55CA;   --blue-400: #5678E0;   --blue-600: #2143A0;
+  --gold-500: #FFB627;
+  /* Flame — the print-material gradient, for tasteful hero / divider moments. */
+  --gradient-flame: linear-gradient(115deg, #D7453E 0%, #4D43BB 46%, #2E55CA 74%, #0A0B0D 100%);
+
+  /* Fractional's brand "color" — a muted, metallic, pearlescent holographic gradient.
+     Used as one color on Fractional's brand moments (wordmark, hero headline). NOT a saturated rainbow. */
+  --fractional-prism: linear-gradient(100deg, #97A3B4, #B8B2D2, #A2CCCA, #D9CBB2, #C2B4CE, #AEB6C9);
+
+  /* Fractional / collection spectrum — 18-hue ordered ring.
+     Used by collections (industries, case studies, fractional services)
+     via positional assignment. 01 = brand red (merged), 04 = ember. */
+  --spectrum-01: var(--ignite-500);  --spectrum-02: #E0663F;
+  --spectrum-03: #E68A4C;            --spectrum-04: var(--ember-500);
+  --spectrum-05: #E8C24A;            --spectrum-06: #CBD24A;
+  --spectrum-07: #9FC24E;            --spectrum-08: #6FBF6A;
+  --spectrum-09: #4FB58A;            --spectrum-10: #3FAEA8;
+  --spectrum-11: #3E9FC0;            --spectrum-12: #4F7DA6;
+  --spectrum-13: #4664C4;            --spectrum-14: #6A5CD1;
+  --spectrum-15: #8A5CD1;            --spectrum-16: #A85BC0;
+  --spectrum-17: #C85B9E;            --spectrum-18: #E27BA0;
+
+  /* Services mega-menu — one color per category lane, inherited by children. */
+  --cat-staffing:            var(--spectrum-01);
+  --cat-sampling:            var(--spectrum-03);
+  --cat-retail-programs:     var(--spectrum-05);
+  --cat-trade-distributor:   var(--spectrum-07);
+  --cat-experiential:        var(--spectrum-09);
+  --cat-hospitality-events:  var(--spectrum-10);
+  --cat-creative-content:    var(--spectrum-12);
+  --cat-sales-distribution:  var(--spectrum-13);
+  --cat-strategy-growth:     var(--spectrum-15);
+  --cat-reporting:           #D6F35F;
+
+  /* -------------------- COLOR: SEMANTIC --------------------- */
+  --success: #6BE486;
+  --warn: #FFB627;
+  --danger: #FF4D4D;
+  --info: #5AB8FF;
+
+  /* Live / real-time indicator */
+  --live: #FF2D55;   /* cooler/magenta so it never reads as brand red */
+
+  /* -------------------- TYPE -------------------------------- */
+  /* Display + Body — Instrument Sans: clean workhorse across the whole site. */
+  --font-display: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+  /* Serif — Instrument Serif: reserved for select display moments ("Boots in 200 metros"). */
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  /* Mono — JetBrains Mono: ops/tactical labels, ASCII markup. */
+  --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+  /* Stencil — Noto Sans 700, all-caps: veteran-owned stencil nod. Use SPARINGLY. */
+  --font-stencil: 'Noto Sans', 'Impact', sans-serif;
+
+  /* Type scale — tight, punchy, field-ready */
+  --t-display-xl: clamp(72px, 10vw, 144px);   /* hero slabs */
+  --t-display-l:  clamp(56px, 7vw, 96px);
+  --t-display-m:  clamp(40px, 5vw, 64px);
+  --t-display-s:  32px;
+  --t-h1: 44px;
+  --t-h2: 32px;
+  --t-h3: 22px;
+  --t-h4: 18px;
+  --t-body-l: 18px;
+  --t-body:   16px;
+  --t-body-s: 14px;
+  --t-caption: 13px;
+  --t-eyebrow: 12px;   /* letter-spaced monospace labels */
+  --t-micro:   11px;
+
+  --lh-tight:  1.05;
+  --lh-snug:   1.2;
+  --lh-body:   1.55;
+  --lh-loose:  1.7;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.08em;
+  --tracking-ops: 0.22em;   /* the letter-spaced "OPS" labels */
+
+  /* -------------------- SPACING ----------------------------- */
+  /* 4-point base. */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+  --s-32: 128px;
+
+  /* -------------------- HERO SIZING ------------------------- */
+  /* Three standard hero vertical-padding variants. Height is content-driven;
+     these set consistent padding-block so pages stop rolling their own heights.
+     compact = utility/detail/long-tail · standard = primary pages · tall = flagship (home). */
+  --hero-pad-compact:  72px;
+  --hero-pad-standard: 112px;
+  --hero-pad-tall:     160px;
+
+  /* -------------------- RADII ------------------------------- */
+  /* Slightly generous, but never pill-soft. */
+  --r-1: 4px;
+  --r-2: 8px;
+  --r-3: 12px;
+  --r-4: 16px;
+  --r-5: 20px;
+  --r-6: 28px;
+  --r-pill: 999px;
+
+  /* -------------------- SHADOW ------------------------------ */
+  /* On dark, shadows are subtle; real depth comes from borders + chroma glow. */
+  --shadow-1: 0 1px 0 rgba(255,255,255,0.04) inset, 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-2: 0 4px 16px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.04) inset;
+  --shadow-3: 0 16px 48px rgba(0,0,0,0.55), 0 1px 0 rgba(255,255,255,0.06) inset;
+  --glow-spark: 0 0 0 1px rgba(214, 243, 95, 0.15), 0 8px 32px rgba(214,243,95,0.18);
+  --glow-ignite: 0 0 0 1px rgba(215, 69, 62, 0.15), 0 8px 32px rgba(215,69,62,0.18);
+
+  /* -------------------- BORDERS ----------------------------- */
+  --border-1: 1px solid var(--ink-400);
+  --border-2: 1px solid var(--ink-300);
+  --border-hair: 1px solid rgba(255,255,255,0.06);
+
+  /* -------------------- MOTION ------------------------------ */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 360ms;
+
+  /* -------------------- GRID -------------------------------- */
+  --grid-max: 1480px;
+  --grid-gutter: 24px;
+}
+[data-ig-chrome]{font-family:var(--font-body);color:var(--fg-1);-webkit-font-smoothing:antialiased;line-height:var(--lh-body);text-align:left}
+[data-ig-chrome] *,[data-ig-chrome] *::before,[data-ig-chrome] *::after{box-sizing:border-box}
+[data-ig-chrome] a{text-decoration:none}
+[data-ig-chrome] p{margin:0}
+[data-ig-chrome] h1,[data-ig-chrome] h2,[data-ig-chrome] h3,[data-ig-chrome] h4,[data-ig-chrome] h5{margin:0;font-family:var(--font-display)}
+[data-ig-chrome] ul{margin:0;padding:0;list-style:none}
+[data-ig-chrome] img{max-width:100%;display:block}
+[data-ig-chrome] button{font:inherit;cursor:pointer}
+[data-ig-chrome][data-ig-chrome="top"]{position:relative;z-index:1000;background:#0A0B0D}
+[data-ig-chrome] header nav a{white-space:nowrap}
+@media (max-width: 720px) {
+  [data-ig-chrome] header a[href="/contact"].link-mono{display:none !important}
+  [data-ig-chrome] footer{padding:56px 20px 24px !important}
+  [data-ig-chrome] footer [style*="font-size: clamp(80px"]{font-size:64px !important;margin-bottom:36px !important}
+  [data-ig-chrome] footer [style*="grid-template-columns"]{grid-template-columns:1fr !important;gap:32px !important}
+}
+@media (max-width: 1080px) {
+  [data-ig-chrome] header nav{display:none !important}
+  [data-ig-chrome] header > div:first-child{padding:0 18px !important;height:60px !important;gap:8px !important}
+}
+@media (min-width: 1081px) and (max-width: 1240px) {
+  [data-ig-chrome] header nav{gap:0 !important}
+  [data-ig-chrome] header nav a{padding-left:9px !important;padding-right:9px !important;font-size:12px !important;letter-spacing:0.1em !important}
+}
+@media (max-width: 1199px) {
+  [data-ig-chrome] header nav{display:none !important}
+  [data-ig-chrome] .nav-cta-desktop{display:none !important}
+  [data-ig-chrome] .nav-burger{display:inline-flex !important}
+  [data-ig-chrome] header > div:first-child{height:72px !important;gap:12px !important}
+}
+/* legacy Webflow chrome hidden once the React chrome mounts */
+html.ig-chrome-on .header-wrapper---absolute,html.ig-chrome-on .header-wrapper,html.ig-chrome-on .w-nav,html.ig-chrome-on [data-ig-old-footer]{display:none !important}
