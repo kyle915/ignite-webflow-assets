@@ -2993,7 +2993,7 @@ const AboutOffsite = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-3)",
     textTransform: "uppercase"
   }
-}, "est. 2008 \xB7 17 years of offsites")), /*#__PURE__*/React.createElement("div", {
+}, "est. 2018 \xB7 8 years of offsites")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "1.6fr 1fr",

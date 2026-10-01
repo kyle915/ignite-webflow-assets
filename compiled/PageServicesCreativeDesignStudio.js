@@ -61,7 +61,8 @@ const Slot = ({
   tall,
   accent,
   rot = 0,
-  big
+  big,
+  img
 }) => /*#__PURE__*/React.createElement("div", {
   className: "cs-tile",
   style: {
@@ -70,7 +71,7 @@ const Slot = ({
     overflow: "hidden",
     transform: `rotate(${rot}deg)`,
     aspectRatio: tall ? "3/4" : big ? "16/10" : "4/3",
-    background: `linear-gradient(135deg, ${accent || ORANGE}22, ${INK}10), repeating-linear-gradient(45deg, rgba(20,17,12,0.04) 0 14px, transparent 14px 28px)`,
+    background: img ? `linear-gradient(180deg, rgba(20,17,12,0) 45%, rgba(20,17,12,0.62)), url("${img}") center / cover no-repeat` : `linear-gradient(135deg, ${accent || ORANGE}22, ${INK}10), repeating-linear-gradient(45deg, rgba(20,17,12,0.04) 0 14px, transparent 14px 28px)`,
     border: "1px solid rgba(20,17,12,0.16)",
     display: "flex",
     flexDirection: "column",
@@ -87,10 +88,10 @@ const Slot = ({
 }, /*#__PURE__*/React.createElement("span", {
   className: "cs-slot-label",
   style: {
-    color: INK,
-    opacity: 0.55
+    color: img ? "#fff" : INK,
+    opacity: img ? 0 : 0.55
   }
-}, "IMG"), /*#__PURE__*/React.createElement("span", {
+}, img ? "" : "IMG"), /*#__PURE__*/React.createElement("span", {
   style: {
     width: 22,
     height: 22,
@@ -113,7 +114,7 @@ const Slot = ({
 }), /*#__PURE__*/React.createElement("div", {
   className: "cs-slot-label",
   style: {
-    color: INK
+    color: img ? "#fff" : INK
   }
 }, label)));
 
@@ -248,6 +249,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(Slot, {
   label: "Hero key art",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/activation-liquid-death-festival-hearse-tent-wide.jpg",
   tall: true,
   accent: ORANGE,
   rot: -1.5
@@ -259,10 +261,12 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(Slot, {
   label: "POS / signage",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/torch-thc-kings-liquor-activation.png",
   accent: CLAY,
   rot: 1.2
 }), /*#__PURE__*/React.createElement(Slot, {
   label: "Packaging",
+  img: "https://kyle915.github.io/ignite-webflow-assets/assets/begoat-fred-meyer-demo-table.png",
   accent: INK,
   rot: -0.8
 }))))));
@@ -303,34 +307,42 @@ const Marquee = () => {
 const Gallery = () => {
   const tiles = [{
     label: "Festival key art",
+    img: "https://kyle915.github.io/ignite-webflow-assets/assets/breakaway-jimmy-johns-silent-disco.jpg",
     a: ORANGE,
     tall: false
   }, {
     label: "End-cap / POS",
+    img: "https://kyle915.github.io/ignite-webflow-assets/assets/begoat-fred-meyer-demo-aisle.png",
     a: CLAY,
     tall: true
   }, {
     label: "Sample kit packaging",
+    img: "https://kyle915.github.io/ignite-webflow-assets/assets/brewdr-kroger-demo-table.jpg",
     a: INK,
     tall: false
   }, {
     label: "Booth / footprint design",
+    img: "https://kyle915.github.io/ignite-webflow-assets/assets/trade-show-pressreader-booth.jpg",
     a: ORANGE,
     tall: false
   }, {
     label: "Social / paid cutdowns",
+    img: "https://kyle915.github.io/ignite-webflow-assets/assets/street-team-liquid-death-miami.jpg",
     a: CLAY,
     tall: false
   }, {
     label: "Signage system",
+    img: "https://kyle915.github.io/ignite-webflow-assets/assets/activation-total-wireless-storefront.jpg",
     a: INK,
     tall: true
   }, {
     label: "Vehicle / tour wrap",
+    img: "https://cdn.prod.website-files.com/688129f3841088c282c32750/689787a3d26c27f24d0483a6_KKchicken.webp",
     a: ORANGE,
     tall: false
   }, {
     label: "GWP / premium",
+    img: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-6-owala-engraving.jpg",
     a: CLAY,
     tall: false
   }];
@@ -388,21 +400,11 @@ const Gallery = () => {
     }
   }, /*#__PURE__*/React.createElement(Slot, {
     label: t.label,
+    img: t.img,
     accent: t.a,
     tall: t.tall,
     rot: i % 3 === 0 ? -1 : i % 3 === 1 ? 0.8 : 0
-  })))), /*#__PURE__*/React.createElement("p", {
-    className: "cs-reveal",
-    style: {
-      marginTop: 28,
-      textAlign: "center",
-      fontFamily: "var(--font-mono)",
-      fontSize: 11,
-      letterSpacing: "0.14em",
-      color: "rgba(20,17,12,0.45)",
-      textTransform: "uppercase"
-    }
-  }, "\u203B Placeholder frames \u2014 drop real campaign work or stock before launch")));
+  }))))));
 };
 
 /* ============ THE TAKE ============ */

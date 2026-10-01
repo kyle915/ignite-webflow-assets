@@ -1226,7 +1226,7 @@ const CaseCTA = ({
 /* ------------------------------------------------------------------ ROOT */
 const CaseStudyPage = () => {
   const params = new URLSearchParams(window.location.search);
-  const slug = params.get("slug") || "liquid-death";
+  const slug = (window.location.pathname.match(/^\/portfolio\/([^\/?#]+)/) || [])[1] || params.get("slug") || "liquid-death";
   const c = (window.CASE_STUDIES || {})[slug];
   return /*#__PURE__*/React.createElement("div", {
     "data-screen-label": c ? `Case · ${c.brand}` : "Case · 404"
