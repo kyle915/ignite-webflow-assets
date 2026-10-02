@@ -36,7 +36,7 @@ const FEATURED_CASES = [
     brand: "WHITE CLAW", slug: "white-claw", color: "#003D7A",
     tagline: "Cracking the spirits launch code.",
     category: "National Sampling Rollout",
-    stats: [["500+", "In-store demos"], ["20%", "Conversion rate"], ["12", "Markets in 90d"]],
+    stats: [],
     img: (window.__resources?.r_688d8a159dce27cfc5ed905c_1 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688d8a159dce27cfc5ed905c_1.jpg"),
     logo: (window.__resources?.r_688c1b129ea08467c1137c5d_white_claw_logo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b129ea08467c1137c5d_white-claw-logo.webp"),
   },
@@ -116,7 +116,7 @@ const CaseStudyCarousel = () => (
                   {c.tagline}
                 </h3>
                 <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-                  {c.stats.map(([n, l]) => (
+                  {(c.stats || []).map(([n, l]) => (
                     <div key={l}>
                       <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, color: "#FFB627", letterSpacing: "-0.02em", lineHeight: 1 }}>{n}</div>
                       <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.18em", textTransform: "uppercase", opacity: 0.75, marginTop: 4 }}>{l}</div>

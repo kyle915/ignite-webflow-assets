@@ -44,7 +44,7 @@ const FEATURED_CASES = [{
   color: "#003D7A",
   tagline: "Cracking the spirits launch code.",
   category: "National Sampling Rollout",
-  stats: [["500+", "In-store demos"], ["20%", "Conversion rate"], ["12", "Markets in 90d"]],
+  stats: [],
   img: window.__resources?.r_688d8a159dce27cfc5ed905c_1 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688d8a159dce27cfc5ed905c_1.jpg",
   logo: window.__resources?.r_688c1b129ea08467c1137c5d_white_claw_logo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b129ea08467c1137c5d_white-claw-logo.webp"
 }, {
@@ -220,7 +220,7 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
     gap: 20,
     flexWrap: "wrap"
   }
-}, c.stats.map(([n, l]) => /*#__PURE__*/React.createElement("div", {
+}, (c.stats || []).map(([n, l]) => /*#__PURE__*/React.createElement("div", {
   key: l
 }, /*#__PURE__*/React.createElement("div", {
   style: {
