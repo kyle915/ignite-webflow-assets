@@ -387,7 +387,40 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
     gap: 80,
     alignItems: "start"
   }
-}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(OpsLine, null, ">> WHAT CLIENTS SAY")), /*#__PURE__*/React.createElement("div", {
+}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(OpsLine, null, ">> WHAT CLIENTS SAY"), /*#__PURE__*/React.createElement("blockquote", {
+  style: {
+    marginTop: 24,
+    fontFamily: "var(--font-serif)",
+    fontWeight: 500,
+    fontSize: "clamp(32px, 4vw, 54px)",
+    letterSpacing: "-0.015em",
+    lineHeight: 1.1,
+    color: "var(--fg-1-inv)",
+    margin: 0
+  }
+}, /*#__PURE__*/React.createElement("span", {
+  style: {
+    color: "var(--ignite-500)",
+    fontSize: "1.0em",
+    lineHeight: 0
+  }
+}, "\u201C"), "Ignite's team drove a ", /*#__PURE__*/React.createElement("span", {
+  style: {
+    color: "var(--ignite-500)"
+  }
+}, "20% conversion rate"), " across 500+ in-store demos. We scaled from 3 markets to 10+ in under 90 days."), /*#__PURE__*/React.createElement("div", {
+  style: {
+    marginTop: 32
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  style: {
+    fontFamily: "var(--font-mono)",
+    fontSize: 11,
+    letterSpacing: "0.18em",
+    textTransform: "uppercase",
+    color: "var(--fg-3-inv)"
+  }
+}, "MARKETING DIRECTOR \xB7 CPG BEVERAGE BRAND"))), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
