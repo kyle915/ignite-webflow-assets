@@ -159,8 +159,8 @@ const BRAND_BAR_CSS = `
 @media (max-width:760px){.bb-in{padding:0 18px;height:42px}.bb-tabs{height:42px;gap:28px}.bb-cross{display:none}}
 `;
 const BrandBar = ({ rel = "", brand = "ignite" }) => {
-  const igniteHref = rel + "index.html";
-  const sparkHref = rel + "pages/spark-platform.html";
+  const igniteHref = "index.html"; /* absolute after build; never prefix rel (pages pass rel="../") */
+  const sparkHref = "pages/spark-platform.html";
   const onSpark = brand === "spark";
   return (
     <div className="bb-bar" data-brand={brand}>

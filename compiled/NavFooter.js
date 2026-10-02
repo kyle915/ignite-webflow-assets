@@ -305,8 +305,8 @@ const BrandBar = ({
   rel = "",
   brand = "ignite"
 }) => {
-  const igniteHref = rel + "/";
-  const sparkHref = rel + "https://sparkbyignite.igniteproductions.co/";
+  const igniteHref = "/"; /* absolute after build; never prefix rel (pages pass rel="../") */
+  const sparkHref = "https://sparkbyignite.igniteproductions.co/";
   const onSpark = brand === "spark";
   return /*#__PURE__*/React.createElement("div", {
     className: "bb-bar",
