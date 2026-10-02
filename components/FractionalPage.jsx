@@ -828,7 +828,7 @@ const FROM_TO = [
   ["Slotting fees with no plan",        "Trade calendar tied to P&L"],
   ["Demos run by no-shows",             "257K vetted ambassadors"],
   ["Sell sheet from 2022",              "Buyer-ready brand kit"],
-  ["$240K+ for two FT hires",           "A retainer that flexes monthly"],
+  ["The cost of two full-time hires",   "A retainer that flexes monthly"],
 ];
 
 const FractionalFromTo = () => (
@@ -887,8 +887,8 @@ const FractionalFromTo = () => (
    05 · BUILT FOR + WEEK ONE — two-column promise
    ================================================================== */
 const BUILT_FOR = [
-  "Are doing $1M–$50M and ready to scale",
-  "Need senior CPG leadership without $250K+ overhead",
+  "Are emerging and mid-market brands ready to scale",
+  "Need senior CPG leadership without full-time overhead",
   "Are stuck managing brokers & demos themselves",
   "Want results before another funding round",
   "Have product-market fit but flat velocity",
@@ -908,7 +908,7 @@ const FractionalBuiltFor = () => (
   }}>
     <Container>
       <div style={{ maxWidth: 920, marginBottom: 64 }}>
-        <FpOpsLine color="var(--spectrum-09)">{">>"} BEST FOR · $1M–$50M BRANDS SCALING DISTRIBUTION</FpOpsLine>
+        <FpOpsLine color="var(--spectrum-09)">{">>"} BEST FOR · EMERGING AND MID-MARKET BRANDS SCALING DISTRIBUTION</FpOpsLine>
         <h2 style={{
           marginTop: 16, fontFamily: "var(--font-display)", fontWeight: 900,
           fontSize: "clamp(44px, 5.6vw, 88px)", letterSpacing: "-0.04em",

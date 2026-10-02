@@ -1143,7 +1143,7 @@ const FractionalEngines = () => /*#__PURE__*/React.createElement("section", {
 /* ==================================================================
    04 · FROM → TO — transformation pairs
    ================================================================== */
-const FROM_TO = [["Founder pitching buyers at 11pm", "Senior CPG closer in your seat"], ["Brokers you can't reach", "Weekly read-outs & scorecards"], ["Slotting fees with no plan", "Trade calendar tied to P&L"], ["Demos run by no-shows", "257K vetted ambassadors"], ["Sell sheet from 2022", "Buyer-ready brand kit"], ["$240K+ for two FT hires", "A retainer that flexes monthly"]];
+const FROM_TO = [["Founder pitching buyers at 11pm", "Senior CPG closer in your seat"], ["Brokers you can't reach", "Weekly read-outs & scorecards"], ["Slotting fees with no plan", "Trade calendar tied to P&L"], ["Demos run by no-shows", "257K vetted ambassadors"], ["Sell sheet from 2022", "Buyer-ready brand kit"], ["The cost of two full-time hires", "A retainer that flexes monthly"]];
 const FractionalFromTo = () => /*#__PURE__*/React.createElement("section", {
   style: {
     background: "var(--ink-000)",
@@ -1234,7 +1234,7 @@ const FractionalFromTo = () => /*#__PURE__*/React.createElement("section", {
 /* ==================================================================
    05 · BUILT FOR + WEEK ONE — two-column promise
    ================================================================== */
-const BUILT_FOR = ["Are doing $1M–$50M and ready to scale", "Need senior CPG leadership without $250K+ overhead", "Are stuck managing brokers & demos themselves", "Want results before another funding round", "Have product-market fit but flat velocity", "Are losing time to \"founder-as-VP\" syndrome"];
+const BUILT_FOR = ["Are emerging and mid-market brands ready to scale", "Need senior CPG leadership without full-time overhead", "Are stuck managing brokers & demos themselves", "Want results before another funding round", "Have product-market fit but flat velocity", "Are losing time to \"founder-as-VP\" syndrome"];
 const WEEK_ONE = [["DAY 1", "Embedded senior team plugged into your stack"], ["WEEK 1", "Brand & account audit — buyer-by-buyer"], ["WEEK 2", "Custom 90-day playbook delivered & approved"], ["WEEK 3", "First buyer pitches & sample drops out the door"], ["ONGOING", "Friday read-outs — what shipped, stuck, next"]];
 const FractionalBuiltFor = () => /*#__PURE__*/React.createElement("section", {
   className: "paper",
@@ -1249,7 +1249,7 @@ const FractionalBuiltFor = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(FpOpsLine, {
   color: "var(--spectrum-09)"
-}, ">>", " BEST FOR \xB7 $1M\u2013$50M BRANDS SCALING DISTRIBUTION"), /*#__PURE__*/React.createElement("h2", {
+}, ">>", " BEST FOR \xB7 EMERGING AND MID-MARKET BRANDS SCALING DISTRIBUTION"), /*#__PURE__*/React.createElement("h2", {
   style: {
     marginTop: 16,
     fontFamily: "var(--font-display)",
