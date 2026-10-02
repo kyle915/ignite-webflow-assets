@@ -118,7 +118,8 @@
       "global": "PageSparkForBrands",
       "bundle": "PageSparkForBrands",
       "deps": [
-        "SparkSite"
+        "SparkSite",
+        "V2AppFrame"
       ]
     },
     "/services/fabrication-builds": {
