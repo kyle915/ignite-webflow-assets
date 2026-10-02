@@ -887,7 +887,7 @@ const FractionalFromTo = () => (
    05 · BUILT FOR + WEEK ONE — two-column promise
    ================================================================== */
 const BUILT_FOR = [
-  "Are emerging and mid-market brands ready to scale",
+  "Are emerging or mid-market and ready to scale",
   "Need senior CPG leadership without full-time overhead",
   "Are stuck managing brokers & demos themselves",
   "Want results before another funding round",
