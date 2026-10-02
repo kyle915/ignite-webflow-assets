@@ -87,7 +87,7 @@ const FractionalProcess = () => (
 /* ---------- WORK ---------- */
 const WORK_CASES = [
   { slug: "liquid-death", brand: "LIQUID DEATH", tagline: "Murdering thirst, coast to coast.", category: "Brand Ambassador Program", stats: [["850+","Events"],["47","Markets"],["1.4M","Reached"]], img: (window.__resources?.r_6882bb7581d3d94867693919_liquid_death || "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882bb7581d3d94867693919_liquid-death.webp") },
-  { slug: "white-claw", brand: "WHITE CLAW", tagline: "Cracking the spirits launch code.", category: "National Sampling Rollout", stats: [["500+","Demos"],["20%","Conversion"],["12","Markets"]], img: (window.__resources?.r_688d8a159dce27cfc5ed905c_1 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688d8a159dce27cfc5ed905c_1.jpg") },
+  { slug: "white-claw", brand: "WHITE CLAW", tagline: "Cracking the spirits launch code.", category: "National Sampling Rollout", stats: [], img: (window.__resources?.r_688d8a159dce27cfc5ed905c_1 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688d8a159dce27cfc5ed905c_1.jpg") },
   { slug: "mas", brand: "MAS+", tagline: "Street-level energy. Stadium-level reach.", category: "Street Sampling", stats: [["320","Events"],["180K","Samples"],["6","Stadiums"]], img: (window.__resources?.r_688ce54c92fd540e9bdf283a_3 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688ce54c92fd540e9bdf283a_3.png") },
   { slug: "dude-wipes", brand: "DUDE WIPES", tagline: "Everywhere guys hang out.", category: "Experiential Tour", stats: [["120","Events"],["85K","Samples"],["18","Markets"]], img: (window.__resources?.r_68968fb1a0824c0e0bb6223b_SMALLS94_11_15_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/68968fb1a0824c0e0bb6223b_SMALLS94_11_15_2024_Brandy_Wilson_06080ec4-0c97-5fdb-74ec-ed3d6cd749a5_2.jpg") },
   { slug: "total-wireless", brand: "TOTAL WIRELESS", tagline: "Retail activation at scale.", category: "In-Store Demos", stats: [["240","Stores"],["22","Markets"],["15%","Lift"]], img: (window.__resources?.r_68962d00b2b16cc7bb7a21c8_TOTAL53_07_26_2 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/68962d00b2b16cc7bb7a21c8_TOTAL53_07_26_2025_Deborah_Camp_0feb1a50-ac63-c910-7335-bb5ff6c1b927_8.jpg") },
@@ -131,7 +131,7 @@ const WorkGrid = () => (
                 <div style={{ fontFamily: "var(--font-stencil)", fontSize: 14, letterSpacing: "0.12em", color: "#FFB627", marginBottom: 14 }}>{c.brand}</div>
                 <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 34, letterSpacing: "-0.02em", lineHeight: 1.05, marginBottom: 20 }}>{c.tagline}</h3>
                 <div style={{ display: "flex", gap: 24 }}>
-                  {c.stats.map(([n, l]) => (
+                  {(c.stats || []).map(([n, l]) => (
                     <div key={l}>
                       <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 26, color: "#FFB627", letterSpacing: "-0.02em", lineHeight: 1 }}>{n}</div>
                       <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", opacity: 0.75, marginTop: 4 }}>{l}</div>
@@ -175,7 +175,7 @@ const AboutStats = () => (
         The numbers, in a word:<br/><span style={{ fontStyle: "italic", color: "var(--ignite-500)" }}>big.</span>
       </h2>
       <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
-        {[["257,000+", "Vetted ambassadors"], ["5,000+", "Activations per year"], ["200+", "Brands served"], ["50", "States covered"], ["8", "Years in business"], ["25M+", "Consumers reached"], ["87%", "Client retention"], ["20%+", "Avg demo conversion"]].map(([n, l]) => (
+        {[["257,000+", "Vetted ambassadors"], ["5,000+", "Activations per year"], ["200+", "Brands served"], ["50", "States covered"], ["2018", "Founded"], ["VETERAN", "Owned · VOSB"]].map(([n, l]) => (
           <div key={l} style={{ padding: 24, background: "var(--paper-000)", border: "1px solid var(--paper-200)", borderRadius: 14 }}>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 48, letterSpacing: "-0.03em", lineHeight: 1, color: "var(--fg-1-inv)" }}>{n}</div>
             <div style={{ marginTop: 12, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--fg-3-inv)" }}>{l}</div>

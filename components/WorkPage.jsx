@@ -90,7 +90,7 @@ const WORK_CASES = [
   { slug: "mas",            bento: "md",        accent: "#D7453E", surface: "#1A0E0A",
     stats: [["75K+","Samples 2025"],["6","West Coast mkts"],["MLS","+ fútbol"]] },
   { slug: "white-claw",     bento: "lg-wide",   accent: "#7BD0E8", surface: "#0B1A22",
-    stats: [["1,400+","Demos"],["35%","Conversion"],["+7%","Sales lift"]] },
+    stats: [] },
   { slug: "smalls-sliders", bento: "md",        accent: "#FFC727", surface: "#231708",
     stats: [["Multi","Mobile tour"],["Custom","Truck buildout"],["South","U.S. region"]] },
   { slug: "total-wireless", bento: "lg-wide",   accent: "#D31920", surface: "#1A0606",
@@ -453,7 +453,7 @@ const WorkHeroRail = () => {
               </h3>
 
               <div style={{ display:"flex", gap:18, marginTop:6 }}>
-                {c.stats.slice(0,3).map(([n,l]) => (
+                {(c.stats || []).slice(0,3).map(([n,l]) => (
                   <div key={l}>
                     <div style={{ fontFamily:"var(--font-display)", fontWeight:700, fontSize:22,
                       letterSpacing:"-0.025em", color:c.accent, lineHeight:1 }}>{n}</div>
@@ -604,12 +604,12 @@ const WorkBento = () => {
                 }}>
                   {c.headline}
                 </h3>
-                {(plan[c.slug]?.col === "span 8" || plan[c.slug]?.col === "span 12") && (
+                {(plan[c.slug]?.col === "span 8" || plan[c.slug]?.col === "span 12") && (c.stats || []).length > 0 && (
                   <div style={{
                     marginTop:6, display:"flex", gap:24,
                     paddingTop:14, borderTop:`1px solid ${c.accent}33`,
                   }}>
-                    {c.stats.slice(0,3).map(([n,l]) => (
+                    {(c.stats || []).slice(0,3).map(([n,l]) => (
                       <div key={l}>
                         <div style={{ fontFamily:"var(--font-display)", fontWeight:700, fontSize:24,
                           letterSpacing:"-0.025em", color:c.accent, lineHeight:1 }}>{n}</div>

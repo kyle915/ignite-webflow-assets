@@ -61,7 +61,7 @@ const SVC_LANES = [
     bullets: ["Festival Activations","Pop-Ups","Brand Activations","Immersive Installations","Campus Tours","Mall & Lifestyle Centers"],
     img: (window.__resources?.r_assets_experiential_liquiddeath_nascar_jpg || "../assets/experiential-liquiddeath-nascar.jpg"),
     imgPos: "center 40%",
-    meta: ["48 markets / yr","350+ activations","12 yrs running"] },
+    meta: ["48 markets / yr","350+ activations","2018 founded"] },
   { slug: "event-production", n: "EP", flag: true, accent: "#D7453E",
     title: "Event Production", sub: "One producer from brief to strike.",
     long: "Run-of-show, vendor and AV coordination, permits and insurance, staging, load-in, on-site show calling, crew and a recap within hours. Launches, pop-ups, festival footprints and developer events.",
@@ -773,7 +773,7 @@ const SvcStats = () => (
         {[
           ["257K+", "vetted ambassadors", "var(--spark-500)"],
           ["50", "states active · national coverage", "var(--ignite-500)"],
-          ["12yrs", "running, still veteran-owned", "var(--ember-500)"],
+          ["2018", "founded, still veteran-owned", "var(--ember-500)"],
           ["48hr", "rush staffing, anywhere", "var(--spark-500)"],
         ].map(([n, l, c]) => (
           <div key={l} style={{ paddingTop: 14, borderTop: `1px solid ${c}` }}>

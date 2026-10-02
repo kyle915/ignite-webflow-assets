@@ -106,15 +106,11 @@ const CASE_STUDIES = {
     challenge:
       "To support the launch of White Claw Vodka in summer 2024, the brand needed a high-volume, nationwide demo program that could break through in a crowded spirits market. The goal: build presence fast, drive meaningful trial, and convert consumers at scale — across both on- and off-premise.",
     solution:
-      "Ignite was selected as the national execution agency — managing over 1,400 demos across bars, liquor stores, and grocery accounts. While a strategic partner led the campaign design, we handled every detail of the rollout: staffing, scheduling, logistics, POS setup, and recaps. Our ambassadors were trained to deliver a premium, informed consumer experience that reflected the brand's positioning.",
+      "Ignite was selected as the national execution agency — managing demos across bars, liquor stores, and grocery accounts. While a strategic partner led the campaign design, we handled every detail of the rollout: staffing, scheduling, logistics, POS setup, and recaps. Our ambassadors were trained to deliver a premium, informed consumer experience that reflected the brand's positioning.",
     outcomes: [
-      "1,400+ activations executed nationwide",
-      "35% average conversion rate during on-premise demos",
-      "+7% lift in off-premise sales during demo periods",
-      "6 bottles sold per demo, on average",
       "Flawless execution across both control and franchise markets",
     ],
-    stats: [["1,400+","Activations"],["35%","Avg conversion"],["+7%","Sales lift"]],
+    stats: [],
     gallery: [
       "https://cdn.prod.website-files.com/688129f3841088c282c32750/688e7dc6a5c043be57079bdd_2.jpg",
       "https://cdn.prod.website-files.com/688129f3841088c282c32750/68962c56b0fda1a0e539fd60_WHITECLAW0B928F87_42CD_4C86_B4C3_E4F26F5A0393_6419694d-a383-4f11-88ed-9353557c7f12.jpg",

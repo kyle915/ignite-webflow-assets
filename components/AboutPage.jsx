@@ -920,7 +920,7 @@ const AboutPhotos = () => {
 const ABOUT_ENGAGEMENT = [
   {tag:"01 · PROJECT", title:"One activation, end-to-end.", body:"A launch, a tour leg, a stadium takeover. We scope, build, staff, run, and measure a single campaign — then hand you the recap.", best:"Best for: a defined moment with a clear date.",cta:"Request a quote",href:"https://www.igniteproductions.co/contact"},
   {tag:"02 · RETAINER", title:"Always-on field execution.", body:"We become your field marketing arm. Recurring sampling, demo cycles, regional tours, ambassador programs — measured continuously through Spark.", best:"Best for: programs running 6+ months.",cta:"Talk through scope",href:"https://www.igniteproductions.co/contact"},
-  {tag:"03 · FRACTIONAL", title:"Embedded leadership.", body:"Senior CPG marketing leadership inside your team without the FTE cost. Retail strategy, sponsorship management, GTM planning — by the quarter.", best:"Best for: brands $5M–$100M without a VP yet.",cta:"See Fractional →",href:"fractional.html"},
+  {tag:"03 · FRACTIONAL", title:"Embedded leadership.", body:"Senior CPG marketing leadership inside your team without the FTE cost. Retail strategy, sponsorship management, GTM planning — by the quarter.", best:"Best for: emerging and mid-market brands without a VP yet.",cta:"See Fractional →",href:"fractional.html"},
 ];
 
 const AboutEngagement = () => (
