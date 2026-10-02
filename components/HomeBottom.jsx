@@ -101,7 +101,7 @@ const CaseStudyCarousel = () => (
             }}/>
             <div style={{ position: "relative", padding: 32, height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-start" }}>
-                {c.logo ? (<img src={c.logo} alt={c.brand} style={{ height: 132, width: "auto", maxWidth: 240, display: "block", objectFit: "contain", filter: "brightness(0) invert(1) drop-shadow(0 2px 10px rgba(0,0,0,0.6))" }} loading="lazy" decoding="async"/>) : (<span style={{ display:"block", fontFamily:"var(--font-display)", fontWeight:800, fontSize:"clamp(26px,3vw,44px)", letterSpacing:"-0.03em", lineHeight:1, color:"#fff", margin:"12px 0" }}>{c.brand}</span>)}
+                {c.logo ? (<img src={c.logo} alt={c.brand} style={{ height: "auto", maxHeight: 96, width: "auto", maxWidth: 220, display: "block", objectFit: "contain", filter: "brightness(0) invert(1) drop-shadow(0 2px 10px rgba(0,0,0,0.6))" }} loading="lazy" decoding="async"/>) : (<span style={{ display:"block", fontFamily:"var(--font-display)", fontWeight:800, fontSize:"clamp(26px,3vw,44px)", letterSpacing:"-0.03em", lineHeight:1, color:"#fff", margin:"12px 0" }}>{c.brand}</span>)}
               </div>
               <div>
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "#FFB627", marginBottom: 12 }}>
@@ -197,7 +197,7 @@ const HomeTestimonial = () => (
         <div>
           <OpsLine>>> WHAT CLIENTS SAY</OpsLine>
           <blockquote style={{
-            marginTop: 24,
+            marginTop: 24, textAlign: "left",
             fontFamily: "var(--font-serif)", fontWeight: 500,
             fontSize: "clamp(32px, 4vw, 54px)", letterSpacing: "-0.015em", lineHeight: 1.1,
             color: "var(--fg-1-inv)", margin: 0,

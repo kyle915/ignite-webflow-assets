@@ -53,7 +53,10 @@ const CLIENT_LOGOS = [{
   url: window.__resources?.r_688c3839708ed185c2de5ba9_dude_wipes || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3839708ed185c2de5ba9_dude-wipes.webp"
 }, {
   name: "Krispy Krunchy",
-  url: window.__resources?.r_688c1b20a33960875f5d7bc0_krispy_krunchy_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b20a33960875f5d7bc0_krispy-krunchy-logo.webp"
+  url: IG_ASSET("logo-krispy-krunchy.png"),
+  ink: true,
+  maxH: 46,
+  maxW: 70
 }, {
   name: "Marc Anthony",
   url: window.__resources?.r_688c378239e6dc2ebedde728_marc_anthony_lo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c378239e6dc2ebedde728_marc-anthony-logo.webp"
@@ -75,6 +78,12 @@ const CLIENT_LOGOS = [{
   ink: true,
   maxH: 52,
   maxW: 70
+}, {
+  name: "Kalshi",
+  url: IG_ASSET("logo-kalshi.png"),
+  ink: true,
+  maxH: 26,
+  maxW: 110
 }, {
   name: "PressReader",
   url: IG_ASSET("logo-pressreader.png"),
@@ -522,5 +531,6 @@ const TwoEngines = () => /*#__PURE__*/React.createElement("section", {
 }, "SEE THE PLATFORM \u2192"))));
 Object.assign(window, {
   ClientMarquee,
-  TwoEngines
+  TwoEngines,
+  CLIENT_LOGOS
 });

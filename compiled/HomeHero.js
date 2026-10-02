@@ -10,6 +10,160 @@ const MOMENTS = [["AUSTIN, TX", "WHITE CLAW", "SXSW TAKEOVER", "03:14 PM CT"], [
 /* Word rotators that sit under "We turn" */
 /* Edgy rotators — who & what we convert. */
 const WORDS = ["consumers", "strangers", "skeptics", "streets", "stadiums", "shoppers", "crowds", "side-eyes"];
+
+/* ---------- Hero ticker: count-up stats + client logos, service row underneath ---------- */
+const HX_STATS = [{
+  n: 257000,
+  suffix: "+",
+  label: "BRAND AMBASSADORS",
+  href: "/services/event-staffing"
+}, {
+  n: 5000,
+  suffix: "+",
+  label: "EVENTS EXECUTED",
+  href: "/work"
+}, {
+  n: 50,
+  suffix: "",
+  label: "STATES COVERED",
+  href: "/markets"
+}, {
+  n: 48,
+  suffix: "hr",
+  label: "RUSH STAFFING",
+  href: "https://www.igniteproductions.co/contact"
+}, {
+  t: "SINCE 2018",
+  label: "VETERAN-OWNED",
+  href: "/about"
+}, {
+  t: "GPS",
+  label: "VERIFIED SHIFTS",
+  href: "https://sparkbyignite.igniteproductions.co/"
+}, {
+  t: "TIPS + RBS",
+  label: "CERTIFIED STAFF",
+  href: "/services/event-staffing"
+}];
+const HX_LOGO_PICK = ["OpenAI", "Claude", "Liquid Death", "White Claw", "Breakaway", "Total Wireless", "Luckin Coffee"];
+const HX_SERVICES = [["Event staffing", "/services/event-staffing"], ["Product sampling", "/services/product-sampling"], ["Trade show staffing", "/services/trade-shows"], ["Experiential marketing", "/services/experiential-marketing"], ["Street teams", "/services/street-teams"], ["Mobile tours", "/services/mobile-tours"], ["Event production", "/services/event-production"], ["Sponsorships", "/services/sponsorship-partnerships"], ["Spark reporting", "https://sparkbyignite.igniteproductions.co/"]];
+const hxFmt = v => v.toLocaleString("en-US");
+const HeroTicker = () => {
+  const ref = hsRef(null);
+  const [p, setP] = hsState(0);
+  hsEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setP(1);
+      return;
+    }
+    let raf, t0;
+    const io = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return;
+      io.disconnect();
+      const step = t => {
+        if (!t0) t0 = t;
+        const k = Math.min(1, (t - t0) / 1600);
+        setP(1 - Math.pow(1 - k, 3));
+        if (k < 1) raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
+    }, {
+      threshold: 0.3
+    });
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+  const logos = (window.CLIENT_LOGOS || []).filter(l => HX_LOGO_PICK.includes(l.name));
+  const seq = [];
+  HX_STATS.forEach((s, i) => {
+    seq.push({
+      k: "s" + i,
+      s
+    });
+    if (logos[i % (logos.length || 1)]) seq.push({
+      k: "l" + i,
+      l: logos[i % logos.length]
+    });
+  });
+  const row = r => seq.map(({
+    k,
+    s,
+    l
+  }) => s ? /*#__PURE__*/React.createElement("a", {
+    key: r + k,
+    className: "hx-item",
+    href: s.href,
+    "aria-hidden": r ? "true" : undefined,
+    tabIndex: r ? -1 : undefined
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "hx-n"
+  }, s.t || hxFmt(Math.round(s.n * p)) + s.suffix), /*#__PURE__*/React.createElement("span", {
+    className: "hx-l"
+  }, s.label)) : /*#__PURE__*/React.createElement("span", {
+    key: r + k,
+    className: "hx-logo",
+    "aria-hidden": r ? "true" : undefined
+  }, /*#__PURE__*/React.createElement("img", {
+    src: l.url,
+    alt: r ? "" : l.name,
+    loading: "lazy",
+    decoding: "async",
+    style: {
+      maxHeight: Math.min(l.maxH || 30, 28),
+      maxWidth: Math.min(l.maxW || 120, 110)
+    }
+  })));
+  const svc = r => HX_SERVICES.map(([n, f]) => /*#__PURE__*/React.createElement("a", {
+    key: r + f,
+    className: "hx-svc",
+    href: f,
+    "aria-hidden": r ? "true" : undefined,
+    tabIndex: r ? -1 : undefined
+  }, n));
+  return /*#__PURE__*/React.createElement("div", {
+    ref: ref,
+    className: "hx-wrap",
+    "aria-label": "Ignite by the numbers"
+  }, /*#__PURE__*/React.createElement("style", null, `
+        .hx-wrap{position:relative;z-index:3;border-top:1px solid rgba(214,243,95,.22);background:linear-gradient(180deg,rgba(10,11,13,.82),rgba(10,11,13,.96));backdrop-filter:blur(20px);overflow:hidden}
+        .hx-wrap::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,rgba(214,243,95,.035) 0 1px,transparent 1px 64px)}
+        .hx-vp{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+        .hx-track{display:flex;align-items:center;width:max-content;padding:16px 0;animation:marquee 64s linear infinite}
+        .hx-track.rev{padding:9px 0;animation:hxRev 52s linear infinite}
+        .hx-vp:hover .hx-track{animation-play-state:paused}
+        .hx-sub{border-top:1px solid rgba(255,255,255,.06);background:rgba(214,243,95,.025)}
+        .hx-item{display:inline-flex;align-items:center;gap:14px;padding:0 30px;white-space:nowrap;text-decoration:none;border-radius:8px;transition:background .2s}
+        .hx-item:hover{background:rgba(214,243,95,.06)}
+        .hx-item:focus-visible{outline:2px solid #D6F35F;outline-offset:-2px}
+        .hx-n{font-family:var(--font-display);font-weight:700;font-size:32px;line-height:1;letter-spacing:-.025em;font-variant-numeric:tabular-nums;background:linear-gradient(100deg,#D6F35F 0%,#D6F35F 40%,#F6FFD0 50%,#D6F35F 60%,#D6F35F 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:hxSheen 6s ease-in-out infinite}
+        .hx-l{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.24em;color:rgba(255,255,255,.62);line-height:1}
+        .hx-item:hover .hx-l{color:#fff}
+        .hx-logo{display:inline-flex;align-items:center;padding:0 30px;position:relative}
+        .hx-logo::before,.hx-logo::after{content:"//";position:absolute;top:50%;transform:translateY(-50%);font-family:var(--font-mono);font-size:12px;color:rgba(214,243,95,.35)}
+        .hx-logo::before{left:0}.hx-logo::after{right:0}
+        .hx-logo img{display:block;width:auto;margin:0 22px;filter:brightness(0) invert(1);opacity:.55}
+        .hx-svc{display:inline-flex;align-items:center;gap:12px;padding:0 22px;white-space:nowrap;text-decoration:none;font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);transition:color .2s}
+        .hx-svc::before{content:"*";color:#D6F35F;font-size:13px}
+        .hx-svc:hover{color:#D6F35F}
+        @keyframes hxSheen{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+        @keyframes hxRev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+        @media (max-width:720px){.hx-n{font-size:24px}.hx-item{padding:0 20px}.hx-logo{padding:0 22px}.hx-logo img{margin:0 16px}.hx-track.rev{padding:7px 0}}
+        @media (prefers-reduced-motion:reduce){.hx-track,.hx-n{animation:none}}
+      `), /*#__PURE__*/React.createElement("div", {
+    className: "hx-vp"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "hx-track"
+  }, row(0), row(1))), /*#__PURE__*/React.createElement("div", {
+    className: "hx-vp hx-sub"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "hx-track rev"
+  }, svc(0), svc(1))));
+};
 const HomeHero = () => {
   const [idx, setIdx] = hsState(0);
   const [wordIdx, setWordIdx] = hsState(0);
@@ -373,49 +527,7 @@ const HomeHero = () => {
       e.currentTarget.style.borderColor = "rgba(255,255,255,0.28)";
       e.currentTarget.style.background = "transparent";
     }
-  }, "See the work ", /*#__PURE__*/React.createElement("span", null, "\u2192")))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: "relative",
-      zIndex: 3,
-      borderTop: "1px solid rgba(255,255,255,0.14)",
-      background: "rgba(10,10,10,0.7)",
-      backdropFilter: "blur(20px)",
-      overflow: "hidden"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      padding: "13px 0",
-      display: "flex",
-      gap: 48,
-      whiteSpace: "nowrap",
-      animation: "marquee 48s linear infinite",
-      width: "max-content"
-    }
-  }, [...Array(2)].flatMap((_, r) => [["257,000+", "VETTED AMBASSADORS"], ["5,000+", "EVENTS EXECUTED"], ["50", "STATES + DC"], ["VETERAN", "OWNED · VOSB"], ["2018", "FOUNDED"]].map(([n, l], i) => /*#__PURE__*/React.createElement("span", {
-    key: r + "-" + i,
-    style: {
-      display: "inline-flex",
-      alignItems: "center",
-      gap: 14,
-      paddingRight: 48,
-      borderRight: "1px solid rgba(255,255,255,0.12)"
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-display)",
-      fontWeight: 700,
-      fontSize: 30,
-      letterSpacing: "-0.02em",
-      color: "#FFB627"
-    }
-  }, n), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-mono)",
-      fontSize: 11,
-      letterSpacing: "0.22em",
-      color: "rgba(255,255,255,0.65)"
-    }
-  }, l)))))));
+  }, "See the work ", /*#__PURE__*/React.createElement("span", null, "\u2192")))), /*#__PURE__*/React.createElement(HeroTicker, null));
 };
 Object.assign(window, {
   HomeHero

@@ -24,7 +24,7 @@ const {
   SANS
 } = SPK;
 const PURPLE = "#A87CE0";
-const FAQ = [["Can our retailers request an activation themselves?", "Yes. Every account, chain, or region can get its own branded request link — no login needed — or a workspace login if they want to see history. A store manager or category buyer submits the door, the date window, and the reason. It lands in your approval queue with their name on it. You approve, reschedule, or decline with a reason, and they're notified automatically."], ["How do requests from our own field team get in?", "Your marketing and field managers submit through the same intake, with your SKU catalog, brand standards, and budget codes already attached. For a whole quarter, drop a spreadsheet into Bulk Upload — every row is validated before anything writes, so a typo on row 7 doesn't break rows 1 through 6."], ["We already have a field team. Why do we need field activation software?", "Because the program currently lives in six places. Spark puts intake, approvals, staffing, GPS verification, recaps, and cost-per-sample in one record per activation, so you can defend the field budget with proof instead of anecdotes."], ["Can a CPG brand use Spark to manage multiple field marketing agencies?", "Yes. Every agency reports into one recap standard, so you can compare partners on completion, on-time rate, photo compliance, and report quality side by side — in the same view as your in-house team."], ["How long does it take a brand to get live on Spark?", "Days, not quarters. Send your program structure and account list and you'll be watching live check-ins the same week. Ambassadors need no training, and retail requesters never see a login screen."]];
+const FAQ = [["Can our retailers request an activation themselves?", "Yes. Every account, chain, or region can get its own branded request link, no login needed, or a workspace login if they want to see history. A store manager or category buyer submits the door, the date window, and the reason. It lands in your approval queue with their name on it. You approve, reschedule, or decline with a reason, and they're notified automatically."], ["How do requests from our own field team get in?", "Your marketing and field managers submit through the same intake, with your SKU catalog, brand standards, and budget codes already attached. For a whole quarter, drop a spreadsheet into Bulk Upload. Every row is validated before anything writes, so a typo on row 7 doesn't break rows 1 through 6."], ["We already have a field team. Why do we need field activation software?", "Because the program currently lives in six places. Spark puts intake, approvals, staffing, GPS verification, recaps, and cost-per-sample in one record per activation, so you can defend the field budget with proof instead of anecdotes."], ["Can a CPG brand use Spark to manage multiple field marketing agencies?", "Yes. Every agency reports into one recap standard, so you can compare partners on completion, on-time rate, photo compliance, and report quality side by side, in the same view as your in-house team."], ["How long does it take a brand to get live on Spark?", "Days, not quarters. Send your program structure and account list and you'll be watching live check-ins the same week. Ambassadors need no training, and retail requesters never see a login screen."]];
 const Screen = ({
   view,
   top = 0,
@@ -59,7 +59,7 @@ const Hero = () => {
   const [ref, inv] = useSparkInView(.15);
   return /*#__PURE__*/React.createElement("section", {
     ref: ref,
-    "data-screen-label": "01 For Brands \u2014 hero",
+    "data-screen-label": "01 For Brands, hero",
     style: {
       position: "relative",
       background: BG,
@@ -142,7 +142,7 @@ const Hero = () => {
     style: {
       marginTop: 24
     }
-  }, "Your team requests activations. Your retailers, buyers, and distributor reps request their own. Everything lands in one queue you approve, watch live, and close out with proof \u2014 without adding a coordinator to chase it."), /*#__PURE__*/React.createElement("div", {
+  }, "Your team requests activations. Your retailers, buyers, and distributor reps request their own. Everything lands in one queue you approve, watch live, and close out with proof, without adding a coordinator to chase it."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 34,
       display: "flex",
@@ -171,7 +171,7 @@ const Hero = () => {
     view: "tracker",
     top: 276,
     url: "app.spark.co / master-tracker",
-    label: "Spark master tracker \u2014 every activation request and its status"
+    label: "Spark master tracker, every activation request and its status"
   }), /*#__PURE__*/React.createElement("div", {
     className: "sp-statrow",
     style: {
@@ -210,7 +210,7 @@ const Paths = () => /*#__PURE__*/React.createElement(SparkSec, {
   }
 }, /*#__PURE__*/React.createElement(SparkEyebrow, null, ">> INTAKE"), /*#__PURE__*/React.createElement("h2", {
   className: "sp-h2"
-}, "Requests come from your team \u2014 ", /*#__PURE__*/React.createElement("span", {
+}, "Requests come from your team, ", /*#__PURE__*/React.createElement("span", {
   style: {
     color: LIME,
     fontStyle: "italic"
@@ -256,7 +256,7 @@ const Paths = () => /*#__PURE__*/React.createElement(SparkSec, {
     lineHeight: 1.6,
     color: FG2
   }
-}, "Brand, shopper, and field managers submit activations against your own catalog \u2014 market, account, date, SKUs, sample target, brand standard, budget code."), /*#__PURE__*/React.createElement("ul", {
+}, "Brand, shopper, and field managers submit activations against your own catalog: market, account, date, SKUs, sample target, brand standard, budget code."), /*#__PURE__*/React.createElement("ul", {
   className: "fb-list"
 }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
   className: "fb-tick"
@@ -295,7 +295,7 @@ const Paths = () => /*#__PURE__*/React.createElement(SparkSec, {
     lineHeight: 1.6,
     color: FG2
   }
-}, "Store managers, category buyers, distributor reps, and regional sales request a demo for their own door \u2014 from a branded link with no login, or their own workspace if they want the history."), /*#__PURE__*/React.createElement("ul", {
+}, "Store managers, category buyers, distributor reps, and regional sales request a demo for their own door, from a branded link with no login, or their own workspace if they want the history."), /*#__PURE__*/React.createElement("ul", {
   className: "fb-list"
 }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
   className: "fb-tick",
@@ -355,13 +355,13 @@ const Queue = () => /*#__PURE__*/React.createElement(SparkSec, {
   }
 }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
   className: "fb-tick"
-}, "\u25B8"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Approve, reschedule, or decline"), " \u2014 with a reason that goes back automatically.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+}, "\u25B8"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Approve, reschedule, or decline"), ", with a reason that goes back automatically.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
   className: "fb-tick"
 }, "\u25B8"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Route by market or manager"), " so regional leads clear their own doors.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
   className: "fb-tick"
 }, "\u25B8"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "One master tracker"), " holds every activation from request through recap approval.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
   className: "fb-tick"
-}, "\u25B8"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Recaps get approved here too"), " \u2014 nothing reaches a buyer before you've read it."))), /*#__PURE__*/React.createElement("a", {
+}, "\u25B8"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Recaps get approved here too"), ". Nothing reaches a buyer before you've read it."))), /*#__PURE__*/React.createElement("a", {
   href: "https://sparkbyignite.igniteproductions.co/product/request",
   style: {
     display: "inline-flex",
@@ -377,7 +377,7 @@ const Queue = () => /*#__PURE__*/React.createElement(SparkSec, {
 }, "How intake works ", /*#__PURE__*/React.createElement("span", null, "\u2192"))), /*#__PURE__*/React.createElement(Screen, {
   view: "approvals",
   url: "app.spark.co / approvals",
-  label: "Spark approvals queue \u2014 pending activation requests and recaps"
+  label: "Spark approvals queue, pending activation requests and recaps"
 }))));
 const Live = () => /*#__PURE__*/React.createElement(SparkSec, {
   label: "04 Live execution",
@@ -387,7 +387,7 @@ const Live = () => /*#__PURE__*/React.createElement(SparkSec, {
 }, /*#__PURE__*/React.createElement(Screen, {
   view: "today",
   url: "app.spark.co / today",
-  label: "Spark live view \u2014 today's activations with GPS check-ins"
+  label: "Spark live view, today's activations with GPS check-ins"
 }), /*#__PURE__*/React.createElement("div", {
   className: "sp-rv"
 }, /*#__PURE__*/React.createElement(SparkEyebrow, null, ">> LIVE"), /*#__PURE__*/React.createElement("h2", {
@@ -402,7 +402,7 @@ const Live = () => /*#__PURE__*/React.createElement(SparkSec, {
   style: {
     marginTop: 18
   }
-}, "Not a phone call on Monday. GPS check-in at the door, geotagged photos landing during the shift, and per-SKU counts as they're logged \u2014 so a market manager can answer \"is it happening?\" without calling anyone."), /*#__PURE__*/React.createElement("ul", {
+}, "Not a phone call on Monday. GPS check-in at the door, geotagged photos landing during the shift, and per-SKU counts as they're logged, so a market manager can answer \"is it happening?\" without calling anyone."), /*#__PURE__*/React.createElement("ul", {
   className: "fb-list",
   style: {
     marginTop: 26,
@@ -412,7 +412,7 @@ const Live = () => /*#__PURE__*/React.createElement(SparkSec, {
   className: "fb-tick"
 }, "\u25B8"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Who's clocked in, where,"), " across every market on one live board.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
   className: "fb-tick"
-}, "\u25B8"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Photos with a location stamp"), " \u2014 shelf, display, setup, and crowd.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+}, "\u25B8"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Photos with a location stamp"), ": shelf, display, setup, and crowd.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
   className: "fb-tick"
 }, "\u25B8"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Exceptions surface themselves:"), " no-shows, late starts, missing capture.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
   className: "fb-tick"
@@ -447,10 +447,10 @@ const Coverage = () => /*#__PURE__*/React.createElement(SparkSec, {
   className: "fb-tick"
 }, "\u25B8"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Gaps are visible"), " before the retailer points them out.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
   className: "fb-tick"
-}, "\u25B8"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Plan the next wave from the map"), " \u2014 request straight off an untouched door.")))), /*#__PURE__*/React.createElement(Screen, {
+}, "\u25B8"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "Plan the next wave from the map"), ": request straight off an untouched door.")))), /*#__PURE__*/React.createElement(Screen, {
   view: "accountmap",
   url: "app.spark.co / account-map",
-  label: "Spark account map \u2014 store-level coverage by status"
+  label: "Spark account map, store-level coverage by status"
 }))));
 const Proof = () => /*#__PURE__*/React.createElement(SparkSec, {
   label: "06 Proof",
@@ -472,12 +472,12 @@ const Proof = () => /*#__PURE__*/React.createElement(SparkSec, {
   style: {
     marginTop: 18
   }
-}, "The recap writes itself from what happened in the field \u2014 photos, counts, notes, timestamps \u2014 and lands within 24 hours instead of at quarter-end. Same record, two audiences: the retailer sees their doors, finance sees cost per sample.")), /*#__PURE__*/React.createElement("div", {
+}, "The recap writes itself from what happened in the field: photos, counts, notes, timestamps, and lands within 24 hours instead of at quarter-end. Same record, two audiences: the retailer sees their doors, finance sees cost per sample.")), /*#__PURE__*/React.createElement("div", {
   className: "sp-3col sp-rv",
   style: {
     marginTop: 44
   }
-}, [["01", "Per-door recap", "Photos, counts, and conditions for the exact store the buyer asked about — shareable as a link, not a 40MB deck."], ["02", "Cost per sample", "Program spend against samples delivered and doors covered, live, by market and by SKU."], ["03", "Field sampling report", "The rollup: SKU mix, velocity by window, and the year-to-date picture your team presents internally."]].map(([n, t, d]) => /*#__PURE__*/React.createElement("div", {
+}, [["01", "Per-door recap", "Photos, counts, and conditions for the exact store the buyer asked about, shareable as a link, not a 40MB deck."], ["02", "Cost per sample", "Program spend against samples delivered and doors covered, live, by market and by SKU."], ["03", "Field sampling report", "The rollup: SKU mix, velocity by window, and the year-to-date picture your team presents internally."]].map(([n, t, d]) => /*#__PURE__*/React.createElement("div", {
   key: n,
   className: "sp-card",
   style: {
@@ -512,7 +512,7 @@ const Proof = () => /*#__PURE__*/React.createElement(SparkSec, {
 }, /*#__PURE__*/React.createElement(Screen, {
   view: "field",
   url: "app.spark.co / field-sampling-report",
-  label: "Spark field sampling report \u2014 SKU mix and sampling velocity"
+  label: "Spark field sampling report, SKU mix and sampling velocity"
 }))));
 const Roles = () => /*#__PURE__*/React.createElement(SparkSec, {
   label: "07 Who sees what"
@@ -538,7 +538,7 @@ const Roles = () => /*#__PURE__*/React.createElement(SparkSec, {
   style: {
     marginTop: 44
   }
-}, [["BRAND HQ", "Every market, every agency, every door — plus the budget view and the export.", LIME], ["REGIONAL / FIELD MANAGER", "Their markets, their staff, their approvals. They clear their own queue.", LIME], ["RETAIL PARTNER", "Submits a request for their store, sees the outcome and the recap for that door. Nothing else.", PURPLE], ["DISTRIBUTOR REP", "Requests demos for their accounts from the truck. No login, no training.", PURPLE], ["AGENCY PARTNER", "Executes and reports into your standard, so partners are actually comparable.", "#7A9BE0"], ["AMBASSADOR", "The shift, the checklist, the capture. Mobile, offline-tolerant, 90 seconds to learn.", "#7A9BE0"]].map(([t, d, c]) => /*#__PURE__*/React.createElement("div", {
+}, [["BRAND HQ", "Every market, every agency, every door, plus the budget view and the export.", LIME], ["REGIONAL / FIELD MANAGER", "Their markets, their staff, their approvals. They clear their own queue.", LIME], ["RETAIL PARTNER", "Submits a request for their store, sees the outcome and the recap for that door. Nothing else.", PURPLE], ["DISTRIBUTOR REP", "Requests demos for their accounts from the truck. No login, no training.", PURPLE], ["AGENCY PARTNER", "Executes and reports into your standard, so partners are actually comparable.", "#7A9BE0"], ["AMBASSADOR", "The shift, the checklist, the capture. Mobile, offline-tolerant, 90 seconds to learn.", "#7A9BE0"]].map(([t, d, c]) => /*#__PURE__*/React.createElement("div", {
   key: t,
   className: "fb-role"
 }, /*#__PURE__*/React.createElement("span", {
@@ -652,7 +652,7 @@ const Related = () => /*#__PURE__*/React.createElement(SparkSec, {
 const App = () => {
   useSparkReveal();
   return /*#__PURE__*/React.createElement("div", {
-    "data-screen-label": "Spark \u2014 For Brands"
+    "data-screen-label": "Spark, For Brands"
   }, /*#__PURE__*/React.createElement(SparkNav, {
     active: "solutions"
   }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Paths, null), /*#__PURE__*/React.createElement(Queue, null), /*#__PURE__*/React.createElement(Live, null), /*#__PURE__*/React.createElement(Coverage, null), /*#__PURE__*/React.createElement(Proof, null), /*#__PURE__*/React.createElement(Roles, null), /*#__PURE__*/React.createElement(Shift, null), /*#__PURE__*/React.createElement(SparkFaq, {

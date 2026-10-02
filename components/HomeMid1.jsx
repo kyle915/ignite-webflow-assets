@@ -12,11 +12,12 @@ const CLIENT_LOGOS = [
   { name: "Brew Dr. Kombucha", url: IG_ASSET("logo-brew-dr.png"), ink: true, maxH: 32, maxW: 110 },
   { name: "Total Wireless", url: (window.__resources?.r_688c1bb2f2c798b4cb850d2e_total_wireless_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1bb2f2c798b4cb850d2e_total-wireless-logo.webp") },
   { name: "Dude Wipes",     url: (window.__resources?.r_688c3839708ed185c2de5ba9_dude_wipes || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3839708ed185c2de5ba9_dude-wipes.webp") },
-  { name: "Krispy Krunchy", url: (window.__resources?.r_688c1b20a33960875f5d7bc0_krispy_krunchy_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b20a33960875f5d7bc0_krispy-krunchy-logo.webp") },
+  { name: "Krispy Krunchy", url: IG_ASSET("logo-krispy-krunchy.png"), ink: true, maxH: 46, maxW: 70 },
   { name: "Marc Anthony",   url: (window.__resources?.r_688c378239e6dc2ebedde728_marc_anthony_lo || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c378239e6dc2ebedde728_marc-anthony-logo.webp") },
   { name: "Breakaway",      url: IG_ASSET("logo-breakaway.png"), ink: true, maxH: 30, maxW: 110 },
   { name: "BeGoat",         url: IG_ASSET("logo-begoat.png"), ink: true, maxH: 34, maxW: 110 },
   { name: "Drekker Brewing Co.", url: IG_ASSET("logo-drekker.png"), ink: true, maxH: 52, maxW: 70 },
+  { name: "Kalshi",         url: IG_ASSET("logo-kalshi.png"), ink: true, maxH: 26, maxW: 110 },
   { name: "PressReader", url: IG_ASSET("logo-pressreader.png"), ink: true, maxH: 28, maxW: 130 },
   { name: "Feel Free",      url: IG_ASSET("logo-feel-free.png"), ink: true, maxH: 34, maxW: 130 },
   { name: "PIVOT Performance Energy", url: IG_ASSET("logo-pivot.png"), ink: true, maxH: 30, maxW: 120 },
@@ -211,4 +212,4 @@ const TwoEngines = () => (
   </section>
 );
 
-Object.assign(window, { ClientMarquee, TwoEngines });
+Object.assign(window, { ClientMarquee, TwoEngines, CLIENT_LOGOS });

@@ -202,6 +202,13 @@
         "RelatedCases"
       ]
     },
+    "/veteran-owned": {
+      "global": "PageVeteranOwned",
+      "bundle": "PageVeteranOwned",
+      "deps": [
+        "RelatedCases"
+      ]
+    },
     "/spark-solution": {
       "global": "PageSparkSolution",
       "bundle": "PageSparkSolution",

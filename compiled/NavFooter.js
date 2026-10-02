@@ -120,6 +120,10 @@ const SITE_SERVICE_GROUPS = [{
   name: "Hospitality & Events",
   accent: "ignite",
   services: [{
+    slug: "event-production",
+    label: "Event Production",
+    sub: "Brief to strike: show flow, vendors, AV, crew"
+  }, {
     slug: "weddings",
     label: "Weddings & Private Events",
     sub: "White-glove staffing, VIP + hospitality teams",

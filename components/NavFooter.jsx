@@ -59,6 +59,7 @@ const SITE_SERVICE_GROUPS = [
     name: "Hospitality & Events",
     accent: "ignite",
     services: [
+      { slug: "event-production",                label: "Event Production",              sub: "Brief to strike: show flow, vendors, AV, crew" },
       { slug: "weddings",                        label: "Weddings & Private Events",     sub: "White-glove staffing, VIP + hospitality teams", href: "pages/weddings.html" },
       { slug: "travel",                          label: "Group & Event Travel",          sub: "In-house group travel, room blocks, on-site ops", href: "pages/travel.html" },
       { slug: "pop-up-retail",                   label: "Pop-Up & Branded Retail",       sub: "Temporary storefronts, residencies, takeovers" },
@@ -380,7 +381,7 @@ const SiteNav = ({ rel = "", active = "", activeService = "", brand = "ignite" }
         <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
           <span className="nav-cta-desktop">
             <AccentBtn size="sm" accent="spark" onClick={() => location.href = "https://www.igniteproductions.co/contact"}>
-              Request staff now
+              GET IN TOUCH
             </AccentBtn>
           </span>
           <button className="nav-burger" aria-label={mobileOpen ? "Close menu" : "Open menu"} aria-expanded={mobileOpen}
@@ -619,7 +620,7 @@ const SiteNav = ({ rel = "", active = "", activeService = "", brand = "ignite" }
             </div>
           )}
           <a href={"https://www.igniteproductions.co/contact"} onClick={() => setMobileOpen(false)}
-            style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginTop: 24, minHeight: 54, borderRadius: 999, background: "var(--spark-500)", color: "#0A0B0D", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 16, textDecoration: "none" }}>Request staff now <span style={{ fontFamily: "var(--font-mono)" }}>→</span></a>
+            style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginTop: 24, minHeight: 54, borderRadius: 999, background: "var(--spark-500)", color: "#0A0B0D", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 16, textDecoration: "none" }}>GET IN TOUCH <span style={{ fontFamily: "var(--font-mono)" }}>→</span></a>
           </div>
         </div>
       )}

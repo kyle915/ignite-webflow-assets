@@ -93,6 +93,12 @@ const INDUSTRIES_DATA = {
       desc: "Iced product transport, drink-temperature compliance"
     }],
     proofPoints: [{
+      brand: "Brew Dr. Kombucha",
+      line: "About 150 retail demos a month"
+    }, {
+      brand: "BE GOAT Energy",
+      line: "Fred Meyer rollout, Pacific Northwest"
+    }, {
       logo: "liquid-death",
       line: "National retail, festival, NASCAR sponsorship"
     }, {
@@ -203,6 +209,9 @@ const INDUSTRIES_DATA = {
       desc: "Per-store unit counts back to your trade desk same-day"
     }],
     proofPoints: [{
+      brand: "Stone House Bread",
+      line: "32 demos · 19 Kroger stores · 16 Michigan cities"
+    }, {
       logo: "krispy-krunchy",
       line: "C-store demo programs"
     }, {
@@ -313,6 +322,9 @@ const INDUSTRIES_DATA = {
       desc: "Documented sample sizes per state law"
     }],
     proofPoints: [{
+      brand: "Drekker Brewing",
+      line: "Total Wine & More tasting program"
+    }, {
       logo: "liquid-death",
       line: "National activation (regulated for alcohol-adjacent events)"
     }, {
@@ -350,7 +362,7 @@ const INDUSTRIES_DATA = {
       stage: "DISTRIBUTOR",
       title: "3-tier sign-off",
       desc: "Coordinate with RNDC / Southern Glazer's / Breakthru on permits and pour rules.",
-      time: "Day 3–10"
+      time: "Day 3-10"
     }, {
       stage: "VERIFY",
       title: "TIPS / TABC / RBS check",
@@ -426,6 +438,12 @@ const INDUSTRIES_DATA = {
       desc: "Salesforce, HubSpot, Outreach formats day-of"
     }],
     proofPoints: [{
+      brand: "OpenAI · Dev Day 2026",
+      line: "87 brand ambassadors on site"
+    }, {
+      brand: "Claude · Code workshop tour",
+      line: "12-city developer workshop tour"
+    }, {
       logo: "pressreader",
       line: "Multi-year trade show staffing"
     }, {
@@ -550,7 +568,7 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Lineup + tour map",
       desc: "Confirm models, trims, ride-and-drive routes, and dealer schedule.",
-      time: "Day 0–3"
+      time: "Day 0-3"
     }, {
       stage: "LOGISTICS",
       title: "Vehicle staging",
@@ -653,7 +671,7 @@ const INDUSTRIES_DATA = {
       stage: "PERMIT",
       title: "Chain + hygiene SOP",
       desc: "Per-retailer paperwork, single-use applicator plan, allergen call-outs.",
-      time: "Day 3–10"
+      time: "Day 3-10"
     }, {
       stage: "TRAIN",
       title: "Application + shade",
@@ -732,6 +750,9 @@ const INDUSTRIES_DATA = {
       desc: "Live + recorded modules tracked through Spark"
     }],
     proofPoints: [{
+      brand: "Torch THC",
+      line: "2,500+ retail activations a year"
+    }, {
       brand: "Cannabis brand (NDA)",
       line: "Multi-state dispensary activation"
     }, {
@@ -742,7 +763,7 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Legal markets only",
       desc: "Confirm which states / jurisdictions permit your program. Flag exclusions early.",
-      time: "Day 0–3"
+      time: "Day 0-3"
     }, {
       stage: "PERMIT",
       title: "Cannabis-board paperwork",
@@ -833,6 +854,9 @@ const INDUSTRIES_DATA = {
       desc: "Cold-weather, rain, and heat protocols built into every plan"
     }],
     proofPoints: [{
+      brand: "Breakaway Music Festival",
+      line: "12 festivals · Jimmy John's + hiyo"
+    }, {
       logo: "liquid-death",
       line: "NASCAR sponsorship activation"
     }, {
@@ -846,7 +870,7 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Goals + property type",
       desc: "Stadium, arena, festival, motorsport — confirm venue access path.",
-      time: "Day 0–3"
+      time: "Day 0-3"
     }, {
       stage: "CLEAR",
       title: "Team + property sign-off",
@@ -943,7 +967,7 @@ const INDUSTRIES_DATA = {
       stage: "PERMIT",
       title: "Chain + venue paperwork",
       desc: "PetSmart / Petco demo permits, COIs, allergen disclosures.",
-      time: "Day 3–10"
+      time: "Day 3-10"
     }, {
       stage: "TRAIN",
       title: "Pet-safety briefing",
@@ -1030,7 +1054,7 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Claims + channel mix",
       desc: "Confirm what you can claim by channel; flag FDA-sensitive ingredients early.",
-      time: "Day 0–3"
+      time: "Day 0-3"
     }, {
       stage: "COMPLIANCE",
       title: "Claims script + legal",
@@ -1115,6 +1139,9 @@ const INDUSTRIES_DATA = {
       desc: "Crew briefed on franchise-specific compliance pre-event"
     }],
     proofPoints: [{
+      brand: "Luckin Coffee",
+      line: "NYC store openings + app signups"
+    }, {
       logo: "krispy-krunchy",
       line: "C-store demo + launch programs"
     }, {
@@ -1266,6 +1293,107 @@ const INDUSTRIES_DATA = {
     cta: {
       heading: "Brief us on a gaming program.",
       body: "Console launch, esports tournament, creator collab, or convention booth. We'll scope crew, hardware, and compliance inside 48 hours.",
+      primaryLabel: "Start a brief",
+      primaryHref: "https://www.igniteproductions.co/contact"
+    }
+  },
+  /* ============= TELECOM & RETAIL ============= */
+  "telecom-retail": {
+    slug: "telecom-retail",
+    name: "Telecom & Retail",
+    short: "Telecom",
+    accent: "#FFB627",
+    hero: {
+      eyebrow: "INDUSTRY · TELECOM · WIRELESS · RETAIL",
+      title: "Retail activations that turn store traffic into activations.",
+      acc: "activations",
+      lede: "Prepaid and postpaid wireless, device launches, dealer and master-agent networks, and big-box retail. Brand ambassadors in the store who can explain a plan, run a promo and log every conversation in Spark.",
+      stats: [{
+        v: "300+",
+        l: "stores in one program"
+      }, {
+        v: "Co-op",
+        l: "funded programs managed"
+      }, {
+        v: "Bilingual",
+        l: "Spanish-English crews"
+      }]
+    },
+    intro: "Telecom retail is a conversion problem in a small space. Shoppers walk in with a question about price, coverage or a phone, and the person at the table has about a minute to answer it well. We cast ambassadors who can explain a plan in plain language, train them on your offers and the retailer's rules, and report every activation by store so you can see which doors and which offers are working.",
+    activations: ["In-store promo tables and demo events", "Device and plan launch support", "Dealer and master-agent store programs", "Co-op and MDF funded activations", "Big-box retail and mall events", "Bilingual Spanish-English ambassadors", "Grand openings and store relaunches", "Community and street events near stores"],
+    compliance: [{
+      lab: "Retailer rules",
+      desc: "Each banner's vendor and in-store conduct rules briefed before the shift"
+    }, {
+      lab: "Offer accuracy",
+      desc: "Plans, pricing and promo terms trained and checked before every program"
+    }, {
+      lab: "Co-op documentation",
+      desc: "GPS check-ins, photos and recaps that support co-op claims"
+    }, {
+      lab: "Consumer privacy",
+      desc: "No customer account data collected by ambassadors"
+    }],
+    proofPoints: [{
+      logo: "total-wireless",
+      line: "300+ stores across 9 Texas markets"
+    }],
+    faqs: [{
+      q: "Can your ambassadors explain wireless plans and promos?",
+      a: "Yes. We train every ambassador on your current plans, device offers and promo terms before the program, and refresh the training when offers change."
+    }, {
+      q: "Do you work with dealer and master-agent stores?",
+      a: "Yes. We schedule directly with stores in a dealer or master-agent network and report activity by store, so each partner sees their own results."
+    }, {
+      q: "Can co-op or MDF budgets fund these programs?",
+      a: "Often, yes. Spark's GPS check-ins, photos and recaps give you the proof-of-performance most co-op programs ask for."
+    }, {
+      q: "Do you have bilingual ambassadors for telecom retail?",
+      a: "Yes. Spanish-English ambassadors are standard in most of the markets where wireless retail programs run."
+    }],
+    playbook: [{
+      stage: "BRIEF",
+      title: "Offers + store list",
+      desc: "Plans, promos, target stores and what a good activation looks like.",
+      time: "Day 0-3"
+    }, {
+      stage: "SCHEDULE",
+      title: "Store coordination",
+      desc: "Dates confirmed with each store or dealer, retailer rules reviewed.",
+      time: "Day 3-10"
+    }, {
+      stage: "TRAIN",
+      title: "Plan + promo training",
+      desc: "Ambassadors trained on offers, objections and the retailer's floor rules.",
+      time: "Pre-launch"
+    }, {
+      stage: "RUN",
+      title: "Store-level reporting",
+      desc: "GPS check-in, photos and conversations logged per store in Spark.",
+      time: "Every shift"
+    }],
+    relatedMarkets: ["dallas", "houston", "austin", "miami", "los-angeles", "new-york"],
+    relatedServices: [{
+      slug: "product-sampling",
+      label: "Retail Demos"
+    }, {
+      slug: "event-staffing",
+      label: "Bilingual Staff"
+    }, {
+      slug: "street-teams",
+      label: "Store-area Street Teams"
+    }, {
+      slug: "event-reporting-recaps",
+      label: "Store-level Reporting"
+    }],
+    sparkAngle: {
+      headline: "Spark for telecom retail",
+      lede: "Store-by-store activity, conversations and photo proof, ready for co-op claims and partner reviews.",
+      points: ["GPS-verified shift per store", "Conversations and sign-ups logged live", "Photo proof for co-op claims", "Results by store, market and dealer"]
+    },
+    cta: {
+      heading: "Brief us on a retail program.",
+      body: "Store tables, device launches or a dealer network rollout. Send the store list and we'll come back with a plan within 24 hours.",
       primaryLabel: "Start a brief",
       primaryHref: "https://www.igniteproductions.co/contact"
     }

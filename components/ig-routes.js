@@ -14,15 +14,17 @@
     "weddings.html": "/weddings", "travel.html": "/travel", "privacy.html": "/privacy", "terms.html": "/terms",
     "accessibility.html": "/accessibility", "thank-you.html": "/thank-you", "services.html": "/ignite-services",
     "topics.html": "/topics", "spark-retail.html": "/spark-retail",
-    "404.html": "/404"
+    "spark-for-brands.html": "/spark-for-brands",
+    "veteran-owned.html": "/veteran-owned", "trade-show-calendar.html": "/trade-show-calendar", "booth-staffing-checklist.html": "/booth-staffing-checklist",
+    "trade-show-staffing-cost.html": "/trade-show-staffing/cost", "trade-show-staffing-calculator.html": "/trade-show-staffing/calculator", "trade-shows-tech-ai.html": "/trade-show-staffing/tech-ai-conferences", "404.html": "/404"
   };
-  /* Spark pages live on the subdomain. Pricing + for-brands are not deployed yet: they fall back to the Spark home. */
+  /* Spark pages live on the subdomain. Pricing + for-brands live on www (like Spark Retail) until the Spark site is redeployed. */
   var SPARK_STATIC = {
     "spark-platform-v2.html": "/", "spark.html": "/", "spark-platform.html": "/",
     "spark-products.html": "/product", "spark-solutions.html": "/solutions",
     "spark-use-cases.html": "/use-cases", "spark-compare.html": "/compare",
     "spark-trust.html": "/trust", "spark-explore.html": "/explore",
-    "spark-pricing.html": "/", "spark-for-brands.html": "/"
+    "spark-pricing.html": "/demo" /* /spark-pricing held until real prices (2026-10-01) */
   };
   /* Project slug -> live Webflow CMS slug, where they differ */
   var CASE_ALIAS = { "krispy-krunchy": "krispy-krunchy-chicken", "marc-anthony": "marc-anthony-brands", "glendalough": "glendalough-distillery" };
@@ -32,7 +34,7 @@
     "city.html": ["c", "/cities/", "/markets"],
     "industry.html": ["i", "/industries/", "/industries"],
     "topic.html": ["t", "/topics/", "/topics"],
-    "trade-show.html": ["s", null, "/services/trade-shows"]
+    "trade-show.html": ["s", "/trade-show-staffing/", "/services/trade-shows"]
   };
   var SPARK_PARAM = {
     "spark-product.html": ["p", "/product/", "/product"],
@@ -45,6 +47,8 @@
     if (!m) return null;
     var file = m[1].toLowerCase(), qs = m[2] || "", hash = m[3] || "", host = HOST, path, p, v;
     if (/^services-[a-z0-9-]+\.html$/.test(file)) path = "/services/" + file.slice(9, -5);
+    else if (/^city-[a-z0-9-]+\.html$/.test(file)) path = "/cities/" + file.slice(5, -5);
+    else if (/^trade-show-staffing-(las-vegas|orlando|chicago)\.html$/.test(file)) path = "/trade-show-staffing/" + file.slice(20, -5);
     else if (SPARK_PARAM[file]) { p = SPARK_PARAM[file]; v = new URLSearchParams(qs).get(p[0]); host = SPARK; path = v ? p[1] + v : p[2]; qs = ""; }
     else if (SPARK_STATIC[file]) { host = SPARK; path = SPARK_STATIC[file]; }
     else if (PARAM[file]) {
