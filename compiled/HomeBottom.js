@@ -396,7 +396,8 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
     letterSpacing: "-0.015em",
     lineHeight: 1.1,
     color: "var(--fg-1-inv)",
-    margin: 0
+    margin: 0,
+    textAlign: "left"
   }
 }, /*#__PURE__*/React.createElement("span", {
   style: {
