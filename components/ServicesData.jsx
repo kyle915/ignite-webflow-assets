@@ -94,7 +94,7 @@ const SERVICES_DATA = {
       { t: "Hospitality Staff",          d: "Hosts, bartenders, mixologists for VIP, on-premise, and after-party programming." },
     ],
     stats: [["257,000+", "vetted ambassadors"], ["50", "states covered"], ["48hr", "rush turnaround"]],
-    featured: { brand: "WHITE CLAW", line: "Cracking the spirits launch code.", img: (window.__resources?.r_688d8a159dce27cfc5ed905c_1 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688d8a159dce27cfc5ed905c_1.jpg") },
+    featured: { brand: "WHITE CLAW", line: "500+ in-store demos. 12 markets in 90 days. 20% conversion rate.", img: (window.__resources?.r_688d8a159dce27cfc5ed905c_1 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688d8a159dce27cfc5ed905c_1.jpg") },
     adjacent: ["product-sampling", "experiential-marketing", "trade-shows"],
   },
 
@@ -132,7 +132,7 @@ const SERVICES_DATA = {
         "Walmart co-op", "Target MDF", "Costco roadshows", "Total Wireless co-op",
       ],
     },
-    featured: { brand: "WHITE CLAW", line: "Cracking the spirits launch code.", img: (window.__resources?.r_688d8a159dce27cfc5ed905c_1 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688d8a159dce27cfc5ed905c_1.jpg") },
+    featured: { brand: "WHITE CLAW", line: "12 markets, 500+ in-store demos, 20% conversion at the shelf.", img: (window.__resources?.r_688d8a159dce27cfc5ed905c_1 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688d8a159dce27cfc5ed905c_1.jpg") },
     adjacent: ["event-staffing", "mobile-tours", "experiential-marketing"],
   },
 

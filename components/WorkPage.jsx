@@ -90,7 +90,7 @@ const WORK_CASES = [
   { slug: "mas",            bento: "md",        accent: "#D7453E", surface: "#1A0E0A",
     stats: [["75K+","Samples 2025"],["6","West Coast mkts"],["MLS","+ fútbol"]] },
   { slug: "white-claw",     bento: "lg-wide",   accent: "#7BD0E8", surface: "#0B1A22",
-    stats: [] },
+    stats: [["1,400+","Demos"],["35%","Conversion"],["+7%","Sales lift"]] },
   { slug: "smalls-sliders", bento: "md",        accent: "#FFC727", surface: "#231708",
     stats: [["Multi","Mobile tour"],["Custom","Truck buildout"],["South","U.S. region"]] },
   { slug: "total-wireless", bento: "lg-wide",   accent: "#D31920", surface: "#1A0606",
