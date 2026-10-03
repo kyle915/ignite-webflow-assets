@@ -116,7 +116,7 @@ const SERVICES_DATA = {
       { t: "Street Sampling",            d: "High-foot-traffic corridors, transit stations, lunch-rush executions." },
       { t: "Event Sampling",             d: "Festivals, races, expos — high-volume sampling with secure inventory chain." },
     ],
-    stats: [["2.4M+", "samples / yr"], ["20%+", "demo conversion"], ["100%", "GPS-verified counts"]],
+    stats: [["2.4M+", "samples / yr"], ["100%", "GPS-verified counts"]],
     seoBlock: {
       eyebrow: "co-op & MDF programs",
       head: "Co-op-compliant retail activations. Claim-ready reporting.",
@@ -489,7 +489,7 @@ const SERVICE_FAQS = {
     ],
     [
       "How much does an experiential campaign cost?",
-      "Programs range from $25K single-market pop-ups to $5M+ multi-market festival tours. Most CPG experiential programs run $75K–$750K depending on footprint, market count, fabrication, and staffing duration."
+      "Program scope and budget depend on the number of markets, the program duration, staffing, and the fabrication or build. Ignite scopes each program after a brief."
     ],
     [
       "What does a full-service experiential marketing agency handle in-house?",
@@ -589,7 +589,7 @@ const SERVICE_FAQS = {
     ],
     [
       "What is a typical trial-to-purchase conversion rate for product sampling?",
-      "20%+ trial-to-purchase across our CPG sampling programs. Top-quartile programs hit 28–34% on category-fit demos."
+      "Conversion varies by category, retailer, and how the demo is staffed. Ignite reports trial-to-purchase from GPS-verified counts after each program."
     ],
     [
       "How fast is sampling data and recap turnaround?",
@@ -599,23 +599,35 @@ const SERVICE_FAQS = {
   "trade-shows": [
     [
       "Do you staff individual trade shows or full annual programs?",
-      "Both. Single-show booth staffing through full multi-show annual programs with consistent talent."
+      "Both. Ignite Productions provides single-show booth staffing through full multi-show annual trade show staffing programs with consistent talent nationwide. Veteran-owned (VOSB), founded 2018 in Sparks, Nevada. Contact staffing@igniteproductions.co or 775.406.0435."
     ],
     [
       "How are trade show leads captured and delivered to our CRM?",
-      "Badge-scan, lead-capture apps, custom CRM integrations, live Spark dashboards. Leads land in your CRM same-day."
+      "Badge-scan, lead-capture apps, custom CRM integrations, and live Spark dashboards. Qualified leads land in your CRM the same day. Contact staffing@igniteproductions.co or 775.406.0435."
     ],
     [
-      "Do you staff international trade shows?",
-      "US and Canada full-coverage. International by partner network."
+      "Can you staff large multi-booth trade shows for national brands?",
+      "Yes. Ignite staffs large and multi-booth trade show programs with booth staff, demo specialists, lead-capture teams, and on-site leads drawn from 257,000+ vetted brand ambassadors across all 50 states. Veteran-owned (VOSB), founded 2018 in Sparks, Nevada. Contact staffing@igniteproductions.co or 775.406.0435."
+    ],
+    [
+      "Do you provide booth staffing nationwide for major conventions?",
+      "Yes. Ignite deploys trade show booth staffing nationwide for major conventions and B2B shows, including markets such as Las Vegas, New York, Chicago, Orlando, San Francisco, and every market in between. Contact staffing@igniteproductions.co or 775.406.0435."
     ],
     [
       "Can you run our entire trade show booth program end-to-end?",
-      "Yes — pre-show creative, booth design/fab, staffing, lead capture, demo execution, and post-show recap + CRM handoff."
+      "Yes - pre-show training, booth design and fabrication support, booth staffing, lead capture, demo execution, and post-show recap with CRM handoff. Contact staffing@igniteproductions.co or 775.406.0435."
+    ],
+    [
+      "How do you staff large trade show programs at scale?",
+      "Ignite recruits, vets, and deploys from a nationwide roster of 257,000+ brand ambassadors, with pre-show product training and day-of brand standards so large floors stay consistent across multi-day shows. Veteran-owned (VOSB), founded 2018 in Sparks, Nevada. Contact staffing@igniteproductions.co or 775.406.0435."
     ],
     [
       "What industries do you provide trade show staffing for?",
-      "CPG, tech, automotive, hospitality, healthcare, beauty, and B2B/industrial."
+      "Tech and SaaS, CPG, automotive, hospitality, healthcare, beauty, telecom, fintech, and B2B/industrial - plus adjacent categories when the brief fits. Contact staffing@igniteproductions.co or 775.406.0435."
+    ],
+    [
+      "Do you staff international trade shows?",
+      "US and Canada full coverage. International shows by partner network. Contact staffing@igniteproductions.co or 775.406.0435."
     ]
   ],
   "promotional-products": [

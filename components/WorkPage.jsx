@@ -453,7 +453,7 @@ const WorkHeroRail = () => {
               </h3>
 
               <div style={{ display:"flex", gap:18, marginTop:6 }}>
-                {c.stats.slice(0,3).map(([n,l]) => (
+                {(c.stats || []).slice(0,3).map(([n,l]) => (
                   <div key={l}>
                     <div style={{ fontFamily:"var(--font-display)", fontWeight:700, fontSize:22,
                       letterSpacing:"-0.025em", color:c.accent, lineHeight:1 }}>{n}</div>
@@ -604,12 +604,12 @@ const WorkBento = () => {
                 }}>
                   {c.headline}
                 </h3>
-                {(plan[c.slug]?.col === "span 8" || plan[c.slug]?.col === "span 12") && (
+                {(plan[c.slug]?.col === "span 8" || plan[c.slug]?.col === "span 12") && (c.stats || []).length > 0 && (
                   <div style={{
                     marginTop:6, display:"flex", gap:24,
                     paddingTop:14, borderTop:`1px solid ${c.accent}33`,
                   }}>
-                    {c.stats.slice(0,3).map(([n,l]) => (
+                    {(c.stats || []).slice(0,3).map(([n,l]) => (
                       <div key={l}>
                         <div style={{ fontFamily:"var(--font-display)", fontWeight:700, fontSize:24,
                           letterSpacing:"-0.025em", color:c.accent, lineHeight:1 }}>{n}</div>

@@ -144,7 +144,7 @@ const WORK_CASES = [{
   bento: "lg-wide",
   accent: "#7BD0E8",
   surface: "#0B1A22",
-  stats: []
+  stats: [["1,400+", "Demos"], ["35%", "Conversion"], ["+7%", "Sales lift"]]
 }, {
   slug: "smalls-sliders",
   bento: "md",

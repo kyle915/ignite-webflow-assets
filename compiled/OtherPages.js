@@ -274,7 +274,7 @@ const WORK_CASES = [{
   brand: "WHITE CLAW",
   tagline: "Cracking the spirits launch code.",
   category: "National Sampling Rollout",
-  stats: [],
+  stats: [["500+", "Demos"], ["20%", "Conversion"], ["12", "Markets"]],
   img: window.__resources?.r_688d8a159dce27cfc5ed905c_1 || "https://cdn.prod.website-files.com/688129f3841088c282c32750/688d8a159dce27cfc5ed905c_1.jpg"
 }, {
   slug: "mas",

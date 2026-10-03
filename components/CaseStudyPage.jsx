@@ -102,6 +102,7 @@ const CaseHero = ({ c }) => (
           </div>
 
           {/* Stats */}
+          {(c.stats || []).length > 0 && (
           <div style={{
             marginTop:48, display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:20,
             borderTop:`1px solid ${c.accent}33`, paddingTop:32,
@@ -113,6 +114,7 @@ const CaseHero = ({ c }) => (
               </div>
             ))}
           </div>
+          )}
         </div>
 
         {/* Right — hero image */}

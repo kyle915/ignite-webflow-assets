@@ -2,7 +2,9 @@
 // Dark ground · ignite-orange accents · Space Grotesk display · JetBrains mono labels
 
 const fmtDate = (iso) => {
+  if (!iso) return '';
   const d = new Date(iso + 'T12:00:00');
+  if (Number.isNaN(d.getTime())) return '';
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).toUpperCase();
 };
 
@@ -18,7 +20,7 @@ function BlogIndex() {
       const q = search.toLowerCase();
       posts = posts.filter(p =>
         p.title.toLowerCase().includes(q) ||
-        p.dek.toLowerCase().includes(q) ||
+        (p.dek || '').toLowerCase().includes(q) ||
         (p.tags || []).some(t => t.toLowerCase().includes(q))
       );
     }
@@ -140,7 +142,7 @@ function BlogIndex() {
               {[
                 {n:BLOG_POSTS.length, l:'DISPATCHES'},
                 {n:BLOG_CATEGORIES.length-1, l:'CATEGORIES'},
-                {n:'7K+', l:'AMBASSADORS'},
+                {n:'257,000+', l:'AMBASSADORS'},
                 {n:'50', l:'STATES'},
               ].map((s,i)=>(
                 <div key={i} style={{
@@ -227,7 +229,7 @@ function BlogIndex() {
                   <div style={{
                     fontFamily:'var(--font-mono)', fontSize:9, letterSpacing:'0.18em',
                     textTransform:'uppercase', opacity:0.75
-                  }}>№{String(BLOG_POSTS.indexOf(p)+1).padStart(2,'0')} / {p.category.toUpperCase()}</div>
+                  }}>№{String(BLOG_POSTS.indexOf(p)+1).padStart(2,'0')} / {(p.category || '').toUpperCase()}</div>
                   <div style={{
                     fontSize:17, lineHeight:0.95, fontWeight:700,
                     letterSpacing:'-0.025em', fontFamily:'var(--font-display)'
@@ -236,7 +238,7 @@ function BlogIndex() {
                     fontFamily:'var(--font-mono)', fontSize:9, letterSpacing:'0.18em', opacity:0.6,
                     display:'flex', justifyContent:'space-between'
                   }}>
-                    <span>{p.readTime} MIN</span>
+                    <span>{p.readTime ? p.readTime + " MIN" : "READ"}</span>
                     <span>READ →</span>
                   </div>
                 </a>
@@ -284,6 +286,34 @@ function BlogIndex() {
               </button>
             );
           })}
+        </div>
+      </section>
+
+      <section style={{
+        borderBottom:'1px solid var(--ink-400)',
+        background:'var(--ink-000)'
+      }}>
+        <div style={{
+          maxWidth:'var(--grid-max)', margin:'0 auto',
+          padding:'16px var(--grid-gutter)',
+          display:'flex', gap:8, flexWrap:'wrap', alignItems:'center'
+        }}>
+          <span className="eyebrow" style={{marginRight:8}}>BROWSE BY CATEGORY:</span>
+          {[["industry","Industry"],["logistics","Logistics"],["measurement","Measurement"],["staffing","Staffing"],["strategy","Strategy"]].map(([slug, label]) => (
+            <a
+              key={slug}
+              href={"/blog-categories/" + slug}
+              style={{
+                padding:'8px 16px',
+                border:'1px solid var(--ink-400)',
+                background:'transparent',
+                color:'var(--fg-1)',
+                fontFamily:'var(--font-mono)', fontSize:12, letterSpacing:'0.12em',
+                textTransform:'uppercase', textDecoration:'none',
+                display:'flex', gap:6, alignItems:'center'
+              }}
+            >{label}</a>
+          ))}
         </div>
       </section>
 
@@ -426,7 +456,7 @@ function BlogIndex() {
                       <div style={{
                         fontFamily:'var(--font-mono)', fontSize:10, letterSpacing:'0.2em',
                         textTransform:'uppercase', opacity:0.6
-                      }}>№{String(BLOG_POSTS.indexOf(p)+1).padStart(2,'0')} / {p.category.toUpperCase()}</div>
+                      }}>№{String(BLOG_POSTS.indexOf(p)+1).padStart(2,'0')} / {(p.category || '').toUpperCase()}</div>
                       <div style={{
                         fontSize:26, lineHeight:0.95, fontWeight:700,
                         letterSpacing:'-0.03em', fontFamily:'var(--font-display)'
@@ -438,9 +468,9 @@ function BlogIndex() {
 
                     {/* Meta */}
                     <div style={{display:'flex', gap:12, marginBottom:12, alignItems:'center'}}>
-                      <span className="eyebrow">{fmtDate(p.date)}</span>
-                      <span style={{width:3, height:3, borderRadius:'50%', background:'var(--fg-3)'}}/>
-                      <span className="eyebrow">{p.readTime} MIN</span>
+                      {p.date ? <span className="eyebrow">{fmtDate(p.date)}</span> : null}
+                      {p.date && p.readTime ? <span style={{width:3, height:3, borderRadius:'50%', background:'var(--fg-3)'}}/> : null}
+                      {p.readTime ? <span className="eyebrow">{p.readTime} MIN</span> : null}
                     </div>
 
                     <h3 style={{

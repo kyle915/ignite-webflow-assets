@@ -131,7 +131,7 @@ const WorkGrid = () => (
                 <div style={{ fontFamily: "var(--font-stencil)", fontSize: 14, letterSpacing: "0.12em", color: "#FFB627", marginBottom: 14 }}>{c.brand}</div>
                 <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 34, letterSpacing: "-0.02em", lineHeight: 1.05, marginBottom: 20 }}>{c.tagline}</h3>
                 <div style={{ display: "flex", gap: 24 }}>
-                  {c.stats.map(([n, l]) => (
+                  {(c.stats || []).map(([n, l]) => (
                     <div key={l}>
                       <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 26, color: "#FFB627", letterSpacing: "-0.02em", lineHeight: 1 }}>{n}</div>
                       <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", opacity: 0.75, marginTop: 4 }}>{l}</div>
@@ -175,7 +175,7 @@ const AboutStats = () => (
         The numbers, in a word:<br/><span style={{ fontStyle: "italic", color: "var(--ignite-500)" }}>big.</span>
       </h2>
       <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
-        {[["257,000+", "Vetted ambassadors"], ["5,000+", "Activations per year"], ["200+", "Brands served"], ["50", "States covered"], ["8", "Years in business"], ["25M+", "Consumers reached"], ["87%", "Client retention"], ["20%+", "Avg demo conversion"]].map(([n, l]) => (
+        {[["257,000+", "Vetted ambassadors"], ["5,000+", "Activations per year"], ["200+", "Brands served"], ["50", "States covered"], ["2018", "Founded"], ["VETERAN", "Owned · VOSB"]].map(([n, l]) => (
           <div key={l} style={{ padding: 24, background: "var(--paper-000)", border: "1px solid var(--paper-200)", borderRadius: 14 }}>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 48, letterSpacing: "-0.03em", lineHeight: 1, color: "var(--fg-1-inv)" }}>{n}</div>
             <div style={{ marginTop: 12, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--fg-3-inv)" }}>{l}</div>
