@@ -1619,7 +1619,8 @@ const AdjacentServices = ({
         fontWeight: 700,
         fontSize: 24,
         letterSpacing: "-0.02em",
-        marginBottom: 8
+        marginBottom: 8,
+        color: "#fff"
       }
     }, o.label), /*#__PURE__*/React.createElement("div", {
       style: {
