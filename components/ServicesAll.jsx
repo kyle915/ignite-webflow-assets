@@ -291,39 +291,11 @@ const SvcHero = () => {
               fontSize: "clamp(48px, 6.2vw, 104px)", lineHeight: 0.92, letterSpacing: "-0.04em", margin: 0,
               textWrap: "balance", position: "relative",
             }}>
-              {/* line 1 */}
-              <span style={{ display: "block" }}>Everything</span>
-
-              {/* line 2 — italic orange */}
-              <span style={{ display: "block" }}>
-                <span style={{
-                  fontStyle: "italic", color: "var(--ignite-500)",
-                  
-                }}>experiential</span>
-              </span>
-
-              {/* line 3 — built, staffed, measured */}
-              <span style={{ display: "block", marginTop: "0.04em" }}>
-                built, staffed,{" "}
-                <span style={{ color: "var(--fg-3)" }}>and</span>{" "}
-                <span style={{ position: "relative", display: "inline-block" }}>
-                  <span aria-hidden="true" style={{
-                    position: "absolute", inset: "-14% -8%",
-                    background: "transparent",
-                    filter: "blur(18px)", zIndex: 0, pointerEvents: "none",
-                    animation: "svcMeasuredPulse 2.6s ease-in-out infinite",
-                  }}/>
-                  <span style={{
-                    position: "relative", zIndex: 1, color: "var(--spark-500)",
-                    
-                    animation: "svcMeasuredTextPulse 2.6s ease-in-out infinite",
-                  }}>measured.</span>
-                </span>
-              </span>
+              Event Marketing
             </h1>
 
             <p style={{ marginTop: 32, fontSize: 19, lineHeight: 1.5, color: "rgba(245,242,236,0.85)", margin: "32px 0 0", maxWidth: 620 }}>
-              Ignite Productions is a <strong style={{ color: "var(--fg-1)" }}>full-service experiential agency</strong> — strategy, fabrication, staffing, mobile tours, sampling, trade shows, and merch. One roster, one platform, every market.
+              Ignite Productions is a veteran-owned (VOSB) event marketing agency founded in 2018. 257,000+ vetted brand ambassadors in all 50 states.
             </p>
 
             <div style={{ marginTop: 32, display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
