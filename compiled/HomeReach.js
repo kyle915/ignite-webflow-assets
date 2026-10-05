@@ -4,11 +4,6 @@
    Pure internal-linking authority + buyer-journey entry points. */
 
 const HOME_MARKET_CHIPS = [["New York", "new-york"], ["Los Angeles", "los-angeles"], ["Chicago", "chicago"], ["Dallas", "dallas"], ["Miami", "miami"], ["Atlanta", "atlanta"], ["Austin", "austin"], ["Las Vegas", "las-vegas"], ["Phoenix", "phoenix"], ["Denver", "denver"], ["Nashville", "nashville"], ["Seattle", "seattle"]];
-/* Indexed trade-show city pages. Other chips keep chipBase + slug (/cities/*). */
-const HOME_MARKET_HREFS = {
-  chicago: "/trade-show-staffing/chicago",
-  "las-vegas": "/trade-show-staffing/las-vegas"
-};
 const HOME_INDUSTRY_CHIPS = [["CPG Beverage", "cpg-beverage"], ["Food & Snack", "cpg-food-snack"], ["Alcohol & Spirits", "alcohol-spirits"], ["Tech & SaaS", "tech-saas"], ["Sports & Entertainment", "sports-entertainment"], ["Health & Wellness", "health-wellness"], ["Cannabis", "cannabis"], ["QSR & Restaurant", "qsr-restaurant"]];
 const TeaserCol = ({
   accent,
@@ -80,7 +75,7 @@ const TeaserCol = ({
   }
 }, chips.map(([label, slug]) => /*#__PURE__*/React.createElement("a", {
   key: slug,
-  href: HOME_MARKET_HREFS[slug] || chipBase + slug,
+  href: chipBase + slug,
   style: {
     padding: "7px 13px",
     borderRadius: 999,
