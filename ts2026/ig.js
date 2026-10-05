@@ -83,4 +83,15 @@ ig-header{display:block;position:sticky;top:0;z-index:50}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -40px 0px"});
 const scan=()=>document.querySelectorAll(".rv:not(.in)").forEach(el=>io.observe(el));
 document.readyState==="loading"?document.addEventListener("DOMContentLoaded",scan):scan();
+
+/* /trade-show-staffing/chicago RELATED "CITY · Chicago event staffing" card:
+   Webflow HTML still points at noindexed /cities/chicago. Repoint to the money page. */
+function retargetChicagoRelated(){
+  var p=(location.pathname||"").replace(/\/+$/,"")||"/";
+  if(p!=="/trade-show-staffing/chicago") return;
+  document.querySelectorAll(".related a.card.rel[href*='/cities/chicago']").forEach(function(a){
+    a.setAttribute("href","/services/event-staffing");
+  });
+}
+document.readyState==="loading"?document.addEventListener("DOMContentLoaded",retargetChicagoRelated):retargetChicagoRelated();
 })();
