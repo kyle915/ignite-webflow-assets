@@ -9,6 +9,12 @@ const HOME_MARKET_CHIPS = [
   ["Nashville", "nashville"], ["Seattle", "seattle"],
 ];
 
+/* Indexed trade-show city pages. Other chips keep chipBase + slug (/cities/*). */
+const HOME_MARKET_HREFS = {
+  chicago: "/trade-show-staffing/chicago",
+  "las-vegas": "/trade-show-staffing/las-vegas",
+};
+
 const HOME_INDUSTRY_CHIPS = [
   ["CPG Beverage", "cpg-beverage"], ["Food & Snack", "cpg-food-snack"], ["Alcohol & Spirits", "alcohol-spirits"],
   ["Tech & SaaS", "tech-saas"], ["Sports & Entertainment", "sports-entertainment"],
@@ -37,7 +43,7 @@ const TeaserCol = ({ accent, eyebrow, title, italic, body, chips, chipBase, hubL
     <p style={{ marginTop: 16, fontSize: 15.5, lineHeight: 1.55, color: "var(--fg-2)", maxWidth: 460 }}>{body}</p>
     <div style={{ marginTop: 24, display: "flex", flexWrap: "wrap", gap: 8 }}>
       {chips.map(([label, slug]) => (
-        <a key={slug} href={chipBase + slug} style={{
+        <a key={slug} href={HOME_MARKET_HREFS[slug] || chipBase + slug} style={{
           padding: "7px 13px", borderRadius: 999, textDecoration: "none",
           background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.14)",
           fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.06em", color: "rgba(255,255,255,0.85)",

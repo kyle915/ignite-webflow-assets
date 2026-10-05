@@ -300,7 +300,7 @@ const ServicesGrid = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2)",
     maxWidth: 640
   }
-}, "From strategy to fabrication to 257,000 ambassadors on the ground, we operate every lane of activation under one roof.")), /*#__PURE__*/React.createElement("a", {
+}, "From strategy to fabrication to 257,000+ ambassadors on the ground, we operate every lane of activation under one roof.")), /*#__PURE__*/React.createElement("a", {
   href: "/ignite-services",
   className: "cap-circle",
   "aria-label": "All capabilities",

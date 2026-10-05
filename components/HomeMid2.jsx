@@ -192,7 +192,7 @@ const ServicesGrid = () => (
             Field marketing,<br/><span style={{ fontStyle: "italic", color: "#FFB627" }}>full-stack.</span>
           </h2>
           <p style={{ marginTop: 22, fontSize: 18, lineHeight: 1.5, color: "var(--fg-2)", maxWidth: 640 }}>
-            From strategy to fabrication to 257,000 ambassadors on the ground, we operate every lane of activation under one roof.
+            From strategy to fabrication to 257,000+ ambassadors on the ground, we operate every lane of activation under one roof.
           </p>
         </div>
         <a href="pages/services.html" className="cap-circle" aria-label="All capabilities" style={{

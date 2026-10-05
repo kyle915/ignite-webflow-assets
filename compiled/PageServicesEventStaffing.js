@@ -1043,7 +1043,14 @@ const Spark = () => {
     }
   }, l)))))))));
 };
-const FAQS = [["How large is your ambassador roster?", "257,000+ vetted brand ambassadors across all 50 states, with depth in every major and secondary market."], ["How fast is rush staffing?", "48-hour turnaround for most markets. A short scoping call confirms coverage and timing."], ["Are ambassadors trained on our brand?", "Yes. Pre-shift brand training, talking points, product handling, and compliance certs (TIPS, food handler), delivered to every phone via Spark."], ["How are shifts verified?", "GPS check-in/out, photo verification, time-stamped sample counts, and a live shift dashboard."], ["Do you have bilingual staff?", "Yes. Spanish-language and multicultural ambassadors, vetted at hire and requestable per shift."]];
+const FAQS = [["How large is your ambassador roster?", "257,000+ vetted brand ambassadors across all 50 states, with depth in every major and secondary market."], ["How fast is rush staffing?", "48-hour turnaround for most markets. A short scoping call confirms coverage and timing."], ["Are ambassadors trained on our brand?", "Yes. Pre-shift brand training, talking points, product handling, and compliance certs (TIPS, food handler), delivered to every phone via Spark."], ["How are shifts verified?", "GPS check-in/out, photo verification, time-stamped sample counts, and a live shift dashboard."], ["Do you have bilingual staff?", "Yes. Spanish-language and multicultural ambassadors, vetted at hire and requestable per shift."], ["Do you provide event staffing in my city?", ["Yes. Ignite deploys event staffing nationwide with 257,000+ vetted brand ambassadors — including New York City, Los Angeles, ", /*#__PURE__*/React.createElement("a", {
+  href: "/trade-show-staffing/chicago",
+  style: {
+    color: AMBER,
+    textDecoration: "underline"
+  },
+  onClick: e => e.stopPropagation()
+}, "Chicago"), ", Miami, Dallas, Atlanta, and Las Vegas, plus every market in between. Veteran-owned (VOSB), founded 2018 in Sparks, Nevada. Contact staffing@igniteproductions.co or 775.406.0435."]]];
 const Faq = () => {
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
