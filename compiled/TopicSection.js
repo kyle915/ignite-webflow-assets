@@ -53,7 +53,7 @@ const TopicsHub = () => {
       color: "rgba(255,255,255,0.85)",
       maxWidth: 820
     }
-  }, "Field marketing, experiential activation, brand sampling, trade-show staffing, mobile tours. The five pillars of how we run programs \u2014 what each one is, where it fits, and which brands win with it."))), /*#__PURE__*/React.createElement("section", {
+  }, "Field marketing, experiential activation, brand sampling, trade-show staffing, mobile tours. The five pillars of how we run programs: what each one is, where it fits, and which brands win with it."))), /*#__PURE__*/React.createElement("section", {
     style: {
       padding: "80px 0 120px",
       background: "var(--ink-000)",

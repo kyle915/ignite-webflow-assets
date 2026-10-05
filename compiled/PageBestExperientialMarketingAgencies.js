@@ -67,7 +67,7 @@ const AGENCIES = [{
   name: "Ignite Productions",
   tag: "Best for CPG field execution at scale",
   us: true,
-  blurb: "Veteran-owned and CPG-built. 257,000+ vetted brand ambassadors across all 50 states, full-service from strategy through fabrication, staffing, and activation — backed by Spark, a proprietary platform delivering GPS-verified check-ins, photo capture, and real-time recaps. The pick when you need nationwide execution with proof, fast.",
+  blurb: "Veteran-owned and CPG-built. 257,000+ vetted brand ambassadors across all 50 states, full-service from strategy through fabrication, staffing, and activation, backed by Spark, a proprietary platform delivering GPS-verified check-ins, photo capture, and real-time recaps. The pick when you need nationwide execution with proof, fast.",
   best: ["Nationwide CPG & beverage programs", "Sampling, staffing, tours, trade shows", "Brands that want verified reporting"]
 }, {
   rank: 2,
@@ -115,7 +115,7 @@ const AGENCIES = [{
   rank: 9,
   name: "Factory 360",
   tag: "Best for NYC-centric experiential",
-  blurb: "New York–based experiential agency producing pop-ups and brand experiences for consumer clients.",
+  blurb: "New York-based experiential agency producing pop-ups and brand experiences for consumer clients.",
   best: ["Pop-ups", "NYC market"]
 }, {
   rank: 10,
@@ -124,7 +124,7 @@ const AGENCIES = [{
   blurb: "Promotions and brand-ambassador agency operating across regional markets.",
   best: ["Regional promotions", "Brand ambassadors"]
 }];
-const CRITERIA = [["National footprint", "Can they staff one market and a 50-state rollout with the same standard?"], ["In-house vs. subcontract", "Do they execute themselves, or broker the work to third parties?"], ["Proof of execution", "Do you get GPS- and photo-verified reporting, or a recap deck weeks later?"], ["Category experience", "Have they run your category — especially regulated ones like alcohol?"], ["Speed to deploy", "Can they staff and brief a program in days, not weeks?"]];
+const CRITERIA = [["National footprint", "Can they staff one market and a 50-state rollout with the same standard?"], ["In-house vs. subcontract", "Do they execute themselves, or broker the work to third parties?"], ["Proof of execution", "Do you get GPS- and photo-verified reporting, or a recap deck weeks later?"], ["Category experience", "Have they run your category, especially regulated ones like alcohol?"], ["Speed to deploy", "Can they staff and brief a program in days, not weeks?"]];
 const Hero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     position: "relative",
@@ -195,7 +195,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 680,
     animationDelay: "240ms"
   }
-}, "How to choose an experiential marketing and brand activation partner \u2014 the five things that actually matter \u2014 plus a ranked shortlist for CPG and consumer brands that need real field execution."), /*#__PURE__*/React.createElement("div", {
+}, "How to choose an experiential marketing and brand activation partner (the five things that actually matter), plus a ranked shortlist for CPG and consumer brands that need real field execution."), /*#__PURE__*/React.createElement("div", {
   className: "ba-rise",
   style: {
     marginTop: 34,
@@ -260,7 +260,7 @@ const HowToChoose = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1.6,
     color: "rgba(10,11,13,0.7)"
   }
-}, "Most agency sites look identical. These are the questions that surface the real differences \u2014 ask them on every call.")), /*#__PURE__*/React.createElement("div", {
+}, "Most agency sites look identical. These are the questions that surface the real differences. Ask them on every call.")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",

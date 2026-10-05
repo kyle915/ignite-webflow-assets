@@ -266,7 +266,7 @@ const Hero = () => {
       maxWidth: 660,
       textWrap: "pretty"
     }
-  }, "We engaged 50% of the student population and became best friends with the chapter house. Algorithms can't reach the dorm row \u2014 we can."), /*#__PURE__*/React.createElement("div", {
+  }, "We engaged 50% of the student population and became best friends with the chapter house. Algorithms can't reach the dorm row. We can."), /*#__PURE__*/React.createElement("div", {
     className: "col-rise",
     style: {
       marginTop: 36,
@@ -1027,7 +1027,7 @@ const LANES = [{
 }, {
   n: "06",
   t: "Sorority / Fraternity Gifting",
-  d: "Branded gifting straight into Greek life — chapter houses, recruitment week, formals, philanthropy events, big/little reveals. Get your product into the highest-influence social networks on campus, hand-delivered.",
+  d: "Branded gifting straight into Greek life: chapter houses, recruitment week, formals, philanthropy events, big/little reveals. Get your product into the highest-influence social networks on campus, hand-delivered.",
   tag: "GREEK NETWORK",
   color: LIME,
   photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-4-apartment-pool.jpg",
@@ -1036,7 +1036,7 @@ const LANES = [{
 }, {
   n: "07",
   t: "Collegiate Experiential Tours",
-  d: "A branded footprint that travels — multi-campus tours hitting a new school every few days. Custom builds, photo moments, sampling, and content capture, rolled out city to city on a single coordinated route.",
+  d: "A branded footprint that travels: multi-campus tours hitting a new school every few days. Custom builds, photo moments, sampling, and content capture, rolled out city to city on a single coordinated route.",
   tag: "MULTI-CAMPUS ROUTE",
   color: ACCENT,
   photo: "https://kyle915.github.io/ignite-webflow-assets/assets/collegiate-7-owala-team.jpg",
@@ -1117,7 +1117,7 @@ const FiveLanes = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 360,
     margin: 0
   }
-}, "Seven lanes. Different jobs to be done. Most programs stitch 2\u20133 together; the boldest run the whole board.")), /*#__PURE__*/React.createElement("div", {
+}, "Seven lanes. Different jobs to be done. Most programs stitch 2 or 3 together; the boldest run the whole board.")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "repeat(12, 1fr)",
@@ -1403,7 +1403,7 @@ const TACTICS = [{
 }, {
   n: "04",
   t: "Door hangers + apartments",
-  d: "Off-campus apartment rows. Door hangers, sample kits, leave-behinds at the door. Upperclassmen don't live in dorms anymore — and your sample truck isn't reaching them.",
+  d: "Off-campus apartment rows. Door hangers, sample kits, leave-behinds at the door. Upperclassmen don't live in dorms anymore, and your sample truck isn't reaching them.",
   tags: ["OFF-CAMPUS", "UPPERCLASSMEN", "APARTMENT ROW"],
   color: LIME
 }, {
@@ -1706,7 +1706,7 @@ const Cascade = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 420,
     margin: 0
   }
-}, "Four reasons CPG brands hand us their campus program \u2014 and don't take it back.")), /*#__PURE__*/React.createElement("div", {
+}, "Four reasons CPG brands hand us their campus program, and don't take it back.")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
@@ -1944,13 +1944,13 @@ const GreekLife = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1.6,
     color: "rgba(255,255,255,0.72)"
   }
-}, "Sororities and fraternities are the densest, highest-influence social graphs on any campus. Recruitment week, big/little reveals, formals, philanthropy events \u2014 we get your brand hand-delivered into the rooms where campus taste actually gets set.")), /*#__PURE__*/React.createElement("div", {
+}, "Sororities and fraternities are the densest, highest-influence social graphs on any campus. Recruitment week, big/little reveals, formals, philanthropy events: we get your brand hand-delivered into the rooms where campus taste actually gets set.")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(250px,1fr))",
     gap: 16
   }
-}, [["Recruitment / rush week", "Branded gifting into bid-day bags and rush events — peak attention, peak new-member reach."], ["Big / little reveals", "Product seeded into the most-posted week of the Greek calendar. Built for the camera."], ["Philanthropy + formals", "Sponsorship and product presence at the events chapters actually promote to campus."], ["Panhellenic + IFC programs", "Multi-chapter activations coordinated across an entire Greek system, one point of contact."]].map(([t, d]) => /*#__PURE__*/React.createElement("div", {
+}, [["Recruitment / rush week", "Branded gifting into bid-day bags and rush events: peak attention, peak new-member reach."], ["Big / little reveals", "Product seeded into the most-posted week of the Greek calendar. Built for the camera."], ["Philanthropy + formals", "Sponsorship and product presence at the events chapters actually promote to campus."], ["Panhellenic + IFC programs", "Multi-chapter activations coordinated across an entire Greek system, one point of contact."]].map(([t, d]) => /*#__PURE__*/React.createElement("div", {
   key: t,
   style: {
     padding: "26px 24px",
@@ -2024,7 +2024,7 @@ const CampusCalendar = () => /*#__PURE__*/React.createElement("section", {
     gridTemplateColumns: "repeat(auto-fit, minmax(180px,1fr))",
     gap: 12
   }
-}, [["AUG–SEP", "Move-In + Welcome Week", "Highest-density window of the year. Brand defaults set for 4 years.", ACCENT], ["SEP–NOV", "Game Days + Homecoming", "Tailgates, fan zones, alumni traffic. Peak social posting.", LIME], ["OCT–NOV", "Recruitment + Midterms", "Greek rush, club fairs, the fuel-me-up moment.", ACCENT], ["DEC / APR", "Finals Weeks", "11pm energy-need windows. Dorm + library sampling.", LIME], ["MAR", "Spring Break", "Beach + destination activations. The travel-brand window.", ACCENT], ["APR", "Spring Philanthropy", "Greek philanthropy, day-parties, end-of-year events.", LIME]].map(([w, t, d, c]) => /*#__PURE__*/React.createElement("div", {
+}, [["AUG TO SEP", "Move-In + Welcome Week", "Highest-density window of the year. Brand defaults set for 4 years.", ACCENT], ["SEP TO NOV", "Game Days + Homecoming", "Tailgates, fan zones, alumni traffic. Peak social posting.", LIME], ["OCT TO NOV", "Recruitment + Midterms", "Greek rush, club fairs, the fuel-me-up moment.", ACCENT], ["DEC / APR", "Finals Weeks", "11pm energy-need windows. Dorm + library sampling.", LIME], ["MAR", "Spring Break", "Beach + destination activations. The travel-brand window.", ACCENT], ["APR", "Spring Philanthropy", "Greek philanthropy, day-parties, end-of-year events.", LIME]].map(([w, t, d, c]) => /*#__PURE__*/React.createElement("div", {
   key: t,
   style: {
     padding: "22px 18px",
@@ -2104,7 +2104,7 @@ const CampusCompliance = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1.6,
     color: "rgba(255,255,255,0.72)"
   }
-}, "Every university has its own solicitation policy, vendor approval, and space-reservation process. We handle the paperwork so your brand is on campus legally \u2014 not escorted off it.")), /*#__PURE__*/React.createElement("div", {
+}, "Every university has its own solicitation policy, vendor approval, and space-reservation process. We handle the paperwork so your brand is on campus legally, not escorted off it.")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
@@ -2270,7 +2270,7 @@ const Campuses = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 960,
     fontFamily: "var(--font-body)"
   }
-}, "Ignite runs collegiate marketing, back-to-school sampling, student brand-ambassador programs, product seeding, door-hanger drops, and on-campus activations across the ", /*#__PURE__*/React.createElement("b", null, "SEC, Big Ten, ACC, Big 12, Pac-12, American, Mountain West, Sun Belt, MAC, Ivy League, and HBCU (MEAC + SWAC)"), " conferences \u2014 plus community colleges, art schools, and urban multi-school metros nationwide. Don't see your campus? We staff all 50 states.")));
+}, "Ignite runs collegiate marketing, back-to-school sampling, student brand-ambassador programs, product seeding, door-hanger drops, and on-campus activations across the ", /*#__PURE__*/React.createElement("b", null, "SEC, Big Ten, ACC, Big 12, Pac-12, American, Mountain West, Sun Belt, MAC, Ivy League, and HBCU (MEAC + SWAC)"), " conferences, plus community colleges, art schools, and urban multi-school metros nationwide. Don't see your campus? We staff all 50 states.")));
 
 /* =========================================================
    06.5 / ON THE GROUND — real photo gallery of campus work
@@ -2621,7 +2621,7 @@ const Receipts = () => /*#__PURE__*/React.createElement("section", {
     textTransform: "uppercase",
     textAlign: "center"
   }
-}, "\u2014 STUDENT BRAND MANAGER \xB7 UT AUSTIN \xB7 Q3 PROGRAM"), /*#__PURE__*/React.createElement("div", {
+}, "STUDENT BRAND MANAGER \xB7 UT AUSTIN \xB7 Q3 PROGRAM"), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 80,
     paddingTop: 56,
@@ -2808,7 +2808,7 @@ const SparkField = () => {
       margin: 0,
       paddingBottom: 8
     }
-  }, "Spark is our proprietary field-ops platform \u2014 257,000 brand ambassadors, gamified and game-ready. You see who's on which campus, in real time, as the cans hit hands.")), /*#__PURE__*/React.createElement("div", {
+  }, "Spark is our proprietary field-ops platform: 257,000 brand ambassadors, gamified and game-ready. You see who's on which campus, in real time, as the cans hit hands.")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
       gridTemplateColumns: "repeat(4, 1fr)",
@@ -3146,7 +3146,7 @@ const SparkField = () => {
       textTransform: "uppercase",
       lineHeight: 1.5
     }
-  }, "\u203B BAs earn points per shift, sample, + photo \u2014 redeemable for cash, gear, and tickets. Gamified means staffed-fast.")))));
+  }, "\u203B BAs earn points per shift, sample, + photo, redeemable for cash, gear, and tickets. Gamified means staffed-fast.")))));
 };
 
 /* =========================================================
@@ -3237,7 +3237,7 @@ const Pedigree = () => /*#__PURE__*/React.createElement("section", {
     color: "#fff",
     fontStyle: "italic"
   }
-}, "own"), " Gen-Z \u2014 student-marketeer programs, creator engines, and campus wellness machines. We've sat in your seat. Now we run the field for you.")), /*#__PURE__*/React.createElement("div", {
+}, "own"), " Gen-Z: student-marketeer programs, creator engines, and campus wellness machines. We've sat in your seat. Now we run the field for you.")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "flex",
     flexDirection: "column",
@@ -3416,7 +3416,7 @@ const CollegiatePage = () => {
     slug: "collegiate-marketing"
   }) : null, /*#__PURE__*/React.createElement(SiteFooter, null));
 };
-document.title = "Collegiate Marketing | Gen-Z Campus Activation — Ignite";
+document.title = "Collegiate Marketing | Gen-Z Campus Activation | Ignite";
 Object.assign(window, {
   PageServicesCollegiateMarketing: CollegiatePage
 });

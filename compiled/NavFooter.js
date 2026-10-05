@@ -78,7 +78,7 @@ const SITE_SERVICE_GROUPS = [{
   }, {
     slug: "trade-show-ad-trucks",
     href: "/trade-show-staffing/ad-trucks",
-    label: "Trade Show Ad Trucks",
+    label: "Ad Trucks",
     sub: "Truck + street team + booth crew"
   }, {
     slug: "distributor-demo-programs",
@@ -157,7 +157,7 @@ const SITE_SERVICE_GROUPS = [{
   services: [{
     slug: "content-capture",
     label: "Content & Capture Crews",
-    sub: "Photo, video, UGC — launch-ready, same week"
+    sub: "Photo, video, UGC: launch-ready, same week"
   }, {
     slug: "creative-design-studio",
     label: "Creative & Design Studio",
@@ -173,7 +173,7 @@ const SITE_SERVICE_GROUPS = [{
   services: [{
     slug: "fractional-sales-team",
     label: "Fractional Sales Team",
-    sub: "A senior, embedded CPG sales team — scaled monthly",
+    sub: "A senior, embedded CPG sales team, scaled monthly",
     href: "/services/fractional-sales-team"
   }, {
     slug: "retail-sales-broker-management",
@@ -188,7 +188,7 @@ const SITE_SERVICE_GROUPS = [{
   }, {
     slug: "trade-marketing-management",
     label: "Trade Marketing",
-    sub: "Co-op, MDF, scan-back — a calendar tied to your P&L",
+    sub: "Co-op, MDF, scan-back: a calendar tied to your P&L",
     href: "/services/trade-marketing-management"
   }, {
     slug: "distribution-expansion",
@@ -236,21 +236,21 @@ const SITE_SERVICE_GROUPS = [{
   services: [{
     slug: "event-reporting-recaps",
     label: "Event Recap & Reporting",
-    sub: "Powered by Spark — recaps in hours, not weeks"
+    sub: "Powered by Spark: recaps in hours, not weeks"
   }, {
     slug: "spark",
     label: "Spark Platform",
-    sub: "The field-marketing dashboard — GPS, photos, samples, auto recaps",
+    sub: "The field-marketing dashboard: GPS, photos, samples, auto recaps",
     href: "https://sparkbyignite.igniteproductions.co/"
   }, {
     slug: "spark-retail",
     label: "Spark Retail Execution",
-    sub: "Crowdsourced in-store audits, OOS + price checks — vetted field force",
+    sub: "Crowdsourced in-store audits, OOS + price checks, vetted field force",
     href: "/spark-retail"
   }, {
     slug: "ai-management",
     label: "AI Management",
-    sub: "We run the AI layer — recaps, forecasting, creative, audience scoring",
+    sub: "We run the AI layer: recaps, forecasting, creative, audience scoring",
     href: "/services/ai-management"
   }]
 }];
@@ -373,7 +373,7 @@ const SiteNav = ({
 }) => {
   const [scrolled, setScrolled] = useNavState(false);
   const [megaOpen, setMegaOpen] = useNavState(null);
-  const [activeCat, setActiveCat] = useNavState(0); // desktop master–detail
+  const [activeCat, setActiveCat] = useNavState(0); // desktop master-detail
   const [openParent, setOpenParent] = useNavState(0); // mobile accordion
   const [isTouch, setIsTouch] = useNavState(false);
   const [mobileOpen, setMobileOpen] = useNavState(false);
@@ -467,7 +467,7 @@ const SiteNav = ({
     }
   }, /*#__PURE__*/React.createElement("a", {
     href: rel + "/",
-    "aria-label": "Ignite Productions \u2014 home",
+    "aria-label": "Ignite Productions home",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -1074,7 +1074,7 @@ const SiteNav = ({
     }
   }, /*#__PURE__*/React.createElement("a", {
     href: rel + "/",
-    "aria-label": "Ignite Productions \u2014 home",
+    "aria-label": "Ignite Productions home",
     onClick: () => setMobileOpen(false),
     style: {
       display: "inline-flex",

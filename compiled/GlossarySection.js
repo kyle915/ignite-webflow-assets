@@ -53,7 +53,7 @@ const GlossaryHub = () => {
       color: "rgba(255,255,255,0.85)",
       maxWidth: 820
     }
-  }, "Plain-language definitions for the certifications, programs, and acronyms that come up on every brief \u2014 TIPS, TABC, RBS, COIs, co-op programs, GPS-verified sampling, and more."))), /*#__PURE__*/React.createElement("section", {
+  }, "Plain-language definitions for the certifications, programs, and acronyms that come up on every brief: TIPS, TABC, RBS, COIs, co-op programs, GPS-verified sampling, and more."))), /*#__PURE__*/React.createElement("section", {
     style: {
       padding: "80px 0 120px",
       background: "var(--ink-000)",

@@ -393,7 +393,7 @@ const Hero = () => {
       fontWeight: 500,
       animationDelay: "240ms"
     }
-  }, "Ad trucks, sprinter vans, branded bikes, and transit takeovers \u2014 routed city to city and ", /*#__PURE__*/React.createElement("b", {
+  }, "Ad trucks, sprinter vans, branded bikes, and transit takeovers, routed city to city and ", /*#__PURE__*/React.createElement("b", {
     style: {
       color: "#fff"
     }
@@ -548,14 +548,14 @@ const WhatIs = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "#fff"
   }
-}, "branded vehicles \u2014 ad trucks, sprinter vans, bikes, food carts"), " \u2014 to deliver brand experiences and sampling across cities on a routed schedule. ", /*#__PURE__*/React.createElement("b", {
+}, "branded vehicles (ad trucks, sprinter vans, bikes, food carts)"), " to deliver brand experiences and sampling across cities on a routed schedule. ", /*#__PURE__*/React.createElement("b", {
   style: {
     color: AMBER
   }
 }, "Ignite"), " owns the whole thing: fleet, wraps, permits, drivers, staffing, routing, and same-day Spark reporting. National reach compressed into weeks."))));
 
 /* ---------- FLEET ---------- */
-const FLEET = [["LED Ad Trucks", "Full-motion digital billboards on wheels — day-parted creative, dominant in dense urban corridors.", AMBER], ["Vinyl & 3D Wrap Trucks", "High-impact static or sculptural wraps that turn a box truck into a rolling landmark.", ORANGE], ["Sprinter Vans", "Sampling, lounge, or photo-experience builds — a branded room that pulls up anywhere.", CYAN], ["Pedicabs & E-Bikes", "Nimble, dense, and camera-friendly — perfect for festival perimeters and downtown grids.", AMBER], ["Food & Sample Carts", "Bike-mounted sampling that weaves through foot traffic where trucks can't go.", ORANGE], ["Transit Takeovers", "Wraps, station domination, and rideshare integrations for saturation in a single market.", CYAN]];
+const FLEET = [["LED Ad Trucks", "Full-motion digital billboards on wheels: day-parted creative, dominant in dense urban corridors.", AMBER], ["Vinyl & 3D Wrap Trucks", "High-impact static or sculptural wraps that turn a box truck into a rolling landmark.", ORANGE], ["Sprinter Vans", "Sampling, lounge, or photo-experience builds: a branded room that pulls up anywhere.", CYAN], ["Pedicabs & E-Bikes", "Nimble, dense, and camera-friendly, perfect for festival perimeters and downtown grids.", AMBER], ["Food & Sample Carts", "Bike-mounted sampling that weaves through foot traffic where trucks can't go.", ORANGE], ["Transit Takeovers", "Wraps, station domination, and rideshare integrations for saturation in a single market.", CYAN]];
 const Fleet = () => /*#__PURE__*/React.createElement("section", {
   id: "fleet",
   style: {
@@ -633,7 +633,7 @@ const Fleet = () => /*#__PURE__*/React.createElement("section", {
 
 /* ---------- ROUTE TIMELINE ---------- */
 const Route = () => {
-  const steps = [["ROUTE", "Map", "We build the city-by-city route around your markets, moments, and budget."], ["WRAP", "Build", "Fleet wrapped, built, and outfitted — sampling rigs, LED, lounge, or photo."], ["ROLL", "Deploy", "Drivers + brand ambassadors staffed, permitted, and GPS-tracked market to market."], ["REPORT", "Measure", "Stops, impressions, samples, and leads on a live Spark dashboard — same day."]];
+  const steps = [["ROUTE", "Map", "We build the city-by-city route around your markets, moments, and budget."], ["WRAP", "Build", "Fleet wrapped, built, and outfitted: sampling rigs, LED, lounge, or photo."], ["ROLL", "Deploy", "Drivers + brand ambassadors staffed, permitted, and GPS-tracked market to market."], ["REPORT", "Measure", "Stops, impressions, samples, and leads on a live Spark dashboard, same day."]];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: INK,
@@ -760,7 +760,7 @@ const Versus = () => /*#__PURE__*/React.createElement("section", {
     flexDirection: "column",
     gap: 12
   }
-}, ["Drives loops with no strategy", "No staff, no sampling, no capture", "\"It drove around\" — no proof", "You chase permits and drivers", "One market, one vehicle"].map(x => /*#__PURE__*/React.createElement("div", {
+}, ["Drives loops with no strategy", "No staff, no sampling, no capture", "\"It drove around\" with no proof", "You chase permits and drivers", "One market, one vehicle"].map(x => /*#__PURE__*/React.createElement("div", {
   key: x,
   style: {
     display: "flex",
@@ -790,14 +790,14 @@ const Versus = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(Mono, {
   color: AMBER
-}, "IGNITE \u2014 A MANAGED TOUR"), /*#__PURE__*/React.createElement("div", {
+}, "IGNITE: A MANAGED TOUR"), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 16,
     display: "flex",
     flexDirection: "column",
     gap: 12
   }
-}, ["Routed around your markets + moments", "Staffed with brand ambassadors + sampling", "GPS-tracked, same-day impression data", "Permits, DOT, drivers, logistics — handled", "6-20 markets on one managed rollout"].map(x => /*#__PURE__*/React.createElement("div", {
+}, ["Routed around your markets + moments", "Staffed with brand ambassadors + sampling", "GPS-tracked, same-day impression data", "Permits, DOT, drivers, logistics: handled", "6-20 markets on one managed rollout"].map(x => /*#__PURE__*/React.createElement("div", {
   key: x,
   style: {
     display: "flex",
@@ -859,7 +859,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1.6,
     color: "rgba(255,255,255,0.74)"
   }
-}, "Spark tracks every stop by GPS, counts samples and leads, logs dwell time, and reports day-parted impressions \u2014 so a tour isn't a vibe, it's a number you can put in the recap."), /*#__PURE__*/React.createElement("a", {
+}, "Spark tracks every stop by GPS, counts samples and leads, logs dwell time, and reports day-parted impressions, so a tour isn't a vibe, it's a number you can put in the recap."), /*#__PURE__*/React.createElement("a", {
   href: "https://sparkbyignite.igniteproductions.co/",
   style: {
     marginTop: 24,
@@ -906,7 +906,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
     color: "rgba(255,255,255,0.6)"
   }
 }, l)))))));
-const FAQS = [["What is a mobile marketing tour?", "A multi-market activation using branded vehicles — ad trucks, vans, bikes, carts — to deliver experiences and sampling across cities on a routed schedule. National reach in weeks."], ["How are mobile tours tracked?", "GPS-verified routing, day-parted impression counts, and a Spark dashboard on stops, samples, leads, and dwell time — same day."], ["What vehicle types do you operate?", "Six classes: LED ad trucks, vinyl/3D-wrap trucks, sprinter vans, pedicab/e-bike fleets, and food-cart bikes, plus transit takeovers. Custom builds available."], ["How long does a tour run?", "From 2-week single-market activations to 12-month national rollouts. Most CPG tours run 4-12 weeks across 6-20 markets."], ["Do you handle permits and routing?", "Yes — permitting, DOT compliance, driver staffing, hotel/per-diem logistics, and city-by-city routing all in-house."]];
+const FAQS = [["What is a mobile marketing tour?", "A multi-market activation using branded vehicles (ad trucks, vans, bikes, carts) to deliver experiences and sampling across cities on a routed schedule. National reach in weeks."], ["How are mobile tours tracked?", "GPS-verified routing, day-parted impression counts, and a Spark dashboard on stops, samples, leads, and dwell time, same day."], ["What vehicle types do you operate?", "Six classes: LED ad trucks, vinyl/3D-wrap trucks, sprinter vans, pedicab/e-bike fleets, and food-cart bikes, plus transit takeovers. Custom builds available."], ["How long does a tour run?", "From 2-week single-market activations to 12-month national rollouts. Most CPG tours run 4-12 weeks across 6-20 markets."], ["Do you handle permits and routing?", "Yes. Permitting, DOT compliance, driver staffing, hotel/per-diem logistics, and city-by-city routing all in-house."]];
 const Faq = () => {
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
@@ -1135,7 +1135,7 @@ const PhotoBand = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 460,
     textShadow: "0 2px 14px rgba(0,0,0,0.6)"
   }
-}, "From motorsport paddocks to downtown grids \u2014 a vehicle people stop, photograph, and post."))));
+}, "From motorsport paddocks to downtown grids: a vehicle people stop, photograph, and post."))));
 const TOURS = [["Claude Code workshop tour", "12 cities", "Developer workshop stops with local crews at every city.", "/portfolio/claude-code-workshops"], ["Krispy Krunchy Chicken", "10 cities", "Mobile sampling tour with branded truck and mascot.", "/portfolio/krispy-krunchy-chicken"], ["Smalls Sliders", "Multi-market", "Food truck tour supporting new-market launches.", "/portfolio/smalls-sliders"], ["Breakaway Music Festival", "12 festivals", "A touring sponsor footprint rebuilt at every stop.", "/portfolio/breakaway"]];
 const TourProof = () => /*#__PURE__*/React.createElement("section", {
   "data-screen-label": "Tours we've run",

@@ -1571,7 +1571,7 @@ const WorkCTA = () => {
       textAlign: "center",
       textWrap: "balance"
     }
-  }, "Tell us what you're trying to move \u2014 trial, retention, retail sell-through, reach.", /*#__PURE__*/React.createElement("br", null), "We'll come back with a program shaped for it."), /*#__PURE__*/React.createElement("div", {
+  }, "Tell us what you're trying to move: trial, retention, retail sell-through, reach.", /*#__PURE__*/React.createElement("br", null), "We'll come back with a program shaped for it."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 56,
       display: "flex",

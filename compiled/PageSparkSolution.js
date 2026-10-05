@@ -22,7 +22,7 @@ if (S.href) {
   location.replace(S.href);
 }
 sparkSetMeta({
-  title: `Spark ${S.name} — Field Marketing Software | Spark by Ignite`.slice(0, 60),
+  title: `Spark ${S.name}: Field Marketing Software | Spark by Ignite`.slice(0, 60),
   desc: `${S.h1} Spark field marketing software for ${S.audience.toLowerCase()}: GPS-verified proof, auto recaps, live dashboards.`.slice(0, 155),
   canonical: `https://sparkbyignite.igniteproductions.co/solutions/${S.slug}`,
   ld: {
@@ -45,7 +45,7 @@ sparkSetMeta({
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
-      "description": "Free tier — 5 events per month, unlimited ambassador seats"
+      "description": "Free tier: 5 events per month, unlimited ambassador seats"
     }
   },
   faq: S.faq
@@ -74,7 +74,7 @@ const Hero = () => {
   const [ref, inv] = useSparkInView(.2);
   return /*#__PURE__*/React.createElement("section", {
     ref: ref,
-    "data-screen-label": "01 Solution Hero — " + S.name,
+    "data-screen-label": "01 Solution Hero: " + S.name,
     style: {
       position: "relative",
       background: BG,
@@ -495,7 +495,7 @@ const Related = () => /*#__PURE__*/React.createElement(SparkSec, {
 const App = () => {
   useSparkReveal();
   return /*#__PURE__*/React.createElement("div", {
-    "data-screen-label": "Spark Solution — " + S.name
+    "data-screen-label": "Spark Solution: " + S.name
   }, /*#__PURE__*/React.createElement(SparkNav, {
     active: "solutions"
   }), /*#__PURE__*/React.createElement(Hero, null), S.pains && /*#__PURE__*/React.createElement(Pains, null), /*#__PURE__*/React.createElement(Flow, null), /*#__PURE__*/React.createElement(Modules, null), /*#__PURE__*/React.createElement(SparkFaq, {

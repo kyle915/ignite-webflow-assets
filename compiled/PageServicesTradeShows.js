@@ -236,7 +236,7 @@ const Hero = () => {
       maxWidth: 720,
       textWrap: "pretty"
     }
-  }, "Booth staffing, lead-capture teams, and demo specialists who qualify traffic instead of scanning badges \u2014 pre-show training through same-day CRM handoff."), /*#__PURE__*/React.createElement("div", {
+  }, "Booth staffing, lead-capture teams, and demo specialists who qualify traffic instead of scanning badges, from pre-show training through same-day CRM handoff."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
       gridTemplateColumns: "repeat(3, 1fr)",
@@ -384,10 +384,10 @@ const WhatIs = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: AMBER
   }
-}, "Ignite"), " runs it end-to-end \u2014 pre-show training through same-day CRM handoff \u2014 from one vetted network across all 50 states and Canada. Veteran-owned, CPG-built, Spark-verified."))));
+}, "Ignite"), " runs it end-to-end (pre-show training through same-day CRM handoff) from one vetted network across all 50 states and Canada. Veteran-owned, CPG-built, Spark-verified."))));
 
 /* ---------- WHAT WE STAFF ---------- */
-const ROLES = [["Booth Staff", "Trained hosts who greet, qualify, and route traffic — on-brand, on-message, all show.", AMBER], ["Lead-Capture Teams", "Badge-scan and app-based capture with qualifying questions, tagged hot to cold.", CYAN], ["Demo Specialists", "Product pros who run the demo that turns a walk-by into a booked follow-up.", ORANGE], ["Registration & Greeters", "Check-in, badge, and traffic-flow staff that keep the entrance moving.", AMBER], ["Field Captains", "On-site leads who run the booth schedule, breaks, and the end-of-day recap.", CYAN], ["Full Show Management", "Creative, booth design/fab, staffing, capture, and post-show CRM — one partner.", ORANGE]];
+const ROLES = [["Booth Staff", "Trained hosts who greet, qualify, and route traffic: on-brand, on-message, all show.", AMBER], ["Lead-Capture Teams", "Badge-scan and app-based capture with qualifying questions, tagged hot to cold.", CYAN], ["Demo Specialists", "Product pros who run the demo that turns a walk-by into a booked follow-up.", ORANGE], ["Registration & Greeters", "Check-in, badge, and traffic-flow staff that keep the entrance moving.", AMBER], ["Field Captains", "On-site leads who run the booth schedule, breaks, and the end-of-day recap.", CYAN], ["Full Show Management", "Creative, booth design/fab, staffing, capture, and post-show CRM: one partner.", ORANGE]];
 const Roles = () => /*#__PURE__*/React.createElement("section", {
   id: "floor",
   style: {
@@ -465,7 +465,7 @@ const Roles = () => /*#__PURE__*/React.createElement("section", {
 
 /* ---------- SHOW TIMELINE ---------- */
 const Timeline = () => {
-  const steps = [["PRE-SHOW", "Brief + train", "Brand training, talking points, and qualifying script pushed to every phone via Spark."], ["MOVE-IN", "Booth ready", "Staff badged, booth set, lead-capture and CRM integration tested before doors open."], ["ON FLOOR", "Qualify + capture", "Traffic greeted, qualified, and tagged hot-to-cold — captains manage the schedule live."], ["SAME DAY", "CRM handoff", "Tagged leads synced to your CRM and a recap delivered before the show even closes."]];
+  const steps = [["PRE-SHOW", "Brief + train", "Brand training, talking points, and qualifying script pushed to every phone via Spark."], ["MOVE-IN", "Booth ready", "Staff badged, booth set, lead-capture and CRM integration tested before doors open."], ["ON FLOOR", "Qualify + capture", "Traffic greeted, qualified, and tagged hot-to-cold; captains manage the schedule live."], ["SAME DAY", "CRM handoff", "Tagged leads synced to your CRM and a recap delivered before the show even closes."]];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: INK,
@@ -622,7 +622,7 @@ const Versus = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(Mono, {
   color: AMBER
-}, "IGNITE \u2014 MANAGED TRADE SHOW TEAM"), /*#__PURE__*/React.createElement("div", {
+}, "IGNITE | MANAGED TRADE SHOW TEAM"), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 16,
     display: "flex",
@@ -691,7 +691,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1.6,
     color: "rgba(255,255,255,0.74)"
   }
-}, "Spark is our proprietary field platform: live lead counts, staff GPS check-in, photo capture, and same-day CRM sync. You watch the booth perform in real time \u2014 and every qualified lead is in your pipeline before you land."), /*#__PURE__*/React.createElement("a", {
+}, "Spark is our proprietary field platform: live lead counts, staff GPS check-in, photo capture, and same-day CRM sync. You watch the booth perform in real time, and every qualified lead is in your pipeline before you land."), /*#__PURE__*/React.createElement("a", {
   href: "https://sparkbyignite.igniteproductions.co/",
   style: {
     marginTop: 24,
@@ -738,7 +738,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
     color: "rgba(255,255,255,0.6)"
   }
 }, l)))))));
-const FAQS = [["Do you staff individual trade shows or full annual programs?","Both. Ignite Productions provides single-show booth staffing through full multi-show annual trade show staffing programs with consistent talent nationwide. Veteran-owned (VOSB), founded 2018 in Sparks, Nevada. Contact staffing@igniteproductions.co or 775.406.0435."],["How are trade show leads captured and delivered to our CRM?","Badge-scan, lead-capture apps, custom CRM integrations, and live Spark dashboards. Qualified leads land in your CRM the same day. Contact staffing@igniteproductions.co or 775.406.0435."],["Can you staff large multi-booth trade shows for national brands?","Yes. Ignite staffs large and multi-booth trade show programs with booth staff, demo specialists, lead-capture teams, and on-site leads drawn from 257,000+ vetted brand ambassadors across all 50 states. Veteran-owned (VOSB), founded 2018 in Sparks, Nevada. Contact staffing@igniteproductions.co or 775.406.0435."],["Do you provide booth staffing nationwide for major conventions?","Yes. Ignite deploys trade show booth staffing nationwide for major conventions and B2B shows, including markets such as Las Vegas, New York, Chicago, Orlando, San Francisco, and every market in between. Contact staffing@igniteproductions.co or 775.406.0435."],["Can you run our entire trade show booth program end-to-end?","Yes - pre-show training, booth design and fabrication support, booth staffing, lead capture, demo execution, and post-show recap with CRM handoff. Contact staffing@igniteproductions.co or 775.406.0435."],["How do you staff large trade show programs at scale?","Ignite recruits, vets, and deploys from a nationwide roster of 257,000+ brand ambassadors, with pre-show product training and day-of brand standards so large floors stay consistent across multi-day shows. Veteran-owned (VOSB), founded 2018 in Sparks, Nevada. Contact staffing@igniteproductions.co or 775.406.0435."],["What industries do you provide trade show staffing for?","Tech and SaaS, CPG, automotive, hospitality, healthcare, beauty, telecom, fintech, and B2B/industrial - plus adjacent categories when the brief fits. Contact staffing@igniteproductions.co or 775.406.0435."],["Do you staff international trade shows?","US and Canada full coverage. International shows by partner network. Contact staffing@igniteproductions.co or 775.406.0435."]];
+const FAQS = [["Do you staff individual trade shows or full annual programs?", "Both. Ignite Productions provides single-show booth staffing through full multi-show annual trade show staffing programs with consistent talent nationwide. Veteran-owned (VOSB), founded 2018 in Sparks, Nevada. Contact staffing@igniteproductions.co or 775.406.0435."], ["How are trade show leads captured and delivered to our CRM?", "Badge-scan, lead-capture apps, custom CRM integrations, and live Spark dashboards. Qualified leads land in your CRM the same day. Contact staffing@igniteproductions.co or 775.406.0435."], ["Can you staff large multi-booth trade shows for national brands?", "Yes. Ignite staffs large and multi-booth trade show programs with booth staff, demo specialists, lead-capture teams, and on-site leads drawn from 257,000+ vetted brand ambassadors across all 50 states. Veteran-owned (VOSB), founded 2018 in Sparks, Nevada. Contact staffing@igniteproductions.co or 775.406.0435."], ["Do you provide booth staffing nationwide for major conventions?", "Yes. Ignite deploys trade show booth staffing nationwide for major conventions and B2B shows, including markets such as Las Vegas, New York, Chicago, Orlando, San Francisco, and every market in between. Contact staffing@igniteproductions.co or 775.406.0435."], ["Can you run our entire trade show booth program end-to-end?", "Yes. Pre-show training, booth design and fabrication support, booth staffing, lead capture, demo execution, and post-show recap with CRM handoff. Contact staffing@igniteproductions.co or 775.406.0435."], ["How do you staff large trade show programs at scale?", "Ignite recruits, vets, and deploys from a nationwide roster of 257,000+ brand ambassadors, with pre-show product training and day-of brand standards so large floors stay consistent across multi-day shows. Veteran-owned (VOSB), founded 2018 in Sparks, Nevada. Contact staffing@igniteproductions.co or 775.406.0435."], ["What industries do you provide trade show staffing for?", "Tech and SaaS, CPG, automotive, hospitality, healthcare, beauty, telecom, fintech, and B2B/industrial, plus adjacent categories when the brief fits. Contact staffing@igniteproductions.co or 775.406.0435."], ["Do you staff international trade shows?", "US and Canada full coverage. International shows by partner network. Contact staffing@igniteproductions.co or 775.406.0435."]];
 const Faq = () => {
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {

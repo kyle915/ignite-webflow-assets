@@ -124,7 +124,7 @@ const AGENT_LINES = [{
   c: CYAN
 }, {
   t: "forecast.agent",
-  m: "Phoenix sampling demand ▲ 18% — reallocating",
+  m: "Phoenix sampling demand ▲ 18% · reallocating",
   c: VIOLET
 }, {
   t: "creative.agent",
@@ -292,7 +292,7 @@ const Hero = () => {
     style: {
       color: "#fff"
     }
-  }, "run the whole layer"), " \u2014 recaps, forecasting, creative localization, audience scoring \u2014 fed by real field data and watched by operators. You get the output. We run the models."), /*#__PURE__*/React.createElement("div", {
+  }, "run the whole layer"), " (recaps, forecasting, creative localization, audience scoring), fed by real field data and watched by operators. You get the output. We run the models."), /*#__PURE__*/React.createElement("div", {
     className: "ai-rise",
     style: {
       marginTop: 34,
@@ -549,7 +549,7 @@ const Problem = () => /*#__PURE__*/React.createElement("section", {
   d: "Off-the-shelf models don't know your brand, your markets, or your shelf. So the output sounds like everyone else."
 }, {
   t: "No one to own it",
-  d: "Marketing isn't a data team. Prompts, pipelines, governance, and review have no home — so AI stays a toy, not a system."
+  d: "Marketing isn't a data team. Prompts, pipelines, governance, and review have no home, so AI stays a toy, not a system."
 }].map((p, i) => /*#__PURE__*/React.createElement("div", {
   key: p.t,
   style: {
@@ -580,25 +580,25 @@ const CAPS = [{
   tag: "recap.agent",
   c: CYAN,
   t: "Automated activation recaps",
-  d: "Thousands of GPS-stamped photos and check-ins become a branded, same-day recap — KPIs, highlights, market notes, all written for you.",
+  d: "Thousands of GPS-stamped photos and check-ins become a branded, same-day recap: KPIs, highlights, market notes, all written for you.",
   k: ["Same-day", "Photo-backed", "Brand voice"]
 }, {
   tag: "forecast.agent",
   c: VIOLET,
   t: "Demand & sell-through forecasting",
-  d: "Model which markets and SKUs need more sampling, staffing, or inventory — before the week goes sideways.",
+  d: "Model which markets and SKUs need more sampling, staffing, or inventory before the week goes sideways.",
   k: ["By market", "By SKU", "Reallocation"]
 }, {
   tag: "creative.agent",
   c: CYAN,
   t: "Creative & script localization",
-  d: "One brief becomes market-specific scripts, signage copy, and social — in English and Spanish — in minutes, on brand.",
+  d: "One brief becomes market-specific scripts, signage copy, and social, in English and Spanish, in minutes, on brand.",
   k: ["EN + ES", "Per market", "On-brand"]
 }, {
   tag: "vision.agent",
   c: ACCENT,
   t: "Shelf & compliance vision",
-  d: "Computer vision reads store photos for out-of-stocks, planogram gaps, and competitive sets — flagged automatically.",
+  d: "Computer vision reads store photos for out-of-stocks, planogram gaps, and competitive sets, flagged automatically.",
   k: ["OOS", "Planogram", "Competitive"]
 }, {
   tag: "audience.agent",
@@ -650,7 +650,7 @@ const Capabilities = () => /*#__PURE__*/React.createElement("section", {
     color: "rgba(255,255,255,0.7)",
     maxWidth: 640
   }
-}, "Run as a managed layer \u2014 connected to your Spark field data, governed, and reviewed by operators before anything ships.")), /*#__PURE__*/React.createElement("div", {
+}, "Run as a managed layer: connected to your Spark field data, governed, and reviewed by operators before anything ships.")), /*#__PURE__*/React.createElement("div", {
   className: "ai-two-col",
   style: {
     display: "grid",
@@ -726,15 +726,15 @@ const Capabilities = () => /*#__PURE__*/React.createElement("section", {
 const HOW = [{
   n: "01",
   t: "Audit",
-  d: "We map your data, tools, and the workflows eating your team's time. You get a prioritized AI build plan — no jargon."
+  d: "We map your data, tools, and the workflows eating your team's time. You get a prioritized AI build plan, no jargon."
 }, {
   n: "02",
   t: "Build",
-  d: "We wire the models, prompts, and data pipes — connected to Spark field data — and set the human-in-the-loop review gates."
+  d: "We wire the models, prompts, and data pipes (connected to Spark field data) and set the human-in-the-loop review gates."
 }, {
   n: "03",
   t: "Deploy",
-  d: "Workflows go live behind your brand. Recaps generate, forecasts publish, creative localizes, leads route — automatically."
+  d: "Workflows go live behind your brand. Recaps generate, forecasts publish, creative localizes, leads route, automatically."
 }, {
   n: "04",
   t: "Optimize",
@@ -1022,7 +1022,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     fontFamily: "var(--font-display)",
     fontWeight: 500
   }
-}, "Tell us where your team is drowning \u2014 recaps, forecasting, creative, leads. We'll scope the AI build, wire it to your data, and have the first workflow live in weeks."), /*#__PURE__*/React.createElement("div", {
+}, "Tell us where your team is drowning: recaps, forecasting, creative, leads. We'll scope the AI build, wire it to your data, and have the first workflow live in weeks."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 44,
     display: "flex",

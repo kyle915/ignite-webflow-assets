@@ -323,7 +323,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     fontWeight: 500,
     animationDelay: "240ms"
   }
-}, "Booths, pop-ups, scenic sets, and photo-ops \u2014 ", /*#__PURE__*/React.createElement("b", {
+}, "Booths, pop-ups, scenic sets, and photo-ops: ", /*#__PURE__*/React.createElement("b", {
   style: {
     color: "#fff"
   }
@@ -378,7 +378,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap",
     animationDelay: "460ms"
   }
-}, [["8'–40'", "build scale"], ["1", "team, end to end"], ["Ship-", "ready cases"]].map(([v, l]) => /*#__PURE__*/React.createElement("div", {
+}, [["8' to 40'", "build scale"], ["1", "team, end to end"], ["Ship-", "ready cases"]].map(([v, l]) => /*#__PURE__*/React.createElement("div", {
   key: l
 }, /*#__PURE__*/React.createElement("div", {
   style: {
@@ -469,8 +469,8 @@ const WhatIs = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: ORANGE
   }
-}, "We draw it, engineer it, and build it ourselves"), " \u2014 carpentry, metal, paint, vinyl, and electrical in-house \u2014 then ship it in cases, install it on-site, and strike it. No translation layer, no finger-pointing, no \"that's not what the render looked like.\""))));
-const CAPS = [["Trade show booths", "10x10 inline to 40x60 island — engineered to ship, set fast, and reconfigure show to show.", BLUE], ["Pop-up & branded retail", "Temporary storefronts and shop-in-shops built to code and built to move.", ORANGE], ["Scenic & photo-ops", "Sculptural moments, oversized props, and set pieces designed for the camera.", AMBER], ["Modular touring sets", "Reconfigurable footprints that pack in standard cases and scale per market.", BLUE], ["Custom POS & displays", "Retail displays, coolers, and end-caps that survive the store and sell the shelf.", ORANGE], ["Festival & sponsor builds", "Weatherized footprints, stages, and activations engineered for the field.", AMBER]];
+}, "We draw it, engineer it, and build it ourselves"), " (carpentry, metal, paint, vinyl, and electrical in-house), then ship it in cases, install it on-site, and strike it. No translation layer, no finger-pointing, no \"that's not what the render looked like.\""))));
+const CAPS = [["Trade show booths", "10x10 inline to 40x60 island, engineered to ship, set fast, and reconfigure show to show.", BLUE], ["Pop-up & branded retail", "Temporary storefronts and shop-in-shops built to code and built to move.", ORANGE], ["Scenic & photo-ops", "Sculptural moments, oversized props, and set pieces designed for the camera.", AMBER], ["Modular touring sets", "Reconfigurable footprints that pack in standard cases and scale per market.", BLUE], ["Custom POS & displays", "Retail displays, coolers, and end-caps that survive the store and sell the shelf.", ORANGE], ["Festival & sponsor builds", "Weatherized footprints, stages, and activations engineered for the field.", AMBER]];
 const Caps = () => /*#__PURE__*/React.createElement("section", {
   id: "capabilities",
   style: {
@@ -612,7 +612,7 @@ const PhotoBand = () => /*#__PURE__*/React.createElement("section", {
     textShadow: "0 2px 14px rgba(0,0,0,0.6)"
   }
 }, "Booths and builds engineered in the shop, trucked in, and standing on the floor by doors-open."))));
-const STEPS = [["DESIGN", "Draw + engineer", "Concept, CAD, and structural engineering — costed and build-ready before a board is cut."], ["BUILD", "Fabricate in-house", "Carpentry, metal, paint, vinyl, and electrical under one roof, on one timeline."], ["SHIP", "Case + transport", "Packed in ship-ready cases with load plans, labeled and mapped for the crew."], ["DEPLOY", "Install + strike", "On-site crew builds it, supervises the run, strikes it, and returns it to shop."]];
+const STEPS = [["DESIGN", "Draw + engineer", "Concept, CAD, and structural engineering, costed and build-ready before a board is cut."], ["BUILD", "Fabricate in-house", "Carpentry, metal, paint, vinyl, and electrical under one roof, on one timeline."], ["SHIP", "Case + transport", "Packed in ship-ready cases with load plans, labeled and mapped for the crew."], ["DEPLOY", "Install + strike", "On-site crew builds it, supervises the run, strikes it, and returns it to shop."]];
 const Process = () => /*#__PURE__*/React.createElement("section", {
   style: {
     background: INK,
@@ -766,7 +766,7 @@ const Versus = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(Mono, {
   color: ORANGE
-}, "IGNITE \u2014 DESIGN + BUILD"), /*#__PURE__*/React.createElement("div", {
+}, "IGNITE | DESIGN + BUILD"), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 16,
     display: "flex",
@@ -793,7 +793,7 @@ const Versus = () => /*#__PURE__*/React.createElement("section", {
     color: "#fff"
   }
 }, x))))))));
-const FAQS = [["Do you fabricate in-house?", "Yes — an in-house build shop with carpentry, metalwork, paint, vinyl, and electrical. Design, fabricate, ship, install, strike — one team."], ["What scales of build do you do?", "From 8-foot photo-ops to 40-foot immersive sets, single one-offs through multiple touring builds at once."], ["Can you build modular/touring activations?", "Yes — reconfigurable footprints engineered to ship in standard cases, set fast, and scale from 10x10 to 40x60."], ["Do you handle install and strike?", "Full-service: fabrication, transport, install crew, on-site supervision, strike, and return-to-shop refurb."], ["What categories do you build for?", "CPG, beverage, tech, hospitality, retail pop-ups, festival sponsors, and B2B trade show booths."]];
+const FAQS = [["Do you fabricate in-house?", "Yes. We run an in-house build shop with carpentry, metalwork, paint, vinyl, and electrical. Design, fabricate, ship, install, strike: one team."], ["What scales of build do you do?", "From 8-foot photo-ops to 40-foot immersive sets, single one-offs through multiple touring builds at once."], ["Can you build modular/touring activations?", "Yes, with reconfigurable footprints engineered to ship in standard cases, set fast, and scale from 10x10 to 40x60."], ["Do you handle install and strike?", "Full-service: fabrication, transport, install crew, on-site supervision, strike, and return-to-shop refurb."], ["What categories do you build for?", "CPG, beverage, tech, hospitality, retail pop-ups, festival sponsors, and B2B trade show booths."]];
 const Faq = () => {
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
@@ -903,7 +903,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 620,
     fontWeight: 500
   }
-}, "Napkin drawing, render, or a Pinterest board \u2014 we'll engineer it, cost it, build it, and stand it up on-site."), /*#__PURE__*/React.createElement("div", {
+}, "Napkin drawing, render, or a Pinterest board: we'll engineer it, cost it, build it, and stand it up on-site."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 38,
     display: "flex",

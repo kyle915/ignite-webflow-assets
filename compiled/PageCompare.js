@@ -6,7 +6,7 @@
 
 const COMPARE_ROWS = [{
   cat: "Staffing speed",
-  them: "2–3 weeks for a 'rush' market, with crew you've never met.",
+  them: "2 to 3 weeks for a 'rush' market, with crew you've never met.",
   us: "48-hour rush window. Same crew, every market. We don't sub it out."
 }, {
   cat: "Quote transparency",
@@ -31,7 +31,7 @@ const COMPARE_ROWS = [{
 }, {
   cat: "In-house tech",
   them: "A spreadsheet. Maybe a CSV from a third-party staffing platform.",
-  us: "Spark — proprietary field-ops platform. Live dashboard, request intake, GPS check-ins, recap engine."
+  us: "Spark: proprietary field-ops platform. Live dashboard, request intake, GPS check-ins, recap engine."
 }, {
   cat: "Geographic coverage",
   them: "Top 10 markets in-house, the rest 'we partner with locals.'",
@@ -155,7 +155,7 @@ const ComparePage = () => /*#__PURE__*/React.createElement(React.Fragment, null,
     textWrap: "pretty",
     animationDelay: "240ms"
   }
-}, "A direct comparison. Eight places where we operate differently \u2014 and what that means for your program, your invoice, and the answer when leadership asks ", /*#__PURE__*/React.createElement("em", {
+}, "A direct comparison. Eight places where we operate differently, and what that means for your program, your invoice, and the answer when leadership asks ", /*#__PURE__*/React.createElement("em", {
   style: {
     color: "var(--ignite-500)"
   }

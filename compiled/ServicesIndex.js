@@ -75,7 +75,7 @@ const ServicesIndexHero = () => /*#__PURE__*/React.createElement("section", {
     color: "rgba(255,255,255,0.85)",
     maxWidth: 720
   }
-}, "Strategy, fabrication, ambassadors, sampling, mobile media, trade shows, and merch \u2014 designed, built, and run by one team. No agency runaround.")));
+}, "Strategy, fabrication, ambassadors, sampling, mobile media, trade shows, and merch: designed, built, and run by one team. No agency runaround.")));
 const ServicesIndexGrid = () => /*#__PURE__*/React.createElement("section", {
   style: {
     padding: "60px 48px 120px",

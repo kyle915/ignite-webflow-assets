@@ -353,7 +353,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     fontFamily: "var(--font-display)",
     fontWeight: 500
   }
-}, "Planogram audits, POS resets, end-cap builds, and OOS recovery \u2014 ", /*#__PURE__*/React.createElement("b", {
+}, "Planogram audits, POS resets, end-cap builds, and OOS recovery: ", /*#__PURE__*/React.createElement("b", {
   style: {
     color: "#fff"
   }
@@ -532,7 +532,7 @@ const OOSFlow = () => {
       color: "rgba(255,255,255,0.68)",
       maxWidth: 600
     }
-  }, "Most brands find out a SKU went out of stock when the scan data drops two weeks later. We flag it the moment the crew walks the aisle \u2014 and close the loop.")), /*#__PURE__*/React.createElement("div", {
+  }, "Most brands find out a SKU went out of stock when the scan data drops two weeks later. We flag it the moment the crew walks the aisle, and close the loop.")), /*#__PURE__*/React.createElement("div", {
     className: "rm-flow",
     style: {
       display: "grid",
@@ -617,7 +617,7 @@ const OOSFlow = () => {
 
 /* ============ QUARTERLY ROLLUP ============ */
 const Rollup = () => {
-  const rows = [["Whole Foods · Northeast region audit", "NORTHEAST · 6 STATES", 412], ["Target · Q3 reset compliance sweep", "NATIONAL · 18 DMAs", 1820], ["Costco · Roadshow week 1–4 audits", "WEST · 6 STATES", 186], ["Sprouts · New-item launch verification", "TX + CO + AZ", 210], ["Kroger · End-cap install audit", "SOUTHEAST · 4 DMAs", 780], ["Wegmans · Quarterly planogram check", "NY + PA · 8 MARKETS", 94], ["Sam's Club · POS verification sweep", "NATIONAL · 12 DMAs", 320], ["GNC · Specialty SKU compliance", "NATIONAL · 30 DMAs", 390]];
+  const rows = [["Whole Foods · Northeast region audit", "NORTHEAST · 6 STATES", 412], ["Target · Q3 reset compliance sweep", "NATIONAL · 18 DMAs", 1820], ["Costco · Roadshow weeks 1 to 4 audits", "WEST · 6 STATES", 186], ["Sprouts · New-item launch verification", "TX + CO + AZ", 210], ["Kroger · End-cap install audit", "SOUTHEAST · 4 DMAs", 780], ["Wegmans · Quarterly planogram check", "NY + PA · 8 MARKETS", 94], ["Sam's Club · POS verification sweep", "NATIONAL · 12 DMAs", 320], ["GNC · Specialty SKU compliance", "NATIONAL · 30 DMAs", 390]];
   const max = 1820;
   return /*#__PURE__*/React.createElement("section", {
     style: {
@@ -884,7 +884,7 @@ const Spark = () => {
       lineHeight: 1.6,
       color: "rgba(255,255,255,0.74)"
     }
-  }, "Every store visit runs through Spark \u2014 planogram compliance scored, before-and-after photos, OOS flagged same-day, end-cap install status verified. Brand, broker, and retail account manager see the same dashboard."), /*#__PURE__*/React.createElement("div", {
+  }, "Every store visit runs through Spark: planogram compliance scored, before-and-after photos, OOS flagged same-day, end-cap install status verified. Brand, broker, and retail account manager see the same dashboard."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 26,
       display: "flex",
@@ -1039,7 +1039,7 @@ const Spark = () => {
 
 /* ============ FAQ ============ */
 const FAQ = () => {
-  const items = [["What kinds of merchandising do you handle?", "Planogram audits, POS resets, end-cap installs, new-item shelf placement, back-stock pulls, out-of-stock recovery, signage installation, scan-back demo coordination, and competitive intel where the program calls for it."], ["Can you audit hundreds of stores in a single week?", "Yes. Our 257,000+ ambassador bench covers all 50 states. We run multi-thousand-store audit windows routinely, all reported per-store through Spark with photo evidence and GPS verification."], ["What chains do you work with?", "Whole Foods, Costco, Sam's Club, Target, Walmart, Kroger, Publix, Wegmans, Sprouts, Erewhon, GNC, Vitamin Shoppe, Pet Supplies Plus, plus most regional grocery and specialty banners. We file the chain-specific paperwork and brand-standard compliance."], ["How do we see what actually happened in each store?", "Every store visit shows up in Spark — GPS check-in/check-out, photo gallery, ambassador notes, planogram compliance flag, OOS list. Brand, broker, and retail account team see the same dashboard."], ["Can merchandising be combined with demo programs?", "Yes. We run combined programs where merchandising walks the shelf the day before a demo arrives, so the shelf is reset, the POS is in place, and the BA isn't sampling next to an empty facing."]];
+  const items = [["What kinds of merchandising do you handle?", "Planogram audits, POS resets, end-cap installs, new-item shelf placement, back-stock pulls, out-of-stock recovery, signage installation, scan-back demo coordination, and competitive intel where the program calls for it."], ["Can you audit hundreds of stores in a single week?", "Yes. Our 257,000+ ambassador bench covers all 50 states. We run multi-thousand-store audit windows routinely, all reported per-store through Spark with photo evidence and GPS verification."], ["What chains do you work with?", "Whole Foods, Costco, Sam's Club, Target, Walmart, Kroger, Publix, Wegmans, Sprouts, Erewhon, GNC, Vitamin Shoppe, Pet Supplies Plus, plus most regional grocery and specialty banners. We file the chain-specific paperwork and brand-standard compliance."], ["How do we see what actually happened in each store?", "Every store visit shows up in Spark: GPS check-in/check-out, photo gallery, ambassador notes, planogram compliance flag, OOS list. Brand, broker, and retail account team see the same dashboard."], ["Can merchandising be combined with demo programs?", "Yes. We run combined programs where merchandising walks the shelf the day before a demo arrives, so the shelf is reset, the POS is in place, and the BA isn't sampling next to an empty facing."]];
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
     style: {

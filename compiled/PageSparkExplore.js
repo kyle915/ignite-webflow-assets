@@ -170,7 +170,7 @@ const SolutionsTab = () => /*#__PURE__*/React.createElement(React.Fragment, null
     position: "relative",
     overflow: "hidden"
   },
-  "aria-label": "Software only \u2014 coming soon"
+  "aria-label": "Software only: coming soon"
 }, /*#__PURE__*/React.createElement("div", {
   "aria-hidden": true,
   style: {
@@ -246,18 +246,18 @@ const SolutionsTab = () => /*#__PURE__*/React.createElement(React.Fragment, null
     fontSize: 28,
     color: FG
   }
-}, "With Ignite ", /*#__PURE__*/React.createElement("span", {
+}, "With Ignite", /*#__PURE__*/React.createElement("span", {
   style: {
     color: LIME
   }
-}, "\u2014 included at no additional cost")), /*#__PURE__*/React.createElement("p", {
+}, ": included at no additional cost")), /*#__PURE__*/React.createElement("p", {
   style: {
     margin: "14px 0 0",
     fontSize: 15,
     lineHeight: 1.6,
     color: FG2
   }
-}, "Hand us the program. Ignite staffs, trains, and executes with a 257K-strong bench \u2014 and Spark comes with it at no platform cost."), /*#__PURE__*/React.createElement("a", {
+}, "Hand us the program. Ignite staffs, trains, and executes with a 257K-strong bench, and Spark comes with it at no platform cost."), /*#__PURE__*/React.createElement("a", {
   className: "sp-btn",
   href: "https://sparkbyignite.igniteproductions.co/",
   style: {

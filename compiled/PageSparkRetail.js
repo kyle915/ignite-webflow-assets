@@ -238,7 +238,7 @@ const Hero = () => {
     style: {
       color: "#fff"
     }
-  }, "257,000-strong field force"), " claims it, completes it, and GPS + photo verifies it. Other platforms send anonymous gig workers. We send a trained roster \u2014 and you watch it happen live in Spark."), /*#__PURE__*/React.createElement("div", {
+  }, "257,000-strong field force"), " claims it, completes it, and GPS + photo verifies it. Other platforms send anonymous gig workers. We send a trained roster, and you watch it happen live in Spark."), /*#__PURE__*/React.createElement("div", {
     className: "sr-rise",
     style: {
       marginTop: 34,
@@ -498,7 +498,7 @@ const Problem = () => /*#__PURE__*/React.createElement("section", {
     color: "rgba(10,11,13,0.7)",
     maxWidth: 720
   }
-}, "The display never got built. The SKU's been out of stock for nine days. A competitor bought your end-cap. You find out a quarter later \u2014 in a vendor PDF, if at all. Crowdsourced apps promised to fix it, then sent anonymous gig workers with no training and no accountability.")), /*#__PURE__*/React.createElement("div", {
+}, "The display never got built. The SKU's been out of stock for nine days. A competitor bought your end-cap. You find out a quarter later, in a vendor PDF, if at all. Crowdsourced apps promised to fix it, then sent anonymous gig workers with no training and no accountability.")), /*#__PURE__*/React.createElement("div", {
   className: "sr-two-col sr-reveal",
   style: {
     marginTop: 56,
@@ -511,7 +511,7 @@ const Problem = () => /*#__PURE__*/React.createElement("section", {
   d: "You paid for the end-cap. Nobody verified it got built. The retailer says it did."
 }, {
   t: "Silent stockouts",
-  d: "OOS is invisible until scan data catches up — weeks of lost velocity later."
+  d: "OOS is invisible until scan data catches up: weeks of lost velocity later."
 }, {
   t: "Anonymous gig data",
   d: "Generic platforms send whoever's nearby. No vetting, no training, no recourse on a bad audit."
@@ -548,12 +548,12 @@ const Problem = () => /*#__PURE__*/React.createElement("section", {
 const HOW = [{
   n: "01",
   t: "Post the task",
-  d: "Pick stores (or a whole chain / DMA), define the task — audit, photo, OOS check, price grab, competitive intel — set the payout. Live in minutes.",
+  d: "Pick stores (or a whole chain / DMA), define the task (audit, photo, OOS check, price grab, competitive intel), set the payout. Live in minutes.",
   tag: "BRAND SIDE"
 }, {
   n: "02",
   t: "The field force claims it",
-  d: "257,000 vetted, trained ambassadors get matched by location. The right person near the store claims it. Not a random gig stranger — a roster member with a track record.",
+  d: "257,000 vetted, trained ambassadors get matched by location. The right person near the store claims it. Not a random gig stranger, but a roster member with a track record.",
   tag: "FIELD SIDE"
 }, {
   n: "03",
@@ -562,7 +562,7 @@ const HOW = [{
   tag: "VERIFIED"
 }, {
   n: "04",
-  t: "Watch it land — live",
+  t: "Watch it land, live",
   d: "Results stream into your Spark dashboard as they happen. Per-store, per-task, photo-backed. Export, share, or pipe to your BI stack same day.",
   tag: "REAL-TIME"
 }];
@@ -1305,7 +1305,7 @@ const TASKS = [{
   d: "Is it on the shelf, faced, and priced right? Photo-verified, store by store."
 }, {
   t: "Out-of-stock detection",
-  d: "Same-day OOS flagging with photo proof — route it to the retailer before velocity drops."
+  d: "Same-day OOS flagging with photo proof. Route it to the retailer before velocity drops."
 }, {
   t: "Planogram compliance",
   d: "Built to spec or not. Gaps flagged, end-caps verified, resets audited."
@@ -1314,10 +1314,10 @@ const TASKS = [{
   d: "Capture live shelf price, promo execution, competitor pricing across the set."
 }, {
   t: "Competitive intelligence",
-  d: "Competitor facings, new items, pricing, and display share — captured in the wild."
+  d: "Competitor facings, new items, pricing, and display share, captured in the wild."
 }, {
   t: "Demo & sampling coverage",
-  d: "Verify your demo actually ran, counted, and converted — not just got booked."
+  d: "Verify your demo actually ran, counted, and converted, not just got booked."
 }];
 const Tasks = () => /*#__PURE__*/React.createElement("section", {
   style: {
@@ -1397,7 +1397,7 @@ const Tasks = () => /*#__PURE__*/React.createElement("section", {
 }, x.d))))));
 
 /* ============================ VS / DIFFERENCE ============================ */
-const VS = [["Anonymous gig worker, claimed off a map", "Vetted, trained roster member with a track record"], ["No accountability on a bad or faked audit", "GPS check-in + photo proof + fraud screening, or no payout"], ["Coverage gaps in rural + secondary markets", "257,000 ambassadors · all 50 states · same-week reach"], ["A data vendor that hands you a CSV", "A field-marketing operator that can also fix what it finds"], ["Generic, race-to-the-bottom task pool", "Gamified roster — points, tiers, Cans-in-Hands leaderboard"]];
+const VS = [["Anonymous gig worker, claimed off a map", "Vetted, trained roster member with a track record"], ["No accountability on a bad or faked audit", "GPS check-in + photo proof + fraud screening, or no payout"], ["Coverage gaps in rural + secondary markets", "257,000 ambassadors · all 50 states · same-week reach"], ["A data vendor that hands you a CSV", "A field-marketing operator that can also fix what it finds"], ["Generic, race-to-the-bottom task pool", "Gamified roster: points, tiers, Cans-in-Hands leaderboard"]];
 const Versus = () => /*#__PURE__*/React.createElement("section", {
   style: {
     background: INK,
@@ -1450,7 +1450,7 @@ const Versus = () => /*#__PURE__*/React.createElement("section", {
     color: "rgba(255,255,255,0.7)",
     maxWidth: 680
   }
-}, "The gig-app platforms get you scale and lose you trust. Traditional merchandising gets you trust and loses you scale + speed. Spark is the only one that's both \u2014 because the \"crowd\" is our own vetted, trained, gamified field force.")), /*#__PURE__*/React.createElement("div", {
+}, "The gig-app platforms get you scale and lose you trust. Traditional merchandising gets you trust and loses you scale + speed. Spark is the only one that's both, because the \"crowd\" is our own vetted, trained, gamified field force.")), /*#__PURE__*/React.createElement("div", {
   style: {
     border: "1px solid rgba(255,255,255,0.1)",
     borderRadius: 16,
@@ -1662,7 +1662,7 @@ const SparkRetailPage = () => {
     "data-screen-label": "Spark Retail"
   }, /*#__PURE__*/React.createElement(SparkNav, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Ticker, null), /*#__PURE__*/React.createElement(Problem, null), /*#__PURE__*/React.createElement(How, null), /*#__PURE__*/React.createElement(Dashboard, null), /*#__PURE__*/React.createElement(Tasks, null), /*#__PURE__*/React.createElement(Stats, null), /*#__PURE__*/React.createElement(CTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
 };
-document.title = "Spark Retail Execution | Crowdsourced In-Store Intelligence — Ignite";
+document.title = "Spark Retail Execution | Crowdsourced In-Store Intelligence | Ignite";
 Object.assign(window, {
   PageSparkRetail: SparkRetailPage
 });

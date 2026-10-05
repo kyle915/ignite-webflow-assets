@@ -57,7 +57,7 @@ SERVICES_DATA["bilingual-brand-ambassadors"] = {
   },
   "benchDepth": {
     "headline": "Bilingual specialists|*in every Hispanic-strong market.*",
-    "sub": "We staff against the demographic, not just the metro. Bilingual specialist density tracks the actual Hispanic + multicultural population — not census-tract averages.",
+    "sub": "We staff against the demographic, not just the metro. Bilingual specialist density tracks the actual Hispanic + multicultural population, not census-tract averages.",
     "markets": [{
       "name": "Miami / South Florida",
       "state": "FL · 70% HISPANIC",
@@ -113,7 +113,7 @@ SERVICES_DATA["bilingual-brand-ambassadors"] = {
   },
   "corridorMap": {
     "headline": "Cultural calendar.|*We staff against every moment.*",
-    "sub": "Hispanic Heritage Month is the headline. But the real calendar runs year-round — and the brands that show up at every moment outperform the ones that only show up in September.",
+    "sub": "Hispanic Heritage Month is the headline. But the real calendar runs year-round, and the brands that show up at every moment outperform the ones that only show up in September.",
     "corridors": [{
       "city": "MAR · NATIONAL",
       "name": "Three Kings Day window + Carnival",
@@ -258,19 +258,19 @@ SERVICES_DATA["bilingual-brand-ambassadors"] = {
   "heroPos": "center 30%",
   "sub": [{
     "t": "Spanish-fluent ambassadors",
-    "d": "Real fluency — not high-school Spanish. Vetted via in-language interview before deployment."
+    "d": "Real fluency, not high-school Spanish. Vetted via in-language interview before deployment."
   }, {
     "t": "Bilingual demo + retail",
-    "d": "Carniceria, Hispanic grocery, El Super, Northgate Market, Bravo, Sedano's — chain-specific programs."
+    "d": "Carniceria, Hispanic grocery, El Super, Northgate Market, Bravo, Sedano's: chain-specific programs."
   }, {
     "t": "Latin music festival programs",
-    "d": "Calibash, La Onda, Premios Juventud, Latin Grammy — festival-grade staffing and brand activation."
+    "d": "Calibash, La Onda, Premios Juventud, Latin Grammy: festival-grade staffing and brand activation."
   }, {
     "t": "Soccer + sports tie-ins",
-    "d": "MLS, Liga MX matches, Concacaf, Copa America — culturally-tuned activation alongside the sport."
+    "d": "MLS, Liga MX matches, Concacaf, Copa America: culturally-tuned activation alongside the sport."
   }, {
     "t": "Cultural-event activation",
-    "d": "Día de los Muertos, Cinco de Mayo, Hispanic Heritage Month, Carnaval — staffed to the moment."
+    "d": "Día de los Muertos, Cinco de Mayo, Hispanic Heritage Month, Carnaval: staffed to the moment."
   }, {
     "t": "In-language brand briefing",
     "d": "Talking points and conversion ask delivered in Spanish and English. Crew briefed in both."
@@ -279,13 +279,13 @@ SERVICES_DATA["bilingual-brand-ambassadors"] = {
     "d": "Spanish + Portuguese + Haitian Creole + Mandarin + French where the audience demands it."
   }, {
     "t": "Mas+ stadium model",
-    "d": "Same playbook we run for Mas+ × Messi — culturally-anchored stadium and concourse activation."
+    "d": "Same playbook we run for Mas+ × Messi: culturally-anchored stadium and concourse activation."
   }],
   "stats": [["Spanish-fluent", "verified per ambassador"], ["50", "states + DC"], ["7+", "languages on roster"]],
   "adjacent": ["event-staffing", "experiential-marketing", "product-sampling"],
   "pov": {
     "lead": "\"Bilingual\" isn't a checkbox. It's a sound check.",
-    "body": "Brands check the bilingual box without verifying. We don't. Every ambassador on a Spanish-language program is interviewed in Spanish, briefed in Spanish, and judged on whether the conversation actually lands with the consumer. Other languages too — Portuguese for World Cup, Haitian Creole for Miami programs, Mandarin for Bay Area tech events.",
+    "body": "Brands check the bilingual box without verifying. We don't. Every ambassador on a Spanish-language program is interviewed in Spanish, briefed in Spanish, and judged on whether the conversation actually lands with the consumer. Other languages too: Portuguese for World Cup, Haitian Creole for Miami programs, Mandarin for Bay Area tech events.",
     "marquee": ["FLUENCY-VERIFIED", "CULTURALLY-BRIEFED", "IN-LANGUAGE TRAINING", "MAS+ PROVEN", "NATIONAL COVERAGE"]
   },
   "pains": {
@@ -293,7 +293,7 @@ SERVICES_DATA["bilingual-brand-ambassadors"] = {
     "sinker": "We replace the checkbox with verified fluency and in-language briefing.",
     "items": ["Hired a 'bilingual' BA who only spoke restaurant Spanish", "Watched a Spanish-language demo run with English-only ambassadors", "Lost trust with the audience because the script didn't translate", "Found out the cultural nuance was missing 10 minutes into the demo", "Asked vendor for 'bilingual' staff and gotten the same crew as English", "Paid translator rates for staff who couldn't hold a conversation", "Coordinated 4 different cultural events without a consistent crew", "Wondered why your Hispanic-targeted media isn't converting"]
   },
-  "comparison": [["'Bilingual' on a roster check", "In-language interview before every program"], ["Generic activation script translated last-minute", "Brand brief delivered in Spanish and English"], ["No cultural context training", "Briefed on cultural moments, music, references, refusals"], ["Different vendor for Hispanic vs general market", "Same managed program — both audiences served by the same captain"], ["No multi-language coverage", "Spanish + Portuguese + Mandarin + Haitian Creole on roster"], ["Generic event staffing pool", "Vetted bilingual roster — captains who've run Hispanic activations before"]],
+  "comparison": [["'Bilingual' on a roster check", "In-language interview before every program"], ["Generic activation script translated last-minute", "Brand brief delivered in Spanish and English"], ["No cultural context training", "Briefed on cultural moments, music, references, refusals"], ["Different vendor for Hispanic vs general market", "Same managed program: both audiences served by the same captain"], ["No multi-language coverage", "Spanish + Portuguese + Mandarin + Haitian Creole on roster"], ["Generic event staffing pool", "Vetted bilingual roster: captains who've run Hispanic activations before"]],
   "proof": null,
   "industries": ["CPG Beverage", "CPG Food & Snack", "Alcohol & Spirits", "Sports & Entertainment", "Lifestyle & Beauty", "QSR & Restaurant", "Health & Wellness", "Tech & SaaS"],
   "process": [["BRIEF", "Confirm audience profile, markets, cultural moments, in-language requirements."], ["VERIFY", "Each ambassador interviewed in target language. Fluency scored before deployment."], ["BRIEF (in-language)", "Product brief, talking points, refusals delivered in both languages."], ["EXECUTE", "Captain-led shifts, in-language consumer engagement, photo + content capture."], ["RECAP", "Per-shift conversion data, cultural-context notes, audience capture for future programs."]],
@@ -313,10 +313,10 @@ SERVICES_DATA["bilingual-brand-ambassadors"] = {
   "seoBlock": {
     "eyebrow": "DEEP DIVE",
     "head": "Hispanic-targeted activation is its own discipline. Bilingual on paper isn't bilingual in market.",
-    "paras": ["Ignite runs bilingual brand ambassador programs across the U.S. Hispanic and multicultural market. Spanish-fluent staff verified before deployment, briefed in both languages, deployed across retail demos, festival programs, stadium activations, and cultural moments. Same Mas+ × Messi staffing model we already run at scale.", "Real fluency is the floor. Every Spanish-language ambassador on the roster has been interviewed in Spanish by a native speaker before they get assigned. Brand briefing is bilingual — your talking points, conversion ask, refusal protocols, and product knowledge land in both languages so the consumer engagement actually works.", "Programs route across high-Hispanic markets — LA, Miami, Houston, NYC, Chicago, San Antonio, Phoenix, Dallas — plus Hispanic grocery banners (El Super, Northgate, Bravo, Sedano's), Latin music festivals (Calibash, La Onda, Premios Juventud), and soccer activation alongside MLS, Liga MX, and Concacaf events.", "Best for CPG brands running Hispanic-targeted media that needs in-market trial alongside it, beverage and spirits brands engaging Hispanic on-premise venues, and brand teams looking to scale a culturally-anchored playbook nationally instead of running it state by state."],
+    "paras": ["Ignite runs bilingual brand ambassador programs across the U.S. Hispanic and multicultural market. Spanish-fluent staff verified before deployment, briefed in both languages, deployed across retail demos, festival programs, stadium activations, and cultural moments. Same Mas+ × Messi staffing model we already run at scale.", "Real fluency is the floor. Every Spanish-language ambassador on the roster has been interviewed in Spanish by a native speaker before they get assigned. Brand briefing is bilingual: your talking points, conversion ask, refusal protocols, and product knowledge land in both languages so the consumer engagement actually works.", "Programs route across high-Hispanic markets (LA, Miami, Houston, NYC, Chicago, San Antonio, Phoenix, Dallas) plus Hispanic grocery banners (El Super, Northgate, Bravo, Sedano's), Latin music festivals (Calibash, La Onda, Premios Juventud), and soccer activation alongside MLS, Liga MX, and Concacaf events.", "Best for CPG brands running Hispanic-targeted media that needs in-market trial alongside it, beverage and spirits brands engaging Hispanic on-premise venues, and brand teams looking to scale a culturally-anchored playbook nationally instead of running it state by state."],
     "chips": ["Bilingual brand ambassadors", "Spanish speaking brand ambassadors", "Multicultural event staffing", "Hispanic marketing activations", "Bilingual promotional staff", "Mas+ stadium activation", "Latin festival staffing", "Hispanic retail demo", "Spanish-language brand activation", "Multicultural marketing agency"]
   },
-  "faqs": [["How do you verify fluency?", "Every Spanish-language ambassador is interviewed in Spanish by a native speaker before they're deployed. Fluency is scored against the program — restaurant Spanish doesn't pass for a regulated brand activation."], ["What other languages do you cover?", "Spanish primarily. Portuguese (World Cup, Brazilian audiences), Haitian Creole (Miami), Mandarin (Bay Area, Seattle, NYC), French (Quebec adjacent / Haitian / West African). Other languages on request, scoped per program."], ["Can you staff Calibash, La Onda, and Latin Grammy weekends?", "Yes. We've staffed Latin music festival programs as part of our standard festival activation roster. Captain-led, fluency-verified, briefed in both languages."], ["Do you handle Liga MX / MLS / Concacaf activation?", "Yes. Stadium and concourse staffing for soccer-anchored programs is a regular Hispanic-market vertical. Mas+ × Messi is the proof point."], ["Can bilingual ambassadors handle a regulated pour?", "Yes. TIPS / TABC / RBS certification is required regardless of language — every bilingual pour-team ambassador is also certified for the regulated activity."], ["Can you scale a Hispanic activation nationally?", "Yes. Same managed program model as our English-language ambassador program — single PM, fluency-verified roster, captain rotation, market-by-market coverage."]],
+  "faqs": [["How do you verify fluency?", "Every Spanish-language ambassador is interviewed in Spanish by a native speaker before they're deployed. Fluency is scored against the program; restaurant Spanish doesn't pass for a regulated brand activation."], ["What other languages do you cover?", "Spanish primarily. Portuguese (World Cup, Brazilian audiences), Haitian Creole (Miami), Mandarin (Bay Area, Seattle, NYC), French (Quebec adjacent / Haitian / West African). Other languages on request, scoped per program."], ["Can you staff Calibash, La Onda, and Latin Grammy weekends?", "Yes. We've staffed Latin music festival programs as part of our standard festival activation roster. Captain-led, fluency-verified, briefed in both languages."], ["Do you handle Liga MX / MLS / Concacaf activation?", "Yes. Stadium and concourse staffing for soccer-anchored programs is a regular Hispanic-market vertical. Mas+ × Messi is the proof point."], ["Can bilingual ambassadors handle a regulated pour?", "Yes. TIPS / TABC / RBS certification is required regardless of language. Every bilingual pour-team ambassador is also certified for the regulated activity."], ["Can you scale a Hispanic activation nationally?", "Yes. Same managed program model as our English-language ambassador program: single PM, fluency-verified roster, captain rotation, market-by-market coverage."]],
   "sparkAngle": {
     "headline": "Spark for bilingual programs",
     "lede": "Per-shift in-language consumer engagement, cultural-context notes, market-by-market Hispanic audience capture.",
@@ -364,7 +364,7 @@ const BL_DICT = {
   "INDUSTRIES": "INDUSTRIAS",
   "MARKETS": "MERCADOS",
   "SERVICES": "SERVICIOS",
-  "Request staff now": "Solicitar personal ya",
+  "Request a quote": "Solicitar cotización",
   "Staffing & Talent": "Personal y Talento",
   "Sampling": "Muestreo",
   "Retail Programs": "Programas de Retail",
@@ -403,7 +403,7 @@ const BL_DICT = {
   // POV
   "THE TAKE": "NUESTRA POSTURA",
   "\"Bilingual\" isn't a checkbox. It's a sound check.": "«Bilingüe» no es una casilla. Es una prueba de sonido.",
-  "Brands check the bilingual box without verifying. We don't. Every ambassador on a Spanish-language program is interviewed in Spanish, briefed in Spanish, and judged on whether the conversation actually lands with the consumer. Other languages too — Portuguese for World Cup, Haitian Creole for Miami programs, Mandarin for Bay Area tech events.": "Las marcas marcan la casilla de bilingüe sin verificar. Nosotros no. Cada embajador de un programa en español es entrevistado en español, capacitado en español y evaluado según si la conversación realmente conecta con el consumidor. Otros idiomas también: portugués para el Mundial, creole haitiano para programas en Miami, mandarín para eventos tech del Área de la Bahía.",
+  "Brands check the bilingual box without verifying. We don't. Every ambassador on a Spanish-language program is interviewed in Spanish, briefed in Spanish, and judged on whether the conversation actually lands with the consumer. Other languages too: Portuguese for World Cup, Haitian Creole for Miami programs, Mandarin for Bay Area tech events.": "Las marcas marcan la casilla de bilingüe sin verificar. Nosotros no. Cada embajador de un programa en español es entrevistado en español, capacitado en español y evaluado según si la conversación realmente conecta con el consumidor. Otros idiomas también: portugués para el Mundial, creole haitiano para programas en Miami, mandarín para eventos tech del Área de la Bahía.",
   // pains
   "// FOUND-YOU MOMENT": "// MOMENTO DE VERDAD",
   "If you've staffed a Hispanic activation before, you've probably…": "Si ya has dotado de personal una activación hispana, probablemente…",
@@ -431,11 +431,11 @@ const BL_DICT = {
   "No cultural context training": "Sin entrenamiento de contexto cultural",
   "Briefed on cultural moments, music, references, refusals": "Capacitados en momentos culturales, música, referencias y negativas",
   "Different vendor for Hispanic vs general market": "Un proveedor distinto para el mercado hispano y el general",
-  "Same managed program — both audiences served by the same captain": "El mismo programa gestionado: ambas audiencias atendidas por el mismo capitán",
+  "Same managed program: both audiences served by the same captain": "El mismo programa gestionado: ambas audiencias atendidas por el mismo capitán",
   "No multi-language coverage": "Sin cobertura multilingüe",
   "Spanish + Portuguese + Mandarin + Haitian Creole on roster": "Español + portugués + mandarín + creole haitiano en el roster",
   "Generic event staffing pool": "Bolsa genérica de personal para eventos",
-  "Vetted bilingual roster — captains who've run Hispanic activations before": "Roster bilingüe verificado: capitanes que ya han dirigido activaciones hispanas",
+  "Vetted bilingual roster: captains who've run Hispanic activations before": "Roster bilingüe verificado: capitanes que ya han dirigido activaciones hispanas",
   // channels
   "CHANNEL BREAKDOWN": "DESGLOSE POR CANAL",
   "One playbook.": "Un solo manual.",
@@ -503,14 +503,14 @@ const BL_DICT = {
   "BENCH DEPTH": "PROFUNDIDAD DEL EQUIPO",
   "Bilingual specialists": "Especialistas bilingües",
   "in every Hispanic-strong market.": "en cada mercado de fuerte presencia hispana.",
-  "We staff against the demographic, not just the metro. Bilingual specialist density tracks the actual Hispanic + multicultural population — not census-tract averages.": "Dotamos de personal según la demografía, no solo según el metro. La densidad de especialistas bilingües sigue la población hispana + multicultural real, no los promedios por sector censal.",
+  "We staff against the demographic, not just the metro. Bilingual specialist density tracks the actual Hispanic + multicultural population, not census-tract averages.": "Dotamos de personal según la demografía, no solo según el metro. La densidad de especialistas bilingües sigue la población hispana + multicultural real, no los promedios por sector censal.",
   "BILINGUAL SPECIALISTS": "ESPECIALISTAS BILINGÜES",
   "Bilingual specialist counts reflect Spanish-fluent ambassadors with regional-dialect proficiency. Source: U.S. Census + Pew Research Hispanic population data.": "Los conteos de especialistas bilingües reflejan embajadores con español fluido y dominio de dialectos regionales. Fuente: Censo de EE. UU. + datos de población hispana de Pew Research.",
   // calendar
   "CORRIDOR DENSITY MAP": "MAPA DE DENSIDAD DE CORREDORES",
   "Cultural calendar.": "Calendario cultural.",
   "We staff against every moment.": "Personal para cada momento.",
-  "Hispanic Heritage Month is the headline. But the real calendar runs year-round — and the brands that show up at every moment outperform the ones that only show up in September.": "El Mes de la Herencia Hispana es el titular. Pero el calendario real corre todo el año — y las marcas que aparecen en cada momento superan a las que solo aparecen en septiembre.",
+  "Hispanic Heritage Month is the headline. But the real calendar runs year-round, and the brands that show up at every moment outperform the ones that only show up in September.": "El Mes de la Herencia Hispana es el titular. Pero el calendario real corre todo el año, y las marcas que aparecen en cada momento superan a las que solo aparecen en septiembre.",
   "VELOCITY": "VELOCIDAD",
   "※ BEST WINDOW:": "※ MEJOR VENTANA:",
   "EVERY CHANNEL": "TODOS LOS CANALES",
@@ -519,21 +519,21 @@ const BL_DICT = {
   "CAPABILITIES": "CAPACIDADES",
   "What we run inside": "Lo que operamos dentro de",
   "Spanish-fluent ambassadors": "Embajadores con español fluido",
-  "Real fluency — not high-school Spanish. Vetted via in-language interview before deployment.": "Fluidez real, no español de secundaria. Verificado con entrevista en el idioma antes del despliegue.",
+  "Real fluency, not high-school Spanish. Vetted via in-language interview before deployment.": "Fluidez real, no español de secundaria. Verificado con entrevista en el idioma antes del despliegue.",
   "Bilingual demo + retail": "Demo y retail bilingüe",
-  "Carniceria, Hispanic grocery, El Super, Northgate Market, Bravo, Sedano's — chain-specific programs.": "Carnicería, supermercados hispanos, El Super, Northgate Market, Bravo, Sedano's — programas por cadena.",
+  "Carniceria, Hispanic grocery, El Super, Northgate Market, Bravo, Sedano's: chain-specific programs.": "Carnicería, supermercados hispanos, El Super, Northgate Market, Bravo, Sedano's: programas por cadena.",
   "Latin music festival programs": "Programas de festivales de música latina",
-  "Calibash, La Onda, Premios Juventud, Latin Grammy — festival-grade staffing and brand activation.": "Calibash, La Onda, Premios Juventud, Latin Grammy — personal y activación de nivel festival.",
+  "Calibash, La Onda, Premios Juventud, Latin Grammy: festival-grade staffing and brand activation.": "Calibash, La Onda, Premios Juventud, Latin Grammy: personal y activación de nivel festival.",
   "Soccer + sports tie-ins": "Vínculos con fútbol y deportes",
-  "MLS, Liga MX matches, Concacaf, Copa America — culturally-tuned activation alongside the sport.": "MLS, partidos de Liga MX, Concacaf, Copa América — activación afinada culturalmente junto al deporte.",
+  "MLS, Liga MX matches, Concacaf, Copa America: culturally-tuned activation alongside the sport.": "MLS, partidos de Liga MX, Concacaf, Copa América: activación afinada culturalmente junto al deporte.",
   "Cultural-event activation": "Activación de eventos culturales",
-  "Día de los Muertos, Cinco de Mayo, Hispanic Heritage Month, Carnaval — staffed to the moment.": "Día de los Muertos, Cinco de Mayo, Mes de la Herencia Hispana, Carnaval — personal a la medida del momento.",
+  "Día de los Muertos, Cinco de Mayo, Hispanic Heritage Month, Carnaval: staffed to the moment.": "Día de los Muertos, Cinco de Mayo, Mes de la Herencia Hispana, Carnaval: personal a la medida del momento.",
   "In-language brand briefing": "Briefing de marca en el idioma",
   "Talking points and conversion ask delivered in Spanish and English. Crew briefed in both.": "Puntos clave y objetivo de conversión entregados en español e inglés. Equipo capacitado en ambos.",
   "Multi-language coverage": "Cobertura multilingüe",
   "Spanish + Portuguese + Haitian Creole + Mandarin + French where the audience demands it.": "Español + portugués + creole haitiano + mandarín + francés donde la audiencia lo exija.",
   "Mas+ stadium model": "Modelo de estadio Mas+",
-  "Same playbook we run for Mas+ × Messi — culturally-anchored stadium and concourse activation.": "El mismo manual que operamos para Mas+ × Messi: activación de estadio y explanada anclada en la cultura.",
+  "Same playbook we run for Mas+ × Messi: culturally-anchored stadium and concourse activation.": "El mismo manual que operamos para Mas+ × Messi: activación de estadio y explanada anclada en la cultura.",
   // compliance
   "COMPLIANCE · CERTIFICATIONS · SOPS": "CUMPLIMIENTO · CERTIFICACIONES · PROCEDIMIENTOS",
   "-POINT STANDARD": "-PUNTOS DE ESTÁNDAR",
@@ -596,8 +596,8 @@ const BL_DICT = {
   "Spanish-language brand activation": "Activación de marca en español",
   "Multicultural marketing agency": "Agencia de marketing multicultural",
   "Ignite runs bilingual brand ambassador programs across the U.S. Hispanic and multicultural market. Spanish-fluent staff verified before deployment, briefed in both languages, deployed across retail demos, festival programs, stadium activations, and cultural moments. Same Mas+ × Messi staffing model we already run at scale.": "Ignite opera programas de embajadores de marca bilingües en todo el mercado hispano y multicultural de EE. UU. Personal con español fluido verificado antes del despliegue, capacitado en ambos idiomas y desplegado en demos de retail, programas de festival, activaciones de estadio y momentos culturales. El mismo modelo de personal Mas+ × Messi que ya operamos a escala.",
-  "Real fluency is the floor. Every Spanish-language ambassador on the roster has been interviewed in Spanish by a native speaker before they get assigned. Brand briefing is bilingual — your talking points, conversion ask, refusal protocols, and product knowledge land in both languages so the consumer engagement actually works.": "La fluidez real es el piso. Cada embajador de español del roster ha sido entrevistado en español por un hablante nativo antes de ser asignado. El briefing de marca es bilingüe: tus puntos clave, objetivo de conversión, protocolos de negativa y conocimiento de producto se entregan en ambos idiomas para que la interacción con el consumidor de verdad funcione.",
-  "Programs route across high-Hispanic markets — LA, Miami, Houston, NYC, Chicago, San Antonio, Phoenix, Dallas — plus Hispanic grocery banners (El Super, Northgate, Bravo, Sedano's), Latin music festivals (Calibash, La Onda, Premios Juventud), and soccer activation alongside MLS, Liga MX, and Concacaf events.": "Los programas recorren mercados de alta presencia hispana — LA, Miami, Houston, NYC, Chicago, San Antonio, Phoenix, Dallas — además de cadenas de supermercado hispano (El Super, Northgate, Bravo, Sedano's), festivales de música latina (Calibash, La Onda, Premios Juventud) y activación de fútbol junto a eventos de MLS, Liga MX y Concacaf.",
+  "Real fluency is the floor. Every Spanish-language ambassador on the roster has been interviewed in Spanish by a native speaker before they get assigned. Brand briefing is bilingual: your talking points, conversion ask, refusal protocols, and product knowledge land in both languages so the consumer engagement actually works.": "La fluidez real es el piso. Cada embajador de español del roster ha sido entrevistado en español por un hablante nativo antes de ser asignado. El briefing de marca es bilingüe: tus puntos clave, objetivo de conversión, protocolos de negativa y conocimiento de producto se entregan en ambos idiomas para que la interacción con el consumidor de verdad funcione.",
+  "Programs route across high-Hispanic markets (LA, Miami, Houston, NYC, Chicago, San Antonio, Phoenix, Dallas) plus Hispanic grocery banners (El Super, Northgate, Bravo, Sedano's), Latin music festivals (Calibash, La Onda, Premios Juventud), and soccer activation alongside MLS, Liga MX, and Concacaf events.": "Los programas recorren mercados de alta presencia hispana (LA, Miami, Houston, NYC, Chicago, San Antonio, Phoenix, Dallas) además de cadenas de supermercado hispano (El Super, Northgate, Bravo, Sedano's), festivales de música latina (Calibash, La Onda, Premios Juventud) y activación de fútbol junto a eventos de MLS, Liga MX y Concacaf.",
   "Best for CPG brands running Hispanic-targeted media that needs in-market trial alongside it, beverage and spirits brands engaging Hispanic on-premise venues, and brand teams looking to scale a culturally-anchored playbook nationally instead of running it state by state.": "Ideal para marcas CPG con medios dirigidos a hispanos que necesitan prueba en el mercado, marcas de bebidas y destilados que activan locales on-premise hispanos, y equipos de marca que buscan escalar un manual anclado en la cultura a nivel nacional en lugar de operarlo estado por estado.",
   // coverage
   "// coverage / 50.states /": "// cobertura / 50.estados /",
@@ -607,7 +607,7 @@ const BL_DICT = {
   "+ EVERY ZIP IN BETWEEN": "+ CADA CÓDIGO POSTAL ENTRE MEDIO",
   "We don't just say": "No solo decimos",
   "national": "nacional",
-  "— we": "— lo",
+  ". We": ". Lo",
   "show up": "demostramos",
   "in every DMA. One roster. One platform. One PO. Detroit on Tuesday, Tampa on Wednesday, doesn't matter.": "en cada DMA. Un roster. Una plataforma. Una orden de compra. Detroit el martes, Tampa el miércoles, da igual.",
   "RUSH": "URGENCIA",
@@ -615,7 +615,7 @@ const BL_DICT = {
   "// available in major markets": "// disponible en los mercados principales",
   "Ignite supports": "Ignite ofrece",
   "in major markets nationwide.": "en los principales mercados del país.",
-  "Including New York, Los Angeles, Chicago, Dallas-Fort Worth, Atlanta, Miami, Las Vegas, Phoenix, Denver, and Seattle — plus 190+ surge metros.": "Incluye Nueva York, Los Ángeles, Chicago, Dallas-Fort Worth, Atlanta, Miami, Las Vegas, Phoenix, Denver y Seattle — además de 190+ metros de refuerzo.",
+  "Including New York, Los Angeles, Chicago, Dallas-Fort Worth, Atlanta, Miami, Las Vegas, Phoenix, Denver, and Seattle, plus 190+ surge metros.": "Incluye Nueva York, Los Ángeles, Chicago, Dallas-Fort Worth, Atlanta, Miami, Las Vegas, Phoenix, Denver y Seattle, además de 190+ metros de refuerzo.",
   "See all markets": "Ver todos los mercados",
   // spark
   "Spark for bilingual programs": "Spark para programas bilingües",
@@ -635,7 +635,7 @@ const BL_DICT = {
   "// faq": "// preguntas frecuentes",
   "Frequently asked.": "Preguntas frecuentes.",
   "How do you verify fluency?": "¿Cómo verifican la fluidez?",
-  "Every Spanish-language ambassador is interviewed in Spanish by a native speaker before they're deployed. Fluency is scored against the program — restaurant Spanish doesn't pass for a regulated brand activation.": "Cada embajador de español es entrevistado en español por un hablante nativo antes de ser desplegado. La fluidez se califica según el programa: el español de restaurante no pasa para una activación de marca regulada.",
+  "Every Spanish-language ambassador is interviewed in Spanish by a native speaker before they're deployed. Fluency is scored against the program; restaurant Spanish doesn't pass for a regulated brand activation.": "Cada embajador de español es entrevistado en español por un hablante nativo antes de ser desplegado. La fluidez se califica según el programa: el español de restaurante no pasa para una activación de marca regulada.",
   "What other languages do you cover?": "¿Qué otros idiomas cubren?",
   "Spanish primarily. Portuguese (World Cup, Brazilian audiences), Haitian Creole (Miami), Mandarin (Bay Area, Seattle, NYC), French (Quebec adjacent / Haitian / West African). Other languages on request, scoped per program.": "Principalmente español. Portugués (Mundial, audiencias brasileñas), creole haitiano (Miami), mandarín (Área de la Bahía, Seattle, NYC), francés (Quebec / haitiano / África occidental). Otros idiomas a solicitud, según el programa.",
   "Can you staff Calibash, La Onda, and Latin Grammy weekends?": "¿Pueden dotar de personal Calibash, La Onda y los fines de semana de los Latin Grammy?",
@@ -643,9 +643,9 @@ const BL_DICT = {
   "Do you handle Liga MX / MLS / Concacaf activation?": "¿Manejan activaciones de Liga MX / MLS / Concacaf?",
   "Yes. Stadium and concourse staffing for soccer-anchored programs is a regular Hispanic-market vertical. Mas+ × Messi is the proof point.": "Sí. El personal de estadio y explanada para programas anclados en el fútbol es una vertical habitual del mercado hispano. Mas+ × Messi es la prueba.",
   "Can bilingual ambassadors handle a regulated pour?": "¿Los embajadores bilingües pueden manejar un servicio de alcohol regulado?",
-  "Yes. TIPS / TABC / RBS certification is required regardless of language — every bilingual pour-team ambassador is also certified for the regulated activity.": "Sí. La certificación TIPS / TABC / RBS es obligatoria sin importar el idioma: cada embajador del equipo de servicio bilingüe también está certificado para la actividad regulada.",
+  "Yes. TIPS / TABC / RBS certification is required regardless of language. Every bilingual pour-team ambassador is also certified for the regulated activity.": "Sí. La certificación TIPS / TABC / RBS es obligatoria sin importar el idioma: cada embajador del equipo de servicio bilingüe también está certificado para la actividad regulada.",
   "Can you scale a Hispanic activation nationally?": "¿Pueden escalar una activación hispana a nivel nacional?",
-  "Yes. Same managed program model as our English-language ambassador program — single PM, fluency-verified roster, captain rotation, market-by-market coverage.": "Sí. El mismo modelo de programa gestionado que nuestro programa de embajadores en inglés: un solo PM, roster con fluidez verificada, rotación de capitanes y cobertura mercado por mercado.",
+  "Yes. Same managed program model as our English-language ambassador program: single PM, fluency-verified roster, captain rotation, market-by-market coverage.": "Sí. El mismo modelo de programa gestionado que nuestro programa de embajadores en inglés: un solo PM, roster con fluidez verificada, rotación de capitanes y cobertura mercado por mercado.",
   // adjacent + CTA
   "OFTEN PAIRED WITH": "SUELE COMBINARSE CON",
   "These run great together.": "Funcionan muy bien juntos.",

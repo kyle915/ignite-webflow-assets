@@ -22,7 +22,7 @@ const pi = SPARK_PRODUCTS.indexOf(P);
 const prev = SPARK_PRODUCTS[(pi + SPARK_PRODUCTS.length - 1) % SPARK_PRODUCTS.length],
   next = SPARK_PRODUCTS[(pi + 1) % SPARK_PRODUCTS.length];
 sparkSetMeta({
-  title: `Spark ${P.name} — ${P.tag.charAt(0) + P.tag.slice(1).toLowerCase()} for Field Marketing`.slice(0, 60),
+  title: `Spark ${P.name}: ${P.tag.charAt(0) + P.tag.slice(1).toLowerCase()} for Field Marketing`.slice(0, 60),
   desc: `${P.h1} ${P.sub}`.slice(0, 155),
   canonical: `https://sparkbyignite.igniteproductions.co/product/${P.slug}`,
   ld: {
@@ -47,7 +47,7 @@ sparkSetMeta({
   faq: P.faq
 });
 const Hero = () => /*#__PURE__*/React.createElement("section", {
-  "data-screen-label": "01 Product Hero — " + P.name,
+  "data-screen-label": "01 Product Hero: " + P.name,
   style: {
     position: "relative",
     background: BG,
@@ -462,7 +462,7 @@ const Loop = () => /*#__PURE__*/React.createElement(SparkSec, {
 const App = () => {
   useSparkReveal();
   return /*#__PURE__*/React.createElement("div", {
-    "data-screen-label": "Spark Product — " + P.name
+    "data-screen-label": "Spark Product: " + P.name
   }, /*#__PURE__*/React.createElement(SparkNav, {
     active: "product"
   }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(SparkTicker, null), /*#__PURE__*/React.createElement(Caps, null), /*#__PURE__*/React.createElement(Uses, null), /*#__PURE__*/React.createElement(Loop, null), /*#__PURE__*/React.createElement(SparkFaq, {

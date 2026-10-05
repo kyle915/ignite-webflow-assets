@@ -65,7 +65,7 @@ const INDUSTRIES_DATA = {
       eyebrow: "INDUSTRY · BEVERAGE",
       title: "Beverage activation, sampling, and retail support.",
       acc: "sampling",
-      lede: "Sparkling water, energy, juice, RTD coffee, kombucha, hydration, functional. We run trial-driving activations in the channels that move beverage volume — retail, festival, sports, and convenience.",
+      lede: "Sparkling water, energy, juice, RTD coffee, kombucha, hydration, functional. We run trial-driving activations in the channels that move beverage volume: retail, festival, sports, and convenience.",
       stats: [{
         v: "Same-day",
         l: "sample counts"
@@ -77,7 +77,7 @@ const INDUSTRIES_DATA = {
         l: "in-market crew"
       }]
     },
-    intro: "Beverage brands live and die on trial. We've staffed sampling programs across grocery, c-store, mass, and natural channels — plus festival and event-side trial moments where category buyers actually live. Crews are trained on your product, your message, and your conversion play.",
+    intro: "Beverage brands live and die on trial. We've staffed sampling programs across grocery, c-store, mass, and natural channels, plus festival and event-side trial moments where category buyers actually live. Crews are trained on your product, your message, and your conversion play.",
     activations: ["In-store sampling (grocery, mass, c-store, natural)", "Festival & event sampling footprints", "Mobile beverage tours & branded vehicles", "Retail demo programs with conversion tracking", "Bar & nightlife activation", "Sports & lifestyle sponsorship support", "Beverage trade-show staffing", "Convenience store ride-alongs"],
     compliance: [{
       lab: "TIPS / TABC / RBS",
@@ -122,18 +122,18 @@ const INDUSTRIES_DATA = {
       a: "Yes. For chilled product programs we coordinate iced transport, on-site coolers, and pour-temp protocols so the sample tastes like the SKU."
     }, {
       q: "What's the lead time for a national beverage sampling program?",
-      a: "Single market: 5–10 business days standard, 48 hours rush. Multi-market (10+ cities): 2–4 weeks for full briefing and crew readiness."
+      a: "Single market: 5 to 10 business days standard, 48 hours rush. Multi-market (10+ cities): 2 to 4 weeks for full briefing and crew readiness."
     }],
     playbook: [{
       stage: "BRIEF",
       title: "Goals, channels, SKUs",
       desc: "Map trial targets to retail + event channels that move beverage volume.",
-      time: "Day 0–1"
+      time: "Day 0 to 1"
     }, {
       stage: "PERMIT",
       title: "Chain + venue sign-off",
       desc: "Demo permits with grocery / mass / c-store partners. Cold-chain logistics confirmed.",
-      time: "Day 2–7"
+      time: "Day 2 to 7"
     }, {
       stage: "STAFF",
       title: "Trained on the SKU",
@@ -181,7 +181,7 @@ const INDUSTRIES_DATA = {
       eyebrow: "INDUSTRY · FOOD & SNACK",
       title: "Food sampling, retail demos, and trial-driving programs.",
       acc: "trial-driving",
-      lede: "Better-for-you, frozen, snack, candy, jerky, condiments, protein. We turn passive grocery shoppers into trial users — at the shelf, in the aisle, at the festival, and on the campus.",
+      lede: "Better-for-you, frozen, snack, candy, jerky, condiments, protein. We turn passive grocery shoppers into trial users: at the shelf, in the aisle, at the festival, and on the campus.",
       stats: [{
         v: "Grocery + mass",
         l: "channel experience"
@@ -223,24 +223,24 @@ const INDUSTRIES_DATA = {
     }],
     faqs: [{
       q: "Can you run product sampling inside major grocery chains like Whole Foods and Kroger?",
-      a: "Yes — we staff inside Whole Foods, Sprouts, Wegmans, Target, Costco, Publix, Kroger, and most regional banners. We handle the demo permit, COI, and chain-specific paperwork."
+      a: "Yes. We staff inside Whole Foods, Sprouts, Wegmans, Target, Costco, Publix, Kroger, and most regional banners. We handle the demo permit, COI, and chain-specific paperwork."
     }, {
       q: "Do your ambassadors have food handler certifications?",
       a: "Every ambassador staffed to a food sampling program holds the certification their state requires (ServSafe, state food handler card, or equivalent). For allergen-sensitive SKUs we add extra protocol training."
     }, {
       q: "How do you report on a multi-store rollout?",
-      a: "Through Spark. You get per-store unit counts, photos, ambassador notes, and (where the retailer allows) UPC-level scan data — same-day, every day of the program."
+      a: "Through Spark. You get per-store unit counts, photos, ambassador notes, and (where the retailer allows) UPC-level scan data. Same-day, every day of the program."
     }],
     playbook: [{
       stage: "BRIEF",
       title: "Goals, channels, allergens",
       desc: "Map sampling targets across grocery, mass, c-store. Flag allergens early.",
-      time: "Day 0–1"
+      time: "Day 0 to 1"
     }, {
       stage: "PAPERWORK",
       title: "Demo permits + COI",
       desc: "Filed with the store, the chain, and the local health department.",
-      time: "Day 2–10"
+      time: "Day 2 to 10"
     }, {
       stage: "CERTIFY",
       title: "Food handler verification",
@@ -300,7 +300,7 @@ const INDUSTRIES_DATA = {
         l: "states & ABC jurisdictions"
       }]
     },
-    intro: "Alcohol activation has rules. We know them — by state, by jurisdiction, by retailer, by venue. Every ambassador we staff to a regulated program holds the certification the law requires. Every pour is documented. Every COI is on file. Distributors love working with us because nothing comes back to bite them.",
+    intro: "Alcohol activation has rules. We know them: by state, by jurisdiction, by retailer, by venue. Every ambassador we staff to a regulated program holds the certification the law requires. Every pour is documented. Every COI is on file. Distributors love working with us because nothing comes back to bite them.",
     activations: ["On-premise pouring & bar takeovers", "Off-premise retail sampling (grocery, liquor, c-store)", "Distributor-led demo programs", "Festival & sports activations", "Brand house & tasting room operations", "Nightlife & lounge programs", "Trade-show booth support (RNDC, BevCon, Tales of the Cocktail)", "Holiday & seasonal pulse activations"],
     compliance: [{
       lab: "TIPS / TABC / RBS",
@@ -310,7 +310,7 @@ const INDUSTRIES_DATA = {
       desc: "Filed by jurisdiction; we route around dry counties"
     }, {
       lab: "3-tier compliance",
-      desc: "Distributor coordination — RNDC, Southern Glazer's, Breakthru"
+      desc: "Distributor coordination: RNDC, Southern Glazer's, Breakthru"
     }, {
       lab: "COI carriers",
       desc: "Liquor liability included, additional insureds on request"
@@ -348,7 +348,7 @@ const INDUSTRIES_DATA = {
       a: "Yes. We carry general liability and liquor liability across every program. Additional insureds are added per venue, distributor, and brand requirement."
     }, {
       q: "Can you sample in dry counties or restricted jurisdictions?",
-      a: "Where state and county law permits, yes. Where it doesn't, we'll tell you up front — we don't take chances with regulated programs."
+      a: "Where state and county law permits, yes. Where it doesn't, we'll tell you up front. We don't take chances with regulated programs."
     }, {
       q: "What's your refusal-to-serve protocol?",
       a: "Every regulated shift has a documented refusal-to-serve SOP and incident log. We brief the captain before deployment and review post-event if anything's flagged."
@@ -357,12 +357,12 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Goals + jurisdictions",
       desc: "Map activation to ABC rules state-by-state. Flag dry counties early.",
-      time: "Day 0–2"
+      time: "Day 0 to 2"
     }, {
       stage: "DISTRIBUTOR",
       title: "3-tier sign-off",
       desc: "Coordinate with RNDC / Southern Glazer's / Breakthru on permits and pour rules.",
-      time: "Day 3–10"
+      time: "Day 3 to 10"
     }, {
       stage: "VERIFY",
       title: "TIPS / TABC / RBS check",
@@ -371,7 +371,7 @@ const INDUSTRIES_DATA = {
     }, {
       stage: "POUR",
       title: "Sample, ID-check, log",
-      desc: "Documented pour sizes, ID protocols, refusal incidents — all logged in Spark.",
+      desc: "Documented pour sizes, ID protocols, refusal incidents, all logged in Spark.",
       time: "Activation day"
     }],
     relatedMarkets: ["new-york", "austin", "las-vegas", "miami", "chicago", "nashville"],
@@ -390,12 +390,12 @@ const INDUSTRIES_DATA = {
     }],
     sparkAngle: {
       headline: "Spark for alcohol",
-      lede: "Pour counts, ID-check logs, refusal incidents, and distributor-ready recaps — all timestamped and audit-ready.",
+      lede: "Pour counts, ID-check logs, refusal incidents, and distributor-ready recaps, all timestamped and audit-ready.",
       points: ["Documented pour sizes per state law", "ID-check completion rate per shift", "Refusal-to-serve incident log", "Distributor + brand share-ready recap"]
     },
     cta: {
       heading: "Brief us on a regulated activation.",
-      body: "From a single tasting to a national distributor rollout — we handle the compliance, the crew, and the cardboard cutouts.",
+      body: "From a single tasting to a national distributor rollout, we handle the compliance, the crew, and the cardboard cutouts.",
       primaryLabel: "Start a brief",
       primaryHref: "https://www.igniteproductions.co/contact"
     }
@@ -410,7 +410,7 @@ const INDUSTRIES_DATA = {
       eyebrow: "INDUSTRY · TECH · SAAS · ENTERPRISE",
       title: "Conference activation, trade-show staffing, and lead capture.",
       acc: "captured",
-      lede: "B2B SaaS, enterprise software, dev tools, AI, security, hardware. Booth staffing that hits qualified-lead targets — plus brand houses, customer dinners, and hospitality programs around the conferences your sales team works.",
+      lede: "B2B SaaS, enterprise software, dev tools, AI, security, hardware. Booth staffing that hits qualified-lead targets, plus brand houses, customer dinners, and hospitality programs around the conferences your sales team works.",
       stats: [{
         v: "Lead capture",
         l: "with QA + scrubbing"
@@ -422,7 +422,7 @@ const INDUSTRIES_DATA = {
         l: "lead handoff to SDRs"
       }]
     },
-    intro: "Tech activation is a sales problem, not a brand problem. We staff your booth with people who can qualify a buyer, hand off to your AE without dropping context, and keep the lead list scrubbed so it doesn't blow up your CRM. Built around the conferences your team already works — Money 20/20, AWS re:Invent, Dreamforce, KubeCon, SaaStr, Web Summit, plus regional shows.",
+    intro: "Tech activation is a sales problem, not a brand problem. We staff your booth with people who can qualify a buyer, hand off to your AE without dropping context, and keep the lead list scrubbed so it doesn't blow up your CRM. Built around the conferences your team already works: Money 20/20, AWS re:Invent, Dreamforce, KubeCon, SaaStr, Web Summit, plus regional shows.",
     activations: ["Trade-show booth staffing & lead capture", "Conference activation (Money 20/20, re:Invent, Dreamforce, KubeCon)", "Brand houses & off-site hospitality", "Customer & prospect dinners", "Demo specialist staffing", "Bilingual staff (Spanish, Mandarin, Portuguese)", "Field marketing tour support", "Roadshow & city-tour programs"],
     compliance: [{
       lab: "Lead quality SLA",
@@ -452,27 +452,27 @@ const INDUSTRIES_DATA = {
     }],
     faqs: [{
       q: "Can trade show booth staff demo a SaaS or tech product?",
-      a: "Yes — for a brief. We staff demo specialists when the product needs it, brief them on your messaging and demo flow before the event, and pair them with technical leads from your team for the deep questions."
+      a: "Yes, for a brief. We staff demo specialists when the product needs it, brief them on your messaging and demo flow before the event, and pair them with technical leads from your team for the deep questions."
     }, {
       q: "How do you handle lead capture and CRM handoff?",
-      a: "Badge scan + qualifying questions captured on-device, scrubbed by the captain end-of-day, delivered to your Salesforce / HubSpot / Outreach in your preferred format the next morning — not three weeks after."
+      a: "Badge scan + qualifying questions captured on-device, scrubbed by the captain end-of-day, delivered to your Salesforce / HubSpot / Outreach in your preferred format the next morning, not three weeks after."
     }, {
       q: "Do you have bilingual staff for international shows?",
-      a: "Yes. Spanish, Mandarin, Portuguese, French, and German are the most-requested. Other languages on request — we'll confirm availability in the market."
+      a: "Yes. Spanish, Mandarin, Portuguese, French, and German are the most-requested. Other languages on request; we'll confirm availability in the market."
     }, {
       q: "Can you run an off-site brand house alongside the booth?",
-      a: "Yes. We've staffed and produced executive dinners, hospitality suites, partner mixers, and full off-conference brand houses — managed independently from the booth team."
+      a: "Yes. We've staffed and produced executive dinners, hospitality suites, partner mixers, and full off-conference brand houses, managed independently from the booth team."
     }],
     playbook: [{
       stage: "BRIEF",
       title: "ICP + qualifying logic",
       desc: "Map your buyer profile and qualifying questions to badge-scan flow.",
-      time: "Day 0–2"
+      time: "Day 0 to 2"
     }, {
       stage: "CRM",
       title: "Salesforce / HubSpot map",
       desc: "Field mapping, lead-quality SLA, and consent-capture flow signed off by your legal.",
-      time: "Day 3–7"
+      time: "Day 3 to 7"
     }, {
       stage: "TRAIN",
       title: "Demo + messaging",
@@ -500,7 +500,7 @@ const INDUSTRIES_DATA = {
     }],
     sparkAngle: {
       headline: "Spark for tech & SaaS",
-      lede: "Booth dwell time, qualifying-question coverage, and lead-quality scoring — piped to Salesforce / HubSpot / Outreach end-of-day.",
+      lede: "Booth dwell time, qualifying-question coverage, and lead-quality scoring, piped to Salesforce / HubSpot / Outreach end-of-day.",
       points: ["Lead-quality scoring per ambassador", "Qualifying-question coverage per booth visitor", "Direct CRM handoff with consent captured", "Booth dwell + traffic heatmap"]
     },
     cta: {
@@ -559,21 +559,21 @@ const INDUSTRIES_DATA = {
       a: "We staff a mix: product specialists trained on your model lineup before deployment, plus floor team for traffic and lead capture. For deep technical Q&A we pair with your OEM rep or a brand-certified specialist."
     }, {
       q: "Do you handle ride-and-drive operations?",
-      a: "Yes. End-to-end — registration, waivers, ID checks, keyholder rotation, route management, vehicle wash-and-reset between drives, and lead capture for follow-up."
+      a: "Yes. End-to-end: registration, waivers, ID checks, keyholder rotation, route management, vehicle wash-and-reset between drives, and lead capture for follow-up."
     }, {
       q: "Can you staff a multi-stop national auto tour?",
-      a: "Yes. We've staffed and routed tours across 10+ market circuits — vehicle transport, staffing rotations, venue coordination, and city-by-city compliance."
+      a: "Yes. We've staffed and routed tours across 10+ market circuits: vehicle transport, staffing rotations, venue coordination, and city-by-city compliance."
     }],
     playbook: [{
       stage: "BRIEF",
       title: "Lineup + tour map",
       desc: "Confirm models, trims, ride-and-drive routes, and dealer schedule.",
-      time: "Day 0–3"
+      time: "Day 0 to 3"
     }, {
       stage: "LOGISTICS",
       title: "Vehicle staging",
       desc: "Trucking, washing, charging, key control, waiver paperwork prepped.",
-      time: "Day 4–14"
+      time: "Day 4 to 14"
     }, {
       stage: "TRAIN",
       title: "Product specialists",
@@ -601,7 +601,7 @@ const INDUSTRIES_DATA = {
     }],
     sparkAngle: {
       headline: "Spark for automotive",
-      lede: "Test-drive consent, waiver capture, lead scoring, and dealer-network handoff — logged per VIN, per state.",
+      lede: "Test-drive consent, waiver capture, lead scoring, and dealer-network handoff, logged per VIN, per state.",
       points: ["Per-vehicle keyholder rotation log", "Test-drive waiver capture by state", "Lead scoring routed to nearest dealer", "Brand-standard compliance tracking"]
     },
     cta: {
@@ -621,7 +621,7 @@ const INDUSTRIES_DATA = {
       eyebrow: "INDUSTRY · BEAUTY · FASHION · WELLNESS · LUXURY",
       title: "Beauty pop-ups, retail trial, and influencer-adjacent activation.",
       acc: "trial",
-      lede: "Skincare, color, haircare, fragrance, fashion, jewelry, wellness, supplements. We run retail trial, pop-up stores, brand houses, and the kind of activation where the product needs to be touched, smelled, applied, and photographed — well.",
+      lede: "Skincare, color, haircare, fragrance, fashion, jewelry, wellness, supplements. We run retail trial, pop-up stores, brand houses, and the kind of activation where the product needs to be touched, smelled, applied, and photographed. Well.",
       stats: [{
         v: "Application-trained",
         l: "crew where needed"
@@ -633,7 +633,7 @@ const INDUSTRIES_DATA = {
         l: "for socials + earned"
       }]
     },
-    intro: "Beauty and lifestyle activation has a different physics: the product is intimate, the application matters, and the consumer is photographing it. We staff with crew who know how to demo a serum, suggest a shade, run a fragrance ladder, and look right doing it — without scripting the conversation into a robot pitch.",
+    intro: "Beauty and lifestyle activation has a different physics: the product is intimate, the application matters, and the consumer is photographing it. We staff with crew who know how to demo a serum, suggest a shade, run a fragrance ladder, and look right doing it, without scripting the conversation into a robot pitch.",
     activations: ["Beauty retail trial (Sephora, Ulta, Bluemercury, Macy's)", "Pop-up stores & limited-time activations", "Fragrance ladders & scent trial bars", "Color & application demos", "Hair & nail trial programs", "Fashion week & runway activation", "Wellness & supplement sampling", "Influencer-adjacent retail tie-ins"],
     compliance: [{
       lab: "Hygiene & sanitation",
@@ -654,24 +654,24 @@ const INDUSTRIES_DATA = {
       a: "For application-heavy categories (color, fragrance, skincare) we staff crew with relevant retail or cosmetology backgrounds and run product-specific training before deployment."
     }, {
       q: "Can you activate inside Sephora or Ulta?",
-      a: "Yes — we've staffed both. We handle the chain's brand-standard paperwork, scheduling, and conduct expectations before crew lands in-store."
+      a: "Yes, we've staffed both. We handle the chain's brand-standard paperwork, scheduling, and conduct expectations before crew lands in-store."
     }, {
       q: "What's your hygiene SOP for sampling?",
       a: "Single-use applicators, hand sanitation between consumers, allergen call-outs, and a written cosmetic-safety SOP per program. Adjusts to FDA / state guidance."
     }, {
       q: "Can you tie in influencer or content capture at the event?",
-      a: "Yes. We've run programs alongside paid creators and earned-media activations — coordinating shoot windows, talent green rooms, and content capture so the program has a second life on socials."
+      a: "Yes. We've run programs alongside paid creators and earned-media activations, coordinating shoot windows, talent green rooms, and content capture so the program has a second life on socials."
     }],
     playbook: [{
       stage: "BRIEF",
       title: "Goals + retailer rules",
       desc: "Map trial targets to Sephora / Ulta / Macy's brand standards.",
-      time: "Day 0–2"
+      time: "Day 0 to 2"
     }, {
       stage: "PERMIT",
       title: "Chain + hygiene SOP",
       desc: "Per-retailer paperwork, single-use applicator plan, allergen call-outs.",
-      time: "Day 3–10"
+      time: "Day 3 to 10"
     }, {
       stage: "TRAIN",
       title: "Application + shade",
@@ -699,12 +699,12 @@ const INDUSTRIES_DATA = {
     }],
     sparkAngle: {
       headline: "Spark for beauty",
-      lede: "Per-shade sample counts, application-time tracking, and photo-ready content capture — packaged for retail buyers and earned media.",
+      lede: "Per-shade sample counts, application-time tracking, and photo-ready content capture, packaged for retail buyers and earned media.",
       points: ["Per-shade / per-SKU sample log", "Content release capture for earned media", "Conversion-to-purchase where retailer permits", "Hygiene SOP completion per shift"]
     },
     cta: {
       heading: "Brief us on a beauty activation.",
-      body: "Pop-up, retail trial, or multi-market launch — we'll scope crew, retailer compliance, and content strategy inside 48 hours.",
+      body: "Pop-up, retail trial, or multi-market launch: we'll scope crew, retailer compliance, and content strategy inside 48 hours.",
       primaryLabel: "Start a brief",
       primaryHref: "https://www.igniteproductions.co/contact"
     }
@@ -719,7 +719,7 @@ const INDUSTRIES_DATA = {
       eyebrow: "INDUSTRY · CANNABIS · CBD · HEMP",
       title: "Dispensary activation, budtender education, and compliant sampling.",
       acc: "compliant",
-      lede: "Flower, vape, edibles, beverages, CBD, hemp-derived THC. We run dispensary activation, budtender education programs, and category-appropriate sampling in every state where it's legal — and we know exactly where it isn't.",
+      lede: "Flower, vape, edibles, beverages, CBD, hemp-derived THC. We run dispensary activation, budtender education programs, and category-appropriate sampling in every state where it's legal, and we know exactly where it isn't.",
       stats: [{
         v: "MED & REC",
         l: "state by state"
@@ -731,14 +731,14 @@ const INDUSTRIES_DATA = {
         l: "no shortcuts"
       }]
     },
-    intro: "Cannabis activation is the most regulated work in field marketing. We run programs across legal-rec, medical, and CBD/hemp markets — with strict 21+ ID protocols, age-gated sampling, and state-by-state ABC/cannabis-board paperwork. We won't sample in jurisdictions where it isn't legal, and we'll tell you which ones those are up front.",
+    intro: "Cannabis activation is the most regulated work in field marketing. We run programs across legal-rec, medical, and CBD/hemp markets, with strict 21+ ID protocols, age-gated sampling, and state-by-state ABC/cannabis-board paperwork. We won't sample in jurisdictions where it isn't legal, and we'll tell you which ones those are up front.",
     activations: ["Dispensary in-store activation", "Budtender education programs", "Hemp-derived beverage sampling (legal markets)", "Cannabis trade-show staffing (MJBizCon, Hall of Flowers)", "Industry event activation", "Pop-up cannabis-friendly venue programs", "CBD/wellness retail sampling", "Compliance-first product education"],
     compliance: [{
       lab: "21+ age gating",
       desc: "ID verification per state law, refusal SOPs documented"
     }, {
       lab: "State by state",
-      desc: "We know where we can and can't operate — and tell you up front"
+      desc: "We know where we can and can't operate, and tell you up front"
     }, {
       lab: "Cannabis board permits",
       desc: "Where required, filed before deployment"
@@ -763,12 +763,12 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Legal markets only",
       desc: "Confirm which states / jurisdictions permit your program. Flag exclusions early.",
-      time: "Day 0–3"
+      time: "Day 0 to 3"
     }, {
       stage: "PERMIT",
       title: "Cannabis-board paperwork",
       desc: "File state cannabis-board paperwork, age-gating SOPs, dispensary partner letters.",
-      time: "Day 4–14"
+      time: "Day 4 to 14"
     }, {
       stage: "TRAIN",
       title: "Compliance brief",
@@ -801,13 +801,13 @@ const INDUSTRIES_DATA = {
     },
     faqs: [{
       q: "Where is cannabis sampling and dispensary activation legal?",
-      a: "Where state and local law explicitly permit it. We won't fudge it — if your target market doesn't allow sampling, we'll propose a budtender-education or hemp-derived alternative."
+      a: "Where state and local law explicitly permit it. We won't fudge it: if your target market doesn't allow sampling, we'll propose a budtender-education or hemp-derived alternative."
     }, {
       q: "Are your ambassadors trained on cannabis compliance?",
       a: "Yes. Every ambassador on a cannabis program is briefed on 21+ ID protocols, refusal SOPs, no-on-site-consumption rules, and brand-specific compliance. Refresher per program."
     }, {
       q: "Do you have COIs for cannabis activation?",
-      a: "Yes — including cannabis-specific liability where carriers offer it. Additional insureds added per dispensary, brand, and venue."
+      a: "Yes, including cannabis-specific liability where carriers offer it. Additional insureds added per dispensary, brand, and venue."
     }],
     cta: {
       heading: "Brief us on a cannabis program.",
@@ -826,7 +826,7 @@ const INDUSTRIES_DATA = {
       eyebrow: "INDUSTRY · SPORTS · ENTERTAINMENT · LIVE EVENTS",
       title: "Stadium activation, fan zones, and concourse staffing.",
       acc: "concourse",
-      lede: "Stadium and arena activation, fan zones, concourse staffing, halftime activations, jersey-back sponsorships, and entertainment-property programs. We work inside the venues that matter — NFL, NBA, MLB, NHL, MLS, NCAA, NASCAR, festivals, and global tours.",
+      lede: "Stadium and arena activation, fan zones, concourse staffing, halftime activations, jersey-back sponsorships, and entertainment-property programs. We work inside the venues that matter: NFL, NBA, MLB, NHL, MLS, NCAA, NASCAR, festivals, and global tours.",
       stats: [{
         v: "Venue-cleared",
         l: "with team + property"
@@ -869,13 +869,13 @@ const INDUSTRIES_DATA = {
     playbook: [{
       stage: "BRIEF",
       title: "Goals + property type",
-      desc: "Stadium, arena, festival, motorsport — confirm venue access path.",
-      time: "Day 0–3"
+      desc: "Stadium, arena, festival, motorsport: confirm venue access path.",
+      time: "Day 0 to 3"
     }, {
       stage: "CLEAR",
       title: "Team + property sign-off",
       desc: "Coordinate with team marketing, ops, and (where needed) league office.",
-      time: "Day 4–21"
+      time: "Day 4 to 21"
     }, {
       stage: "BRIEF CREW",
       title: "Game-day SOPs",
@@ -884,7 +884,7 @@ const INDUSTRIES_DATA = {
     }, {
       stage: "GAME DAY",
       title: "Activate, capture, recap",
-      desc: "Concourse staffing, fan zone, on-field — recap in Spark same-day.",
+      desc: "Concourse staffing, fan zone, on-field. Recap in Spark same-day.",
       time: "Event day"
     }],
     relatedMarkets: ["new-york", "los-angeles", "miami", "chicago", "dallas", "atlanta", "las-vegas"],
@@ -903,7 +903,7 @@ const INDUSTRIES_DATA = {
     }],
     sparkAngle: {
       headline: "Spark for sports",
-      lede: "Per-section concourse traffic, fan-zone dwell time, sampling counts by gate, and broadcast-window activation timing — captured live during the game.",
+      lede: "Per-section concourse traffic, fan-zone dwell time, sampling counts by gate, and broadcast-window activation timing, captured live during the game.",
       points: ["Per-section / per-gate sampling counts", "Fan-zone dwell + engagement time", "Broadcast-window activation windows logged", "Game-day weather impact tagged to KPIs"]
     },
     faqs: [{
@@ -911,7 +911,7 @@ const INDUSTRIES_DATA = {
       a: "Yes. We've staffed concourse, fan zone, and on-field programs across NFL, MLB, NBA, NHL, MLS, and motorsports venues. We coordinate with the team, the venue, and (where needed) the league office."
     }, {
       q: "How early do we need to plan a game-day program?",
-      a: "2–8 weeks for full team and venue sign-off, depending on the property. Major-league venues require longer; college and minor-league venues can move faster."
+      a: "2 to 8 weeks for full team and venue sign-off, depending on the property. Major-league venues require longer; college and minor-league venues can move faster."
     }, {
       q: "Can you handle weather contingencies?",
       a: "Yes. Every outdoor program ships with cold-weather, rain, and heat SOPs. Crew is briefed pre-event, and we'll re-staff or replan if conditions force it."
@@ -933,7 +933,7 @@ const INDUSTRIES_DATA = {
       eyebrow: "INDUSTRY · PET · ANIMAL · WELLNESS",
       title: "Pet retail sampling, store-in-store activation, and pet parent trial.",
       acc: "trial",
-      lede: "Dog and cat food, treats, wellness, gear, accessories, and adjacent CPG. We run trial programs inside the channels pet parents actually shop — PetSmart, Petco, regional banners, and the lifestyle events where the dogs come too.",
+      lede: "Dog and cat food, treats, wellness, gear, accessories, and adjacent CPG. We run trial programs inside the channels pet parents actually shop: PetSmart, Petco, regional banners, and the lifestyle events where the dogs come too.",
       stats: [{
         v: "PetSmart",
         l: "national experience"
@@ -962,12 +962,12 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Channel + audience",
       desc: "Confirm retail partners, lifestyle events, target pet-parent profile.",
-      time: "Day 0–2"
+      time: "Day 0 to 2"
     }, {
       stage: "PERMIT",
       title: "Chain + venue paperwork",
       desc: "PetSmart / Petco demo permits, COIs, allergen disclosures.",
-      time: "Day 3–10"
+      time: "Day 3 to 10"
     }, {
       stage: "TRAIN",
       title: "Pet-safety briefing",
@@ -1034,7 +1034,7 @@ const INDUSTRIES_DATA = {
         l: "channel mix"
       }]
     },
-    intro: "Health and wellness activation has guardrails — what you can claim, who you can claim it to, and how the sample needs to be handled. We brief crew on FDA-compliant language, allergen call-outs, and ingredient-deck disclosure. Programs run inside specialty retail, gyms, festivals, and clinical-adjacent venues.",
+    intro: "Health and wellness activation has guardrails: what you can claim, who you can claim it to, and how the sample needs to be handled. We brief crew on FDA-compliant language, allergen call-outs, and ingredient-deck disclosure. Programs run inside specialty retail, gyms, festivals, and clinical-adjacent venues.",
     activations: ["GNC / Vitamin Shoppe / specialty retail demo", "Whole Foods & natural channel sampling", "Gym & fitness studio trial", "Wellness event sampling (Wanderlust, Lululemon stores)", "Functional beverage trial", "Sports nutrition activation", "Doctor / clinical-channel education programs", "Trade-show staffing (Expo West, SupplySide)"],
     compliance: [{
       lab: "FDA-compliant claims",
@@ -1044,7 +1044,7 @@ const INDUSTRIES_DATA = {
       desc: "Allergens, restricted ingredients, label-accurate scripting"
     }, {
       lab: "Channel-specific SOPs",
-      desc: "GNC vs Whole Foods vs gym — each has different rules"
+      desc: "GNC vs Whole Foods vs gym: each has different rules"
     }],
     proofPoints: [{
       logo: "dude-wipes",
@@ -1054,12 +1054,12 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Claims + channel mix",
       desc: "Confirm what you can claim by channel; flag FDA-sensitive ingredients early.",
-      time: "Day 0–3"
+      time: "Day 0 to 3"
     }, {
       stage: "COMPLIANCE",
       title: "Claims script + legal",
       desc: "Talking points reviewed against label; restricted-claim list set.",
-      time: "Day 4–10"
+      time: "Day 4 to 10"
     }, {
       stage: "TRAIN",
       title: "Ingredient + claim",
@@ -1092,10 +1092,10 @@ const INDUSTRIES_DATA = {
     },
     faqs: [{
       q: "How do you keep supplement and wellness sampling FDA-compliant?",
-      a: "Yes. For any supplement, functional, or claims-sensitive program, crew gets a written briefing on what they can and can't say — reviewed against your label and legal team before deployment."
+      a: "Yes. For any supplement, functional, or claims-sensitive program, crew gets a written briefing on what they can and can't say, reviewed against your label and legal team before deployment."
     }, {
       q: "Can you sample inside gyms and fitness studios?",
-      a: "Yes. We've run programs at Equinox, Lululemon studios, F45, Barry's, CrossFit boxes, and yoga studios — each has different brand-partner rules; we manage the coordination."
+      a: "Yes. We've run programs at Equinox, Lululemon studios, F45, Barry's, CrossFit boxes, and yoga studios. Each has different brand-partner rules; we manage the coordination."
     }],
     cta: {
       heading: "Brief us on a wellness program.",
@@ -1114,7 +1114,7 @@ const INDUSTRIES_DATA = {
       eyebrow: "INDUSTRY · QSR · FAST CASUAL · RESTAURANT",
       title: "Grand openings, LTO launches, and franchise activation.",
       acc: "LTO",
-      lede: "Burger, chicken, pizza, taco, BBQ, dessert, coffee, fast-casual, ghost kitchen. We run grand openings, LTO trial, mascot tours, and multi-unit franchise activation — from a single market test through national chain rollouts.",
+      lede: "Burger, chicken, pizza, taco, BBQ, dessert, coffee, fast-casual, ghost kitchen. We run grand openings, LTO trial, mascot tours, and multi-unit franchise activation, from a single market test through national chain rollouts.",
       stats: [{
         v: "Grand openings",
         l: "ribbon to capacity"
@@ -1152,12 +1152,12 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Open date + units",
       desc: "Confirm grand opening date, unit count, target first-day capacity.",
-      time: "Day 0–7"
+      time: "Day 0 to 7"
     }, {
       stage: "PERMIT",
       title: "Local + food handler",
       desc: "City permits, food handler certs, sampling COIs, parking coordination.",
-      time: "Day 8–21"
+      time: "Day 8 to 21"
     }, {
       stage: "TRAIN",
       title: "Brand voice + LTO",
@@ -1185,15 +1185,15 @@ const INDUSTRIES_DATA = {
     }],
     sparkAngle: {
       headline: "Spark for QSR",
-      lede: "First-day line length, capture rate, sample-to-purchase conversion, and franchise-by-franchise rollout pacing — live during the open.",
+      lede: "First-day line length, capture rate, sample-to-purchase conversion, and franchise-by-franchise rollout pacing, live during the open.",
       points: ["Line length + capture rate per unit", "Sample-to-purchase conversion", "Loyalty enrollment captured per shift", "Multi-unit rollout pacing"]
     },
     faqs: [{
       q: "Can you staff a multi-unit QSR or restaurant franchise grand opening?",
-      a: "Yes. We've run sequenced multi-unit grand openings — staffing rotations, vehicle staging, supply chain on swag and signage, plus a single PM coordinating across all units."
+      a: "Yes. We've run sequenced multi-unit grand openings: staffing rotations, vehicle staging, supply chain on swag and signage, plus a single PM coordinating across all units."
     }, {
       q: "How much lead time for a grand opening?",
-      a: "Single market: 2–3 weeks ideal. Multi-unit national launch: 4–8 weeks. Faster turns are possible but rates carry rush premiums."
+      a: "Single market: 2 to 3 weeks ideal. Multi-unit national launch: 4 to 8 weeks. Faster turns are possible but rates carry rush premiums."
     }],
     cta: {
       heading: "Brief us on a QSR launch.",
@@ -1247,12 +1247,12 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Title + audience tier",
       desc: "Confirm game/title, audience tier (esports, casual, family), event circuit.",
-      time: "Day 0–5"
+      time: "Day 0 to 5"
     }, {
       stage: "HARDWARE",
       title: "Console + station prep",
       desc: "Per-station hardware tracking, network / latency QA, controller inventory.",
-      time: "Day 6–14"
+      time: "Day 6 to 14"
     }, {
       stage: "TRAIN",
       title: "Game-savvy crew",
@@ -1285,7 +1285,7 @@ const INDUSTRIES_DATA = {
     },
     faqs: [{
       q: "Can event staff actually demo a video game at a convention or esports event?",
-      a: "For demo-heavy programs, yes. We staff demo specialists from the gaming community — Twitch streamers, esports vets, console+PC players — and run pre-event training on your specific title."
+      a: "For demo-heavy programs, yes. We staff demo specialists from the gaming community (Twitch streamers, esports vets, console+PC players) and run pre-event training on your specific title."
     }, {
       q: "Do you handle NDAs for unreleased content?",
       a: "Yes. Per-event, per-ambassador NDAs for any pre-release content. Hardware seal-of-secrecy SOPs where the platform-holder requires it."
@@ -1355,12 +1355,12 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Offers + store list",
       desc: "Plans, promos, target stores and what a good activation looks like.",
-      time: "Day 0–3"
+      time: "Day 0 to 3"
     }, {
       stage: "SCHEDULE",
       title: "Store coordination",
       desc: "Dates confirmed with each store or dealer, retailer rules reviewed.",
-      time: "Day 3–10"
+      time: "Day 3 to 10"
     }, {
       stage: "TRAIN",
       title: "Plan + promo training",
@@ -1420,7 +1420,7 @@ const INDUSTRIES_DATA = {
         l: "rollout playbooks"
       }]
     },
-    intro: "Hospitality activation is a service business. The crew has to look right, sound right, and treat every interaction like brand equity. We staff luxury-trained ambassadors who understand the hospitality service standard — and the operations crew that handles airport security, hotel union, and destination-marketing-partner paperwork.",
+    intro: "Hospitality activation is a service business. The crew has to look right, sound right, and treat every interaction like brand equity. We staff luxury-trained ambassadors who understand the hospitality service standard, and the operations crew that handles airport security, hotel union, and destination-marketing-partner paperwork.",
     activations: ["Hotel grand opening activation", "Airline lounge programs", "Airport activation & TSA-cleared deployment", "Cruise terminal & onboard activation", "Destination marketing tours (DMO partnerships)", "Travel-trade conference staffing (Skift, WTM)", "Luxury brand-house & VIP hospitality", "Cultural + culinary tourism programs"],
     compliance: [{
       lab: "Property brand standards",
@@ -1440,12 +1440,12 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Property + service tier",
       desc: "Confirm property, service-standard tier, audience profile.",
-      time: "Day 0–5"
+      time: "Day 0 to 5"
     }, {
       stage: "CLEAR",
       title: "Property + airport paperwork",
       desc: "Brand-standard briefing, TSA badging if airside, union coordination.",
-      time: "Day 6–21"
+      time: "Day 6 to 21"
     }, {
       stage: "TRAIN",
       title: "Luxury service standard",
@@ -1478,7 +1478,7 @@ const INDUSTRIES_DATA = {
     },
     faqs: [{
       q: "Can you staff hotel property openings across multiple locations in one chain?",
-      a: "Yes. We've sequenced multi-property opening tours — staffing rotations, brand-standard briefings per property, plus a single PM coordinating across the chain."
+      a: "Yes. We've sequenced multi-property opening tours: staffing rotations, brand-standard briefings per property, plus a single PM coordinating across the chain."
     }, {
       q: "Do you have airport-cleared crew?",
       a: "Yes. For airside or TSA-restricted activation, we deploy ambassadors with airport-issued badges, briefed on TSA protocols and property-specific rules."

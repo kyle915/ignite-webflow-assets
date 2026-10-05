@@ -287,7 +287,7 @@ const ShelfAudit = () => {
       color: c,
       letterSpacing: "-0.02em"
     }
-  }, scanned ? v : "—"), /*#__PURE__*/React.createElement(SMMono, {
+  }, scanned ? v : "-"), /*#__PURE__*/React.createElement(SMMono, {
     style: {
       fontSize: 9
     }
@@ -367,7 +367,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "#fff"
   }
-}, "closes it at the shelf"), " \u2014 end-caps, POS, in-aisle demos, and scan-back, executed per store and photo-verified so trade spend has receipts."), /*#__PURE__*/React.createElement("div", {
+}, "closes it at the shelf"), ": end-caps, POS, in-aisle demos, and scan-back, executed per store and photo-verified so trade spend has receipts."), /*#__PURE__*/React.createElement("div", {
   className: "sm-reveal",
   style: {
     marginTop: 32,
@@ -621,7 +621,7 @@ const POSWall = () => {
       color: "rgba(255,255,255,0.68)",
       maxWidth: 640
     }
-  }, "In-house fabrication for every POS material in your shopper program \u2014 retailer-spec compliant, photographed per piece on install.")), /*#__PURE__*/React.createElement("div", {
+  }, "In-house fabrication for every POS material in your shopper program: retailer-spec compliant, photographed per piece on install.")), /*#__PURE__*/React.createElement("div", {
     className: "sm-pos-grid",
     style: {
       display: "grid",
@@ -674,7 +674,7 @@ const POSWall = () => {
 
 /* ================= SCAN-BACK ROI LADDER ================= */
 const ScanBack = () => {
-  const steps = [["ACTIVATE", "Run the program", "End-cap built, POS installed, demo running, scan-back coordinated.", "Per-store data"], ["SHOPPER", "Hand on product", "Awareness → trial → conversion captured at the shelf with intent flags.", "Per-sample conversion"], ["SCAN LIFT", "Velocity rebuilds", "Where the retailer allows, scan velocity confirmed in the 4 weeks post-activation.", "+12–28% typical"], ["REORDER", "Buyer reorders", "Velocity holds → the buyer reorders the SKU → next reset window protected.", "Multi-week tail"]];
+  const steps = [["ACTIVATE", "Run the program", "End-cap built, POS installed, demo running, scan-back coordinated.", "Per-store data"], ["SHOPPER", "Hand on product", "Awareness → trial → conversion captured at the shelf with intent flags.", "Per-sample conversion"], ["SCAN LIFT", "Velocity rebuilds", "Where the retailer allows, scan velocity confirmed in the 4 weeks post-activation.", "+12 to 28% typical"], ["REORDER", "Buyer reorders", "Velocity holds → the buyer reorders the SKU → next reset window protected.", "Multi-week tail"]];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: "#0C0E12",
@@ -937,7 +937,7 @@ const Spark = () => {
       lineHeight: 1.6,
       color: "rgba(255,255,255,0.74)"
     }
-  }, "Every shopper program runs through Spark \u2014 per-store shelf-state audit, POS placement verified per piece, end-cap install confirmation, and a scan flag the day the crew walks. Brand, broker, and retailer see the same data."), /*#__PURE__*/React.createElement("div", {
+  }, "Every shopper program runs through Spark: per-store shelf-state audit, POS placement verified per piece, end-cap install confirmation, and a scan flag the day the crew walks. Brand, broker, and retailer see the same data."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 26,
       display: "flex",
@@ -1104,7 +1104,7 @@ const Spark = () => {
 
 /* ================= FAQ ================= */
 const FAQ = () => {
-  const items = [["What's the difference between shopper marketing and retail merchandising?", "Merchandising executes the shelf — planogram, OOS, POS placement. Shopper marketing is broader: the in-aisle ambassador, the scan-back demo, the end-cap moment, and the buyer-side reporting. We run both, often together."], ["Can you handle scan-back co-op programs?", "Yes. We coordinate retailer-funded demo programs tied to post-event scan velocity. Chain paperwork, COIs, and certifications filed. Recap goes to brand, broker, and retailer the same day."], ["Do you build the POS materials, or just place them?", "Both. We have an in-house fabrication shop for end-caps, branded fixtures, and POS at scale — and we can place materials your existing print partner produces, with photo evidence per piece either way."], ["What chains do you work in?", "Whole Foods, Costco, Sam's Club, Target, Walmart, Kroger, Publix, Wegmans, Sprouts, Erewhon, GNC, Vitamin Shoppe, Pet Supplies Plus, plus most regional banners. Chain-specific paperwork filed before deployment."], ["How quickly do we see results?", "Per-store recap in Spark same-day. Scan-back data flows as the retailer releases it (usually 24–72 hours). Program-level analysis at week-end or month-end depending on cadence."]];
+  const items = [["What's the difference between shopper marketing and retail merchandising?", "Merchandising executes the shelf: planogram, OOS, POS placement. Shopper marketing is broader: the in-aisle ambassador, the scan-back demo, the end-cap moment, and the buyer-side reporting. We run both, often together."], ["Can you handle scan-back co-op programs?", "Yes. We coordinate retailer-funded demo programs tied to post-event scan velocity. Chain paperwork, COIs, and certifications filed. Recap goes to brand, broker, and retailer the same day."], ["Do you build the POS materials, or just place them?", "Both. We have an in-house fabrication shop for end-caps, branded fixtures, and POS at scale, and we can place materials your existing print partner produces, with photo evidence per piece either way."], ["What chains do you work in?", "Whole Foods, Costco, Sam's Club, Target, Walmart, Kroger, Publix, Wegmans, Sprouts, Erewhon, GNC, Vitamin Shoppe, Pet Supplies Plus, plus most regional banners. Chain-specific paperwork filed before deployment."], ["How quickly do we see results?", "Per-store recap in Spark same-day. Scan-back data flows as the retailer releases it (usually 24 to 72 hours). Program-level analysis at week-end or month-end depending on cadence."]];
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
     style: {

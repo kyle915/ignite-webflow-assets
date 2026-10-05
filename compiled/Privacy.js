@@ -39,7 +39,7 @@ const PR_SECTIONS = [{
     style: prStrong
   }, "Check-in / check-out only."), " Your device location is captured at the moment you tap Check In and Check Out. Spark does not continuously track your location between those events."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", {
     style: prStrong
-  }, "Geofence verification."), " When you check in, the captured coordinates are compared to the activation's geofence (typically a 100\u2013300 meter radius around the venue). Out-of-range check-ins are flagged for review."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", {
+  }, "Geofence verification."), " When you check in, the captured coordinates are compared to the activation's geofence (typically a 100 to 300 meter radius around the venue). Out-of-range check-ins are flagged for review."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", {
     style: prStrong
   }, "Off-shift."), " Spark does not collect your location when you are not on an active shift. You can revoke location permission in your device settings at any time, but check-in/check-out will be unavailable until it is re-enabled."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", {
     style: prStrong
@@ -52,15 +52,15 @@ const PR_SECTIONS = [{
     style: prUl
   }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", {
     style: prStrong
-  }, "Service providers"), " \u2014 hosting (Webflow, GitHub Pages, Cloudflare), database and identity providers, payroll/payment processors, communications (email, SMS), analytics, and customer-support tooling, each under written confidentiality and data-protection terms."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", {
+  }, "Service providers"), ": hosting (Webflow, GitHub Pages, Cloudflare), database and identity providers, payroll/payment processors, communications (email, SMS), analytics, and customer-support tooling, each under written confidentiality and data-protection terms."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", {
     style: prStrong
-  }, "Clients"), " \u2014 for each program you work, the contracting client sees the field reports and timecards generated for that program."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", {
+  }, "Clients"), ": for each program you work, the contracting client sees the field reports and timecards generated for that program."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", {
     style: prStrong
-  }, "Subcontracted partners"), " \u2014 when an activation requires it, we share the minimum necessary info with fabrication, logistics, or insurance partners."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", {
+  }, "Subcontracted partners"), ": when an activation requires it, we share the minimum necessary info with fabrication, logistics, or insurance partners."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", {
     style: prStrong
-  }, "Corporate transactions"), " \u2014 in connection with a merger, acquisition, financing, or sale of assets, with appropriate confidentiality protections."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", {
+  }, "Corporate transactions"), ": in connection with a merger, acquisition, financing, or sale of assets, with appropriate confidentiality protections."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", {
     style: prStrong
-  }, "Legal"), " \u2014 to comply with law, court orders, lawful requests, or to protect the rights, safety, and property of Ignite, our users, or the public.")))
+  }, "Legal"), ": to comply with law, court orders, lawful requests, or to protect the rights, safety, and property of Ignite, our users, or the public.")))
 }, {
   h: "How long we keep it",
   body: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", null, "We keep personal information only as long as we need it for the purposes described, plus the period required by law:"), /*#__PURE__*/React.createElement("ul", {
@@ -370,7 +370,7 @@ const PrivacyPolicy = () => {
       color: "var(--fg-2)",
       maxWidth: 520
     }
-  }, "Have a privacy question, or want to exercise a data right? A human will respond \u2014 usually same business day."), /*#__PURE__*/React.createElement("a", {
+  }, "Have a privacy question, or want to exercise a data right? A human will respond, usually same business day."), /*#__PURE__*/React.createElement("a", {
     href: "mailto:privacy@igniteproductions.co",
     style: {
       display: "inline-flex",

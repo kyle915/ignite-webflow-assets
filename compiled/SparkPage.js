@@ -281,7 +281,7 @@ const SparkHero = () => {
       color: "var(--fg-2)",
       maxWidth: 720
     }
-  }, "Spark is Ignite's real-time field marketing platform \u2014 designed to give clients instant visibility into every demo, event, tour, sample, and activation we run. It replaces inconsistent recaps, spreadsheet chaos, and vendor fragmentation with one centralized, agency-run system."), /*#__PURE__*/React.createElement("div", {
+  }, "Spark is Ignite's real-time field marketing platform, designed to give clients instant visibility into every demo, event, tour, sample, and activation we run. It replaces inconsistent recaps, spreadsheet chaos, and vendor fragmentation with one centralized, agency-run system."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 40,
       display: "flex",
@@ -831,7 +831,7 @@ const SparkMobile = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-3)",
     marginTop: 4
   }
-}, "AUSTIN, TX \xB7 12:00 \u2013 8:00 PM"), /*#__PURE__*/React.createElement("div", {
+}, "AUSTIN, TX \xB7 12:00 to 8:00 PM"), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 20,
     padding: 16,
