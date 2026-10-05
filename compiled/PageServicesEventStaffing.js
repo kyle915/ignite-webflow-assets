@@ -184,6 +184,17 @@ const Hero = () => {
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", {
     className: "es-rise",
     style: {
+      margin: "0 0 18px",
+      fontFamily: "var(--font-mono)",
+      fontWeight: 500,
+      fontSize: 12.5,
+      letterSpacing: "0.22em",
+      textTransform: "uppercase",
+      color: AMBER
+    }
+  }, "Event Staffing Agency"), /*#__PURE__*/React.createElement("h2", {
+    className: "es-rise",
+    style: {
       fontFamily: "var(--font-display)",
       fontWeight: 900,
       fontSize: "clamp(40px,5.2vw,88px)",

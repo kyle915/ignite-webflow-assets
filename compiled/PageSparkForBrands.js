@@ -154,7 +154,7 @@ const Hero = () => {
     href: "https://www.igniteproductions.co/contact"
   }, "See Spark on a live program ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
     className: "sp-ghost",
-    href: "/spark-demo"
+    href: "https://sparkbyignite.igniteproductions.co/demo"
   }, "See the live dashboard")), /*#__PURE__*/React.createElement("p", {
     className: "sp-foot",
     style: {
