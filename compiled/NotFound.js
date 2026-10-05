@@ -31,7 +31,7 @@ const NotFound = () => {
   }, []);
   return /*#__PURE__*/React.createElement("main", {
     style: {
-      minHeight: "100vh",
+      minHeight: "calc(100vh - 140px)",
       background: "#0B0B0B",
       color: "#fff",
       position: "relative",

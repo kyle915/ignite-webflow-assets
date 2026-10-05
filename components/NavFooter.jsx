@@ -27,6 +27,7 @@ const SITE_SERVICE_GROUPS = [
     accent: "ignite",
     services: [
       { slug: "retail-demo-programs",            label: "Retail Demo Programs",          sub: "In-store demos at Whole Foods, Costco, Target" },
+      { slug: "costco-roadshows",                label: "Costco Roadshows",              sub: "Warehouse club roadshows that sell" },
       { slug: "retail-merchandising",            label: "Retail Merchandising",          sub: "Per-store audits, OOS recovery, planogram" },
       { slug: "shopper-marketing",               label: "Shopper Marketing",             sub: "End-cap, POS, in-aisle, scan-back" },
       { slug: "qsr-restaurant-activations",      label: "QSR / Restaurant",              sub: "Brand activations inside QSR + casual dining" },
@@ -37,6 +38,7 @@ const SITE_SERVICE_GROUPS = [
     accent: "amber",
     services: [
       { slug: "trade-shows",                     label: "Trade Show Support",            sub: "Booth staffing, lead capture, demos" },
+      { slug: "trade-show-ad-trucks", href: "pages/trade-show-ad-trucks.html", label: "Trade Show Ad Trucks", sub: "Truck + street team + booth crew" },
       { slug: "distributor-demo-programs",       label: "Distributor Demo Programs",     sub: "GSM, ride-along, 3-tier coordination" },
       { slug: "sports-marketing-activations",    label: "Sports Marketing",              sub: "Stadium, match-day, league activation" },
       { slug: "collegiate-marketing",            label: "Collegiate Marketing",          sub: "200+ campuses · move-in / game-day / Greek / finals" },
@@ -50,6 +52,7 @@ const SITE_SERVICE_GROUPS = [
       { slug: "experiential-marketing",          label: "Experiential Marketing",        sub: "Pop-ups, immersive installations, brand worlds" },
       { slug: "event-production",                label: "Event Production",              sub: "Brief to strike: show flow, vendors, AV, crew" },
       { slug: "mobile-tours",                    label: "Mobile Marketing Tours",        sub: "Ad trucks, branded bikes, sprinter vans" },
+      { slug: "ad-trucks",                       label: "Ad Trucks + Mobile Billboards", sub: "Daily rates from $1,600 · all 50 states" },
       { slug: "fabrication-builds",              label: "Fabrication & Builds",          sub: "Custom builds, scenic fab, photo ops" },
       { slug: "field-marketing",                 label: "Field Marketing",               sub: "Always-on field force, route + cadence" },
       { slug: "sponsorship-partnerships",        label: "Sponsorship & Partnerships",    sub: "Source, negotiate, activate, measure" },
@@ -620,7 +623,7 @@ const SiteNav = ({ rel = "", active = "", activeService = "", brand = "ignite" }
             </div>
           )}
           <a href={"https://www.igniteproductions.co/contact"} onClick={() => setMobileOpen(false)}
-            style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginTop: 24, minHeight: 54, borderRadius: 999, background: "var(--spark-500)", color: "#0A0B0D", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 16, textDecoration: "none" }}>GET IN TOUCH <span style={{ fontFamily: "var(--font-mono)" }}>→</span></a>
+            style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginTop: 24, minHeight: 54, borderRadius: 999, background: "var(--spark-500)", color: "#0A0B0D", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 16, textDecoration: "none" }}>Request a quote <span style={{ fontFamily: "var(--font-mono)" }}>→</span></a>
           </div>
         </div>
       )}

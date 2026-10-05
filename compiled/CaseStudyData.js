@@ -107,9 +107,9 @@ const CASE_STUDIES = {
     stats: [["300+", "Stores activated"], ["9", "Texas markets"], ["VR", "Custom build"]],
     gallery: ["https://cdn.prod.website-files.com/688129f3841088c282c32750/68962ced6417271e06cfcad1_TOTAL5C0B993F_7DBD_4138_861A_1958F6440579_7d52960e-92a0-41d6-a8df-a16dfacbd3f0.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/6897988d7a57ad607ede4886_TOTAL53_07_26_2025_Deborah_Camp_0feb1a50-ac63-c910-7335-bb5ff6c1b927_7.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/68962d00b2b16cc7bb7a21c8_TOTAL53_07_26_2025_Deborah_Camp_0feb1a50-ac63-c910-7335-bb5ff6c1b927_8.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/68979898fd30b080895a6dba_TOTAL54_07_26_2025_Mariya_Vorochkova_0feb1a50-ac63-c910-7335-bb5ff6c1b927_4.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689798a88853e160388ca213_TOTAL01226EB3_5B4A_4D17_AD7C_C94B181B6B84_3df7698b-5b77-41d1-bd17-ff55abd93e01.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689eb98ad743a568e457aee6_PHOTO-2025-08-02-20-44-55.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689eb98a87b6b6b947b92789_PHOTO-2025-08-02-20-44-56.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689eb98a667b9a5b53b8a097_PHOTO-2025-08-02-20-44-56(1).jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689eb98a58c9d00f403b51c6_PHOTO-2025-08-02-20-44-56(2).jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689eb98af7f122d9493d514b_PHOTO-2025-08-02-20-44-57.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689eb98a961e973feea60e74_PHOTO-2025-08-02-20-45-54.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689eb98abf92e7656c2cd18a_PHOTO-2025-08-02-20-45-57.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689eb98a15d8bd06fcb173d4_PHOTO-2025-08-02-20-46-03.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689eb98a27662b9f6cd05f0b_PHOTO-2025-08-02-20-46-04.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689eb98a1a5236b7bd33481a_PHOTO-2025-08-02-20-46-09.jpg"]
   },
-  "krispy-krunchy-chicken": {
+  "krispy-krunchy": {
     brand: "Krispy Krunchy Chicken",
-    slug: "krispy-krunchy-chicken",
+    slug: "krispy-krunchy",
     year: "Q1–Q2 2025",
     logo: "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b20a33960875f5d7bc0_krispy-krunchy-logo.webp",
     hero: "https://cdn.prod.website-files.com/688129f3841088c282c32750/689787a3d26c27f24d0483a6_KKchicken.webp",
@@ -128,9 +128,9 @@ const CASE_STUDIES = {
     stats: [["10", "Markets"], ["100K+", "Consumers reached"], ["Doug", "The Nug · mascot"]],
     gallery: ["https://cdn.prod.website-files.com/688129f3841088c282c32750/689797ddd94ba5b4806220c6_KKC20_03_31_2025_Valeria_Anzures_9eb1ced9-0ed8-ec9d-93fe-9480437cb0a6_1.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689797e2b856928cc91cf7b7_KKC21_04_01_2025_Jasmin_Sendejo_9eb1ced9-0ed8-ec9d-93fe-9480437cb0a6_0.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689797e644254b632387d49b_KKCManna-21.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/6897980575bd751f2c9d3b7d_KKC19_02_28_2025_Niels_Van%20Duysen_9eb1ced9-0ed8-ec9d-93fe-9480437cb0a6_6.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/6897981029107c42be0216fb_KKCPhoto%20Feb%2025%202025%2C%206%2006%2049%20PM.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/68979820e28f52977170f446_KKCPhoto%20May%2024%202025%2C%201%2045%2038%20PM.jpg"]
   },
-  "marc-anthony-brands": {
+  "marc-anthony": {
     brand: "Marc Anthony Brands",
-    slug: "marc-anthony-brands",
+    slug: "marc-anthony",
     year: "Always-on partner",
     logo: "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c378239e6dc2ebedde728_marc-anthony-logo.webp",
     hero: "https://cdn.prod.website-files.com/688129f3841088c282c32750/6897a0396b0c6d800aa91a47_Marc-anthony.webp",
@@ -154,7 +154,7 @@ const CASE_STUDIES = {
     slug: "dude-wipes",
     year: "2024 — 25",
     logo: "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3839708ed185c2de5ba9_dude-wipes.webp",
-    hero: "https://cdn.prod.website-files.com/688129f3841088c282c32750/689f6c956eb5b413250617c5_dude-wipe.webp",
+    hero: "https://kyle915.github.io/ignite-webflow-assets/assets/dude-wipes-mascot-stadium.jpg#pos=center%2045%25",
     headline: "Stadium to street, we wipe the competition.",
     category: "Event Marketing",
     sector: "CPG · Personal Care",
@@ -168,11 +168,11 @@ const CASE_STUDIES = {
     solution: "Ignite partnered with Dude Wipes to lead national event activations, managing everything from strategy and creative to staffing, logistics, and distribution. We activated at high-profile cultural moments — including the Super Bowl — and executed high-volume sampling with trained brand ambassadors who delivered the brand's tone and message with confidence. Each activation was designed to spark conversation, drive real product trial, and convert new fans.",
     outcomes: ["100,000+ products sampled across national events", "Presence at major cultural moments including the Super Bowl", "Consistent field team delivery of brand messaging and energy", "Turnkey execution: creative, staffing, logistics, recaps", "Increased unaided awareness and positive trial sentiment"],
     stats: [["100K+", "Products sampled"], ["Super", "Bowl presence"], ["Turnkey", "Full service"]],
-    gallery: ["https://cdn.prod.website-files.com/688129f3841088c282c32750/689f6c956eb5b413250617c5_dude-wipe.webp"]
+    gallery: ["https://kyle915.github.io/ignite-webflow-assets/assets/dude-wipes-mascot-stadium.jpg", "https://cdn.prod.website-files.com/688129f3841088c282c32750/689f6c956eb5b413250617c5_dude-wipe.webp"]
   },
-  "glendalough-distillery": {
+  "glendalough": {
     brand: "Glendalough Distillery",
-    slug: "glendalough-distillery",
+    slug: "glendalough",
     year: "2024 — 25",
     logo: "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3841bacf82489917b2b9_glendonough-distillery.webp",
     hero: "https://cdn.prod.website-files.com/688129f3841088c282c32750/68967edbc258f310ecdb385d_glendon.webp",
@@ -195,7 +195,7 @@ const CASE_STUDIES = {
     brand: "OpenAI",
     slug: "openai-devday",
     year: "2026",
-    logo: "https://kyle915.github.io/ignite-webflow-assets/assets/logo-openai-mark-white.png",
+    logo: "https://kyle915.github.io/ignite-webflow-assets/assets/logo-openai-mark.png",
     hero: "https://kyle915.github.io/ignite-webflow-assets/assets/openai-devday-exterior.jpg",
     headline: "87 ambassadors. One event. Support across the entire attendee experience.",
     category: "Event Execution",
@@ -379,6 +379,26 @@ const CASE_STUDIES = {
     outcomes: ["2,500+ retail activations annually across the U.S.", "National retail and field marketing support", "Point-of-sale and branded premium asset creation", "Activation kitting and retail partner scheduling", "Brand ambassador staffing and on-site execution"],
     stats: [["2,500+", "Activations / yr"], ["National", "U.S. retail"], ["1", "Agency, end to end"]],
     gallery: ["https://kyle915.github.io/ignite-webflow-assets/assets/torch-thc-kings-liquor-activation.png"]
+  },
+  "kalshi": {
+    brand: "Kalshi",
+    slug: "kalshi",
+    year: "NFL season",
+    hero: "https://kyle915.github.io/ignite-webflow-assets/assets/kalshi-tailgate-crowd-giveaway.jpg#pos=center%2045%25",
+    headline: "Bringing tables to the tailgate.",
+    category: "Sports Marketing · Tailgate Activation · Branded Giveaways",
+    sector: "Sports",
+    tags: ["Buffalo tailgates", "Branded table giveaway", "Game-day tradition"],
+    services: ["Tailgate Activation", "Brand Ambassador Staffing", "Branded Giveaways", "Food Distribution", "On-Site Execution"],
+    accent: "#1FC37A",
+    surface: "#0A0B0D",
+    ink: "#FFFFFF",
+    location: "Buffalo, NY · Game-day tailgate lots",
+    challenge: "Buffalo football fans bring their own kind of energy to game day. The tailgate is part of the experience, and jumping through folding tables has become one of the city's most recognizable fan traditions. For Kalshi, that tradition gave the brand a natural way to connect with fans. Ignite worked with the team to bring the activation into the tailgate lots, putting Kalshi in the middle of the pregame action.",
+    solution: "The centerpiece was simple: hand out Kalshi-branded tables for fans to jump onto and break in true Buffalo fashion. The tables gave fans something they could immediately make part of their own tailgate, and Kalshi's branding became part of the scene, from fans carrying tables through the lots to the moments before a jump. Alongside the table giveaways, the activation featured branded hats and food distribution. The team showed up in home-team colors and Kalshi caps, matching the atmosphere and connecting with fans where they were already gathering. The activation brought Kalshi directly into a tradition fans already knew and embraced, with crowds gathering around the giveaways, fans posing with branded tables, and Kalshi appearing throughout the tailgate. By building the activation around local fan culture, Ignite helped Kalshi create a visible, participatory presence before kickoff.",
+    outcomes: ["Kalshi-branded tables handed out for the tailgate table jump", "Branded hats and food distribution across the tailgate lots", "Team in home-team colors and Kalshi caps, matched to the crowd", "Crowds gathering around the giveaways before kickoff", "A visible, participatory brand presence built on local fan culture"],
+    stats: [["Buffalo", "Tailgate lots"], ["Tables", "Branded giveaway"], ["Pregame", "Fan moments"]],
+    gallery: ["https://kyle915.github.io/ignite-webflow-assets/assets/kalshi-tailgate-crowd-giveaway.jpg", "https://kyle915.github.io/ignite-webflow-assets/assets/kalshi-tailgate-fans-tables.jpg", "https://kyle915.github.io/ignite-webflow-assets/assets/kalshi-tailgate-table-jump.jpg", "https://kyle915.github.io/ignite-webflow-assets/assets/kalshi-tailgate-food-handout.jpg", "https://kyle915.github.io/ignite-webflow-assets/assets/kalshi-tailgate-team.jpg"]
   }
 };
 Object.assign(window, {

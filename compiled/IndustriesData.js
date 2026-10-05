@@ -362,7 +362,7 @@ const INDUSTRIES_DATA = {
       stage: "DISTRIBUTOR",
       title: "3-tier sign-off",
       desc: "Coordinate with RNDC / Southern Glazer's / Breakthru on permits and pour rules.",
-      time: "Day 3-10"
+      time: "Day 3–10"
     }, {
       stage: "VERIFY",
       title: "TIPS / TABC / RBS check",
@@ -568,7 +568,7 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Lineup + tour map",
       desc: "Confirm models, trims, ride-and-drive routes, and dealer schedule.",
-      time: "Day 0-3"
+      time: "Day 0–3"
     }, {
       stage: "LOGISTICS",
       title: "Vehicle staging",
@@ -671,7 +671,7 @@ const INDUSTRIES_DATA = {
       stage: "PERMIT",
       title: "Chain + hygiene SOP",
       desc: "Per-retailer paperwork, single-use applicator plan, allergen call-outs.",
-      time: "Day 3-10"
+      time: "Day 3–10"
     }, {
       stage: "TRAIN",
       title: "Application + shade",
@@ -763,7 +763,7 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Legal markets only",
       desc: "Confirm which states / jurisdictions permit your program. Flag exclusions early.",
-      time: "Day 0-3"
+      time: "Day 0–3"
     }, {
       stage: "PERMIT",
       title: "Cannabis-board paperwork",
@@ -870,7 +870,7 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Goals + property type",
       desc: "Stadium, arena, festival, motorsport — confirm venue access path.",
-      time: "Day 0-3"
+      time: "Day 0–3"
     }, {
       stage: "CLEAR",
       title: "Team + property sign-off",
@@ -967,7 +967,7 @@ const INDUSTRIES_DATA = {
       stage: "PERMIT",
       title: "Chain + venue paperwork",
       desc: "PetSmart / Petco demo permits, COIs, allergen disclosures.",
-      time: "Day 3-10"
+      time: "Day 3–10"
     }, {
       stage: "TRAIN",
       title: "Pet-safety briefing",
@@ -1054,7 +1054,7 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Claims + channel mix",
       desc: "Confirm what you can claim by channel; flag FDA-sensitive ingredients early.",
-      time: "Day 0-3"
+      time: "Day 0–3"
     }, {
       stage: "COMPLIANCE",
       title: "Claims script + legal",
@@ -1355,12 +1355,12 @@ const INDUSTRIES_DATA = {
       stage: "BRIEF",
       title: "Offers + store list",
       desc: "Plans, promos, target stores and what a good activation looks like.",
-      time: "Day 0-3"
+      time: "Day 0–3"
     }, {
       stage: "SCHEDULE",
       title: "Store coordination",
       desc: "Dates confirmed with each store or dealer, retailer rules reviewed.",
-      time: "Day 3-10"
+      time: "Day 3–10"
     }, {
       stage: "TRAIN",
       title: "Plan + promo training",
