@@ -342,18 +342,16 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     gap: 56,
     alignItems: "center"
   }
-}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", {
+}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
   className: "fm-reveal",
   style: {
-    margin: "0 0 18px",
-    fontFamily: "var(--font-mono)",
-    fontWeight: 500,
-    fontSize: 12.5,
-    letterSpacing: "0.22em",
-    textTransform: "uppercase",
-    color: MINT
+    display: "flex",
+    alignItems: "center",
+    gap: 12,
+    marginBottom: 26,
+    flexWrap: "wrap"
   }
-}, "Field Marketing Programs"), /*#__PURE__*/React.createElement("h2", {
+}), /*#__PURE__*/React.createElement("h1", {
   className: "fm-reveal",
   style: {
     fontFamily: "var(--font-display)",

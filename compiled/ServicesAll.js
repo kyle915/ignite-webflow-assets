@@ -427,7 +427,52 @@ const SvcHero = () => {
       textWrap: "balance",
       position: "relative"
     }
-  }, "Event Marketing"), /*#__PURE__*/React.createElement("p", {
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "block"
+    }
+  }, "Everything"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "block"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontStyle: "italic",
+      color: "var(--ignite-500)"
+    }
+  }, "experiential")), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "block",
+      marginTop: "0.04em"
+    }
+  }, "built, staffed,", " ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--fg-3)"
+    }
+  }, "and"), " ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: "relative",
+      display: "inline-block"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true",
+    style: {
+      position: "absolute",
+      inset: "-14% -8%",
+      background: "transparent",
+      filter: "blur(18px)",
+      zIndex: 0,
+      pointerEvents: "none",
+      animation: "svcMeasuredPulse 2.6s ease-in-out infinite"
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: "relative",
+      zIndex: 1,
+      color: "var(--spark-500)",
+      animation: "svcMeasuredTextPulse 2.6s ease-in-out infinite"
+    }
+  }, "measured.")))), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 32,
       fontSize: 19,
@@ -436,7 +481,11 @@ const SvcHero = () => {
       margin: "32px 0 0",
       maxWidth: 620
     }
-  }, "Ignite Productions is a veteran-owned (VOSB) event marketing agency founded in 2018. 257,000+ vetted brand ambassadors in all 50 states."), /*#__PURE__*/React.createElement("div", {
+  }, "Ignite Productions is a ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: "var(--fg-1)"
+    }
+  }, "full-service experiential agency"), ": strategy, fabrication, staffing, mobile tours, sampling, trade shows, and merch. One roster, one platform, every market."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 32,
       display: "flex",

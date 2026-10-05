@@ -10,7 +10,7 @@ window.LEGAL_DOCS = {
     titleB: "Policy.",
     effective: "Feb 23, 2026",
     lede: "How Ignite Productions LLC collects, uses, stores, and protects personal information in connection with the Spark by Ignite platform. By creating an account, accessing, or using Spark, you consent to the practices described below. This policy is incorporated by reference into the Spark by Ignite Terms of Service.",
-    contact: [["Company", "Ignite Productions LLC"], ["Privacy", "staffing@igniteproductions.co"], ["Phone", "775.406.0435"], ["Web", "www.igniteproductions.co"]],
+    contact: [["Company", "Ignite Productions LLC"], ["Privacy", "events@igniteproductions.co"], ["Phone", "775.406.0435"], ["Web", "www.igniteproductions.co"]],
     sections: [{
       id: "introduction",
       title: "Introduction",
@@ -277,7 +277,7 @@ window.LEGAL_DOCS = {
         text: "For privacy inquiries, data subject requests, or general questions about this Privacy Policy:"
       }, {
         type: "kv",
-        rows: [["Company", "Ignite Productions LLC"], ["Email", "staffing@igniteproductions.co"], ["Privacy inquiries", "staffing@igniteproductions.co"], ["Phone", "775.406.0435"], ["Website", "www.igniteproductions.co"]]
+        rows: [["Company", "Ignite Productions LLC"], ["Email", "events@igniteproductions.co"], ["Privacy inquiries", "events@igniteproductions.co"], ["Phone", "775.406.0435"], ["Website", "www.igniteproductions.co"]]
       }]
     }]
   },
@@ -288,7 +288,7 @@ window.LEGAL_DOCS = {
     titleB: "Service.",
     effective: "Feb 23, 2026",
     lede: "Legally binding agreement governing your access to and use of the Spark by Ignite platform, including all associated mobile applications, web applications, dashboards, APIs, and related services. By using the Platform, you agree to these terms.",
-    contact: [["Company", "Ignite Productions LLC"], ["Email", "staffing@igniteproductions.co"], ["Phone", "775.406.0435"], ["Web", "www.igniteproductions.co"]],
+    contact: [["Company", "Ignite Productions LLC"], ["Email", "events@igniteproductions.co"], ["Phone", "775.406.0435"], ["Web", "www.igniteproductions.co"]],
     sections: [{
       id: "introduction",
       title: "Introduction & acceptance",
@@ -857,7 +857,7 @@ window.LEGAL_DOCS = {
         text: "For questions about these Terms or to provide notices under them:"
       }, {
         type: "kv",
-        rows: [["Company", "Ignite Productions LLC"], ["Email", "staffing@igniteproductions.co"], ["Phone", "775.406.0435"], ["Website", "www.igniteproductions.co"]]
+        rows: [["Company", "Ignite Productions LLC"], ["Email", "events@igniteproductions.co"], ["Phone", "775.406.0435"], ["Website", "www.igniteproductions.co"]]
       }]
     }]
   },
@@ -868,7 +868,7 @@ window.LEGAL_DOCS = {
     titleB: "Statement.",
     effective: "May 11, 2026",
     lede: "Ignite Productions LLC is committed to making its website, the Spark by Ignite platform, and related digital experiences usable by the widest possible audience, including people with disabilities. This statement describes the standards we target, what we have done, where we know we fall short, and how to reach us if you hit a barrier.",
-    contact: [["Company", "Ignite Productions LLC"], ["Accessibility", "staffing@igniteproductions.co"], ["Phone", "775.406.0435"], ["Web", "www.igniteproductions.co"]],
+    contact: [["Company", "Ignite Productions LLC"], ["Accessibility", "events@igniteproductions.co"], ["Phone", "775.406.0435"], ["Web", "www.igniteproductions.co"]],
     sections: [{
       id: "commitment",
       title: "Our commitment",
@@ -956,7 +956,7 @@ window.LEGAL_DOCS = {
         items: ["The URL of the page or screen where you encountered the barrier", "A description of the problem and what you were trying to do", "Your browser, operating system, and any assistive technology you were using (if comfortable sharing)", "How you'd like us to follow up with you"]
       }, {
         type: "kv",
-        rows: [["Company", "Ignite Productions LLC"], ["Email", "staffing@igniteproductions.co"], ["Subject line", "Accessibility: [page or feature]"], ["Phone", "775.406.0435"], ["Website", "www.igniteproductions.co"]]
+        rows: [["Company", "Ignite Productions LLC"], ["Email", "events@igniteproductions.co"], ["Subject line", "Accessibility: [page or feature]"], ["Phone", "775.406.0435"], ["Website", "www.igniteproductions.co"]]
       }]
     }, {
       id: "formal-complaints",

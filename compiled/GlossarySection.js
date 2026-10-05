@@ -80,19 +80,7 @@ const GlossaryHub = () => {
     }
   }, list.map((t, i) => /*#__PURE__*/React.createElement("a", {
     key: t.slug,
-    id: t.slug,
-    href: ({
-      "activation-recap": 1,
-      "bilingual-brand-ambassador": 1,
-      "booth-staff": 1,
-      "cost-per-sample": 1,
-      "field-marketing-agency": 1,
-      "in-store-demo": 1,
-      "lead-capture": 1,
-      "mobile-billboard": 1,
-      "product-sampling": 1,
-      "street-team": 1
-    })[t.slug] ? "/glossary#" + t.slug : "/glossary/" + t.slug,
+    href: "/glossary/" + t.slug,
     className: "gl-card",
     style: {
       display: "flex",
