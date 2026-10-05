@@ -214,17 +214,6 @@ const Hero = () => {
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", {
     className: "ba-rise",
     style: {
-      margin: "0 0 18px",
-      fontFamily: "var(--font-mono)",
-      fontWeight: 500,
-      fontSize: 12.5,
-      letterSpacing: "0.22em",
-      textTransform: "uppercase",
-      color: ORANGE
-    }
-  }, "Brand Ambassador Agency"), /*#__PURE__*/React.createElement("h2", {
-    className: "ba-rise",
-    style: {
       fontFamily: "var(--font-display)",
       fontWeight: 900,
       fontSize: "clamp(48px,6.8vw,116px)",

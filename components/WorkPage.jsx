@@ -48,7 +48,7 @@ const WORK_BRAND_LOGOS = {
   "liquid-death":   "https://cdn.prod.website-files.com/688129f3841088c282c32750/6882f25fd226513954e724e2_liquid-death-logo-transparent.webp",
   "white-claw":     "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b129ea08467c1137c5d_white-claw-logo.webp",
   "mas":            "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1c02300cc1480ff080dc_mas-messi-logo.webp",
-  "krispy-krunchy-chicken": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b20a33960875f5d7bc0_krispy-krunchy-logo.webp",
+  "krispy-krunchy": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b20a33960875f5d7bc0_krispy-krunchy-logo.webp",
   "total-wireless": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1bb2f2c798b4cb850d2e_total-wireless-logo.webp",
   "openai-devday":  "../assets/logo-openai-mark.png",
   "claude-code-workshops": "../assets/logo-claude.png",
@@ -60,9 +60,9 @@ const WORK_BRAND_LOGOS = {
   "torch-thc":      "../assets/logo-torch-thc.png",
   "stone-house-bread": "../assets/logo-stone-house-bread-dark-bg.png",
   "dude-wipes":     "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3839708ed185c2de5ba9_dude-wipes.webp",
-  "glendalough-distillery":    "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3841bacf82489917b2b9_glendonough-distillery.webp",
+  "glendalough":    "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3841bacf82489917b2b9_glendonough-distillery.webp",
   "smalls-sliders": "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c377975c7a23684962d73_smalls-sliders.webp",
-  "marc-anthony-brands":   "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c378239e6dc2ebedde728_marc-anthony-logo.webp",
+  "marc-anthony":   "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c378239e6dc2ebedde728_marc-anthony-logo.webp",
 };
 
 /* Pull hero imagery + canonical headlines from CASE_STUDIES for accurate visuals */
@@ -97,13 +97,13 @@ const WORK_CASES = [
     stats: [["Multi","Mobile tour"],["Custom","Truck buildout"],["South","U.S. region"]] },
   { slug: "total-wireless", bento: "lg-wide",   accent: "#D31920", surface: "#1A0606",
     stats: [["300+","Stores"],["9","TX markets"],["VR","Build"]] },
-  { slug: "krispy-krunchy-chicken", bento: "md",        accent: "#F5B83A", surface: "#1F1408",
+  { slug: "krispy-krunchy", bento: "md",        accent: "#F5B83A", surface: "#1F1408",
     stats: [["10","Cities"],["100K+","Reached"],["Doug","The Nug"]] },
-  { slug: "marc-anthony-brands",   bento: "md",        accent: "#C99C5E", surface: "#1A140C",
+  { slug: "marc-anthony",   bento: "md",        accent: "#C99C5E", surface: "#1A140C",
     stats: [["250+","Demos / yr"],["All US","Markets"],["Multi","SKU"]] },
   { slug: "dude-wipes",     bento: "md",        accent: "#1A8CFF", surface: "#06101F",
     stats: [["100K+","Sampled"],["Super","Bowl"],["NFL","Sundays"]] },
-  { slug: "glendalough-distillery",    bento: "md",        accent: "#7FB069", surface: "#0E1A0B",
+  { slug: "glendalough",    bento: "md",        accent: "#7FB069", surface: "#0E1A0B",
     stats: [["Premium","Set"],["Midwest","Region"],["Full","Program"]] },
 ];
 
@@ -515,10 +515,10 @@ const WorkBento = () => {
     "white-claw":     { col:"span 4", row:"span 1" },
     "smalls-sliders": { col:"span 4", row:"span 1" },
     "total-wireless": { col:"span 6", row:"span 1" },
-    "krispy-krunchy-chicken": { col:"span 6", row:"span 1" },
+    "krispy-krunchy": { col:"span 6", row:"span 1" },
     "dude-wipes":     { col:"span 6", row:"span 1" },
-    "marc-anthony-brands":   { col:"span 6", row:"span 1" },
-    "glendalough-distillery":    { col:"span 12", row:"span 3" }, // WIDE + taller
+    "marc-anthony":   { col:"span 6", row:"span 1" },
+    "glendalough":    { col:"span 12", row:"span 3" }, // WIDE + taller
   };
 
   return (

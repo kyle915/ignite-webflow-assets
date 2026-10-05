@@ -457,7 +457,11 @@ const SvcHero = () => {
       margin: "32px 0 0",
       maxWidth: 620
     }
-  }, "Ignite Productions is a veteran-owned (VOSB) event marketing agency founded in 2018. 257,000+ vetted brand ambassadors in all 50 states."), /*#__PURE__*/React.createElement("div", {
+  }, "Ignite Productions is a ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: "var(--fg-1)"
+    }
+  }, "full-service experiential agency"), ": strategy, fabrication, staffing, mobile tours, sampling, trade shows, and merch. One roster, one platform, every market."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 32,
       display: "flex",

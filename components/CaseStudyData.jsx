@@ -207,7 +207,7 @@ const CASE_STUDIES = {
 
   "krispy-krunchy": {
     brand: "Krispy Krunchy Chicken",
-    slug: "krispy-krunchy-chicken",
+    slug: "krispy-krunchy",
     year: "Q1–Q2 2025",
     logo: "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c1b20a33960875f5d7bc0_krispy-krunchy-logo.webp",
     hero: "https://cdn.prod.website-files.com/688129f3841088c282c32750/689787a3d26c27f24d0483a6_KKchicken.webp",
@@ -242,7 +242,7 @@ const CASE_STUDIES = {
 
   "marc-anthony": {
     brand: "Marc Anthony Brands",
-    slug: "marc-anthony-brands",
+    slug: "marc-anthony",
     year: "Always-on partner",
     logo: "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c378239e6dc2ebedde728_marc-anthony-logo.webp",
     hero: "https://cdn.prod.website-files.com/688129f3841088c282c32750/6897a0396b0c6d800aa91a47_Marc-anthony.webp",
@@ -311,7 +311,7 @@ const CASE_STUDIES = {
 
   "glendalough": {
     brand: "Glendalough Distillery",
-    slug: "glendalough-distillery",
+    slug: "glendalough",
     year: "2024 — 25",
     logo: "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3841bacf82489917b2b9_glendonough-distillery.webp",
     hero: "https://cdn.prod.website-files.com/688129f3841088c282c32750/68967edbc258f310ecdb385d_glendon.webp",
@@ -644,9 +644,5 @@ const CASE_STUDIES = {
     ],
   },
 };
-
-CASE_STUDIES["krispy-krunchy-chicken"] = CASE_STUDIES["krispy-krunchy"];
-CASE_STUDIES["marc-anthony-brands"] = CASE_STUDIES["marc-anthony"];
-CASE_STUDIES["glendalough-distillery"] = CASE_STUDIES["glendalough"];
 
 Object.assign(window, { CASE_STUDIES });
