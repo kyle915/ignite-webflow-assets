@@ -242,7 +242,7 @@ const Hero = () => {
     style: {
       color: "#fff"
     }
-  }, "257,000+ vetted ambassadors"), " in all 50 states \u2014 recruited, trained, briefed, and proven on shift with GPS + photo. One partner, every market."), /*#__PURE__*/React.createElement("div", {
+  }, "257,000+ vetted ambassadors"), " in all 50 states: recruited, trained, briefed, and proven on shift with GPS + photo. One partner, every market."), /*#__PURE__*/React.createElement("div", {
     className: "ba-rise",
     style: {
       marginTop: 32,
@@ -521,7 +521,7 @@ const WhatIs = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1.6,
     color: "rgba(255,255,255,0.82)"
   }
-}, "A brand ambassador agency recruits, vets, trains, schedules, and manages the people who represent a brand in the field \u2014 at sampling programs, retail demos, festivals, trade shows, and activations. ", /*#__PURE__*/React.createElement("b", {
+}, "A brand ambassador agency recruits, vets, trains, schedules, and manages the people who represent a brand in the field: at sampling programs, retail demos, festivals, trade shows, and activations. ", /*#__PURE__*/React.createElement("b", {
   style: {
     color: "#fff"
   }
@@ -529,12 +529,20 @@ const WhatIs = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: ORANGE
   }
-}, "257,000+ vetted ambassadors across all 50 states"), ". We're veteran-owned and CPG-built, so the people repping your brand are briefed on the product and the conversion goal \u2014 not handed a script to read off their phone."))));
+}, "257,000+ vetted ambassadors across all 50 states"), ". We're veteran-owned and CPG-built, so the people repping your brand are briefed on the product and the conversion goal, not handed a script to read off their phone."))));
 
-/* ---------- VETTING FUNNEL ---------- */
+/* ---------- VETTING PIPELINE ---------- */
 const Funnel = () => {
-  const steps = [["Applications", "Open pipeline, every market", 7400, "rgba(255,255,255,0.55)"], ["Screened", "ID, background, references", 4600, "#4FB58A"], ["Vetted", "Interviewed + role-matched", 2500, "#4664C4"], ["Trained", "Brand brief + certs (TIPS/RBS/Food)", 1550, "#E68A4C"], ["Deployed", "Badged, on shift, GPS-verified", 890, "#fff"]];
-  const max = steps[0][2];
+  const gates = [["01", "APPLY", "Open pipeline", "Applications from every market, filtered by location, experience and availability."], ["02", "SCREEN", "ID + background", "Identity, background and references checked before anyone moves forward."], ["03", "VET", "Interview + match", "Interviewed by our team and matched to the roles and brands they fit."], ["04", "TRAIN", "Brief + certs", "Brand brief, product training and TIPS, RBS or food-handler certs on file."], ["05", "DEPLOY", "Badged + verified", "Badged onto your program, GPS check-in every shift, reported in Spark."]];
+  const [on, setOn] = React.useState(0);
+  React.useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setOn(4);
+      return;
+    }
+    const id = setInterval(() => setOn(v => (v + 1) % 5), 1500);
+    return () => clearInterval(id);
+  }, []);
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: "#0C0E13",
@@ -546,7 +554,7 @@ const Funnel = () => {
     className: "ba-reveal",
     style: {
       maxWidth: 780,
-      marginBottom: 48
+      marginBottom: 56
     }
   }, /*#__PURE__*/React.createElement(Mono, {
     color: ORANGE
@@ -555,7 +563,7 @@ const Funnel = () => {
       marginTop: 16,
       fontFamily: "var(--font-display)",
       fontWeight: 800,
-      fontSize: "clamp(30px,4.4vw,60px)",
+      fontSize: "clamp(32px,4.4vw,64px)",
       letterSpacing: "-0.035em",
       lineHeight: 0.98
     }
@@ -564,203 +572,148 @@ const Funnel = () => {
       fontStyle: "italic",
       color: ORANGE
     }
-  }, "A vetting funnel.")), /*#__PURE__*/React.createElement("p", {
+  }, "Five gates.")), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 16,
       fontSize: 16.5,
       lineHeight: 1.55,
       color: "rgba(255,255,255,0.7)"
     }
-  }, "Marketplace apps hand you whoever taps \"accept.\" We filter the network down to the people who actually show up and represent \u2014 then brief and badge them for your brand.")), /*#__PURE__*/React.createElement("div", {
-    className: "ba-reveal",
+  }, "Marketplace apps hand you whoever taps \"accept.\" Every Ignite ambassador clears five gates before they wear your badge.")), /*#__PURE__*/React.createElement("div", {
+    className: "ba-gates ba-reveal"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ba-track",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("span", {
     style: {
-      display: "flex",
-      flexDirection: "column",
-      gap: 14
+      width: on / 4 * 100 + "%",
+      "--p": on / 4 * 100
     }
-  }, steps.map(([t, d, v, c], i) => {
-    const pct = Math.round(v / max * 100);
-    const barW = Math.max(pct, 14); /* floor so every stage stays visibly rendered */
-    return /*#__PURE__*/React.createElement("div", {
-      key: t,
-      style: {
-        display: "grid",
-        gridTemplateColumns: "200px 1fr 90px",
-        gap: 18,
-        alignItems: "center"
-      },
-      className: "ba-3col"
-    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontFamily: "var(--font-display)",
-        fontWeight: 800,
-        fontSize: 18,
-        color: typeof c === "string" && c.startsWith("#") ? c : "#fff"
-      }
-    }, t), /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontFamily: "var(--font-mono)",
-        fontSize: 10,
-        color: "rgba(255,255,255,0.45)",
-        marginTop: 3,
-        letterSpacing: "0.04em"
-      }
-    }, d)), /*#__PURE__*/React.createElement("div", {
-      style: {
-        position: "relative",
-        height: 14,
-        background: "rgba(255,255,255,0.08)",
-        border: "1px solid rgba(255,255,255,0.1)",
-        borderRadius: 999,
-        overflow: "hidden"
-      }
-    }, /*#__PURE__*/React.createElement("div", {
-      style: {
-        position: "absolute",
-        inset: 0,
-        width: barW + "%",
-        background: `linear-gradient(90deg, ${c}, ${c}99)`,
-        borderRadius: 999,
-        boxShadow: i < 4 ? `0 0 14px ${c}55` : "none"
-      }
-    })), /*#__PURE__*/React.createElement("div", {
-      style: {
-        textAlign: "right",
-        fontFamily: "var(--font-mono)",
-        fontWeight: 700,
-        fontSize: 15,
-        color: typeof c === "string" && c.startsWith("#") ? c : "#fff"
-      }
-    }, v.toLocaleString()));
-  })), /*#__PURE__*/React.createElement("p", {
-    className: "ba-reveal",
-    style: {
-      marginTop: 24,
-      fontFamily: "var(--font-mono)",
-      fontSize: 11,
-      letterSpacing: "0.06em",
-      color: "rgba(255,255,255,0.4)"
-    }
-  }, "\u203B Illustrative funnel \u2014 only fully vetted, briefed ambassadors get badged onto your program.")));
+  })), gates.map(([n, k, t, d], i) => /*#__PURE__*/React.createElement("div", {
+    key: n,
+    className: "ba-gate" + (i <= on ? " lit" : "") + (i === on ? " now" : "")
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ba-node"
+  }, /*#__PURE__*/React.createElement("span", null, i < on ? "✓" : n)), /*#__PURE__*/React.createElement("div", {
+    className: "ba-k"
+  }, k), /*#__PURE__*/React.createElement("h3", null, t), /*#__PURE__*/React.createElement("p", null, d)))), /*#__PURE__*/React.createElement("style", null, `
+          .ba-gates{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+          .ba-track{position:absolute;left:28px;right:calc(20% - 28px);top:27px;height:2px;background:rgba(255,255,255,.12)}
+          .ba-track span{display:block;height:100%;background:linear-gradient(90deg,${ORANGE},#D6F35F);box-shadow:0 0 12px rgba(214,243,95,.5);transition:width .9s cubic-bezier(.16,.84,.3,1)}
+          .ba-gate{position:relative}
+          .ba-node{width:56px;height:56px;border-radius:56px;display:grid;place-items:center;background:#0C0E13;border:2px solid rgba(255,255,255,.18);font-family:var(--font-mono);font-weight:700;font-size:14px;color:rgba(255,255,255,.5);transition:all .4s;position:relative;z-index:1}
+          .ba-gate.lit .ba-node{border-color:#D6F35F;color:#D6F35F}
+          .ba-gate.now .ba-node{background:#D6F35F;color:#0A0B0D;box-shadow:0 0 0 6px rgba(214,243,95,.15),0 0 24px rgba(214,243,95,.5)}
+          .ba-k{margin-top:18px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;color:rgba(255,255,255,.45);transition:color .4s}
+          .ba-gate.lit .ba-k{color:#D6F35F}
+          .ba-gate h3{margin-top:8px;font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:-.01em}
+          .ba-gate p{margin-top:8px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.62)}
+          @media (max-width:900px){.ba-gates{grid-template-columns:1fr;gap:26px;padding-left:76px}.ba-track{left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto}.ba-track span{width:100%!important;height:calc(var(--p,0)*1%)}.ba-node{position:absolute;left:-76px;top:0}.ba-k{margin-top:4px}}
+        `)));
 };
 
-/* ---------- VS marketplace ---------- */
-const Versus = () => /*#__PURE__*/React.createElement("section", {
-  style: {
-    background: INK,
-    color: "#fff",
-    padding: "118px 0",
-    borderBottom: "1px solid rgba(255,255,255,0.08)"
-  }
-}, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
-  className: "ba-reveal",
-  style: {
-    maxWidth: 800,
-    marginBottom: 46
-  }
-}, /*#__PURE__*/React.createElement(Mono, {
-  color: AMBER
-}, "// MANAGED BENCH vs. MARKETPLACE"), /*#__PURE__*/React.createElement("h2", {
-  style: {
-    marginTop: 16,
-    fontFamily: "var(--font-display)",
-    fontWeight: 800,
-    fontSize: "clamp(32px,4.4vw,64px)",
-    letterSpacing: "-0.035em",
-    lineHeight: 0.98
-  }
-}, "Booked, not ", /*#__PURE__*/React.createElement("span", {
-  style: {
-    fontStyle: "italic",
-    color: ORANGE
-  }
-}, "gambled."))), /*#__PURE__*/React.createElement("div", {
-  className: "ba-vs",
-  style: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: 16
-  }
-}, /*#__PURE__*/React.createElement("div", {
-  className: "ba-reveal",
-  style: {
-    padding: "32px 28px",
-    background: "rgba(255,255,255,0.03)",
-    border: "1px solid rgba(255,255,255,0.1)",
-    borderRadius: 16
-  }
-}, /*#__PURE__*/React.createElement(Mono, {
-  color: "rgba(255,255,255,0.5)"
-}, "A STAFFING MARKETPLACE"), /*#__PURE__*/React.createElement("div", {
-  style: {
-    marginTop: 16,
-    display: "flex",
-    flexDirection: "column",
-    gap: 12
-  }
-}, ["Whoever taps accept gets the shift", "No training, no brand brief", "No-shows are your problem", "\"Trust me, it went fine\" reporting", "A different vendor in every market"].map(x => /*#__PURE__*/React.createElement("div", {
-  key: x,
-  style: {
-    display: "flex",
-    gap: 11,
-    alignItems: "flex-start"
-  }
-}, /*#__PURE__*/React.createElement("span", {
-  style: {
-    color: "rgba(255,255,255,0.35)",
-    fontFamily: "var(--font-mono)",
-    marginTop: 1
-  }
-}, "\u2715"), /*#__PURE__*/React.createElement("span", {
-  style: {
-    fontSize: 15,
-    lineHeight: 1.5,
-    color: "rgba(255,255,255,0.65)"
-  }
-}, x))))), /*#__PURE__*/React.createElement("div", {
-  className: "ba-reveal",
-  style: {
-    padding: "32px 28px",
-    background: `linear-gradient(180deg, ${ORANGE}14, rgba(255,255,255,0.02))`,
-    border: `1px solid ${ORANGE}55`,
-    borderRadius: 16,
-    transitionDelay: "80ms"
-  }
-}, /*#__PURE__*/React.createElement(Mono, {
-  color: ORANGE
-}, "IGNITE \u2014 MANAGED AGENCY"), /*#__PURE__*/React.createElement("div", {
-  style: {
-    marginTop: 16,
-    display: "flex",
-    flexDirection: "column",
-    gap: 12
-  }
-}, ["Role-matched, vetted ambassadors", "Briefed + trained on your brand", "A bench deep enough to cover call-outs", "GPS + photo-verified, same-day recap", "One partner across all 50 states"].map(x => /*#__PURE__*/React.createElement("div", {
-  key: x,
-  style: {
-    display: "flex",
-    gap: 11,
-    alignItems: "flex-start"
-  }
-}, /*#__PURE__*/React.createElement("span", {
-  style: {
-    color: ORANGE,
-    fontFamily: "var(--font-mono)",
-    marginTop: 1
-  }
-}, "\u2713"), /*#__PURE__*/React.createElement("span", {
-  style: {
-    fontSize: 15,
-    lineHeight: 1.5,
-    color: "#fff"
-  }
-}, x))))))));
-
-/* ---------- HOW ---------- */
-const How = () => {
-  const steps = [["01", "Brief", "A 30-min call: brand, markets, dates, the conversion goal. We ballpark coverage and budget."], ["02", "Match", "We pull role-matched ambassadors from the 50-state bench, matched on certs, language and experience."], ["03", "Train", "Every ambassador is briefed on your product, the ask, and the rules of the room before they arrive."], ["04", "Deploy", "Badged and on shift, GPS clock-in, photos uploaded live to Spark."], ["05", "Report", "Same-day recap with who, where, counts and photos, not a deck three weeks later."]];
+/* ---------- VS MARKETPLACE APPS ---------- */
+const Versus = () => {
+  const rows = [["Who shows up", "Whoever taps accept first", "Ambassadors cleared through five gates and matched to your brand"], ["Training", "None, or a PDF the night before", "Brand brief and product training before the first shift"], ["Certifications", "Self-reported", "TIPS, RBS and food-handler certs verified before a shift can be claimed"], ["On-site lead", "You manage the crew yourself", "A team lead runs the floor on larger programs"], ["Proof", "A timesheet, if you're lucky", "GPS check-in, geotagged photos and a Spark recap every shift"], ["No-shows", "Your problem", "Flagged before the shift, backfilled from the bench"]];
   return /*#__PURE__*/React.createElement("section", {
-    id: "how",
+    style: {
+      background: INK,
+      color: "#fff",
+      padding: "118px 0",
+      borderBottom: "1px solid rgba(255,255,255,0.08)"
+    }
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+    className: "ba-reveal",
+    style: {
+      maxWidth: 780,
+      marginBottom: 44
+    }
+  }, /*#__PURE__*/React.createElement(Mono, {
+    color: ORANGE
+  }, "// AGENCY VS. GIG APP"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      marginTop: 16,
+      fontFamily: "var(--font-display)",
+      fontWeight: 800,
+      fontSize: "clamp(32px,4.4vw,64px)",
+      letterSpacing: "-0.035em",
+      lineHeight: 0.98
+    }
+  }, "A managed bench, ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontStyle: "italic",
+      color: ORANGE
+    }
+  }, "not a marketplace."))), /*#__PURE__*/React.createElement("div", {
+    className: "ba-reveal",
+    style: {
+      border: "1px solid rgba(255,255,255,0.1)",
+      borderRadius: 16,
+      overflow: "hidden",
+      overflowX: "auto"
+    }
+  }, /*#__PURE__*/React.createElement("table", {
+    style: {
+      width: "100%",
+      borderCollapse: "collapse",
+      minWidth: 640
+    }
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", {
+    style: {
+      background: "#12141A"
+    }
+  }, ["", "GIG APP / MARKETPLACE", "IGNITE"].map((h, i) => /*#__PURE__*/React.createElement("th", {
+    key: i,
+    style: {
+      textAlign: "left",
+      padding: "16px 20px",
+      fontFamily: "var(--font-mono)",
+      fontSize: 11,
+      letterSpacing: "0.2em",
+      fontWeight: 500,
+      color: i === 2 ? "#D6F35F" : "rgba(255,255,255,0.5)"
+    }
+  }, h)))), /*#__PURE__*/React.createElement("tbody", null, rows.map(([a, b, c]) => /*#__PURE__*/React.createElement("tr", {
+    key: a,
+    style: {
+      borderTop: "1px solid rgba(255,255,255,0.08)"
+    }
+  }, /*#__PURE__*/React.createElement("th", {
+    scope: "row",
+    style: {
+      textAlign: "left",
+      padding: "18px 20px",
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: 17,
+      width: "22%"
+    }
+  }, a), /*#__PURE__*/React.createElement("td", {
+    style: {
+      padding: "18px 20px",
+      fontSize: 15.5,
+      color: "rgba(255,255,255,0.55)"
+    }
+  }, b), /*#__PURE__*/React.createElement("td", {
+    style: {
+      padding: "18px 20px",
+      fontSize: 15.5,
+      color: "#fff",
+      background: "rgba(214,243,95,0.05)"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "#D6F35F",
+      fontWeight: 700,
+      marginRight: 8
+    }
+  }, "\u2713"), c))))))));
+};
+
+/* ---------- HOW IT WORKS ---------- */
+const How = () => {
+  const steps = [["01", "BRIEF", "Tell us the program", "Markets, dates, roles and the brand story. A real human replies with a plan and quote within 24 hours."], ["02", "CAST", "We match the crew", "Ambassadors cast from the local bench and matched to your audience, with bilingual crews on request."], ["03", "TRAIN", "They learn your brand", "Product training and talking points before the first shift, so the crew sounds like your own team."], ["04", "RUN + REPORT", "Every shift, verified", "GPS check-in, live counts and photos in Spark, with a recap within hours of the last shift."]];
+  return /*#__PURE__*/React.createElement("section", {
     style: {
       background: "#0C0E13",
       color: "#fff",
@@ -771,11 +724,11 @@ const How = () => {
     className: "ba-reveal",
     style: {
       maxWidth: 780,
-      marginBottom: 48
+      marginBottom: 44
     }
   }, /*#__PURE__*/React.createElement(Mono, {
     color: ORANGE
-  }, "// FROM BRIEF TO RECAP"), /*#__PURE__*/React.createElement("h2", {
+  }, "// HOW IT WORKS"), /*#__PURE__*/React.createElement("h2", {
     style: {
       marginTop: 16,
       fontFamily: "var(--font-display)",
@@ -784,46 +737,53 @@ const How = () => {
       letterSpacing: "-0.035em",
       lineHeight: 0.98
     }
-  }, "How it runs.")), /*#__PURE__*/React.createElement("div", {
-    className: "ba-2col",
+  }, "From brief to ", /*#__PURE__*/React.createElement("span", {
     style: {
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit,minmax(210px,1fr))",
-      gap: 14
+      fontStyle: "italic",
+      color: ORANGE
     }
-  }, steps.map(([n, t, d], i) => /*#__PURE__*/React.createElement("div", {
+  }, "badged crew."))), /*#__PURE__*/React.createElement("div", {
+    className: "ba-reveal ba-how"
+  }, steps.map(([n, k, t, d]) => /*#__PURE__*/React.createElement("div", {
     key: n,
-    className: "ba-reveal",
     style: {
-      padding: "26px 24px",
-      background: "rgba(255,255,255,0.04)",
-      border: "1px solid rgba(255,255,255,0.1)",
-      borderRadius: 14,
-      transitionDelay: i * 55 + "ms"
+      padding: "28px 24px",
+      borderRadius: 16,
+      background: "#12141A",
+      border: "1px solid rgba(255,255,255,0.08)"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: "var(--font-mono)",
-      fontSize: 13,
-      fontWeight: 700,
-      color: ORANGE
+      fontFamily: "var(--font-display)",
+      fontWeight: 900,
+      fontSize: 48,
+      lineHeight: 1,
+      color: "transparent",
+      WebkitTextStroke: "1.5px rgba(214,243,95,.55)"
     }
   }, n), /*#__PURE__*/React.createElement("div", {
     style: {
-      marginTop: 12,
+      marginTop: 14,
+      fontFamily: "var(--font-mono)",
+      fontSize: 10.5,
+      letterSpacing: "0.22em",
+      color: "#D6F35F"
+    }
+  }, k), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      marginTop: 8,
       fontFamily: "var(--font-display)",
-      fontWeight: 800,
-      fontSize: 23,
-      letterSpacing: "-0.02em"
+      fontWeight: 700,
+      fontSize: 21
     }
   }, t), /*#__PURE__*/React.createElement("p", {
     style: {
-      marginTop: 9,
-      fontSize: 14,
+      marginTop: 8,
+      fontSize: 15,
       lineHeight: 1.55,
-      color: "rgba(255,255,255,0.68)"
+      color: "rgba(255,255,255,0.65)"
     }
-  }, d))))));
+  }, d)))), /*#__PURE__*/React.createElement("style", null, ".ba-how{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}@media (max-width:900px){.ba-how{grid-template-columns:1fr 1fr}}@media (max-width:560px){.ba-how{grid-template-columns:1fr}}")));
 };
 
 /* ---------- SPARK ---------- */
@@ -927,7 +887,7 @@ const Spark = () => {
       lineHeight: 1.6,
       color: "rgba(255,255,255,0.74)"
     }
-  }, "Spark is our proprietary field platform. GPS-verified clock-in, photo capture, and a same-day recap on every ambassador, every shift \u2014 the accountability layer most agencies just don't have."), /*#__PURE__*/React.createElement("div", {
+  }, "Spark is our proprietary field platform. GPS-verified clock-in, photo capture, and a same-day recap on every ambassador, every shift. It's the accountability layer most agencies just don't have."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 26,
       display: "flex",
@@ -1186,7 +1146,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 620,
     fontWeight: 500
   }
-}, "Book a 30-minute call. We'll scope coverage, timing, and budget \u2014 and have briefed ambassadors ready to deploy."), /*#__PURE__*/React.createElement("div", {
+}, "Book a 30-minute call. We'll scope coverage, timing, and budget, and have briefed ambassadors ready to deploy."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 38,
     display: "flex",

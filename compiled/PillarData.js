@@ -13,7 +13,7 @@ const PILLAR_TOPICS = {
     eyebrow: "TOPIC CLUSTER · FIELD MARKETING",
     hero: "The complete field marketing playbook.",
     accGlow: "playbook",
-    lede: "Field marketing is the discipline of executing brand programs in the physical world — sampling, retail demos, sponsorship activation, mobile tours, and distributor education. Everything we run sits inside it.",
+    lede: "Field marketing is the discipline of executing brand programs in the physical world: sampling, retail demos, sponsorship activation, mobile tours, and distributor education. Everything we run sits inside it.",
     sections: [{
       h: "Services we run",
       kind: "services",
@@ -38,7 +38,7 @@ const PILLAR_TOPICS = {
     eyebrow: "TOPIC CLUSTER · EXPERIENTIAL",
     hero: "Face-to-face brand activation, end-to-end.",
     accGlow: "Face-to-face",
-    lede: "Experiential marketing is the in-person discipline — pop-ups, festivals, sponsorship activations, brand houses, retail trial. The moment the consumer touches the product. Everything we build, staff, and measure here.",
+    lede: "Experiential marketing is the in-person discipline: pop-ups, festivals, sponsorship activations, brand houses, retail trial. The moment the consumer touches the product. Everything we build, staff, and measure here.",
     sections: [{
       h: "Services in this cluster",
       kind: "services",
@@ -63,7 +63,7 @@ const PILLAR_TOPICS = {
     eyebrow: "TOPIC CLUSTER · SAMPLING",
     hero: "The trial-driving discipline, run with GPS-verified counts.",
     accGlow: "trial-driving",
-    lede: "Product sampling — in-store, on-premise, festival, campus. The discipline that turns product trial into purchase. Every can, taste, sample logged in Spark with location, timestamp, and (where retail permits) conversion data.",
+    lede: "Product sampling: in-store, on-premise, festival, campus. The discipline that turns product trial into purchase. Every can, taste, sample logged in Spark with location, timestamp, and (where retail permits) conversion data.",
     sections: [{
       h: "Sampling services",
       kind: "services",
@@ -88,7 +88,7 @@ const PILLAR_TOPICS = {
     eyebrow: "TOPIC CLUSTER · TRADE SHOWS",
     hero: "Booth crew that hits qualified-lead targets.",
     accGlow: "qualified",
-    lede: "Trade show staffing — booth attendants, demo leads, lead capture, hospitality. The discipline that turns three days of conference traffic into a clean CRM list for sales. Bilingual where useful, badge-scan ready, lead-quality scrubbed end of day.",
+    lede: "Trade show staffing: booth attendants, demo leads, lead capture, hospitality. The discipline that turns three days of conference traffic into a clean CRM list for sales. Bilingual where useful, badge-scan ready, lead-quality scrubbed end of day.",
     sections: [{
       h: "Trade show services",
       kind: "services",
@@ -113,7 +113,7 @@ const PILLAR_TOPICS = {
     eyebrow: "TOPIC CLUSTER · MOBILE TOURS",
     hero: "Multi-market activation on wheels.",
     accGlow: "Multi-market",
-    lede: "Mobile marketing tours — sprinter vans, ad trucks, branded vehicles, sampling tours. The discipline of taking a brand activation from market to market without losing the experience between cities. We route, staff, fuel, and recap them.",
+    lede: "Mobile marketing tours: sprinter vans, ad trucks, branded vehicles, sampling tours. The discipline of taking a brand activation from market to market without losing the experience between cities. We route, staff, fuel, and recap them.",
     sections: [{
       h: "Mobile tour services",
       kind: "services",

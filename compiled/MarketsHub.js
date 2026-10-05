@@ -14,18 +14,18 @@ const {
    Every city chip in a region inherits its region's hue (via --chip). */
 const REGION_HUES = window.REGION_HUES || {
   "northeast": "#5E8B7E",
-  // slate green — temperate deciduous
+  // slate green, temperate deciduous
   "southeast": "#E39A4C",
-  // warm amber — humid subtropical
+  // warm amber, humid subtropical
   "midwest": "#4F86C6",
-  // lake blue — Great Lakes
+  // lake blue, Great Lakes
   "southwest": "#CE6B3E",
-  // desert terracotta — arid
+  // desert terracotta, arid
   "west": "#E7B84A",
-  // coastal gold — Mediterranean
+  // coastal gold, Mediterranean
   "pacific-northwest": "#3E8060",
-  // evergreen — temperate rainforest
-  "mountain": "#6C6FB2" // alpine slate-violet — high country
+  // evergreen, temperate rainforest
+  "mountain": "#6C6FB2" // alpine slate-violet, high country
 };
 
 /* ---------- Hero band ---------- */
@@ -198,7 +198,7 @@ const MarketsHero = ({
     animation: "mhNationalShimmer 4s linear infinite",
     display: "inline-block"
   }
-}, "national"), " \u2014 all 50 states and 200+ named metros. From one-market pop-ups to nationwide rollouts: staffing, sampling, experiential, mobile tours, and trade-show programs, wherever the brief lands."), /*#__PURE__*/React.createElement("div", {
+}, "national"), ": all 50 states and 200+ named metros. From one-market pop-ups to nationwide rollouts: staffing, sampling, experiential, mobile tours, and trade-show programs, wherever the brief lands."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 64,
     display: "grid",
@@ -644,7 +644,7 @@ const MarketsHub = ({
     type: "text",
     value: filter,
     onChange: e => setFilter(e.target.value),
-    placeholder: "City, state, or slug \u2014 try \u2018TX\u2019, \u2018miami\u2019, \u2018festival\u2019\u2026",
+    placeholder: "City, state, or slug. Try \u2018TX\u2019, \u2018miami\u2019, \u2018festival\u2019\u2026",
     "aria-label": "Filter markets",
     style: {
       flex: 1,
@@ -697,7 +697,7 @@ const MarketsHub = ({
     style: {
       color: "var(--ignite-500)"
     }
-  }, filter), "\u201D \u2014 we may still cover it. ", /*#__PURE__*/React.createElement("a", {
+  }, filter), "\u201D. We may still cover it. ", /*#__PURE__*/React.createElement("a", {
     href: rel + "https://www.igniteproductions.co/contact",
     style: {
       color: "var(--ignite-500)"
@@ -754,7 +754,7 @@ const MarketsHub = ({
       color: "var(--fg-2)",
       maxWidth: 620
     }
-  }, "We staff 200+ metros and surge into the rest. If your market isn't listed, send us the brief \u2014 we'll come back inside 48 hours with a local crew, permits, and a quote."), /*#__PURE__*/React.createElement("div", {
+  }, "We staff 200+ metros and surge into the rest. If your market isn't listed, send us the brief and we'll come back inside 48 hours with a local crew, permits, and a quote."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 32,
       display: "flex",

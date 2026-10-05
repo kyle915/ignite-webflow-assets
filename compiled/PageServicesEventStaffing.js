@@ -186,17 +186,29 @@ const Hero = () => {
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 900,
-      fontSize: "clamp(48px,6.6vw,112px)",
-      letterSpacing: "-0.05em",
-      lineHeight: 0.88,
-      animationDelay: "120ms"
+      fontSize: "clamp(40px,5.2vw,88px)",
+      letterSpacing: "-0.045em",
+      lineHeight: 0.98,
+      animationDelay: "120ms",
+      textWrap: "balance"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "block"
     }
   }, "Staffed in ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
-      color: AMBER
+      color: AMBER,
+      whiteSpace: "nowrap",
+      paddingRight: "0.06em"
     }
-  }, "48 hours."), /*#__PURE__*/React.createElement("br", null), "Briefed before they arrive."), /*#__PURE__*/React.createElement("p", {
+  }, "48 hours.")), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "block",
+      marginTop: "0.06em"
+    }
+  }, "Briefed before they arrive.")), /*#__PURE__*/React.createElement("p", {
     className: "es-rise",
     style: {
       marginTop: 26,
@@ -212,7 +224,7 @@ const Hero = () => {
     style: {
       color: "#fff"
     }
-  }, "257,000+ vetted ambassadors"), " \u2014 captains, demo specialists, street teams, bilingual staff \u2014 across all 50 states. Rush-ready, brand-briefed, GPS-verified on every shift."), /*#__PURE__*/React.createElement("div", {
+  }, "257,000+ vetted ambassadors"), " (captains, demo specialists, street teams, bilingual staff) across all 50 states. Rush-ready, brand-briefed, GPS-verified on every shift."), /*#__PURE__*/React.createElement("div", {
     className: "es-rise",
     style: {
       marginTop: 32,
@@ -237,7 +249,7 @@ const Hero = () => {
       textDecoration: "none",
       boxShadow: `0 12px 40px ${AMBER}44`
     }
-  }, "Request staff now ", /*#__PURE__*/React.createElement("span", {
+  }, "Request a quote ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-mono)"
     }
@@ -471,7 +483,7 @@ const WhatIs = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1.6,
     color: "rgba(255,255,255,0.82)"
   }
-}, "An event staffing agency recruits, vets, trains, schedules, and manages the people who work brand events \u2014 ambassadors, demo specialists, street teams, trade-show hosts, and field captains. ", /*#__PURE__*/React.createElement("b", {
+}, "An event staffing agency recruits, vets, trains, schedules, and manages the people who work brand events: ambassadors, demo specialists, street teams, trade-show hosts, and field captains. ", /*#__PURE__*/React.createElement("b", {
   style: {
     color: "#fff"
   }
@@ -486,7 +498,7 @@ const WhatIs = () => /*#__PURE__*/React.createElement("section", {
 }, "48-hour rush turnaround"), " and GPS-verified proof on every shift. Veteran-owned and CPG-built."))));
 
 /* ---------- THE CREW ---------- */
-const CREW = [["Brand Ambassadors", "Face of the brand — sampling, engagement, conversion. Trained on your product and the ask.", AMBER], ["Demo Specialists", "In-store and retail demo pros who drive trial and move units at the shelf.", "#5ED4A8"], ["Street Teams", "High-energy guerrilla crews for hand-to-hand sampling and density-driven reach.", ORANGE], ["Trade-Show Hosts", "Booth staff trained on lead capture, demos, and qualifying foot traffic.", AMBER], ["Field Captains", "On-site leads who run the shift, manage the team, and own the recap.", "#5ED4A8"], ["Bilingual Staff", "Spanish-language and multicultural ambassadors, requestable per market.", ORANGE]];
+const CREW = [["Brand Ambassadors", "Face of the brand: sampling, engagement, conversion. Trained on your product and the ask.", AMBER], ["Demo Specialists", "In-store and retail demo pros who drive trial and move units at the shelf.", "#5ED4A8"], ["Street Teams", "High-energy guerrilla crews for hand-to-hand sampling and density-driven reach.", ORANGE], ["Trade-Show Hosts", "Booth staff trained on lead capture, demos, and qualifying foot traffic.", AMBER], ["Field Captains", "On-site leads who run the shift, manage the team, and own the recap.", "#5ED4A8"], ["Bilingual Staff", "Spanish-language and multicultural ambassadors, requestable per market.", ORANGE]];
 const Crew = () => /*#__PURE__*/React.createElement("section", {
   id: "crew",
   style: {
@@ -659,14 +671,24 @@ const Versus = () => /*#__PURE__*/React.createElement("section", {
     fontWeight: 800,
     fontSize: "clamp(32px,4.4vw,64px)",
     letterSpacing: "-0.035em",
-    lineHeight: 0.98
+    lineHeight: 1.02
   }
-}, "Covered, not ", /*#__PURE__*/React.createElement("span", {
+}, /*#__PURE__*/React.createElement("span", {
+  style: {
+    display: "block"
+  }
+}, "Covered."), /*#__PURE__*/React.createElement("span", {
+  style: {
+    display: "block"
+  }
+}, "Not ", /*#__PURE__*/React.createElement("span", {
   style: {
     fontStyle: "italic",
-    color: AMBER
+    color: AMBER,
+    whiteSpace: "nowrap",
+    paddingRight: "0.06em"
   }
-}, "crossed-fingers."))), /*#__PURE__*/React.createElement("div", {
+}, "crossed fingers.")))), /*#__PURE__*/React.createElement("div", {
   className: "es-vs",
   style: {
     display: "grid",
@@ -720,7 +742,7 @@ const Versus = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(Mono, {
   color: AMBER
-}, "IGNITE \u2014 MANAGED STAFFING"), /*#__PURE__*/React.createElement("div", {
+}, "IGNITE | MANAGED STAFFING"), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 16,
     display: "flex",
@@ -849,7 +871,7 @@ const Spark = () => {
       lineHeight: 1.6,
       color: "rgba(255,255,255,0.74)"
     }
-  }, "Spark is our proprietary field platform: GPS clock-in/out, photo capture, time-stamped sample counts, and a live shift dashboard. You see each shift as it happens \u2014 never a \"were they actually there?\" question mark."), /*#__PURE__*/React.createElement("div", {
+  }, "Spark is our proprietary field platform: GPS clock-in/out, photo capture, time-stamped sample counts, and a live shift dashboard. You see each shift as it happens, never a \"were they actually there?\" question mark."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 26,
       display: "flex",
@@ -1010,7 +1032,7 @@ const Spark = () => {
     }
   }, l)))))))));
 };
-const FAQS = [["How large is your ambassador roster?", "257,000+ vetted brand ambassadors across all 50 states, with depth in every major and secondary market."], ["How fast is rush staffing?", "48-hour turnaround for most markets. A short scoping call confirms coverage and timing."], ["Are ambassadors trained on our brand?", "Yes — pre-shift brand training, talking points, product handling, and compliance certs (TIPS, food handler), delivered to every phone via Spark."], ["How are shifts verified?", "GPS check-in/out, photo verification, time-stamped sample counts, and a live shift dashboard."], ["Do you have bilingual staff?", "Yes — Spanish-language and multicultural ambassadors, vetted at hire and requestable per shift."]];
+const FAQS = [["How large is your ambassador roster?", "257,000+ vetted brand ambassadors across all 50 states, with depth in every major and secondary market."], ["How fast is rush staffing?", "48-hour turnaround for most markets. A short scoping call confirms coverage and timing."], ["Are ambassadors trained on our brand?", "Yes. Pre-shift brand training, talking points, product handling, and compliance certs (TIPS, food handler), delivered to every phone via Spark."], ["How are shifts verified?", "GPS check-in/out, photo verification, time-stamped sample counts, and a live shift dashboard."], ["Do you have bilingual staff?", "Yes. Spanish-language and multicultural ambassadors, vetted at hire and requestable per shift."]];
 const Faq = () => {
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
@@ -1120,7 +1142,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 620,
     fontWeight: 500
   }
-}, "Markets, dates, headcount, the goal. We'll confirm coverage and have briefed, badged staff ready \u2014 often within 48 hours."), /*#__PURE__*/React.createElement("div", {
+}, "Markets, dates, headcount, the goal. We'll confirm coverage and have briefed, badged staff ready, often within 48 hours."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 38,
     display: "flex",
@@ -1139,7 +1161,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     fontSize: 17,
     textDecoration: "none"
   }
-}, "Request staff now \u2192"), /*#__PURE__*/React.createElement("a", {
+}, "Request a quote \u2192"), /*#__PURE__*/React.createElement("a", {
   href: "/brand-ambassador-agency",
   style: {
     padding: "20px 28px",

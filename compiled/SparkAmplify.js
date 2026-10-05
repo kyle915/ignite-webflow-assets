@@ -39,7 +39,7 @@ const SparkAmpStyles = () => /*#__PURE__*/React.createElement("style", null, `
    01 · THE WEDGE — software vs. software + the crew
    ============================================================ */
 const SparkVsSoftware = () => {
-  const rows = [["Who runs the shift?", "You hire it. Or your agency does.", "257,000+ vetted ambassadors, ours"], ["Coverage gaps", "You backfill the market yourself", "We staff the market — all 50 states"], ["Cancellations", "Your problem at 6am", "Our captain re-staffs before you wake up"], ["Training on your brand", "A PDF you upload", "Briefed, rehearsed, certified per state"], ["Data quality", "Only as good as who you hired", "GPS + photo verified by our own crew"], ["One throat to choke", "Software vendor · staffing vendor · broker", "One PM. One platform. One invoice."]];
+  const rows = [["Who runs the shift?", "You hire it. Or your agency does.", "257,000+ vetted ambassadors, ours"], ["Coverage gaps", "You backfill the market yourself", "We staff the market: all 50 states"], ["Cancellations", "Your problem at 6am", "Our captain re-staffs before you wake up"], ["Training on your brand", "A PDF you upload", "Briefed, rehearsed, certified per state"], ["Data quality", "Only as good as who you hired", "GPS + photo verified by our own crew"], ["One throat to choke", "Software vendor · staffing vendor · broker", "One PM. One platform. One invoice."]];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: "var(--ink-000)",
@@ -90,7 +90,7 @@ const SparkVsSoftware = () => {
       color: "var(--fg-2)",
       maxWidth: 660
     }
-  }, "Field execution software is only as good as the people carrying the phone. Spark ships with the bench \u2014 so the data is clean because ", /*#__PURE__*/React.createElement("b", {
+  }, "Field execution software is only as good as the people carrying the phone. Spark ships with the bench, so the data is clean because ", /*#__PURE__*/React.createElement("b", {
     style: {
       color: "var(--fg-1)"
     }
@@ -232,7 +232,7 @@ const SparkGamified = () => {
       color: "var(--fg-2)",
       maxWidth: 640
     }
-  }, "Spark is gamified for the field. Ambassadors earn on verified hand-offs, photo quality, and on-time check-in \u2014 then climb tiers that unlock better programs. Your program gets the crew that's ", /*#__PURE__*/React.createElement("b", {
+  }, "Spark is gamified for the field. Ambassadors earn on verified hand-offs, photo quality, and on-time check-in, then climb tiers that unlock better programs. Your program gets the crew that's ", /*#__PURE__*/React.createElement("b", {
     style: {
       color: "var(--fg-1)"
     }
@@ -457,7 +457,7 @@ const SparkRoles = () => {
       color: "var(--fg-2)",
       maxWidth: 620
     }
-  }, "Everybody in the chain needs a different cut of the same activation. Spark serves the view each one actually asks for \u2014 nobody's rebuilding a deck to answer a question.")), /*#__PURE__*/React.createElement("div", {
+  }, "Everybody in the chain needs a different cut of the same activation. Spark serves the view each one actually asks for. Nobody's rebuilding a deck to answer a question.")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: 10,
@@ -569,7 +569,7 @@ const SparkIntegrations = () => {
       color: "var(--fg-2)",
       maxWidth: 620
     }
-  }, "Field data locked inside a vendor portal is worth nothing at the buyer meeting. Everything Spark captures gets out \u2014 in the format the person asking for it actually uses.")), /*#__PURE__*/React.createElement("div", {
+  }, "Field data locked inside a vendor portal is worth nothing at the buyer meeting. Everything Spark captures gets out, in the format the person asking for it actually uses.")), /*#__PURE__*/React.createElement("div", {
     className: "samp-3col",
     style: {
       display: "grid",

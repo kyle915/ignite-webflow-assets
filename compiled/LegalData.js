@@ -128,7 +128,7 @@ window.LEGAL_DOCS = {
         text: "We may share personal information with the following categories of recipients:"
       }, {
         type: "ul",
-        items: ["**Cloud hosting and infrastructure providers** — for Platform operation and data storage.", "**Payroll and workforce management systems** — for compensation processing.", "**Analytics providers** — for Platform performance monitoring and improvement.", "**Professional advisors** — legal counsel, accountants, and consultants as necessary.", "**Clients** — activation-related performance data and reporting as required by service agreements.", "**Government authorities** — if required by law, regulation, legal process, or enforceable governmental request."]
+        items: ["**Cloud hosting and infrastructure providers**: for Platform operation and data storage.", "**Payroll and workforce management systems**: for compensation processing.", "**Analytics providers**: for Platform performance monitoring and improvement.", "**Professional advisors**: legal counsel, accountants, and consultants as necessary.", "**Clients**: activation-related performance data and reporting as required by service agreements.", "**Government authorities**: if required by law, regulation, legal process, or enforceable governmental request."]
       }, {
         type: "p",
         text: "All third-party service providers are contractually obligated to protect personal information. **Ignite does not sell personal information.**"
@@ -287,7 +287,7 @@ window.LEGAL_DOCS = {
     titleA: "Terms of",
     titleB: "Service.",
     effective: "Feb 23, 2026",
-    lede: "Legally binding agreement governing your access to and use of the Spark by Ignite platform — including all associated mobile applications, web applications, dashboards, APIs, and related services. By using the Platform, you agree to these terms.",
+    lede: "Legally binding agreement governing your access to and use of the Spark by Ignite platform, including all associated mobile applications, web applications, dashboards, APIs, and related services. By using the Platform, you agree to these terms.",
     contact: [["Company", "Ignite Productions LLC"], ["Email", "events@igniteproductions.co"], ["Phone", "775.406.0435"], ["Web", "www.igniteproductions.co"]],
     sections: [{
       id: "introduction",
@@ -324,7 +324,7 @@ window.LEGAL_DOCS = {
         text: "Spark by Ignite is a proprietary field marketing command center designed to streamline event marketing operations. The Platform provides tools for:"
       }, {
         type: "ul",
-        items: ["**Activation Management** — submitting, tracking, and managing demo and event requests, scheduling, staffing, and approvals.", "**Real-Time Reporting** — live dashboards with KPIs, conversion metrics, photo/video uploads, and event-level performance data.", "**Time & Attendance** — GPS-verified clock-in/clock-out functionality for activation verification and project completion.", "**Analytics & Insights** — market-by-market performance comparisons, trendlines, consumer feedback, and AI-powered insights.", "**Auto-Generated Recaps** — instant, shareable event summaries with photo galleries and KPI breakdowns.", "**Distributor & Sales Coordination** — request workflows eliminating email chains and operational bottlenecks."]
+        items: ["**Activation Management**: submitting, tracking, and managing demo and event requests, scheduling, staffing, and approvals.", "**Real-Time Reporting**: live dashboards with KPIs, conversion metrics, photo/video uploads, and event-level performance data.", "**Time & Attendance**: GPS-verified clock-in/clock-out functionality for activation verification and project completion.", "**Analytics & Insights**: market-by-market performance comparisons, trendlines, consumer feedback, and AI-powered insights.", "**Auto-Generated Recaps**: instant, shareable event summaries with photo galleries and KPI breakdowns.", "**Distributor & Sales Coordination**: request workflows eliminating email chains and operational bottlenecks."]
       }, {
         type: "p",
         text: "Spark is a technology platform. Ignite does not guarantee business results, sales outcomes, campaign performance, or conversion metrics. All insights and analytics are provided for informational purposes."
@@ -867,7 +867,7 @@ window.LEGAL_DOCS = {
     titleA: "Accessibility",
     titleB: "Statement.",
     effective: "May 11, 2026",
-    lede: "Ignite Productions LLC is committed to making its website, the Spark by Ignite platform, and related digital experiences usable by the widest possible audience — including people with disabilities. This statement describes the standards we target, what we have done, where we know we fall short, and how to reach us if you hit a barrier.",
+    lede: "Ignite Productions LLC is committed to making its website, the Spark by Ignite platform, and related digital experiences usable by the widest possible audience, including people with disabilities. This statement describes the standards we target, what we have done, where we know we fall short, and how to reach us if you hit a barrier.",
     contact: [["Company", "Ignite Productions LLC"], ["Accessibility", "events@igniteproductions.co"], ["Phone", "775.406.0435"], ["Web", "www.igniteproductions.co"]],
     sections: [{
       id: "commitment",
@@ -888,7 +888,7 @@ window.LEGAL_DOCS = {
       }, {
         type: "callout",
         label: "TARGET STANDARD",
-        text: "**WCAG 2.1, Level AA** — applied to igniteproductions.co, the Spark by Ignite web and mobile platform, and customer-facing dashboards and reports."
+        text: "**WCAG 2.1, Level AA**, applied to igniteproductions.co, the Spark by Ignite web and mobile platform, and customer-facing dashboards and reports."
       }, {
         type: "p",
         text: "We design and develop with the four WCAG principles in mind: perceivable, operable, understandable, and robust. Where reasonably practicable, we also adopt WCAG 2.2 AA criteria as they become stable and supported by assistive technology."
@@ -901,7 +901,7 @@ window.LEGAL_DOCS = {
         text: "Our current accessibility practices include:"
       }, {
         type: "ul",
-        items: ["Building with semantic HTML, ARIA where appropriate, and meaningful headings and landmarks", "Designing for keyboard-only navigation — every interactive control is reachable and operable without a mouse", "Maintaining sufficient color contrast for body text and interactive elements against the design system's dark and light surfaces", "Providing visible focus indicators on all focusable controls", "Writing alternative text for meaningful imagery and marking decorative imagery as such", "Captioning or providing transcripts for video content where reasonably practicable", "Supporting browser-level text resizing up to 200% without loss of content or functionality", "Honoring user preferences for reduced motion where they are exposed by the operating system", "Reviewing accessibility during design, code review, and pre-release QA"]
+        items: ["Building with semantic HTML, ARIA where appropriate, and meaningful headings and landmarks", "Designing for keyboard-only navigation: every interactive control is reachable and operable without a mouse", "Maintaining sufficient color contrast for body text and interactive elements against the design system's dark and light surfaces", "Providing visible focus indicators on all focusable controls", "Writing alternative text for meaningful imagery and marking decorative imagery as such", "Captioning or providing transcripts for video content where reasonably practicable", "Supporting browser-level text resizing up to 200% without loss of content or functionality", "Honoring user preferences for reduced motion where they are exposed by the operating system", "Reviewing accessibility during design, code review, and pre-release QA"]
       }]
     }, {
       id: "known-limitations",
@@ -914,7 +914,7 @@ window.LEGAL_DOCS = {
         items: ["**Third-party embeds.** Some embedded content (e.g., video players, mapping providers, analytics widgets) is loaded from third-party services whose accessibility we do not directly control. We choose vendors that publish their own accessibility documentation where possible.", "**Legacy proof-of-performance media.** Photo and video assets uploaded by field staff prior to our captioning workflow may not have alt text or captions attached. New uploads are prompted for descriptions; older recap archives are being backfilled.", "**Data-dense dashboards.** Some real-time Spark dashboards include map visualizations and dense tables that may be difficult to consume with a screen reader. We provide accessible tabular equivalents and CSV export for these views, and continue to improve native screen-reader support.", "**PDF documents.** Some downloadable PDFs (such as case studies, recaps, or partnership materials) may not yet be fully tagged for screen readers. If you need an accessible version of a specific document, contact us and we will provide one.", "**Animations & motion.** Marketing pages on igniteproductions.co include scroll-linked animations and decorative motion. These respect the `prefers-reduced-motion` system setting where supported, but a small number of legacy effects may still play.", "**Custom typography.** A small number of display headings use custom letterforms (e.g., stencil-style brand marks). These are presented as text where reasonably practicable, but a few are rendered as images and may rely on alt text rather than live text."]
       }, {
         type: "p",
-        text: "This list is not exhaustive. If you encounter an accessibility barrier that is not listed here, please tell us — see **Feedback & contact** below."
+        text: "This list is not exhaustive. If you encounter an accessibility barrier that is not listed here, please tell us (see **Feedback & contact** below)."
       }]
     }, {
       id: "assistive-tech",
@@ -956,7 +956,7 @@ window.LEGAL_DOCS = {
         items: ["The URL of the page or screen where you encountered the barrier", "A description of the problem and what you were trying to do", "Your browser, operating system, and any assistive technology you were using (if comfortable sharing)", "How you'd like us to follow up with you"]
       }, {
         type: "kv",
-        rows: [["Company", "Ignite Productions LLC"], ["Email", "events@igniteproductions.co"], ["Subject line", "Accessibility — [page or feature]"], ["Phone", "775.406.0435"], ["Website", "www.igniteproductions.co"]]
+        rows: [["Company", "Ignite Productions LLC"], ["Email", "events@igniteproductions.co"], ["Subject line", "Accessibility: [page or feature]"], ["Phone", "775.406.0435"], ["Website", "www.igniteproductions.co"]]
       }]
     }, {
       id: "formal-complaints",
@@ -986,7 +986,7 @@ window.LEGAL_DOCS = {
         text: "This statement is reviewed and updated on a regular cadence and after material changes to the website or the Spark platform."
       }, {
         type: "kv",
-        rows: [["Last reviewed", "May 11, 2026"], ["Standard", "WCAG 2.1, Level AA"], ["Scope", "igniteproductions.co, Spark by Ignite web & mobile, customer-facing dashboards & reports"], ["Owner", "Ignite Productions LLC — Operations"]]
+        rows: [["Last reviewed", "May 11, 2026"], ["Standard", "WCAG 2.1, Level AA"], ["Scope", "igniteproductions.co, Spark by Ignite web & mobile, customer-facing dashboards & reports"], ["Owner", "Ignite Productions LLC, Operations"]]
       }]
     }]
   }

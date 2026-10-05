@@ -38,7 +38,7 @@ if (typeof document !== "undefined" && !document.getElementById("about-kf")) {
 const ABOUT_VALUES = [{
   n: "01",
   t: "Show up ready",
-  d: "We prep, brief, and rehearse. Our ambassadors are trained on your brand — not reading a script off their phone."
+  d: "We prep, brief, and rehearse. Our ambassadors are trained on your brand, not reading a script off their phone."
 }, {
   n: "02",
   t: "Prove it. Don't pitch it.",
@@ -63,7 +63,7 @@ const ABOUT_LEADERS = [{
   role: "Director, Experiential Sales",
   img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-baesha.jpg",
   resKey: "r_assets_team_baesha_png",
-  bio: "Runs the experiential pipeline end-to-end — from scoping the brief to deploying the team in market."
+  bio: "Runs the experiential pipeline end-to-end, from scoping the brief to deploying the team in market."
 }, {
   name: "Junior",
   role: "Director of Sales",
@@ -81,13 +81,13 @@ const ABOUT_LEADERS = [{
   role: "Creative Director",
   img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-taylor.jpg",
   resKey: "r_assets_team_taylor_jpg",
-  bio: "Owns the look and feel of every activation — from booth concept to ambassador wardrobe to recap design."
+  bio: "Owns the look and feel of every activation, from booth concept to ambassador wardrobe to recap design."
 }, {
   name: "Keis",
   role: "Project Coordinator",
   img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-keis.png",
   resKey: "r_assets_team_keis_png",
-  bio: "The operational backbone. Schedules, staffing, logistics — the work that makes the work happen."
+  bio: "The operational backbone. Schedules, staffing, logistics: the work that makes the work happen."
 }, {
   name: "Nena",
   role: "Data Analyst",
@@ -105,18 +105,18 @@ const ABOUT_LEADERS = [{
   role: "Sr. Account Coordinator",
   img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-myriant.webp",
   resKey: "r_assets_team_myriant_webp",
-  bio: "Coordinates the moving pieces — staffing, assets, vendors — so the field team can focus on the consumer."
+  bio: "Coordinates the moving pieces (staffing, assets, vendors) so the field team can focus on the consumer."
 }, {
   name: "Harris",
   role: "Account & Activation Manager",
   img: "https://kyle915.github.io/ignite-webflow-assets/assets/team-harris.jpg",
   resKey: "r_assets_team_harris_webp",
-  bio: "Runs accounts and activations end to end — from kickoff brief through live execution on the ground."
+  bio: "Runs accounts and activations end to end, from kickoff brief through live execution on the ground."
 }];
 const ABOUT_TIMELINE = [{
   y: "2018",
   t: "Founded",
-  d: "Kyle launches Ignite Productions — CPG-focused, veteran-operated."
+  d: "Kyle launches Ignite Productions: CPG-focused, veteran-operated."
 }, {
   y: "2020",
   t: "VOSB Certified",
@@ -415,7 +415,7 @@ const AboutHero = () => {
     style: {
       color: "var(--fg-1)"
     }
-  }, "veteran-owned brand activation agency"), " built on a different model: a senior, hands-on core team running a 257,000-person ambassador network \u2014 with the tech to prove every single activation worked."), /*#__PURE__*/React.createElement("div", {
+  }, "veteran-owned brand activation agency"), " built on a different model: a senior, hands-on core team running a 257,000-person ambassador network, with the tech to prove every single activation worked."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 28,
       display: "flex",
@@ -627,7 +627,7 @@ const MODEL_LAYERS = [{
   label: "BUILD SHOP",
   v: "IN-HOUSE",
   tag: "fab · booths, mobile, retail",
-  d: "Booths, mobile units, retail displays — fabricated by people we know, not a vendor we found."
+  d: "Booths, mobile units, retail displays, fabricated by people we know, not a vendor we found."
 }, {
   idx: "L3",
   label: "SPARK PLATFORM",
@@ -639,7 +639,7 @@ const MODEL_LAYERS = [{
   label: "AMBASSADORS",
   v: "257,000+",
   tag: "network · 50 states, vetted",
-  d: "Background-checked, trained, deployable. Cast by market — never by lottery."
+  d: "Background-checked, trained, deployable. Cast by market, never by lottery."
 }];
 const AboutModel = () => {
   const [active, setActive] = abState(0);
@@ -731,7 +731,7 @@ const AboutModel = () => {
       margin: 0,
       maxWidth: 540
     }
-  }, "Agencies usually outsource one of these four things. We don't. Senior strategy, in-house fabrication, real-time tech, and a vetted national network \u2014 ", /*#__PURE__*/React.createElement("em", {
+  }, "Agencies usually outsource one of these four things. We don't. Senior strategy, in-house fabrication, real-time tech, and a vetted national network, ", /*#__PURE__*/React.createElement("em", {
     style: {
       color: "var(--fg-1)",
       fontStyle: "normal",
@@ -881,7 +881,7 @@ const AboutModel = () => {
       background: "var(--ignite-500)",
       animation: "abTextPulse 2.4s ease-in-out infinite"
     }
-  }), "ALL FOUR LAYERS, IN-HOUSE \u2014 NO SUBCONTRACTED PROMISE-KEEPING"))));
+  }), "ALL FOUR LAYERS, IN-HOUSE: NO SUBCONTRACTED PROMISE-KEEPING"))));
 };
 
 /* ============================================================ FOUNDER */
@@ -1001,7 +1001,7 @@ const AboutFounder = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "var(--fg-1)"
   }
-}, "Kyle Christiansen"), " spent 20+ years in CPG marketing \u2014 leadership stints at ", /*#__PURE__*/React.createElement("strong", {
+}, "Kyle Christiansen"), " spent 20+ years in CPG marketing, with leadership stints at ", /*#__PURE__*/React.createElement("strong", {
   style: {
     color: "var(--fg-1)"
   }
@@ -1159,7 +1159,7 @@ const AboutLeaders = () => /*#__PURE__*/React.createElement("section", {
     }
   }, /*#__PURE__*/React.createElement("img", {
     src: resolved,
-    alt: `${m.name} — ${m.role}`,
+    alt: `${m.name}, ${m.role}`,
     loading: "lazy",
     style: {
       width: "100%",
@@ -1571,7 +1571,7 @@ const AboutCaseSpotlight = () => /*#__PURE__*/React.createElement("section", {
     textTransform: "uppercase",
     marginBottom: 14
   }
-}, "2021 \u2014 PRESENT \xB7 NATIONAL TOUR"), /*#__PURE__*/React.createElement("h2", {
+}, "2021 TO PRESENT \xB7 NATIONAL TOUR"), /*#__PURE__*/React.createElement("h2", {
   style: {
     fontFamily: "var(--font-display)",
     fontWeight: 700,
@@ -1602,7 +1602,7 @@ const AboutCaseSpotlight = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2)",
     maxWidth: 560
   }
-}, "Multi-year national field marketing program for Liquid Death \u2014 sampling, retail demos, festivals, and tour activations across 47 U.S. markets. Every can tracked. Every sample geo-stamped. Every recap delivered before the next event began."), /*#__PURE__*/React.createElement("div", {
+}, "Multi-year national field marketing program for Liquid Death: sampling, retail demos, festivals, and tour activations across 47 U.S. markets. Every can tracked. Every sample geo-stamped. Every recap delivered before the next event began."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 36,
     display: "grid",
@@ -1766,7 +1766,7 @@ const AboutCoverage = () => /*#__PURE__*/React.createElement("section", {
     margin: 0,
     maxWidth: 480
   }
-}, "National coverage with local-market knowledge. Our ambassador network is deep in every major DMA \u2014 and on call in the secondary ones, too.")), /*#__PURE__*/React.createElement("div", {
+}, "National coverage with local-market knowledge. Our ambassador network is deep in every major DMA, and on call in the secondary ones, too.")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "repeat(5, 1fr)",
@@ -1917,7 +1917,7 @@ const AboutVOSB = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement("img", {
   src: window.__resources?.r_assets_vosb_logo_png || "https://kyle915.github.io/ignite-webflow-assets/assets/vosb-logo.png",
-  alt: "VOSB \u2014 Certified Veteran-Owned Small Business",
+  alt: "VOSB: Certified Veteran-Owned Small Business",
   width: "260",
   height: "260",
   style: {
@@ -2227,7 +2227,7 @@ const AboutFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 720,
     margin: "32px auto 0"
   }
-}, "Tell us the brief \u2014 we'll bring the team, the tech, and the receipts."), /*#__PURE__*/React.createElement("div", {
+}, "Tell us the brief. We'll bring the team, the tech, and the receipts."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 44,
     display: "inline-flex",
@@ -2559,7 +2559,7 @@ const AboutSpark = () => {
       color: "#D6F35F",
       fontWeight: 700
     }
-  }, "Spark"), " \u2014 and our engineering team designs, ships, and runs every line of it."), /*#__PURE__*/React.createElement("p", {
+  }, "Spark"), ", and our engineering team designs, ships, and runs every line of it."), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 14,
       fontSize: 16,
@@ -2567,7 +2567,7 @@ const AboutSpark = () => {
       color: "var(--fg-3)",
       maxWidth: 620
     }
-  }, "Most experiential agencies stitch together licensed CRMs, generic reporting tools, and post-event PDFs. We replaced all of it with one platform purpose-built for CPG activations, mobile tours, product sampling, and brand ambassador programs \u2014 with ", /*#__PURE__*/React.createElement("strong", {
+  }, "Most experiential agencies stitch together licensed CRMs, generic reporting tools, and post-event PDFs. We replaced all of it with one platform purpose-built for CPG activations, mobile tours, product sampling, and brand ambassador programs, with ", /*#__PURE__*/React.createElement("strong", {
     style: {
       color: "var(--fg-2)",
       fontWeight: 600
@@ -2634,7 +2634,7 @@ const AboutSpark = () => {
     }
   }, /*#__PURE__*/React.createElement("img", {
     src: window.__resources?.r_assets_spark_logo_full_png || "https://kyle915.github.io/ignite-webflow-assets/assets/spark-logo-full.png",
-    alt: "Spark by Ignite \u2014 proprietary field marketing platform",
+    alt: "Spark by Ignite: proprietary field marketing platform",
     style: {
       height: 42,
       width: "auto",
@@ -2802,21 +2802,21 @@ const AboutPhotos = () => {
 const ABOUT_ENGAGEMENT = [{
   tag: "01 · PROJECT",
   title: "One activation, end-to-end.",
-  body: "A launch, a tour leg, a stadium takeover. We scope, build, staff, run, and measure a single campaign — then hand you the recap.",
+  body: "A launch, a tour leg, a stadium takeover. We scope, build, staff, run, and measure a single campaign, then hand you the recap.",
   best: "Best for: a defined moment with a clear date.",
   cta: "Request a quote",
   href: "https://www.igniteproductions.co/contact"
 }, {
   tag: "02 · RETAINER",
   title: "Always-on field execution.",
-  body: "We become your field marketing arm. Recurring sampling, demo cycles, regional tours, ambassador programs — measured continuously through Spark.",
+  body: "We become your field marketing arm. Recurring sampling, demo cycles, regional tours, ambassador programs, measured continuously through Spark.",
   best: "Best for: programs running 6+ months.",
   cta: "Talk through scope",
   href: "https://www.igniteproductions.co/contact"
 }, {
   tag: "03 · FRACTIONAL",
   title: "Embedded leadership.",
-  body: "Senior CPG marketing leadership inside your team without the FTE cost. Retail strategy, sponsorship management, GTM planning — by the quarter.",
+  body: "Senior CPG marketing leadership inside your team without the FTE cost. Retail strategy, sponsorship management, GTM planning, by the quarter.",
   best: "Best for: emerging and mid-market brands without a VP yet.",
   cta: "See Fractional →",
   href: "/fractional"

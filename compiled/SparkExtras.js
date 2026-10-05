@@ -99,7 +99,7 @@ const SparkBeforeAfter = () => {
       color: "var(--fg-2)",
       lineHeight: 1.6
     }
-  }, "\"Hey team \u2014 attached is the recap deck for the Austin event. ", /*#__PURE__*/React.createElement("span", {
+  }, "\"Hey team, attached is the recap deck for the Austin event. ", /*#__PURE__*/React.createElement("span", {
     style: {
       background: "rgba(216,118,84,0.2)",
       padding: "0 4px"

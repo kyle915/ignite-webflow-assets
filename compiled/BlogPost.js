@@ -695,7 +695,7 @@ function BlogPost() {
       marginBottom: 32,
       opacity: 0.85
     }
-  }, "Send us the brief. We'll come back with a real budget structure, a staffing plan, and a measurement framework \u2014 usually within 48 hours."), /*#__PURE__*/React.createElement("a", {
+  }, "Send us the brief. We'll come back with a real budget structure, a staffing plan, and a measurement framework, usually within 48 hours."), /*#__PURE__*/React.createElement("a", {
     href: "https://www.igniteproductions.co/contact",
     style: {
       display: 'inline-flex',

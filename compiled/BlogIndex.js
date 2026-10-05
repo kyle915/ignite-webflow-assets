@@ -854,7 +854,7 @@ function BlogIndex() {
       maxWidth: 520,
       opacity: 0.85
     }
-  }, "Send us the deck. We'll come back with a real budget structure, a staffing plan, and a measurement framework \u2014 usually within 48 hours.")), /*#__PURE__*/React.createElement("div", {
+  }, "Send us the deck. We'll come back with a real budget structure, a staffing plan, and a measurement framework, usually within 48 hours.")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',

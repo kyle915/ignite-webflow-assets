@@ -380,7 +380,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "#fff"
   }
-}, "embedded execution layer"), " \u2014 staffing, distributor coordination, logistics, and reporting in one operation instead of six regional vendors."), /*#__PURE__*/React.createElement("div", {
+}, "embedded execution layer"), ": staffing, distributor coordination, logistics, and reporting in one operation instead of six regional vendors."), /*#__PURE__*/React.createElement("div", {
   className: "fm-reveal",
   style: {
     marginTop: 32,
@@ -622,7 +622,7 @@ const Spine = () => {
 
 /* =================== WHAT'S INCLUDED — numbered rows =================== */
 const Included = () => {
-  const rows = [["Strategy & program design", "We map your field strategy across markets, channels, distributors, and trial moments before the program ships."], ["Staffing & training", "257K+ vetted ambassadors, pre-shift product training, category certifications, captain rotation across markets."], ["Distributor coordination", "RNDC, Southern Glazer's, Breakthru, plus regional houses. We file paperwork, coordinate demos, share recaps."], ["Retail account activation", "Co-op programs, scan-back demos, end-cap support, planogram audits, shelf-ready execution."], ["Sponsorship & event activation", "Stadium, festival, fan-zone, brand-house operations. Field crew that knows the venue rules."], ["Mobile & tour execution", "Routing, staffing, logistics, recap — we run the road program from kickoff to wrap."], ["Real-time reporting", "Every check-in, count, photo, and recap logged in Spark. Brand and distributor see the same numbers."], ["Recap & optimization", "Per-market recaps, trend analysis across programs, next-quarter playbook recommendations."]];
+  const rows = [["Strategy & program design", "We map your field strategy across markets, channels, distributors, and trial moments before the program ships."], ["Staffing & training", "257K+ vetted ambassadors, pre-shift product training, category certifications, captain rotation across markets."], ["Distributor coordination", "RNDC, Southern Glazer's, Breakthru, plus regional houses. We file paperwork, coordinate demos, share recaps."], ["Retail account activation", "Co-op programs, scan-back demos, end-cap support, planogram audits, shelf-ready execution."], ["Sponsorship & event activation", "Stadium, festival, fan-zone, brand-house operations. Field crew that knows the venue rules."], ["Mobile & tour execution", "Routing, staffing, logistics, recap: we run the road program from kickoff to wrap."], ["Real-time reporting", "Every check-in, count, photo, and recap logged in Spark. Brand and distributor see the same numbers."], ["Recap & optimization", "Per-market recaps, trend analysis across programs, next-quarter playbook recommendations."]];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: INK,
@@ -686,7 +686,7 @@ const Included = () => {
 
 /* =================== PROGRAM FLOW — horizontal rail =================== */
 const Flow = () => {
-  const steps = [["BRIEF", "Map field strategy across markets, channels, distributors, trial moments."], ["STAFF", "Captains + ambassadors selected per market. Compliance briefed pre-deployment."], ["EXECUTE", "Spark live-tracks every shift, count, photo, and check-in."], ["REPORT", "Real-time dashboard for brand, distributor, retailer — same numbers, same time."], ["OPTIMIZE", "Per-market trend analysis, recap-to-recap insight, next-quarter playbook."]];
+  const steps = [["BRIEF", "Map field strategy across markets, channels, distributors, trial moments."], ["STAFF", "Captains + ambassadors selected per market. Compliance briefed pre-deployment."], ["EXECUTE", "Spark live-tracks every shift, count, photo, and check-in."], ["REPORT", "Real-time dashboard for brand, distributor, retailer: same numbers, same time."], ["OPTIMIZE", "Per-market trend analysis, recap-to-recap insight, next-quarter playbook."]];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: "#0C0E12",
@@ -860,7 +860,7 @@ const Spark = () => {
       lineHeight: 1.6,
       color: "rgba(255,255,255,0.74)"
     }
-  }, "Every program runs through Spark \u2014 our in-house field platform. Live dashboards, GPS-verified check-ins, real-time counts, and auto-generated recaps. Brand, distributor, and retailer see the same numbers at the same time."), /*#__PURE__*/React.createElement("div", {
+  }, "Every program runs through Spark, our in-house field platform. Live dashboards, GPS-verified check-ins, real-time counts, and auto-generated recaps. Brand, distributor, and retailer see the same numbers at the same time."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 26,
       display: "flex",
@@ -1059,7 +1059,7 @@ const Proof = () => /*#__PURE__*/React.createElement("section", {
     letterSpacing: "-0.02em",
     lineHeight: 1.25
   }
-}, "Beverage, spirits, telco, sports, CPG \u2014 executed market by market.")), /*#__PURE__*/React.createElement("div", {
+}, "Beverage, spirits, telco, sports, CPG: executed market by market.")), /*#__PURE__*/React.createElement("div", {
   className: "fm-reveal",
   style: {
     display: "flex",
@@ -1083,7 +1083,7 @@ const Proof = () => /*#__PURE__*/React.createElement("section", {
 
 /* =================== FAQ =================== */
 const FAQ = () => {
-  const items = [["What's the difference between field marketing and experiential?", "Experiential is one tool inside field marketing. Field marketing is broader — it owns retail, distributor coordination, sponsorship activation, sampling, and trade marketing. Experiential is the moment; field marketing is the discipline."], ["Can you run multi-market programs through a single partner?", "Yes — it's our core competency. Single PM, single platform, single recap across markets. We run programs from 3 markets up through national 50-state rollouts without changing the playbook."], ["Do you coordinate with our distributor partners?", "Yes. We work cleanly with RNDC, Southern Glazer's, Breakthru, and most regional houses. We file paperwork, coordinate demo schedules, and share recaps with both the brand and distributor."], ["How quickly can you scale a program?", "Single market: 5–10 business days standard, 48 hours rush. Multi-market national rollout: 2–4 weeks for briefing, paperwork, certifications, and crew readiness."], ["Do you replace our internal field marketing team?", "No. We're the embedded execution layer. Your team owns strategy, brand, and the retailer relationship; we bring vetted ambassadors, captains, compliance, and reporting at national scale."]];
+  const items = [["What's the difference between field marketing and experiential?", "Experiential is one tool inside field marketing. Field marketing is broader: it owns retail, distributor coordination, sponsorship activation, sampling, and trade marketing. Experiential is the moment; field marketing is the discipline."], ["Can you run multi-market programs through a single partner?", "Yes. It's our core competency. Single PM, single platform, single recap across markets. We run programs from 3 markets up through national 50-state rollouts without changing the playbook."], ["Do you coordinate with our distributor partners?", "Yes. We work cleanly with RNDC, Southern Glazer's, Breakthru, and most regional houses. We file paperwork, coordinate demo schedules, and share recaps with both the brand and distributor."], ["How quickly can you scale a program?", "Single market: 5 to 10 business days standard, 48 hours rush. Multi-market national rollout: 2 to 4 weeks for briefing, paperwork, certifications, and crew readiness."], ["Do you replace our internal field marketing team?", "No. We're the embedded execution layer. Your team owns strategy, brand, and the retailer relationship; we bring vetted ambassadors, captains, compliance, and reporting at national scale."]];
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
     style: {

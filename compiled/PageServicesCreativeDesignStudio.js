@@ -212,7 +212,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 520,
     animationDelay: "240ms"
   }
-}, "Campaign creative, key art, POS, and packaging \u2014 designed by a studio that knows exactly how it gets fabricated, printed, permitted, and staffed. Beautiful and buildable. Approved is shipped."), /*#__PURE__*/React.createElement("div", {
+}, "Campaign creative, key art, POS, and packaging, designed by a studio that knows exactly how it gets fabricated, printed, permitted, and staffed. Beautiful and buildable. Approved is shipped."), /*#__PURE__*/React.createElement("div", {
   className: "cs-rise",
   style: {
     marginTop: 32,
@@ -392,7 +392,7 @@ const Gallery = () => {
       lineHeight: 1.55,
       color: "rgba(20,17,12,0.7)"
     }
-  }, "A working studio \u2014 every piece here was designed to be fabricated, printed, and staffed. Drop your own work into these frames.")), /*#__PURE__*/React.createElement("div", {
+  }, "A working studio: every piece here was designed to be fabricated, printed, and staffed. Drop your own work into these frames.")), /*#__PURE__*/React.createElement("div", {
     className: "cs-gallery cs-reveal",
     style: {
       display: "grid",
@@ -471,7 +471,7 @@ const Take = () => /*#__PURE__*/React.createElement("section", {
     color: "rgba(243,239,230,0.82)",
     maxWidth: 680
   }
-}, "We design and fabricate under one roof, so the creative you approve is the creative that ships \u2014 permitted, printed, installed, and staffed without a translation layer."))));
+}, "We design and fabricate under one roof, so the creative you approve is the creative that ships: permitted, printed, installed, and staffed without a translation layer."))));
 
 /* ============ CAPABILITIES ============ */
 const CAPS = [{
@@ -647,7 +647,7 @@ const Seo = () => /*#__PURE__*/React.createElement("section", {
     letterSpacing: "-0.03em",
     lineHeight: 1.04
   }
-}, "A creative studio with a fabrication shop attached."), ["Our creative and design studio covers campaign creative, key art, POS and signage, experiential design, and packaging — the visual system that carries a brand across every activation surface.", "What makes it different is execution: the same company that designs the booth also fabricates it, prints the signage, and staffs the floor. So creative is designed production-ready, with specs, dielines, and venue rules accounted for from the first sketch.", "Creative systems are built localization-ready — per market and per language (EN + ES) — so a national program ships consistent but locally relevant, fast.", "Best for CPG, beverage, and lifestyle brands who want activation creative that's beautiful and buildable, from one team, on time and on budget."].map((p, i) => /*#__PURE__*/React.createElement("p", {
+}, "A creative studio with a fabrication shop attached."), ["Our creative and design studio covers campaign creative, key art, POS and signage, experiential design, and packaging: the visual system that carries a brand across every activation surface.", "What makes it different is execution: the same company that designs the booth also fabricates it, prints the signage, and staffs the floor. So creative is designed production-ready, with specs, dielines, and venue rules accounted for from the first sketch.", "Creative systems are built localization-ready, per market and per language (EN + ES), so a national program ships consistent but locally relevant, fast.", "Best for CPG, beverage, and lifestyle brands who want activation creative that's beautiful and buildable, from one team, on time and on budget."].map((p, i) => /*#__PURE__*/React.createElement("p", {
   key: i,
   style: {
     marginTop: 18,
@@ -680,7 +680,7 @@ const Seo = () => /*#__PURE__*/React.createElement("section", {
 }, k))))));
 
 /* ============ FAQ ============ */
-const FAQS = [["Do you design and build, or just design?", "Both. Our studio designs and our fabrication + print teams build — so approved creative ships without a translation layer."], ["Can you localize creative per market?", "Yes. Creative systems are built localization-ready for multiple markets and languages (EN + ES)."], ["Do you deliver production-ready files?", "Yes — specs, dielines, and print-ready files our own build and print teams run immediately."], ["Can you work from our existing brand guidelines?", "Absolutely. We design within your guidelines, or help extend them for activation surfaces."], ["Do you handle packaging and kits?", "Yes — sample kits, gift-with-purchase, and limited-run packaging design and production."]];
+const FAQS = [["Do you design and build, or just design?", "Both. Our studio designs and our fabrication + print teams build, so approved creative ships without a translation layer."], ["Can you localize creative per market?", "Yes. Creative systems are built localization-ready for multiple markets and languages (EN + ES)."], ["Do you deliver production-ready files?", "Yes. Specs, dielines, and print-ready files our own build and print teams run immediately."], ["Can you work from our existing brand guidelines?", "Absolutely. We design within your guidelines, or help extend them for activation surfaces."], ["Do you handle packaging and kits?", "Yes, including sample kits, gift-with-purchase, and limited-run packaging design and production."]];
 const Faq = () => {
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
@@ -788,7 +788,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 620,
     fontWeight: 500
   }
-}, "Tell us what you're launching. We'll design it, build it, print it, and put it in front of real people \u2014 one team, start to finish."), /*#__PURE__*/React.createElement("div", {
+}, "Tell us what you're launching. We'll design it, build it, print it, and put it in front of real people. One team, start to finish."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 38,
     display: "flex",

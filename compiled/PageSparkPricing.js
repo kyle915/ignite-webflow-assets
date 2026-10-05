@@ -136,7 +136,7 @@ const Cell = ({
     color: MUT,
     opacity: .5
   }
-}, "\u2014") : /*#__PURE__*/React.createElement("span", {
+}, "-") : /*#__PURE__*/React.createElement("span", {
   style: {
     color: FG
   }
@@ -204,7 +204,7 @@ const Finder = ({
   }, "Just us"), /*#__PURE__*/React.createElement("button", {
     "aria-pressed": ws === 5,
     onClick: () => setWs(5)
-  }, "2\u201310 clients"), /*#__PURE__*/React.createElement("button", {
+  }, "2 to 10 clients"), /*#__PURE__*/React.createElement("button", {
     "aria-pressed": ws === 25,
     onClick: () => setWs(25)
   }, "10+ clients"))), /*#__PURE__*/React.createElement("div", {
@@ -244,7 +244,7 @@ const Finder = ({
     style: {
       marginTop: 14
     }
-  }, "// EXCEED THE LIMIT AND NOTHING BREAKS \u2014 WE FLAG IT AND TALK"))), /*#__PURE__*/React.createElement("style", null, `
+  }, "// EXCEED THE LIMIT AND NOTHING BREAKS. WE FLAG IT AND TALK"))), /*#__PURE__*/React.createElement("style", null, `
         .sp-finder{padding:clamp(24px,3vw,38px);display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(24px,4vw,52px);align-items:center}
         .sp-fnlabel{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:24px;font-family:var(--sp-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--sp-mut)}
         .sp-fnlabel b{font-size:18px;letter-spacing:.02em;color:var(--sp-lime)}
@@ -401,13 +401,13 @@ const Plans = ({
   className: "sp-price"
 }, annual ? p.a : p.m, /^\$\d|\$X/.test(p.m) && /*#__PURE__*/React.createElement("small", null, "/ mo")), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("i", null, "\u2192"), p.f.ws, " workspace", p.f.ws === "1" ? "" : "s"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("i", null, "\u2192"), p.f.ev, " active events"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("i", null, "\u2192"), "Unlimited ambassador seats"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("i", null, "\u2192"), p.f.adm, " admin seat", p.f.adm === "1" ? "" : "s"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("i", null, "\u2192"), "GPS, recaps, photo capture"), /*#__PURE__*/React.createElement("li", {
   className: p.f.tmpl ? "" : "off"
-}, /*#__PURE__*/React.createElement("i", null, p.f.tmpl ? "→" : "—"), "Custom recap templates"), /*#__PURE__*/React.createElement("li", {
+}, /*#__PURE__*/React.createElement("i", null, p.f.tmpl ? "→" : "-"), "Custom recap templates"), /*#__PURE__*/React.createElement("li", {
   className: p.f.ai ? "" : "off"
-}, /*#__PURE__*/React.createElement("i", null, p.f.ai ? "→" : "—"), "Ask AI and insights"), /*#__PURE__*/React.createElement("li", {
+}, /*#__PURE__*/React.createElement("i", null, p.f.ai ? "→" : "-"), "Ask AI and insights"), /*#__PURE__*/React.createElement("li", {
   className: p.f.wl ? "" : "off"
-}, /*#__PURE__*/React.createElement("i", null, p.f.wl ? "→" : "—"), "White-label client portal"), /*#__PURE__*/React.createElement("li", {
+}, /*#__PURE__*/React.createElement("i", null, p.f.wl ? "→" : "-"), "White-label client portal"), /*#__PURE__*/React.createElement("li", {
   className: p.f.sso ? "" : "off"
-}, /*#__PURE__*/React.createElement("i", null, p.f.sso ? "→" : "—"), "SSO, audit log, dedicated CSM")), /*#__PURE__*/React.createElement("a", {
+}, /*#__PURE__*/React.createElement("i", null, p.f.sso ? "→" : "-"), "SSO, audit log, dedicated CSM")), /*#__PURE__*/React.createElement("a", {
   href: p.href,
   className: p.pop ? "sp-btn" : "sp-ghost",
   style: {

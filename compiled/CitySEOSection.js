@@ -28,7 +28,7 @@
 const CITY_FALLBACK_CTA = {
   eyebrow: "READY WHEN YOU ARE",
   heading: "Let's run something here.",
-  body: "Brief us on the program. Single-night activation through national tour — we'll scope it to fit.",
+  body: "Brief us on the program. Single-night activation through national tour. We'll scope it to fit.",
   primaryLabel: "Start a brief",
   primaryHref: "https://www.igniteproductions.co/contact",
   secondaryLabel: "See the work",
@@ -344,7 +344,7 @@ const CitySeoIntro = ({
       animationDelay: "340ms",
       position: "relative"
     }
-  }, "We staff, build, and run brand activations in ", city.metro || city.name, " \u2014 festival pop-ups, retail demos, mobile tours, and trade-show floors. Local crew, local permits, national playbook."), /*#__PURE__*/React.createElement("div", {
+  }, "We staff, build, and run brand activations in ", city.metro || city.name, ": festival pop-ups, retail demos, mobile tours, and trade-show floors. Local crew, local permits, national playbook."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 64,
       position: "relative",
@@ -462,7 +462,7 @@ const CitySeoActivations = ({
       color: "var(--fg-2)",
       maxWidth: 360
     }
-  }, "The lanes we book most often in ", city.name, ". We run others too \u2014 brief us if you don't see yours.")), /*#__PURE__*/React.createElement("div", {
+  }, "The lanes we book most often in ", city.name, ". We run others too. Brief us if you don't see yours.")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",

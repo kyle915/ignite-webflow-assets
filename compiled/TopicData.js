@@ -14,16 +14,16 @@ const TOPIC_PILLARS = {
     eyebrow: "PILLAR · IN-MARKET EXECUTION",
     headline: "The discipline of getting your brand into a stranger's hand.",
     acc: "stranger's hand",
-    lede: "Field marketing is the function — and the discipline — that translates brand strategy into in-market execution. Sampling, staffing, sponsorship activation, mobile tours, distributor education, retail demos. Everything that happens after the deck closes.",
+    lede: "Field marketing is the function (and the discipline) that translates brand strategy into in-market execution. Sampling, staffing, sponsorship activation, mobile tours, distributor education, retail demos. Everything that happens after the deck closes.",
     sections: [{
       h: "What 'field marketing' actually means",
-      p: "Field marketing is the work that happens in places — not on screens, not in decks. It's the discipline that owns market-by-market activation: trial-driving demos, festival pop-ups, distributor coordination, retailer programs, sponsorship integrations. The success metric is rarely impressions. It's usually trial, conversion, or scan lift."
+      p: "Field marketing is the work that happens in places, not on screens, not in decks. It's the discipline that owns market-by-market activation: trial-driving demos, festival pop-ups, distributor coordination, retailer programs, sponsorship integrations. The success metric is rarely impressions. It's usually trial, conversion, or scan lift."
     }, {
       h: "How it differs from experiential",
       p: "Experiential is one tool inside field marketing. Field marketing also owns retail, distributor coordination, scan-back programs, and the unsexy logistics that make in-store demos actually move units. If experiential is the moment, field marketing is the discipline."
     }, {
       h: "What it looks like in practice",
-      p: "A national CPG brand running 1,200 retail demos a quarter across 18 chains. A spirits brand staffing 80 distributor-led tastings a month. A tech company staffing 14 trade shows a year while running 30 city tour stops. Field marketing programs scale from a single market test to a national rollout — all coordinated through one in-house team or via an agency partner."
+      p: "A national CPG brand running 1,200 retail demos a quarter across 18 chains. A spirits brand staffing 80 distributor-led tastings a month. A tech company staffing 14 trade shows a year while running 30 city tour stops. Field marketing programs scale from a single market test to a national rollout, all coordinated through one in-house team or via an agency partner."
     }],
     services: ["product-sampling", "event-staffing", "experiential-marketing", "mobile-tours", "trade-shows"],
     industries: ["cpg-beverage", "cpg-food-snack", "alcohol-spirits"],
@@ -38,16 +38,16 @@ const TOPIC_PILLARS = {
     eyebrow: "PILLAR · IN-PERSON BRAND EXPERIENCE",
     headline: "Brand activation that earns the line, the photo, and the next purchase.",
     acc: "the next purchase",
-    lede: "Experiential activation is in-person brand work — pop-ups, festival footprints, brand houses, sponsorship integrations, sampling moments. The point isn't to be photographed; the point is to drive trial, memory, and earned media that compound long after strike.",
+    lede: "Experiential activation is in-person brand work: pop-ups, festival footprints, brand houses, sponsorship integrations, sampling moments. The point isn't to be photographed; the point is to drive trial, memory, and earned media that compound long after strike.",
     sections: [{
       h: "Pop-ups, festivals, sponsorship integrations",
-      p: "From single-day pop-ups to multi-day festival activations — Coachella, SXSW, ACL, F1 — to full-season sponsorship integrations. Every activation needs the same three things: a permit and venue clearance pipeline, trained ambassadors, and a measurement plan."
+      p: "From single-day pop-ups to multi-day festival activations (Coachella, SXSW, ACL, F1) to full-season sponsorship integrations. Every activation needs the same three things: a permit and venue clearance pipeline, trained ambassadors, and a measurement plan."
     }, {
       h: "Why production discipline matters",
       p: "An experiential program lives or dies on logistics. The fabrication has to land. The crew has to be in market. The COIs have to be filed. The brand standard has to ship intact. Most agencies pitch the concept; few execute the production."
     }, {
       h: "Earned media is the second life",
-      p: "A good activation generates content that runs for months after. Photo capture, creator partnership, social-ready footprint design, content release rights — all of it is set up before, not after, the activation."
+      p: "A good activation generates content that runs for months after. Photo capture, creator partnership, social-ready footprint design, content release rights: all of it is set up before, not after, the activation."
     }],
     services: ["experiential-marketing", "event-staffing", "fabrication-builds", "product-sampling"],
     industries: ["cpg-beverage", "alcohol-spirits", "sports-entertainment", "lifestyle-beauty"],
@@ -68,7 +68,7 @@ const TOPIC_PILLARS = {
       p: "Three different plays, one underlying skill. Retail sampling is partnered with the chain (Whole Foods, Costco, GNC) and pays back in lift on the next scan period. Street sampling is route-based, audience-targeted, and cheaper per touch. Event sampling rides the audience of an adjacent draw (festival, sports, lifestyle event)."
     }, {
       h: "Why per-sample economics matter more than count",
-      p: "5,000 samples in the wrong audience is a waste. 500 samples to the right buyer profile drives trial-to-purchase in the same week. The math that matters is conversion-per-sample, not raw count — and that requires GPS-verified data, not estimated count sheets."
+      p: "5,000 samples in the wrong audience is a waste. 500 samples to the right buyer profile drives trial-to-purchase in the same week. The math that matters is conversion-per-sample, not raw count, and that requires GPS-verified data, not estimated count sheets."
     }, {
       h: "Compliance and certifications",
       p: "Different categories have different rules. Alcohol requires TIPS / TABC / RBS, age-gating, and pour limits. Food requires ServSafe and allergen SOPs. Cannabis requires 21+ ID verification and state-by-state legality checks. We don't fake any of them."
@@ -86,7 +86,7 @@ const TOPIC_PILLARS = {
     eyebrow: "PILLAR · BOOTH STAFFING + LEAD CAPTURE",
     headline: "Booth crew that closes the gap between badge scan and CRM.",
     acc: "badge scan and CRM",
-    lede: "Trade show staffing is its own discipline — different from event staffing or sampling. The crew has to qualify a buyer, capture a lead with the right consent flow, and hand off to your sales org without dropping context.",
+    lede: "Trade show staffing is its own discipline, different from event staffing or sampling. The crew has to qualify a buyer, capture a lead with the right consent flow, and hand off to your sales org without dropping context.",
     sections: [{
       h: "What good booth staffing actually does",
       p: "Three things: filters traffic by qualification, captures leads with badge scan + scripted questions, and hands off to your SDRs the same day. Anything less is just headcount in a polo shirt."
@@ -95,7 +95,7 @@ const TOPIC_PILLARS = {
       p: "End-of-day scrub by the captain (drops the noise), CRM sync to Salesforce / HubSpot / Outreach in your preferred field map the next morning. Not three weeks after the show. Not an Excel attachment."
     }, {
       h: "Brand-house and hospitality programs",
-      p: "Conferences increasingly aren't won at the booth — they're won at the off-site brand house, the partner dinner, the hospitality suite. We staff and produce those alongside the booth program with separate crew and a separate logistics track."
+      p: "Conferences increasingly aren't won at the booth. They're won at the off-site brand house, the partner dinner, the hospitality suite. We staff and produce those alongside the booth program with separate crew and a separate logistics track."
     }],
     services: ["trade-shows", "event-staffing", "experiential-marketing", "promotional-products"],
     industries: ["tech-saas", "automotive", "hospitality-travel", "health-wellness"],
@@ -108,7 +108,7 @@ const TOPIC_PILLARS = {
     short: "Mobile Tours",
     accent: "#D7453E",
     eyebrow: "PILLAR · MULTI-MARKET BRAND TOURS",
-    headline: "A truck, a route, a story — built to move units in 10 markets, not just one.",
+    headline: "A truck, a route, a story: built to move units in 10 markets, not just one.",
     acc: "10 markets",
     lede: "Mobile tours collapse months of single-market programs into a coordinated multi-stop rollout. Branded vehicles, festival-grade footprints, traveling crew. Built for brands that need national footprint without national overhead.",
     sections: [{
@@ -119,7 +119,7 @@ const TOPIC_PILLARS = {
       p: "Truck maintenance, driver hours, permits per city, power and parking, vehicle wraps, generator fuel, cold-chain on consumables. The half no one pitches and everyone underestimates. We line-item it before quote."
     }, {
       h: "Per-stop conversion + tour-wide story",
-      p: "Each market gets its own per-stop scoring (samples, leads, content). The tour gets its own narrative — content cuts that compound across stops and become the recap deck for next year's program."
+      p: "Each market gets its own per-stop scoring (samples, leads, content). The tour gets its own narrative: content cuts that compound across stops and become the recap deck for next year's program."
     }],
     services: ["mobile-tours", "experiential-marketing", "fabrication-builds", "event-staffing", "product-sampling"],
     industries: ["cpg-beverage", "qsr-restaurant", "automotive", "cpg-food-snack"],

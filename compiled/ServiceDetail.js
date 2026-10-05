@@ -547,14 +547,14 @@ const ServicePainBanner = ({
       maxWidth: 920,
       display: "block"
     }
-  }, s.pains.sinker.split("—")[0], /*#__PURE__*/React.createElement("span", {
+  }, s.pains.sinker.split(": ")[0], /*#__PURE__*/React.createElement("span", {
     style: {
       color: accent,
       fontStyle: "italic",
       fontFamily: "Georgia, serif",
       fontWeight: 400
     }
-  }, s.pains.sinker.includes("—") ? " — " + s.pains.sinker.split("—")[1] : "")))));
+  }, s.pains.sinker.includes(": ") ? ": " + s.pains.sinker.split(": ").slice(1).join(": ") : "")))));
 };
 
 /* ---------- Comparison — most agencies vs Ignite ---------- */
@@ -1031,7 +1031,7 @@ const ServiceMarkets = ({
       color: s.accent,
       fontWeight: 700
     }
-  }, "national"), " \u2014 we ", /*#__PURE__*/React.createElement("span", {
+  }, "national"), ". We ", /*#__PURE__*/React.createElement("span", {
     style: {
       borderBottom: `2px solid ${s.accent}`
     }
@@ -1258,7 +1258,7 @@ const ServiceProcess = ({
   s
 }) => {
   const accent = s.paperAccent || s.accent || "var(--ignite-500)";
-  const defaultSteps = [["BRIEF", "Quick 30-min call. We scope, ballpark, and align on the goal."], ["DESIGN", "Concept, footprint, route, or kit — engineered for the goal, not for the deck."], ["BUILD/STAFF", "In-house fabrication, vetted ambassadors, full kit and logistics."], ["EXECUTE", "Spark live-tracks every shift, every check-in, every count, every mile."], ["RECAP", "Same-week recap with photos, metrics, and what we'd change next round."]];
+  const defaultSteps = [["BRIEF", "Quick 30-min call. We scope, ballpark, and align on the goal."], ["DESIGN", "Concept, footprint, route, or kit: engineered for the goal, not for the deck."], ["BUILD/STAFF", "In-house fabrication, vetted ambassadors, full kit and logistics."], ["EXECUTE", "Spark live-tracks every shift, every check-in, every count, every mile."], ["RECAP", "Same-week recap with photos, metrics, and what we'd change next round."]];
   const steps = s.process && s.process.length ? s.process : defaultSteps;
   return /*#__PURE__*/React.createElement("section", {
     className: "paper",
@@ -1472,7 +1472,7 @@ const ServiceMarketsBlock = ({
       color: "rgba(255,255,255,0.7)",
       maxWidth: 520
     }
-  }, "Including New York, Los Angeles, Chicago, Dallas-Fort Worth, Atlanta, Miami, Las Vegas, Phoenix, Denver, and Seattle \u2014 plus 190+ surge metros."), /*#__PURE__*/React.createElement("a", {
+  }, "Including New York, Los Angeles, Chicago, Dallas-Fort Worth, Atlanta, Miami, Las Vegas, Phoenix, Denver, and Seattle, plus 190+ surge metros."), /*#__PURE__*/React.createElement("a", {
     href: rel + "/markets",
     style: {
       marginTop: 22,
@@ -3040,7 +3040,7 @@ const ServiceBeforeAfter = ({
       flexShrink: 0,
       fontSize: 11
     }
-  }, "\u2014"), /*#__PURE__*/React.createElement("span", {
+  }, "-"), /*#__PURE__*/React.createElement("span", {
     style: {
       lineHeight: 1.5
     }
@@ -6494,7 +6494,7 @@ const ServiceRecapTimeline = ({
       textTransform: "uppercase",
       textAlign: "center"
     }
-  }, "\u2014"))))), /*#__PURE__*/React.createElement("div", {
+  }, "n/a"))))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
       gridTemplateColumns: "140px 1fr",
@@ -6568,7 +6568,7 @@ const ServiceRecapTimeline = ({
       textTransform: "uppercase",
       textAlign: "center"
     }
-  }, "\u2014"))))))));
+  }, "n/a"))))))));
 };
 
 /* ---------- Recap Distribution Map — one recap, multiple stakeholders ---------- */

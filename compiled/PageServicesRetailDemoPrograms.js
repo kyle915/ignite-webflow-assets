@@ -361,7 +361,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     fontFamily: "var(--font-display)",
     fontWeight: 500
   }
-}, "In-store sampling inside the chains where the shopper actually buys \u2014 ", /*#__PURE__*/React.createElement("b", {
+}, "In-store sampling inside the chains where the shopper actually buys: ", /*#__PURE__*/React.createElement("b", {
   style: {
     color: "#fff"
   }
@@ -493,7 +493,7 @@ const Counters = () => {
 
 /* ============ SCAN-BACK ROI LADDER ============ */
 const ScanBack = () => {
-  const steps = [["DEMO", "Sample + convert", "Crew runs the demo, logs count, captures conversion intent at the shelf.", "Per-store data"], ["SCAN", "Retailer scan lift", "Where the retailer allows, we tie demo windows to UPC scan velocity changes.", "+12–35% typical"], ["REORDER", "Retailer reorders", "Velocity moves → the retailer reorders → your trade team has a defensible story.", "Multi-week tail"], ["RECAP", "Quarterly proof", "Spark rolls demo activity, scan lift, and reorder data into one trade-ready dashboard.", "1 dashboard"]];
+  const steps = [["DEMO", "Sample + convert", "Crew runs the demo, logs count, captures conversion intent at the shelf.", "Per-store data"], ["SCAN", "Retailer scan lift", "Where the retailer allows, we tie demo windows to UPC scan velocity changes.", "+12 to 35% typical"], ["REORDER", "Retailer reorders", "Velocity moves → the retailer reorders → your trade team has a defensible story.", "Multi-week tail"], ["RECAP", "Quarterly proof", "Spark rolls demo activity, scan lift, and reorder data into one trade-ready dashboard.", "1 dashboard"]];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: "#0C0E12",
@@ -603,7 +603,7 @@ const ScanBack = () => {
 
 /* ============ CHANNEL / BANNER GRID ============ */
 const Channels = () => {
-  const rows = [["Grocery & Natural", "WHOLE FOODS · SPROUTS · WEGMANS · EREWHON · KROGER", "Chain demo permits, allergen disclosure, store COIs", "Sample-and-talk, 4–6 hr, captain-led"], ["Mass & Club", "TARGET · WALMART · COSTCO · SAM'S CLUB", "Roadshow registration, multi-store rollout paperwork", "High-volume sampling, line management, multi-day"], ["Convenience & Gas", "WAWA · SHEETZ · 7-ELEVEN · AMPM · CIRCLE K", "Per-store demo agreements, ride-along route paperwork", "Quick-sample drops, ride-along routes"], ["Specialty", "GNC · VITAMIN SHOPPE · PET SUPPLIES PLUS · ULTA", "Category certs, ingredient training, brand standards", "Application-trained, product-specialist flow"]];
+  const rows = [["Grocery & Natural", "WHOLE FOODS · SPROUTS · WEGMANS · EREWHON · KROGER", "Chain demo permits, allergen disclosure, store COIs", "Sample-and-talk, 4 to 6 hr, captain-led"], ["Mass & Club", "TARGET · WALMART · COSTCO · SAM'S CLUB", "Roadshow registration, multi-store rollout paperwork", "High-volume sampling, line management, multi-day"], ["Convenience & Gas", "WAWA · SHEETZ · 7-ELEVEN · AMPM · CIRCLE K", "Per-store demo agreements, ride-along route paperwork", "Quick-sample drops, ride-along routes"], ["Specialty", "GNC · VITAMIN SHOPPE · PET SUPPLIES PLUS · ULTA", "Category certs, ingredient training, brand standards", "Application-trained, product-specialist flow"]];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: INK,
@@ -854,7 +854,7 @@ const Spark = () => {
       lineHeight: 1.6,
       color: "rgba(255,255,255,0.74)"
     }
-  }, "Every demo runs through Spark \u2014 per-store unit counts logged live, GPS ambassador check-ins, photo evidence from the aisle, and UPC scan-back where the retailer allows. Brand, broker, and retailer see the same dashboard."), /*#__PURE__*/React.createElement("div", {
+  }, "Every demo runs through Spark: per-store unit counts logged live, GPS ambassador check-ins, photo evidence from the aisle, and UPC scan-back where the retailer allows. Brand, broker, and retailer see the same dashboard."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 26,
       display: "flex",
@@ -1009,7 +1009,7 @@ const Spark = () => {
 
 /* ============ FAQ ============ */
 const FAQ = () => {
-  const items = [["Can you staff inside Whole Foods, Costco, and Target?", "Yes. We staff inside Whole Foods, Sprouts, Wegmans, Costco, Target, Sam's Club, Kroger, Publix, and most regional banners. We file the chain-specific demo permits, COIs, and paperwork on your behalf."], ["Are your demo staff food handler certified?", "Every ambassador staffed to a food, beverage, or sampling demo holds the certification their state requires — ServSafe, state food handler card, or equivalent. For allergen-sensitive SKUs we add cross-contact prevention protocols."], ["How fast can you launch a national retail demo program?", "Single market: 5–10 business days standard, 48 hours rush. Multi-banner rollouts: 2–4 weeks for full briefing, paperwork, and crew readiness across markets."], ["What reporting do we get from each demo?", "Per-store sample count, photos, ambassador notes, GPS check-in/out, and — where the retailer permits — UPC-level scan-back data, all live in Spark. Same-day, every day of the program."], ["Can you handle co-op or distributor-funded demos?", "Yes. We run co-op programs where the retailer or distributor funds part of the demo. We file the chain-specific paperwork, COIs, and demo permits, and report cleanly back to brand, retailer, and distributor."]];
+  const items = [["Can you staff inside Whole Foods, Costco, and Target?", "Yes. We staff inside Whole Foods, Sprouts, Wegmans, Costco, Target, Sam's Club, Kroger, Publix, and most regional banners. We file the chain-specific demo permits, COIs, and paperwork on your behalf."], ["Are your demo staff food handler certified?", "Every ambassador staffed to a food, beverage, or sampling demo holds the certification their state requires: ServSafe, state food handler card, or equivalent. For allergen-sensitive SKUs we add cross-contact prevention protocols."], ["How fast can you launch a national retail demo program?", "Single market: 5 to 10 business days standard, 48 hours rush. Multi-banner rollouts: 2 to 4 weeks for full briefing, paperwork, and crew readiness across markets."], ["What reporting do we get from each demo?", "Per-store sample count, photos, ambassador notes, GPS check-in/out, and (where the retailer permits) UPC-level scan-back data, all live in Spark. Same-day, every day of the program."], ["Can you handle co-op or distributor-funded demos?", "Yes. We run co-op programs where the retailer or distributor funds part of the demo. We file the chain-specific paperwork, COIs, and demo permits, and report cleanly back to brand, retailer, and distributor."]];
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
     style: {

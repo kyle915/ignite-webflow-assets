@@ -608,7 +608,7 @@ const TwoWays = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 620,
     margin: "16px auto 0"
   }
-}, "Most clients use both \u2014 a fractional team driving strategy, plus project-based staffing when national activations hit. Either way, Spark is included at no additional cost.")), /*#__PURE__*/React.createElement("div", {
+}, "Most clients use both: a fractional team driving strategy, plus project-based staffing when national activations hit. Either way, Spark is included at no additional cost.")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
@@ -621,7 +621,7 @@ const TwoWays = () => /*#__PURE__*/React.createElement("section", {
   kicker: "ONGOING · STRATEGIC",
   label: "01 · FRACTIONAL",
   title: "Fractional Teams",
-  d: "Dedicated team embedded in your brand to run retail strategy, field execution, and activations. Advisory, embedded, or full leadership — monthly retainer, no full-time overhead.",
+  d: "Dedicated team embedded in your brand to run retail strategy, field execution, and activations. Advisory, embedded, or full leadership: monthly retainer, no full-time overhead.",
   best: "Scaling into retail · launching a new line · post-Series A",
   cta: "Explore Fractional →",
   accent: "#D7453E"
@@ -630,7 +630,7 @@ const TwoWays = () => /*#__PURE__*/React.createElement("section", {
   kicker: "PROJECT · ON-DEMAND",
   label: "02 · STAFFING + EXPERIENTIAL",
   title: "BA Staffing & Experiential",
-  d: "257,000+ vetted brand ambassadors across 50 states. Full-scale experiential production — sampling, mobile tours, trade shows, custom builds — deployed in days, not months.",
+  d: "257,000+ vetted brand ambassadors across 50 states. Full-scale experiential production (sampling, mobile tours, trade shows, custom builds) deployed in days, not months.",
   best: "National sampling · trade shows · festival activations · retail sell-in",
   cta: "Explore Services →",
   accent: "#FFB627"
@@ -769,7 +769,7 @@ const TwoWays = () => /*#__PURE__*/React.createElement("section", {
     fontStyle: "italic",
     color: "var(--spark-500)"
   }
-}, "Spark"), " \u2014 live dashboards, GPS-verified check-ins, instant recaps. Zero extra cost."))), /*#__PURE__*/React.createElement("div", {
+}, "Spark"), ": live dashboards, GPS-verified check-ins, instant recaps. Zero extra cost."))), /*#__PURE__*/React.createElement("div", {
   style: {
     fontFamily: "var(--font-mono)",
     fontSize: 12,

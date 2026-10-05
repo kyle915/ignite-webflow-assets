@@ -370,7 +370,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "#fff"
   }
-}, "actually happen"), " \u2014 because we file the COIs, ABC permits, and TIPS cards on every side before the crew lands."), /*#__PURE__*/React.createElement("div", {
+}, "actually happen"), ", because we file the COIs, ABC permits, and TIPS cards on every side before the crew lands."), /*#__PURE__*/React.createElement("div", {
   className: "dd-reveal",
   style: {
     marginTop: 32,
@@ -506,7 +506,7 @@ const Counters = () => {
 
 /* ============ GSM RUN-OF-SHOW ============ */
 const GSMDay = () => {
-  const sched = [["06:30", "Load-in + pour bar build", "Crew arrives, builds the brand bar, ices product, stages cups and rep packets.", "IGNITE"], ["07:30", "Walk-through + COI handoff", "Distributor warehouse manager walks the floor, COIs handed off, fire-marshal sign-off.", "DISTRIBUTOR"], ["08:00", "GSM opens, reps arrive", "Reps roll in, grab coffee, head to brand bars. Crew already in position pouring.", ""], ["08:15", "Brand training pour", "Brand manager runs the talking points; crew pours flights paced to the script.", "BRAND"], ["09:30", "Q&A + sell-sheet handoff", "Reps get comp data, a talking-point card, and a sample 4-pack to take with them.", "IGNITE"], ["11:30", "Strike + load-out", "Bar broken down, branded materials inventoried, leftover product handed back.", "IGNITE"], ["EOD", "Same-day recap delivered", "Spark dashboard — pour count, rep headcount, photos, notes — sent to brand + distributor.", "SPARK"]];
+  const sched = [["06:30", "Load-in + pour bar build", "Crew arrives, builds the brand bar, ices product, stages cups and rep packets.", "IGNITE"], ["07:30", "Walk-through + COI handoff", "Distributor warehouse manager walks the floor, COIs handed off, fire-marshal sign-off.", "DISTRIBUTOR"], ["08:00", "GSM opens, reps arrive", "Reps roll in, grab coffee, head to brand bars. Crew already in position pouring.", ""], ["08:15", "Brand training pour", "Brand manager runs the talking points; crew pours flights paced to the script.", "BRAND"], ["09:30", "Q&A + sell-sheet handoff", "Reps get comp data, a talking-point card, and a sample 4-pack to take with them.", "IGNITE"], ["11:30", "Strike + load-out", "Bar broken down, branded materials inventoried, leftover product handed back.", "IGNITE"], ["EOD", "Same-day recap delivered", "Spark dashboard (pour count, rep headcount, photos, notes) sent to brand + distributor.", "SPARK"]];
   const oc = {
     IGNITE: ORANGE,
     DISTRIBUTOR: "#5AB8FF",
@@ -551,7 +551,7 @@ const GSMDay = () => {
       color: "rgba(255,255,255,0.68)",
       maxWidth: 620
     }
-  }, "We run the distributor general sales meeting demo end to end \u2014 load-in through same-day recap. Brand, distributor, and reps all leave with the same data.")), /*#__PURE__*/React.createElement("div", {
+  }, "We run the distributor general sales meeting demo end to end: load-in through same-day recap. Brand, distributor, and reps all leave with the same data.")), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "relative",
       paddingLeft: 24
@@ -638,7 +638,7 @@ const GSMDay = () => {
       fontSize: 10.5,
       color: "rgba(255,255,255,0.4)"
     }
-  }, "\u203B Schedule shifts by distributor \u2014 RNDC runs different than Southern Glazer's, and we know both.")));
+  }, "\u203B Schedule shifts by distributor: RNDC runs different than Southern Glazer's, and we know both.")));
 };
 
 /* ============ RIDE-ALONG WEEK ============ */
@@ -681,7 +681,7 @@ const RideAlong = () => {
       color: "rgba(255,255,255,0.68)",
       maxWidth: 620
     }
-  }, "Most demo agencies stop at the warehouse. We get in the truck \u2014 a managed crew of pourers and brand specialists rides with sales reps for a full week of retail and on-premise stops.")), /*#__PURE__*/React.createElement("div", {
+  }, "Most demo agencies stop at the warehouse. We get in the truck: a managed crew of pourers and brand specialists rides with sales reps for a full week of retail and on-premise stops.")), /*#__PURE__*/React.createElement("div", {
     className: "dd-week",
     style: {
       display: "grid",
@@ -735,7 +735,7 @@ const RideAlong = () => {
       fontSize: 20,
       color: "#fff"
     }
-  }, d[3] || "—"), /*#__PURE__*/React.createElement(DDMono, {
+  }, d[3] || "n/a"), /*#__PURE__*/React.createElement(DDMono, {
     style: {
       fontSize: 8
     }
@@ -885,7 +885,7 @@ const Ladder = () => {
 
 /* ============ ENABLEMENT KIT ============ */
 const Kit = () => {
-  const items = [["Sell-sheet (1-pager)", "Front: brand story + key flavor notes. Back: pour build, comp set, suggested price point."], ["Talking-point card", "Wallet-sized cheat sheet with on-premise pitch, retail pitch, and 3 objection handles."], ["Comp-data sheet", "Velocity vs comp set, retail price ladder, distributor margin call-out."], ["Sample 4-pack", "Rep takes home product to share with on-premise GMs and retail buyers."], ["Branded swag", "Tee, hat, or pin set — rep wear on the next ride-along becomes brand exposure."], ["QR → digital pitch deck", "Always-current sell deck the rep can open on phone or laptop, mid-meeting."]];
+  const items = [["Sell-sheet (1-pager)", "Front: brand story + key flavor notes. Back: pour build, comp set, suggested price point."], ["Talking-point card", "Wallet-sized cheat sheet with on-premise pitch, retail pitch, and 3 objection handles."], ["Comp-data sheet", "Velocity vs comp set, retail price ladder, distributor margin call-out."], ["Sample 4-pack", "Rep takes home product to share with on-premise GMs and retail buyers."], ["Branded swag", "Tee, hat, or pin set; rep wear on the next ride-along becomes brand exposure."], ["QR → digital pitch deck", "Always-current sell deck the rep can open on phone or laptop, mid-meeting."]];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: INK,
@@ -922,7 +922,7 @@ const Kit = () => {
       color: "rgba(255,255,255,0.68)",
       maxWidth: 640
     }
-  }, "Reps remember the brand for as long as they have the materials. We build the take-home kit so it's the rep's pitch deck for the next 30 days \u2014 not a stack of paper.")), /*#__PURE__*/React.createElement("div", {
+  }, "Reps remember the brand for as long as they have the materials. We build the take-home kit so it's the rep's pitch deck for the next 30 days, not a stack of paper.")), /*#__PURE__*/React.createElement("div", {
     className: "dd-kit",
     style: {
       display: "grid",
@@ -1190,7 +1190,7 @@ const Spark = () => {
       lineHeight: 1.6,
       color: "rgba(255,255,255,0.74)"
     }
-  }, "No more vendor PDFs to the brand and Excel to the distributor. Spark is the single recap surface \u2014 pour counts per rep, ID-check completion, refusal incidents, retailer notes. Distributor account managers get pulled into the same workspace."), /*#__PURE__*/React.createElement("div", {
+  }, "No more vendor PDFs to the brand and Excel to the distributor. Spark is the single recap surface: pour counts per rep, ID-check completion, refusal incidents, retailer notes. Distributor account managers get pulled into the same workspace."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 26,
       display: "flex",
@@ -1345,7 +1345,7 @@ const Spark = () => {
 
 /* ============ FAQ ============ */
 const FAQ = () => {
-  const items = [["Which distributors do you work with?", "RNDC, Southern Glazer's, Breakthru Beverage, Republic National, Empire Merchants, and most regional houses. We file paperwork on your behalf and the distributor's; programs scale state by state."], ["Does the distributor or the brand pay for the demo?", "Depends on the program structure. Distributor-funded, brand-funded, and co-op programs are all common — we handle the paperwork and reporting regardless of who's writing the check."], ["Can you file ABC permits in every state?", "Yes. Each state's Alcoholic Beverage Commission has its own paperwork; we file per jurisdiction. Restricted states and dry counties are flagged up front before the program ships."], ["What's the recap format the distributor sees?", "Same dashboard as the brand. Pour counts, pour sizes, photos, retailer notes, refusal incidents — all share-ready for the distributor account manager's quarterly review."], ["Can you handle multi-distributor national programs?", "Yes. Most national alcohol programs route through 3–6 distributors depending on state coverage. We coordinate paperwork, demo calendars, and reporting across all distributor partners through a single PM."]];
+  const items = [["Which distributors do you work with?", "RNDC, Southern Glazer's, Breakthru Beverage, Republic National, Empire Merchants, and most regional houses. We file paperwork on your behalf and the distributor's; programs scale state by state."], ["Does the distributor or the brand pay for the demo?", "Depends on the program structure. Distributor-funded, brand-funded, and co-op programs are all common. We handle the paperwork and reporting regardless of who's writing the check."], ["Can you file ABC permits in every state?", "Yes. Each state's Alcoholic Beverage Commission has its own paperwork; we file per jurisdiction. Restricted states and dry counties are flagged up front before the program ships."], ["What's the recap format the distributor sees?", "Same dashboard as the brand. Pour counts, pour sizes, photos, retailer notes, refusal incidents, all share-ready for the distributor account manager's quarterly review."], ["Can you handle multi-distributor national programs?", "Yes. Most national alcohol programs route through 3 to 6 distributors depending on state coverage. We coordinate paperwork, demo calendars, and reporting across all distributor partners through a single PM."]];
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
     style: {

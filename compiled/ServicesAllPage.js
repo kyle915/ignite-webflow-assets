@@ -103,7 +103,7 @@ const SVC_LANES = [{
   accent: "#D7453E",
   title: "Experiential Marketing",
   sub: "Brand activations, festival footprints, immersive installations.",
-  long: "Festival activations, pop-ups, brand activations, immersive installations, campus tours. We design the moment, build the set, staff the floor, and capture the metric — start to recap.",
+  long: "Festival activations, pop-ups, brand activations, immersive installations, campus tours. We design the moment, build the set, staff the floor, and capture the metric, start to recap.",
   bullets: ["Festival Activations", "Pop-Ups", "Brand Activations", "Immersive Installations", "Campus Tours", "Mall & Lifestyle Centers"],
   img: "https://kyle915.github.io/ignite-webflow-assets/assets/experiential-liquiddeath-nascar.jpg",
   imgPos: "center 40%",
@@ -115,7 +115,7 @@ const SVC_LANES = [{
   accent: "#FFB627",
   title: "Mobile Marketing Tours",
   sub: "Ad trucks, branded bikes, sprinter vans, sampling roadshows.",
-  long: "Multi-city tours engineered end-to-end — vehicles, permits, drivers, on-site teams, daily recaps. Built to land in the right neighborhoods at the right hours.",
+  long: "Multi-city tours engineered end-to-end: vehicles, permits, drivers, on-site teams, daily recaps. Built to land in the right neighborhoods at the right hours.",
   bullets: ["Ad Trucks", "Mobile Billboards", "Branded Bikes", "Sprinter Vans", "Sampling Roadshows", "Tour Routing & Permits"],
   img: window.__resources?.r_68962c63c89c6cf0f46a6b66_SMALLS93_11_15_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/68962c63c89c6cf0f46a6b66_SMALLS93_11_15_2024_Eva_Rowin_06080ec4-0c97-5fdb-74ec-ed3d6cd749a5_0.jpg",
   imgPos: "center 45%",
@@ -127,7 +127,7 @@ const SVC_LANES = [{
   accent: "#D7453E",
   title: "Fabrication & Builds",
   sub: "Scenic fab, modular activations, touring builds, photo ops.",
-  long: "In-house shop for custom builds and modular activations. We ship, set, strike, and store — and we engineer for road wear so your hero piece survives ten markets.",
+  long: "In-house shop for custom builds and modular activations. We ship, set, strike, and store, and we engineer for road wear so your hero piece survives ten markets.",
   bullets: ["Custom Builds", "Scenic Fabrication", "Pop-Up Construction", "Modular Activations", "Touring Builds", "Photo Op Installations"],
   img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600&q=80",
   imgPos: "center 40%",
@@ -138,7 +138,7 @@ const SVC_LANES = [{
   accent: "#FFB627",
   title: "Event Staffing",
   sub: "257,000+ vetted ambassadors, all 50 states, 48-hour rush.",
-  long: "Brand ambassadors, street teams, bilingual staff, and tour managers — vetted, trained, and dispatched fast. Real people who learn your brand and report what mattered.",
+  long: "Brand ambassadors, street teams, bilingual staff, and tour managers: vetted, trained, and dispatched fast. Real people who learn your brand and report what mattered.",
   bullets: ["Brand Ambassadors", "Street Teams", "Bilingual Staff", "Tour Managers", "Booth Staff", "Mascots & Costume"],
   img: window.__resources?.r_68962cc2d0a6bcf7ced84e53_WHITECLAW96_05_ || "https://cdn.prod.website-files.com/688129f3841088c282c32750/68962cc2d0a6bcf7ced84e53_WHITECLAW96_05_27_2025_Adia_Oshikoya_84db346d-29fd-6179-d310-6927f656bdca_0.jpg",
   imgPos: "center 30%",
@@ -149,7 +149,7 @@ const SVC_LANES = [{
   accent: "#D6F35F",
   title: "Product Sampling",
   sub: "GPS-verified counts, retail demos, street + event sampling.",
-  long: "Reportable sampling — every can, taste, and conversion tied to a place and a person. Power by Spark, our field-marketing dashboard, so you see numbers the same day.",
+  long: "Reportable sampling: every can, taste, and conversion tied to a place and a person. Power by Spark, our field-marketing dashboard, so you see numbers the same day.",
   bullets: ["In-Store Sampling", "Retail Demo Programs", "Street Sampling", "Campus Sampling", "Festival Sampling", "GPS-Verified Counts"],
   img: "https://kyle915.github.io/ignite-webflow-assets/assets/sampling-liquiddeath-petsmart.jpg",
   imgPos: "center 35%",
@@ -171,7 +171,7 @@ const SVC_LANES = [{
   accent: "#D7453E",
   title: "Promotional Products & Premiums",
   sub: "Branded merch, swag kits, custom apparel, premium fulfillment.",
-  long: "Sourced, designed, kitted, warehoused, and shipped — for a tour, a launch, a one-off VIP gift, or an evergreen program. We handle the boring parts so the merch lands hot.",
+  long: "Sourced, designed, kitted, warehoused, and shipped for a tour, a launch, a one-off VIP gift, or an evergreen program. We handle the boring parts so the merch lands hot.",
   bullets: ["Branded Merchandise", "Swag Kits", "Custom Apparel", "Premium Fulfillment", "Kitting & Warehousing", "On-Demand Storefronts"],
   img: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=1600&q=80",
   imgPos: "center",
@@ -181,8 +181,8 @@ const SVC_LANES = [{
   n: "08",
   accent: "#D7453E",
   title: "Fractional CPG Leadership",
-  sub: "Embedded sales & marketing leadership — without the full-time overhead.",
-  long: "Three engagement tiers — Advisory, Embedded, Leadership. We plug into your org chart and run retail strategy, field execution, sponsorships, and activations as a fractional team. Built for emerging CPG and beverage brands scaling into retail.",
+  sub: "Embedded sales & marketing leadership, without the full-time overhead.",
+  long: "Three engagement tiers: Advisory, Embedded, Leadership. We plug into your org chart and run retail strategy, field execution, sponsorships, and activations as a fractional team. Built for emerging CPG and beverage brands scaling into retail.",
   bullets: ["Advisory Tier", "Embedded VP", "Full Leadership", "Retail Strategy", "Field Execution", "Sponsorship Management", "Sales Programs", "Marketing Ops"],
   img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&q=80",
   imgPos: "center 40%",
@@ -193,8 +193,8 @@ const SVC_LANES = [{
   n: "09",
   accent: "#D6F35F",
   title: "Spark Platform",
-  sub: "The field-marketing dashboard — live GPS, photos, samples, auto recaps.",
-  long: "Spark is the operational layer underneath every activation we run. GPS check-ins, sample counts, lead capture, photo uploads, and live dashboards. Recaps generate themselves — no PDFs, no 9-day waits. Included free with every engagement.",
+  sub: "The field-marketing dashboard: live GPS, photos, samples, auto recaps.",
+  long: "Spark is the operational layer underneath every activation we run. GPS check-ins, sample counts, lead capture, photo uploads, and live dashboards. Recaps generate themselves. No PDFs, no 9-day waits. Included free with every engagement.",
   bullets: ["GPS Check-ins", "Sample Counts", "Lead Capture", "Photo Uploads", "Live Dashboards", "Auto Recaps", "Per-SKU Breakdown", "Same-Day Data"],
   img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80",
   imgPos: "center",
@@ -461,7 +461,7 @@ const SvcHero = () => {
     style: {
       color: "var(--fg-1)"
     }
-  }, "full-service experiential agency"), " \u2014 strategy, fabrication, staffing, mobile tours, sampling, trade shows, and merch. One roster, one platform, every market."), /*#__PURE__*/React.createElement("div", {
+  }, "full-service experiential agency"), ": strategy, fabrication, staffing, mobile tours, sampling, trade shows, and merch. One roster, one platform, every market."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 32,
       display: "flex",
@@ -1128,7 +1128,7 @@ const SvcFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 720,
     margin: "32px auto 0"
   }
-}, "One call covers strategy, fabrication, staffing, tours, sampling, trade shows, and merch. We're an extension of your team \u2014 not another vendor."), /*#__PURE__*/React.createElement("div", {
+}, "One call covers strategy, fabrication, staffing, tours, sampling, trade shows, and merch. We're an extension of your team, not another vendor."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 44,
     display: "inline-flex",

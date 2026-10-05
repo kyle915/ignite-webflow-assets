@@ -9,20 +9,20 @@
 const CrossVerticalFAQ = () => {
   const [open, setOpen] = React.useState(0);
   const faqs = [{
-    q: "We span categories — can you handle mixed-vertical programs?",
-    a: "Yes. We've run programs that span beverage and food, beauty and lifestyle, alcohol and hospitality. Each vertical gets its own captain, compliance briefing, and reporting layer — but you stay on one PM, one invoice, one Spark view."
+    q: "We span categories. Can you handle mixed-vertical programs?",
+    a: "Yes. We've run programs that span beverage and food, beauty and lifestyle, alcohol and hospitality. Each vertical gets its own captain, compliance briefing, and reporting layer, but you stay on one PM, one invoice, one Spark view."
   }, {
     q: "How does pricing change by vertical?",
     a: "Per-rep, per-shift staffing is the same baseline across verticals. Compliance overhead changes the math: regulated alcohol programs carry TIPS / TABC training and liquor liability; auto programs carry waiver capture and trucking; tech programs carry CRM-mapping setup. We're transparent about which adders apply."
   }, {
     q: "Do you carry separate COIs for different verticals?",
-    a: "Yes. We carry vertical-appropriate insurance — general liability everywhere, liquor liability for alcohol programs, vehicle and additional-insured riders for auto, and consent-capture-ready protocols for tech and beauty. COIs added to specific named insureds on request."
+    a: "Yes. We carry vertical-appropriate insurance: general liability everywhere, liquor liability for alcohol programs, vehicle and additional-insured riders for auto, and consent-capture-ready protocols for tech and beauty. COIs added to specific named insureds on request."
   }, {
     q: "Can you brief crew on technical product knowledge?",
-    a: "Yes — within reason. Sampling and trial crews get product-fact briefings before deployment. For technical demo or specialist roles (auto product specialists, SaaS demo leads, beauty applicators) we staff crew with category background and run extra training pre-event."
+    a: "Yes, within reason. Sampling and trial crews get product-fact briefings before deployment. For technical demo or specialist roles (auto product specialists, SaaS demo leads, beauty applicators) we staff crew with category background and run extra training pre-event."
   }, {
     q: "Which verticals are you strongest in?",
-    a: "Beverage, alcohol & spirits, and food & snack are the deepest benches — we run those daily. Tech / SaaS, automotive, and lifestyle & beauty are full-service practices with senior leads in each category. Pet, cannabis, finance, and gaming we do consistently as well."
+    a: "Beverage, alcohol & spirits, and food & snack are the deepest benches; we run those daily. Tech / SaaS, automotive, and lifestyle & beauty are full-service practices with senior leads in each category. Pet, cannabis, finance, and gaming we do consistently as well."
   }];
   return /*#__PURE__*/React.createElement("div", null, faqs.map((f, i) => {
     const isOpen = open === i;
@@ -219,7 +219,7 @@ const IndustriesHub = () => {
     style: {
       color: "var(--ignite-500)"
     }
-  }, "Different verticals, different rules"), " \u2014 alcohol has TIPS / TABC, food has allergen SOPs, tech has lead capture and CRM handoff. Pick yours."))), /*#__PURE__*/React.createElement("section", {
+  }, "Different verticals, different rules"), ": alcohol has TIPS / TABC, food has allergen SOPs, tech has lead capture and CRM handoff. Pick yours."))), /*#__PURE__*/React.createElement("section", {
     style: {
       padding: "100px 0",
       background: "var(--ink-000)",
@@ -492,7 +492,7 @@ const IndustriesHub = () => {
       color: "var(--fg-2)",
       maxWidth: 620
     }
-  }, "Pet, finance, cannabis, gaming, motorsports, hospitality \u2014 we've staffed and run activation across most consumer categories. Brief us and we'll come back with vertical-specific compliance and crew."), /*#__PURE__*/React.createElement("div", {
+  }, "Pet, finance, cannabis, gaming, motorsports, hospitality: we've staffed and run activation across most consumer categories. Brief us and we'll come back with vertical-specific compliance and crew."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 32,
       display: "flex",

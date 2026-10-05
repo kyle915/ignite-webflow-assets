@@ -121,7 +121,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
 }, /*#__PURE__*/React.createElement(SparkTicker, {
   items: [["●", "LIVE"], ["", "CSV · PDF · SLIDES"], ["", "GPS + TIMESTAMP EMBEDDED"], ["", "ROLE-BASED ACCESS"], ["", "API + WEBHOOKS"], ["0", "DATA RESOLD"], ["", "SSO ON ENTERPRISE"], ["", "OFFLINE-SAFE"]]
 })));
-const EXPORTS = [["csv", "CSV", /*#__PURE__*/React.createElement(React.Fragment, null, "One row per event and ambassador pair. Straight into Excel, Sheets, or your warehouse.")], ["pdf", "PDF recap", /*#__PURE__*/React.createElement(React.Fragment, null, "The client-ready recap: metrics, photos, notes, cost per sample \u2014 already formatted.")], ["photos", "Photo bundle", /*#__PURE__*/React.createElement(React.Fragment, null, "Every image with GPS coordinates and capture time embedded in the file.")], ["api", "API / webhook", /*#__PURE__*/React.createElement(React.Fragment, null, "Push check-ins, recaps, and uploads into your own stack the moment they happen.")], ["link", "Share link", /*#__PURE__*/React.createElement(React.Fragment, null, "A live, read-only dashboard for a retailer or distributor. No login, no PDF.")]];
+const EXPORTS = [["csv", "CSV", /*#__PURE__*/React.createElement(React.Fragment, null, "One row per event and ambassador pair. Straight into Excel, Sheets, or your warehouse.")], ["pdf", "PDF recap", /*#__PURE__*/React.createElement(React.Fragment, null, "The client-ready recap: metrics, photos, notes, cost per sample, already formatted.")], ["photos", "Photo bundle", /*#__PURE__*/React.createElement(React.Fragment, null, "Every image with GPS coordinates and capture time embedded in the file.")], ["api", "API / webhook", /*#__PURE__*/React.createElement(React.Fragment, null, "Push check-ins, recaps, and uploads into your own stack the moment they happen.")], ["link", "Share link", /*#__PURE__*/React.createElement(React.Fragment, null, "A live, read-only dashboard for a retailer or distributor. No login, no PDF.")]];
 const CSV_ROWS = [["event_id", "market", "account", "ba", "samples", "photos", "gps_ok", "recap_hrs"], ["EV-40812", "Austin, TX", "H-E-B Mueller", "M. Vega", "327", "12", "true", "3.1"], ["EV-40813", "Brooklyn, NY", "Whole Foods Gowanus", "D. Cole", "254", "9", "true", "2.4"], ["EV-40814", "Denver, CO", "King Soopers 041", "R. Vance", "198", "11", "true", "4.0"], ["EV-40815", "Miami, FL", "Publix 0731", "K. Brooks", "301", "10", "true", "2.9"]];
 const ExportPreview = () => {
   const [k, setK] = React.useState("csv");
@@ -145,7 +145,7 @@ const ExportPreview = () => {
     style: {
       marginTop: 18
     }
-  }, "Pick a format. This is the shape of the data you get \u2014 not a promise, a preview.")), /*#__PURE__*/React.createElement("div", {
+  }, "Pick a format. This is the shape of the data you get. Not a promise, a preview.")), /*#__PURE__*/React.createElement("div", {
     className: "sp-xtabs sp-rv",
     role: "tablist",
     "aria-label": "Export formats",
@@ -192,7 +192,7 @@ const ExportPreview = () => {
     className: "sp-xdoc"
   }, /*#__PURE__*/React.createElement("div", {
     className: "sp-xdochead"
-  }, /*#__PURE__*/React.createElement("span", null, "AUSTIN, TX \xB7 H-E-B MUELLER"), /*#__PURE__*/React.createElement("span", null, "SAT 12\u20138 \xB7 RECAP READY 24H")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("span", null, "AUSTIN, TX \xB7 H-E-B MUELLER"), /*#__PURE__*/React.createElement("span", null, "SAT 12 TO 8 \xB7 RECAP READY 24H")), /*#__PURE__*/React.createElement("div", {
     className: "sp-xkpis"
   }, [["327", "SAMPLES"], ["68", "LEADS"], ["$2.18", "COST / SAMPLE"], ["97%", "PHOTO OK"]].map(([v, l]) => /*#__PURE__*/React.createElement("div", {
     key: l
@@ -237,7 +237,7 @@ const ExportPreview = () => {
       lineHeight: 1.55,
       color: MUT
     }
-  }, "Notes: Mueller ran hot 2\u20135pm; 5-variant tasting drove trade-up to the 12-pack. Two OOS flagged on shelf tag audit.")), k === "photos" && /*#__PURE__*/React.createElement("div", {
+  }, "Notes: Mueller ran hot 2 to 5pm; 5-variant tasting drove trade-up to the 12-pack. Two OOS flagged on shelf tag audit.")), k === "photos" && /*#__PURE__*/React.createElement("div", {
     className: "sp-xlist"
   }, [["IMG_4412.jpg", "30.2989, -97.7218 · 14:06:22 · H-E-B Mueller"], ["IMG_4413.jpg", "30.2989, -97.7218 · 14:11:04 · shelf + display"], ["IMG_4414.jpg", "30.2989, -97.7218 · 15:38:51 · sampling table"], ["IMG_4415.jpg", "30.2989, -97.7218 · 18:02:10 · end-of-shift count"]].map(([f, m]) => /*#__PURE__*/React.createElement("div", {
     key: f
@@ -265,7 +265,7 @@ const ExportPreview = () => {
       lineHeight: 1.6,
       color: FG2
     }
-  }, "Share one link with a retailer, distributor, or brand partner. They see the markets, photos, and counts you allow \u2014 live, with nothing else in view."), /*#__PURE__*/React.createElement("div", {
+  }, "Share one link with a retailer, distributor, or brand partner. They see the markets, photos, and counts you allow. Live, with nothing else in view."), /*#__PURE__*/React.createElement("div", {
     className: "sp-xperms"
   }, [["Markets & counts", "VISIBLE"], ["Photo gallery", "VISIBLE"], ["Ambassador names", "HIDDEN"], ["Cost per sample", "HIDDEN"]].map(([l, s]) => /*#__PURE__*/React.createElement("div", {
     key: l

@@ -202,7 +202,7 @@ const Hero = () => {
     style: {
       color: "#fff"
     }
-  }, "proves it"), " \u2014 in-store demos, street, campus, festivals \u2014 every sample GPS-verified, every count in your dashboard by end of day."), /*#__PURE__*/React.createElement("div", {
+  }, "proves it"), " across in-store demos, street, campus, and festivals. Every sample GPS-verified, every count in your dashboard by end of day."), /*#__PURE__*/React.createElement("div", {
     className: "ps-rise",
     style: {
       marginTop: 32,
@@ -470,7 +470,7 @@ const WhatIs = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1.6,
     color: "rgba(255,255,255,0.82)"
   }
-}, "A product sampling agency staffs and runs the programs that put your product directly in a consumer's hands \u2014 in-store demos, retail sampling, street teams, campus, festivals, and on-premise. ", /*#__PURE__*/React.createElement("b", {
+}, "A product sampling agency staffs and runs the programs that put your product directly in a consumer's hands: in-store demos, retail sampling, street teams, campus, festivals, and on-premise. ", /*#__PURE__*/React.createElement("b", {
   style: {
     color: "#fff"
   }
@@ -482,11 +482,11 @@ const WhatIs = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "#fff"
   }
-}, "GPS-verified counts"), " \u2014 so sampling stops being a cost line and starts being a measurable trial engine."))));
+}, "GPS-verified counts"), ", so sampling stops being a cost line and starts being a measurable trial engine."))));
 
 /* ---------- CONVERSION FUNNEL ---------- */
 const Funnel = () => {
-  const steps = [["Reach", "People who walk past the demo", 100, "rgba(255,255,255,0.4)"], ["Sampled", "Product actually in hand", 58, LIME], ["Engaged", "Heard the pitch, asked a question", 39, LIME], ["Converted", "Bought — trial → purchase", 21, ORANGE]];
+  const steps = [["Reach", "People who walk past the demo", 100, "rgba(255,255,255,0.4)"], ["Sampled", "Product actually in hand", 58, LIME], ["Engaged", "Heard the pitch, asked a question", 39, LIME], ["Converted", "Bought: trial → purchase", 21, ORANGE]];
   return /*#__PURE__*/React.createElement("section", {
     id: "funnel",
     style: {
@@ -524,7 +524,7 @@ const Funnel = () => {
       lineHeight: 1.55,
       color: "rgba(255,255,255,0.7)"
     }
-  }, "Trial is the shortest path to a first purchase. We staff the demo, drive the conversation to the conversion ask, and count every step so you know the real return \u2014 not a vibe.")), /*#__PURE__*/React.createElement("div", {
+  }, "Trial is the shortest path to a first purchase. We staff the demo, drive the conversation to the conversion ask, and count every step so you know the real return, not a vibe.")), /*#__PURE__*/React.createElement("div", {
     className: "ps-reveal",
     style: {
       display: "flex",
@@ -591,7 +591,7 @@ const Funnel = () => {
       letterSpacing: "0.06em",
       color: "rgba(255,255,255,0.4)"
     }
-  }, "\u203B Illustrative funnel \u2014 real conversion varies by category and channel; top programs hit 28\u201334%.")));
+  }, "\u203B Illustrative funnel. Real conversion varies by category and channel; top programs hit 28 to 34%.")));
 };
 
 /* ---------- CHANNELS ---------- */
@@ -758,7 +758,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
     color: "rgba(255,255,255,0.6)"
   }
 }, l)))))));
-const FAQS = [["How do you measure sampling ROI?", "GPS-verified sample counts, per-SKU velocity, trial-to-purchase conversion, and post-sampling intercept research — delivered same-day in the Spark dashboard."], ["What channels do you sample in?", "Grocery, mass, c-store, natural, on-premise, campus, street, festivals, sporting events, and B2B trade shows — with channel-specific staffing and compliance."], ["Do you sample alcohol and regulated categories?", "Yes. TIPS-certified staff, state-by-state alcohol compliance, and food-handler certs for all F&B sampling."], ["What's typical conversion?", "Conversion varies by category, retailer, and how the demo is staffed. Ignite reports trial-to-purchase from GPS-verified counts after each program."], ["How fast is data turnaround?", "Same-day. Counts, photos, and dashboards are available within hours of shift completion."]];
+const FAQS = [["How do you measure sampling ROI?", "GPS-verified sample counts, per-SKU velocity, trial-to-purchase conversion, and post-sampling intercept research, delivered same-day in the Spark dashboard."], ["What channels do you sample in?", "Grocery, mass, c-store, natural, on-premise, campus, street, festivals, sporting events, and B2B trade shows, with channel-specific staffing and compliance."], ["Do you sample alcohol and regulated categories?", "Yes. TIPS-certified staff, state-by-state alcohol compliance, and food-handler certs for all F&B sampling."], ["What's typical conversion?", "Conversion varies by category, retailer, and how the demo is staffed. Ignite reports trial-to-purchase from GPS-verified counts after each program."], ["How fast is data turnaround?", "Same-day. Counts, photos, and dashboards are available within hours of shift completion."]];
 const Faq = () => {
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
@@ -868,7 +868,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 620,
     fontWeight: 500
   }
-}, "Tell us the product, the markets, and the goal. We'll design the sampling program, staff it, and prove the trial \u2014 sample by sample."), /*#__PURE__*/React.createElement("div", {
+}, "Tell us the product, the markets, and the goal. We'll design the sampling program, staff it, and prove the trial, sample by sample."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 38,
     display: "flex",

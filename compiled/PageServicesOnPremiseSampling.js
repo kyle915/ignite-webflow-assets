@@ -449,7 +449,7 @@ const Timeline = () => {
       color: "rgba(255,255,255,0.68)",
       maxWidth: 600
     }
-  }, "The full run-of-show before the first guest walks in \u2014 bar built, glassware washed, certs verified, refusal SOP rehearsed.")), /*#__PURE__*/React.createElement("div", {
+  }, "The full run-of-show before the first guest walks in: bar built, glassware washed, certs verified, refusal SOP rehearsed.")), /*#__PURE__*/React.createElement("div", {
     className: "op-sop",
     style: {
       display: "grid",
@@ -592,7 +592,7 @@ const PourNight = () => {
       fontSize: "clamp(28px,3.6vw,50px)",
       letterSpacing: "-0.03em"
     }
-  }, "Pours, conversions, refusals \u2014 logged live."), /*#__PURE__*/React.createElement("p", {
+  }, "Pours, conversions, refusals: logged live."), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 14,
       fontSize: 16,
@@ -725,7 +725,7 @@ const PourNight = () => {
 
 /* ============ REFUSAL SOP ============ */
 const RefusalSOP = () => {
-  const branches = [["Guest can't show valid ID", ["Polite refusal, brand-tone language", "Captain pulled in for de-escalation", "No pour. No exceptions."], "ID-check failure"], ["Guest appears intoxicated", ["Bar lead refuses pour", "Captain offers water + a seat", "Venue security looped in if needed"], "Over-served refusal"], ["Pour cap reached for venue", ["Crew checks the program max per state law", "Refusal explained politely", "Brand swag handoff instead"], "Cap-reached refusal"], ["Under-21 attempt", ["Refusal scripted, no negotiation", "Captain alerted, venue staff notified", "Logged with timestamp + photo where allowed"], "Minor refusal — escalated"]];
+  const branches = [["Guest can't show valid ID", ["Polite refusal, brand-tone language", "Captain pulled in for de-escalation", "No pour. No exceptions."], "ID-check failure"], ["Guest appears intoxicated", ["Bar lead refuses pour", "Captain offers water + a seat", "Venue security looped in if needed"], "Over-served refusal"], ["Pour cap reached for venue", ["Crew checks the program max per state law", "Refusal explained politely", "Brand swag handoff instead"], "Cap-reached refusal"], ["Under-21 attempt", ["Refusal scripted, no negotiation", "Captain alerted, venue staff notified", "Logged with timestamp + photo where allowed"], "Minor refusal: escalated"]];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: INK,
@@ -889,7 +889,7 @@ const Liability = () => {
       color: "rgba(255,255,255,0.68)",
       maxWidth: 620
     }
-  }, "Every program ships with named-additional-insured COIs to the brand, distributor, and venue \u2014 filed before crew lands.")), /*#__PURE__*/React.createElement("div", {
+  }, "Every program ships with named-additional-insured COIs to the brand, distributor, and venue, filed before crew lands.")), /*#__PURE__*/React.createElement("div", {
     className: "op-liab",
     style: {
       display: "grid",
@@ -941,7 +941,7 @@ const Liability = () => {
       fontSize: 10.5,
       color: "rgba(255,255,255,0.4)"
     }
-  }, "\u203B Limits scale to program \u2014 higher limits available on request.")));
+  }, "\u203B Limits scale to program. Higher limits available on request.")));
 };
 
 /* ============ BRAND-HOUSE ROSTER ============ */
@@ -983,7 +983,7 @@ const Roster = () => {
       color: "rgba(255,255,255,0.68)",
       maxWidth: 620
     }
-  }, "A typical Friday-to-Sunday brand-house roster. Scales to 18\u201324 across the weekend for larger venues.")), /*#__PURE__*/React.createElement("div", {
+  }, "A typical Friday-to-Sunday brand-house roster. Scales to 18 to 24 across the weekend for larger venues.")), /*#__PURE__*/React.createElement("div", {
     className: "op-roster",
     style: {
       display: "grid",
@@ -1143,7 +1143,7 @@ const Spark = () => {
       lineHeight: 1.6,
       color: "rgba(255,255,255,0.74)"
     }
-  }, "Documented pour sizes, ID-check completion, refusal incidents, cert expiry \u2014 all logged in Spark. The distributor and the brand see the same audit-ready dashboard."), /*#__PURE__*/React.createElement("div", {
+  }, "Documented pour sizes, ID-check completion, refusal incidents, cert expiry: all logged in Spark. The distributor and the brand see the same audit-ready dashboard."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 26,
       display: "flex",
@@ -1298,7 +1298,7 @@ const Spark = () => {
 
 /* ============ FAQ ============ */
 const FAQ = () => {
-  const items = [["Are all your pour staff TIPS / TABC / RBS certified?", "Yes. We don't staff a regulated pour with anyone who isn't currently certified for the jurisdiction. Cards on file, refreshed before expiry, available for distributor audit or regulator request."], ["Can you coordinate with our distributor for an in-bar demo?", "Yes. We've run programs through RNDC, Southern Glazer's, Breakthru Beverage, and most regional houses. We file the demo paperwork on your behalf and the distributor's."], ["Do you handle liquor liability and COIs?", "Yes. We carry general liability and liquor liability across every regulated program. Additional insureds are added per venue, distributor, and brand requirement before deployment."], ["Can you sample in dry counties or restricted jurisdictions?", "Where state and county law permits — yes. Where it doesn't, we tell you up front. We don't take chances with regulated programs."], ["Can you handle bars in NYC, Texas, and California simultaneously?", "Yes. Each state has different cert requirements — RBS in California, TABC in Texas, TIPS in New York. We staff certified ambassadors per state and track expiry through Spark."]];
+  const items = [["Are all your pour staff TIPS / TABC / RBS certified?", "Yes. We don't staff a regulated pour with anyone who isn't currently certified for the jurisdiction. Cards on file, refreshed before expiry, available for distributor audit or regulator request."], ["Can you coordinate with our distributor for an in-bar demo?", "Yes. We've run programs through RNDC, Southern Glazer's, Breakthru Beverage, and most regional houses. We file the demo paperwork on your behalf and the distributor's."], ["Do you handle liquor liability and COIs?", "Yes. We carry general liability and liquor liability across every regulated program. Additional insureds are added per venue, distributor, and brand requirement before deployment."], ["Can you sample in dry counties or restricted jurisdictions?", "Where state and county law permits, yes. Where it doesn't, we tell you up front. We don't take chances with regulated programs."], ["Can you handle bars in NYC, Texas, and California simultaneously?", "Yes. Each state has different cert requirements: RBS in California, TABC in Texas, TIPS in New York. We staff certified ambassadors per state and track expiry through Spark."]];
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
     style: {

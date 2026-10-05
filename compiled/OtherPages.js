@@ -52,7 +52,7 @@ const FractionalHero = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2)",
     maxWidth: 640
   }
-}, "Your fractional CPG Sales & Marketing team. Strategy, retail execution, and activations \u2014 without the full-time overhead. No more wearing every hat."), /*#__PURE__*/React.createElement("div", {
+}, "Your fractional CPG Sales & Marketing team. Strategy, retail execution, and activations, without the full-time overhead. No more wearing every hat."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 40,
     display: "flex",
@@ -230,7 +230,7 @@ const FractionalProcess = () => /*#__PURE__*/React.createElement("section", {
     gridTemplateColumns: "repeat(3, 1fr)",
     gap: 24
   }
-}, [["01", "Strategy Call", "We learn your brand, your gaps, and your goals. No pitch deck — just an honest conversation."], ["02", "Scope + Retainer", "Custom retainer — Sales, Marketing, or both. Month-to-month after the first 3 months."], ["03", "We Execute. You Grow.", "Meetings get booked, shelves get stocked, activations get executed — you get your time back."]].map(([n, t, d]) => /*#__PURE__*/React.createElement("div", {
+}, [["01", "Strategy Call", "We learn your brand, your gaps, and your goals. No pitch deck, just an honest conversation."], ["02", "Scope + Retainer", "Custom retainer: Sales, Marketing, or both. Month-to-month after the first 3 months."], ["03", "We Execute. You Grow.", "Meetings get booked, shelves get stocked, activations get executed. You get your time back."]].map(([n, t, d]) => /*#__PURE__*/React.createElement("div", {
   key: n,
   style: {
     padding: 32,
@@ -334,7 +334,7 @@ const WorkHero = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2)",
     maxWidth: 700
   }
-}, "Every program we run is measured in conversions, samples distributed, and markets activated \u2014 not impressions. Here's a selection.")));
+}, "Every program we run is measured in conversions, samples distributed, and markets activated, not impressions. Here's a selection.")));
 const WorkGrid = () => /*#__PURE__*/React.createElement("section", {
   className: "paper",
   style: {
@@ -515,7 +515,7 @@ const AboutHero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "var(--fg-1)"
   }
-}, "257,000+ brand ambassadors"), " running 5,000+ events executed for the brands that define culture \u2014 and the agency-run Spark platform has changed how clients see field marketing forever."))));
+}, "257,000+ brand ambassadors"), " running 5,000+ events executed for the brands that define culture, and the agency-run Spark platform has changed how clients see field marketing forever."))));
 const AboutStats = () => /*#__PURE__*/React.createElement("section", {
   id: "impact",
   className: "paper",
@@ -609,7 +609,7 @@ const AboutValues = () => /*#__PURE__*/React.createElement("section", {
     gridTemplateColumns: "repeat(3, 1fr)",
     gap: 20
   }
-}, [["Show up ready", "We prep, brief, and rehearse. Ambassadors are trained on your brand — not reading a script off their phone."], ["Prove it, don't pitch it", "Every program is measured. Spark shows you what happened in real time. No post-event PDFs."], ["Move the product", "Awareness is a side effect. The goal is trial, conversion, and repeat purchase. We optimize for that."]].map(([t, d]) => /*#__PURE__*/React.createElement("div", {
+}, [["Show up ready", "We prep, brief, and rehearse. Ambassadors are trained on your brand, not reading a script off their phone."], ["Prove it, don't pitch it", "Every program is measured. Spark shows you what happened in real time. No post-event PDFs."], ["Move the product", "Awareness is a side effect. The goal is trial, conversion, and repeat purchase. We optimize for that."]].map(([t, d]) => /*#__PURE__*/React.createElement("div", {
   key: t,
   style: {
     padding: 32,
@@ -639,7 +639,7 @@ const AboutValues = () => /*#__PURE__*/React.createElement("section", {
 }, d))))));
 
 /* ---------- CONTACT ---------- */
-const CONTACT_STEPS = [["01", "You send us the brief.", "2 min", "Just the basics — what you're launching, where, and roughly when. No long forms. No qualification gauntlet."], ["02", "We respond within 24 hours.", "Same day on weekdays", "A real human who's read your brief — not a templated \u201Cthanks for reaching out.\u201D If we're not the right fit, we'll tell you and point you somewhere better."], ["03", "30-min discovery call.", "No pitch deck", "We dig into goals, timeline, and budget. You leave with a clear sense of fit, scope, and next steps — even if that's \u201Cgo talk to someone else.\u201D"]];
+const CONTACT_STEPS = [["01", "You send us the brief.", "2 min", "Just the basics: what you're launching, where, and roughly when. No long forms. No qualification gauntlet."], ["02", "We respond within 24 hours.", "Same day on weekdays", "A real human who's read your brief, not a templated \u201Cthanks for reaching out.\u201D If we're not the right fit, we'll tell you and point you somewhere better."], ["03", "30-min discovery call.", "No pitch deck", "We dig into goals, timeline, and budget. You leave with a clear sense of fit, scope, and next steps, even if that's \u201Cgo talk to someone else.\u201D"]];
 const CONTACT_DOORS = [{
   dot: "var(--ignite-500)",
   t: "Brand Ambassador Staffing",
@@ -651,14 +651,14 @@ const CONTACT_DOORS = [{
   dot: "#FFB627",
   t: "Fractional Sales & Marketing",
   lead: "I'm doing too much myself.",
-  d: "Senior CPG operators plug into your team. Sales strategy, retail growth, broker management, marketing leadership — without the full-time hire.",
+  d: "Senior CPG operators plug into your team. Sales strategy, retail growth, broker management, marketing leadership. All without the full-time hire.",
   tag: "Fractional Services",
   href: "/fractional"
 }, {
   dot: "var(--spark-500)",
   t: "Spark Platform",
   lead: "I need to see what's actually happening.",
-  d: "Real-time field marketing intelligence. Live check-ins, sample tracking, conversion data, and post-event recaps — all in one dashboard.",
+  d: "Real-time field marketing intelligence. Live check-ins, sample tracking, conversion data, and post-event recaps, all in one dashboard.",
   tag: "Spark by Ignite",
   href: "https://sparkbyignite.igniteproductions.co/"
 }];
@@ -723,7 +723,7 @@ const ContactForm = () => {
       color: "var(--fg-2)",
       maxWidth: 580
     }
-  }, urgent ? "We staff short-lead requests in as little as 48 hours across our 50-state network. Email or call — tell us when, where, and how many." : "Tell us about your launch, activation, or staffing need. Whether you're 90 days from a national rollout or trying to figure out next quarter's play — we'll respond within 24 hours and get a real conversation started."), /*#__PURE__*/React.createElement("div", {
+  }, urgent ? "We staff short-lead requests in as little as 48 hours across our 50-state network. Email or call: tell us when, where, and how many." : "Tell us about your launch, activation, or staffing need. Whether you're 90 days from a national rollout or trying to figure out next quarter's play, we'll respond within 24 hours and get a real conversation started."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 36,
       display: "flex",

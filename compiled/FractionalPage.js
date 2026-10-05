@@ -77,7 +77,7 @@ const FOUNDER_TASKS = [{
   t: "Pitch Whole Foods Northeast buyer (again)",
   tag: "SALES"
 }, {
-  t: "Refresh sell sheet — investor sees deck Friday",
+  t: "Refresh sell sheet: investor sees deck Friday",
   tag: "MKTG"
 }, {
   t: "Find 4 demo staff for Costco roadshow Sat",
@@ -92,7 +92,7 @@ const FOUNDER_TASKS = [{
   t: "Approve trade show booth mockup",
   tag: "MKTG"
 }, {
-  t: "Reorder samples — 2 events out of stock",
+  t: "Reorder samples (2 events out of stock)",
   tag: "OPS"
 }, {
   t: "Schedule QBR w/ KeHE",
@@ -107,13 +107,13 @@ const FOUNDER_TASKS = [{
   t: "Sign event insurance COI for Austin",
   tag: "OPS"
 }, {
-  t: "Review velocity dip — store #12, store #44",
+  t: "Review velocity dip: store #12, store #44",
   tag: "DATA"
 }, {
   t: "Confirm broker meeting in Dallas",
   tag: "SALES"
 }, {
-  t: "Photos from Saturday demo — where are they?",
+  t: "Photos from Saturday demo: where are they?",
   tag: "MKTG"
 }, {
   t: "Push back launch ship date w/ co-packer",
@@ -128,7 +128,7 @@ const FOUNDER_TASKS = [{
   t: "Negotiate slotting at H-E-B",
   tag: "SALES"
 }, {
-  t: "Sample drop — 14 buyers, hand-deliver",
+  t: "Sample drop: 14 buyers, hand-deliver",
   tag: "MKTG"
 }, {
   t: "Read 47 unread Slack threads from staff",
@@ -764,7 +764,7 @@ const FractionalHero2 = () => /*#__PURE__*/React.createElement("section", {
 /* ==================================================================
    01.5 · PAIN BANNER — "we've all been there" scrolling confessions
    ================================================================== */
-const PAIN_POINTS = ["Building a sell sheet in Canva at 2am", "Hoping the buyer calls you back after that last-ditch text", "Three Slack DMs to the broker. Two unread. One \"k.\"", "Forecasting Q4 in a spreadsheet you don't fully trust", "Booking a flight to meet a buyer who already rescheduled twice", "Approving a demo team you've never met for a Saturday at Costco", "Reconciling slotting fees against a P&L that hasn't been updated since March", "Re-saving \"FINAL_v9_USE_THIS_ONE.pdf\"", "Following up on the Sprouts review three Mondays in a row", "Wondering why velocity is flat at store #44", "Lying awake doing trade math instead of sleeping", "Posting a job for a VP of Sales you can't actually afford", "Realizing the photos from Saturday's activation never came in", "Negotiating slotting on the same call as picking up your kid", "Showing up to a trade show with a booth and zero leads queued", "Telling your investors \"we just need one more hire\" — again", "Eating a granola bar at your desk because the team needs a recap deck by EOD", "Pretending the broker scorecard isn't a vibe check", "Re-reading the MDF agreement at midnight trying to find the loophole", "Submitting a co-op claim with 90% of receipts and praying", "Burning through scan-back budget on a promo that didn't move units", "Signing a festival sponsorship and realizing nobody's running activation", "An athlete partnership that's basically just a UPS shipping address", "Watching a competitor walk away with the endcap you wanted", "Building the Q4 trade calendar in the parking lot before a buyer meeting", "Three Instagram DMs from agencies pitching you the same deck", "Approving sponsorship spend before approving payroll", "Buyer asking for a TPR and you're not 100% sure what TPR stands for", "Reading a Nielsen report you didn't pay for and don't fully trust", "Realizing the partnership lead never got handed off after the trade show", "Pulling category review insights from three different broker emails", "Saying \"we'll figure out KPIs after launch\" — again", "Trying to remember which retailer wants the SRP at 3.99 vs 4.49"];
+const PAIN_POINTS = ["Building a sell sheet in Canva at 2am", "Hoping the buyer calls you back after that last-ditch text", "Three Slack DMs to the broker. Two unread. One \"k.\"", "Forecasting Q4 in a spreadsheet you don't fully trust", "Booking a flight to meet a buyer who already rescheduled twice", "Approving a demo team you've never met for a Saturday at Costco", "Reconciling slotting fees against a P&L that hasn't been updated since March", "Re-saving \"FINAL_v9_USE_THIS_ONE.pdf\"", "Following up on the Sprouts review three Mondays in a row", "Wondering why velocity is flat at store #44", "Lying awake doing trade math instead of sleeping", "Posting a job for a VP of Sales you can't actually afford", "Realizing the photos from Saturday's activation never came in", "Negotiating slotting on the same call as picking up your kid", "Showing up to a trade show with a booth and zero leads queued", "Telling your investors \"we just need one more hire\" (again)", "Eating a granola bar at your desk because the team needs a recap deck by EOD", "Pretending the broker scorecard isn't a vibe check", "Re-reading the MDF agreement at midnight trying to find the loophole", "Submitting a co-op claim with 90% of receipts and praying", "Burning through scan-back budget on a promo that didn't move units", "Signing a festival sponsorship and realizing nobody's running activation", "An athlete partnership that's basically just a UPS shipping address", "Watching a competitor walk away with the endcap you wanted", "Building the Q4 trade calendar in the parking lot before a buyer meeting", "Three Instagram DMs from agencies pitching you the same deck", "Approving sponsorship spend before approving payroll", "Buyer asking for a TPR and you're not 100% sure what TPR stands for", "Reading a Nielsen report you didn't pay for and don't fully trust", "Realizing the partnership lead never got handed off after the trade show", "Pulling category review insights from three different broker emails", "Saying \"we'll figure out KPIs after launch\" (again)", "Trying to remember which retailer wants the SRP at 3.99 vs 4.49"];
 const FractionalPainBanner = () => {
   /* split into 3 staggered rows for variety */
   const rows = [[PAIN_POINTS.slice(0, 12), 100, "var(--ignite-500)"], [PAIN_POINTS.slice(12, 23), 130, "#FFB627"], [PAIN_POINTS.slice(23), 115, "var(--ignite-500)"]];
@@ -979,7 +979,7 @@ const FractionalEngines = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-1-inv)",
     textWrap: "balance"
   }
-}, "The fastest way to grow a CPG brand isn't another hire \u2014", /*#__PURE__*/React.createElement("span", {
+}, "The fastest way to grow a CPG brand isn't another hire:", /*#__PURE__*/React.createElement("span", {
   style: {
     display: "inline-block",
     fontStyle: "italic",
@@ -1004,7 +1004,7 @@ const FractionalEngines = () => /*#__PURE__*/React.createElement("section", {
   tag: "ENGINE 01 · THE LEAD",
   title: "CPG Sales",
   head: "Get on shelf. Stay on shelf.",
-  blurb: "Senior sales leadership without the full-time overhead. We own buyer pitching, broker management, distribution, slotting, and trade — end-to-end, accountable to revenue.",
+  blurb: "Senior sales leadership without the full-time overhead. We own buyer pitching, broker management, distribution, slotting, and trade: end-to-end, accountable to revenue.",
   chips: [["Fractional sales team", "/services/fractional-sales-team"], ["Broker management", "/services/retail-sales-broker-management"], ["Buyer pitch & line reviews", "/services/buyer-pitch-line-reviews"], ["Trade marketing", "/services/trade-marketing-management"], ["Distribution expansion", "/services/distribution-expansion"], ["Retail readiness & margin", "/services/retail-readiness"]],
   accent: "var(--ignite-500)",
   lead: true
@@ -1013,7 +1013,7 @@ const FractionalEngines = () => /*#__PURE__*/React.createElement("section", {
   tag: "ENGINE 02 · THE SUPPORT",
   title: "Marketing",
   head: "Make them remember you.",
-  blurb: "Sell sheets, sponsorships, demo & sampling, and experiential — the presence that backs the sell-in and keeps you bought.",
+  blurb: "Sell sheets, sponsorships, demo & sampling, and experiential: the presence that backs the sell-in and keeps you bought.",
   chips: [["Sell sheets", null], ["Sponsorships", null], ["Sampling", null], ["Trade shows", null], ["Activations", null]],
   accent: "#FFB627"
 }].map(e => /*#__PURE__*/React.createElement("div", {
@@ -1234,8 +1234,8 @@ const FractionalFromTo = () => /*#__PURE__*/React.createElement("section", {
 /* ==================================================================
    05 · BUILT FOR + WEEK ONE — two-column promise
    ================================================================== */
-const BUILT_FOR = ["Are doing $1M–$50M and ready to scale", "Need senior CPG leadership without $250K+ overhead", "Are stuck managing brokers & demos themselves", "Want results before another funding round", "Have product-market fit but flat velocity", "Are losing time to \"founder-as-VP\" syndrome"];
-const WEEK_ONE = [["DAY 1", "Embedded senior team plugged into your stack"], ["WEEK 1", "Brand & account audit — buyer-by-buyer"], ["WEEK 2", "Custom 90-day playbook delivered & approved"], ["WEEK 3", "First buyer pitches & sample drops out the door"], ["ONGOING", "Friday read-outs — what shipped, stuck, next"]];
+const BUILT_FOR = ["Are doing $1M to $50M and ready to scale", "Need senior CPG leadership without $250K+ overhead", "Are stuck managing brokers & demos themselves", "Want results before another funding round", "Have product-market fit but flat velocity", "Are losing time to \"founder-as-VP\" syndrome"];
+const WEEK_ONE = [["DAY 1", "Embedded senior team plugged into your stack"], ["WEEK 1", "Brand & account audit, buyer-by-buyer"], ["WEEK 2", "Custom 90-day playbook delivered & approved"], ["WEEK 3", "First buyer pitches & sample drops out the door"], ["ONGOING", "Friday read-outs: what shipped, stuck, next"]];
 const FractionalBuiltFor = () => /*#__PURE__*/React.createElement("section", {
   className: "paper",
   style: {
@@ -1249,7 +1249,7 @@ const FractionalBuiltFor = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement(FpOpsLine, {
   color: "var(--spectrum-09)"
-}, ">>", " BEST FOR \xB7 $1M\u2013$50M BRANDS SCALING DISTRIBUTION"), /*#__PURE__*/React.createElement("h2", {
+}, ">>", " BEST FOR \xB7 $1M TO $50M BRANDS SCALING DISTRIBUTION"), /*#__PURE__*/React.createElement("h2", {
   style: {
     marginTop: 16,
     fontFamily: "var(--font-display)",
@@ -1414,7 +1414,7 @@ const FractionalBuiltFor = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2)",
     lineHeight: 1.55
   }
-}, "No proposal-then-silence cycle. Senior people, embedded inside your tools \u2014 Slack, Notion, CRM \u2014 on day one."))))));
+}, "No proposal-then-silence cycle. Senior people, embedded inside your tools (Slack, Notion, CRM) on day one."))))));
 
 /* ==================================================================
    06 · CADENCE — Weekly / Monthly / Quarterly
@@ -1432,7 +1432,7 @@ const CADENCE = [{
 }, {
   when: "QUARTERLY",
   head: "Joint business plan refresh",
-  body: "Brand health check. Broker scorecards. Trade ROI deep-dive. One QBR for the founder — not two siloed updates.",
+  body: "Brand health check. Broker scorecards. Trade ROI deep-dive. One QBR for the founder, not two siloed updates.",
   bullets: ["Brand health", "Broker scorecards", "Single QBR"]
 }];
 const FractionalCadence = () => /*#__PURE__*/React.createElement("section", {
@@ -1459,7 +1459,7 @@ const FractionalCadence = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 1100,
     textWrap: "balance"
   }
-}, "A real cadence \u2014", /*#__PURE__*/React.createElement("span", {
+}, "A real cadence,", /*#__PURE__*/React.createElement("span", {
   className: "fp-prism-text",
   style: {
     fontStyle: "italic",
@@ -1562,7 +1562,7 @@ const FractionalCadence = () => /*#__PURE__*/React.createElement("section", {
 /* ==================================================================
    07 · COMPARISON — Ignite vs FT Hire vs Agency
    ================================================================== */
-const COMPARE_ROWS = [["Time to start", "~2 weeks", "3–6 mos", "4–8 wks"], ["CPG-specific senior leadership", true, "maybe", false], ["257K+ ambassadors / boots-on-ground", true, false, "subbed"], ["Sales + Marketing under one roof", true, "2 hires", "usually one"], ["Scale up / down monthly", true, "severance", "annual"], ["Skin in the game on revenue", true, "salary only", false]];
+const COMPARE_ROWS = [["Time to start", "~2 weeks", "3 to 6 mos", "4 to 8 wks"], ["CPG-specific senior leadership", true, "maybe", false], ["257K+ ambassadors / boots-on-ground", true, false, "subbed"], ["Sales + Marketing under one roof", true, "2 hires", "usually one"], ["Scale up / down monthly", true, "severance", "annual"], ["Skin in the game on revenue", true, "salary only", false]];
 const cellRender = v => {
   if (v === true) return /*#__PURE__*/React.createElement("span", {
     style: {
@@ -1687,17 +1687,17 @@ const FractionalCompare = () => /*#__PURE__*/React.createElement("section", {
    08 · FIRST 90 DAYS — three-phase timeline
    ================================================================== */
 const PHASES = [{
-  range: "DAYS 1–14",
+  range: "DAYS 1 TO 14",
   name: "Embed",
-  body: "Brand audit. Account mapping. Quick-win ID. Tooling embedded inside your stack — Slack, Notion, CRM.",
+  body: "Brand audit. Account mapping. Quick-win ID. Tooling embedded inside your stack: Slack, Notion, CRM.",
   out: "Custom 90-day playbook"
 }, {
-  range: "DAYS 15–45",
+  range: "DAYS 15 TO 45",
   name: "First Wins",
   body: "First buyer pitches go out. Sell sheet refresh. First demo / sampling activation in-market. Weekly Friday read-outs.",
   out: "First chain meetings booked"
 }, {
-  range: "DAYS 46–90",
+  range: "DAYS 46 TO 90",
   name: "Compounding",
   body: "First POs land. Velocity baselines set. Trade show or activation executed. Decision point: scale up, narrow scope, or stay course.",
   out: "Measurable lift on doors / velocity"
@@ -1725,7 +1725,7 @@ const Fractional90Days = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: 1100,
     textWrap: "balance"
   }
-}, "From signed to in-market \u2014", /*#__PURE__*/React.createElement(FpItalic, null, " in three phases.")), /*#__PURE__*/React.createElement("div", {
+}, "From signed to in-market", /*#__PURE__*/React.createElement(FpItalic, null, " in three phases.")), /*#__PURE__*/React.createElement("div", {
   style: {
     position: "relative",
     marginTop: 80
@@ -2216,7 +2216,7 @@ const FractionalPrograms = () => /*#__PURE__*/React.createElement("section", {
     color: "var(--fg-2-inv)",
     maxWidth: 740
   }
-}, "Trade marketing, co-op math, sponsorship deals, field execution \u2014 managed by one senior team that already knows CPG retail. Pick the lanes you need; we run them together.")), /*#__PURE__*/React.createElement("div", {
+}, "Trade marketing, co-op math, sponsorship deals and field execution, all managed by one senior team that already knows CPG retail. Pick the lanes you need; we run them together.")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",

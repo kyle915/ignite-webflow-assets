@@ -180,7 +180,7 @@ const ThankYou = ({
       letterSpacing: "-0.035em",
       margin: 0
     }
-  }, "Thanks \u2014 we'll be", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+  }, "Thanks, we'll be", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
       color: "var(--ignite-500)"

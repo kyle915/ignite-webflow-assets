@@ -32,7 +32,7 @@ window.CITY_DATA = {
     name: "Reno",
     state: "Nevada",
     metro: "Reno-Sparks",
-    intro: "Ignite Productions runs brand activations across the Reno-Sparks metro — from the Riverwalk and Midtown to the casino corridor and Sparks Marina. Our local crew has staffed Hot August Nights, Burning Man supply chain and staging, Lake Tahoe destination programs, downtown sampling routes, and on-premise launches for CPG, beverage, and lifestyle brands.",
+    intro: "Ignite Productions runs brand activations across the Reno-Sparks metro, from the Riverwalk and Midtown to the casino corridor and Sparks Marina. Our local crew has staffed Hot August Nights, Burning Man supply chain and staging, Lake Tahoe destination programs, downtown sampling routes, and on-premise launches for CPG, beverage, and lifestyle brands.",
     ambassadors: "1,200+",
     yearsActive: "Since 2018",
     coverageNote: "Reno-Sparks + Tahoe",
@@ -59,18 +59,18 @@ window.CITY_DATA = {
     }],
     faqs: [{
       q: "Can you staff Burning Man and pre-burn events?",
-      a: "Yes. We staff supply chain, staging, transport, and pre-burn programs in the Reno area — vendor support, gear distribution, and brand presence at official partner events. We do not staff inside the playa itself."
+      a: "Yes. We staff supply chain, staging, transport, and pre-burn programs in the Reno area: vendor support, gear distribution, and brand presence at official partner events. We do not staff inside the playa itself."
     }, {
       q: "Do you cover Lake Tahoe and Truckee?",
       a: "Yes. South Lake Tahoe, North Shore, Incline Village, and Truckee are part of our Reno service area. We've supported destination weekends, festival activations, and on-premise launches across the Tahoe basin."
     }, {
       q: "What's your rush window for Reno bookings?",
-      a: "48 hours from brief to boots on the ground for in-market staffing. Hot August Nights, Reno Rodeo, and Burning Man surge weekends require earlier lock-in — brief us 4–6 weeks ahead when possible."
+      a: "48 hours from brief to boots on the ground for in-market staffing. Hot August Nights, Reno Rodeo, and Burning Man surge weekends require earlier lock-in. Brief us 4 to 6 weeks ahead when possible."
     }],
     cta: {
       eyebrow: "READY WHEN YOU ARE",
       heading: "Run something in {city}.",
-      body: "Brief us on the program — single-night Riverwalk activation through multi-week Tahoe coverage. We'll scope it to fit.",
+      body: "Brief us on the program: single-night Riverwalk activation through multi-week Tahoe coverage. We'll scope it to fit.",
       primaryLabel: "Start a brief",
       primaryHref: "https://igniteproductions.co/contact",
       secondaryLabel: "See the work",

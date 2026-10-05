@@ -922,18 +922,18 @@ const AVAILABLE_CITY_SLUGS = Object.values(MARKETS_BY_SLUG).map(c => c.slug);
 if (!window.REGION_HUES) {
   window.REGION_HUES = {
     "northeast": "#5E8B7E",
-    // slate green — temperate deciduous
+    // slate green, temperate deciduous
     "southeast": "#E39A4C",
-    // warm amber — humid subtropical
+    // warm amber, humid subtropical
     "midwest": "#4F86C6",
-    // lake blue — Great Lakes
+    // lake blue, Great Lakes
     "southwest": "#CE6B3E",
-    // desert terracotta — arid
+    // desert terracotta, arid
     "west": "#E7B84A",
-    // coastal gold — Mediterranean
+    // coastal gold, Mediterranean
     "pacific-northwest": "#3E8060",
-    // evergreen — temperate rainforest
-    "mountain": "#6C6FB2" // alpine slate-violet — high country
+    // evergreen, temperate rainforest
+    "mountain": "#6C6FB2" // alpine slate-violet, high country
   };
 }
 

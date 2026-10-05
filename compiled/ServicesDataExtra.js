@@ -112,7 +112,7 @@
     },
     "tierLadder": {
       "headline": "Four tiers.|One managed bench.",
-      "sub": "Pricing maps to tier. The right crew shows up for the right job — not a flat-rate roster of who-was-available.",
+      "sub": "Pricing maps to tier. The right crew shows up for the right job, not a flat-rate roster of who-was-available.",
       "tiers": [{
         "name": "Captain",
         "desc": "Floor lead, schedule manager, escalation point.",
@@ -125,7 +125,7 @@
         "role": "Runs demo-heavy shifts, bilingual programs, technical product flows"
       }, {
         "name": "Ambassador",
-        "desc": "Vetted, briefed, deployed — the working backbone of the bench.",
+        "desc": "Vetted, briefed, deployed: the working backbone of the bench.",
         "requirements": "Base certs for the program (TIPS / TABC / ServSafe as needed)",
         "role": "Runs the standard sampling, retail demo, festival, or street shift"
       }, {
@@ -137,7 +137,7 @@
     },
     "recruitingFunnel": {
       "headline": "12,000 applied last quarter.|1,600 made it to the bench.",
-      "sub": "We don't run a 'sign-up' platform. Every ambassador in the active bench has been vetted, background-checked, trained, and scored — and most applicants don't make it through.",
+      "sub": "We don't run a 'sign-up' platform. Every ambassador in the active bench has been vetted, background-checked, trained, and scored. Most applicants don't make it through.",
       "stages": [{
         "label": "APPLIED",
         "count": 12000,
@@ -190,7 +190,7 @@
     "short": "BA Management",
     "eyebrow": "STAFFING // MANAGEMENT",
     "tagline": "Recruit, train, deploy, and manage your brand ambassador program at national scale.",
-    "intro": "Brand ambassador management for brands that need a vetted, trained, accountable field force — not a freelance roster you have to chase. Recruiting, certifications, training, scheduling, deployment, and performance reporting, all run through one platform with one PM.",
+    "intro": "Brand ambassador management for brands that need a vetted, trained, accountable field force, not a freelance roster you have to chase. Recruiting, certifications, training, scheduling, deployment, and performance reporting, all run through one platform with one PM.",
     "hero": "https://kyle915.github.io/ignite-webflow-assets/assets/staffing-unfck-your-feet-team.jpg",
     "heroPos": "center 32%",
     "sub": [{
@@ -198,10 +198,10 @@
       "d": "Background-checked, age-verified, experience-mapped ambassadors. 257,000+ bench."
     }, {
       "t": "Certifications + training",
-      "d": "TIPS / TABC / RBS / ServSafe / food handler — tracked per ambassador, refreshed before expiry."
+      "d": "TIPS / TABC / RBS / ServSafe / food handler: tracked per ambassador, refreshed before expiry."
     }, {
       "t": "Brand-specific briefing",
-      "d": "Product knowledge, conversion ask, talking points, refusal protocols — pushed through Spark."
+      "d": "Product knowledge, conversion ask, talking points, refusal protocols, all pushed through Spark."
     }, {
       "t": "Scheduling + deployment",
       "d": "Captain-led shift assignment, geo-routing, back-up coverage, no-call no-show recovery."
@@ -216,21 +216,21 @@
       "d": "Branded uniforms, ID badges, brand-kit logistics handled per ambassador per shift."
     }, {
       "t": "Pay + 1099 administration",
-      "d": "Pay rates, ambassador reimbursements, 1099 admin handled — your team never touches it."
+      "d": "Pay rates, ambassador reimbursements, 1099 admin handled. Your team never touches it."
     }],
     "stats": [["257K+", "ambassador bench"], ["50", "states + DC"], ["1099", "admin handled"]],
     "adjacent": ["event-staffing", "product-sampling", "experiential-marketing"],
     "pov": {
       "lead": "Managed, not transactional.",
-      "body": "Most brands hire ambassadors through staffing platforms — a transactional pool with no training, no continuity, no accountability. We replace that with a managed program: same captains, same crew rotation, same training pipeline, same reporting — every shift, every market, every quarter.",
+      "body": "Most brands hire ambassadors through staffing platforms: a transactional pool with no training, no continuity, no accountability. We replace that with a managed program: same captains, same crew rotation, same training pipeline, same reporting. Every shift, every market, every quarter.",
       "marquee": ["MANAGED", "VETTED", "CERTIFIED", "BRIEFED", "ACCOUNTABLE"]
     },
     "pains": {
       "opener": "If you've staffed brand ambassadors before, you've probably…",
-      "sinker": "We give you a managed field force — same crew, same training, same standards, every shift.",
+      "sinker": "We give you a managed field force: same crew, same training, same standards, every shift.",
       "items": ["Hired through 4 different staffing platforms in 4 markets", "Lost a shift to a no-call no-show with no backup", "Found out a BA wasn't TIPS-certified mid-pour", "Watched a 'trained' rep read your script off their phone", "Heard 'we'll get you a fill' twenty minutes before doors", "Spent more time managing the staffing vendor than the campaign", "Tried to track 200 1099s by hand", "Wondered why this is all so manual"]
     },
-    "comparison": [["Staffing platform marketplace", "Managed program with vetted bench"], ["Different rep every shift", "Same captain, same crew across the program"], ["No pre-shift brief, just the call sheet", "Product-trained, briefed, talking-points loaded"], ["No-show? Good luck.", "Backup coverage SOP, captain on-call, no-call no-show recovery"], ["1099 admin and pay reconciliation on your team", "Handled in full — you see one invoice"], ["Performance tracked in your head", "Per-shift scoring, captain notes, market-by-market quality benchmarks"]],
+    "comparison": [["Staffing platform marketplace", "Managed program with vetted bench"], ["Different rep every shift", "Same captain, same crew across the program"], ["No pre-shift brief, just the call sheet", "Product-trained, briefed, talking-points loaded"], ["No-show? Good luck.", "Backup coverage SOP, captain on-call, no-call no-show recovery"], ["1099 admin and pay reconciliation on your team", "Handled in full; you see one invoice"], ["Performance tracked in your head", "Per-shift scoring, captain notes, market-by-market quality benchmarks"]],
     "proof": null,
     "industries": ["CPG Beverage", "CPG Food & Snack", "Alcohol & Spirits", "Tech & SaaS", "Sports & Entertainment", "Lifestyle & Beauty", "Cannabis", "Health & Wellness"],
     "process": [["RECRUIT", "Source against your audience and certification requirements per market."], ["VET", "Background check, age verify, experience map, in-person interview where required."], ["TRAIN", "Product training, certifications tracked, brand brief loaded in Spark."], ["DEPLOY", "Captain-led shift assignment, kit management, GPS-verified check-in."], ["REPORT", "Per-shift scoring, retention tracking, market quality benchmarks."]],
@@ -239,7 +239,7 @@
       "desc": "All managed ambassadors background-screened. Re-screened per program where the venue or brand requires."
     }, {
       "lab": "Certifications tracked",
-      "desc": "TIPS / TABC / RBS / ServSafe / food handler — auto-flagged 30 days before expiry, refreshed before deployment."
+      "desc": "TIPS / TABC / RBS / ServSafe / food handler: auto-flagged 30 days before expiry, refreshed before deployment."
     }, {
       "lab": "1099 + pay admin",
       "desc": "Pay rates, reimbursements, 1099 administration handled. Your finance team sees one invoice."
@@ -253,13 +253,13 @@
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
       "head": "Brand ambassador management is the operations layer between your brief and the field.",
-      "paras": ["Ignite manages brand ambassador programs at national scale. 257,000+ vetted ambassadors across all 50 states. We recruit, vet, train, deploy, certify, schedule, brief, and report — all through a single platform with one PM. Brands plug in; we handle the rest.", "Programs run as managed engagements, not transactional staffing marketplaces. Same captains, same crew rotation, same standards across markets. Continuity is the differentiator — most staffing platforms throw you a different rep every shift; we don't.", "Every ambassador profile, certification, shift, score, and pay record lives in <a href='/spark' style='color:#D7453E'>Spark</a>. Performance is visible. Retention is tracked. Quality benchmarks roll up market by market so the brand sees where to invest, where to swap, and where to scale.", "Best for brands running 100+ shifts a year, brands operating multi-market always-on programs, and brand-marketing teams who want a managed field force instead of a freelance roster they have to chase."],
+      "paras": ["Ignite manages brand ambassador programs at national scale. 257,000+ vetted ambassadors across all 50 states. We recruit, vet, train, deploy, certify, schedule, brief, and report, all through a single platform with one PM. Brands plug in; we handle the rest.", "Programs run as managed engagements, not transactional staffing marketplaces. Same captains, same crew rotation, same standards across markets. Continuity is the differentiator: most staffing platforms throw you a different rep every shift; we don't.", "Every ambassador profile, certification, shift, score, and pay record lives in <a href='/spark' style='color:#D7453E'>Spark</a>. Performance is visible. Retention is tracked. Quality benchmarks roll up market by market so the brand sees where to invest, where to swap, and where to scale.", "Best for brands running 100+ shifts a year, brands operating multi-market always-on programs, and brand-marketing teams who want a managed field force instead of a freelance roster they have to chase."],
       "chips": ["Brand ambassador management", "Brand ambassador agency", "Event staff management", "Promotional staffing management", "Ambassador recruiting", "Field staff management", "Brand rep program management", "Managed ambassador program", "Vetted brand ambassadors", "TIPS certified ambassadors"]
     },
-    "faqs": [["Is this different from event staffing?", "Yes. Event staffing is one-off shift coverage. Brand ambassador management is a continuous program: same crew across multi-quarter activation, with retention scoring, certifications tracked, and your brand's playbook embedded into the platform."], ["How big is your ambassador bench?", "257,000+ vetted ambassadors across all 50 states. Major-metro depth is sufficient for back-up coverage; we add tier-2 / tier-3 market depth on a per-program basis as the program scales."], ["What if a BA no-shows?", "Backup coverage SOP per shift. Captain on-call. No-call no-show recovery built into the program — we restock the shift, not the next program."], ["Can you handle 1099 administration?", "Yes. Pay rates, ambassador reimbursements, 1099 administration. Your finance team sees one invoice per program."], ["How quickly can you scale up an ambassador program?", "Single-market launch: 5–10 business days standard, 48 hours rush. Multi-market national: 2–4 weeks for full recruit + vetting + brief."], ["Do you manage continuity across multiple programs we run?", "Yes. Same captain rotation, same ambassador continuity, same retention pool — across sampling, retail demos, festival activations, trade shows. One managed program, multiple use cases."]],
+    "faqs": [["Is this different from event staffing?", "Yes. Event staffing is one-off shift coverage. Brand ambassador management is a continuous program: same crew across multi-quarter activation, with retention scoring, certifications tracked, and your brand's playbook embedded into the platform."], ["How big is your ambassador bench?", "257,000+ vetted ambassadors across all 50 states. Major-metro depth is sufficient for back-up coverage; we add tier-2 / tier-3 market depth on a per-program basis as the program scales."], ["What if a BA no-shows?", "Backup coverage SOP per shift. Captain on-call. No-call no-show recovery built into the program. We restock the shift, not the next program."], ["Can you handle 1099 administration?", "Yes. Pay rates, ambassador reimbursements, 1099 administration. Your finance team sees one invoice per program."], ["How quickly can you scale up an ambassador program?", "Single-market launch: 5 to 10 business days standard, 48 hours rush. Multi-market national: 2 to 4 weeks for full recruit + vetting + brief."], ["Do you manage continuity across multiple programs we run?", "Yes. Same captain rotation, same ambassador continuity, same retention pool across sampling, retail demos, festival activations, trade shows. One managed program, multiple use cases."]],
     "sparkAngle": {
       "headline": "Spark for ambassador management",
-      "lede": "Per-ambassador profile, certification expiry, shift score, retention score, pay record — all in one platform.",
+      "lede": "Per-ambassador profile, certification expiry, shift score, retention score, pay record, all in one platform.",
       "points": ["Per-ambassador profile + cert expiry flags", "Shift-by-shift performance scoring", "Retention tracking + market quality benchmarks", "1099 + pay record per ambassador"]
     },
     "pairedChips": [{
@@ -297,8 +297,8 @@
     "short": "Strategy",
     "eyebrow": "STRATEGY // PLANNING",
     "heroSplit": ["Strategy that ends", "in the real world."],
-    "tagline": "Positioning, channel strategy, and activation calendars — built by the team that has to make them real.",
-    "intro": "Most strategy decks die on a shelf because the people who wrote them never have to execute them. We plan the way we operate. Brand and activation strategy from Ignite covers positioning, audience, channel and market prioritization, and a quarter-by-quarter activation calendar — grounded in what actually happens in-market, because we run the field every day.",
+    "tagline": "Positioning, channel strategy, and activation calendars, built by the team that has to make them real.",
+    "intro": "Most strategy decks die on a shelf because the people who wrote them never have to execute them. We plan the way we operate. Brand and activation strategy from Ignite covers positioning, audience, channel and market prioritization, and a quarter-by-quarter activation calendar, grounded in what actually happens in-market, because we run the field every day.",
     "hero": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2400&q=80",
     "heroPos": "center 40%",
     "sub": [{
@@ -306,7 +306,7 @@
       "d": "Sharpen who you're for, what you stand for, and the wedge that wins trial."
     }, {
       "t": "Channel & market priority",
-      "d": "Where to play — retail, on-premise, festival, campus, DTC — and which markets first."
+      "d": "Where to play (retail, on-premise, festival, campus, DTC) and which markets first."
     }, {
       "t": "Activation calendar",
       "d": "A quarter-by-quarter plan of activations mapped to launches, seasons, and moments."
@@ -318,18 +318,18 @@
       "d": "Define the metrics up front so the program proves itself."
     }, {
       "t": "Execution handoff",
-      "d": "Strategy that hands directly to our field teams — no translation lost."
+      "d": "Strategy that hands directly to our field teams, with no translation lost."
     }],
     "stats": [["50", "states of execution data"], ["5K+", "activations / yr informing plans"], ["Operator", "built strategy"]],
     "adjacent": ["field-marketing", "experiential-marketing", "event-staffing"],
     "pov": {
       "lead": "A strategy you can't execute is a wish with a deadline.",
-      "body": "We've run thousands of activations across 50 states. That field reality is the input to the plan — so the strategy you get is the one that actually ships.",
+      "body": "We've run thousands of activations across 50 states. That field reality is the input to the plan, so the strategy you get is the one that actually ships.",
       "marquee": ["POSITION", "PRIORITIZE", "PLAN", "MEASURE", "OPERATOR-BUILT"]
     },
     "pains": {
       "opener": "If you own brand or activation planning, you've probably…",
-      "sinker": "We plan like operators — strategy that hands straight to the field.",
+      "sinker": "We plan like operators: strategy that hands straight to the field.",
       "items": ["Paid for a strategy deck that never got executed", "Watched the plan and the execution live in different agencies", "Guessed at which markets to enter first", "Had no KPIs defined until after launch", "Built an activation calendar with no field reality behind it", "Lost the thread between the brief and what shipped"]
     },
     "comparison": [["Strategy agency that never executes", "Plan built by the team that runs the field"], ["Deck that dies on a shelf", "Calendar that hands straight to execution"], ["Market priority by gut feel", "Market priority informed by 50-state data"], ["KPIs defined after launch", "Measurement designed into the plan"]],
@@ -340,11 +340,11 @@
     "industries": ["CPG Beverage", "CPG Food & Snack", "Alcohol & Spirits", "Pet", "Health & Wellness", "Beauty", "QSR & Restaurant", "Sports & Entertainment", "Cannabis"],
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
-      "head": "The planning layer above execution — built by the people who execute.",
-      "paras": ["Brand and activation strategy is the planning discipline that sits above execution: positioning, audience, channel and market prioritization, budget allocation, and the activation calendar. Ignite builds it grounded in real field data, because we run the execution every day.", "Where most strategy shops hand off a deck and disappear, our plans hand directly to our own field teams — the same crews, platform, and reporting cadence — so nothing is lost in translation between the brief and what ships.", "Measurement is designed in from the start through <a href='/spark' style='color:#2DE2E6'>Spark</a>, so every activation in the calendar has KPIs defined before it launches and proves itself in-market.", "Best for emerging and scaling CPG brands building their go-to-market, and established brands who want their strategy and execution under one accountable roof."],
+      "head": "The planning layer above execution, built by the people who execute.",
+      "paras": ["Brand and activation strategy is the planning discipline that sits above execution: positioning, audience, channel and market prioritization, budget allocation, and the activation calendar. Ignite builds it grounded in real field data, because we run the execution every day.", "Where most strategy shops hand off a deck and disappear, our plans hand directly to our own field teams (the same crews, platform, and reporting cadence), so nothing is lost in translation between the brief and what ships.", "Measurement is designed in from the start through <a href='/spark' style='color:#2DE2E6'>Spark</a>, so every activation in the calendar has KPIs defined before it launches and proves itself in-market.", "Best for emerging and scaling CPG brands building their go-to-market, and established brands who want their strategy and execution under one accountable roof."],
       "chips": ["brand activation strategy", "CPG go-to-market strategy", "field marketing strategy", "activation planning agency", "brand positioning CPG", "channel strategy", "market prioritization", "experiential strategy"]
     },
-    "faqs": [["Do you only do strategy, or execution too?", "Both — and that's the point. Our strategy hands directly to our own field teams, so the plan and the execution stay under one roof."], ["What does a strategy engagement include?", "Positioning and audience work, channel and market prioritization, a quarter-by-quarter activation calendar, budget allocation, and KPI/measurement design."], ["How is your strategy different from a brand agency's?", "We've run thousands of activations across 50 states. That field reality is the input — so the plan is executable, not aspirational."], ["Can you work alongside our existing creative or media agency?", "Yes. We focus on activation and field strategy and coordinate cleanly with your creative, media, and PR partners."], ["How do you measure whether the strategy worked?", "KPIs are defined up front and tracked in Spark, so each activation in the plan proves itself in real time."]],
+    "faqs": [["Do you only do strategy, or execution too?", "Both, and that's the point. Our strategy hands directly to our own field teams, so the plan and the execution stay under one roof."], ["What does a strategy engagement include?", "Positioning and audience work, channel and market prioritization, a quarter-by-quarter activation calendar, budget allocation, and KPI/measurement design."], ["How is your strategy different from a brand agency's?", "We've run thousands of activations across 50 states. That field reality is the input, so the plan is executable, not aspirational."], ["Can you work alongside our existing creative or media agency?", "Yes. We focus on activation and field strategy and coordinate cleanly with your creative, media, and PR partners."], ["How do you measure whether the strategy worked?", "KPIs are defined up front and tracked in Spark, so each activation in the plan proves itself in real time."]],
     "compliance": [{
       "lab": "Data-informed",
       "desc": "Plans grounded in real activation data across 50 states."
@@ -380,7 +380,7 @@
     }],
     "sparkAngle": {
       "headline": "Spark for strategy",
-      "lede": "Every activation in your plan ships with KPIs defined up front and measured live — so the strategy proves itself.",
+      "lede": "Every activation in your plan ships with KPIs defined up front and measured live, so the strategy proves itself.",
       "points": ["KPIs designed into the plan", "Live measurement per activation", "50-state data feeding the strategy", "One source of truth, plan to recap"]
     }
   };
@@ -397,24 +397,24 @@
     "eyebrow": "SALES // BUYER READINESS",
     "heroSplit": ["Walk into the review", "ready to win."],
     "tagline": "Qualified buyer meetings, category stories, and line-review prep built by senior CPG sellers.",
-    "intro": "A line review is the highest-leverage 30 minutes in CPG — and most brands walk in with a deck built in Canva at 2am. We build the category story, the data, and the deck, then rehearse the pitch so you (or your broker) walk in ready to win the slot. Senior CPG sales help, on demand.",
+    "intro": "A line review is the highest-leverage 30 minutes in CPG, and most brands walk in with a deck built in Canva at 2am. We build the category story, the data, and the deck, then rehearse the pitch so you (or your broker) walk in ready to win the slot. Senior CPG sales help, on demand.",
     "hero": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=2400&q=80",
     "heroPos": "center 30%",
     "sub": [{
       "t": "Buyer meeting sourcing",
-      "d": "We don't just prep the pitch — we secure qualified buyer meetings with the right retail partners for your category and stage."
+      "d": "We don't just prep the pitch; we secure qualified buyer meetings with the right retail partners for your category and stage."
     }, {
       "t": "Buyer targeting & outreach",
       "d": "Account targeting, contact mapping, and outreach so you walk into the right rooms, not whoever replies."
     }, {
       "t": "Category story",
-      "d": "We build the 'why now, why us' narrative buyers actually respond to — anchored in category data."
+      "d": "We build the 'why now, why us' narrative buyers actually respond to, anchored in category data."
     }, {
       "t": "Pitch deck build",
-      "d": "A clean, retailer-ready deck — not a 47-slide founder brain-dump."
+      "d": "A clean, retailer-ready deck, not a 47-slide founder brain-dump."
     }, {
       "t": "Line-review prep",
-      "d": "Pricing, SRP, margins, planogram fit, and the objections you'll get — handled in advance."
+      "d": "Pricing, SRP, margins, planogram fit, and the objections you'll get, all handled in advance."
     }, {
       "t": "Mock pitch & coaching",
       "d": "We rehearse the pitch with you or your broker so the room feels familiar."
@@ -429,7 +429,7 @@
     "adjacent": ["retail-sales-broker-management", "distribution-expansion", "trade-marketing-management"],
     "pov": {
       "lead": "Buyers don't reject products. They reject unprepared pitches.",
-      "body": "The slot is rarely lost on the product — it's lost on a muddled category story, the wrong SRP, or an answer you didn't have ready. We make sure the room is the easy part because the prep was the hard part.",
+      "body": "The slot is rarely lost on the product. It's lost on a muddled category story, the wrong SRP, or an answer you didn't have ready. We make sure the room is the easy part because the prep was the hard part.",
       "marquee": ["CATEGORY STORY", "LINE-REVIEW READY", "RETAILER-GRADE DECKS", "CPG-BUILT", "CLOSE THE SLOT"]
     },
     "pains": {
@@ -449,7 +449,7 @@
       "paras": ["Buyer pitch and line-review preparation is the work of building the category story, the pricing, the deck, and the rehearsal that turns a buyer meeting into a placement. For emerging brands, this is the difference between a slot and a 'circle back next reset.'", "Ignite brings senior CPG sellers who've sat on both sides of the table. We assemble the velocity and category data, build a clean retailer-grade deck, lock the SRP and margin math, and rehearse the pitch with you or your broker.", "We also handle the part most brands skip: the follow-up. What to send, when to follow up, and how to convert a soft 'maybe' into a purchase order.", "Best for CPG brands heading into a category review, founders pitching buyers themselves, and teams whose brokers need a stronger story and deck to sell in."],
       "chips": ["buyer pitch preparation", "line review prep", "category review deck", "CPG sales deck", "retail buyer pitch", "category story", "sell sheet design", "CPG pitch coaching", "retail line review", "slotting pitch"]
     },
-    "faqs": [["Can you get us the meeting, not just prep us for it?", "Yes. We source and secure qualified buyer meetings with the right retail partners for your category and stage, then build the story and rehearse the pitch."], ["Do you pitch the buyer for us, or prep us to pitch?", "Both. We can prep and rehearse you or your broker, or — depending on scope — sit in the room as your fractional sales lead."], ["How far ahead should we engage you?", "Ideally 3–4 weeks before the review so we can build the story, deck, and data and run a real rehearsal. Faster turnarounds are possible."], ["Can you localize the deck for different retailers?", "Yes — retailer-specific pricing, story, and planogram fit, including EN + ES where needed."], ["Do you build the sell sheet too?", "Yes. A clean, on-brand sell sheet and the supporting one-pagers buyers expect."], ["What happens after the meeting?", "We build the follow-up plan — what to send, when, and how to convert a 'maybe' into a PO."]],
+    "faqs": [["Can you get us the meeting, not just prep us for it?", "Yes. We source and secure qualified buyer meetings with the right retail partners for your category and stage, then build the story and rehearse the pitch."], ["Do you pitch the buyer for us, or prep us to pitch?", "Both. We can prep and rehearse you or your broker, or, depending on scope, sit in the room as your fractional sales lead."], ["How far ahead should we engage you?", "Ideally 3 to 4 weeks before the review so we can build the story, deck, and data and run a real rehearsal. Faster turnarounds are possible."], ["Can you localize the deck for different retailers?", "Yes: retailer-specific pricing, story, and planogram fit, including EN + ES where needed."], ["Do you build the sell sheet too?", "Yes. A clean, on-brand sell sheet and the supporting one-pagers buyers expect."], ["What happens after the meeting?", "We build the follow-up plan: what to send, when, and how to convert a 'maybe' into a PO."]],
     "compliance": [{
       "lab": "Pricing & margin",
       "desc": "SRP, margin, and promotional math validated before the room."
@@ -463,7 +463,7 @@
       "lab": "Follow-up cadence",
       "desc": "Post-meeting plan documented so nothing stalls."
     }],
-    "process": [["BRIEF", "Map the retailer, the category, and the slot you're after."], ["BUILD", "Category story, deck, pricing, and one-pagers."], ["REHEARSE", "Mock pitch and objection handling with you or your broker."], ["PITCH", "Walk in ready — in the room or behind it."], ["FOLLOW UP", "Convert the 'maybe' into a PO with a real follow-up plan."]],
+    "process": [["BRIEF", "Map the retailer, the category, and the slot you're after."], ["BUILD", "Category story, deck, pricing, and one-pagers."], ["REHEARSE", "Mock pitch and objection handling with you or your broker."], ["PITCH", "Walk in ready, in the room or behind it."], ["FOLLOW UP", "Convert the 'maybe' into a PO with a real follow-up plan."]],
     "pairedChips": [{
       "label": "Broker Management",
       "href": "/services/retail-sales-broker-management"
@@ -485,7 +485,7 @@
     }],
     "sparkAngle": {
       "headline": "Spark for the pitch",
-      "lede": "Walk in with live trial and velocity data from your own activations — not a stale Nielsen slide.",
+      "lede": "Walk in with live trial and velocity data from your own activations, not a stale Nielsen slide.",
       "points": ["Real sampling + trial data from the field", "Velocity by market and account", "Photo proof of activation", "Exportable into the pitch deck"]
     }
   };
@@ -501,8 +501,8 @@
     "short": "Content Capture",
     "eyebrow": "CREATIVE // CAPTURE",
     "heroSplit": ["We're already on-site.", "We leave with the content."],
-    "tagline": "Photo, video, and UGC crews embedded in your activations — so you leave with launch-ready content, not a memory.",
-    "intro": "You're already paying to put your brand in front of real people. We make sure you leave with the footage. Content and capture crews embed in your sampling, experiential, and retail activations to shoot photo, video, and UGC-style content — then deliver edited, platform-ready assets fast. Real moments, real people, real markets — not a sterile studio shoot.",
+    "tagline": "Photo, video, and UGC crews embedded in your activations, so you leave with launch-ready content, not a memory.",
+    "intro": "You're already paying to put your brand in front of real people. We make sure you leave with the footage. Content and capture crews embed in your sampling, experiential, and retail activations to shoot photo, video, and UGC-style content, then deliver edited, platform-ready assets fast. Real moments, real people, real markets. Not a sterile studio shoot.",
     "hero": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=2400&q=80",
     "heroPos": "center 40%",
     "sub": [{
@@ -522,13 +522,13 @@
       "d": "Talent and location releases captured on-site so assets are cleared for use."
     }, {
       "t": "Spark-linked delivery",
-      "d": "Content tagged to market, event, and SKU — searchable in Spark with the rest of your field data."
+      "d": "Content tagged to market, event, and SKU, searchable in Spark with the rest of your field data."
     }],
     "stats": [["Same-week", "edit delivery"], ["50", "states covered"], ["UGC + hero", "every shoot"]],
     "adjacent": ["field-marketing", "experiential-marketing", "event-staffing"],
     "pov": {
       "lead": "The activation ends. The content shouldn't.",
-      "body": "Most brands spend on the moment and capture it on a staffer's phone. We embed real crews so the activation becomes a content engine — feeding social, retail, and paid for months.",
+      "body": "Most brands spend on the moment and capture it on a staffer's phone. We embed real crews so the activation becomes a content engine, feeding social, retail, and paid for months.",
       "marquee": ["PHOTO", "VIDEO", "UGC", "SAME-WEEK", "ON-BRAND"]
     },
     "pains": {
@@ -545,10 +545,10 @@
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
       "head": "Turn every activation into a content engine.",
-      "paras": ["Content and capture crews are photo, video, and UGC teams embedded directly in brand activations — sampling, experiential, retail, festivals, and tours. Ignite staffs them alongside the activation crew so the brand leaves with launch-ready assets, not phone snapshots.", "We shoot UGC and creator-style vertical content, hero photography, and event video — then deliver edited, platform-native cut-downs the same week, while the moment still matters for social and paid.", "Assets are tagged by market, event, and SKU inside <a href='/spark' style='color:#D7453E'>Spark</a>, so your content library is searchable alongside your field data — and every clip ships with talent and location releases captured on-site.", "Best for CPG, beverage, and lifestyle brands who run frequent activations and need a steady stream of authentic, in-market content for social, retail, and paid media."],
+      "paras": ["Content and capture crews are photo, video, and UGC teams embedded directly in brand activations: sampling, experiential, retail, festivals, and tours. Ignite staffs them alongside the activation crew so the brand leaves with launch-ready assets, not phone snapshots.", "We shoot UGC and creator-style vertical content, hero photography, and event video, then deliver edited, platform-native cut-downs the same week, while the moment still matters for social and paid.", "Assets are tagged by market, event, and SKU inside <a href='/spark' style='color:#D7453E'>Spark</a>, so your content library is searchable alongside your field data, and every clip ships with talent and location releases captured on-site.", "Best for CPG, beverage, and lifestyle brands who run frequent activations and need a steady stream of authentic, in-market content for social, retail, and paid media."],
       "chips": ["brand content capture", "UGC agency", "event content production", "activation photography", "social content crews", "brand video production", "in-market content", "creator-style content"]
     },
-    "faqs": [["What do we actually receive?", "Edited photo and video assets — UGC-style vertical cut-downs, reels, and hero stills — tagged by market and event, typically delivered the same week."], ["Is the content cleared for paid use?", "Yes. Talent and location releases are captured on-site so your assets are cleared for organic and paid use."], ["Can crews shoot at any activation type?", "Yes — sampling, experiential, retail demos, festivals, tours, and sponsorship footprints. We brief crews on the brand before deployment."], ["How fast is delivery?", "Same-week for social cut-downs is standard; rush same-day is available for time-sensitive moments."], ["Do you also handle the activation itself?", "Yes. Most brands bundle capture with the activation we're already staffing — one crew, one brief, one invoice."]],
+    "faqs": [["What do we actually receive?", "Edited photo and video assets (UGC-style vertical cut-downs, reels, and hero stills), tagged by market and event, typically delivered the same week."], ["Is the content cleared for paid use?", "Yes. Talent and location releases are captured on-site so your assets are cleared for organic and paid use."], ["Can crews shoot at any activation type?", "Yes: sampling, experiential, retail demos, festivals, tours, and sponsorship footprints. We brief crews on the brand before deployment."], ["How fast is delivery?", "Same-week for social cut-downs is standard; rush same-day is available for time-sensitive moments."], ["Do you also handle the activation itself?", "Yes. Most brands bundle capture with the activation we're already staffing: one crew, one brief, one invoice."]],
     "compliance": [{
       "lab": "Talent releases",
       "desc": "Model and talent releases captured on-site for every featured person."
@@ -560,9 +560,9 @@
       "desc": "Human review of assets against brand guidelines before delivery."
     }, {
       "lab": "Spark delivery",
-      "desc": "Assets tagged by market, event, and SKU — searchable in Spark."
+      "desc": "Assets tagged by market, event, and SKU, searchable in Spark."
     }],
-    "process": [["BRIEF", "Align on shot list, brand guidelines, and the platforms the content feeds."], ["CAPTURE", "Crews embed in the activation — photo, video, UGC, releases on-site."], ["EDIT", "Same-week cut-downs, reels, and hero stills, platform-native."], ["DELIVER", "Tagged, cleared assets delivered and filed in Spark by market + event."]],
+    "process": [["BRIEF", "Align on shot list, brand guidelines, and the platforms the content feeds."], ["CAPTURE", "Crews embed in the activation: photo, video, UGC, releases on-site."], ["EDIT", "Same-week cut-downs, reels, and hero stills, platform-native."], ["DELIVER", "Tagged, cleared assets delivered and filed in Spark by market + event."]],
     "pairedChips": [{
       "label": "Field Marketing",
       "href": "/services/field-marketing"
@@ -584,7 +584,7 @@
     }],
     "sparkAngle": {
       "headline": "Spark for content",
-      "lede": "Every asset tagged by market, event, and SKU — your content library lives next to your field data, searchable and cleared.",
+      "lede": "Every asset tagged by market, event, and SKU. Your content library lives next to your field data, searchable and cleared.",
       "points": ["Assets tagged by market, event, SKU", "Releases captured + stored on-site", "Same-week edits delivered through Spark", "Searchable library across every activation"]
     }
   };
@@ -601,7 +601,7 @@
     "eyebrow": "GROWTH // LIFECYCLE",
     "heroSplit": ["The lead didn't end", "at the sample."],
     "tagline": "Email, SMS, and automated journeys that turn the leads you capture in the field into repeat buyers.",
-    "intro": "Every sampling event and sweepstakes captures leads — and most of them die in a spreadsheet. We close the loop. CRM and lifecycle marketing from Ignite syncs the first-party data your field programs capture into email and SMS journeys: welcome flows, offers, winback, and retention — so the trial you paid for turns into a repeat purchase.",
+    "intro": "Every sampling event and sweepstakes captures leads, and most of them die in a spreadsheet. We close the loop. CRM and lifecycle marketing from Ignite syncs the first-party data your field programs capture into email and SMS journeys: welcome flows, offers, winback, and retention, so the trial you paid for turns into a repeat purchase.",
     "hero": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2400&q=80",
     "heroPos": "center 40%",
     "sub": [{
@@ -612,7 +612,7 @@
       "d": "Welcome, offer, nurture, winback, and retention flows built and managed."
     }, {
       "t": "First-party data",
-      "d": "Build owned audiences from real field interactions — privacy-compliant."
+      "d": "Build owned audiences from real field interactions, privacy-compliant."
     }, {
       "t": "Offer & coupon loops",
       "d": "QR and code redemption tied back to the activation that drove it."
@@ -621,18 +621,18 @@
       "d": "Segment by market, product, and behavior for relevant messaging."
     }, {
       "t": "Reporting",
-      "d": "Open, click, redemption, and repeat-purchase signal — closed-loop to the field."
+      "d": "Open, click, redemption, and repeat-purchase signal, closed-loop to the field."
     }],
     "stats": [["First-party", "data from the field"], ["Email + SMS", "journeys"], ["Closed-loop", "to activation"]],
     "adjacent": ["field-marketing", "experiential-marketing", "event-staffing"],
     "pov": {
       "lead": "You paid for the trial. Don't lose the relationship.",
-      "body": "Field marketing captures more first-party data than any ad ever will. We turn that data into journeys — so a sample becomes a subscriber becomes a repeat buyer.",
+      "body": "Field marketing captures more first-party data than any ad ever will. We turn that data into journeys, so a sample becomes a subscriber becomes a repeat buyer.",
       "marquee": ["CAPTURE", "NURTURE", "CONVERT", "RETAIN", "FIRST-PARTY"]
     },
     "pains": {
       "opener": "If you capture leads at events, you've probably…",
-      "sinker": "We close the loop — field leads into journeys that convert.",
+      "sinker": "We close the loop: field leads into journeys that convert.",
       "items": ["Watched sweepstakes leads die in a spreadsheet", "Captured emails you never messaged", "Had no link between a coupon redemption and the event", "Run email and field marketing as separate worlds", "Lost first-party data you legally collected", "Couldn't prove activation drove repeat purchase"]
     },
     "comparison": [["Leads die in a spreadsheet", "Leads sync from Spark into journeys"], ["Email and field run separately", "Closed-loop from activation to inbox"], ["No link between coupon and event", "Redemption tied back to the activation"], ["Generic blasts", "Segmented by market, product, behavior"]],
@@ -644,10 +644,10 @@
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
       "head": "Close the loop between the field and the inbox.",
-      "paras": ["CRM and lifecycle marketing is the practice of turning captured leads into repeat customers through email, SMS, and automated journeys. Ignite is uniquely positioned to run it because our field programs capture first-party data every day.", "Leads from sweepstakes, sampling, and activations flow from <a href='/spark' style='color:#8B7CF6'>Spark</a> into your CRM — scored, segmented, and clean — then into welcome, offer, nurture, winback, and retention flows built and managed by our team.", "Coupon and QR redemption ties back to the activation that drove it, so for the first time you can connect an in-market sample to a repeat purchase — a closed loop most CPG brands have never had.", "Best for CPG and beverage brands running sampling and sweepstakes who want to build owned, first-party audiences and prove that activation drives retention."],
+      "paras": ["CRM and lifecycle marketing is the practice of turning captured leads into repeat customers through email, SMS, and automated journeys. Ignite is uniquely positioned to run it because our field programs capture first-party data every day.", "Leads from sweepstakes, sampling, and activations flow from <a href='/spark' style='color:#8B7CF6'>Spark</a> into your CRM (scored, segmented, and clean), then into welcome, offer, nurture, winback, and retention flows built and managed by our team.", "Coupon and QR redemption ties back to the activation that drove it, so for the first time you can connect an in-market sample to a repeat purchase: a closed loop most CPG brands have never had.", "Best for CPG and beverage brands running sampling and sweepstakes who want to build owned, first-party audiences and prove that activation drives retention."],
       "chips": ["CRM lifecycle marketing", "email SMS marketing CPG", "lead nurture", "marketing automation", "sweepstakes lead capture", "retention marketing", "first-party data CPG", "closed-loop marketing"]
     },
-    "faqs": [["Do you build and manage the journeys, or just hand over data?", "Both. We sync the data and build/manage the email and SMS journeys — welcome, offer, nurture, winback, and retention."], ["What platforms do you work in?", "We work in your existing CRM/ESP (Klaviyo, Braze, HubSpot, Salesforce, and similar) or help you select one."], ["How does field data get into the CRM?", "Leads captured in Spark at sampling and sweepstakes flow into your CRM, scored and segmented, in real time."], ["Is lead capture privacy-compliant?", "Yes. Consent and opt-in are captured at the point of collection, and data handling is documented for your legal team."], ["Can you tie a coupon redemption to a specific event?", "Yes. QR and code redemption is tied back to the activation that drove it, closing the loop from field to purchase."]],
+    "faqs": [["Do you build and manage the journeys, or just hand over data?", "Both. We sync the data and build/manage the email and SMS journeys: welcome, offer, nurture, winback, and retention."], ["What platforms do you work in?", "We work in your existing CRM/ESP (Klaviyo, Braze, HubSpot, Salesforce, and similar) or help you select one."], ["How does field data get into the CRM?", "Leads captured in Spark at sampling and sweepstakes flow into your CRM, scored and segmented, in real time."], ["Is lead capture privacy-compliant?", "Yes. Consent and opt-in are captured at the point of collection, and data handling is documented for your legal team."], ["Can you tie a coupon redemption to a specific event?", "Yes. QR and code redemption is tied back to the activation that drove it, closing the loop from field to purchase."]],
     "compliance": [{
       "lab": "Consent + opt-in",
       "desc": "TCPA/CAN-SPAM-aware consent captured at point of collection."
@@ -661,7 +661,7 @@
       "lab": "Closed-loop",
       "desc": "Redemption tied to activation via Spark."
     }],
-    "process": [["CAPTURE", "Leads collected in the field flow into Spark, consented and clean."], ["SYNC", "Scored, segmented leads pushed into your CRM/ESP."], ["NURTURE", "Email + SMS journeys built and managed — welcome to winback."], ["MEASURE", "Open, click, redemption, and repeat-purchase signal, closed-loop."]],
+    "process": [["CAPTURE", "Leads collected in the field flow into Spark, consented and clean."], ["SYNC", "Scored, segmented leads pushed into your CRM/ESP."], ["NURTURE", "Email + SMS journeys built and managed, from welcome to winback."], ["MEASURE", "Open, click, redemption, and repeat-purchase signal, closed-loop."]],
     "pairedChips": [{
       "label": "Field Marketing",
       "href": "/services/field-marketing"
@@ -683,7 +683,7 @@
     }],
     "sparkAngle": {
       "headline": "Spark for lifecycle",
-      "lede": "Field leads flow straight from Spark into your CRM — consented, scored, and tied to the activation that captured them.",
+      "lede": "Field leads flow straight from Spark into your CRM: consented, scored, and tied to the activation that captured them.",
       "points": ["Leads synced from field to CRM live", "Consent captured at point of collection", "Redemption tied to activation", "Closed-loop from sample to repeat buy"]
     }
   };
@@ -705,7 +705,7 @@
     "heroPos": "center 45%",
     "sub": [{
       "t": "Retailer targeting",
-      "d": "We prioritize the chains and channels where your brand has the best shot — not a spray-and-pray list."
+      "d": "We prioritize the chains and channels where your brand has the best shot, not a spray-and-pray list."
     }, {
       "t": "New-door strategy",
       "d": "A sell-in plan per retailer: the story, the pricing, the timing, the broker."
@@ -714,13 +714,13 @@
       "d": "GPS-verified demos that turn a new placement into velocity before it gets cut."
     }, {
       "t": "Channel expansion",
-      "d": "Grocery, c-store, club, natural, on-premise — sequenced in the right order."
+      "d": "Grocery, c-store, club, natural, on-premise: sequenced in the right order."
     }, {
       "t": "Velocity protection",
       "d": "New doors die without support. We staff the demos that keep them on shelf."
     }, {
       "t": "Expansion reporting",
-      "d": "Doors opened, velocity by account, and what to do next — in one read-out."
+      "d": "Doors opened, velocity by account, and what to do next, all in one read-out."
     }],
     "stats": [["257K+", "ambassadors for demos"], ["50", "states routed"], ["1", "expansion plan, focused"]],
     "adjacent": ["retail-sales-broker-management", "buyer-pitch-line-reviews", "trade-marketing-management"],
@@ -743,10 +743,10 @@
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
       "head": "Winning distribution is easy. Holding it is the whole game.",
-      "paras": ["Distribution expansion is the work of targeting the right retailers, selling them in, and backing new placements with the trial that protects velocity. The brands that scale don't chase every door — they win the right ones and support them.", "Ignite builds the expansion plan around the chains and channels where your brand has the best shot, runs the sell-in with senior CPG sellers, and deploys distributor demos from a 257K-ambassador field team to turn placements into reordering doors.", "We sequence channels in the right order — grocery, c-store, club, natural, on-premise — so the brand grows where it can support itself instead of collapsing under doors it can't service.", "Best for CPG brands moving from regional into national, brands losing placements to low velocity, and founders spreading a small field budget across too many markets."],
+      "paras": ["Distribution expansion is the work of targeting the right retailers, selling them in, and backing new placements with the trial that protects velocity. The brands that scale don't chase every door. They win the right ones and support them.", "Ignite builds the expansion plan around the chains and channels where your brand has the best shot, runs the sell-in with senior CPG sellers, and deploys distributor demos from a 257K-ambassador field team to turn placements into reordering doors.", "We sequence channels in the right order (grocery, c-store, club, natural, on-premise) so the brand grows where it can support itself instead of collapsing under doors it can't service.", "Best for CPG brands moving from regional into national, brands losing placements to low velocity, and founders spreading a small field budget across too many markets."],
       "chips": ["distribution expansion", "CPG distribution strategy", "new door strategy", "retailer targeting", "distributor demos", "channel expansion", "retail sell-in", "velocity support", "CPG distribution agency", "grocery distribution"]
     },
-    "faqs": [["How do you decide which retailers to target?", "We prioritize chains and channels by fit, margin, competitive set, and your ability to support velocity — not a generic 'every door' list."], ["Do you handle the sell-in or just the strategy?", "Both. We build the plan and, as your fractional sales lead, run or support the sell-in with brokers and buyers."], ["Why do new doors need demos?", "New placements get cut when velocity is low. Distributor demos and sampling drive the trial that protects the shelf and earns the reorder."], ["Can you support a national rollout?", "Yes — 50-state coverage with a 257K-ambassador bench, sequenced channel by channel so growth is supportable."], ["How do you report on expansion?", "Doors opened, velocity by account, and clear next steps — in one read-out, not six broker emails."]],
+    "faqs": [["How do you decide which retailers to target?", "We prioritize chains and channels by fit, margin, competitive set, and your ability to support velocity, not a generic 'every door' list."], ["Do you handle the sell-in or just the strategy?", "Both. We build the plan and, as your fractional sales lead, run or support the sell-in with brokers and buyers."], ["Why do new doors need demos?", "New placements get cut when velocity is low. Distributor demos and sampling drive the trial that protects the shelf and earns the reorder."], ["Can you support a national rollout?", "Yes: 50-state coverage with a 257K-ambassador bench, sequenced channel by channel so growth is supportable."], ["How do you report on expansion?", "Doors opened, velocity by account, and clear next steps, in one read-out, not six broker emails."]],
     "compliance": [{
       "lab": "Distributor coordination",
       "desc": "RNDC, Southern Glazer's, Breakthru, and regional houses aligned on demos and resets."
@@ -785,7 +785,7 @@
     }],
     "sparkAngle": {
       "headline": "Spark for expansion",
-      "lede": "See which new doors are actually moving — and put demo support exactly where velocity is at risk.",
+      "lede": "See which new doors are actually moving, and put demo support exactly where velocity is at risk.",
       "points": ["Velocity by account and market", "Demo execution where doors need it", "Reorder signals from the field", "One read-out for brand and broker"]
     }
   };
@@ -817,14 +817,14 @@
     "alreadyDelivered": {
       "eyebrow": "RECAPS · ALREADY OUT THE DOOR",
       "title": "Recaps delivered|this month.",
-      "lede": "Every program Ignite runs ships through Spark. The counter is the recap pile that's already in our clients' inboxes — not the slide we promised them.",
+      "lede": "Every program Ignite runs ships through Spark. The counter is the recap pile that's already in our clients' inboxes, not the slide we promised them.",
       "stats": [["247", "RECAPS DELIVERED MTD"], ["100%", "BY DAY 1"], ["6", "AVG STAKEHOLDERS"], ["3hr", "MEDIAN TURNAROUND"]]
     },
     "recapPreview": {
       "headline": "Open the deck.|Same view, every stakeholder.",
-      "sub": "This is what an Ignite + Spark recap looks like the morning after strike. Cover, KPIs, photos, captain notes, scan lift, and a distribution list — all auto-generated from field activity.",
+      "sub": "This is what an Ignite + Spark recap looks like the morning after strike. Cover, KPIs, photos, captain notes, scan lift, and a distribution list, all auto-generated from field activity.",
       "brand": "DEMO BRAND",
-      "eventName": "ACL Festival — Weekend One Recap",
+      "eventName": "ACL Festival: Weekend One Recap",
       "kpis": [["4,208", "SAMPLES"], ["1,840", "LEADS CAPTURED"], ["+18%", "SCAN LIFT (POST)"], ["98%", "ON-TIME CHECK-INS"], ["12", "CAPTAIN NOTES"]],
       "tiles": [{
         "title": "Field KPIs",
@@ -911,35 +911,35 @@
       "period": "Q3 2026",
       "totals": [["12", "EVENTS RUN"], ["28,400", "TOTAL SAMPLES"], ["6,140", "LEADS CAPTURED"], ["+21%", "SCAN LIFT (MEAN)"], ["100%", "ON-TIME RECAPS"]],
       "eventList": [{
-        "name": "ACL Festival — Weekend One",
+        "name": "ACL Festival: Weekend One",
         "market": "AUSTIN · TX",
         "samples": "4,208"
       }, {
-        "name": "ACL Festival — Weekend Two",
+        "name": "ACL Festival: Weekend Two",
         "market": "AUSTIN · TX",
         "samples": "3,892"
       }, {
-        "name": "Whole Foods Brooklyn — Saturday Demo",
+        "name": "Whole Foods Brooklyn: Saturday Demo",
         "market": "BROOKLYN · NY",
         "samples": "412"
       }, {
-        "name": "Costco Roadshow — Denver Wk 1",
+        "name": "Costco Roadshow: Denver Wk 1",
         "market": "DENVER · CO",
         "samples": "1,840"
       }, {
-        "name": "Costco Roadshow — Denver Wk 2",
+        "name": "Costco Roadshow: Denver Wk 2",
         "market": "DENVER · CO",
         "samples": "2,100"
       }, {
-        "name": "RNDC TX GSM — Houston",
+        "name": "RNDC TX GSM: Houston",
         "market": "HOUSTON · TX",
         "samples": "320"
       }, {
-        "name": "SGWS FL GSM — Tampa",
+        "name": "SGWS FL GSM: Tampa",
         "market": "TAMPA · FL",
         "samples": "280"
       }, {
-        "name": "Sprouts Austin — New SKU Launch",
+        "name": "Sprouts Austin: New SKU Launch",
         "market": "AUSTIN · TX",
         "samples": "610"
       }]
@@ -965,7 +965,7 @@
       "context": "FESTIVAL MULTI-DAY",
       "tag": "WEEKEND-OF",
       "title": "Multi-day festival recap, delivered every morning",
-      "desc": "ACL or Lollapalooza-style multi-day. Each morning's recap covers the prior day's samples, photos, captain notes — distributor + retailer + brand all see it before lunch.",
+      "desc": "ACL or Lollapalooza-style multi-day. Each morning's recap covers the prior day's samples, photos, captain notes. Distributor + retailer + brand all see it before lunch.",
       "lift": "5-stakeholder distribution"
     }, {
       "context": "QUARTERLY RETAIL",
@@ -988,7 +988,7 @@
     }],
     "short": "Reporting",
     "eyebrow": "SPARK // FIELD REPORTING",
-    "tagline": "Spark by Ignite is the in-house field-marketing platform that turns activations into auto-generated, GPS-verified, share-ready recaps — same day, every program.",
+    "tagline": "Spark by Ignite is the in-house field-marketing platform that turns activations into auto-generated, GPS-verified, share-ready recaps, same day, every program.",
     "intro": "Event recap and reporting that ships before the next meeting, not after the next quarter. GPS-verified ambassador check-ins, sample counts logged live, photo capture from the field, and recap dashboards your brand, distributor, and retailer all see at the same time. Powered by Spark, our in-house field marketing platform.",
     "hero": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=2400&q=80",
     "heroPos": "center 40%",
@@ -1003,7 +1003,7 @@
       "d": "Time-stamped, location-tagged, uploaded mid-shift. Recap is photo-heavy by default."
     }, {
       "t": "KPI tracking",
-      "d": "Samples, leads, conversions, dwell time, scan-back data — tracked against program KPIs."
+      "d": "Samples, leads, conversions, dwell time, scan-back data, all tracked against program KPIs."
     }, {
       "t": "Auto-generated recaps",
       "d": "Recap dashboards fire within hours of strike. No 'we'll send the deck next week.'"
@@ -1012,7 +1012,7 @@
       "d": "Per-market roll-up, comparative analysis, where to invest next quarter."
     }, {
       "t": "CRM + data warehouse sync",
-      "d": "Salesforce, HubSpot, Klaviyo, custom data warehouse — entries and engagement flow nightly."
+      "d": "Salesforce, HubSpot, Klaviyo, custom data warehouse: entries and engagement flow nightly."
     }, {
       "t": "Custom exports + APIs",
       "d": "PDF, CSV, JSON, API hookups for trade teams and data engineering."
@@ -1021,7 +1021,7 @@
     "adjacent": ["field-marketing", "experiential-marketing", "event-staffing"],
     "pov": {
       "lead": "If the recap arrives after the next planning meeting, the program failed its second job.",
-      "body": "Field marketing's biggest leak isn't execution — it's the data trail. A great activation with a 9-day-late recap is a great activation that didn't influence the next quarter's plan. We close that gap. Same-day visibility. Auto-generated dashboards. Recap before the next meeting.",
+      "body": "Field marketing's biggest leak isn't execution. It's the data trail. A great activation with a 9-day-late recap is a great activation that didn't influence the next quarter's plan. We close that gap. Same-day visibility. Auto-generated dashboards. Recap before the next meeting.",
       "marquee": ["LIVE", "GPS-VERIFIED", "PHOTO-CAPTURED", "AUTO-GENERATED", "DISTRIBUTOR-SHARED"]
     },
     "pains": {
@@ -1032,7 +1032,7 @@
     "comparison": [["Recap deck arrives 2 weeks after the event", "Live dashboard updating during the event"], ["Sample count estimated end of day", "GPS-tagged counts logged live"], ["Photos lost in DMs and emails", "Time-stamped, location-tagged uploads in Spark"], ["You assemble the quarterly review by hand", "Spark rolls up per-market, per-program quarterly auto"], ["Distributor gets the recap 4 days late", "Distributor + brand see the dashboard same time"], ["No data hookups, no API", "CRM + data warehouse sync, JSON/CSV/PDF exports"]],
     "proof": null,
     "industries": ["CPG Beverage", "CPG Food & Snack", "Alcohol & Spirits", "Tech & SaaS", "Sports & Entertainment", "Pet", "Health & Wellness", "QSR & Restaurant", "Automotive"],
-    "process": [["BRIEF", "Confirm KPIs, channels, frequency, who sees what."], ["CONFIGURE", "Build the dashboard — KPIs, scoring rubric, audience access."], ["EXECUTE", "Field crew checks in, captures, logs. Spark dashboards update live."], ["RECAP", "Auto-generated recap fires within hours. Custom exports if needed."], ["ROLLUP", "Quarterly per-market, per-program analysis ships automatically."]],
+    "process": [["BRIEF", "Confirm KPIs, channels, frequency, who sees what."], ["CONFIGURE", "Build the dashboard: KPIs, scoring rubric, audience access."], ["EXECUTE", "Field crew checks in, captures, logs. Spark dashboards update live."], ["RECAP", "Auto-generated recap fires within hours. Custom exports if needed."], ["ROLLUP", "Quarterly per-market, per-program analysis ships automatically."]],
     "compliance": [{
       "lab": "GPS verification",
       "desc": "Every ambassador check-in geo-stamped. No 'felt good' counts."
@@ -1044,17 +1044,17 @@
       "desc": "Sweepstakes entries, content-release agreements, opt-ins all timestamped."
     }, {
       "lab": "Data warehouse + CRM hookup",
-      "desc": "Salesforce, HubSpot, Klaviyo, custom — nightly sync with audit trail."
+      "desc": "Salesforce, HubSpot, Klaviyo, custom: nightly sync with audit trail."
     }],
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
       "head": "Field marketing without reporting is just expensive faith.",
-      "paras": ["<a href='/spark' style='color:#D6F35F'>Spark by Ignite</a> is included in every Ignite program — and it's the platform that makes our reporting different. GPS-verified ambassador check-ins, live sample counts, photo capture from the field, KPI tracking against your scoring rubric, and auto-generated recaps that ship within hours of strike instead of weeks.", "Brand teams, distributor partners, and retailers log into the same dashboard. Same numbers. Same time. No more reconciling a brand-side recap against a distributor-side recap against a retailer scan report. The recap is the dashboard, and the dashboard is live.", "Programs sync nightly to your CRM, data warehouse, or trade analytics stack. Salesforce, HubSpot, Klaviyo, Snowflake, BigQuery — pick the hookup, we build the integration. Custom exports as PDF, CSV, JSON, or API endpoint, depending on who's consuming the data.", "Best for brands running multi-market, multi-quarter programs that need a quarterly view their trade desk and senior team can defend. Field marketing's biggest leak is the data trail; we close it."],
+      "paras": ["<a href='/spark' style='color:#D6F35F'>Spark by Ignite</a> is included in every Ignite program, and it's the platform that makes our reporting different. GPS-verified ambassador check-ins, live sample counts, photo capture from the field, KPI tracking against your scoring rubric, and auto-generated recaps that ship within hours of strike instead of weeks.", "Brand teams, distributor partners, and retailers log into the same dashboard. Same numbers. Same time. No more reconciling a brand-side recap against a distributor-side recap against a retailer scan report. The recap is the dashboard, and the dashboard is live.", "Programs sync nightly to your CRM, data warehouse, or trade analytics stack. Salesforce, HubSpot, Klaviyo, Snowflake, BigQuery: pick the hookup, we build the integration. Custom exports as PDF, CSV, JSON, or API endpoint, depending on who's consuming the data.", "Best for brands running multi-market, multi-quarter programs that need a quarterly view their trade desk and senior team can defend. Field marketing's biggest leak is the data trail; we close it."],
       "chips": ["Event recap reporting", "Activation reporting", "Field marketing reporting", "Event analytics", "Real-time event dashboards", "Marketing recap dashboards", "GPS-verified reporting", "Sampling analytics", "Spark dashboard", "Field marketing platform"]
     },
-    "faqs": [["How fast do recaps actually ship?", "Auto-generated recap dashboards update live during the event. Final recap (with cleaned photo gallery, ambassador notes, KPI summary) ships within 3 hours of strike — not 3 weeks."], ["What can be pushed to our CRM?", "Sweepstakes entries, lead capture, opt-ins, content-release records, engagement events — all with consent timestamp and source-tag. Nightly sync to Salesforce, HubSpot, Klaviyo, Mailchimp, or custom data warehouse."], ["Can our distributor / retailer see the dashboard?", "Yes. Per-program access controls let you give brand-side, distributor-side, and retailer-side views. Everyone sees the same numbers, same time. No more reconciling four different recap formats."], ["What does Spark cost?", "Spark is included in every Ignite program — there's no separate platform fee. Custom integrations and data warehouse hookups can carry build costs depending on scope, scoped per program."], ["Can you build a custom KPI rubric per program?", "Yes. Samples, leads, scan-back data, conversion lift, brand-standard compliance, dwell time, ID-check completion — your KPI mix shapes the dashboard. Per-program scoring rubric set at brief."], ["What if we already use another field marketing platform?", "Most brands don't have one — Spark replaces a Slack channel + 4 PDFs + a panic deck. If you're already on Repsly / GoSpotCheck / Pinata, we can run on top of it for activation execution + reporting, with handoff back to your existing analytics."]],
+    "faqs": [["How fast do recaps actually ship?", "Auto-generated recap dashboards update live during the event. Final recap (with cleaned photo gallery, ambassador notes, KPI summary) ships within 3 hours of strike, not 3 weeks."], ["What can be pushed to our CRM?", "Sweepstakes entries, lead capture, opt-ins, content-release records, engagement events, all with consent timestamp and source-tag. Nightly sync to Salesforce, HubSpot, Klaviyo, Mailchimp, or custom data warehouse."], ["Can our distributor / retailer see the dashboard?", "Yes. Per-program access controls let you give brand-side, distributor-side, and retailer-side views. Everyone sees the same numbers, same time. No more reconciling four different recap formats."], ["What does Spark cost?", "Spark is included in every Ignite program; there's no separate platform fee. Custom integrations and data warehouse hookups can carry build costs depending on scope, scoped per program."], ["Can you build a custom KPI rubric per program?", "Yes. Samples, leads, scan-back data, conversion lift, brand-standard compliance, dwell time, ID-check completion. Your KPI mix shapes the dashboard. Per-program scoring rubric set at brief."], ["What if we already use another field marketing platform?", "Most brands don't have one. Spark replaces a Slack channel + 4 PDFs + a panic deck. If you're already on Repsly / GoSpotCheck / Pinata, we can run on top of it for activation execution + reporting, with handoff back to your existing analytics."]],
     "sparkAngle": {
-      "headline": "Spark — the reporting engine",
+      "headline": "Spark: the reporting engine",
       "lede": "Live dashboards, GPS-verified data, auto-generated recaps. Included in every Ignite program. Tour Spark below.",
       "points": ["Live activation dashboards", "GPS check-ins + photo capture", "Auto-generated recaps in hours", "CRM + data warehouse sync"]
     },
@@ -1097,7 +1097,7 @@
     "short": "Festival",
     "eyebrow": "EXPERIENTIAL // FESTIVAL",
     "tagline": "Festival activation, built and staffed. From the brand house to the sample tent to the after-hours pop-up.",
-    "intro": "Festival brand activations across music, food, lifestyle, and cultural festivals. Coachella, Lollapalooza, ACL, EDC, Bonnaroo, Outside Lands, Stagecoach, Calibash, La Onda — we build, staff, route, and recap brand activations inside the gates and around the perimeter. Permits handled, footprint built, ambassadors trained, data captured.",
+    "intro": "Festival brand activations across music, food, lifestyle, and cultural festivals. Coachella, Lollapalooza, ACL, EDC, Bonnaroo, Outside Lands, Stagecoach, Calibash, La Onda: we build, staff, route, and recap brand activations inside the gates and around the perimeter. Permits handled, footprint built, ambassadors trained, data captured.",
     "hero": "https://kyle915.github.io/ignite-webflow-assets/assets/staffing-liquid-death-acl.jpg",
     "heroPos": "center 40%",
     "sub": [{
@@ -1105,10 +1105,10 @@
       "d": "10x10 to 40x40 branded footprints. Fabricated in-house, shipped, set, struck on schedule."
     }, {
       "t": "Festival staffing",
-      "d": "Captains, ambassadors, demo specialists, photo team — trained on the brand and the festival."
+      "d": "Captains, ambassadors, demo specialists, photo team, all trained on the brand and the festival."
     }, {
       "t": "Sampling at scale",
-      "d": "Festival-grade sampling — 10,000+ units a day where the program calls for it."
+      "d": "Festival-grade sampling: 10,000+ units a day where the program calls for it."
     }, {
       "t": "Brand houses + VIP",
       "d": "Off-festival brand-house programs, artist-meet-and-greet hosting, VIP suite staffing."
@@ -1120,21 +1120,21 @@
       "d": "Same-night content edit. Stories, reels, earned-media-ready edits delivered before next-day strike."
     }, {
       "t": "Mas+ × Latin festival model",
-      "d": "Calibash, La Onda, Premios Juventud — bilingual staffing, culturally-anchored brand moments."
+      "d": "Calibash, La Onda, Premios Juventud: bilingual staffing, culturally-anchored brand moments."
     }, {
       "t": "Multi-festival circuits",
-      "d": "Plan one program across the season — Coachella → Stagecoach → EDC → Lolla → ACL — one playbook."
+      "d": "Plan one program across the season (Coachella → Stagecoach → EDC → Lolla → ACL) with one playbook."
     }],
     "stats": [["10K+", "samples / day"], ["40x40", "footprints built"], ["50", "states + DC"]],
     "adjacent": ["experiential-marketing", "event-staffing", "product-sampling"],
     "pov": {
-      "lead": "Festivals don't sell brands. Brands sell themselves — if the activation actually shows up.",
-      "body": "Most festival activations die in the build week. Permits late, freight late, crew untrained, sample plan wrong, content capture forgotten until Sunday night. We've built the festival activation playbook into a managed program — permits, fab, freight, crew, sample, content, recap. Same week one through week six of the season.",
+      "lead": "Festivals don't sell brands. Brands sell themselves, if the activation actually shows up.",
+      "body": "Most festival activations die in the build week. Permits late, freight late, crew untrained, sample plan wrong, content capture forgotten until Sunday night. We've built the festival activation playbook into a managed program: permits, fab, freight, crew, sample, content, recap. Same week one through week six of the season.",
       "marquee": ["FESTIVAL-GRADE", "PERMIT-HANDLED", "FABRICATED-IN-HOUSE", "SAMPLED-AT-SCALE", "CONTENT-CAPTURED"]
     },
     "pains": {
       "opener": "If you've activated at a festival, you've probably…",
-      "sinker": "We replace the chaos with a managed festival playbook — permits, fab, crew, sample, content, recap.",
+      "sinker": "We replace the chaos with a managed festival playbook: permits, fab, crew, sample, content, recap.",
       "items": ["Lost a build day to a missing permit", "Watched freight arrive 12 hours after gates", "Run out of samples by Sunday afternoon", "Found out content capture was a phone in someone's pocket", "Heard your festival vendor disappear after strike", "Tried to manage Coachella + Stagecoach + EDC with three different agencies", "Got a recap deck four weeks after the festival", "Asked yourself why you don't run an in-house festival program"]
     },
     "comparison": [["Generic event staffer, briefed in the back of house", "Festival-trained ambassador with category background"], ["Permits filed last-minute, build week chaos", "Permits filed at sign-off, build week scheduled"], ["Sample plan estimated", "Sample plan modeled against gate traffic and dwell time"], ["No content capture, recap deck weeks later", "Same-night content edit, recap dashboard before strike"], ["Different vendor per festival", "Same playbook, same captain rotation, same Spark dashboard"], ["Brand fabricator + staffing + content as 3 vendors", "Built, staffed, captured, recapped under one PM"]],
@@ -1152,18 +1152,18 @@
       "desc": "Every regulated pour ambassador certified for the festival's state. Cards on file."
     }, {
       "lab": "Content release",
-      "desc": "Photo and video release SOPs — festival, brand, and ambassador all signed before deployment."
+      "desc": "Photo and video release SOPs: festival, brand, and ambassador all signed before deployment."
     }],
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
-      "head": "Festival activation is its own discipline. Permits, fab, freight, crew, sample, content, recap — under one PM.",
-      "paras": ["Ignite runs festival brand activations across the major music, food, lifestyle, and cultural festival circuits. Coachella, Stagecoach, Lollapalooza, ACL, EDC, Bonnaroo, Outside Lands, BottleRock, Hangout, Music Midtown, Made in America. Calibash, La Onda, Premios Juventud, Hispanicize. SXSW, ACL Live, Pitchfork, Afropunk, Roots Picnic.", "Programs include footprint design and in-house fabrication, festival permits and ABC paperwork, freight logistics, captain-led staffing, sample plan modeling, content capture, and same-night recap delivery. <a href='/spark' style='color:#D7453E'>Spark</a> logs every sample, every photo, every dwell-time check-in across the festival weekend.", "Brand-house programs run alongside the on-festival activation. Artist meet-and-greet hosting, VIP suite staffing, sponsor-integration activation, and after-hours pop-ups. Bilingual staffing for Latin music festival circuits — same Mas+ × Messi model we run for our Hispanic-targeted programs.", "Best for beverage and spirits brands running multi-festival summer programs, lifestyle brands activating during cultural moments, and CPG brands seeking massive trial windows that double as content engines for the next quarter."],
+      "head": "Festival activation is its own discipline. Permits, fab, freight, crew, sample, content, recap, all under one PM.",
+      "paras": ["Ignite runs festival brand activations across the major music, food, lifestyle, and cultural festival circuits. Coachella, Stagecoach, Lollapalooza, ACL, EDC, Bonnaroo, Outside Lands, BottleRock, Hangout, Music Midtown, Made in America. Calibash, La Onda, Premios Juventud, Hispanicize. SXSW, ACL Live, Pitchfork, Afropunk, Roots Picnic.", "Programs include footprint design and in-house fabrication, festival permits and ABC paperwork, freight logistics, captain-led staffing, sample plan modeling, content capture, and same-night recap delivery. <a href='/spark' style='color:#D7453E'>Spark</a> logs every sample, every photo, every dwell-time check-in across the festival weekend.", "Brand-house programs run alongside the on-festival activation. Artist meet-and-greet hosting, VIP suite staffing, sponsor-integration activation, and after-hours pop-ups. Bilingual staffing for Latin music festival circuits, using the same Mas+ × Messi model we run for our Hispanic-targeted programs.", "Best for beverage and spirits brands running multi-festival summer programs, lifestyle brands activating during cultural moments, and CPG brands seeking massive trial windows that double as content engines for the next quarter."],
       "chips": ["Festival brand activations", "Festival event staffing", "Brand activation at festivals", "Music festival sampling", "Cultural event activations", "Coachella activation agency", "ACL festival activation", "EDC brand activation", "Lollapalooza activation", "Calibash brand activation"]
     },
     "faqs": [["Which festivals have you activated at?", "Coachella, Stagecoach, Lollapalooza, ACL, EDC, Bonnaroo, Outside Lands, BottleRock, Hangout, Music Midtown, Made in America, Calibash, La Onda, Hispanicize, SXSW, Pitchfork, Afropunk, Roots Picnic, plus most major regional and lifestyle festivals."], ["Can you handle permits and the festival paperwork?", "Yes. Vendor permits, fire marshal sign-off, ABC permits, additional-insured COIs, freight schedules. Filed at sign-off, not last-minute."], ["Do you build the footprint or just staff it?", "Both. In-house fabrication shop in Reno, NV builds branded footprints from 10x10 sample tents up to 40x40 brand houses. Freight scheduled, set, struck. Crew and content under the same PM."], ["What's the sample-per-day capacity at a major festival?", "Festival-grade programs can run 10,000+ samples a day where the gate traffic and footprint support it. We model sample plan against expected dwell time and footprint capacity at brief."], ["Can you handle multi-festival circuits in one engagement?", "Yes. Coachella + Stagecoach (same weekend, same market) is a common combo. Multi-festival summer programs (Coachella → Lolla → ACL → EDC) run under one playbook, one captain rotation, one Spark dashboard."], ["What's included in the recap?", "Same-night content cut delivered before strike. Post-festival recap dashboard with per-day sample counts, GPS-verified ambassador shifts, content gallery, dwell time tracking, and audience capture for next-quarter remarketing."]],
     "sparkAngle": {
       "headline": "Spark for festival activation",
-      "lede": "Per-festival sample counts, dwell time, content capture log, brand-house attendance — all on one dashboard before strike.",
+      "lede": "Per-festival sample counts, dwell time, content capture log, brand-house attendance, all on one dashboard before strike.",
       "points": ["Festival sample counts logged live", "Dwell time per footprint zone", "Same-night content delivery", "Per-festival recap dashboard"]
     },
     "pairedChips": [{
@@ -1208,7 +1208,7 @@
     "eyebrow": "SALES // EMBEDDED TEAM",
     "heroSplit": ["Your sales team.", "On Monday."],
     "tagline": "A senior, embedded CPG sales team for a fraction of the cost of building one.",
-    "intro": "Hiring a VP of Sales, a trade marketer, and a field team costs $250K+ and six months. We embed a senior CPG sales team into your brand for a fraction of that — buyer pitches, broker management, trade, and distribution expansion, backed by 257K ambassadors — scaled up or down monthly, no severance.",
+    "intro": "Hiring a VP of Sales, a trade marketer, and a field team costs $250K+ and six months. We embed a senior CPG sales team into your brand for a fraction of that. Buyer pitches, broker management, trade, and distribution expansion, backed by 257K ambassadors, scaled up or down monthly, no severance.",
     "hero": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2400&q=80",
     "heroPos": "center 30%",
     "sub": [{
@@ -1234,15 +1234,15 @@
     "adjacent": ["retail-sales-broker-management", "buyer-pitch-line-reviews", "distribution-expansion"],
     "pov": {
       "lead": "You don't need another hire. You need the work done.",
-      "body": "A VP of Sales is one person, six months out, and $250K+ a year. A fractional sales team is senior leadership, broker management, trade, and a field army — embedded now, scaled monthly, accountable to revenue.",
+      "body": "A VP of Sales is one person, six months out, and $250K+ a year. A fractional sales team is senior leadership, broker management, trade, and a field army: embedded now, scaled monthly, accountable to revenue.",
       "marquee": ["EMBEDDED MONDAY", "SENIOR CPG SALES", "SCALE MONTHLY", "NO SEVERANCE", "SKIN IN THE GAME"]
     },
     "pains": {
       "opener": "If you're running CPG sales without a team, you've probably…",
-      "sinker": "We embed the senior sales team — leadership, brokers, trade, field — and scale it monthly.",
-      "items": ["Posted a job for a VP of Sales you can't afford", "Acted as your own VP of Sales at 11pm", "Told investors 'we just need one more hire' — again", "Split sales work across three agencies that don't talk", "Lost momentum waiting six months for a hire to ramp", "Carried broker, trade, and field on one person's back", "Paid full-time salaries for seasonal sales needs", "Watched velocity stall while you recruited"]
+      "sinker": "We embed the senior sales team (leadership, brokers, trade, field) and scale it monthly.",
+      "items": ["Posted a job for a VP of Sales you can't afford", "Acted as your own VP of Sales at 11pm", "Told investors 'we just need one more hire' (again)", "Split sales work across three agencies that don't talk", "Lost momentum waiting six months for a hire to ramp", "Carried broker, trade, and field on one person's back", "Paid full-time salaries for seasonal sales needs", "Watched velocity stall while you recruited"]
     },
-    "comparison": [["A $250K+ VP of Sales, 6 months out", "A senior sales team embedded now"], ["One hire carrying everything", "Leadership, brokers, trade, and field together"], ["Three agencies that don't talk", "One accountable team under one roof"], ["Full-time salary for seasonal needs", "Scale up or down monthly"], ["Severance risk if it doesn't work", "No severance — monthly engagement"], ["Salary only, no skin in the game", "A partner accountable to your revenue"]],
+    "comparison": [["A $250K+ VP of Sales, 6 months out", "A senior sales team embedded now"], ["One hire carrying everything", "Leadership, brokers, trade, and field together"], ["Three agencies that don't talk", "One accountable team under one roof"], ["Full-time salary for seasonal needs", "Scale up or down monthly"], ["Severance risk if it doesn't work", "No severance, monthly engagement"], ["Salary only, no skin in the game", "A partner accountable to your revenue"]],
     "proof": {
       "logos": ["LIQUID DEATH", "WHITE CLAW", "MARC ANTHONY", "MAS+", "TOTAL WIRELESS", "DUDE WIPES"],
       "note": "Brands Ignite supports across sales, trade, and field."
@@ -1250,14 +1250,14 @@
     "industries": ["CPG Beverage", "CPG Food & Snack", "Alcohol & Spirits", "Pet", "Health & Wellness", "Beauty"],
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
-      "head": "A fractional sales team is senior CPG sales leadership — embedded, not hired.",
-      "paras": ["A fractional sales team gives an emerging or mid-size CPG brand the senior sales function it needs — buyer pitching, broker management, trade marketing, and distribution expansion — without the $250K+ overhead and six-month ramp of building one in-house.", "Ignite embeds a senior CPG sales lead into your brand and backs them with the full operation: broker scorecards, line-review prep, co-op and MDF management, distribution strategy, and a 257K-ambassador field team for the demos and sampling that drive trial.", "It scales the way your business does — up for a launch or a category review, down between pushes — monthly, with no severance and skin in the game on your revenue.", "Best for CPG brands in the $1M–$50M range with product-market fit but no senior sales team, founders acting as their own VP of Sales, and brands that need results before another funding round."],
+      "head": "A fractional sales team is senior CPG sales leadership: embedded, not hired.",
+      "paras": ["A fractional sales team gives an emerging or mid-size CPG brand the senior sales function it needs (buyer pitching, broker management, trade marketing, and distribution expansion) without the $250K+ overhead and six-month ramp of building one in-house.", "Ignite embeds a senior CPG sales lead into your brand and backs them with the full operation: broker scorecards, line-review prep, co-op and MDF management, distribution strategy, and a 257K-ambassador field team for the demos and sampling that drive trial.", "It scales the way your business does (up for a launch or a category review, down between pushes), monthly, with no severance and skin in the game on your revenue.", "Best for CPG brands in the $1M to $50M range with product-market fit but no senior sales team, founders acting as their own VP of Sales, and brands that need results before another funding round."],
       "chips": ["fractional sales team", "fractional VP of sales", "outsourced CPG sales", "fractional sales leadership", "embedded sales team", "CPG sales agency", "fractional sales management", "outsourced sales team CPG", "fractional head of sales", "contract sales team"]
     },
-    "faqs": [["What does a fractional sales team actually include?", "Senior sales leadership plus broker management, buyer pitch and line-review prep, trade marketing, distribution expansion, and a 257K-ambassador field team — under one roof."], ["How is this cheaper than hiring?", "You get the function of multiple senior hires for a fraction of $250K+ in salary and overhead, with no recruiting time and no severance risk."], ["Can we scale it up and down?", "Yes — monthly. Scale up for a launch or category review, down between pushes."], ["Do you have skin in the game?", "We structure engagements to be accountable to outcomes, not just hours — aligned with your revenue."], ["Does it replace our internal team?", "It can be your sales team, or augment the one you have. Most brands start with us owning the function and hand off as they grow."]],
+    "faqs": [["What does a fractional sales team actually include?", "Senior sales leadership plus broker management, buyer pitch and line-review prep, trade marketing, distribution expansion, and a 257K-ambassador field team, all under one roof."], ["How is this cheaper than hiring?", "You get the function of multiple senior hires for a fraction of $250K+ in salary and overhead, with no recruiting time and no severance risk."], ["Can we scale it up and down?", "Yes, monthly. Scale up for a launch or category review, down between pushes."], ["Do you have skin in the game?", "We structure engagements to be accountable to outcomes, not just hours, aligned with your revenue."], ["Does it replace our internal team?", "It can be your sales team, or augment the one you have. Most brands start with us owning the function and hand off as they grow."]],
     "compliance": [{
       "lab": "Engagement scope",
-      "desc": "Clear monthly scope — leadership, brokers, trade, field — with no severance lock-in."
+      "desc": "Clear monthly scope (leadership, brokers, trade, field) with no severance lock-in."
     }, {
       "lab": "Broker & distributor",
       "desc": "We manage the network and coordinate distributors on your behalf."
@@ -1268,7 +1268,7 @@
       "lab": "Field compliance",
       "desc": "TIPS / TABC / RBS / ServSafe handled per activation."
     }],
-    "process": [["AUDIT", "Map your sales gaps — leadership, brokers, trade, field."], ["EMBED", "Drop in a senior CPG sales lead and the supporting team."], ["RUN", "Pitches, brokers, trade, and demos — executed weekly."], ["REVIEW", "QBRs tied to P&L; scale the team to the season."], ["SCALE", "Up for launches and reviews, down between — monthly."]],
+    "process": [["AUDIT", "Map your sales gaps: leadership, brokers, trade, field."], ["EMBED", "Drop in a senior CPG sales lead and the supporting team."], ["RUN", "Pitches, brokers, trade, and demos, executed weekly."], ["REVIEW", "QBRs tied to P&L; scale the team to the season."], ["SCALE", "Up for launches and reviews, down between, monthly."]],
     "pairedChips": [{
       "label": "Broker Management",
       "href": "/services/retail-sales-broker-management"
@@ -1293,7 +1293,7 @@
     }],
     "sparkAngle": {
       "headline": "Spark for your sales team",
-      "lede": "Your embedded team runs on Spark — broker scorecards, account activity, and field execution in one source of truth.",
+      "lede": "Your embedded team runs on Spark: broker scorecards, account activity, and field execution in one source of truth.",
       "points": ["Broker + account scorecards live", "Field demos tied to the accounts that need them", "QBR-ready exports, not hand-built decks", "Brand and team see the same numbers"]
     }
   };
@@ -1309,8 +1309,8 @@
     "short": "Creators",
     "eyebrow": "GROWTH // CREATORS",
     "heroSplit": ["Seeding to stages.", "Creators who show up."],
-    "tagline": "Tastemaker seeding, creator events, and paid creator programs — run by the team that already knows the field.",
-    "intro": "Creator marketing fails when it's transactional — a brand DMs 50 influencers and hopes. We run it like field marketing: identify the real-reach creators and tastemakers in your markets, seed product into the networks that move culture, host creator-first events, and scale into paid partnerships. Authentic adoption first, paid amplification second.",
+    "tagline": "Tastemaker seeding, creator events, and paid creator programs, run by the team that already knows the field.",
+    "intro": "Creator marketing fails when it's transactional: a brand DMs 50 influencers and hopes. We run it like field marketing: identify the real-reach creators and tastemakers in your markets, seed product into the networks that move culture, host creator-first events, and scale into paid partnerships. Authentic adoption first, paid amplification second.",
     "hero": "https://cdn.prod.website-files.com/688129f3841088c282c32750/689f6b9d26a289da85ff0302_LDEATH7_01_18_2025_Alexis_Michel_4c0632ca-d7da-7528-4ad2-83c239eb2b59_1.jpg",
     "heroPos": "center 35%",
     "sub": [{
@@ -1318,7 +1318,7 @@
       "d": "We find the athletes, club leaders, micro-creators, and local tastemakers with real reach in your markets."
     }, {
       "t": "Product seeding",
-      "d": "Right product, right hands, before everyone else — authentic adoption, not paid-post energy."
+      "d": "Right product, right hands, before everyone else. Authentic adoption, not paid-post energy."
     }, {
       "t": "Creator events",
       "d": "Brand houses, creator dinners, and content days that earn organic posting."
@@ -1336,12 +1336,12 @@
     "adjacent": ["field-marketing", "experiential-marketing", "event-staffing"],
     "pov": {
       "lead": "Reach you can't buy starts with product in the right hands.",
-      "body": "The brands Gen Z keeps for a decade got there through people they trust — not a banner ad. We seed, host, and scale through creators who actually move their networks.",
+      "body": "The brands Gen Z keeps for a decade got there through people they trust, not a banner ad. We seed, host, and scale through creators who actually move their networks.",
       "marquee": ["SEED", "HOST", "AMPLIFY", "TRACK", "CULTURE-FIRST"]
     },
     "pains": {
       "opener": "If you run creator or influencer programs, you've probably…",
-      "sinker": "We run it like field marketing — relationships first, paid amplification second.",
+      "sinker": "We run it like field marketing: relationships first, paid amplification second.",
       "items": ["DM'd 50 influencers and heard back from three", "Paid for posts that felt like ads and performed like ads", "Had no way to track codes, posts, or usage rights", "Seeded product into the wrong hands", "Watched a competitor own the creators in your category", "Couldn't tell which creators actually drove trial"]
     },
     "comparison": [["Mass DM and hope", "Curated tastemakers with real local reach"], ["Transactional paid posts", "Seeding + events that earn organic adoption"], ["No tracking, no rights", "Codes, posts, and usage rights tracked in Spark"], ["One-off activations", "Always-on creator pipeline in your markets"]],
@@ -1353,10 +1353,10 @@
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
       "head": "Creator marketing run like a field program, not a mass DM.",
-      "paras": ["Influencer and creator marketing is the practice of driving trial and reach through trusted voices — tastemaker seeding, creator events, micro-influencer programs, and paid creator partnerships. Ignite runs it with a field-marketing operator's discipline: relationships, tracking, and accountability.", "We identify real-reach creators and tastemakers in your markets — athletes, campus leaders, micro-creators, local personalities — seed product into their networks, and host creator-first events that earn organic posting before any paid spend.", "Every code, post, and asset is tracked in <a href='/spark' style='color:#8B7CF6'>Spark</a> with usage rights cleared, so you know which creators actually drove trial — and can scale the ones that work into paid partnerships.", "Best for CPG, beverage, and lifestyle brands targeting younger consumers who want authentic adoption and a measurable creator pipeline, not one-off sponsored posts."],
+      "paras": ["Influencer and creator marketing is the practice of driving trial and reach through trusted voices: tastemaker seeding, creator events, micro-influencer programs, and paid creator partnerships. Ignite runs it with a field-marketing operator's discipline: relationships, tracking, and accountability.", "We identify real-reach creators and tastemakers in your markets (athletes, campus leaders, micro-creators, local personalities), seed product into their networks, and host creator-first events that earn organic posting before any paid spend.", "Every code, post, and asset is tracked in <a href='/spark' style='color:#8B7CF6'>Spark</a> with usage rights cleared, so you know which creators actually drove trial, and can scale the ones that work into paid partnerships.", "Best for CPG, beverage, and lifestyle brands targeting younger consumers who want authentic adoption and a measurable creator pipeline, not one-off sponsored posts."],
       "chips": ["influencer marketing agency", "creator marketing CPG", "product seeding agency", "micro-influencer marketing", "creator events", "paid creator programs", "UGC creator marketing", "tastemaker seeding"]
     },
-    "faqs": [["Do you do seeding, paid, or both?", "Both. We lead with seeding and creator events to earn authentic adoption, then scale what's working into briefed, contracted paid partnerships."], ["How do you find the right creators?", "We identify real-reach tastemakers in your specific markets — including from our 257K field network, 40%+ of which is on campus — not a generic influencer database."], ["Are paid programs FTC-compliant?", "Yes. Disclosures, contracts, and usage rights are handled for every paid partnership."], ["Can you track what creators actually drive?", "Yes. Codes, posts, and assets are tracked in Spark so you can tie creator activity to trial and reach."], ["Do creators tie into our on-the-ground activations?", "Yes. Our creators often work the same markets as our field teams — seeding at events, posting from activations, and feeding the content pipeline."]],
+    "faqs": [["Do you do seeding, paid, or both?", "Both. We lead with seeding and creator events to earn authentic adoption, then scale what's working into briefed, contracted paid partnerships."], ["How do you find the right creators?", "We identify real-reach tastemakers in your specific markets, including from our 257K field network, 40%+ of which is on campus, not a generic influencer database."], ["Are paid programs FTC-compliant?", "Yes. Disclosures, contracts, and usage rights are handled for every paid partnership."], ["Can you track what creators actually drive?", "Yes. Codes, posts, and assets are tracked in Spark so you can tie creator activity to trial and reach."], ["Do creators tie into our on-the-ground activations?", "Yes. Our creators often work the same markets as our field teams, seeding at events, posting from activations, and feeding the content pipeline."]],
     "compliance": [{
       "lab": "FTC disclosure",
       "desc": "Proper #ad / disclosure handling on every paid partnership."
@@ -1392,7 +1392,7 @@
     }],
     "sparkAngle": {
       "headline": "Spark for creators",
-      "lede": "Track every code, post, and asset by creator and market — so you scale the creators that actually drive trial.",
+      "lede": "Track every code, post, and asset by creator and market, so you scale the creators that actually drive trial.",
       "points": ["Creator activity tracked by market", "Codes + posts tied to trial", "Usage rights stored per asset", "Pipeline visible alongside field data"]
     }
   };
@@ -1408,8 +1408,8 @@
     "short": "Logistics & Kitting",
     "eyebrow": "OPERATIONS // LOGISTICS",
     "heroSplit": ["Kits packed.", "Markets supplied."],
-    "tagline": "Sample kits, premiums, and program materials — assembled, warehoused, and shipped market by market, on time.",
-    "intro": "The activation only works if the kit shows up. Logistics, kitting, and fulfillment from Ignite handles the unglamorous engine behind every program — assembling sample kits and premiums, warehousing inventory, shipping market by market to land before the crew does, and managing returns. We already supply our own field teams; we'll supply yours.",
+    "tagline": "Sample kits, premiums, and program materials: assembled, warehoused, and shipped market by market, on time.",
+    "intro": "The activation only works if the kit shows up. Logistics, kitting, and fulfillment from Ignite handles the unglamorous engine behind every program: assembling sample kits and premiums, warehousing inventory, shipping market by market to land before the crew does, and managing returns. We already supply our own field teams; we'll supply yours.",
     "hero": "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=2400&q=80",
     "heroPos": "center 45%",
     "sub": [{
@@ -1417,7 +1417,7 @@
       "d": "Sample kits, premium packs, and program materials assembled to spec at scale."
     }, {
       "t": "Warehousing",
-      "d": "Inventory stored, tracked, and managed — ready to deploy on demand."
+      "d": "Inventory stored, tracked, and managed, ready to deploy on demand."
     }, {
       "t": "Market-by-market shipping",
       "d": "Materials routed to land before the crew, in the right quantities, every market."
@@ -1426,7 +1426,7 @@
       "d": "Receiving, reverse logistics, and asset recovery after the program."
     }, {
       "t": "Inventory tracking",
-      "d": "Real-time counts by SKU and market — no surprises mid-program."
+      "d": "Real-time counts by SKU and market, so there are no surprises mid-program."
     }, {
       "t": "Compliance shipping",
       "d": "Regulated and temperature-sensitive product handled to requirement."
@@ -1435,12 +1435,12 @@
     "adjacent": ["field-marketing", "experiential-marketing", "event-staffing"],
     "pov": {
       "lead": "No kit, no activation. It's that simple.",
-      "body": "The flashiest activation dies if the samples are stuck on a dock. We run the logistics engine so the materials are always there — on time, in the right count, in every market.",
+      "body": "The flashiest activation dies if the samples are stuck on a dock. We run the logistics engine so the materials are always there: on time, in the right count, in every market.",
       "marquee": ["KIT", "WAREHOUSE", "SHIP", "RECOVER", "ON-TIME"]
     },
     "pains": {
       "opener": "If you've supplied a field program, you've probably…",
-      "sinker": "We run the logistics engine — kits land before the crew, every market.",
+      "sinker": "We run the logistics engine: kits land before the crew, every market.",
       "items": ["Had a kit show up late and kill an activation", "Lost track of inventory across markets", "Paid to reship materials that went to the wrong place", "Coordinated a kitter, a warehouse, and a shipper separately", "Had no count of what came back after the program", "Scrambled to supply a market that ran out"]
     },
     "comparison": [["Separate kitter, warehouse, and shipper", "One operation: assemble, store, ship, recover"], ["Kits arrive late, activation suffers", "Materials land before the crew, on time"], ["Inventory is a guess", "SKU- and market-level tracking, real time"], ["No plan for returns", "Reverse logistics and asset recovery built in"]],
@@ -1452,10 +1452,10 @@
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
       "head": "The supply engine behind every activation.",
-      "paras": ["Logistics, kitting, and fulfillment is the operational backbone of field marketing — assembling sample kits and premiums, warehousing inventory, shipping market by market, and managing returns. Ignite runs it as a service because we already run it for our own field teams.", "Materials are routed to land before the crew arrives, in the right quantities, in every market — so a national program never stalls because a market ran out or a kit got stuck on a dock.", "Inventory is tracked at the SKU and market level and tied into <a href='/spark' style='color:#FFB627'>Spark</a>, so the brand sees exactly what's stored, shipped, deployed, and returned across the whole program.", "Best for CPG and beverage brands running multi-market sampling, premium, and activation programs who need a single accountable partner for the supply chain behind the field."],
+      "paras": ["Logistics, kitting, and fulfillment is the operational backbone of field marketing: assembling sample kits and premiums, warehousing inventory, shipping market by market, and managing returns. Ignite runs it as a service because we already run it for our own field teams.", "Materials are routed to land before the crew arrives, in the right quantities, in every market, so a national program never stalls because a market ran out or a kit got stuck on a dock.", "Inventory is tracked at the SKU and market level and tied into <a href='/spark' style='color:#FFB627'>Spark</a>, so the brand sees exactly what's stored, shipped, deployed, and returned across the whole program.", "Best for CPG and beverage brands running multi-market sampling, premium, and activation programs who need a single accountable partner for the supply chain behind the field."],
       "chips": ["kitting and fulfillment", "activation logistics", "sample kit assembly", "CPG fulfillment", "event logistics agency", "warehousing and distribution", "field marketing logistics", "reverse logistics"]
     },
-    "faqs": [["What does kitting include?", "Assembly of sample kits, premium packs, and program materials to your spec, at scale, ready to ship."], ["Do you warehouse our inventory?", "Yes. We store, track, and manage inventory at the SKU and market level, ready to deploy on demand."], ["Can you ship market by market on a national program?", "Yes. Materials are routed to land before the crew arrives, in the right quantities, in every market."], ["Do you handle returns and asset recovery?", "Yes — receiving, reverse logistics, and recovery of reusable assets after the program."], ["Can you handle regulated or temperature-sensitive product?", "Yes. Regulated and temp-sensitive product is handled to its shipping and storage requirements."]],
+    "faqs": [["What does kitting include?", "Assembly of sample kits, premium packs, and program materials to your spec, at scale, ready to ship."], ["Do you warehouse our inventory?", "Yes. We store, track, and manage inventory at the SKU and market level, ready to deploy on demand."], ["Can you ship market by market on a national program?", "Yes. Materials are routed to land before the crew arrives, in the right quantities, in every market."], ["Do you handle returns and asset recovery?", "Yes: receiving, reverse logistics, and recovery of reusable assets after the program."], ["Can you handle regulated or temperature-sensitive product?", "Yes. Regulated and temp-sensitive product is handled to its shipping and storage requirements."]],
     "compliance": [{
       "lab": "Regulated shipping",
       "desc": "Regulated and temp-sensitive product handled to requirement."
@@ -1467,7 +1467,7 @@
       "desc": "Returns, receiving, and asset recovery managed."
     }, {
       "lab": "Spark visibility",
-      "desc": "Stored, shipped, deployed, and returned — visible in Spark."
+      "desc": "Stored, shipped, deployed, and returned, all visible in Spark."
     }],
     "process": [["KIT", "Assemble sample kits, premiums, and materials to spec at scale."], ["STORE", "Warehouse and track inventory by SKU and market."], ["SHIP", "Route materials to land before the crew, every market."], ["RECOVER", "Returns, reverse logistics, and asset recovery after the program."]],
     "pairedChips": [{
@@ -1491,7 +1491,7 @@
     }],
     "sparkAngle": {
       "headline": "Spark for logistics",
-      "lede": "See exactly what's stored, shipped, deployed, and returned across every market — tied to the rest of your activation data.",
+      "lede": "See exactly what's stored, shipped, deployed, and returned across every market, tied to the rest of your activation data.",
       "points": ["SKU- and market-level inventory", "Shipment tracking before the crew lands", "Deployment + returns logged", "One source of truth, supply to recap"]
     }
   };
@@ -1507,13 +1507,13 @@
     "short": "Pop-Up Retail",
     "eyebrow": "EXPERIENTIAL // RETAIL",
     "heroSplit": ["A storefront,", "up in days."],
-    "tagline": "Temporary storefronts and brand residencies — designed, fabricated, staffed, and measured, all in-house.",
-    "intro": "A pop-up is a store you have to design, build, permit, staff, stock, and tear down — fast, in an unfamiliar market. We run the whole thing. From a weekend brand residency to a month-long retail takeover, Ignite handles design, fabrication, build-out, staffing, POS, and the recap — so your team approves a concept and shows up to a finished store.",
+    "tagline": "Temporary storefronts and brand residencies: designed, fabricated, staffed, and measured, all in-house.",
+    "intro": "A pop-up is a store you have to design, build, permit, staff, stock, and tear down, fast and in an unfamiliar market. We run the whole thing. From a weekend brand residency to a month-long retail takeover, Ignite handles design, fabrication, build-out, staffing, POS, and the recap, so your team approves a concept and shows up to a finished store.",
     "hero": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2400&q=80",
     "heroPos": "center 45%",
     "sub": [{
       "t": "Concept & design",
-      "d": "The store concept, layout, and brand world — designed with our studio and fab team."
+      "d": "The store concept, layout, and brand world, designed with our studio and fab team."
     }, {
       "t": "Build & install",
       "d": "Fabrication, build-out, fixtures, and install handled by our crews."
@@ -1534,15 +1534,15 @@
     "adjacent": ["field-marketing", "experiential-marketing", "event-staffing"],
     "pov": {
       "lead": "A pop-up is a store with a deadline.",
-      "body": "Most brands hire a builder, a stafffirm, and a permit consultant, then pray they align. We're all three — so the doors open on time and the recap tells you if it worked.",
+      "body": "Most brands hire a builder, a stafffirm, and a permit consultant, then pray they align. We're all three, so the doors open on time and the recap tells you if it worked.",
       "marquee": ["DESIGN", "BUILD", "STAFF", "MEASURE", "ONE PARTNER"]
     },
     "pains": {
       "opener": "If you've launched a pop-up, you've probably…",
-      "sinker": "We're the builder, the staffing firm, and the operator — one partner.",
+      "sinker": "We're the builder, the staffing firm, and the operator: one partner.",
       "items": ["Coordinated a builder, a staffing vendor, and a permit consultant", "Opened late because the fixtures weren't ready", "Had no clean read on traffic or sales after", "Staffed with people who'd never seen the brand", "Scrambled on permits and COIs at the last minute", "Torn down with no plan for the assets"]
     },
-    "comparison": [["Builder + staffing vendor + permit consultant", "One partner: design, build, staff, operate"], ["Opened late, fixtures not ready", "On-time open, in-house fabrication"], ["No read on traffic or sales", "Measured recap — traffic, sales, content"], ["Generic temp staff", "Trained, brand-briefed retail crew"]],
+    "comparison": [["Builder + staffing vendor + permit consultant", "One partner: design, build, staff, operate"], ["Opened late, fixtures not ready", "On-time open, in-house fabrication"], ["No read on traffic or sales", "Measured recap: traffic, sales, content"], ["Generic temp staff", "Trained, brand-briefed retail crew"]],
     "proof": {
       "logos": ["LIQUID DEATH", "WHITE CLAW", "MARC ANTHONY", "MAS+", "TOTAL WIRELESS", "DUDE WIPES"],
       "note": "Pop-ups, residencies, and retail takeovers for beverage, CPG, and lifestyle brands."
@@ -1550,11 +1550,11 @@
     "industries": ["CPG Beverage", "CPG Food & Snack", "Alcohol & Spirits", "Pet", "Health & Wellness", "Beauty", "QSR & Restaurant", "Sports & Entertainment", "Cannabis"],
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
-      "head": "The whole store — designed, built, staffed, and measured.",
-      "paras": ["Pop-up and branded retail covers temporary storefronts, brand residencies, and retail takeovers — short-run physical retail that builds brand and drives trial. Ignite runs the full lifecycle: concept, design, fabrication, permits, staffing, POS, and teardown.", "Because design, fabrication, and staffing all live in-house, the doors open on time and on budget — no finger-pointing between a builder, a staffing vendor, and a permit consultant.", "Every pop-up is measured through <a href='/spark' style='color:#5ED4A8'>Spark</a> — traffic, sales, samples, leads, and content captured — so you know what the store actually returned, not just that it looked good.", "Best for CPG, beverage, and lifestyle brands launching products, entering new markets, or building brand through experiential retail moments."],
+      "head": "The whole store: designed, built, staffed, and measured.",
+      "paras": ["Pop-up and branded retail covers temporary storefronts, brand residencies, and retail takeovers: short-run physical retail that builds brand and drives trial. Ignite runs the full lifecycle: concept, design, fabrication, permits, staffing, POS, and teardown.", "Because design, fabrication, and staffing all live in-house, the doors open on time and on budget, with no finger-pointing between a builder, a staffing vendor, and a permit consultant.", "Every pop-up is measured through <a href='/spark' style='color:#5ED4A8'>Spark</a> (traffic, sales, samples, leads, and content captured), so you know what the store actually returned, not just that it looked good.", "Best for CPG, beverage, and lifestyle brands launching products, entering new markets, or building brand through experiential retail moments."],
       "chips": ["pop-up retail agency", "branded retail", "temporary store build", "brand residency", "retail takeover", "pop-up shop production", "experiential retail", "retail activation"]
     },
-    "faqs": [["What's included in a pop-up engagement?", "Concept and design, fabrication and build-out, permits and COIs, retail staffing and POS, the experiential layer, teardown, and a measured recap."], ["How fast can you open a pop-up?", "Depending on scope, a pop-up can be open in days to a few weeks — design and fabrication run in parallel with permitting and staffing."], ["Do you handle permits and landlord coordination?", "Yes. Retail permits, COIs, landlord/venue coordination, and fire/ADA compliance are part of the scope."], ["Can you handle point-of-sale and inventory?", "Yes — POS systems, inventory, and cash/card handling are managed by trained retail staff."], ["How do we know if it worked?", "Spark measures traffic, sales, samples, leads, and content captured, delivered in a recap after strike."]],
+    "faqs": [["What's included in a pop-up engagement?", "Concept and design, fabrication and build-out, permits and COIs, retail staffing and POS, the experiential layer, teardown, and a measured recap."], ["How fast can you open a pop-up?", "Depending on scope, a pop-up can be open in days to a few weeks; design and fabrication run in parallel with permitting and staffing."], ["Do you handle permits and landlord coordination?", "Yes. Retail permits, COIs, landlord/venue coordination, and fire/ADA compliance are part of the scope."], ["Can you handle point-of-sale and inventory?", "Yes. POS systems, inventory, and cash/card handling are managed by trained retail staff."], ["How do we know if it worked?", "Spark measures traffic, sales, samples, leads, and content captured, delivered in a recap after strike."]],
     "compliance": [{
       "lab": "Retail permits",
       "desc": "Temporary retail permits, fire, and ADA handled per location."
@@ -1590,7 +1590,7 @@
     }],
     "sparkAngle": {
       "headline": "Spark for pop-ups",
-      "lede": "Live traffic, sales, samples, and content from your pop-up — measured daily, recapped after strike.",
+      "lede": "Live traffic, sales, samples, and content from your pop-up, measured daily, recapped after strike.",
       "points": ["Daily traffic + sales tracking", "Samples and leads logged live", "Content captured + tagged", "Measured recap after teardown"]
     }
   };
@@ -1611,7 +1611,7 @@
     "heroPos": "center 40%",
     "sub": [{
       "t": "QSR grand openings",
-      "d": "Restaurant launch programs — opening week staffing, community sampling, branded fan moments."
+      "d": "Restaurant launch programs: opening week staffing, community sampling, branded fan moments."
     }, {
       "t": "LTO trial programs",
       "d": "Limited-time-offer trial drives. Sampling at the store + at-event + at-retail to push the LTO."
@@ -1623,10 +1623,10 @@
       "d": "Restaurant-side ambassadors driving loyalty signups, app downloads, LTO conversion."
     }, {
       "t": "Cultural event tie-ins",
-      "d": "Restaurant brands inside festivals, sporting events, lifestyle events — full activation footprint."
+      "d": "Restaurant brands inside festivals, sporting events, lifestyle events, with a full activation footprint."
     }, {
       "t": "New-market expansion",
-      "d": "QSR brands expanding into new markets — staffing, brand evangelism, retail-adjacent activation."
+      "d": "QSR brands expanding into new markets: staffing, brand evangelism, retail-adjacent activation."
     }, {
       "t": "Catering + corporate sampling",
       "d": "Office sampling, corporate cafeteria trials, large-format catering activation."
@@ -1638,7 +1638,7 @@
     "adjacent": ["product-sampling", "event-staffing", "mobile-tours"],
     "pov": {
       "lead": "In QSR, trial is the whole funnel.",
-      "body": "A consumer who tastes a restaurant brand once is more likely to buy than a consumer who's seen the ad ten times. We staff restaurant activation as a trial-conversion discipline — ServSafe-certified ambassadors, food handler cards on file, sample counts logged live, conversion to loyalty signup or LTO purchase tracked in Spark.",
+      "body": "A consumer who tastes a restaurant brand once is more likely to buy than a consumer who's seen the ad ten times. We staff restaurant activation as a trial-conversion discipline: ServSafe-certified ambassadors, food handler cards on file, sample counts logged live, conversion to loyalty signup or LTO purchase tracked in Spark.",
       "marquee": ["SERVSAFE-CERTIFIED", "FOOD-HANDLER-CARDED", "ALLERGEN-BRIEFED", "TRIAL-FOCUSED", "LOYALTY-TRACKING"]
     },
     "pains": {
@@ -1649,7 +1649,7 @@
     "comparison": [["Generic event staffer, no food handler card", "ServSafe / food handler certified per shift"], ["Allergen briefed at start of shift", "Allergen training built into pre-shift brief in Spark"], ["Sample count estimated end of day", "Per-shift count + photo + GPS log"], ["No loyalty signup conversion tracking", "Per-ambassador loyalty signups tracked in Spark"], ["Different vendor for tour vs grand opening", "Same playbook, captain rotation, single PM"], ["LTO recap takes 3 weeks", "Live dashboard with daily LTO conversion rate"]],
     "proof": null,
     "industries": ["QSR & Restaurant", "CPG Food & Snack", "CPG Beverage", "Lifestyle & Beauty", "Hospitality & Travel", "Health & Wellness"],
-    "process": [["BRIEF", "Confirm restaurant brand, LTO or launch, markets, KPIs (trial, loyalty, conversion)."], ["CERTIFY", "Food handler cards verified. ServSafe / state-by-state per ambassador."], ["BRIEF (food)", "Product brief, allergen training, conversion ask, loyalty pitch — pre-shift in Spark."], ["EXECUTE", "Crew at the store / at the tour / at the event. Samples logged, loyalty signups captured."], ["RECAP", "Per-day LTO conversion rate, per-store grand opening data, content gallery, app signup count."]],
+    "process": [["BRIEF", "Confirm restaurant brand, LTO or launch, markets, KPIs (trial, loyalty, conversion)."], ["CERTIFY", "Food handler cards verified. ServSafe / state-by-state per ambassador."], ["BRIEF (food)", "Product brief, allergen training, conversion ask, loyalty pitch, delivered pre-shift in Spark."], ["EXECUTE", "Crew at the store / at the tour / at the event. Samples logged, loyalty signups captured."], ["RECAP", "Per-day LTO conversion rate, per-store grand opening data, content gallery, app signup count."]],
     "compliance": [{
       "lab": "ServSafe + food handler",
       "desc": "Per-state food handler certification for every QSR / restaurant sampling shift."
@@ -1666,13 +1666,13 @@
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
       "head": "Restaurant brand activation has one job: get the product into the consumer's mouth.",
-      "paras": ["Ignite runs QSR and restaurant brand activations as trial-conversion programs. Smalls Sliders mobile food truck tours, Krispy Krunchy Chicken launch programs, fast-casual LTO sampling, and restaurant grand opening activation — all built around getting the product tasted, the loyalty signup captured, and the next-visit conversion tracked.", "Every food-side ambassador is ServSafe certified and holds the food handler card their state requires. Allergen training is built into the pre-shift brief through <a href='/spark' style='color:#FFB627'>Spark</a> — cross-contact prevention, ingredient cards, allergen call-outs at the sample station.", "Programs include in-store grand opening activation, LTO trial pushes, mobile food truck tours, corporate cafeteria sampling, festival and event tie-ins, and loyalty-app signup drives. Per-shift sample counts, per-ambassador loyalty signups, and conversion-to-next-visit tracked through Spark.", "Best for QSR brands launching new units, fast-casual brands pushing LTO rollouts, restaurant brands expanding into new markets, and any food brand running multi-market mobile tours that need consistent execution and per-stop conversion data."],
+      "paras": ["Ignite runs QSR and restaurant brand activations as trial-conversion programs. Smalls Sliders mobile food truck tours, Krispy Krunchy Chicken launch programs, fast-casual LTO sampling, and restaurant grand opening activation, all built around getting the product tasted, the loyalty signup captured, and the next-visit conversion tracked.", "Every food-side ambassador is ServSafe certified and holds the food handler card their state requires. Allergen training is built into the pre-shift brief through <a href='/spark' style='color:#FFB627'>Spark</a>: cross-contact prevention, ingredient cards, allergen call-outs at the sample station.", "Programs include in-store grand opening activation, LTO trial pushes, mobile food truck tours, corporate cafeteria sampling, festival and event tie-ins, and loyalty-app signup drives. Per-shift sample counts, per-ambassador loyalty signups, and conversion-to-next-visit tracked through Spark.", "Best for QSR brands launching new units, fast-casual brands pushing LTO rollouts, restaurant brands expanding into new markets, and any food brand running multi-market mobile tours that need consistent execution and per-stop conversion data."],
       "chips": ["QSR sampling", "Restaurant activations", "Quick service restaurant marketing", "Food sampling programs", "Restaurant brand ambassadors", "QSR launch agency", "Food truck tour agency", "LTO activation", "Restaurant grand opening", "ServSafe certified sampling"]
     },
-    "faqs": [["Is your crew ServSafe certified?", "Yes — every food-side sampling ambassador holds the certification their state requires (ServSafe or state-specific food handler card). Verified per ambassador, refreshed before expiry."], ["Can you run a multi-market food truck tour?", "Yes. We run national mobile food tours regularly — Smalls Sliders, Krispy Krunchy model. Per-stop crew, per-market food handler certification, per-day sample + loyalty signup tracking through Spark."], ["What about LTO activation?", "LTO trial programs are a frequent use case. Sample the LTO at-event, at-retail, or in-store, capture loyalty signups, track conversion-to-next-visit. Per-day LTO conversion rate live in Spark."], ["Can you handle restaurant grand openings?", "Yes. Opening week staffing, community sampling outside the new store, grand opening day fan moments, captain-led crew, content capture. Restaurant brand-standards briefed before deployment."], ["Do you do loyalty app signup drives?", "Yes. Per-ambassador signup tracking, conversion-tied incentives, app-download counters in Spark. Common pairing with sampling and LTO programs."], ["What's your turnaround for a new-store grand opening?", "Single-store grand opening: 5–10 business days standard, 48 hours rush. Multi-store regional launch: 2–3 weeks for full briefing, certifications, and crew readiness."]],
+    "faqs": [["Is your crew ServSafe certified?", "Yes. Every food-side sampling ambassador holds the certification their state requires (ServSafe or state-specific food handler card). Verified per ambassador, refreshed before expiry."], ["Can you run a multi-market food truck tour?", "Yes. We run national mobile food tours regularly: Smalls Sliders, Krispy Krunchy model. Per-stop crew, per-market food handler certification, per-day sample + loyalty signup tracking through Spark."], ["What about LTO activation?", "LTO trial programs are a frequent use case. Sample the LTO at-event, at-retail, or in-store, capture loyalty signups, track conversion-to-next-visit. Per-day LTO conversion rate live in Spark."], ["Can you handle restaurant grand openings?", "Yes. Opening week staffing, community sampling outside the new store, grand opening day fan moments, captain-led crew, content capture. Restaurant brand-standards briefed before deployment."], ["Do you do loyalty app signup drives?", "Yes. Per-ambassador signup tracking, conversion-tied incentives, app-download counters in Spark. Common pairing with sampling and LTO programs."], ["What's your turnaround for a new-store grand opening?", "Single-store grand opening: 5 to 10 business days standard, 48 hours rush. Multi-store regional launch: 2 to 3 weeks for full briefing, certifications, and crew readiness."]],
     "sparkAngle": {
       "headline": "Spark for QSR + restaurant",
-      "lede": "Per-shift sample counts, per-ambassador loyalty signups, per-day LTO conversion rate, allergen briefing audit — one dashboard.",
+      "lede": "Per-shift sample counts, per-ambassador loyalty signups, per-day LTO conversion rate, allergen briefing audit, all in one dashboard.",
       "points": ["Per-shift sample + LTO trial counts", "Per-ambassador loyalty signup tracking", "Allergen briefing audit per shift", "Per-day LTO conversion rate"]
     },
     "pairedChips": [{
@@ -1716,8 +1716,8 @@
     "short": "Retail Readiness",
     "eyebrow": "SALES // GET RETAIL-READY",
     "heroSplit": ["Retail-ready before", "you pitch."],
-    "tagline": "Pricing, margin, and packaging fixed before the buyer meeting — so you get on shelf and stay profitable on it.",
-    "intro": "Most brands pitch retail before they're ready — wrong price, thin margin, packaging that won't scan or stack. We run the readiness audit first: pricing architecture, margin and COGS, packaging and case specs, and the retailer requirements that kill deals late. Get to shelf retail-ready, and stay profitable once you're there.",
+    "tagline": "Pricing, margin, and packaging fixed before the buyer meeting, so you get on shelf and stay profitable on it.",
+    "intro": "Most brands pitch retail before they're ready: wrong price, thin margin, packaging that won't scan or stack. We run the readiness audit first: pricing architecture, margin and COGS, packaging and case specs, and the retailer requirements that kill deals late. Get to shelf retail-ready, and stay profitable once you're there.",
     "hero": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=2400&q=80",
     "heroPos": "center 40%",
     "sub": [{
@@ -1725,7 +1725,7 @@
       "d": "SRP, wholesale, and promo pricing set per channel so you're competitive and still profitable."
     }, {
       "t": "Margin & COGS modeling",
-      "d": "Real margin math across the chain — landed cost, trade, and retailer markup — before you commit."
+      "d": "Real margin math across the chain (landed cost, trade, and retailer markup) before you commit."
     }, {
       "t": "Packaging & shelf-readiness",
       "d": "Barcodes, case packs, dimensions, and shelf-impact reviewed so nothing gets flagged at the buyer table."
@@ -1734,7 +1734,7 @@
       "d": "Insurance, EDI, slotting expectations, and chain-specific specs handled before they stall a deal."
     }, {
       "t": "Channel fit",
-      "d": "Where your brand wins first — grocery, c-store, club, natural — sequenced for margin, not ego."
+      "d": "Where your brand wins first (grocery, c-store, club, natural), sequenced for margin, not ego."
     }, {
       "t": "Trade math baseline",
       "d": "A starting trade budget tied to your P&L so promo doesn't quietly erase your margin."
@@ -1743,12 +1743,12 @@
     "adjacent": ["buyer-pitch-line-reviews", "retail-sales-broker-management", "distribution-expansion"],
     "pov": {
       "lead": "Most brands don't lose the slot. They lose the margin.",
-      "body": "It's easy to get a yes at the wrong price — and spend two years discovering the deal was never profitable. Readiness is the unglamorous work that decides whether retail makes you money or just makes you busy.",
+      "body": "It's easy to get a yes at the wrong price, and spend two years discovering the deal was never profitable. Readiness is the unglamorous work that decides whether retail makes you money or just makes you busy.",
       "marquee": ["PRICING ARCHITECTURE", "MARGIN MODELING", "SHELF-READY", "RETAILER SPECS", "PROFITABLE ON SHELF"]
     },
     "pains": {
       "opener": "If you're getting ready to pitch retail, you've probably…",
-      "sinker": "We get pricing, margin, and packaging right before the meeting — so the yes is a profitable one.",
+      "sinker": "We get pricing, margin, and packaging right before the meeting, so the yes is a profitable one.",
       "items": ["Set an SRP and hoped the margin worked out", "Found out about a case-pack spec at the buyer table", "Won a slot at a price you couldn't actually sustain", "Guessed at trade budget with no P&L behind it", "Discovered EDI/insurance requirements two weeks before reset", "Priced the same in every channel and lost margin", "Built a deck before fixing the economics", "Scaled doors faster than your margin could carry"]
     },
     "comparison": [["SRP set on a guess", "Pricing architected per channel"], ["Margin you'll 'figure out later'", "COGS and margin modeled up front"], ["Packaging flagged at the buyer table", "Barcodes, case packs, specs verified first"], ["Retailer requirements as a surprise", "Insurance, EDI, slotting handled early"], ["One price everywhere", "Channel-right pricing that protects margin"], ["A yes that isn't profitable", "A yes you can sustain and scale"]],
@@ -1760,10 +1760,10 @@
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
       "head": "Retail readiness is the cheapest insurance a CPG brand can buy.",
-      "paras": ["Retail readiness and margin strategy is the upstream work of getting pricing, margin, packaging, and retailer requirements right before you pitch — so a buyer 'yes' is a profitable, sustainable one.", "Ignite runs the readiness audit as senior CPG operators: pricing architecture per channel, margin and COGS modeling across the chain, packaging and case-spec review, and the retailer requirements (insurance, EDI, slotting) that quietly kill deals late.", "We also set a trade math baseline tied to your P&L, so promotional spend doesn't erase the margin you just protected.", "Best for emerging CPG brands preparing for their first major retail pitch, brands re-pricing after a margin squeeze, and founders who want to know the deal is profitable before they chase it."],
+      "paras": ["Retail readiness and margin strategy is the upstream work of getting pricing, margin, packaging, and retailer requirements right before you pitch, so a buyer 'yes' is a profitable, sustainable one.", "Ignite runs the readiness audit as senior CPG operators: pricing architecture per channel, margin and COGS modeling across the chain, packaging and case-spec review, and the retailer requirements (insurance, EDI, slotting) that quietly kill deals late.", "We also set a trade math baseline tied to your P&L, so promotional spend doesn't erase the margin you just protected.", "Best for emerging CPG brands preparing for their first major retail pitch, brands re-pricing after a margin squeeze, and founders who want to know the deal is profitable before they chase it."],
       "chips": ["retail readiness", "CPG margin strategy", "retail pricing strategy", "COGS modeling", "retail ready packaging", "CPG pricing architecture", "wholesale pricing", "retail buyer requirements", "margin optimization CPG", "retail readiness audit"]
     },
-    "faqs": [["What is a retail readiness audit?", "A senior review of your pricing, margin/COGS, packaging, case specs, and retailer requirements before you pitch — so nothing gets flagged late and the economics actually work."], ["Can you fix our pricing and margin?", "Yes. We architect SRP, wholesale, and promo pricing per channel and model margin across the chain so you stay profitable as you scale."], ["Do you review packaging and barcodes?", "Yes — barcodes, case packs, dimensions, and shelf-impact, so your product is physically ready for the shelf and the buyer table."], ["Is this separate from the pitch?", "It comes first. Readiness fixes the economics; buyer pitch and line-review prep then sells it in."], ["What do you need from us to start?", "Current COGS, pricing, packaging specs, and target retailers. We turn that into a clear readiness and margin plan."]],
+    "faqs": [["What is a retail readiness audit?", "A senior review of your pricing, margin/COGS, packaging, case specs, and retailer requirements before you pitch, so nothing gets flagged late and the economics actually work."], ["Can you fix our pricing and margin?", "Yes. We architect SRP, wholesale, and promo pricing per channel and model margin across the chain so you stay profitable as you scale."], ["Do you review packaging and barcodes?", "Yes: barcodes, case packs, dimensions, and shelf-impact, so your product is physically ready for the shelf and the buyer table."], ["Is this separate from the pitch?", "It comes first. Readiness fixes the economics; buyer pitch and line-review prep then sells it in."], ["What do you need from us to start?", "Current COGS, pricing, packaging specs, and target retailers. We turn that into a clear readiness and margin plan."]],
     "compliance": [{
       "lab": "Pricing & margin",
       "desc": "SRP, wholesale, promo pricing and margin modeled across the chain."
@@ -1802,7 +1802,7 @@
     }],
     "sparkAngle": {
       "headline": "Spark once you're on shelf",
-      "lede": "Readiness gets you placed; Spark keeps the placement profitable — velocity and trade visibility by account.",
+      "lede": "Readiness gets you placed; Spark keeps the placement profitable with velocity and trade visibility by account.",
       "points": ["Velocity by account and SKU", "Trade execution tied to margin", "OOS + reorder signals from the field", "One source of truth for brand and broker"]
     }
   };
@@ -1819,24 +1819,24 @@
     "eyebrow": "SALES // BROKER MANAGEMENT",
     "heroSplit": ["Brokers you can reach.", "Scorecards you can trust."],
     "tagline": "Senior CPG sales leadership to hire, manage, and hold your broker network accountable.",
-    "intro": "Most emerging CPG brands sign a broker and hope. We run the broker relationship like a sales operation — selection, onboarding, weekly accountability, scorecards, and QBRs — so your distribution dollars actually convert to velocity. Veteran-owned, CPG-built, embedded as your fractional sales lead.",
+    "intro": "Most emerging CPG brands sign a broker and hope. We run the broker relationship like a sales operation (selection, onboarding, weekly accountability, scorecards, and QBRs) so your distribution dollars actually convert to velocity. Veteran-owned, CPG-built, embedded as your fractional sales lead.",
     "hero": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=2400&q=80",
     "heroPos": "center 35%",
     "sub": [{
       "t": "Account management",
-      "d": "Proactive management of doors, facings, and velocity after placement — not just sign-in and hope."
+      "d": "Proactive management of doors, facings, and velocity after placement, not just sign-in and hope."
     }, {
       "t": "Velocity & facings growth",
       "d": "We track sell-through by account and push for more facings, better placement, and reorders."
     }, {
       "t": "Broker selection & onboarding",
-      "d": "We vet, interview, and onboard the right broker per region and channel — then brief them on your brand like an internal team."
+      "d": "We vet, interview, and onboard the right broker per region and channel, then brief them on your brand like an internal team."
     }, {
       "t": "Weekly accountability",
       "d": "Standing check-ins, action logs, and follow-through. No more three unread Slack DMs and a 'k.'"
     }, {
       "t": "Broker scorecards",
-      "d": "Objective, repeatable scorecards on doors opened, reviews booked, velocity, and follow-up — reviewed every cycle."
+      "d": "Objective, repeatable scorecards on doors opened, reviews booked, velocity, and follow-up, reviewed every cycle."
     }, {
       "t": "QBRs that mean something",
       "d": "Quarterly business reviews tied to your P&L, not a vibe check. One read-out for the founder."
@@ -1845,18 +1845,18 @@
       "d": "We build the story, the deck, and the data so brokers walk into reviews ready to win."
     }, {
       "t": "Distributor coordination",
-      "d": "We keep brokers and distributors aligned on demos, resets, and trade — one source of truth."
+      "d": "We keep brokers and distributors aligned on demos, resets, and trade, with one source of truth."
     }],
     "stats": [["1", "senior sales lead"], ["50", "states covered"], ["257K+", "ambassadors behind you"]],
     "adjacent": ["buyer-pitch-line-reviews", "distribution-expansion", "trade-marketing-management"],
     "pov": {
       "lead": "A broker without management is a contact, not a channel.",
-      "body": "Brokers carry dozens of brands. The ones that get sold are the ones being managed — briefed, scored, and held to follow-through. We become the senior sales voice that runs your network like it's our revenue.",
+      "body": "Brokers carry dozens of brands. The ones that get sold are the ones being managed: briefed, scored, and held to follow-through. We become the senior sales voice that runs your network like it's our revenue.",
       "marquee": ["BROKER SCORECARDS", "WEEKLY ACCOUNTABILITY", "CPG-BUILT", "QBRs TIED TO P&L", "VETERAN-OWNED"]
     },
     "pains": {
       "opener": "If you manage brokers at a growing CPG brand, you've probably…",
-      "sinker": "We run the network — selection, scorecards, QBRs — so brokers actually move product.",
+      "sinker": "We run the network (selection, scorecards, QBRs) so brokers actually move product.",
       "items": ["Signed a broker and never heard from them again", "Found out about a missed review from the buyer, not the broker", "Had no objective way to tell if a broker was working", "Chased a broker for a recap for three weeks", "Paid for coverage you couldn't measure", "Managed brokers between school pickup and a 6pm call", "Wondered if you should fire them but had no replacement", "Walked into a category review underprepared"]
     },
     "comparison": [["A broker you signed and hope is working", "A managed network with weekly accountability"], ["No objective performance measure", "Repeatable scorecards every cycle"], ["Recaps that arrive weeks late, if ever", "Standing read-outs tied to your P&L"], ["Category reviews you scramble for", "Reviews prepped with story, deck, and data"], ["Brokers and distributors out of sync", "One aligned plan across the channel"], ["Founder managing brokers at 11pm", "Senior CPG sales lead owning the relationship"]],
@@ -1868,16 +1868,16 @@
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
       "head": "Broker management is a sales discipline, not a contract you file and forget.",
-      "paras": ["Retail sales and broker management is the work of selecting, onboarding, and holding a broker network accountable so distribution converts into real velocity. For emerging and mid-size CPG brands, this is usually the founder's job — squeezed between everything else.", "Ignite embeds as your fractional sales leadership: we choose the right brokers per region and channel, brief them like an internal team, and run weekly accountability with objective scorecards on doors opened, reviews booked, and follow-through.", "Every relationship rolls up through clear reporting and QBRs tied to your P&L — so you always know which broker is earning their commission and which one needs a conversation.", "Best for CPG brands in the $1M–$50M range with broker coverage they can't measure, founders acting as their own VP of Sales, and teams heading into category reviews who need senior help to win them."],
+      "paras": ["Retail sales and broker management is the work of selecting, onboarding, and holding a broker network accountable so distribution converts into real velocity. For emerging and mid-size CPG brands, this is usually the founder's job, squeezed between everything else.", "Ignite embeds as your fractional sales leadership: we choose the right brokers per region and channel, brief them like an internal team, and run weekly accountability with objective scorecards on doors opened, reviews booked, and follow-through.", "Every relationship rolls up through clear reporting and QBRs tied to your P&L, so you always know which broker is earning their commission and which one needs a conversation.", "Best for CPG brands in the $1M to $50M range with broker coverage they can't measure, founders acting as their own VP of Sales, and teams heading into category reviews who need senior help to win them."],
       "chips": ["broker management", "CPG broker management agency", "retail sales management", "broker scorecards", "category review prep", "fractional sales leadership", "CPG sales agency", "distributor coordination", "food broker management", "beverage broker management"]
     },
-    "faqs": [["Do you manage accounts after we land them?", "Yes. We run proactive account management focused on doors, facings, and velocity growth — protecting placements and pushing for reorders, not just opening them."], ["Do you replace our broker, or manage the one we have?", "Either. We'll manage and hold accountable the brokers you already work with, or help you select and onboard better-fit brokers per region and channel."], ["What's in a broker scorecard?", "Doors opened, category reviews booked, velocity by account, follow-up completion, and trade execution — objective and repeatable every cycle."], ["How is this different from hiring a VP of Sales?", "You get senior CPG sales leadership without $250K+ in overhead, and a 257K-ambassador field team behind it — scaled monthly, not hired permanently."], ["Do you prep us for category reviews?", "Yes. We build the category story, the deck, and the supporting data, and prep the broker so reviews are won, not winged."], ["Can you coordinate brokers and distributors together?", "Yes. We keep both aligned on demos, resets, and trade so the plan is consistent across the channel."]],
+    "faqs": [["Do you manage accounts after we land them?", "Yes. We run proactive account management focused on doors, facings, and velocity growth, protecting placements and pushing for reorders, not just opening them."], ["Do you replace our broker, or manage the one we have?", "Either. We'll manage and hold accountable the brokers you already work with, or help you select and onboard better-fit brokers per region and channel."], ["What's in a broker scorecard?", "Doors opened, category reviews booked, velocity by account, follow-up completion, and trade execution. Objective and repeatable every cycle."], ["How is this different from hiring a VP of Sales?", "You get senior CPG sales leadership without $250K+ in overhead, and a 257K-ambassador field team behind it, scaled monthly, not hired permanently."], ["Do you prep us for category reviews?", "Yes. We build the category story, the deck, and the supporting data, and prep the broker so reviews are won, not winged."], ["Can you coordinate brokers and distributors together?", "Yes. We keep both aligned on demos, resets, and trade so the plan is consistent across the channel."]],
     "compliance": [{
       "lab": "Broker agreements",
       "desc": "We review scope, commission, and accountability terms with your team."
     }, {
       "lab": "Distributor coordination",
-      "desc": "RNDC, Southern Glazer's, Breakthru, plus regional houses — aligned with broker activity."
+      "desc": "RNDC, Southern Glazer's, Breakthru, plus regional houses, all aligned with broker activity."
     }, {
       "lab": "Reporting cadence",
       "desc": "Standing scorecards and QBRs tied to your P&L."
@@ -1885,7 +1885,7 @@
       "lab": "CRM hygiene",
       "desc": "Accounts, contacts, and next steps kept current so nothing slips."
     }],
-    "process": [["AUDIT", "Map current brokers, coverage gaps, and accountability holes."], ["ONBOARD", "Select / re-brief brokers per region and channel like an internal team."], ["MANAGE", "Weekly accountability, scorecards, and follow-through."], ["REVIEW", "QBRs tied to P&L — doors, velocity, trade ROI."], ["OPTIMIZE", "Re-deploy coverage where it converts; replace what doesn't."]],
+    "process": [["AUDIT", "Map current brokers, coverage gaps, and accountability holes."], ["ONBOARD", "Select / re-brief brokers per region and channel like an internal team."], ["MANAGE", "Weekly accountability, scorecards, and follow-through."], ["REVIEW", "QBRs tied to P&L: doors, velocity, trade ROI."], ["OPTIMIZE", "Re-deploy coverage where it converts; replace what doesn't."]],
     "pairedChips": [{
       "label": "Buyer Pitch & Line Reviews",
       "href": "/services/buyer-pitch-line-reviews"
@@ -1910,7 +1910,7 @@
     }],
     "sparkAngle": {
       "headline": "Spark for sales",
-      "lede": "Broker scorecards, account activity, and field execution in one view — so your sales reporting isn't a spreadsheet you don't trust.",
+      "lede": "Broker scorecards, account activity, and field execution in one view, so your sales reporting isn't a spreadsheet you don't trust.",
       "points": ["Broker + account scorecards in one dashboard", "Field demo execution tied to the accounts that need it", "QBR-ready exports, not hand-built decks", "Brand and broker see the same numbers"]
     }
   };
@@ -1926,7 +1926,7 @@
     "heroSplit": ["Own the building.", "Tailgate to tunnel."],
     "corridorMap": {
       "headline": "Leagues. Stadiums.|*Every major moment.*",
-      "sub": "We've activated in every major North American league and at every level of the sports calendar — from the AFC Championship game to a Tuesday MLS match to a NASCAR Cup Series weekend.",
+      "sub": "We've activated in every major North American league and at every level of the sports calendar, from the AFC Championship game to a Tuesday MLS match to a NASCAR Cup Series weekend.",
       "corridors": [{
         "city": "NFL · NATIONAL",
         "name": "32 teams · Sundays + Thursday + Monday",
@@ -2072,7 +2072,7 @@
     }],
     "liveCapture": {
       "headline": "Game-day live capture.|*From tailgate to tunnel.*",
-      "lede": "Brand, agency, and league all see the same live dashboard. Fan touch-points, sweeps entries, social tags — as the activation unfolds across pre-game, in-bowl, and post-game windows.",
+      "lede": "Brand, agency, and league all see the same live dashboard. Fan touch-points, sweeps entries, and social tags update as the activation unfolds across pre-game, in-bowl, and post-game windows.",
       "counterLabel": "FAN TOUCH-POINTS TODAY",
       "counterStart": 18400,
       "rowsLabel": "LIVE GAME-DAY FEED",
@@ -2119,7 +2119,7 @@
     }],
     "benchDepth": {
       "headline": "Sports specialists|*near every stadium.*",
-      "sub": "We staff against the league footprint, not just the metro. Sports-trained crew lives in or near every major stadium city — game-day deployment ready inside the league cadence.",
+      "sub": "We staff against the league footprint, not just the metro. Sports-trained crew lives in or near every major stadium city, ready for game-day deployment inside the league cadence.",
       "markets": [{
         "name": "New York / NJ",
         "state": "GIANTS · JETS · METS · YANKEES · KNICKS · NETS · RANGERS · NYCFC",
@@ -2176,7 +2176,7 @@
     "short": "Sports",
     "eyebrow": "SPORTS // FAN ENGAGEMENT",
     "tagline": "Stadium, fan zone, concourse, and tailgate activation across MLS, NFL, NBA, MLB, NHL, MMA, NASCAR, and Liga MX.",
-    "intro": "Sports marketing activations for brands sponsoring or activating around major league and college sports. MLS soccer, NFL game days, NBA arenas, MLB ballparks, Liga MX, Concacaf, college football, NASCAR weekends — we staff, sample, host, and capture brand engagement across the fan journey. From the tailgate to the concourse to the post-game.",
+    "intro": "Sports marketing activations for brands sponsoring or activating around major league and college sports. MLS soccer, NFL game days, NBA arenas, MLB ballparks, Liga MX, Concacaf, college football, NASCAR weekends: we staff, sample, host, and capture brand engagement across the fan journey. From the tailgate to the concourse to the post-game.",
     "hero": "https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&w=2400&q=80",
     "heroPos": "center 45%",
     "sub": [{
@@ -2208,12 +2208,12 @@
     "adjacent": ["experiential-marketing", "event-staffing", "product-sampling"],
     "pov": {
       "lead": "Sports activation is the only marketing that has to land before the third quarter.",
-      "body": "You don't get a do-over. The fan walks past your fan zone once. They sample once. They post once or they don't. We staff sports activation as a sales discipline — every concourse moment, every tailgate moment, every photo moment is briefed to convert, captured to share, and reported before the post-game presser.",
+      "body": "You don't get a do-over. The fan walks past your fan zone once. They sample once. They post once or they don't. We staff sports activation as a sales discipline: every concourse moment, every tailgate moment, every photo moment is briefed to convert, captured to share, and reported before the post-game presser.",
       "marquee": ["STADIUM-CLEARED", "FAN-FACING", "CONTENT-READY", "GAME-DAY", "BILINGUAL-WHERE-NEEDED"]
     },
     "pains": {
       "opener": "If you've sponsored a sports property, you've probably…",
-      "sinker": "We replace the panic with a managed sports playbook — stadium clearance, captain-led crew, content edited before bedtime.",
+      "sinker": "We replace the panic with a managed sports playbook: stadium clearance, captain-led crew, content edited before bedtime.",
       "items": ["Lost a build day to stadium ops paperwork", "Watched fan-zone attendance get estimated by the venue", "Had brand ambassadors show up un-cleared", "Run sampling at half-time without a count system", "Lost content because the credentials didn't include cameras", "Tried to coordinate Mas+ × Messi-level activation with general event staff", "Found out your premium-suite host wasn't TIPS-certified", "Built a sponsor-recap deck from photos in a Slack channel"]
     },
     "comparison": [["Generic event staffing platform", "Sports-cleared, stadium-vetted crew"], ["Sponsor recap from a Slack channel of photos", "Same-night content + Spark dashboard"], ["No bilingual coverage for soccer", "Mas+ × Messi-proven bilingual roster"], ["No TIPS/TABC for premium suite", "Regulated-pour-certified per suite, per shift"], ["Different vendor for stadium vs tailgate", "One PM, tailgate to concourse to suite"], ["Sponsor-share happens 3 days late", "Live dashboard, sponsor sees same numbers same time"]],
@@ -2231,7 +2231,7 @@
       "desc": "Venue + property + sponsor named as additional insureds. Liquor liability per program."
     }, {
       "lab": "Bilingual where needed",
-      "desc": "Liga MX, MLS, Concacaf, Copa America — Spanish-fluent ambassadors verified before deployment."
+      "desc": "Liga MX, MLS, Concacaf, Copa America: Spanish-fluent ambassadors verified before deployment."
     }, {
       "lab": "Content release",
       "desc": "Per-property release SOPs. Brand + ambassador + property all signed before content captured."
@@ -2239,13 +2239,13 @@
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
       "head": "Sports marketing is the activation discipline where every fan touchpoint has to convert.",
-      "paras": ["Ignite runs sports marketing activations across MLS, NFL, NBA, NHL, MLB, MMA, NASCAR, Liga MX, Concacaf, and college football. Stadium activation, fan zones, concourse hosting, tailgate sampling, premium-suite hospitality, and same-night content delivery — under one PM, one Spark dashboard.", "Mas+ × Messi is our flagship sports activation. Bilingual staffing, stadium clearance, fan-zone hosting, content capture across MLS markets. Same playbook applies to any sports property — captain-led crew, in-venue clearance, sponsor-integrated activation, real-time reporting.", "We work cleanly with property rights holders, venue ops, sponsor-activation agencies, and brand-side sports marketing teams. Captain rotation consistent across multi-game programs. <a href='/spark' style='color:#D7453E'>Spark</a> tracks dwell time, fan-zone attendance, sample counts, content capture, and sponsor-share metrics in one dashboard.", "Best for beverage and spirits brands sponsoring leagues or teams, CPG brands running game-day sampling at the tailgate or fan-zone level, automotive brands activating around NASCAR weekends, and any brand running multi-game season programs that need consistent execution and consolidated recap."],
+      "paras": ["Ignite runs sports marketing activations across MLS, NFL, NBA, NHL, MLB, MMA, NASCAR, Liga MX, Concacaf, and college football. Stadium activation, fan zones, concourse hosting, tailgate sampling, premium-suite hospitality, and same-night content delivery, all under one PM, one Spark dashboard.", "Mas+ × Messi is our flagship sports activation. Bilingual staffing, stadium clearance, fan-zone hosting, content capture across MLS markets. Same playbook applies to any sports property: captain-led crew, in-venue clearance, sponsor-integrated activation, real-time reporting.", "We work cleanly with property rights holders, venue ops, sponsor-activation agencies, and brand-side sports marketing teams. Captain rotation consistent across multi-game programs. <a href='/spark' style='color:#D7453E'>Spark</a> tracks dwell time, fan-zone attendance, sample counts, content capture, and sponsor-share metrics in one dashboard.", "Best for beverage and spirits brands sponsoring leagues or teams, CPG brands running game-day sampling at the tailgate or fan-zone level, automotive brands activating around NASCAR weekends, and any brand running multi-game season programs that need consistent execution and consolidated recap."],
       "chips": ["Sports marketing activations", "Sports event staffing", "Game day activations", "Fan engagement marketing", "Stadium sampling", "MLS activation", "NFL fan zone", "Liga MX activation", "NASCAR brand activation", "College football activation"]
     },
-    "faqs": [["Which leagues and properties have you activated with?", "MLS, NFL, NBA, NHL, MLB, MMA, NASCAR, college football (SEC, Big Ten, ACC, Big 12, Pac-12), Liga MX, Concacaf, MLS All-Star, Copa America. Both team-side and league-side activation."], ["Can you handle the Mas+ × Messi-style bilingual stadium model?", "Yes — that's our proof point. Bilingual roster, fluency-verified, stadium-cleared, content-ready. Same model works for any Liga MX, MLS, Concacaf, or soccer-anchored activation."], ["What does a tailgate activation include?", "Branded tailgate footprint, sampling station, sample plan modeled against tailgate traffic, captain-led crew, content capture, and same-night recap. ABC paperwork where the tailgate serves alcohol."], ["Can you staff premium suites and hospitality?", "Yes. TIPS / TABC / RBS-certified hospitality leads for premium suite hosting, partner-program activation, and sponsor-integrated experiences."], ["How quickly do sponsor recaps ship?", "Same-night content cut delivered before the next morning's senior review. Full recap dashboard with sample counts, fan-zone attendance, content gallery, and dwell-time metrics inside hours of game-end."], ["Can you do a multi-game season activation?", "Yes. Most NFL / NBA / MLB season programs run as managed engagements with captain rotation, consistent playbook, and per-game roll-up reporting. Same crew tier across the full season."]],
+    "faqs": [["Which leagues and properties have you activated with?", "MLS, NFL, NBA, NHL, MLB, MMA, NASCAR, college football (SEC, Big Ten, ACC, Big 12, Pac-12), Liga MX, Concacaf, MLS All-Star, Copa America. Both team-side and league-side activation."], ["Can you handle the Mas+ × Messi-style bilingual stadium model?", "Yes, that's our proof point. Bilingual roster, fluency-verified, stadium-cleared, content-ready. Same model works for any Liga MX, MLS, Concacaf, or soccer-anchored activation."], ["What does a tailgate activation include?", "Branded tailgate footprint, sampling station, sample plan modeled against tailgate traffic, captain-led crew, content capture, and same-night recap. ABC paperwork where the tailgate serves alcohol."], ["Can you staff premium suites and hospitality?", "Yes. TIPS / TABC / RBS-certified hospitality leads for premium suite hosting, partner-program activation, and sponsor-integrated experiences."], ["How quickly do sponsor recaps ship?", "Same-night content cut delivered before the next morning's senior review. Full recap dashboard with sample counts, fan-zone attendance, content gallery, and dwell-time metrics inside hours of game-end."], ["Can you do a multi-game season activation?", "Yes. Most NFL / NBA / MLB season programs run as managed engagements with captain rotation, consistent playbook, and per-game roll-up reporting. Same crew tier across the full season."]],
     "sparkAngle": {
       "headline": "Spark for sports activation",
-      "lede": "Per-game fan-zone attendance, sample counts, dwell time, content capture log, sponsor-share metrics — same dashboard for brand, agency, and sponsor.",
+      "lede": "Per-game fan-zone attendance, sample counts, dwell time, content capture log, sponsor-share metrics, all on the same dashboard for brand, agency, and sponsor.",
       "points": ["Per-game fan-zone attendance + dwell time", "Tailgate / concourse / suite sample counts", "Same-night content edit log", "Sponsor-share metrics + multi-game roll-up"]
     },
     "pairedChips": [{
@@ -2289,7 +2289,7 @@
     "heroSplit": ["Sweepstakes.", "Built to convert."],
     "complianceMap": {
       "title": "Bonded states. Restricted states.|We file before you launch.",
-      "sub": "Most agencies hand-wave around state-by-state sweepstakes registration. We don't. Bonding, official rules, restricted-jurisdiction flags — all handled before the program ships.",
+      "sub": "Most agencies hand-wave around state-by-state sweepstakes registration. We don't. Bonding, official rules, restricted-jurisdiction flags, all handled before the program ships.",
       "requiredStates": ["NY", "FL", "RI"],
       "restrictedStates": ["VT", "AK", "HI", "PR"],
       "note": "Rules drafted to all 50 states + DC. Restricted jurisdictions called out at brief, not after."
@@ -2297,7 +2297,7 @@
     "leadFlow": [{
       "label": "01 · DRAW",
       "title": "Selected",
-      "desc": "Random-selection winner draw with audit log, run by Ignite — not the brand and not the agency."
+      "desc": "Random-selection winner draw with audit log, run by Ignite, not the brand and not the agency."
     }, {
       "label": "02 · VERIFY",
       "title": "ID checked",
@@ -2313,11 +2313,11 @@
     }],
     "fulfillmentFlow": {
       "headline": "Prize fulfillment.|*Sourced. Shipped. Confirmed.*",
-      "sub": "Bonded sweepstakes prizes ship through Ignite's fulfillment partners — not a brand's mailroom. Source, kit, pack, ship, track, confirm delivery in writing.",
+      "sub": "Bonded sweepstakes prizes ship through Ignite's fulfillment partners, not a brand's mailroom. Source, kit, pack, ship, track, confirm delivery in writing.",
       "steps": [{
         "label": "SOURCE",
         "title": "Sourced",
-        "desc": "Trip, car, gift card, branded merch — sourced from named partners with delivery SLAs."
+        "desc": "Trip, car, gift card, branded merch, sourced from named partners with delivery SLAs."
       }, {
         "label": "KIT",
         "title": "Kitted",
@@ -2341,7 +2341,7 @@
     "demoToPO": {
       "eyebrow": "ENTRY → OPT-IN → CRM GROWTH",
       "title": "One activation.|*A measurable list bump.*",
-      "lede": "Sweepstakes work when they grow the list. Here's the math from a typical Ignite-run program — one activation, four numbers.",
+      "lede": "Sweepstakes work when they grow the list. Here's the math from a typical Ignite-run program: one activation, four numbers.",
       "stats": [["2,400", "ENTRIES CAPTURED", "Median entries from a single mid-tier festival or retail activation."], ["1,860", "OPT-INS RETAINED", "78% of entries opt in to brand comms (clean, scrubbed, deduped)."], ["+18%", "CRM LIST GROWTH", "Mean monthly list growth in the 30 days post-activation."], ["6:1", "ENTRY-TO-CAC", "Cost-per-opt-in vs paid social benchmark for the same brand."]],
       "foot": "Numbers reflect typical Ignite programs. Conversion varies by brand category, prize tier, and activation channel."
     },
@@ -2372,7 +2372,7 @@
     }],
     "multiEventRollup": {
       "headline": "Run 47 sweepstakes.|*Defend the quarter with one dashboard.*",
-      "sub": "Single sweepstakes tell stories. Quarters tell strategy. Spark rolls every program — entries, opt-ins, winners notified, CRM growth — into one trade-team-ready view.",
+      "sub": "Single sweepstakes tell stories. Quarters tell strategy. Spark rolls every program (entries, opt-ins, winners notified, CRM growth) into one trade-team-ready view.",
       "period": "Q3 2026",
       "totals": [["47", "SWEEPSTAKES RUN"], ["184,200", "ENTRIES CAPTURED"], ["142,800", "OPT-INS RETAINED"], ["9,200", "WINNERS NOTIFIED"], ["+22%", "CRM GROWTH (MEAN)"]],
       "eventList": [{
@@ -2489,8 +2489,8 @@
     }],
     "short": "Sweepstakes",
     "eyebrow": "LEAD-GEN // CONTEST",
-    "tagline": "Branded contests, prize sweepstakes, lead-capture activations — built for trial, opt-in, and CRM growth.",
-    "intro": "Sweepstakes and contest activations that turn a brand moment into a measurable database. Branded sweepstakes, in-event contests, lead-capture activations, prize giveaways, and gamified brand experiences — designed for opt-in, scrubbed for quality, and synced to your CRM the next morning.",
+    "tagline": "Branded contests, prize sweepstakes, lead-capture activations, built for trial, opt-in, and CRM growth.",
+    "intro": "Sweepstakes and contest activations that turn a brand moment into a measurable database. Branded sweepstakes, in-event contests, lead-capture activations, prize giveaways, and gamified brand experiences, designed for opt-in, scrubbed for quality, and synced to your CRM the next morning.",
     "hero": "https://cdn.prod.website-files.com/688129f3841088c282c32750/689698a66c97127792df4694_MAS%2B26_07_20_2025_Jessica_Sanchez_f47ed1e5-a579-4e38-85d2-5b0b5ef59cce_13.jpg",
     "heroPos": "center 40%",
     "sub": [{
@@ -2510,19 +2510,19 @@
       "d": "Official rules drafted to state law, bonding where required, age verification protocols."
     }, {
       "t": "Branded photo booths",
-      "d": "Sweepstakes-integrated photo experiences — every shot generates an entry."
+      "d": "Sweepstakes-integrated photo experiences where every shot generates an entry."
     }, {
       "t": "Sports + festival tie-ins",
       "d": "In-arena sweepstakes, fan-zone prize moments, festival-grade entry capture."
     }, {
       "t": "CRM sync + opt-in",
-      "d": "Salesforce / HubSpot / Klaviyo / Mailchimp — entries flow with consent the next morning."
+      "d": "Salesforce / HubSpot / Klaviyo / Mailchimp: entries flow with consent the next morning."
     }],
     "stats": [["50", "states + DC compliant"], ["48hr", "CRM sync"], ["100%", "consent-captured"]],
     "adjacent": ["experiential-marketing", "product-sampling", "event-staffing"],
     "pov": {
       "lead": "A sweepstakes that doesn't grow your list isn't marketing. It's a gift.",
-      "body": "Most brand sweepstakes leak. Bad rules, no opt-in, no list growth, no story for the next quarterly review. We design contest activations as conversion moments — every entry consent-captured, every winner verified, every record flowing to your CRM with a clean source-tag.",
+      "body": "Most brand sweepstakes leak. Bad rules, no opt-in, no list growth, no story for the next quarterly review. We design contest activations as conversion moments: every entry consent-captured, every winner verified, every record flowing to your CRM with a clean source-tag.",
       "marquee": ["OPT-IN CAPTURED", "CRM-SYNCED", "LEGAL-COMPLIANT", "STATE-BONDED", "CONSENT-RECORDED"]
     },
     "pains": {
@@ -2553,13 +2553,13 @@
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
       "head": "A great contest is a list-building system disguised as a giveaway.",
-      "paras": ["Ignite runs sweepstakes and contest activations as conversion programs — not feel-good giveaways. Every entry is a consented, opt-in, source-tagged record that flows to your CRM the next morning. Branded sweepstakes, in-event contests, photo-booth tie-ins, gamified moments — built around the database you actually want to grow.", "Official rules are drafted to state law. Where required, we file bonding in NY, FL, and RI in advance. Age verification, prize fulfillment, winner notification, and refusal-to-claim protocols all handled. Compliance is the floor — measurable list growth is the goal.", "Programs integrate cleanly with sampling, retail demos, festival activations, sports tie-ins, and trade-show booth capture. <a href='/spark' style='color:#D7453E'>Spark</a> tracks entries live, scrubs duplicates end-of-day, and ships clean records to Salesforce, HubSpot, Klaviyo, Mailchimp, or your in-house data warehouse.", "Best for CPG brands tying trial to subscription, beverage brands running retail co-op contests, sports + entertainment brands running fan capture, and any brand looking to turn a single activation moment into multi-quarter remarketing fuel."],
+      "paras": ["Ignite runs sweepstakes and contest activations as conversion programs, not feel-good giveaways. Every entry is a consented, opt-in, source-tagged record that flows to your CRM the next morning. Branded sweepstakes, in-event contests, photo-booth tie-ins, gamified moments, all built around the database you actually want to grow.", "Official rules are drafted to state law. Where required, we file bonding in NY, FL, and RI in advance. Age verification, prize fulfillment, winner notification, and refusal-to-claim protocols all handled. Compliance is the floor; measurable list growth is the goal.", "Programs integrate cleanly with sampling, retail demos, festival activations, sports tie-ins, and trade-show booth capture. <a href='/spark' style='color:#D7453E'>Spark</a> tracks entries live, scrubs duplicates end-of-day, and ships clean records to Salesforce, HubSpot, Klaviyo, Mailchimp, or your in-house data warehouse.", "Best for CPG brands tying trial to subscription, beverage brands running retail co-op contests, sports + entertainment brands running fan capture, and any brand looking to turn a single activation moment into multi-quarter remarketing fuel."],
       "chips": ["Sweepstakes activations", "Contest marketing", "Lead generation activations", "Experiential sweepstakes", "Promotional contests", "Branded sweepstakes", "Prize giveaway agency", "Lead capture marketing", "State-compliant sweepstakes", "CRM-integrated activations"]
     },
-    "faqs": [["Do you draft the official rules?", "Yes. Legal-compliant official rules drafted to all 50 states + DC. Restricted jurisdictions (NY, FL, RI) bonded and registered in advance where prize value triggers the requirement."], ["How do entries flow to our CRM?", "Captured live during the activation, scrubbed end-of-day for duplicates, exported with consent record + source-tag + UTM, and synced to Salesforce / HubSpot / Klaviyo / Mailchimp the next morning."], ["Can you handle prize fulfillment?", "Yes — end to end. Prize sourcing, packaging, shipment, tracking, winner notification, refusal-to-claim protocol. Hand off to your team only if you want to."], ["What kinds of prizes have you run sweepstakes for?", "Trips, gift cards, branded merch, year-supplies of product, VIP experiences, signed memorabilia, exclusive event access. We size prize logistics to the activation scope."], ["Can a sweepstakes run inside our existing activation?", "Yes — that's most of what we do. Sampling moments, photo booths, mobile tour stops, festival activations, sports fan zones, trade-show booths — every one of those is a natural entry-capture moment."], ["How do you scrub for fake or duplicate entries?", "Email verification, IP de-duplication, phone normalization, GPS plausibility on geo-locked entries. Captured live during the program; clean records ship to your CRM the next morning."]],
+    "faqs": [["Do you draft the official rules?", "Yes. Legal-compliant official rules drafted to all 50 states + DC. Restricted jurisdictions (NY, FL, RI) bonded and registered in advance where prize value triggers the requirement."], ["How do entries flow to our CRM?", "Captured live during the activation, scrubbed end-of-day for duplicates, exported with consent record + source-tag + UTM, and synced to Salesforce / HubSpot / Klaviyo / Mailchimp the next morning."], ["Can you handle prize fulfillment?", "Yes, end to end. Prize sourcing, packaging, shipment, tracking, winner notification, refusal-to-claim protocol. Hand off to your team only if you want to."], ["What kinds of prizes have you run sweepstakes for?", "Trips, gift cards, branded merch, year-supplies of product, VIP experiences, signed memorabilia, exclusive event access. We size prize logistics to the activation scope."], ["Can a sweepstakes run inside our existing activation?", "Yes, that's most of what we do. Sampling moments, photo booths, mobile tour stops, festival activations, sports fan zones, trade-show booths. Every one of those is a natural entry-capture moment."], ["How do you scrub for fake or duplicate entries?", "Email verification, IP de-duplication, phone normalization, GPS plausibility on geo-locked entries. Captured live during the program; clean records ship to your CRM the next morning."]],
     "sparkAngle": {
       "headline": "Spark for sweepstakes",
-      "lede": "Live entry capture, consent record, duplicate scrub, source-tag — flowing into your CRM the next morning with a clean audit trail.",
+      "lede": "Live entry capture, consent record, duplicate scrub, source-tag, flowing into your CRM the next morning with a clean audit trail.",
       "points": ["Live entries logged with consent + UTM", "Duplicate / fraud scrub end-of-day", "CRM sync next morning (Salesforce / HubSpot / Klaviyo)", "Winner audit trail + fulfillment tracking"]
     },
     "pairedChips": [{
@@ -2600,13 +2600,13 @@
     "short": "Trade Marketing",
     "eyebrow": "SALES // TRADE MARKETING",
     "heroSplit": ["Trade spend with", "a plan behind it."],
-    "tagline": "Co-op, MDF, scan-back, and a trade calendar tied to your P&L — managed by CPG operators.",
-    "intro": "Trade is usually a brand's second-biggest line item and its least-managed one. We build and run the trade marketing program — co-op and MDF, scan-backs, coupons, retailer-funded placements — on a calendar tied to your P&L, so every dollar is planned, claimed, and measured against lift.",
+    "tagline": "Co-op, MDF, scan-back, and a trade calendar tied to your P&L, managed by CPG operators.",
+    "intro": "Trade is usually a brand's second-biggest line item and its least-managed one. We build and run the trade marketing program (co-op and MDF, scan-backs, coupons, retailer-funded placements) on a calendar tied to your P&L, so every dollar is planned, claimed, and measured against lift.",
     "hero": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=2400&q=80",
     "heroPos": "center 40%",
     "sub": [{
       "t": "Trade calendar tied to P&L",
-      "d": "A real promo calendar mapped to margin — not a guess updated quarterly."
+      "d": "A real promo calendar mapped to margin, not a guess updated quarterly."
     }, {
       "t": "Co-op & MDF programs",
       "d": "Plan, deploy, and reconcile co-op and MDF so funds get used and claimed."
@@ -2627,12 +2627,12 @@
     "adjacent": ["retail-sales-broker-management", "distribution-expansion", "buyer-pitch-line-reviews"],
     "pov": {
       "lead": "Untracked trade spend is just hope with a budget line.",
-      "body": "Most brands spend trade dollars they can't tie to lift and leave co-op funds unclaimed. We run trade like a P&L discipline — planned, deployed, claimed, and measured — so the second-biggest line item finally earns its keep.",
+      "body": "Most brands spend trade dollars they can't tie to lift and leave co-op funds unclaimed. We run trade like a P&L discipline (planned, deployed, claimed, and measured) so the second-biggest line item finally earns its keep.",
       "marquee": ["TRADE CALENDAR", "CO-OP & MDF", "SCAN-BACK MATH", "TIED TO P&L", "CLAIM EVERYTHING"]
     },
     "pains": {
       "opener": "If you manage trade for a CPG brand, you've probably…",
-      "sinker": "We run trade as a P&L discipline — planned, claimed, and measured against lift.",
+      "sinker": "We run trade as a P&L discipline: planned, claimed, and measured against lift.",
       "items": ["Left co-op or MDF funds unclaimed at year-end", "Run a promo you couldn't tie to any lift", "Re-read the MDF agreement at midnight for the loophole", "Submitted a co-op claim with 90% of receipts and prayed", "Guessed at scan-back math on a napkin", "Found out a retailer placement underperformed too late", "Built a trade calendar disconnected from margin", "Spent trade dollars to hit a number, not a plan"]
     },
     "comparison": [["Trade spend you can't tie to lift", "Every promo modeled and measured"], ["Co-op / MDF left on the table", "Funds planned, deployed, and claimed"], ["Scan-back math on a napkin", "Modeled programs with real payback"], ["A trade calendar disconnected from P&L", "A calendar mapped to margin"], ["Claims filed late and incomplete", "Receipts chased, claims filed clean"], ["Promo to hit a number", "Promo to a plan with measured lift"]],
@@ -2643,11 +2643,11 @@
     "industries": ["CPG Beverage", "CPG Food & Snack", "Alcohol & Spirits", "Pet", "Health & Wellness", "Beauty"],
     "seoBlock": {
       "eyebrow": "DEEP DIVE",
-      "head": "Trade is the second-biggest line on most CPG P&Ls — and the least managed.",
+      "head": "Trade is the second-biggest line on most CPG P&Ls, and the least managed.",
       "paras": ["Trade marketing management covers co-op and MDF programs, scan-backs, coupons, retailer-funded placements, and the promo calendar that ties them all to your P&L. Done well, it's a growth lever. Done loosely, it's a leak.", "Ignite runs trade like the discipline it is. We build a calendar mapped to margin, model each promo against expected lift, deploy co-op and MDF so funds actually get used, and chase the receipts so claims get filed clean and on time.", "Then we measure: promo vs. actual lift, account by account, so next quarter's plan is sharper than this one's.", "Best for CPG brands leaving co-op funds unclaimed, teams running promos they can't tie to lift, and founders who suspect trade is leaking but can't see where."],
       "chips": ["trade marketing management", "co-op program management", "MDF management", "scan-back programs", "trade promotion management", "CPG trade marketing", "retail trade calendar", "coupon program management", "trade spend ROI", "retailer co-op"]
     },
-    "faqs": [["What's the difference between co-op and MDF?", "Co-op funds are typically accrued and shared for advertising/promotion; MDF (market development funds) are discretionary funds for growth activities. We plan, deploy, and reconcile both."], ["Can you tie trade spend to actual lift?", "Yes. We model each promo against expected lift, then measure against actual sell-through, account by account."], ["Do you file the claims?", "Yes. We chase receipts and file co-op/MDF claims clean and on time so funds don't evaporate."], ["Do you build the trade calendar?", "Yes — a promo calendar mapped to your margin and P&L, not a disconnected spreadsheet."], ["Do you work with our broker and distributor?", "Yes. Trade execution is coordinated with brokers and distributors so the plan is consistent across the channel."]],
+    "faqs": [["What's the difference between co-op and MDF?", "Co-op funds are typically accrued and shared for advertising/promotion; MDF (market development funds) are discretionary funds for growth activities. We plan, deploy, and reconcile both."], ["Can you tie trade spend to actual lift?", "Yes. We model each promo against expected lift, then measure against actual sell-through, account by account."], ["Do you file the claims?", "Yes. We chase receipts and file co-op/MDF claims clean and on time so funds don't evaporate."], ["Do you build the trade calendar?", "Yes: a promo calendar mapped to your margin and P&L, not a disconnected spreadsheet."], ["Do you work with our broker and distributor?", "Yes. Trade execution is coordinated with brokers and distributors so the plan is consistent across the channel."]],
     "compliance": [{
       "lab": "Co-op / MDF terms",
       "desc": "Agreements reviewed; funds tracked, deployed, and claimed."
@@ -2686,7 +2686,7 @@
     }],
     "sparkAngle": {
       "headline": "Spark for trade",
-      "lede": "Tie trade dollars to the field execution and sell-through they're meant to drive — in one view.",
+      "lede": "Tie trade dollars to the field execution and sell-through they're meant to drive, all in one view.",
       "points": ["Promo execution verified in the field", "Demo + scan-back activity by account", "Lift visibility by market and SKU", "Claim-ready proof of performance"]
     }
   };
@@ -2708,52 +2708,52 @@
     heroSplit: ["We don't just book it.", "We're already there."],
     short: "Travel",
     eyebrow: "DIVISION // GROUP + EVENT TRAVEL",
-    tagline: "In-house group travel, run by the team that runs the event. Room blocks, air, ground, and the on-site desk — one operator, one accountable number.",
-    intro: "Ignite Travel is the group and event travel arm of Ignite Productions. We book and manage the whole movement — hotel room blocks, group air, ground transport, incentive trips, and on-site travel desks — for the events, activations, conferences, and tours we already produce. Most travel agencies hand you a confirmation and vanish. We're standing in the lobby when your group lands.",
+    tagline: "In-house group travel, run by the team that runs the event. Room blocks, air, ground, and the on-site desk: one operator, one accountable number.",
+    intro: "Ignite Travel is the group and event travel arm of Ignite Productions. We book and manage the whole movement (hotel room blocks, group air, ground transport, incentive trips, and on-site travel desks) for the events, activations, conferences, and tours we already produce. Most travel agencies hand you a confirmation and vanish. We're standing in the lobby when your group lands.",
     hero: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2400&q=80",
     heroPos: "center 50%",
     sub: [{
       t: "Hotel room blocks",
-      d: "Sourced, negotiated, and managed — contract, attrition, cutoffs, rooming lists, and reconciliation handled."
+      d: "Sourced, negotiated, and managed: contract, attrition, cutoffs, rooming lists, and reconciliation handled."
     }, {
       t: "Group air coordination",
       d: "Group fares, individual ticketing, name changes, and irregular-ops rebooking without the call-center hold music."
     }, {
       t: "Ground transport",
-      d: "Airport transfers, shuttles, motorcoaches, black car, and on-site fleet — routed and dispatched by our team."
+      d: "Airport transfers, shuttles, motorcoaches, black car, and on-site fleet, routed and dispatched by our team."
     }, {
       t: "Incentive trips",
-      d: "Reward travel designed end to end — destination, room block, experiences, and on-site hosting by the experiential team."
+      d: "Reward travel designed end to end: destination, room block, experiences, and on-site hosting by the experiential team."
     }, {
       t: "Conference & trade-show travel",
       d: "Attendee travel blocks, exhibitor crews, and staff logistics for the shows we already staff."
     }, {
       t: "Festival & concert groups",
-      d: "Move talent, crew, street teams, and VIP groups to the moment — lodging, ground, and credentials aligned."
+      d: "Move talent, crew, street teams, and VIP groups to the moment, with lodging, ground, and credentials aligned."
     }, {
       t: "Sports group travel",
       d: "Team, sponsor, and fan-group travel around game days, tournaments, and motorsports weekends."
     }, {
       t: "Talent & crew travel",
-      d: "We move our own 257K field force constantly — your talent and crew travel runs on the same machine."
+      d: "We move our own 257K field force constantly. Your talent and crew travel runs on the same machine."
     }, {
       t: "VIP & executive travel",
-      d: "White-glove handling for execs, sponsors, and high-profile guests — discreet, fast, and reachable."
+      d: "White-glove handling for execs, sponsors, and high-profile guests: discreet, fast, and reachable."
     }, {
       t: "On-site travel desk",
       d: "A staffed arrivals, transfers, and rebooking desk run by the operators producing the event."
     }, {
       t: "Manifest & logistics",
-      d: "One source of truth for who's where, when — arrivals, rooming, ground, and credentials in a single manifest."
+      d: "One source of truth for who's where, when: arrivals, rooming, ground, and credentials in a single manifest."
     }, {
       t: "Budget & reconciliation",
       d: "Transparent program budgets, real-time spend, and clean post-program reconciliation. No surprise folio."
     }],
-    stats: [["50", "states + global"], ["4–8 wks", "ideal lead time"], ["1", "accountable team"]],
+    stats: [["50", "states + global"], ["4 to 8 wks", "ideal lead time"], ["1", "accountable team"]],
     adjacent: ["experiential-marketing", "event-staffing", "trade-shows"],
     pov: {
       lead: "Anyone can book a room. Few can run the room.",
-      body: "Travel agencies sell you a confirmation number. We sell you a movement that's wired into the event itself — the same team owns the block, the ground, the desk, and the activation on the other end. When a flight slips at 11pm, you're not on hold with a 1-800 line. You're texting the person who's already on-site.",
+      body: "Travel agencies sell you a confirmation number. We sell you a movement that's wired into the event itself: the same team owns the block, the ground, the desk, and the activation on the other end. When a flight slips at 11pm, you're not on hold with a 1-800 line. You're texting the person who's already on-site.",
       marquee: ["ONE TEAM", "ROOM BLOCKS", "GROUND DISPATCH", "ON-SITE DESK", "ALREADY THERE"]
     },
     pains: {
@@ -2761,16 +2761,16 @@
       sinker: "You shouldn't be the travel agent, the logistics lead, and the producer. Hand all three to one team.",
       items: ["Chasing a rooming-list spreadsheet across six inboxes", "Eating attrition because nobody watched the cutoff date", "On hold with an airline while your group stands at a gate", "Coordinating three vendors who each blame the other two", "Re-keying the same manifest into four different tools", "Booking ground transport that ghosts on arrival day", "Reconciling a folio that looks nothing like the quote", "Wishing the people running the event also ran the travel"]
     },
-    comparison: [["Travel agency books it, then disappears", "The team that runs the event manages the travel"], ["1-800 line when a flight slips at midnight", "Text the operator who's already on-site"], ["Room block, ground, and event = three vendors", "One accountable team owns all three"], ["You keep the master manifest in a spreadsheet", "One live manifest — arrivals, rooming, ground, credentials"], ["Surprise attrition and a mystery folio", "Watched cutoffs, transparent budget, clean reconciliation"], ["Generic group rates", "Negotiated blocks + the perks of a high-volume buyer"]],
+    comparison: [["Travel agency books it, then disappears", "The team that runs the event manages the travel"], ["1-800 line when a flight slips at midnight", "Text the operator who's already on-site"], ["Room block, ground, and event = three vendors", "One accountable team owns all three"], ["You keep the master manifest in a spreadsheet", "One live manifest: arrivals, rooming, ground, credentials"], ["Surprise attrition and a mystery folio", "Watched cutoffs, transparent budget, clean reconciliation"], ["Generic group rates", "Negotiated blocks + the perks of a high-volume buyer"]],
     proof: null,
     industries: ["Corporate Event Teams", "Brand Marketing", "Incentive Program Owners", "Production Companies", "Conference & Trade Show Organizers", "Sports & Entertainment", "Festivals & Tours", "Associations", "Agencies & Planners", "Sponsorship Teams"],
     seoBlock: {
       eyebrow: "NEW DIVISION // NOW BOOKING",
       head: "The agency that runs the event now books the travel to it.",
-      paras: ["Ignite Travel is a dedicated group and event travel division of Ignite Productions, the veteran-owned experiential agency behind activations, tours, and field programs for brands like Liquid Death, White Claw, Marc Anthony Brands, and Glendalough. We move people for a living — a 257,000-person field force, crews, talent, and ambassadors across all 50 states — so managing your group's travel is the same operation we run every week.", "<strong>Why this beats a traditional travel agency:</strong> a normal agency books the trip and hands you a confirmation. We own the event on the other end. The same operators managing your room block also dispatch the ground transport, staff the on-site travel desk, and produce the activation, conference, or incentive trip the group is traveling for. One team. One manifest. One accountable number.", "We handle hotel room blocks and contracts, group air and individual ticketing, ground transport and on-site fleet, incentive-trip design, conference and trade-show travel blocks, festival and sports group travel, VIP and executive handling, and full budget reconciliation. For large programs we staff a live on-site travel desk so arrivals, transfers, and day-of changes never fall between two vendors.", "Programs run domestic and global. Strongest depth in major event and resort markets — Las Vegas, Orlando, Nashville, Austin, Miami, New York, Los Angeles, San Diego, Scottsdale, and most convention and destination-resort cities. International incentive and event travel handled through vetted partner networks."],
+      paras: ["Ignite Travel is a dedicated group and event travel division of Ignite Productions, the veteran-owned experiential agency behind activations, tours, and field programs for brands like Liquid Death, White Claw, Marc Anthony Brands, and Glendalough. We move people for a living (a 257,000-person field force, crews, talent, and ambassadors across all 50 states), so managing your group's travel is the same operation we run every week.", "<strong>Why this beats a traditional travel agency:</strong> a normal agency books the trip and hands you a confirmation. We own the event on the other end. The same operators managing your room block also dispatch the ground transport, staff the on-site travel desk, and produce the activation, conference, or incentive trip the group is traveling for. One team. One manifest. One accountable number.", "We handle hotel room blocks and contracts, group air and individual ticketing, ground transport and on-site fleet, incentive-trip design, conference and trade-show travel blocks, festival and sports group travel, VIP and executive handling, and full budget reconciliation. For large programs we staff a live on-site travel desk so arrivals, transfers, and day-of changes never fall between two vendors.", "Programs run domestic and global. Strongest depth in major event and resort markets: Las Vegas, Orlando, Nashville, Austin, Miami, New York, Los Angeles, San Diego, Scottsdale, and most convention and destination-resort cities. International incentive and event travel handled through vetted partner networks."],
       chips: ["Group travel management", "Event travel agency", "Corporate travel management", "Incentive travel", "Hotel room block management", "Group air booking", "Conference travel", "Trade show travel", "Festival travel", "Sports group travel", "Destination event travel", "On-site travel desk", "Attendee travel management", "VIP travel", "Crew + talent travel", "Travel logistics agency"]
     },
-    faqs: [["How is this different from a normal travel agency?", "A normal travel agency books the trip and disappears. We run the event the group is traveling to. Ignite already produces activations, staffs events, and moves a 257,000-person field force around the country — so we manage travel as one piece of a live event operation, not a detached booking. One team owns the room block, the ground transport, the on-site desk, and the event itself."], ["What kinds of travel do you manage?", "Hotel room blocks, group air, ground transport, incentive trips, corporate retreats, conference and trade-show travel blocks, festival and concert group travel, sports travel, talent and crew travel for productions, VIP and executive travel, and full destination-event travel programs."], ["Do you handle hotel room blocks and contracts?", "Yes. We source and negotiate room blocks, manage the contract, attrition and cutoff dates, rooming lists, and reconciliation. We also build a booking link or managed desk so attendees book inside your block without you chasing a spreadsheet."], ["Can you move a group on short notice?", "Yes. We routinely deploy crews into markets on tight timelines. Standard group programs run smoothest with 4 to 8 weeks of lead time, but we've turned around emergency group travel in days. Rush windows carry premiums."], ["Do you provide an on-site travel desk?", "Yes. For larger programs we staff a live on-site travel and logistics desk — arrivals, transfers, rebookings, and the inevitable day-of changes — run by the same operators handling the event, so nothing falls between two vendors."], ["Can you run incentive trips and reward travel?", "Yes. We design and operate incentive trips and reward travel end to end — destination sourcing, room blocks, experiences, ground program, and on-site hosting. The experiential team that builds brand moments builds the trip itinerary too."], ["Do you book individual travel or only groups?", "Our focus is groups, events, and programs — that's where the in-house operation creates an edge. We handle VIP and executive individual travel as part of a program, but we are not a leisure travel agency for one-off personal trips."], ["What markets and destinations do you cover?", "All 50 states and most global destinations through vetted partners. Deepest domestic depth in Las Vegas, Orlando, Nashville, Austin, Miami, New York, Los Angeles, San Diego, Scottsdale, and the major convention and resort markets."]]
+    faqs: [["How is this different from a normal travel agency?", "A normal travel agency books the trip and disappears. We run the event the group is traveling to. Ignite already produces activations, staffs events, and moves a 257,000-person field force around the country, so we manage travel as one piece of a live event operation, not a detached booking. One team owns the room block, the ground transport, the on-site desk, and the event itself."], ["What kinds of travel do you manage?", "Hotel room blocks, group air, ground transport, incentive trips, corporate retreats, conference and trade-show travel blocks, festival and concert group travel, sports travel, talent and crew travel for productions, VIP and executive travel, and full destination-event travel programs."], ["Do you handle hotel room blocks and contracts?", "Yes. We source and negotiate room blocks, manage the contract, attrition and cutoff dates, rooming lists, and reconciliation. We also build a booking link or managed desk so attendees book inside your block without you chasing a spreadsheet."], ["Can you move a group on short notice?", "Yes. We routinely deploy crews into markets on tight timelines. Standard group programs run smoothest with 4 to 8 weeks of lead time, but we've turned around emergency group travel in days. Rush windows carry premiums."], ["Do you provide an on-site travel desk?", "Yes. For larger programs we staff a live on-site travel and logistics desk (arrivals, transfers, rebookings, and the inevitable day-of changes) run by the same operators handling the event, so nothing falls between two vendors."], ["Can you run incentive trips and reward travel?", "Yes. We design and operate incentive trips and reward travel end to end: destination sourcing, room blocks, experiences, ground program, and on-site hosting. The experiential team that builds brand moments builds the trip itinerary too."], ["Do you book individual travel or only groups?", "Our focus is groups, events, and programs; that's where the in-house operation creates an edge. We handle VIP and executive individual travel as part of a program, but we are not a leisure travel agency for one-off personal trips."], ["What markets and destinations do you cover?", "All 50 states and most global destinations through vetted partners. Deepest domestic depth in Las Vegas, Orlando, Nashville, Austin, Miami, New York, Los Angeles, San Diego, Scottsdale, and the major convention and resort markets."]]
   };
 })();
 
@@ -2792,7 +2792,7 @@
     short: "Weddings",
     eyebrow: "DIVISION // LUXURY HOSPITALITY",
     tagline: "White-glove crews for weddings, welcome parties, and luxury private events. Built for planners. Tested on the floor.",
-    intro: "Ignite Hospitality is the execution layer for wedding planners, luxury venues, and private event producers. We deploy hand-picked captains and trained ambassadors who show up dressed, briefed, and ready to run the planner's vision. Welcome parties, ceremonies, receptions, after-parties, and destination weekends — staffed end to end, all 50 states.",
+    intro: "Ignite Hospitality is the execution layer for wedding planners, luxury venues, and private event producers. We deploy hand-picked captains and trained ambassadors who show up dressed, briefed, and ready to run the planner's vision. Welcome parties, ceremonies, receptions, after-parties, and destination weekends, staffed end to end, all 50 states.",
     hero: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2400&q=80",
     heroPos: "center 45%",
     sub: [{
@@ -2821,7 +2821,7 @@
       d: "Same-night content edit. Stories, reels, and earned-media-ready edits delivered before brunch."
     }, {
       t: "Brand-sponsored activations",
-      d: "When a sponsor or partner brand has a moment at the event — built and staffed inside luxury venue standards."
+      d: "When a sponsor or partner brand has a moment at the event, built and staffed inside luxury venue standards."
     }, {
       t: "Destination wedding support",
       d: "Multi-day staffing, travel coordination, on-the-ground crew sourcing in the destination market."
@@ -2832,7 +2832,7 @@
       t: "After-parties & late nights",
       d: "Bartenders, club hosts, and field crew for the after-party your planner doesn't want to run."
     }],
-    stats: [["50", "states covered"], ["3–6 wks", "standard lead time"], ["1", "captain per event"]],
+    stats: [["50", "states covered"], ["3 to 6 wks", "standard lead time"], ["1", "captain per event"]],
     adjacent: ["event-staffing", "experiential-marketing", "promotional-products"],
     pov: {
       lead: "Weddings aren't activations. They're someone's only-once.",
@@ -2841,7 +2841,7 @@
     },
     pains: {
       opener: "If you're a planner reading this, you're probably…",
-      sinker: "You shouldn't have to staff this yourself — hand it to the crew that already does.",
+      sinker: "You shouldn't have to staff this yourself. Hand it to the crew that already does.",
       items: ["Booking different staffing vendors per market", "Briefing crews you've never met in a venue parking lot", "Chasing TIPS cards 48 hours before pour", "Hoping the bartender's uniform isn't wrinkled", "Wondering if the photo booth team is going to show up dressed", "Splitting content capture between four freelancers", "Eating a no-call no-show on the welcome party crew", "Asking yourself why this is so hard for a $200K event"]
     },
     comparison: [["Generic event staffers, briefed on the way in", "Hand-picked captains + ambassadors, briefed in advance"], ["Whatever showed up in the call sheet", "Black tie / white coat / branded, briefed on service tone"], ["Maybe TIPS, definitely no COI", "TIPS / TABC / RBS, COIs filed, venue-cleared"], ["Vendor disappears mid-event", "Captain owns the floor and reports to your planner"], ["Photos come in 6 weeks later, half missing", "Same-night content cut, delivered before brunch"], ["New crew every night, brief from scratch", "Same crew Friday → Sunday for continuity"]],
@@ -2850,10 +2850,10 @@
     seoBlock: {
       eyebrow: "FOUNDING PARTNERS WANTED",
       head: "We're hand-picking the first planners we work with.",
-      paras: ["Ignite Hospitality is a new dedicated luxury division of Ignite Productions, the veteran-owned experiential marketing agency behind activations for Liquid Death, White Claw, Marc Anthony Brands, and Glendalough. We bring the same operational discipline that powers 5,000+ field activations a year — to weddings, welcome parties, and high-end private events.", "<strong>What 'founding planner partner' means:</strong> we're onboarding a small group of luxury wedding planners and private-event producers as our first hospitality partners. You get priority booking, white-label crew, captain continuity across your full slate, and a direct line to a senior PM who knows your shows.", "We work as the execution layer, not the planner. Wedding planners stay in charge of design, vision, and client relationship. We bring vetted ambassadors, TIPS-certified bartenders, hospitality leads, photo booths, content capture crews, and floor captains who run the night without stealing your spotlight.", "Service tiers fit luxury venue standards — Four Seasons, Ritz-Carlton, Aman, Auberge, Belmond, and independent luxury resorts. COIs on file. Liquor liability included. Service-tier dress matched to the planner's spec. Multi-language crew available for destination programs. NDAs in scope for celebrity and high-profile events."],
+      paras: ["Ignite Hospitality is a new dedicated luxury division of Ignite Productions, the veteran-owned experiential marketing agency behind activations for Liquid Death, White Claw, Marc Anthony Brands, and Glendalough. We bring the same operational discipline that powers 5,000+ field activations a year to weddings, welcome parties, and high-end private events.", "<strong>What 'founding planner partner' means:</strong> we're onboarding a small group of luxury wedding planners and private-event producers as our first hospitality partners. You get priority booking, white-label crew, captain continuity across your full slate, and a direct line to a senior PM who knows your shows.", "We work as the execution layer, not the planner. Wedding planners stay in charge of design, vision, and client relationship. We bring vetted ambassadors, TIPS-certified bartenders, hospitality leads, photo booths, content capture crews, and floor captains who run the night without stealing your spotlight.", "Service tiers fit luxury venue standards: Four Seasons, Ritz-Carlton, Aman, Auberge, Belmond, and independent luxury resorts. COIs on file. Liquor liability included. Service-tier dress matched to the planner's spec. Multi-language crew available for destination programs. NDAs in scope for celebrity and high-profile events."],
       chips: ["Founding planner partner", "Wedding staffing", "Luxury event staffing", "Hospitality ambassadors", "VIP guest management", "Welcome party staffing", "TIPS-certified bartenders", "Photo booth + experiential", "Content capture crews", "Destination wedding support", "Luxury venue partner", "Brand-sponsored wedding activation", "After-party staffing", "Aman partner agency", "Four Seasons partner staffing", "Ritz-Carlton hospitality staffing"]
     },
-    faqs: [["Do you replace wedding planners?", "No. We partner with planners. Ignite is the execution and staffing layer: we deploy the crew, run the floor, and make the planner's vision happen. Planners stay in charge of design and client relationship; we handle the crew and the night-of operation."], ["What kinds of events do you staff?", "Luxury weddings (ceremony, reception, welcome party, day-after brunch), destination weddings, high-end private events, milestone parties, brand-sponsored wedding activations, after-parties, and corporate hospitality events."], ["How fast can you staff a destination wedding?", "Standard turnaround is 3–6 weeks for a destination wedding with full crew, training, and travel coordination. We've turned around in 7 days for emergency replacement scenarios. Rush windows carry premiums."], ["Do you carry the right insurance for luxury venues?", "Yes. General liability, liquor liability (TIPS/TABC/RBS-certified bartenders), and venue-specific additional insureds. We work cleanly with Four Seasons, Ritz-Carlton, Aman, Auberge, Belmond, and independent luxury venues. COIs on file before deployment."], ["Can you produce a brand-sponsored wedding activation?", "Yes. We've built brand activations inside private events — sponsored welcome bars, custom-branded photo experiences, sampling moments, content capture programs. We handle brand compliance and luxury venue standards simultaneously."], ["Will your crew look the part?", "Yes. We dress to the planner's spec — black tie, white coat, all-black, branded, smart casual. We brief each ambassador on service tone, posture, language, and the small details that separate a wedding from a generic event."], ["Can you handle multi-day weekends?", "Yes. Welcome party Friday, ceremony + reception Saturday, brunch Sunday — we plan and staff the full weekend with consistent crew where the program needs continuity."], ["What markets do you cover?", "All 50 states. Strongest depth in NYC, LA, Miami, Aspen, Napa, Charleston, Nashville, Austin, San Diego, the Hamptons, Palm Beach, and most luxury destination resort markets. International on request via partner networks."]]
+    faqs: [["Do you replace wedding planners?", "No. We partner with planners. Ignite is the execution and staffing layer: we deploy the crew, run the floor, and make the planner's vision happen. Planners stay in charge of design and client relationship; we handle the crew and the night-of operation."], ["What kinds of events do you staff?", "Luxury weddings (ceremony, reception, welcome party, day-after brunch), destination weddings, high-end private events, milestone parties, brand-sponsored wedding activations, after-parties, and corporate hospitality events."], ["How fast can you staff a destination wedding?", "Standard turnaround is 3 to 6 weeks for a destination wedding with full crew, training, and travel coordination. We've turned around in 7 days for emergency replacement scenarios. Rush windows carry premiums."], ["Do you carry the right insurance for luxury venues?", "Yes. General liability, liquor liability (TIPS/TABC/RBS-certified bartenders), and venue-specific additional insureds. We work cleanly with Four Seasons, Ritz-Carlton, Aman, Auberge, Belmond, and independent luxury venues. COIs on file before deployment."], ["Can you produce a brand-sponsored wedding activation?", "Yes. We've built brand activations inside private events: sponsored welcome bars, custom-branded photo experiences, sampling moments, content capture programs. We handle brand compliance and luxury venue standards simultaneously."], ["Will your crew look the part?", "Yes. We dress to the planner's spec: black tie, white coat, all-black, branded, smart casual. We brief each ambassador on service tone, posture, language, and the small details that separate a wedding from a generic event."], ["Can you handle multi-day weekends?", "Yes. Welcome party Friday, ceremony + reception Saturday, brunch Sunday. We plan and staff the full weekend with consistent crew where the program needs continuity."], ["What markets do you cover?", "All 50 states. Strongest depth in NYC, LA, Miami, Aspen, Napa, Charleston, Nashville, Austin, San Diego, the Hamptons, Palm Beach, and most luxury destination resort markets. International on request via partner networks."]]
   };
 
   /* Page-level SEO meta — set dynamically because the renderer is shared. */

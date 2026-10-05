@@ -86,7 +86,7 @@ const TickStat = ({
   }, n.toLocaleString());
 };
 const Hero = () => /*#__PURE__*/React.createElement("section", {
-  "data-screen-label": "01 Use Case Hero — " + U.name,
+  "data-screen-label": "01 Use Case Hero: " + U.name,
   style: {
     position: "relative",
     background: BG,
@@ -297,7 +297,7 @@ const Captures = () => {
     style: {
       marginTop: 20
     }
-  }, "Every field on the ambassador's phone maps to a column in your recap. Incomplete reports don't count as complete \u2014 that's the whole point.")), /*#__PURE__*/React.createElement("div", {
+  }, "Every field on the ambassador's phone maps to a column in your recap. Incomplete reports don't count as complete. That's the whole point.")), /*#__PURE__*/React.createElement("div", {
     ref: ref,
     className: "sp-rv sp-mock"
   }, /*#__PURE__*/React.createElement("div", {
@@ -521,7 +521,7 @@ const Related = () => /*#__PURE__*/React.createElement(SparkSec, {
 const App = () => {
   useSparkReveal();
   return /*#__PURE__*/React.createElement("div", {
-    "data-screen-label": "Spark Use Case — " + U.name
+    "data-screen-label": "Spark Use Case: " + U.name
   }, /*#__PURE__*/React.createElement(SparkNav, {
     active: "usecases"
   }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Captures, null), /*#__PURE__*/React.createElement(Scenario, null), /*#__PURE__*/React.createElement(Modules, null), /*#__PURE__*/React.createElement(SparkFaq, {

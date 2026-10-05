@@ -368,7 +368,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "#fff"
   }
-}, "Route-mapped, GPS-verified, audience-targeted"), " \u2014 every hand-off logged, every festival and game-day moment worked."), /*#__PURE__*/React.createElement("div", {
+}, "Route-mapped, GPS-verified, audience-targeted"), ". Every hand-off logged, every festival and game-day moment worked."), /*#__PURE__*/React.createElement("div", {
   className: "st-reveal",
   style: {
     marginTop: 32,
@@ -543,7 +543,7 @@ const Velocity = () => {
       color: "rgba(255,255,255,0.68)",
       maxWidth: 600
     }
-  }, "We've run enough corridors to give you the planning model \u2014 by ambassador, by hour, by city, by program length.")), /*#__PURE__*/React.createElement("div", {
+  }, "We've run enough corridors to give you the planning model: by ambassador, by hour, by city, by program length.")), /*#__PURE__*/React.createElement("div", {
     className: "st-velo",
     style: {
       display: "grid",
@@ -624,7 +624,7 @@ const Velocity = () => {
 
 /* ============ ON-FOOT KIT ============ */
 const Kit = () => {
-  const items = [["Branded cooler + ice packs", "Insulated cooler, branded sleeve, 90-min cold hold for a 24-can refresh."], ["144-can restock pack", "Pre-iced restock at central staging. Captain runs the runner cycle."], ["QR scan card", "Wrist-clipped QR card consumers scan post-hand-off — sends to landing page + CRM."], ["Lift card + offer code", "Branded tear-card with a promo code or social handle to take home."]];
+  const items = [["Branded cooler + ice packs", "Insulated cooler, branded sleeve, 90-min cold hold for a 24-can refresh."], ["144-can restock pack", "Pre-iced restock at central staging. Captain runs the runner cycle."], ["QR scan card", "Wrist-clipped QR card consumers scan post-hand-off; it sends to landing page + CRM."], ["Lift card + offer code", "Branded tear-card with a promo code or social handle to take home."]];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: INK,
@@ -656,7 +656,7 @@ const Kit = () => {
       color: "rgba(255,255,255,0.68)",
       maxWidth: 620
     }
-  }, "Guerrilla works when the crew can pour, log, and refill without going back to the truck. The kit is engineered for the corridor \u2014 light, branded, restock-ready.")), /*#__PURE__*/React.createElement("div", {
+  }, "Guerrilla works when the crew can pour, log, and refill without going back to the truck. The kit is engineered for the corridor: light, branded, restock-ready.")), /*#__PURE__*/React.createElement("div", {
     className: "st-kit",
     style: {
       display: "grid",
@@ -700,7 +700,7 @@ const Kit = () => {
 
 /* ============ NATIONAL MOMENTS BOARD ============ */
 const Moments = () => {
-  const rows = [["Coachella + Stagecoach", "FESTIVAL · INDIO, CA", "APR · 2 WKND", 3, "240–300/hr"], ["ACL Festival", "FESTIVAL · AUSTIN, TX", "OCT · 2 WKND", 3, "220–280/hr"], ["Lollapalooza", "FESTIVAL · CHICAGO, IL", "AUG · 4 DAYS", 3, "240–300/hr"], ["EDC + Lovers & Friends", "FESTIVAL · LAS VEGAS, NV", "MAY · 3 DAYS", 3, "220–280/hr"], ["Rolling Loud + Ultra", "FESTIVAL · MIAMI, FL", "MAR + JUL", 3, "240–300/hr"], ["Super Bowl host city", "MAJOR · ROTATING", "FEB · WEEK", 3, "300+/hr"], ["NCAA Final Four", "MAJOR · ROTATING", "APR · WEEK", 3, "260+/hr"], ["World Series + MLB ASG", "MAJOR · ROTATING", "JUL + OCT", 2, "200–260/hr"], ["NYE Times Square + NYFW", "MOMENT · NEW YORK", "DEC+FEB+SEP", 3, "260+/hr"], ["Mardi Gras + Jazz Fest", "MOMENT · NEW ORLEANS", "FEB + APR", 3, "240–300/hr"], ["SXSW + F1 USGP", "MOMENT · AUSTIN, TX", "MAR + OCT", 3, "220–280/hr"], ["Move-in week + bowl games", "COLLEGE · NATIONAL", "AUG + DEC", 3, "200–260/hr"]];
+  const rows = [["Coachella + Stagecoach", "FESTIVAL · INDIO, CA", "APR · 2 WKND", 3, "240 to 300/hr"], ["ACL Festival", "FESTIVAL · AUSTIN, TX", "OCT · 2 WKND", 3, "220 to 280/hr"], ["Lollapalooza", "FESTIVAL · CHICAGO, IL", "AUG · 4 DAYS", 3, "240 to 300/hr"], ["EDC + Lovers & Friends", "FESTIVAL · LAS VEGAS, NV", "MAY · 3 DAYS", 3, "220 to 280/hr"], ["Rolling Loud + Ultra", "FESTIVAL · MIAMI, FL", "MAR + JUL", 3, "240 to 300/hr"], ["Super Bowl host city", "MAJOR · ROTATING", "FEB · WEEK", 3, "300+/hr"], ["NCAA Final Four", "MAJOR · ROTATING", "APR · WEEK", 3, "260+/hr"], ["World Series + MLB ASG", "MAJOR · ROTATING", "JUL + OCT", 2, "200 to 260/hr"], ["NYE Times Square + NYFW", "MOMENT · NEW YORK", "DEC+FEB+SEP", 3, "260+/hr"], ["Mardi Gras + Jazz Fest", "MOMENT · NEW ORLEANS", "FEB + APR", 3, "240 to 300/hr"], ["SXSW + F1 USGP", "MOMENT · AUSTIN, TX", "MAR + OCT", 3, "220 to 280/hr"], ["Move-in week + bowl games", "COLLEGE · NATIONAL", "AUG + DEC", 3, "200 to 260/hr"]];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: "#0C0E12",
@@ -738,7 +738,7 @@ const Moments = () => {
       color: "rgba(255,255,255,0.68)",
       maxWidth: 640
     }
-  }, "From Coachella to the Super Bowl to NYE Times Square \u2014 if there's a crowd, we've worked the corridor. We staff against the calendar.")), /*#__PURE__*/React.createElement("div", {
+  }, "From Coachella to the Super Bowl to NYE Times Square: if there's a crowd, we've worked the corridor. We staff against the calendar.")), /*#__PURE__*/React.createElement("div", {
     className: "st-moments",
     style: {
       display: "grid",
@@ -918,7 +918,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1.6,
     color: "rgba(255,255,255,0.74)"
   }
-}, "Every drop GPS-tagged, every route completion verified, photo evidence from every neighborhood. The route-level recap ships the day the crew walks \u2014 not four weeks later."), /*#__PURE__*/React.createElement("div", {
+}, "Every drop GPS-tagged, every route completion verified, photo evidence from every neighborhood. The route-level recap ships the day the crew walks, not four weeks later."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 26,
     display: "flex",
@@ -996,7 +996,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
 
 /* ============ FAQ ============ */
 const FAQ = () => {
-  const items = [["What kinds of street teams do you run?", "Sampling drops, flyer runs, branded moments, guerrilla activation, pop-up corridors, branded bike and pedicab routes, and combined foot-plus-vehicle teams. Programs scale from one-day drops to multi-market national tours."], ["How do you make sure samples reach the right audience?", "Route design upfront. We map your sampling against the audience profile you're after — neighborhoods, venues, transit corridors, event ingress paths — then brief the crew on who to engage. Spark logs every drop with location and time."], ["Do you handle permits for street sampling?", "Yes. Where the city or jurisdiction requires permits, we file them. Where street sampling is restricted, we route around it and tell you up front before the program ships."], ["Can you scale to multiple markets at once?", "Yes. Our 257,000+ ambassador bench covers all 50 states. We've run national multi-market street programs across 12–18 metros in a single weekend, coordinated through a single PM."], ["What reporting do we get from a street program?", "Route-level recap end of day — drops per location, photo evidence, GPS verification of route completion, and ambassador notes. Full program recap with photo galleries and per-market breakdowns ships within hours."]];
+  const items = [["What kinds of street teams do you run?", "Sampling drops, flyer runs, branded moments, guerrilla activation, pop-up corridors, branded bike and pedicab routes, and combined foot-plus-vehicle teams. Programs scale from one-day drops to multi-market national tours."], ["How do you make sure samples reach the right audience?", "Route design upfront. We map your sampling against the audience profile you're after (neighborhoods, venues, transit corridors, event ingress paths), then brief the crew on who to engage. Spark logs every drop with location and time."], ["Do you handle permits for street sampling?", "Yes. Where the city or jurisdiction requires permits, we file them. Where street sampling is restricted, we route around it and tell you up front before the program ships."], ["Can you scale to multiple markets at once?", "Yes. Our 257,000+ ambassador bench covers all 50 states. We've run national multi-market street programs across 12 to 18 metros in a single weekend, coordinated through a single PM."], ["What reporting do we get from a street program?", "Route-level recap end of day: drops per location, photo evidence, GPS verification of route completion, and ambassador notes. Full program recap with photo galleries and per-market breakdowns ships within hours."]];
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
     style: {
