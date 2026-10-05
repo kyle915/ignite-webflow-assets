@@ -4,6 +4,13 @@
  * page runner can render it on the matching Webflow route.
  * Regenerate with extract-pages.js — do not hand-edit. */
 
+(function () {
+  if (typeof document === "undefined" || document.getElementById("pagecss-brand-ambassador-agency")) return;
+  var s = document.createElement("style");
+  s.id = "pagecss-brand-ambassador-agency";
+  s.textContent = ":root { --ba-ink:#0A0B0D; --ba-orange:#D7453E; --ba-amber:#FFB627; }\n  body { background:#0A0B0D; }\n  @keyframes ba-rise { 0%{opacity:0;transform:translateY(26px)} 100%{opacity:1;transform:translateY(0)} }\n  @keyframes ba-pulse { 0%,100%{opacity:1} 50%{opacity:.3} }\n  @keyframes ba-blob-a { 0%,100%{transform:translate(-4%,-3%) scale(1)} 50%{transform:translate(8%,5%) scale(1.18)} }\n  @keyframes ba-scan { 0%{transform:translateY(-100vh)} 100%{transform:translateY(100vh)} }\n  @keyframes ba-marq { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }\n  @keyframes ba-ping { 0%{transform:scale(.6);opacity:.9} 100%{transform:scale(2.8);opacity:0} }\n  @keyframes ba-rowin { 0%{opacity:0;transform:translateX(16px)} 100%{opacity:1;transform:translateX(0)} }\n  @keyframes ba-fill { 0%{width:0} 100%{width:var(--w)} }\n  @keyframes ba-spark-pulse { 0%,100%{opacity:1} 50%{opacity:.35} }\n  .ba-rise{animation:ba-rise 800ms cubic-bezier(.16,.84,.3,1) both}\n  .ba-marq-track{display:inline-flex;gap:40px;padding-right:40px;white-space:nowrap;animation:ba-marq 30s linear infinite}\n  .ba-reveal{opacity:0;transform:translateY(26px);transition:opacity 760ms cubic-bezier(.16,.84,.3,1),transform 760ms cubic-bezier(.16,.84,.3,1)}\n  .ba-reveal.in{opacity:1;transform:none}\n  @media (prefers-reduced-motion: reduce){[class*=\"ba-\"]{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}}\n  @media (max-width:920px){ .ba-hero-grid{grid-template-columns:1fr!important} .ba-2col{grid-template-columns:1fr!important} .ba-vs{grid-template-columns:1fr!important} }";
+  document.head.appendChild(s);
+})();
 const INK = "#0A0B0D",
   ORANGE = "#D7453E",
   AMBER = "#FFB627",
@@ -98,7 +105,7 @@ const ROSTER = [{
   name: "Devon T.",
   role: "Street Team Lead",
   mkt: "Chicago, IL",
-  tags: ["Guerilla", "Drives"],
+  tags: ["Guerrilla", "Drives"],
   c: ORANGE
 }, {
   in: "KS",
@@ -245,7 +252,7 @@ const Hero = () => {
       animationDelay: "360ms"
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -751,7 +758,7 @@ const Versus = () => /*#__PURE__*/React.createElement("section", {
 
 /* ---------- HOW ---------- */
 const How = () => {
-  const steps = [["01", "Brief", "A 30-min call: brand, markets, dates, the conversion goal. We ballpark coverage and budget."], ["02", "Match", "We pull role-matched ambassadors from the 50-state bench — certs, language, experience to fit."], ["03", "Train", "Every ambassador is briefed on your product, the ask, and the rules of the room before they arrive."], ["04", "Deploy", "Badged and on shift, GPS clock-in, photos uploaded live to Spark."], ["05", "Report", "Same-day recap — who, where, counts, photos — not a deck three weeks later."]];
+  const steps = [["01", "Brief", "A 30-min call: brand, markets, dates, the conversion goal. We ballpark coverage and budget."], ["02", "Match", "We pull role-matched ambassadors from the 50-state bench, matched on certs, language and experience."], ["03", "Train", "Every ambassador is briefed on your product, the ask, and the rules of the room before they arrive."], ["04", "Deploy", "Badged and on shift, GPS clock-in, photos uploaded live to Spark."], ["05", "Report", "Same-day recap with who, where, counts and photos, not a deck three weeks later."]];
   return /*#__PURE__*/React.createElement("section", {
     id: "how",
     style: {
@@ -944,7 +951,7 @@ const Spark = () => {
       boxShadow: "0 8px 28px rgba(214,243,95,0.28)"
     }
   }, "Explore Spark \u2192"), /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
+    href: "https://www.igniteproductions.co/contact",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -959,7 +966,7 @@ const Spark = () => {
       fontSize: 14,
       textDecoration: "none"
     }
-  }, "Book a demo"))), /*#__PURE__*/React.createElement("div", {
+  }, "Get a staffing quote"))), /*#__PURE__*/React.createElement("div", {
     className: "ba-reveal",
     style: {
       background: "linear-gradient(180deg,#14161B,#0F1115)",
@@ -1082,7 +1089,7 @@ const Spark = () => {
   }, l)))))))));
 };
 
-/* ---------- FAQ (crawlable single Q/A) ---------- */
+/* ---------- FAQ (crawlable single Q/A, matches the page's FAQPage schema) ---------- */
 const FAQ_QUESTION = "What is a brand ambassador agency?";
 const FAQ_ANSWER = "A brand ambassador agency recruits, vets, trains, and deploys people who represent a brand at sampling, retail demos, festivals, and trade shows. Ignite Productions is a veteran-owned (VOSB) brand ambassador agency founded in 2018 in Sparks, Nevada. We staff 257,000+ vetted brand ambassadors in all 50 states. Contact staffing@igniteproductions.co or 775.406.0435.";
 const Faq = () => /*#__PURE__*/React.createElement("section", {
@@ -1187,7 +1194,7 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/contact",
+  href: "https://www.igniteproductions.co/contact",
   style: {
     padding: "20px 32px",
     borderRadius: 999,
@@ -1244,7 +1251,7 @@ const Page = () => {
     accent: "#D7453E",
     label: "Brand Ambassador Agency",
     rel: "../"
-  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Ticker, null), /*#__PURE__*/React.createElement(WhatIs, null), /*#__PURE__*/React.createElement(Funnel, null), /*#__PURE__*/React.createElement(Versus, null), /*#__PURE__*/React.createElement(How, null), /*#__PURE__*/React.createElement(Spark, null), /*#__PURE__*/React.createElement(Faq, null), /*#__PURE__*/React.createElement(CTA, null), /*#__PURE__*/React.createElement(SiteFooter, null), /*#__PURE__*/React.createElement("style", null, `@media (max-width: 900px){ .ba-hero-grid{ grid-template-columns: 1fr !important; } }`));
+  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Ticker, null), /*#__PURE__*/React.createElement(WhatIs, null), /*#__PURE__*/React.createElement(Funnel, null), /*#__PURE__*/React.createElement(Versus, null), /*#__PURE__*/React.createElement(How, null), /*#__PURE__*/React.createElement(Spark, null), /*#__PURE__*/React.createElement(Faq, null), /*#__PURE__*/React.createElement(CTA, null), /*#__PURE__*/React.createElement(SiteFooter, null));
 };
 Object.assign(window, {
   PageBrandAmbassadorAgency: Page
