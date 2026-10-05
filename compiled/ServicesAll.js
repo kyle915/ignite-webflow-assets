@@ -1501,7 +1501,7 @@ const SvcFinalCTA = () => /*#__PURE__*/React.createElement("section", {
     letterSpacing: "-0.01em",
     textDecoration: "none"
   }
-}, "Request staff now ", /*#__PURE__*/React.createElement("span", {
+}, "Request a quote ", /*#__PURE__*/React.createElement("span", {
   style: {
     width: 8,
     height: 8,

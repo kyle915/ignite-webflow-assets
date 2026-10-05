@@ -854,7 +854,7 @@ const SvcFinalCTA = () => (
               backdropFilter: "blur(8px)", color: "var(--fg-1)",
               fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 16, letterSpacing: "-0.01em",
               textDecoration: "none",
-            }}>Request staff now <span style={{ width: 8, height: 8, borderRadius: 999, background: "var(--spark-500)" }}/></a>
+            }}>Request a quote <span style={{ width: 8, height: 8, borderRadius: 999, background: "var(--spark-500)" }}/></a>
           </div>
         </div>
         <img className="svc-final-woman"

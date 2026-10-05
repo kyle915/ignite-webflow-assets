@@ -391,7 +391,6 @@ const HomeTestimonial = () => /*#__PURE__*/React.createElement("section", {
 }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(OpsLine, null, ">> WHAT CLIENTS SAY"), /*#__PURE__*/React.createElement("blockquote", {
   style: {
     marginTop: 24,
-    textAlign: "left",
     fontFamily: "var(--font-serif)",
     fontWeight: 500,
     fontSize: "clamp(32px, 4vw, 54px)",
@@ -568,7 +567,7 @@ const FinalCTA = () => /*#__PURE__*/React.createElement("section", {
     letterSpacing: "-0.01em",
     textDecoration: "none"
   }
-}, "Request staff now ", /*#__PURE__*/React.createElement("span", {
+}, "Request a quote ", /*#__PURE__*/React.createElement("span", {
   style: {
     width: 8,
     height: 8,

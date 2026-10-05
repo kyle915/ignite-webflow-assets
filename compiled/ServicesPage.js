@@ -223,7 +223,7 @@ const ServicesHero = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "var(--spark-500)"
   }
-}, "\u25CF"), " Request staff now")))));
+}, "\u25CF"), " Request a quote")))));
 
 /* ---------- Sticky nav + categories ---------- */
 const CategoryNav = ({

@@ -30,7 +30,7 @@ const NotFound = () => {
 
   return (
     <main style={{
-      minHeight: "100vh", background: "#0B0B0B", color: "#fff",
+      minHeight: "calc(100vh - 140px)", background: "#0B0B0B", color: "#fff",
       position: "relative", overflow: "hidden",
       display: "flex", alignItems: "center", justifyContent: "center",
       padding: "40px 24px",

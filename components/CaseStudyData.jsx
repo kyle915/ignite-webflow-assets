@@ -283,7 +283,7 @@ const CASE_STUDIES = {
     slug: "dude-wipes",
     year: "2024 — 25",
     logo: "https://cdn.prod.website-files.com/688129f3841088c282c32750/688c3839708ed185c2de5ba9_dude-wipes.webp",
-    hero: "https://cdn.prod.website-files.com/688129f3841088c282c32750/689f6c956eb5b413250617c5_dude-wipe.webp",
+    hero: "../assets/dude-wipes-mascot-stadium.jpg#pos=center%2045%25",
     headline: "Stadium to street, we wipe the competition.",
     category: "Event Marketing",
     sector: "CPG · Personal Care",
@@ -304,6 +304,7 @@ const CASE_STUDIES = {
     ],
     stats: [["100K+","Products sampled"],["Super","Bowl presence"],["Turnkey","Full service"]],
     gallery: [
+      "../assets/dude-wipes-mascot-stadium.jpg",
       "https://cdn.prod.website-files.com/688129f3841088c282c32750/689f6c956eb5b413250617c5_dude-wipe.webp",
     ],
   },
@@ -608,6 +609,38 @@ const CASE_STUDIES = {
     stats: [["2,500+","Activations / yr"],["National","U.S. retail"],["1","Agency, end to end"]],
     gallery: [
       "../assets/torch-thc-kings-liquor-activation.png",
+    ],
+  },
+  "kalshi": {
+    brand: "Kalshi",
+    slug: "kalshi",
+    year: "NFL season",
+    hero: "../assets/kalshi-tailgate-crowd-giveaway.jpg#pos=center%2045%25",
+    headline: "Bringing tables to the tailgate.",
+    category: "Sports Marketing · Tailgate Activation · Branded Giveaways",
+    sector: "Sports",
+    tags: ["Buffalo tailgates","Branded table giveaway","Game-day tradition"],
+    services: ["Tailgate Activation","Brand Ambassador Staffing","Branded Giveaways","Food Distribution","On-Site Execution"],
+    accent: "#1FC37A", surface: "#0A0B0D", ink: "#FFFFFF",
+    location: "Buffalo, NY · Game-day tailgate lots",
+    challenge:
+      "Buffalo football fans bring their own kind of energy to game day. The tailgate is part of the experience, and jumping through folding tables has become one of the city's most recognizable fan traditions. For Kalshi, that tradition gave the brand a natural way to connect with fans. Ignite worked with the team to bring the activation into the tailgate lots, putting Kalshi in the middle of the pregame action.",
+    solution:
+      "The centerpiece was simple: hand out Kalshi-branded tables for fans to jump onto and break in true Buffalo fashion. The tables gave fans something they could immediately make part of their own tailgate, and Kalshi's branding became part of the scene, from fans carrying tables through the lots to the moments before a jump. Alongside the table giveaways, the activation featured branded hats and food distribution. The team showed up in home-team colors and Kalshi caps, matching the atmosphere and connecting with fans where they were already gathering. The activation brought Kalshi directly into a tradition fans already knew and embraced, with crowds gathering around the giveaways, fans posing with branded tables, and Kalshi appearing throughout the tailgate. By building the activation around local fan culture, Ignite helped Kalshi create a visible, participatory presence before kickoff.",
+    outcomes: [
+      "Kalshi-branded tables handed out for the tailgate table jump",
+      "Branded hats and food distribution across the tailgate lots",
+      "Team in home-team colors and Kalshi caps, matched to the crowd",
+      "Crowds gathering around the giveaways before kickoff",
+      "A visible, participatory brand presence built on local fan culture",
+    ],
+    stats: [["Buffalo","Tailgate lots"],["Tables","Branded giveaway"],["Pregame","Fan moments"]],
+    gallery: [
+      "../assets/kalshi-tailgate-crowd-giveaway.jpg",
+      "../assets/kalshi-tailgate-fans-tables.jpg",
+      "../assets/kalshi-tailgate-table-jump.jpg",
+      "../assets/kalshi-tailgate-food-handout.jpg",
+      "../assets/kalshi-tailgate-team.jpg",
     ],
   },
 };

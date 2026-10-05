@@ -1619,8 +1619,7 @@ const AdjacentServices = ({
         fontWeight: 700,
         fontSize: 24,
         letterSpacing: "-0.02em",
-        marginBottom: 8,
-        color: "#fff"
+        marginBottom: 8
       }
     }, o.label), /*#__PURE__*/React.createElement("div", {
       style: {
@@ -2122,7 +2121,7 @@ const ServiceCTA = ({
   style: {
     color: "var(--spark-500)"
   }
-}, "\u25CF"), " Request staff now")), /*#__PURE__*/React.createElement("div", {
+}, "\u25CF"), " Request a quote")), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 36,
     paddingTop: 24,

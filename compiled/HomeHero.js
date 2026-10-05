@@ -5,7 +5,7 @@ const {
   useRef: hsRef
 } = React;
 const HERO_VIDEO_URL = window.__resources?.r_68910151313e90f6c97448a5_Untitled_20desi || "https://cdn.prod.website-files.com/688129f3841088c282c326c4/68910151313e90f6c97448a5_Untitled%20design-transcode.mp4";
-const MOMENTS = [["AUSTIN, TX", "WHITE CLAW", "SXSW TAKEOVER", "03:14 PM CT"], ["BROOKLYN, NY", "LIQUID DEATH", "WARPED TOUR", "06:48 PM ET"], ["LOS ANGELES", "DUDE WIPES", "SUMMER POP-UP", "12:02 PM PT"], ["MIAMI, FL", "MAS+", "MESSI ACTIVATION", "07:11 PM ET"], ["CHICAGO, IL", "TOTAL WIRELESS", "LOLLAPALOOZA", "05:33 PM CT"], ["NASHVILLE, TN", "SMALLS SLIDERS", "DOWNTOWN SAMPLING", "01:22 PM CT"]];
+const MOMENTS = [["SAN FRANCISCO, CA", "OPENAI", "DEVDAY // 87 AMBASSADORS", "09:42 AM PT"], ["ATLANTA, GA", "CLAUDE", "CLAUDE CODE WORKSHOP TOUR", "10:15 AM ET"], ["AUSTIN, TX", "LIQUID DEATH", "ACL SAMPLING", "03:14 PM CT"], ["SUNNY ISLES, FL", "TOTAL WIRELESS", "AD TRUCK + STORE EVENT", "12:02 PM ET"], ["NEW YORK, NY", "LUCKIN COFFEE", "STORE OPENING // APP SIGNUPS", "08:30 AM ET"], ["PORTLAND, OR", "BREW DR. KOMBUCHA", "RETAIL DEMOS", "11:20 AM PT"], ["MICHIGAN", "STONE HOUSE BREAD", "KROGER SAMPLING", "01:05 PM ET"], ["TOUR STOP", "JIMMY JOHN'S", "BREAKAWAY SILENT DISCO", "09:48 PM ET"], ["NATIONWIDE", "TORCH", "RETAIL ACTIVATIONS", "04:10 PM CT"], ["PACIFIC NW", "BE GOAT", "FRED MEYER DEMOS", "02:36 PM PT"]];
 
 /* Word rotators that sit under "We turn" */
 /* Edgy rotators — who & what we convert. */
@@ -399,17 +399,17 @@ const HomeHero = () => {
       margin: 0,
       textWrap: "pretty"
     }
-  }, "Veteran-owned. Operator-built. Running ", /*#__PURE__*/React.createElement("span", {
+  }, "Veteran-owned. Operator-built. ", /*#__PURE__*/React.createElement("span", {
     style: {
       color: "#FFB627",
       fontWeight: 600,
       whiteSpace: "nowrap"
     }
-  }, "5,000+ events executed"), " for the brands picking fights with their category, ", /*#__PURE__*/React.createElement("span", {
+  }, "5,000+ events executed"), " for the brands picking fights with their category: ", /*#__PURE__*/React.createElement("span", {
     style: {
       color: "rgba(255,255,255,0.78)"
     }
-  }, "beverage, alcohol, CPG, telecom, QSR, lifestyle, and whoever's next.")), /*#__PURE__*/React.createElement("div", {
+  }, "AI and tech, beverage and alcohol, CPG, QSR, retail, telecom, sports and entertainment, and whoever's next.")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: "13px 16px",
       borderRadius: 12,

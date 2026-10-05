@@ -111,7 +111,7 @@ const ServicesHero = () => (
             border: "1.5px solid rgba(255,255,255,0.28)",
             fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 16, letterSpacing: "-0.01em",
             display: "inline-flex", alignItems: "center", gap: 10,
-          }}><span style={{ color: "var(--spark-500)" }}>●</span> Request staff now</a>
+          }}><span style={{ color: "var(--spark-500)" }}>●</span> Request a quote</a>
         </div>
       </div>
     </Container>

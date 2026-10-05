@@ -197,7 +197,7 @@ const HomeTestimonial = () => (
         <div>
           <OpsLine>>> WHAT CLIENTS SAY</OpsLine>
           <blockquote style={{
-            marginTop: 24, textAlign: "left",
+            marginTop: 24,
             fontFamily: "var(--font-serif)", fontWeight: 500,
             fontSize: "clamp(32px, 4vw, 54px)", letterSpacing: "-0.015em", lineHeight: 1.1,
             color: "var(--fg-1-inv)", margin: 0,
@@ -295,7 +295,7 @@ const FinalCTA = () => (
               backdropFilter: "blur(8px)", color: "var(--fg-1)",
               fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 16, letterSpacing: "-0.01em",
               textDecoration: "none",
-            }}>Request staff now <span style={{ width: 8, height: 8, borderRadius: 999, background: "var(--spark-500)" }}/></a>
+            }}>Request a quote <span style={{ width: 8, height: 8, borderRadius: 999, background: "var(--spark-500)" }}/></a>
           </div>
         </div>
         <img className="svc-final-woman"

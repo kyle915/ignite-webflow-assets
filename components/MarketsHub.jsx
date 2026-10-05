@@ -497,7 +497,7 @@ const MarketsHub = ({ rel = "" }) => {
               local crew, permits, and a quote.
             </p>
             <div style={{ marginTop: 32, display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <AccentBtn accent="spark" onClick={() => location.href = rel + "https://www.igniteproductions.co/contact"}>Request staff now</AccentBtn>
+              <AccentBtn accent="spark" onClick={() => location.href = rel + "https://www.igniteproductions.co/contact"}>Request a quote</AccentBtn>
               <a href={rel + "pages/services.html"} className="link-mono" style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
                 padding: "16px 20px",

@@ -210,7 +210,7 @@ const CaseHero = ({
     border: "1px solid rgba(255,255,255,0.18)"
   }
 }, t))), (c.stats || []).length > 0 && /*#__PURE__*/React.createElement("div", {
-    style: {
+  style: {
     marginTop: 48,
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
@@ -1050,94 +1050,124 @@ const CaseMoreWork = ({
       gridTemplateColumns: "repeat(3, 1fr)",
       gap: 18
     }
-  }, list.map(n => /*#__PURE__*/React.createElement("a", {
-    key: n.slug,
-    href: `/portfolio/${n.slug}`,
-    style: {
-      position: "relative",
-      display: "block",
-      textDecoration: "none",
-      color: "#fff",
-      background: n.surface,
-      borderRadius: 16,
-      overflow: "hidden",
-      border: "1px solid rgba(255,255,255,0.08)",
-      minHeight: 300,
-      padding: 28
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: "absolute",
-      inset: 0,
-      background: "transparent",
-      pointerEvents: "none"
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: "relative",
-      display: "flex",
-      flexDirection: "column",
-      height: "100%"
-    }
-  }, window.WORK_BRAND_LOGOS && window.WORK_BRAND_LOGOS[n.slug] ? /*#__PURE__*/React.createElement("img", {
-    src: window.WORK_BRAND_LOGOS[n.slug],
-    alt: n.brand,
-    style: {
-      height: 44,
-      maxWidth: 200,
-      objectFit: "contain",
-      objectPosition: "left",
-      filter: "brightness(0) invert(1)",
-      marginBottom: 18
-    },
-    loading: "lazy",
-    decoding: "async"
-  }) : /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: "block",
-      fontFamily: "var(--font-display)",
-      fontWeight: 800,
-      fontSize: 22,
-      letterSpacing: "-0.02em",
-      marginBottom: 18
-    }
-  }, n.brand), /*#__PURE__*/React.createElement("h3", {
-    style: {
-      fontFamily: "var(--font-display)",
-      fontWeight: 700,
-      fontSize: 24,
-      letterSpacing: "-0.02em",
-      lineHeight: 1.1,
-      margin: 0
-    }
-  }, n.headline), /*#__PURE__*/React.createElement("div", {
-    style: {
-      flex: 1
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      marginTop: 24
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-mono)",
-      fontSize: 10,
-      letterSpacing: "0.22em",
-      color: n.accent,
-      textTransform: "uppercase"
-    }
-  }, n.category), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-mono)",
-      fontSize: 10,
-      letterSpacing: "0.22em",
-      color: "rgba(255,255,255,0.55)",
-      textTransform: "uppercase"
-    }
-  }, "Read \u2192"))))))));
+  }, list.map(n0 => {
+    const d = window.CASE_STUDIES && window.CASE_STUDIES[n0.slug] || {};
+    const n = {
+      ...d,
+      ...n0,
+      brand: n0.brand || d.brand,
+      headline: n0.headline || d.headline,
+      category: n0.category || d.category,
+      hero: n0.hero || d.hero
+    };
+    const heroSrc = (n.hero || "").split("#")[0];
+    const heroPos = decodeURIComponent((n.hero || "").split("#pos=")[1] || "center");
+    return /*#__PURE__*/React.createElement("a", {
+      key: n.slug,
+      href: `/portfolio/${n.slug}`,
+      style: {
+        position: "relative",
+        display: "block",
+        textDecoration: "none",
+        color: "#fff",
+        background: n.surface,
+        borderRadius: 16,
+        overflow: "hidden",
+        border: "1px solid rgba(255,255,255,0.08)",
+        minHeight: 340,
+        padding: 28
+      }
+    }, heroSrc && /*#__PURE__*/React.createElement("img", {
+      src: heroSrc,
+      alt: "",
+      "aria-hidden": "true",
+      loading: "lazy",
+      decoding: "async",
+      style: {
+        position: "absolute",
+        inset: 0,
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        objectPosition: heroPos,
+        opacity: 0.55
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "absolute",
+        inset: 0,
+        background: "linear-gradient(180deg, rgba(10,11,13,0.35) 0%, rgba(10,11,13,0.55) 45%, rgba(10,11,13,0.92) 100%)",
+        pointerEvents: "none"
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        height: "100%"
+      }
+    }, window.WORK_BRAND_LOGOS && window.WORK_BRAND_LOGOS[n.slug] ? /*#__PURE__*/React.createElement("img", {
+      src: window.WORK_BRAND_LOGOS[n.slug],
+      alt: n.brand,
+      style: {
+        height: 44,
+        maxWidth: 200,
+        width: "auto",
+        alignSelf: "flex-start",
+        objectFit: "contain",
+        objectPosition: "left",
+        filter: "brightness(0) invert(1) drop-shadow(0 2px 10px rgba(0,0,0,.5))",
+        marginBottom: 18
+      },
+      loading: "lazy",
+      decoding: "async"
+    }) : /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: "block",
+        fontFamily: "var(--font-display)",
+        fontWeight: 800,
+        fontSize: 22,
+        letterSpacing: "-0.02em",
+        marginBottom: 18
+      }
+    }, n.brand), /*#__PURE__*/React.createElement("h3", {
+      style: {
+        fontFamily: "var(--font-display)",
+        fontWeight: 700,
+        fontSize: 24,
+        letterSpacing: "-0.02em",
+        lineHeight: 1.1,
+        margin: 0
+      }
+    }, n.headline), /*#__PURE__*/React.createElement("div", {
+      style: {
+        flex: 1
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginTop: 24
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: "var(--font-mono)",
+        fontSize: 10,
+        letterSpacing: "0.22em",
+        color: n.accent,
+        textTransform: "uppercase"
+      }
+    }, n.category), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: "var(--font-mono)",
+        fontSize: 10,
+        letterSpacing: "0.22em",
+        color: "rgba(255,255,255,0.55)",
+        textTransform: "uppercase"
+      }
+    }, "Read \u2192"))));
+  }))));
 };
 
 /* ------------------------------------------------------------------ CTA */

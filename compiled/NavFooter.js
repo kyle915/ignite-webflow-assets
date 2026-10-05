@@ -52,6 +52,10 @@ const SITE_SERVICE_GROUPS = [{
     label: "Retail Demo Programs",
     sub: "In-store demos at Whole Foods, Costco, Target"
   }, {
+    slug: "costco-roadshows",
+    label: "Costco Roadshows",
+    sub: "Warehouse club roadshows that sell"
+  }, {
     slug: "retail-merchandising",
     label: "Retail Merchandising",
     sub: "Per-store audits, OOS recovery, planogram"
@@ -71,6 +75,11 @@ const SITE_SERVICE_GROUPS = [{
     slug: "trade-shows",
     label: "Trade Show Support",
     sub: "Booth staffing, lead capture, demos"
+  }, {
+    slug: "trade-show-ad-trucks",
+    href: "/trade-show-staffing/ad-trucks",
+    label: "Trade Show Ad Trucks",
+    sub: "Truck + street team + booth crew"
   }, {
     slug: "distributor-demo-programs",
     label: "Distributor Demo Programs",
@@ -103,6 +112,10 @@ const SITE_SERVICE_GROUPS = [{
     slug: "mobile-tours",
     label: "Mobile Marketing Tours",
     sub: "Ad trucks, branded bikes, sprinter vans"
+  }, {
+    slug: "ad-trucks",
+    label: "Ad Trucks + Mobile Billboards",
+    sub: "Daily rates from $1,600 · all 50 states"
   }, {
     slug: "fabrication-builds",
     label: "Fabrication & Builds",
@@ -1245,7 +1258,7 @@ const SiteNav = ({
       fontSize: 16,
       textDecoration: "none"
     }
-  }, "GET IN TOUCH ", /*#__PURE__*/React.createElement("span", {
+  }, "Request a quote ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-mono)"
     }

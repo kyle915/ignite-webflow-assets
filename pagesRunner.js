@@ -238,6 +238,27 @@
         "SparkSite"
       ]
     },
+    "/services/ad-trucks": {
+      "global": "PageServicesAdTrucks",
+      "bundle": "PageServicesAdTrucks",
+      "deps": [
+        "AdTruckRates",
+        "RelatedCases"
+      ]
+    },
+    "/services/costco-roadshows": {
+      "global": "PageServicesCostcoRoadshows",
+      "bundle": "PageServicesCostcoRoadshows",
+      "deps": []
+    },
+    "/trade-show-staffing/ad-trucks": {
+      "global": "PageTradeShowAdTrucks",
+      "bundle": "PageTradeShowAdTrucks",
+      "deps": [
+        "AdTruckRates",
+        "RelatedCases"
+      ]
+    },
     "/thank-you": {
       "global": "ThankYou",
       "bundle": "ThankYou",
