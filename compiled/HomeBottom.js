@@ -111,7 +111,7 @@ const CaseStudyCarousel = () => /*#__PURE__*/React.createElement("section", {
   }
 }, FEATURED_CASES.map((c, i) => /*#__PURE__*/React.createElement("a", {
   key: c.slug,
-  href: "/work#" + c.slug,
+  href: "/portfolio/" + c.slug,
   style: {
     position: "relative",
     display: "block",

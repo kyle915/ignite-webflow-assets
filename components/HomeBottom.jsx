@@ -73,7 +73,7 @@ const CaseStudyCarousel = () => (
 
       <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 16 }}>
         {FEATURED_CASES.map((c, i) => (
-          <a key={c.slug} href={"pages/work.html#" + c.slug} style={{
+          <a key={c.slug} href={"pages/case-study.html?slug=" + c.slug} style={{
             position: "relative", display: "block", borderRadius: 20, overflow: "hidden",
             minHeight: 520, background: c.color, color: "#fff",
             gridRow: i === 0 ? "span 1" : "auto",
