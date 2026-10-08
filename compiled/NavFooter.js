@@ -683,7 +683,7 @@ const SiteNav = ({
   }, /*#__PURE__*/React.createElement(AccentBtn, {
     size: "sm",
     accent: "spark",
-    onClick: () => location.href = "https://www.igniteproductions.co/contact"
+    onClick: () => location.href = (window.IG_ROUTE && window.IG_ROUTE("https://www.igniteproductions.co/contact")) || "https://www.igniteproductions.co/contact"
   }, "GET IN TOUCH")), /*#__PURE__*/React.createElement("button", {
     className: "nav-burger",
     "aria-label": mobileOpen ? "Close menu" : "Open menu",
@@ -1343,7 +1343,7 @@ const SiteFooter = ({
     textTransform: "uppercase",
     border: "1px solid rgba(93, 190, 90,0.3)"
   }
-}, "\u25CF Online Now"))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Request a Quote", "https://www.igniteproductions.co/contact"], ["Agency of Record", "/agency-of-record"], ["Markets", "/markets"], ["Industries", "/industries"], ["Weddings", "/weddings"], ["Group Travel", "/travel"], ["Compare", "/compare"], ["Blog", "/blog"], ["Glossary", "/glossary"], ["Spark Platform", "https://sparkbyignite.igniteproductions.co/"], ["Fractional", "/fractional"]]], ["TALENT", [["Apply", "https://www.igniteproductions.co/contact"], ["LinkedIn", "https://www.linkedin.com/company/ignite-productionsllc"], ["Press", "#"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
+}, "\u25CF Online Now"))), [["AGENCY", [["Our Work", "/work"], ["About", "/about"], ["Request a Quote", "https://www.igniteproductions.co/contact"], ["Agency of Record", "/agency-of-record"], ["Markets", "/markets"], ["Industries", "/industries"], ["Weddings", "/weddings"], ["Group Travel", "/travel"], ["Compare", "/compare"], ["Blog", "/blog"], ["Glossary", "/glossary"], ["Spark Platform", "https://sparkbyignite.igniteproductions.co/"], ["Fractional", "/fractional"]]], ["TALENT", [["Apply", "https://www.igniteproductions.co/careers/brand-ambassador"], ["LinkedIn", "https://www.linkedin.com/company/ignite-productionsllc"], ["Press", "#"]]]].map(([h, items]) => /*#__PURE__*/React.createElement("div", {
   key: h
 }, /*#__PURE__*/React.createElement(OpsLine, null, ">> " + h), /*#__PURE__*/React.createElement("ul", {
   style: {
@@ -1358,6 +1358,7 @@ const SiteFooter = ({
   key: l
 }, /*#__PURE__*/React.createElement("a", {
   href: /^https?:/.test(href) ? href : rel + href,
+  "data-ig-audience": h === "TALENT" && l === "Apply" ? "applicant" : undefined,
   style: {
     fontSize: 14,
     color: "var(--fg-2)"

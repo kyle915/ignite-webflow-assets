@@ -41,6 +41,43 @@
     "spark-solution.html": ["s", "/solutions/", "/solutions"],
     "spark-use-case.html": ["u", "/use-cases/", "/use-cases"]
   };
+  /* Carry only campaign metadata already in the current URL. No cookies, storage,
+     form data, click IDs, referrer collection, or additional network requests. */
+  var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_id", "utm_content", "utm_term"];
+  function buyerHost(host) { return /^(?:www\.)?igniteproductions\.co$/i.test(host); }
+  function excludedJourney(url) {
+    return /^\/(?:careers?|jobs?|apply|application|contact-thank-you|thank-you|privacy|terms|accessibility)(?:\/|$)/i.test(url.pathname)
+      || /^(?:ambassador|applicant|talent|job)$/i.test(url.searchParams.get("role") || "");
+  }
+  function campaignValue(params, key) {
+    var values = params.getAll(key);
+    if (values.length !== 1) return null;
+    var value = values[0].trim();
+    /* Marketing labels/IDs only. Reject obvious email, URL, control-character,
+       encoded payload and phone-shaped values rather than forwarding them. */
+    if (!/^[a-z0-9][a-z0-9 ._~+-]{0,159}$/i.test(value)) return null;
+    if (key !== "utm_id" && /^\+?[\d ().-]{7,}$/.test(value)) return null;
+    return value;
+  }
+  function campaignLink(href, originalHref) {
+    if (!href || /^(?:mailto:|tel:|#|javascript:|data:)/i.test(originalHref || href)) return null;
+    try {
+      var current = new URL(location.href), target = new URL(href, current.href);
+      var original = new URL(originalHref || href, current.href);
+      if (!buyerHost(current.hostname) || current.protocol !== "https:" || excludedJourney(current)) return null;
+      if (!buyerHost(target.hostname) || target.origin !== current.origin || target.protocol !== "https:" || target.port || target.username || target.password || excludedJourney(target) || excludedJourney(original)) return null;
+      /* A destination's explicit campaign takes precedence as a complete set.
+         Never mix incoming campaign fields into a separately tagged destination. */
+      if (UTM_KEYS.some(function (key) { return target.searchParams.has(key); })) return null;
+      var explicit = UTM_KEYS.some(function (key) { return original.searchParams.has(key); });
+      var source = explicit ? original.searchParams : current.searchParams, added = false;
+      UTM_KEYS.forEach(function (key) {
+        var value = campaignValue(source, key);
+        if (value !== null) { target.searchParams.set(key, value); added = true; }
+      });
+      return added ? target.href : null;
+    } catch (_) { return null; }
+  }
   function route(href) {
     if (!href || /^(https?:|mailto:|tel:|#|javascript:)/i.test(href)) return null;
     var m = href.match(/^(?:\.\.\/|\.\/)*(?:pages\/)?([a-z0-9-]+\.html)(\?[^#]*)?(#.*)?$/i);
@@ -61,19 +98,37 @@
     if (qs) { var q = new URLSearchParams(qs); ["slug","c","i","t","p","s","u"].forEach(function (k) { q.delete(k); }); qs = q.toString() ? "?" + q.toString() : ""; }
     return host + path + qs + hash;
   }
-  window.IG_ROUTE = route;
+  function rewrite(href) {
+    var mapped = route(href);
+    return campaignLink(mapped || href, href) || mapped;
+  }
+  window.IG_ROUTE = rewrite;
   window.IG_ROUTES_STATIC = STATIC; window.IG_ROUTES_PARAM = PARAM;
   window.IG_ROUTES_SPARK = SPARK_STATIC; window.IG_ROUTES_SPARK_PARAM = SPARK_PARAM; window.IG_CASE_ALIAS = CASE_ALIAS;
   if (!/igniteproductions\.co$/i.test(location.hostname)) return;
+  function fixLink(a) {
+    var href = a.getAttribute("href"), mapped = route(href);
+    var applicant = a.getAttribute("data-ig-audience") === "applicant";
+    var result = (!applicant && campaignLink(mapped || href, href)) || mapped;
+    if (result && result !== href) a.setAttribute("href", result);
+  }
   function fix(root) {
     (root.querySelectorAll ? root.querySelectorAll("a[href]") : []).forEach(function (a) {
-      var r = route(a.getAttribute("href")); if (r) a.setAttribute("href", r);
+      fixLink(a);
     });
   }
   function start() {
     fix(document);
-    new MutationObserver(function (ms) { ms.forEach(function (m) { m.addedNodes.forEach(function (n) { if (n.nodeType === 1) { if (n.matches && n.matches("a[href]")) fix(n.parentNode || n); else fix(n); } }); if (m.type === "attributes" && m.target.matches("a[href]")) { var r = route(m.target.getAttribute("href")); if (r) m.target.setAttribute("href", r); } }); })
+    new MutationObserver(function (ms) { ms.forEach(function (m) { m.addedNodes.forEach(function (n) { if (n.nodeType === 1) { if (n.matches && n.matches("a[href]")) fix(n.parentNode || n); else fix(n); } }); if (m.type === "attributes" && m.target.matches("a[href]")) fixLink(m.target); }); })
       .observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
+    /* Covers links inserted and activated before the observer's next microtask. */
+    function navigation(e) {
+      var node = e.target && (e.target.nodeType === 1 ? e.target : e.target.parentElement);
+      var a = node && node.closest && node.closest("a[href]");
+      if (a) fixLink(a);
+    }
+    document.addEventListener("click", navigation, true);
+    document.addEventListener("auxclick", navigation, true);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
 })();

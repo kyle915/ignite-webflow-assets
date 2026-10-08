@@ -383,7 +383,7 @@ const SiteNav = ({ rel = "", active = "", activeService = "", brand = "ignite" }
         </nav>
         <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
           <span className="nav-cta-desktop">
-            <AccentBtn size="sm" accent="spark" onClick={() => location.href = "https://www.igniteproductions.co/contact"}>
+            <AccentBtn size="sm" accent="spark" onClick={() => location.href = (window.IG_ROUTE && window.IG_ROUTE("https://www.igniteproductions.co/contact")) || "https://www.igniteproductions.co/contact"}>
               GET IN TOUCH
             </AccentBtn>
           </span>
@@ -668,14 +668,14 @@ const SiteFooter = ({ rel = "" }) => (
           </div>
           {[
             ["AGENCY", [["Our Work", "pages/work.html"], ["About", "pages/about.html"], ["Request a Quote", "https://www.igniteproductions.co/contact"], ["Agency of Record", "pages/agency-of-record.html"], ["Markets", "pages/markets.html"], ["Industries", "pages/industries.html"], ["Weddings", "pages/weddings.html"], ["Group Travel", "pages/travel.html"], ["Compare", "pages/compare.html"], ["Blog", "pages/blog.html"], ["Glossary", "pages/glossary.html"], ["Spark Platform", "pages/spark.html"], ["Fractional", "pages/fractional.html"]]],
-            ["TALENT", [["Apply", "https://www.igniteproductions.co/contact"], ["LinkedIn", "https://www.linkedin.com/company/ignite-productionsllc"], ["Press", "#"]]],
+            ["TALENT", [["Apply", "https://www.igniteproductions.co/careers/brand-ambassador"], ["LinkedIn", "https://www.linkedin.com/company/ignite-productionsllc"], ["Press", "#"]]],
           ].map(([h, items]) => (
             <div key={h}>
               <OpsLine>{">> " + h}</OpsLine>
               <ul style={{ listStyle: "none", padding: 0, margin: "12px 0 0", display: "grid", gridTemplateColumns: h === "AGENCY" ? "1fr 1fr" : "1fr", gap: "8px 20px" }}>
                 {items.map(([l, href]) => (
                   <li key={l}>
-                    <a href={/^https?:/.test(href) ? href : rel + href} style={{ fontSize: 14, color: "var(--fg-2)" }}
+                    <a href={/^https?:/.test(href) ? href : rel + href} data-ig-audience={h === "TALENT" && l === "Apply" ? "applicant" : undefined} style={{ fontSize: 14, color: "var(--fg-2)" }}
                        onMouseEnter={(e) => e.currentTarget.style.color = "var(--ignite-500)"}
                        onMouseLeave={(e) => e.currentTarget.style.color = "var(--fg-2)"}>
                       {l}
