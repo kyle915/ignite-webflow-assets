@@ -41,12 +41,12 @@
     "spark-solution.html": ["s", "/solutions/", "/solutions"],
     "spark-use-case.html": ["u", "/use-cases/", "/use-cases"]
   };
-  /* Carry only campaign metadata already in the current URL. No cookies, storage,
-     form data, click IDs, referrer collection, or additional network requests. */
+  /* Carry the six approved campaign tags and the supplied opaque oppref only.
+     No identity fields, other click IDs, referrer collection, or network requests. */
   var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_id", "utm_content", "utm_term"];
   function buyerHost(host) { return /^(?:www\.)?igniteproductions\.co$/i.test(host); }
   function excludedJourney(url) {
-    return /^\/(?:careers?|jobs?|apply|application|contact-thank-you|thank-you|privacy|terms|accessibility)(?:\/|$)/i.test(url.pathname)
+    return /^\/(?:careers?|jobs?|apply|application|applicant|staffing-application|contact-thank-you|thank-you|privacy|terms|accessibility)(?:\/|$)/i.test(url.pathname)
       || /^(?:ambassador|applicant|talent|job)$/i.test(url.searchParams.get("role") || "");
   }
   function campaignValue(params, key) {
@@ -59,6 +59,40 @@
     if (key !== "utm_id" && /^\+?[\d ().-]{7,}$/.test(value)) return null;
     return value;
   }
+  /* Ignite Close inquiry attribution v1. The head-loaded route script runs before
+     Close captures the contact URL. Session retention is limited to 30 minutes. */
+  var ATTRIBUTION_KEY = "ignite.close.inquiry.attribution.v1";
+  var ATTRIBUTION_TTL = 30 * 60 * 1000;
+  function clickReference(params) {
+    var refs = params.getAll("oppref");
+    return refs.length === 1 && refs[0] && refs[0].length <= 4096 && !/[\u0000-\u001f\u007f]/.test(refs[0]) ? refs[0] : null;
+  }
+  function attribution() {
+    var current = new URL(location.href), prior = null, record = null, now = Date.now();
+    try { prior = JSON.parse(sessionStorage.getItem(ATTRIBUTION_KEY) || "null"); } catch (_) {}
+    if (buyerHost(current.hostname) && current.protocol === "https:" && !current.port && !excludedJourney(current)) {
+      var ref = clickReference(current.searchParams);
+      if (ref !== null) {
+        var values = { oppref: ref };
+        UTM_KEYS.forEach(function (key) { var value = campaignValue(current.searchParams, key); if (value !== null) values[key] = value; });
+        record = { at: now, values: values };
+      } else if (!current.searchParams.has("oppref") && !UTM_KEYS.some(function (key) { return current.searchParams.has(key); }) &&
+        prior && typeof prior.at === "number" && now >= prior.at && now - prior.at < ATTRIBUTION_TTL && prior.values &&
+        clickReference(new URLSearchParams({ oppref: prior.values.oppref || "" })) !== null) {
+        // Revalidate stored values and keep the original expiry on clean navigation.
+        record = { at: prior.at, values: { oppref: prior.values.oppref } };
+        UTM_KEYS.forEach(function (key) { var value = campaignValue(new URLSearchParams(prior.values), key); if (value !== null) record.values[key] = value; });
+      }
+      if (/^\/contact\/?$/.test(current.pathname)) {
+        if (current.searchParams.has("oppref") && ref === null) current.searchParams.delete("oppref");
+        if (record) Object.keys(record.values).forEach(function (key) { if (!current.searchParams.has(key)) current.searchParams.set(key, record.values[key]); });
+        if (current.href !== location.href) history.replaceState(history.state, "", current.href);
+      }
+    }
+    try { if (record) sessionStorage.setItem(ATTRIBUTION_KEY, JSON.stringify(record)); else sessionStorage.removeItem(ATTRIBUTION_KEY); } catch (_) {}
+    return record;
+  }
+  var inquiryAttribution = attribution();
   function campaignLink(href, originalHref) {
     if (!href || /^(?:mailto:|tel:|#|javascript:|data:)/i.test(originalHref || href)) return null;
     try {
@@ -68,9 +102,11 @@
       if (!buyerHost(target.hostname) || target.origin !== current.origin || target.protocol !== "https:" || target.port || target.username || target.password || excludedJourney(target) || excludedJourney(original)) return null;
       /* A destination's explicit campaign takes precedence as a complete set.
          Never mix incoming campaign fields into a separately tagged destination. */
-      if (UTM_KEYS.some(function (key) { return target.searchParams.has(key); })) return null;
-      var explicit = UTM_KEYS.some(function (key) { return original.searchParams.has(key); });
-      var source = explicit ? original.searchParams : current.searchParams, added = false;
+      if (target.searchParams.has("oppref") || UTM_KEYS.some(function (key) { return target.searchParams.has(key); })) return null;
+      var explicit = original.searchParams.has("oppref") || UTM_KEYS.some(function (key) { return original.searchParams.has(key); });
+      var source = explicit ? original.searchParams : inquiryAttribution ? new URLSearchParams(inquiryAttribution.values) : current.searchParams, added = false;
+      var ref = clickReference(source);
+      if (ref !== null) { target.searchParams.set("oppref", ref); added = true; }
       UTM_KEYS.forEach(function (key) {
         var value = campaignValue(source, key);
         if (value !== null) { target.searchParams.set(key, value); added = true; }
