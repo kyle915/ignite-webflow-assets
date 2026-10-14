@@ -1285,18 +1285,7 @@ const Dashboard = () => {
     idx: 4,
     store: "COSTCO #88",
     time: "3:02p \xB7 39.74,-104.99"
-  }))))), /*#__PURE__*/React.createElement("p", {
-    className: "sr-reveal",
-    style: {
-      marginTop: 16,
-      textAlign: "center",
-      fontFamily: "var(--font-mono)",
-      fontSize: 11,
-      letterSpacing: "0.16em",
-      color: "rgba(255,255,255,0.4)",
-      textTransform: "uppercase"
-    }
-  }, "\u203B Interface mock \xB7 drop real activation + shelf photos into the proof strip before launch")));
+  })))))));
 };
 
 /* ============================ TASK TYPES ============================ */
