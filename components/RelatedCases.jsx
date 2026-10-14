@@ -64,7 +64,7 @@ const RC_MAP = {
   },
   spark: { "platform":["brew-dr","stone-house-bread","torch-thc"] },
 };
-const RelatedCases = ({ ctx, slug, rel = "../", heading }) => {
+const RelatedCases = ({ ctx, slug, rel = "../", heading, omitMetricsFor = [] }) => {
   const list = ((RC_MAP[ctx] || {})[slug] || []).filter(k => RC_CASES[k]);
   if (!list.length) return null;
   const asset = n => (window.__resources && window.__resources["r_assets_" + n.replace(/[^a-z0-9]/gi, "_")]) || rel + "assets/" + n;
@@ -88,11 +88,11 @@ const RelatedCases = ({ ctx, slug, rel = "../", heading }) => {
               <div style={{ padding:"20px 22px 22px", display:"flex", flexDirection:"column", gap:10, flex:1 }}>
                 <div style={{ fontFamily:"var(--font-mono)", fontSize:10.5, letterSpacing:"0.2em", textTransform:"uppercase", color:"var(--fg-3)" }}>{c.brand}</div>
                 <div style={{ fontFamily:"var(--font-display)", fontWeight:600, fontSize:19, letterSpacing:"-0.01em", lineHeight:1.25 }}>{c.line}</div>
-                <div style={{ marginTop:"auto", paddingTop:12, display:"flex", alignItems:"baseline", gap:10, borderTop:"1px solid var(--ink-400)" }}>
+                {!omitMetricsFor.includes(k) && <div style={{ marginTop:"auto", paddingTop:12, display:"flex", alignItems:"baseline", gap:10, borderTop:"1px solid var(--ink-400)" }}>
                   <span style={{ fontFamily:"var(--font-display)", fontWeight:800, fontSize:24, color:"var(--ignite-500)" }}>{c.stat[0]}</span>
                   <span style={{ fontFamily:"var(--font-mono)", fontSize:10.5, letterSpacing:"0.16em", textTransform:"uppercase", color:"var(--fg-2)" }}>{c.stat[1]}</span>
                   <span style={{ marginLeft:"auto", fontFamily:"var(--font-mono)", fontSize:12, color:"var(--fg-1)" }}>→</span>
-                </div>
+                </div>}
               </div>
             </a>); })}
         </div>

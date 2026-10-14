@@ -376,12 +376,17 @@ const Hero = () => {
       lineHeight: 0.9,
       animationDelay: "120ms"
     }
-  }, "Your brand,", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("span", {
     style: {
+      display: "block"
+    }
+  }, "Mobile tour production."), " ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "block",
       fontStyle: "italic",
       color: AMBER
     }
-  }, "on the move.")), /*#__PURE__*/React.createElement("p", {
+  }, "One team at every stop.")), /*#__PURE__*/React.createElement("p", {
     className: "mt-rise",
     style: {
       marginTop: 26,
@@ -393,11 +398,9 @@ const Hero = () => {
       fontWeight: 500,
       animationDelay: "240ms"
     }
-  }, "Ad trucks, sprinter vans, branded bikes, and transit takeovers, routed city to city and ", /*#__PURE__*/React.createElement("b", {
-    style: {
-      color: "#fff"
-    }
-  }, "GPS-tracked the whole way"), ". National reach, compressed into weeks of high-density execution."), /*#__PURE__*/React.createElement("div", {
+  }, "Take your brand from city to city with a mobile marketing tour built around your audience, markets, and goals. Ignite handles vehicle sourcing and builds, routing, permits, drivers, brand ambassadors, and reporting, so one team is accountable at every stop."), /*#__PURE__*/React.createElement("div", {
+    "data-ig-google-choice": ""
+  }), /*#__PURE__*/React.createElement("div", {
     className: "mt-rise",
     style: {
       marginTop: 32,
@@ -427,6 +430,19 @@ const Hero = () => {
       fontFamily: "var(--font-mono)"
     }
   }, "\u2192")), /*#__PURE__*/React.createElement("a", {
+    href: "/portfolio/krispy-krunchy-chicken",
+    style: {
+      padding: "20px 26px",
+      borderRadius: 999,
+      background: "transparent",
+      color: "#fff",
+      border: "1.5px solid rgba(255,255,255,0.25)",
+      fontFamily: "var(--font-display)",
+      fontWeight: 700,
+      fontSize: 17,
+      textDecoration: "none"
+    }
+  }, "See the Krispy Krunchy Chicken tour \u2192"), /*#__PURE__*/React.createElement("a", {
     href: "#fleet",
     style: {
       padding: "20px 26px",
@@ -1136,7 +1152,7 @@ const PhotoBand = () => /*#__PURE__*/React.createElement("section", {
     textShadow: "0 2px 14px rgba(0,0,0,0.6)"
   }
 }, "From motorsport paddocks to downtown grids: a vehicle people stop, photograph, and post."))));
-const TOURS = [["Claude Code workshop tour", "12 cities", "Developer workshop stops with local crews at every city.", "/portfolio/claude-code-workshops"], ["Krispy Krunchy Chicken", "10 cities", "Mobile sampling tour with branded truck and mascot.", "/portfolio/krispy-krunchy-chicken"], ["Smalls Sliders", "Multi-market", "Food truck tour supporting new-market launches.", "/portfolio/smalls-sliders"], ["Breakaway Music Festival", "12 festivals", "A touring sponsor footprint rebuilt at every stop.", "/portfolio/breakaway"]];
+const TOURS = [["Claude Code workshop tour", "12 cities", "Developer workshop stops with local crews at every city.", "/portfolio/claude-code-workshops"], ["Krispy Krunchy Chicken", "10 cities", "Mobile sampling tour with branded truck and mascot.", "/portfolio/krispy-krunchy-chicken"], ["Smalls Sliders", "Multi-market", "Food truck tour supporting new-market launches.", "/portfolio/smalls-sliders"], ["Breakaway Music Festival", "12 festivals", "Ambassador staffing and on-site sponsor execution across the festival series.", "/portfolio/breakaway"]];
 const TourProof = () => /*#__PURE__*/React.createElement("section", {
   "data-screen-label": "Tours we've run",
   style: {

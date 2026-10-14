@@ -63,7 +63,7 @@ const Mono = ({
   }
 }, children);
 
-/* ---------- HERO — live sample counter ---------- */
+/* ---------- HERO — illustrative sample reporting ---------- */
 const FEED = [{
   mkt: "Kroger · Columbus OH",
   n: "+128",
@@ -86,16 +86,8 @@ const FEED = [{
   c: ORANGE
 }];
 const Hero = () => {
-  const [samples, setSamples] = React.useState(2418640);
-  React.useEffect(() => {
-    const id = setInterval(() => setSamples(v => v + Math.floor(Math.random() * 40) + 8), 600);
-    return () => clearInterval(id);
-  }, []);
-  const [feed, setFeed] = React.useState(3);
-  React.useEffect(() => {
-    const id = setInterval(() => setFeed(f => f >= FEED.length ? 3 : f + 1), 1400);
-    return () => clearInterval(id);
-  }, []);
+  const samples = 734,
+    feed = 3; // Static illustrative counts, not a client total.
   return /*#__PURE__*/React.createElement("section", {
     "data-screen-label": "01 Product Sampling Hero",
     style: {
@@ -158,12 +150,11 @@ const Hero = () => {
       height: 7,
       borderRadius: 999,
       background: LIME,
-      boxShadow: `0 0 10px ${LIME}`,
-      animation: "ps-pulse 1.5s infinite"
+      boxShadow: `0 0 10px ${LIME}`
     }
   }), /*#__PURE__*/React.createElement(Mono, {
     color: LIME
-  }, "SAMPLES HANDED \xB7 YTD"))), /*#__PURE__*/React.createElement("div", {
+  }, "ILLUSTRATIVE SPARK DEMO"))), /*#__PURE__*/React.createElement("div", {
     className: "ps-hero-grid",
     style: {
       display: "grid",
@@ -203,6 +194,8 @@ const Hero = () => {
       color: "#fff"
     }
   }, "proves it"), " across in-store demos, street, campus, and festivals. Every sample GPS-verified, every count in your dashboard by end of day."), /*#__PURE__*/React.createElement("div", {
+    "data-ig-google-choice": ""
+  }), /*#__PURE__*/React.createElement("div", {
     className: "ps-rise",
     style: {
       marginTop: 32,
@@ -244,7 +237,7 @@ const Hero = () => {
       fontSize: 17,
       textDecoration: "none"
     }
-  }, "See the conversion")), /*#__PURE__*/React.createElement("div", {
+  }, "See the measurement")), /*#__PURE__*/React.createElement("div", {
     className: "ps-rise",
     style: {
       marginTop: 30,
@@ -253,7 +246,7 @@ const Hero = () => {
       flexWrap: "wrap",
       animationDelay: "460ms"
     }
-  }, [["2.4M+", "samples / year"], ["100%", "GPS-verified"]].map(([v, l]) => /*#__PURE__*/React.createElement("div", {
+  }, [["Samples", "counts by program"], ["GPS", "shift verification"]].map(([v, l]) => /*#__PURE__*/React.createElement("div", {
     key: l
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -321,12 +314,12 @@ const Hero = () => {
       fontSize: 10.5,
       color: "rgba(255,255,255,0.5)"
     }
-  }, "spark / sampling / live-count"), /*#__PURE__*/React.createElement(Mono, {
+  }, "spark / sampling / example-counts"), /*#__PURE__*/React.createElement(Mono, {
     color: LIME,
     style: {
       fontSize: 9
     }
-  }, "\u25CF LIVE")), /*#__PURE__*/React.createElement("div", {
+  }, "DEMO")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: "26px 18px 18px",
       textAlign: "center",
@@ -340,7 +333,7 @@ const Hero = () => {
       color: "rgba(255,255,255,0.5)",
       textTransform: "uppercase"
     }
-  }, "Samples handed \xB7 YTD"), /*#__PURE__*/React.createElement("div", {
+  }, "Example samples logged"), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 900,
@@ -368,8 +361,7 @@ const Hero = () => {
       padding: "9px 12px",
       borderRadius: 10,
       background: "rgba(255,255,255,0.03)",
-      border: "1px solid rgba(255,255,255,0.07)",
-      animation: i === feed - 1 ? "ps-drop 400ms ease both" : "none"
+      border: "1px solid rgba(255,255,255,0.07)"
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -397,16 +389,16 @@ const Hero = () => {
       alignItems: "center"
     }
   }, /*#__PURE__*/React.createElement(Mono, {
-    color: "rgba(255,255,255,0.4)",
+    color: "rgba(255,255,255,0.6)",
     style: {
       fontSize: 9
     }
-  }, "GPS + PHOTO PER COUNT"), /*#__PURE__*/React.createElement(Mono, {
+  }, "ILLUSTRATIVE COUNTS"), /*#__PURE__*/React.createElement(Mono, {
     color: LIME,
     style: {
       fontSize: 9
     }
-  }, "SAME-DAY DATA"))))))));
+  }, "EXAMPLE PROGRAM"))))))));
 };
 const Ticker = () => {
   const items = ["IN-STORE DEMOS", "STREET SAMPLING", "CAMPUS", "FESTIVALS", "ON-PREMISE", "GPS-VERIFIED COUNTS", "TRIAL → PURCHASE", "SAME-DAY DATA"];
@@ -474,19 +466,15 @@ const WhatIs = () => /*#__PURE__*/React.createElement("section", {
   style: {
     color: "#fff"
   }
-}, "Ignite"), " hands out ", /*#__PURE__*/React.createElement("b", {
+}, "Ignite"), " coordinates the program, staffs the demo, executes in the field, and reports ", /*#__PURE__*/React.createElement("b", {
   style: {
     color: LIME
   }
-}, "2.4M+ samples a year"), " with ", /*#__PURE__*/React.createElement("b", {
-  style: {
-    color: "#fff"
-  }
-}, "GPS-verified counts"), ", so sampling stops being a cost line and starts being a measurable trial engine."))));
+}, "sample counts, photos, and ambassador notes"), " for each program."))));
 
 /* ---------- CONVERSION FUNNEL ---------- */
 const Funnel = () => {
-  const steps = [["Reach", "People who walk past the demo", 100, "rgba(255,255,255,0.4)"], ["Sampled", "Product actually in hand", 58, LIME], ["Engaged", "Heard the pitch, asked a question", 39, LIME], ["Converted", "Bought: trial → purchase", 21, ORANGE]];
+  const steps = [["Reach", "Define the audience and observation method", 100, "rgba(255,255,255,0.4)"], ["Sampled", "Count product samples distributed", 100, LIME], ["Engaged", "Log interactions and ambassador notes", 100, LIME], ["Purchased", "Verify purchases where retailer data is available", 100, ORANGE]];
   return /*#__PURE__*/React.createElement("section", {
     id: "funnel",
     style: {
@@ -512,19 +500,19 @@ const Funnel = () => {
       letterSpacing: "-0.035em",
       lineHeight: 0.98
     }
-  }, "Hand to ", /*#__PURE__*/React.createElement("span", {
+  }, "Measure samples and ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: "italic",
       color: LIME
     }
-  }, "purchase.")), /*#__PURE__*/React.createElement("p", {
+  }, "purchases.")), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 16,
       fontSize: 16.5,
       lineHeight: 1.55,
       color: "rgba(255,255,255,0.7)"
     }
-  }, "Trial is the shortest path to a first purchase. We staff the demo, drive the conversation to the conversion ask, and count every step so you know the real return, not a vibe.")), /*#__PURE__*/React.createElement("div", {
+  }, "Agree the measurement plan before launch. Report samples distributed and shopper interactions, then assess purchases separately where the retailer provides sales or scan-back data for the agreed event window.")), /*#__PURE__*/React.createElement("div", {
     className: "ps-reveal",
     style: {
       display: "flex",
@@ -582,7 +570,7 @@ const Funnel = () => {
       fontWeight: 800,
       color: i >= 1 && i < 3 ? "#0b0905" : "#fff"
     }
-  }, w, "%")))))), /*#__PURE__*/React.createElement("p", {
+  }, i === 3 ? "Retailer data" : "Program reporting")))))), /*#__PURE__*/React.createElement("p", {
     className: "ps-reveal",
     style: {
       marginTop: 24,
@@ -591,7 +579,7 @@ const Funnel = () => {
       letterSpacing: "0.06em",
       color: "rgba(255,255,255,0.4)"
     }
-  }, "\u203B Illustrative funnel. Real conversion varies by category and channel; top programs hit 28 to 34%.")));
+  }, "\u203B Measurement stages, not conversion results. Samples distributed do not establish purchases; the recap identifies the source, reporting period and method used.")));
 };
 
 /* ---------- CHANNELS ---------- */
@@ -711,7 +699,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1.6,
     color: "rgba(255,255,255,0.74)"
   }
-}, "Spark logs every sample with GPS + photo, tracks per-SKU velocity and trial-to-purchase, and delivers a per-market dashboard the same day. Sampling ROI you can actually put in a deck."), /*#__PURE__*/React.createElement("a", {
+}, "Spark records sample counts, GPS-verified shifts, photos and ambassador notes. Purchase or scan-back reporting is included where retailer data is available and the measurement approach has been agreed for the program."), /*#__PURE__*/React.createElement("a", {
   href: "https://sparkbyignite.igniteproductions.co/",
   style: {
     marginTop: 24,
@@ -732,7 +720,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
     gridTemplateColumns: "1fr 1fr",
     gap: 12
   }
-}, [["GPS", "per-count location"], ["Photo", "proof on site"], ["Per-SKU", "velocity + trial"], ["Same-day", "market dashboard"]].map(([v, l]) => /*#__PURE__*/React.createElement("div", {
+}, [["GPS", "verified shifts"], ["Photo", "proof on site"], ["Per-SKU", "sample counts"], ["Same-day", "market dashboard"]].map(([v, l]) => /*#__PURE__*/React.createElement("div", {
   key: l,
   style: {
     padding: "24px 20px",
@@ -758,7 +746,7 @@ const Spark = () => /*#__PURE__*/React.createElement("section", {
     color: "rgba(255,255,255,0.6)"
   }
 }, l)))))));
-const FAQS = [["How do you measure sampling ROI?", "GPS-verified sample counts, per-SKU velocity, trial-to-purchase conversion, and post-sampling intercept research, delivered same-day in the Spark dashboard."], ["What channels do you sample in?", "Grocery, mass, c-store, natural, on-premise, campus, street, festivals, sporting events, and B2B trade shows, with channel-specific staffing and compliance."], ["Do you sample alcohol and regulated categories?", "Yes. TIPS-certified staff, state-by-state alcohol compliance, and food-handler certs for all F&B sampling."], ["What's typical conversion?", "Conversion varies by category, retailer, and how the demo is staffed. Ignite reports trial-to-purchase from GPS-verified counts after each program."], ["How fast is data turnaround?", "Same-day. Counts, photos, and dashboards are available within hours of shift completion."]];
+const FAQS = [["How do you measure a sampling program?", "We report sample counts, photos, ambassador notes and GPS-verified shifts. Where a retailer supplies sales or scan-back data, we agree the event window and method before comparing purchases with sampling activity."], ["Can you coordinate retailer scheduling?", "Yes. We coordinate with retail and distributor partners on store dates, demo requirements, product availability and ambassador scheduling, then manage execution and reporting."], ["Can you roll a program out region by region?", "Yes. We plan the markets, retailer accounts and dates together, then sequence scheduling, staffing and reporting so the program can expand with your retail coverage."], ["Can you support chilled product sampling?", "Include serving temperature, storage, transport and venue facilities in the brief. We confirm the handling plan, retailer requirements and staff briefing before booking the program."], ["How do you distinguish samples from purchases?", "Samples distributed are an activity count. Purchases require separate evidence, such as retailer sales or scan-back data for an agreed period. We identify the source and method in the recap and do not infer purchases from sample counts alone."], ["What channels do you sample in?", "Grocery, mass, c-store, natural, on-premise, campus, street, festivals, sporting events, and B2B trade shows, with channel-specific staffing and compliance."], ["Do you sample alcohol and regulated categories?", "Yes. TIPS-certified staff, state-by-state alcohol compliance, and food-handler certs for all F&B sampling."], ["Do you run retail co-op or MDF-funded programs?", "Yes. We run retail co-op programs and handle creative, staffing, logistics and claim-ready reporting that the retail partner can submit against MDF or scan-back budgets."], ["What's typical conversion?", "Conversion varies by product, retailer, audience and measurement method. We agree the reporting period and available purchase evidence before interpreting trial-to-purchase results; there is no universal conversion rate."], ["How fast is data turnaround?", "Same-day. Counts, photos, and dashboards are available within hours of shift completion."]];
 const Faq = () => {
   const [open, setOpen] = React.useState(0);
   return /*#__PURE__*/React.createElement("section", {
@@ -923,6 +911,82 @@ const CTA = () => /*#__PURE__*/React.createElement("section", {
     color: INK
   }
 }, "On-Premise")))));
+
+/* Existing Brew Dr. case: verified operating scope, no undated volume claim. */
+const BrewDrProof = () => /*#__PURE__*/React.createElement("section", {
+  "data-screen-label": "Brew Dr sampling proof",
+  style: {
+    background: INK,
+    color: "#fff",
+    padding: "80px 0",
+    borderBottom: "1px solid rgba(255,255,255,0.08)"
+  }
+}, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+  className: "ps-2col",
+  style: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: 32,
+    alignItems: "center"
+  }
+}, /*#__PURE__*/React.createElement("img", {
+  src: "https://kyle915.github.io/ignite-webflow-assets/assets/brewdr-king-soopers-demo.jpg",
+  alt: "Brew Dr. retail sampling team at King Soopers",
+  loading: "lazy",
+  decoding: "async",
+  style: {
+    width: "100%",
+    height: 360,
+    objectFit: "cover",
+    objectPosition: "center 40%",
+    borderRadius: 14
+  }
+}), /*#__PURE__*/React.createElement("div", {
+  className: "ps-reveal"
+}, /*#__PURE__*/React.createElement(Mono, {
+  color: ORANGE
+}, "// BREW DR. \xB7 RETAIL SAMPLING"), /*#__PURE__*/React.createElement("h2", {
+  style: {
+    marginTop: 14,
+    fontFamily: "var(--font-display)",
+    fontWeight: 800,
+    fontSize: "clamp(30px,4vw,52px)",
+    letterSpacing: "-0.03em",
+    lineHeight: 1.05
+  }
+}, "From retail coordination to the recap."), /*#__PURE__*/React.createElement("p", {
+  style: {
+    marginTop: 18,
+    fontSize: 16.5,
+    lineHeight: 1.6,
+    color: "rgba(255,255,255,0.78)"
+  }
+}, "Ignite manages Brew Dr.'s retail sampling program from retailer and distributor coordination and demo scheduling through ambassador staffing, in-store execution and reporting. The program began in the Pacific Northwest and is expanding into additional markets."), /*#__PURE__*/React.createElement("div", {
+  style: {
+    marginTop: 24,
+    display: "flex",
+    gap: 16,
+    flexWrap: "wrap"
+  }
+}, /*#__PURE__*/React.createElement("a", {
+  href: "/portfolio/brew-dr",
+  style: {
+    color: LIME,
+    fontFamily: "var(--font-mono)",
+    fontSize: 12,
+    letterSpacing: "0.12em",
+    textDecoration: "none"
+  }
+}, "Read the Brew Dr. case \u2192"), /*#__PURE__*/React.createElement("a", {
+  href: "https://www.igniteproductions.co/contact",
+  style: {
+    color: "#fff",
+    fontFamily: "var(--font-mono)",
+    fontSize: 12,
+    letterSpacing: "0.12em",
+    textDecoration: "none"
+  }
+}, "Plan a sampling program \u2192"))))));
 const Page = () => {
   useReveal();
   return /*#__PURE__*/React.createElement("div", {
@@ -933,9 +997,10 @@ const Page = () => {
     accent: "#E68A4C",
     label: "Product Sampling",
     rel: "../"
-  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Ticker, null), /*#__PURE__*/React.createElement(WhatIs, null), /*#__PURE__*/React.createElement(Funnel, null), /*#__PURE__*/React.createElement(Channels, null), /*#__PURE__*/React.createElement(Spark, null), /*#__PURE__*/React.createElement(Faq, null), /*#__PURE__*/React.createElement(CTA, null), window.RelatedCases ? React.createElement(window.RelatedCases, {
+  }), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(BrewDrProof, null), /*#__PURE__*/React.createElement(Ticker, null), /*#__PURE__*/React.createElement(WhatIs, null), /*#__PURE__*/React.createElement(Funnel, null), /*#__PURE__*/React.createElement(Channels, null), /*#__PURE__*/React.createElement(Spark, null), /*#__PURE__*/React.createElement(Faq, null), /*#__PURE__*/React.createElement(CTA, null), window.RelatedCases ? React.createElement(window.RelatedCases, {
     ctx: "service",
-    slug: "product-sampling"
+    slug: "product-sampling",
+    omitMetricsFor: ["brew-dr"]
   }) : null, /*#__PURE__*/React.createElement(SiteFooter, null));
 };
 Object.assign(window, {

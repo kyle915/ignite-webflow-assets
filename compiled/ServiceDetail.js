@@ -1344,6 +1344,7 @@ const FeaturedCase = ({
   s
 }) => {
   if (!s.featured) return null;
+  const Heading = s.featured.heading ? "h2" : "p";
   return /*#__PURE__*/React.createElement("section", {
     style: {
       padding: "120px 0",
@@ -1404,7 +1405,7 @@ const FeaturedCase = ({
       flexDirection: "column",
       justifyContent: "center"
     }
-  }, /*#__PURE__*/React.createElement(OpsLine, null, "* CASE STUDY"), /*#__PURE__*/React.createElement("p", {
+  }, /*#__PURE__*/React.createElement(OpsLine, null, "* CASE STUDY"), /*#__PURE__*/React.createElement(Heading, {
     style: {
       marginTop: 18,
       fontFamily: "var(--font-display)",
@@ -1413,8 +1414,15 @@ const FeaturedCase = ({
       lineHeight: 1.12,
       letterSpacing: "-0.025em"
     }
-  }, s.featured.line), /*#__PURE__*/React.createElement("a", {
-    href: "/work",
+  }, s.featured.line), s.featured.description && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 18,
+      fontSize: 16,
+      lineHeight: 1.6,
+      color: "var(--fg-2)"
+    }
+  }, s.featured.description), /*#__PURE__*/React.createElement("a", {
+    href: s.featured.href || "/work",
     style: {
       marginTop: 32,
       fontFamily: "var(--font-mono)",
@@ -9340,7 +9348,9 @@ const ServiceDetailPage = ({
     s: s
   }), /*#__PURE__*/React.createElement(ServiceHero, {
     s: s
-  }), /*#__PURE__*/React.createElement(ServicePOV, {
+  }), s.featured && s.featured.placement === "after-hero" ? /*#__PURE__*/React.createElement(FeaturedCase, {
+    s: s
+  }) : null, /*#__PURE__*/React.createElement(ServicePOV, {
     s: s
   }), /*#__PURE__*/React.createElement(ServicePainBanner, {
     s: s
@@ -9420,9 +9430,9 @@ const ServiceDetailPage = ({
     s: s
   }), /*#__PURE__*/React.createElement(ServiceProcess, {
     s: s
-  }), /*#__PURE__*/React.createElement(FeaturedCase, {
+  }), !(s.featured && s.featured.placement === "after-hero") ? /*#__PURE__*/React.createElement(FeaturedCase, {
     s: s
-  }), /*#__PURE__*/React.createElement(ServiceReceipts, {
+  }) : null, /*#__PURE__*/React.createElement(ServiceReceipts, {
     s: s
   }), /*#__PURE__*/React.createElement(ServiceSEOBlock, {
     s: s

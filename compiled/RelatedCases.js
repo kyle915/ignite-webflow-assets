@@ -116,7 +116,8 @@ const RelatedCases = ({
   ctx,
   slug,
   rel = "../",
-  heading
+  heading,
+  omitMetricsFor = []
 }) => {
   const list = ((RC_MAP[ctx] || {})[slug] || []).filter(k => RC_CASES[k]);
   if (!list.length) return null;
@@ -234,7 +235,7 @@ const RelatedCases = ({
         letterSpacing: "-0.01em",
         lineHeight: 1.25
       }
-    }, c.line), /*#__PURE__*/React.createElement("div", {
+    }, c.line), !omitMetricsFor.includes(k) && /*#__PURE__*/React.createElement("div", {
       style: {
         marginTop: "auto",
         paddingTop: 12,

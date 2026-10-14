@@ -655,6 +655,7 @@ const ServiceProcess = ({ s }) => {
 
 const FeaturedCase = ({ s }) => {
   if (!s.featured) return null;
+  const Heading = s.featured.heading ? "h2" : "p";
   return (
   <section style={{ padding: "120px 0", background: "var(--ink-000)", color: "var(--fg-1)", borderTop: "1px solid var(--ink-400)", position: "relative", overflow: "hidden" }}>
     <Container>
@@ -675,11 +676,12 @@ const FeaturedCase = ({ s }) => {
         </div>
         <div style={{ background: "var(--ink-100)", padding: 48, display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <OpsLine>* CASE STUDY</OpsLine>
-          <p style={{
+          <Heading style={{
             marginTop: 18, fontFamily: "var(--font-display)", fontWeight: 600,
             fontSize: "clamp(28px, 3vw, 40px)", lineHeight: 1.12, letterSpacing: "-0.025em",
-          }}>{s.featured.line}</p>
-          <a href="work.html" style={{
+          }}>{s.featured.line}</Heading>
+          {s.featured.description && <p style={{marginTop:18,fontSize:16,lineHeight:1.6,color:"var(--fg-2)"}}>{s.featured.description}</p>}
+          <a href={s.featured.href || "work.html"} style={{
             marginTop: 32, fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.22em",
             textTransform: "uppercase", color: s.accent,
           }}>SEE THE FULL CASE STUDY →</a>
@@ -4591,6 +4593,7 @@ const ServiceDetailPage = ({ slug }) => {
       <SiteNav rel="../" active="SERVICES"/>
       <ServiceBreadcrumb s={s}/>
       <ServiceHero s={s}/>
+      {s.featured && s.featured.placement === "after-hero" ? <FeaturedCase s={s}/> : null}
       <ServicePOV s={s}/>
       <ServicePainBanner s={s}/>
       <ServiceIntro s={s}/>
@@ -4631,7 +4634,7 @@ const ServiceDetailPage = ({ slug }) => {
       <ServiceComplianceBelt s={s}/>
       <ServiceIndustries s={s}/>
       <ServiceProcess s={s}/>
-      <FeaturedCase s={s}/>
+      {!(s.featured && s.featured.placement === "after-hero") ? <FeaturedCase s={s}/> : null}
       <ServiceReceipts s={s}/>
       <ServiceSEOBlock s={s}/>
       <ServiceMarkets s={s}/>
