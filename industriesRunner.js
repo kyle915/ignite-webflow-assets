@@ -80,12 +80,28 @@
   }
   function applyDetailSeo(ind, slug) {
     var url = "https://igniteproductions.co/industries/" + slug;
-    document.title = ind.name + " — Activation, Staffing, Sampling | Ignite Productions";
+    // These two CMS pages own their approved native search metadata. Keep
+    // meaningful values; the empty Webflow template still needs a fallback.
+    var nativeSeo = slug === "tech-saas" || slug === "cpg-beverage";
+    var title = (document.title || "").trim();
+    var defaultTitle = !title || /^(?:Ignite Productions|Industries|Industry)(?:\s*\|\s*Ignite Productions)?$/i.test(title);
+    if (!nativeSeo || defaultTitle) {
+      document.title = ind.name + " — Activation, Staffing, Sampling | Ignite Productions";
+    }
     var md = document.querySelector("meta[name=description]");
     var desc = "Ignite Productions supports " + ind.name.toLowerCase() +
       " brands with experiential marketing, sampling, event staffing, mobile tours, and trade show programs." +
       (ind.compliance ? " Full compliance, certifications, and paperwork handled." : "");
-    if (md) md.setAttribute("content", desc);
+    var nativeDesc = md && (md.getAttribute("content") || "").trim();
+    var defaultDesc = !nativeDesc || /^(?:Ignite Productions|Industries|Industry)$/i.test(nativeDesc);
+    if (!nativeSeo || defaultDesc) {
+      if (!md && nativeSeo) {
+        md = document.createElement("meta");
+        md.setAttribute("name", "description");
+        document.head.appendChild(md);
+      }
+      if (md) md.setAttribute("content", desc);
+    }
     var canonical = document.querySelector("link[rel=canonical]");
     if (!canonical) { canonical = document.createElement("link"); canonical.rel = "canonical"; document.head.appendChild(canonical); }
     canonical.setAttribute("href", url);

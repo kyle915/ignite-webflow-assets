@@ -1,4 +1,4 @@
-/* Featured case studies carousel + Core Difference + CTA footer */
+/* Featured case studies carousel + Featured by Close + Core Difference + CTA footer */
 const FEATURED_CASES = [
   {
     brand: "OPENAI", slug: "openai-devday", color: "#0B1A14",
@@ -306,4 +306,62 @@ const FinalCTA = () => (
   </section>
 );
 
-Object.assign(window, { CaseStudyCarousel, CoreDifference, HomeTestimonial, FinalCTA });
+/* Close customer story, alongside the existing case-study proof. No player or tracking embed. */
+const CLOSE_STORY_URL = "https://close.com/customers/ignite-productions";
+const FEATURED_CLOSE_CSS = `
+.fc-sec{padding:56px 0;background:var(--ink-000);color:var(--fg-1);border-top:1px solid var(--ink-300);border-bottom:1px solid var(--ink-300);letter-spacing:normal}
+.fc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr) auto;gap:32px;align-items:center}
+.fc-lock{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.fc-eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ignite-400)}
+.fc-logo{height:28px;width:auto;display:block}
+.fc-sec .fc-h2{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(24px,2.5vw,32px);letter-spacing:-.025em;line-height:1.15;color:var(--fg-1)}
+.fc-sec .fc-body{margin:12px 0 0;font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--fg-2);max-width:660px}
+.fc-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 20px;border-radius:12px;background:var(--ignite-500);color:#fff;border:1px solid var(--ignite-500);font-family:var(--font-display);font-weight:600;font-size:15px;line-height:1.4;text-decoration:none;white-space:nowrap}
+.fc-btn:hover{color:#fff;background:var(--ignite-600)}
+.fc-btn:focus-visible{outline:2px solid var(--ignite-400);outline-offset:4px}
+@media(max-width:900px){.fc-grid{grid-template-columns:1fr;gap:24px}.fc-lock{flex-direction:row;align-items:center}.fc-btn{justify-self:start}}
+/* Hold the compact section against responsive.css's broad element rules. */
+@media(max-width:720px){.fc-sec.fc-sec{padding-top:40px!important;padding-bottom:40px!important}.fc-sec .fc-h2{font-size:26px!important;line-height:1.15!important;letter-spacing:-.025em!important}.fc-sec .fc-body{font-size:16px!important;line-height:1.6!important}}
+`;
+const FeaturedByClose = () => (
+  <section className="fc-sec" aria-labelledby="fc-title" data-screen-label="Featured by Close">
+    <style>{FEATURED_CLOSE_CSS}</style>
+    <Container>
+      <div className="fc-grid">
+        <div className="fc-lock">
+          <span className="fc-eyebrow">Featured by</span>
+          <img className="fc-logo" src="https://kyle915.github.io/ignite-webflow-assets/assets/logos/close-logo-white.png" alt="Close" width="303" height="82" loading="lazy" decoding="async"/>
+        </div>
+        <div>
+          <h2 id="fc-title" className="fc-h2">The systems behind your event.</h2>
+          <p className="fc-body">Close profiled how Ignite connects client planning, staffing preparation and field reporting through Close and Spark. See how our team keeps event details connected from the first conversation to the recap.</p>
+        </div>
+        <a className="fc-btn" href={CLOSE_STORY_URL} target="_blank" rel="noopener noreferrer">Read the Close story <span aria-hidden="true">→</span></a>
+      </div>
+    </Container>
+  </section>
+);
+
+Object.assign(window, { CaseStudyCarousel, FeaturedByClose, CoreDifference, HomeTestimonial, FinalCTA });
+
+/* The homepage's Webflow embeds have no slot for this section, so mount it in its own node
+   right before the Core Difference embed (i.e. directly after the case study carousel).
+   Homepage only: both neighbours must be present. */
+(function () {
+  function mount() {
+    if (document.getElementById("ignite-featured-close")) return;
+    var cases = document.getElementById("ignite-case-studies");
+    var core = document.getElementById("ignite-core-difference");
+    if (!cases || !core || !window.React || !window.ReactDOM) return;
+    var anchor = core.closest(".w-embed") || core;
+    var el = document.createElement("div");
+    el.id = "ignite-featured-close";
+    anchor.parentNode.insertBefore(el, anchor);
+    ReactDOM.createRoot(el).render(React.createElement(FeaturedByClose));
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", mount, { once: true });
+  } else {
+    mount();
+  }
+})();

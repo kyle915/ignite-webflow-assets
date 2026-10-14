@@ -63,7 +63,7 @@ const Mono = ({
   }
 }, children);
 
-/* ---------- HERO — live shift board ---------- */
+/* ---------- HERO — illustrative Spark shift board ---------- */
 const SHIFTS = [{
   ev: "Festival activation",
   mkt: "Austin, TX",
@@ -96,16 +96,7 @@ const SHIFTS = [{
   c: "#FF5F57"
 }];
 const Hero = () => {
-  const [n, setN] = React.useState(11920);
-  React.useEffect(() => {
-    const id = setInterval(() => setN(v => v + Math.floor(Math.random() * 3)), 1100);
-    return () => clearInterval(id);
-  }, []);
-  const [rows, setRows] = React.useState(3);
-  React.useEffect(() => {
-    const id = setInterval(() => setRows(r => r >= SHIFTS.length ? 3 : r + 1), 1500);
-    return () => clearInterval(id);
-  }, []);
+  const rows = 3; // Fixed examples, never a live feed.
   return /*#__PURE__*/React.createElement("section", {
     "data-screen-label": "01 Event Staffing Hero",
     style: {
@@ -168,12 +159,11 @@ const Hero = () => {
       height: 7,
       borderRadius: 999,
       background: AMBER,
-      boxShadow: `0 0 10px ${AMBER}`,
-      animation: "es-pulse 1.5s infinite"
+      boxShadow: `0 0 10px ${AMBER}`
     }
   }), /*#__PURE__*/React.createElement(Mono, {
     color: AMBER
-  }, n.toLocaleString(), " SHIFTS STAFFED \xB7 YTD"))), /*#__PURE__*/React.createElement("div", {
+  }, "ILLUSTRATIVE SPARK DEMO"))), /*#__PURE__*/React.createElement("div", {
     className: "es-hero-grid",
     style: {
       display: "grid",
@@ -343,12 +333,12 @@ const Hero = () => {
       fontSize: 10.5,
       color: "rgba(255,255,255,0.5)"
     }
-  }, "ignite / shift-board / today"), /*#__PURE__*/React.createElement(Mono, {
+  }, "spark / example shift board"), /*#__PURE__*/React.createElement(Mono, {
     color: AMBER,
     style: {
       fontSize: 9
     }
-  }, "\u25CF LIVE")), /*#__PURE__*/React.createElement("div", {
+  }, "DEMO")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 14,
       display: "flex",
@@ -366,8 +356,7 @@ const Hero = () => {
       padding: "11px 13px",
       borderRadius: 11,
       background: "rgba(255,255,255,0.03)",
-      border: "1px solid rgba(255,255,255,0.07)",
-      animation: i === rows - 1 ? "es-rowin 400ms ease both" : "none"
+      border: "1px solid rgba(255,255,255,0.07)"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -414,12 +403,12 @@ const Hero = () => {
     style: {
       fontSize: 9
     }
-  }, "CAPTAIN-LED \xB7 GPS-VERIFIED"), /*#__PURE__*/React.createElement(Mono, {
+  }, "ILLUSTRATIVE SHIFTS"), /*#__PURE__*/React.createElement(Mono, {
     color: AMBER,
     style: {
       fontSize: 9
     }
-  }, "50-STATE BENCH"))))))));
+  }, "EXAMPLE STATUSES"))))))));
 };
 const Ticker = () => {
   const items = ["BRAND AMBASSADORS", "DEMO SPECIALISTS", "STREET TEAMS", "TRADE-SHOW HOSTS", "BILINGUAL STAFF", "FIELD CAPTAINS", "TIPS-CERTIFIED", "48-HOUR RUSH"];
@@ -772,11 +761,7 @@ const Versus = () => /*#__PURE__*/React.createElement("section", {
 
 /* ---------- SPARK ---------- */
 const Spark = () => {
-  const [n, setN] = React.useState(3184);
-  React.useEffect(() => {
-    const id = setInterval(() => setN(v => v + Math.floor(Math.random() * 2)), 1400);
-    return () => clearInterval(id);
-  }, []);
+  const exampleShifts = 24; // Illustrative sample data, not an operational total.
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: INK,
@@ -839,8 +824,7 @@ const Spark = () => {
       height: 7,
       borderRadius: 999,
       background: "#D6F35F",
-      boxShadow: "0 0 10px #D6F35F",
-      animation: "es-spark-pulse 1.6s infinite"
+      boxShadow: "0 0 10px #D6F35F"
     }
   }), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -851,7 +835,7 @@ const Spark = () => {
       textTransform: "uppercase",
       fontWeight: 700
     }
-  }, "LIVE \xB7 EVENT STAFFING"))), /*#__PURE__*/React.createElement("h2", {
+  }, "SPARK \xB7 ILLUSTRATIVE DEMO"))), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 800,
@@ -968,7 +952,7 @@ const Spark = () => {
       color: "rgba(255,255,255,0.45)",
       textTransform: "uppercase"
     }
-  }, "Shifts logged today"), /*#__PURE__*/React.createElement("span", {
+  }, "Example shifts logged"), /*#__PURE__*/React.createElement("span", {
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -980,8 +964,7 @@ const Spark = () => {
       height: 6,
       borderRadius: 999,
       background: "#D6F35F",
-      boxShadow: "0 0 8px #D6F35F",
-      animation: "es-spark-pulse 1.6s infinite"
+      boxShadow: "0 0 8px #D6F35F"
     }
   }), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -989,7 +972,7 @@ const Spark = () => {
       fontSize: 9,
       color: "#D6F35F"
     }
-  }, "LIVE"))), /*#__PURE__*/React.createElement("div", {
+  }, "DEMO"))), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "var(--font-display)",
       fontWeight: 800,
@@ -999,7 +982,14 @@ const Spark = () => {
       lineHeight: 1,
       marginBottom: 20
     }
-  }, n.toLocaleString()), /*#__PURE__*/React.createElement("div", {
+  }, exampleShifts), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: "0 0 20px",
+      fontSize: 13,
+      lineHeight: 1.5,
+      color: "rgba(255,255,255,0.74)"
+    }
+  }, "Illustrative Spark demo with example data. This is not a live program feed."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
       gridTemplateColumns: "1fr 1fr",
