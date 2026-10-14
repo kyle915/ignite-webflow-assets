@@ -17,6 +17,21 @@ window.LEGAL_DOCS = {
       ["Web", "www.igniteproductions.co"],
     ],
     sections: [
+{
+      "id": "website-advertising-measurement",
+      "title": "Website advertising measurement",
+      "blocks": [
+            {
+                  "type": "p",
+                  "text": "You can optionally allow Ignite to remember your Google ad click ID during this browser-tab session and connect it to an inquiry. If our team verifies the inquiry as a business opportunity, we may share the click ID, a coded reference for the original submission, its submission date and time, and that verified-buyer outcome with Google to measure our advertising. This Google measurement payload excludes your name, email address, phone number, inquiry message, and hashed versions of those details."
+            },
+            {
+                  "type": "p",
+                  "text": "Leaving the choice unchecked does not affect submitting an inquiry or receiving a quote. Uncheck the measurement box to stop further capture and clear this tab's saved click attribution. After submitting an inquiry, request withdrawal of permission for future measurement sharing by emailing staffing@igniteproductions.co. Changing a browser choice cannot automatically remove data already submitted to Close or Google."
+            }
+      ]
+},
+
       {
         id: "introduction",
         title: "Introduction",
