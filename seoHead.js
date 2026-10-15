@@ -87,7 +87,7 @@
         "name": "What is a brand ambassador agency?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A brand ambassador agency recruits, vets, trains, and deploys people who represent a brand at sampling, retail demos, festivals, and trade shows. Ignite Productions is a veteran-owned (VOSB) brand ambassador agency founded in 2018 in Sparks, Nevada. We staff 257,000+ vetted brand ambassadors in all 50 states. Contact staffing@igniteproductions.co or 775.406.0435."
+          "text": "A brand ambassador agency recruits, vets, trains, and deploys people who represent a brand at sampling, retail demos, festivals, and trade shows. Ignite Productions is a veteran-owned (VOSB) brand ambassador agency. We staff 257,000+ vetted brand ambassadors in all 50 states."
         }
       }]
     }, "baa-faq");
