@@ -214,7 +214,20 @@ const Hero = () => {
     style: {
       color: "#fff"
     }
-  }, "257,000+ vetted ambassadors"), " (captains, demo specialists, street teams, bilingual staff) across all 50 states. Rush-ready, brand-briefed, GPS-verified on every shift."), /*#__PURE__*/React.createElement("div", {
+  }, "257,000+ vetted ambassadors"), " (captains, demo specialists, street teams, bilingual staff) across all 50 states. Rush-ready, brand-briefed, GPS-verified on every shift."), /*#__PURE__*/React.createElement("p", {
+    className: "es-rise",
+    "data-ig-entity": "",
+    style: {
+      marginTop: 14,
+      fontSize: "clamp(18px,1.9vw,23px)",
+      lineHeight: 1.45,
+      color: "rgba(255,255,255,0.85)",
+      maxWidth: 560,
+      fontFamily: "var(--font-display)",
+      fontWeight: 500,
+      animationDelay: "240ms"
+    }
+  }, "Ignite Productions provides event staffing nationwide, with 257,000+ vetted event staff cast locally in all 50 states and 5,000+ events executed."), /*#__PURE__*/React.createElement("div", {
     className: "es-rise",
     style: {
       marginTop: 32,

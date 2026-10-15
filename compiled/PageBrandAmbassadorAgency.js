@@ -242,7 +242,20 @@ const Hero = () => {
     style: {
       color: "#fff"
     }
-  }, "257,000+ vetted ambassadors"), " in all 50 states: recruited, trained, briefed, and proven on shift with GPS + photo. One partner, every market."), /*#__PURE__*/React.createElement("div", {
+  }, "257,000+ vetted ambassadors"), " in all 50 states: recruited, trained, briefed, and proven on shift with GPS + photo. One partner, every market."), /*#__PURE__*/React.createElement("p", {
+    className: "ba-rise",
+    "data-ig-entity": "",
+    style: {
+      marginTop: 14,
+      fontSize: "clamp(18px,1.9vw,23px)",
+      lineHeight: 1.45,
+      color: "rgba(255,255,255,0.85)",
+      maxWidth: 560,
+      fontFamily: "var(--font-display)",
+      fontWeight: 500,
+      animationDelay: "240ms"
+    }
+  }, "Ignite Productions is a veteran-owned brand ambassador agency running programs nationwide, with 257,000+ vetted brand ambassadors in all 50 states and 5,000+ events executed."), /*#__PURE__*/React.createElement("div", {
     className: "ba-rise",
     style: {
       marginTop: 32,
