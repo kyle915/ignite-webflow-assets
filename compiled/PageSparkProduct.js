@@ -144,8 +144,8 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement("a", {
   className: "sp-btn",
-  href: "https://www.igniteproductions.co/contact"
-}, "See Spark on a live program ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
+  href: "https://admin.igniteproductions.co/onboarding?utm_source=ignite_web&utm_medium=spark_marketing&utm_campaign=spark-product&utm_content=hero_start_free"
+}, "Start free ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
   className: "sp-ghost",
   href: "https://sparkbyignite.igniteproductions.co/#how"
 }, "See the full loop"))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SparkMock, {

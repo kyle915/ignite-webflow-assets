@@ -151,8 +151,8 @@ const Hero = () => {
     }
   }, /*#__PURE__*/React.createElement("a", {
     className: "sp-btn",
-    href: "https://www.igniteproductions.co/contact"
-  }, "See Spark on a live program ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
+    href: "https://admin.igniteproductions.co/onboarding?utm_source=ignite_web&utm_medium=spark_marketing&utm_campaign=spark-for-brands&utm_content=hero_start_free"
+  }, "Start free ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
     className: "sp-ghost",
     href: "/spark-demo"
   }, "See the live dashboard")), /*#__PURE__*/React.createElement("p", {
@@ -617,8 +617,8 @@ const Shift = () => /*#__PURE__*/React.createElement(SparkSec, {
   className: "fb-chips sp-rv"
 }, /*#__PURE__*/React.createElement("a", {
   className: "sp-btn",
-  href: "https://www.igniteproductions.co/contact"
-}, "See Spark on a live program ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
+  href: "https://admin.igniteproductions.co/onboarding?utm_source=ignite_web&utm_medium=spark_marketing&utm_campaign=spark-for-brands&utm_content=hero_start_free"
+}, "Start free ", /*#__PURE__*/React.createElement("span", null, "\u2192")), /*#__PURE__*/React.createElement("a", {
   className: "sp-ghost",
   href: "https://sparkbyignite.igniteproductions.co/"
 }, "See pricing"))));
