@@ -5,6 +5,8 @@
 (function () {
   var HOST = "https://www.igniteproductions.co";
   var SPARK = "https://sparkbyignite.igniteproductions.co";
+  /* Self-serve Spark Free signup (admin app). Carry UTMs across this hop. */
+  var SPARK_ONBOARDING = "https://admin.igniteproductions.co/onboarding";
   var STATIC = {
     "index.html": "/", "about.html": "/about", "contact.html": "/contact", "work.html": "/work",
     "blog.html": "/blog", "fractional.html": "/fractional", "markets.html": "/markets",
@@ -93,27 +95,44 @@
     return record;
   }
   var inquiryAttribution = attribution();
+  function isSparkOnboarding(url) {
+    return url.protocol === "https:" &&
+      /^admin\.igniteproductions\.co$/i.test(url.hostname) &&
+      /^\/onboarding\/?$/.test(url.pathname) &&
+      !url.port && !url.username && !url.password;
+  }
   function campaignLink(href, originalHref) {
     if (!href || /^(?:mailto:|tel:|#|javascript:|data:)/i.test(originalHref || href)) return null;
     try {
       var current = new URL(location.href), target = new URL(href, current.href);
       var original = new URL(originalHref || href, current.href);
       if (!buyerHost(current.hostname) || current.protocol !== "https:" || excludedJourney(current)) return null;
-      if (!buyerHost(target.hostname) || target.origin !== current.origin || target.protocol !== "https:" || target.port || target.username || target.password || excludedJourney(target) || excludedJourney(original)) return null;
+      var sameOriginBuyer = buyerHost(target.hostname) && target.origin === current.origin &&
+        target.protocol === "https:" && !target.port && !target.username && !target.password &&
+        !excludedJourney(target) && !excludedJourney(original);
+      var onboardingHop = isSparkOnboarding(target);
+      if (!sameOriginBuyer && !onboardingHop) return null;
       /* A destination's explicit campaign takes precedence as a complete set.
-         Never mix incoming campaign fields into a separately tagged destination. */
-      if (target.searchParams.has("oppref") || UTM_KEYS.some(function (key) { return target.searchParams.has(key); })) return null;
+         Never mix incoming campaign fields into a separately tagged destination.
+         Exception: Spark /onboarding may ship default UTMs; still merge missing keys
+         from the live page / session so paid clicks are not dropped. */
+      var targetHasCampaign = target.searchParams.has("oppref") || UTM_KEYS.some(function (key) { return target.searchParams.has(key); });
+      if (targetHasCampaign && !onboardingHop) return null;
       var explicit = original.searchParams.has("oppref") || UTM_KEYS.some(function (key) { return original.searchParams.has(key); });
       var source = explicit ? original.searchParams : inquiryAttribution ? new URLSearchParams(inquiryAttribution.values) : current.searchParams, added = false;
-      var ref = clickReference(source);
-      if (ref !== null) { target.searchParams.set("oppref", ref); added = true; }
+      if (!onboardingHop) {
+        var ref = clickReference(source);
+        if (ref !== null) { target.searchParams.set("oppref", ref); added = true; }
+      }
       UTM_KEYS.forEach(function (key) {
+        if (onboardingHop && target.searchParams.has(key)) return;
         var value = campaignValue(source, key);
         if (value !== null) { target.searchParams.set(key, value); added = true; }
       });
       return added ? target.href : null;
     } catch (_) { return null; }
   }
+  window.IG_SPARK_ONBOARDING = SPARK_ONBOARDING;
   function route(href) {
     if (!href || /^(https?:|mailto:|tel:|#|javascript:)/i.test(href)) return null;
     var m = href.match(/^(?:\.\.\/|\.\/)*(?:pages\/)?([a-z0-9-]+\.html)(\?[^#]*)?(#.*)?$/i);

@@ -30,7 +30,7 @@ const PLANS = [{
   m: "$0",
   a: "$0",
   cta: "Start free",
-  href: "https://www.igniteproductions.co/contact",
+  href: "https://admin.igniteproductions.co/onboarding?utm_source=ignite_web&utm_medium=spark_marketing&utm_campaign=spark-pricing&utm_content=plan_free",
   f: {
     ws: "1",
     ev: "5 / mo",
@@ -49,7 +49,7 @@ const PLANS = [{
   m: "$XX",
   a: "$XX",
   cta: "Start free trial",
-  href: "https://www.igniteproductions.co/contact",
+  href: "https://admin.igniteproductions.co/onboarding?utm_source=ignite_web&utm_medium=spark_marketing&utm_campaign=spark-pricing&utm_content=plan_field",
   f: {
     ws: "1",
     ev: "50 / mo",
@@ -69,7 +69,7 @@ const PLANS = [{
   a: "$XXX",
   pop: true,
   cta: "Start free trial",
-  href: "https://www.igniteproductions.co/contact",
+  href: "https://admin.igniteproductions.co/onboarding?utm_source=ignite_web&utm_medium=spark_marketing&utm_campaign=spark-pricing&utm_content=plan_program",
   f: {
     ws: "1",
     ev: "250 / mo",
