@@ -1,0 +1,17 @@
+# Secrets / local env
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*credentials*
+*serviceAccount*
+*-adminsdk*.json
+.env.from-prod
+
+# Dependencies / build junk
+node_modules/
+.DS_Store
+*.log
+.cache/
+dist/
